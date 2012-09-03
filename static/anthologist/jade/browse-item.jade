@@ -1,0 +1,10 @@
+li
+	if tagType == 'authors'
+		span(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/Person") 
+			meta(itemprop="familyName", content="#{last_name}")
+			meta(itemprop="givenName", content="#{first_name}")
+			meta(itemprop="birthDate", content="#{birth_year}")
+			meta(itemprop="deathDate", content="#{death_year}")
+			!{full_name} (!{dates})
+	else 
+		span(itemprop="itemListElement")= name

@@ -1,0 +1,142 @@
+/*
+ * LESS variables to be used in all stylesheets;
+ * also, classes that apply across pages
+ */
+
+@standard-font: Calisto MT, Book Antiqua, serif;
+@menu-font: Helvetica, sans-serif;
+
+@header-color: #364719;
+
+@sidebar-color: #97B5BB;
+@sidebar-highlight-color: lighten(@sidebar-color, 10%);
+@even-sel-color: lighten(@sidebar-color, 25%);
+@lightest-sidebar-color: lighten(@sidebar-color, 28%);
+@menu-color: darken(@sidebar-color, 20%);
+
+@highlight-color: #990000;
+
+@background-color: desaturate(#707F34, 15%);
+
+@link-base: #003399;
+
+.secret-link {
+  color: black;
+  &:hover { color: @highlight-color; }
+  cursor: pointer;
+}
+
+@gray-text: #484848;
+
+.dot-leaders {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  font-weight: normal;
+  content:
+  " . . . . . . . . . . . . . . . . . . ."
+  " . . . . . . . . . . . . . . . . . . ."
+  " . . . . . . . . . . . . . . . . . . ."
+  " . . . . . . . . . . . . . . . . . . .";
+}
+
+.dot-leader-list {
+  list-style-type: none;
+  margin: 0 0 10px 0;
+  padding-left: 0px;
+  overflow-x: hidden;
+  li {
+    .secret-link;
+    text-align: right;
+    padding-bottom: 2px;
+    &:before {
+      .dot-leaders;
+    }
+    & span:first-child {
+      padding-left: 0.3em;
+      background: @sidebar-color;
+    }
+  }
+}
+
+
+
+
+.bce { font-variant: small-caps; }
+
+.posted-date { font-size: 0.8em; }
+
+.hanging-indent {
+  text-indent: -20px;
+  margin: 0 0 0 20px;  
+}
+
+.poetry-line {
+  display: block;
+  .hanging-indent;
+}
+
+/*in teasers and quotation boxes*/
+
+.ellipsis {
+  font-style: normal;
+  display: inline-block;
+}
+
+.inline-translation {
+  font-style: normal;
+  font-variant: small-caps;
+}
+
+.in-text-comment {
+  font-style: italic;
+  margin: 1em 60px;
+}
+
+/*------------------------*/
+
+.border-radius-soft {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.two-columns (@count: 2) {
+  -moz-column-count: @count; /* Firefox */
+  -webkit-column-count: @count; /* Safari and Chrome */
+  column-count: @count;
+}
+
+.arrow-down { //idea from http://css-tricks.com/snippets/css/css-triangle/
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent; 
+  border-top: 4px solid @link-base;
+  font-size: 1px;
+  height: 0;
+  width: 0; 
+}
+
+.arrow-up { 
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent; 
+  border-bottom: 4px solid @link-base;
+  font-size: 0;
+  height: 0;
+  vertical-align: 6px;
+  width: 0; 
+}
+
+.arrow-right { 
+  border-left: 4px solid @link-base;
+  border-top: 4px solid transparent; 
+  border-bottom: 4px solid transparent;
+  font-size: 0;
+  height: 0;
+  width: 0; 
+}
+
+.down-arrow-link {
+  .arrow-down { font-size: 1.5px; }
+  .secret-link;
+  color: @link-base; //overrides .secret-link
+  &:hover .arrow-down { border-top-color: @highlight-color; }
+}

@@ -1,0 +1,178 @@
+@import "variables.less";
+
+
+/*-------------
+ * RESET
+ * -----------*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*-------------
+ * ELEMENTS
+ * ------------*/
+
+hr { margin: 10px auto; }
+
+p {
+  line-height: 130%;
+  margin-bottom: 1em; //counteracting the reset above
+}
+
+a {
+  color: @link-base;
+  text-decoration: none;
+  &:hover { color: @highlight-color; }
+}
+
+/* <b> will be used to mark special span of text that doens't fit other
+ * semantic markup. */
+b { font-weight: normal; } 
+
+/* If <q> tag is used, quotation marks will be included as part of the text,
+ * due to inconsistent browser support. */
+q:before,
+q:after { content: ""; }
+
+blockquote {
+  font-family: Times New Roman, Times, serif;
+  margin: 1em 0 1em 40px;
+}
+
+/*---------------
+ * SKIP LINK (from http://webaim.org/techniques/skipnav/)
+ *-------------*/
+#skip, #skip:hover, #skip:visited {
+  background-color: white; 
+  position:absolute; 
+  left:0px; 
+  top:-500px; 
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+} 
+
+#skip:active, #skip:focus { 
+  position:static; 
+  width:auto; 
+  height:auto; 
+}
+
+
+/*--------------
+ * BASE LAYOUT
+ * -------------*/
+
+body {
+  background-color: @background-color;
+  font-family: Calisto MT, Constantia, Georgia, serif;
+  margin: 5px;
+}
+
+#wrapper {
+  margin: 0 auto;
+  max-width: 900px;
+  min-width: 785px;
+  overflow: auto;
+}
+
+#site-header,
+#site-footer {
+  background-image: url('/static/anthologist/images/leaf-border-green-black-sm.jpg');
+  float: left;
+  width: 100%;
+}
+
+#site-header { height: 40px; }
+
+#site-content-container {
+  overflow: auto;
+  width: 100%;
+}
+
+/*----------------
+ * HEADER & FOOTER
+ *----------------/
+
+/*HEADER*/
+
+#site-header-title {
+  color: white;
+  display: inline;
+  margin: 0 15px;
+  #site-title-the { font-size: 1.2em; }
+  #site-title-name { font-size: 1.9em; }
+  &:hover { color: @highlight-color; }
+}
+
+/* NAVIGATION MENU 
+ * (some ideas from http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/) */
+
+#site-header-nav { display: inline; }
+
+.navigation {
+  font-family: @menu-font;
+  font-size: 0.9em;
+  list-style-type: none;
+  li {
+    cursor: pointer;
+    float: left;
+    position: relative; // So the dropdown can be positioned absolutely beneath.
+    a {
+      color: white; // Because they are links, default is @link-base.
+      display: block;
+      height: 16px;
+      padding: 12px;
+    }
+    &:hover a {
+      background-color: @menu-color;
+      color: black;
+      opacity: 0.9;
+    }
+  }
+}
+
+/* The rules below relate to the "browse" dropdown, so only apply to the header. */
+
+#site-header-nav .navigation {
+  float: right;
+  ul { //second level list (browse options)
+    background: rgba(255,255,255,0); //for transparency
+    left: -9999px; //hides it out of view until its parent is hovered over
+    list-style-type: none;
+    position: absolute;
+    li {
+      float: none; //gets them all the same width
+      a {
+        padding: 5px 10px; //overriding the padding set on higher level <a>
+        white-space: nowrap;
+      }
+    }
+  }
+  li:hover ul {
+    left: 0; //slide it into view (below, position is set at "left: -9999px" to hide it)
+    li a:hover {
+      background: @highlight-color;
+      color: white;
+    }
+  }
+}
+
+/* FOOTER */
+
+#site-footer {
+  font-family: @menu-font;
+}
+
+.get-copyright-info { cursor: pointer; }
+
+#copyright-info {
+  background: white;
+  border: 5px solid @header-color;
+  clear: left;
+  display: none;
+  font-size: 0.8em;
+  padding: 1em 1em 0 1em;
+}

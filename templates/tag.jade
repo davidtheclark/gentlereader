@@ -1,0 +1,117 @@
+extends ./base.jade
+
+block title
+	title {{ tag|capfirst }} | the Anthologist
+
+block scripts
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/tag-views.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/tag-app.js")
+	
+	{% autoescape off %}
+	script(type="application/javascript")
+		| tagCategory = #{tag_type_json};
+		| if (tagCategory != 'author' && tagCategory != 'language') { tagCategory += 's'; }
+		| tagId = #{tag.pk};
+		| tagName = ((tagCategory != 'author') ? '#{tag.name}' : '#{tag.full_name}');
+	{% endautoescape %}
+
+block styles
+	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/tag.less")
+	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/selection-list.less")
+
+block content
+	#main(itemprop="mainContentOfPage")
+		#main-content(itemscope, itemtype="http://www.schema.org/ItemList")
+			header#content-heading
+				if tag_type
+					#tag-type-heading
+						span#tag-type
+							if tag_type == 'language'
+								| original language
+							else
+								#{tag_type}
+						span#browse-tag-type
+							a(href="/anthologist/#{tag_type}s") &raquo; browse all&nbsp;
+								if tag_type == 'language'
+									| orig. languages
+								else
+									#{tag_type}s
+				if tag_type == 'author'
+					div(itemprop="name", itemscope, itemtype="http://www.schema.org/Person")
+						h1(itemprop="name")= tag
+						meta(itemprop="familyName", content="#{tag.last_name}")
+						meta(itemprop="givenName", content="#{tag.first_name}")
+						#nation-dates				 
+							for nation in tag.nations.all
+								a(href="/anthologist/nations/#{nation.slug}", itemprop="nationality") #{nation.name}
+								.
+							| #{tag.dates}.
+							meta(itemprop="birthDate", content="#{tag.birth_year}")
+							meta(itemprop="deathDeath", content="#{tag.death_year}")
+				else
+					h1(itemprop="name")= tag
+				{% autoescape off %}
+				if tag.description or tag.definition or tag.info_url
+					section#tag-info
+						if tag.definition
+							div(itemprop="description")!= tag.definition
+								| &nbsp;[<cite><a href="#{tag.dictionary_source.link}" target="_blank">#{tag.dictionary_source}</a></cite>]
+						if tag.description
+							div(itemprop="description")!= tag.description
+						if tag.info_url
+							div
+								a(href="#{tag.info_url}", target="_blank") [Wikipedia article]
+				
+				{% endautoescape %}
+			
+			#adjustor-container
+				#showing-container.adjustor-subcontainer
+					label#showing-label.adjustor-section-label(for="showing-content-container") showing :
+					.adjustor-section-content results&nbsp;
+						span#showing-content
+					//filled by tag-app.js
+				
+				#sort-container.adjustor-subcontainer
+					label#sort-label.adjustor-section-label(for="sort-field") sort order :
+					.adjustor-section-content
+						select#sort-field.sort-select
+							option(value="date_entered") post date
+							//-on Author Page, no author filter needed 
+							if tag_type != 'author'
+								option(value="author") author
+							option(value="pub_year") source date
+						select#sort-direction.sort-select
+							option(value="des") descending
+							option(value="asc")	ascending
+				
+				#filter-container.adjustor-subcontainer
+					//filled by tag-app.js
+				
+			#sel-container
+				//populated by tag-app.js
+			
+	#sidebar(itemscope, itemtype="http://www.schema.org/WPSideBar")
+		.sidebar-section
+			header
+				h2.sidebar-heading filter
+				.instructions Narrow the selection list by filtering for the following categories.
+			ul.related-tag-superlist(itemscope, itemtype="http://www.schema.org/ItemList")
+				for c in filter_tag_types
+					li(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
+						span(itemprop="name")
+							if c == 'language'
+								| orig. languages
+							else
+								#{c}
+						ul(id="#{c}-tags").related-tag-list
+							//List populated with tag-filters by selection-list-app.js
+						span(id="hide-#{c}").fewer-tags [fewer #{c} <span class="arrow-up"></span>]
+						span(id="show-#{c}").more-tags [more #{c} <span class="arrow-down"></span>]
+		#sidebar-contribute.sidebar-section
+			h2.sidebar-heading contribute
+			ul#suggest-selection
+				li
+					a(href="/anthologist/contribute/?subject=selection%20for%20tag%20#{tag.pk}%20(#{tag})") another selection for this category
+
+		
+			

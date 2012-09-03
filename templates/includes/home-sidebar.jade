@@ -1,0 +1,37 @@
+.sidebar-block
+	h1 browse
+	span
+		| Explore selections by
+		ul#home-browse-list
+			<li><a href="/anthologist/authors/">author</a></li>
+			<li><a href="/anthologist/timeline/">timeline</a></li>
+			<li><a href="/anthologist/forms/">form</a></li>
+			<li><a href="/anthologist/genres/">genre</a></li>
+			<li><a href="/anthologist/topics/">topic</a></li>
+			<li><a href="/anthologist/contexts/">context</a></li>
+			<li><a href="/anthologist/styles/">style</a></li>
+			<li><a href="/anthologist/nations/">nation</a></li>
+			<li><a href="/anthologist/languages/">original language</a></li>
+		| &#8212; or <a href="/anthologist/selections">see them all at once</a>.
+
+a(href="/anthologist/selections/random").sidebar-block
+	h1 random
+	span Let fate decide what you read &#8212; as it decides so much else.
+
+a(href="/anthologist/feed").sidebar-block
+	h1 subscribe&nbsp;
+		img(src="/static/anthologist/images/icons/feed-icon-12x12-green.png")
+	span Add the Anthologist's RSS feed to your collection.
+
+a(href="/anthologist/contribute").sidebar-block
+	h1 contribute
+	span Send selections, questions, suggestions, comments, kind words, assistance, &amp;c.
+
+a(href="/anthologist/resources").sidebar-block
+	h1 links &amp; sources
+	span Pore over links to related sites, and a complete list of sources for the Anthologist's selections.
+	
+img(src="/static/anthologist/images/silly-scholar.jpg", alt="silly-eyed scholar")#silly-scholar-image
+
+#quotation-container
+	//populated by quotation-box-app.js

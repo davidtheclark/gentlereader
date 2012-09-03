@@ -1,0 +1,39 @@
+@import "variables.less";
+
+#sel-container { display: none; } //Will fade in.
+
+.sel-item-container {
+  padding: 15px;
+}
+
+.sel-item {
+  overflow-x: hidden;
+  h2 {
+    background-color: white;
+    display: inline;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-right: 0.3em;
+    &:before { .dot-leaders; }
+  }
+
+}
+
+.sel-info {
+  a { .secret-link; }
+}
+
+.sel-even,
+.sel-even h2 { background-color: @even-sel-color; }
+
+.sel-teaser {
+  font-family: Times New Roman, serif;
+  font-size: 0.9em;
+  margin: 5px 0 0 20px;
+}
+
+.sel-teaser-text {
+  font-style: italic;
+  .inline-translation,
+  i, em, cite { font-style: normal; }
+}

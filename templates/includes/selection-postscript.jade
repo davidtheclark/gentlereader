@@ -1,0 +1,63 @@
+hr
+
+h2.postscript-heading Further Reading
+
+p#follow-up
+	| Read more from and about
+	if selection.author.last_name != "Anonymous"
+		| #{selection.author}'s
+	if selection.excerpt
+		| #{selection.source_display}:
+	else
+		| #{selection.source.root_work}:
+
+	ul#resource-list
+		if selection.source.digital_text
+			li
+				a(href="#{selection.source.digital_text}", target="_blank") digitized edition
+		if selection.source.scanned_text
+			li
+				a(href="#{selection.source.scanned_text}", target="_blank") scanned edition
+		if selection.source.info_url
+			li
+				a(href="#{selection.source.info_url}", target="_blank") information about the work
+
+#tags
+	p Read other <cite>Anthologist</cite> selections that share features with this one:
+	#postscript-tags(itemscope, itemtype="http://www.schema.org/ItemList")
+		p(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
+			span.postscript-tag-label(itemprop="name") author
+			| :
+			a(href="/anthologist/authors/#{selection.source.author.slug}", rel="tag", itemprop="itemListElement")
+				span(itemref="main-content", itemprop="keywords")= selection.author
+		for tag_bunch in grouped_tags
+			p(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
+				span.postscript-tag-label(itemprop="name")= tag_bunch.type
+				| :
+				for tag in tag_bunch.tags
+					a(href="/anthologist/#{tag.get_tag_type_display()}s/#{tag.slug}", rel="tag", itemprop="itemListElement")
+						span(itemref="main-content", itemprop="keywords")= tag.name
+					if forloop.last == false
+						| ,
+		if selection.source.translator
+			p(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
+				span.postscript-tag-label(itemprop="name") orig. language
+				| :
+				a(href="/anthologist/languages/#{selection.source.language.name}", rel="tag", itemprop="itemListElement")
+					span(itemref="main-content", itemprop="keywords")= selection.source.language.name
+				br
+	p
+		| See selections that surround this one in
+		a(href="/anthologist/timeline/##{selection.source.pub_year}") <cite>The Anthologist</cite>'s timeline
+		| .	
+
+hr
+
+#postscript-dates
+	if selection.date_entered != selection.date_modified
+		p
+			| Last modified:
+			span(itemprop="dateModified", datetime="#{selection.date_modified.isoformat()}")= selection.date_modified|date:"d F Y, G:i"
+	p
+		| Originally posted:
+		span(itemprop="datePublished", datetime="#{selection.date_entered.isoformat()}")= selection.date_entered|date:"d F Y, G:i"

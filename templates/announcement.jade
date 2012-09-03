@@ -1,0 +1,30 @@
+extends ./base.jade
+
+block title
+	title #{ann.title} | the Anthologist
+
+block styles
+	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/announcement.less")
+	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/quotation-box.less")
+
+block scripts
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-views.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-app.js")
+	
+block content
+	#main(itemprop="mainContentOfPage")
+		article#main-content(itemscope, itemtype="http://www.schema.org/BlogPosting")
+			header#content-heading
+				span#tag-type announcement
+				span#browse-tag-type
+					a(href="/anthologist/announcements") &raquo; browse all announcements
+				h1(itemprop="headline")= ann.title
+				#adjustor-container
+					span.adjustor-section-label date posted :&nbsp;
+					time(itemprop="dateCreated", datetime="#{ann.date_entered.isoformat()}")= ann.date_entered|date:"d F Y, P"
+			
+			{% autoescape off %}
+			#body-container(itemprop="articleBody")!= ann.text
+			{% endautoescape %}
+	#sidebar(itemscope, itemtype="WPSideBar")
+		aside#quotation-container	

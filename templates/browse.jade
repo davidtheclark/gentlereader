@@ -1,0 +1,139 @@
+extends ./base.jade
+
+block title
+	title {{ category|capfirst }} | the Anthologist
+
+block styles
+	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/browse.less")
+	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/quotation-box.less")
+	if category == 'selections'
+		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/selection-list.less")
+	if category == 'timeline'
+		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/timeline.less")
+	if category == 'announcements'
+		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/all-announcements.less")
+		
+block scripts
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-views.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-app.js")
+	if category == 'selections'
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/all-selections-views.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/all-selections-app.js")
+	elif category == 'timeline'
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/timeline-views.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/timeline-app.js")
+		{% autoescape off %}
+		script(type="application/javascript")
+			| var year = "#{jump_to}";
+		{% endautoescape %}
+	else // Author and other tags.
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/browse-views.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/browse-app.js")
+		{% autoescape off %}
+		script(type="application/javascript")
+			| var tagType = #{category_json};
+		{% endautoescape %}
+
+block content
+	#main(itemprop="mainContentOfPage")
+		#main-content(itemscope, itemtype="http://www.schema.org/ItemList")
+		
+			header#main-heading
+				h1(itemprop="name")
+					if category == 'selections'
+						| all selections
+					elif category == 'languages'
+						| original languages
+					else
+						| #{category}				
+				#category-description(itemprop="description")
+					include includes/browse-type-descriptions.html
+			
+			if category == 'selections'
+				#adjustor-container
+					#sort-container.adjustor-subcontainer
+						label#sort-label(for="sort-field") sort order :
+						select#sort-field.sort-select
+							option(value="date_entered") post date
+							option(value="author") author
+							option(value="pub_year") source date
+						select#sort-direction.sort-select
+							option(value="des") descending
+							option(value="asc")	ascending
+					#page-select-container.adjustor-subcontainer
+				#sel-container
+					//populated by tag-app.js
+
+			elif category == 'announcements'
+				#announcement-container
+					for a in announcements
+						.ann-list-item(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/BlogPosting")
+							header.ann-list-title
+								h2
+									a(href="../announcements/#{a.slug}", itemprop="url")
+										span(itemprop="headline")= a.title
+								span.posted-date
+									| &raquo;
+									span(itemprop="dateCreated", content="#{a.date_entered.isoformat()}")= a.date_entered|date:"d F Y, P"
+							.ann-list-body
+								{% autoescape off %}							
+								if a.text|wordcount > 150
+									p
+										span(itemprop="description")= a.text|truncatewords_html:200
+										a(href="/anthologist/announcements/#{a.slug}") [read the rest]
+								else 
+									p(itemprop="description")!= a.text
+								{% endautoescape %}
+			
+			elif category == 'timeline'
+				#adjustor-container 
+					#sort-container.adjustor-subcontainer
+						label#sort-label(for="sort-direction") sort order :
+						select#sort-direction
+							option(value="asc") ascending
+							option(value="des") descending
+				#timeline-sel-container
+					//populated by timeline-app.js
+			
+			elif category == 'authors'
+				#adjustor-container 
+					#sort-container.adjustor-subcontainer
+						label#sort-label(for="sort-field") sort order :
+						select#sort-field.sort-select
+							option(value="last_name") last name
+							option(value="birth_year") birth year
+						select#sort-direction.sort-select
+							option(value="asc")	ascending
+							option(value="des") descending
+					#page-select-container.adjustor-subcontainer
+				#tag-container
+					ul#tag-list
+						//populated by browse-app.js
+			
+			else
+				#adjustor-container 
+					#page-select-container.adjustor-subcontainer
+				#tag-container
+					ul#tag-list
+						//populated by browse-app.js
+			
+	#sidebar(itemscope, itemtype="WPSideBar")
+		if category == 'forms' or category == 'genres' or category == 'topics' or category == 'contexts' or category == 'styles'
+			#get-description.sidebar-block Q: What are we calling <strong>#{category}</strong>?
+	
+		if category != 'announcements'
+			nav(itemscope, itemtype="SiteNavigationElement")
+				h2.sidebar-heading(itemprop="description") Other ways to browse: 
+				ul
+					for c in category_array
+						if c != category
+							li
+								a(href="/anthologist/#{c}").sidebar-block
+									if c == 'selections'
+										| all selections
+									elif c == 'languages'
+										| orig. languages
+									else
+										| #{c}
+		aside#quotation-container
+			//populated by quotation-box-app.js

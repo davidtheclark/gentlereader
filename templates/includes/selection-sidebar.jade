@@ -1,0 +1,53 @@
+section#sidebar-display.sidebar-section
+	h2.sidebar-heading adjust
+	.display-section
+		label.display-label(for="width-select") width
+		select#width-select.display-select
+			option(value="300") small
+			option(value="425", selected) medium
+			option(value="550") large
+	.display-section
+		label.display-label(for="size-select") font size
+		select#size-select.display-select
+			option(value="0.8em") small
+			option(value="0.9em") medium
+			option(value="1em", selected) large
+			option(value="1.1em") x-large
+	.display-section
+		label.display-label(for="font-select") font
+		select#font-select.display-select
+			option(value="Calisto MT, Georgia, serif", selected) serif
+			option(value="Helvetica, Arial, sans-serif") sans-serif
+			option(value="Courier, Courier New, monospace") monospace
+	.display-section
+		label.display-label(for="align-select") align
+		select#align-select.display-select
+			option(value="justify", selected) justified
+			option(value="left") ragged
+		
+section#sidebar-tags.sidebar-section(itemscope, itemtype="http://www.schema.org/ItemList")
+	h2(itemprop="name").sidebar-heading explore
+	p.instructions Click a keyword to find more <cite>Anthologist</cite> selections like this one.
+	for tag_bunch in grouped_tags
+		ul.tag-sublist(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
+			h3.sidebar-label(itemprop="name")= tag_bunch.type
+			for tag in tag_bunch.tags
+				a(href="/anthologist/#{tag.get_tag_type_display()}s/#{tag.slug}", rel="tag", itemprop="itemListElement")
+					li
+						span #{tag.name}
+
+section#sidebar-share.sidebar-section
+	h2.sidebar-heading share
+	<span class='st_sharethis' displayText='ShareThis'></span>
+	<span class='st_facebook' displayText='Facebook'></span>
+	<span class='st_twitter' displayText='Tweet'></span>
+	<span class='st_googleplus' displayText='Google +'></span>
+	<span class='st_email' displayText='Email'></span>
+
+section#sidebar-suggest.sidebar-section
+	h2.sidebar-heading contribute
+	ul#sidebar-suggest-content
+		li
+			a(href="/anthologist/contribute/?subject=tag%20for%20sel.%20#{selection.pk}%20(#{selection})") another tag for this selection
+		li
+			a(href="/anthologist/contribute/?subject=selection%20similar%20to%20sel.%20#{selection.pk}%20(#{selection})") another selection like this one 
