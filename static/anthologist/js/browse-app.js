@@ -64,7 +64,7 @@ $(function () {
 			}
 			else {
 				thisApp.tagSet = new TagSet();
-				thisApp.tagSet.url = '/anthologist/api/' + tagType;
+				thisApp.tagSet.url = '/api/' + tagType;
 			}
 			
 			/* After fetch, get page count, set limits, then renderTags(). */

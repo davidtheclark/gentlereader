@@ -39,7 +39,7 @@ var Selection = Backbone.Model.extend({
 });
 
 var SelectionSet = Backbone.Collection.extend({
-	url: '/anthologist/api/selections/',	
+	url: '/api/selections/',	
 	model: Selection,
 	initialize: function(models, options) {
 		this.url += incorporateQuery(options);
@@ -52,18 +52,18 @@ var SelectionSet = Backbone.Collection.extend({
 });
 
 var RandomQuotationSet = Backbone.Collection.extend({
-	url: '/anthologist/api/quotations/random'
+	url: '/api/quotations/random'
 });
 
 var SourceSet = Backbone.Collection.extend({
-	url: '/anthologist/api/sources/',
+	url: '/api/sources/',
 	initialize: function(models, options) {
 		this.url += incorporateQuery(options);
 	}
 });
 
 var AuthorSet = Backbone.Collection.extend({
-	url: '/anthologist/api/authors/',
+	url: '/api/authors/',
 	initialize: function (models, options) {
 		this.url += incorporateQuery(options);
 	}
@@ -95,7 +95,7 @@ var TagFacetedFilterSet = Backbone.Collection.extend({
 })
 
 var RecentContentSet = Backbone.Collection.extend({
-	url: '/anthologist/api/recent',
+	url: '/api/recent',
 	initialize: function(models, options) {
 		if (options && options.hasOwnProperty('restriction')) {
 			this.url += '/' + options['restriction'];
