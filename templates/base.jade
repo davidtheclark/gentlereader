@@ -6,7 +6,7 @@ html(lang = "en")
 			title the Anthologist
 		
 		//rss feed
-		link(rel="alternate", type="application/rss+xml", title="RSS", href="/anthologist/feed/")
+		link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed/")
 		
 		// styles
 		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/base.less")
@@ -32,7 +32,7 @@ html(lang = "en")
 			block header
 				header#site-header(itemscope, itemtype="http://www.schema.org/WPHeader")
 					meta(itemprop="name", content="the Anthologist")
-					a(href="/anthologist/", itemprop="url")#site-header-title
+					a(href="/", itemprop="url")#site-header-title
 						span#site-title-the the&nbsp;
 						span#site-title-name Anthologist
 					nav(itemscope, itemtype="http://www.schema.org/SiteNavigationElement")#site-header-nav
@@ -41,48 +41,48 @@ html(lang = "en")
 								a browse
 								ul
 									li
-										a(href="/anthologist/selections/") &raquo; all selections
+										a(href="/selections/") &raquo; all selections
 									li
-										a(href="/anthologist/authors/") &raquo; authors
+										a(href="/authors/") &raquo; authors
 									li
-										a(href="/anthologist/timeline/") &raquo; timeline
+										a(href="/timeline/") &raquo; timeline
 									li
-										a(href="/anthologist/forms/") &raquo; forms									
+										a(href="/forms/") &raquo; forms									
 									li
-										a(href="/anthologist/genres/") &raquo; genres
+										a(href="/genres/") &raquo; genres
 									li
-										a(href="/anthologist/topics/") &raquo; topics
+										a(href="/topics/") &raquo; topics
 									li
-										a(href="/anthologist/contexts/") &raquo; contexts
+										a(href="/contexts/") &raquo; contexts
 									li
-										a(href="/anthologist/styles/") &raquo; styles
+										a(href="/styles/") &raquo; styles
 									li
-										a(href="/anthologist/nations/") &raquo; nations
+										a(href="/nations/") &raquo; nations
 									li
-										a(href="/anthologist/languages/") &raquo; orig. languages
+										a(href="/languages/") &raquo; orig. languages
 							li
-								a(href="/anthologist/selections/most-recent/") newest
+								a(href="/selections/most-recent/") newest
 							li
-								a(href="/anthologist/selections/random/") random
+								a(href="/selections/random/") random
 							li
-								a(href="/anthologist/announcements/") announcements									
+								a(href="/announcements/") announcements									
 							li
-								a(href="/anthologist/#about") about
+								a(href="/#about") about
 			#site-content-container
 				block content
 			footer#site-footer(itemscope, itemtype="http://www.schema.org/WPFooter")
 				ul.navigation
 					li
-						a(href="/anthologist/resources/") links &amp; sources
+						a(href="/resources/") links &amp; sources
 					li
-						a(href="/anthologist/contribute/") contact, submit, contribute
+						a(href="/contribute/") contact, submit, contribute
 					li
 						a.get-copyright-info copyright info
 					section#copyright-info
 						p
 							| All of <cite>The Anthologist</cite>'s selections are from works in the public domain.
 							| (If a source text is <em>not</em>, in fact, in the public domain, there's been a misunderstanding;
-							| <a href="/anthologist/contribute">please inform us</a> and it will be taken down.)
+							| <a href="/contribute">please inform us</a> and it will be taken down.)
 						p
 							| Everything on the site that is not from the public domain texts
 							| <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">

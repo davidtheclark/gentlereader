@@ -33,10 +33,10 @@ block content
 						span(itemprop="author", itemscope, itemtype="http://schema.org/Person")
 							meta(itemprop="familyName", content="#{selection.source.author.last_name}")
 							meta(itemprop="givenName", content="#{selection.source.author.first_name}")
-							a(href="/anthologist/authors/#{selection.source.author.slug}", itemprop="url" )
+							a(href="/authors/#{selection.source.author.slug}", itemprop="url" )
 								span(itemprop="name")= selection.author
 						| &nbsp;&#8212;
-						a(href="/anthologist/timeline/##{selection.source.pub_year}", itemprop="dateCreated", datetime="#{selection.source.pub_year}")= selection.source.date_display
+						a(href="/timeline/##{selection.source.pub_year}", itemprop="dateCreated", datetime="#{selection.source.pub_year}")= selection.source.date_display
 				.content-header-info
 					if selection.selection_title
 						| From #{selection.source_display}.
@@ -44,7 +44,7 @@ block content
 						| From <cite>#{selection.source.volume_title}</cite>.
 					if selection.source.translator
 						| Translated from
-						a(href="/anthologist/languages/#{selection.source.language.name}")= selection.source.language.name
+						a(href="/languages/#{selection.source.language.name}")= selection.source.language.name
 						| &nbsp;by #{selection.source.translator} in #{selection.source.translation_year}.
 					hr(width="60%")
 					if selection.comment_text

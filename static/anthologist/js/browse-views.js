@@ -4,7 +4,7 @@ var TagItemView = Backbone.View.extend({
 	render: function () {
 		var mod = this.model;
 		/* Set the link's target. */
-		this.$el.attr('href', '/anthologist/' + mod.get('tag_type_display') + 's/' + mod.get('slug') )
+		this.$el.attr('href', '/' + mod.get('tag_type_display') + 's/' + mod.get('slug') )
 		/* Call the jade template and append. */
 		this.$el.append(this.jade.content(mod.toJSON()));
 		$('#tag-list').append(this.el);

@@ -1,7 +1,7 @@
 section.sel-item(itemprop="itemListElement", itemscope, itemtype="http://schema.org/BlogPosting")
 	header
 		h2.sel-title
-			a(href="/anthologist/announcements/#{slug}", itemprop="url")
+			a(href="/announcements/#{slug}", itemprop="url")
 				span(itemprop="headline")= title
 		div.announcement-label-container
 			span.announcement-label announcement :&nbsp;
@@ -9,4 +9,4 @@ section.sel-item(itemprop="itemListElement", itemscope, itemtype="http://schema.
 	.sel-teaser
 		p.teaser-text
 			span(itemprop="description")!= teaser
-			a(href="/anthologist/announcements/#{slug}") [read the rest]
+			a(href="/announcements/#{slug}") [read the rest]

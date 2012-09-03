@@ -80,7 +80,7 @@ block content
 								if a.text|wordcount > 150
 									p
 										span(itemprop="description")= a.text|truncatewords_html:200
-										a(href="/anthologist/announcements/#{a.slug}") [read the rest]
+										a(href="/announcements/#{a.slug}") [read the rest]
 								else 
 									p(itemprop="description")!= a.text
 								{% endautoescape %}
@@ -128,7 +128,7 @@ block content
 					for c in category_array
 						if c != category
 							li
-								a(href="/anthologist/#{c}").sidebar-block
+								a(href="/#{c}").sidebar-block
 									if c == 'selections'
 										| all selections
 									elif c == 'languages'

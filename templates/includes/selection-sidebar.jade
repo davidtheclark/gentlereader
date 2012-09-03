@@ -32,7 +32,7 @@ section#sidebar-tags.sidebar-section(itemscope, itemtype="http://www.schema.org/
 		ul.tag-sublist(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
 			h3.sidebar-label(itemprop="name")= tag_bunch.type
 			for tag in tag_bunch.tags
-				a(href="/anthologist/#{tag.get_tag_type_display()}s/#{tag.slug}", rel="tag", itemprop="itemListElement")
+				a(href="/#{tag.get_tag_type_display()}s/#{tag.slug}", rel="tag", itemprop="itemListElement")
 					li
 						span #{tag.name}
 
@@ -48,6 +48,6 @@ section#sidebar-suggest.sidebar-section
 	h2.sidebar-heading contribute
 	ul#sidebar-suggest-content
 		li
-			a(href="/anthologist/contribute/?subject=tag%20for%20sel.%20#{selection.pk}%20(#{selection})") another tag for this selection
+			a(href="/contribute/?subject=tag%20for%20sel.%20#{selection.pk}%20(#{selection})") another tag for this selection
 		li
-			a(href="/anthologist/contribute/?subject=selection%20similar%20to%20sel.%20#{selection.pk}%20(#{selection})") another selection like this one 
+			a(href="/contribute/?subject=selection%20similar%20to%20sel.%20#{selection.pk}%20(#{selection})") another selection like this one 

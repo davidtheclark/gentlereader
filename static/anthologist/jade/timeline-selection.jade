@@ -3,7 +3,7 @@ div(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/Creat
 	.timeline-sel-body
 		meta(itemprop="dateCreated", datetime="#{source.pub_year}")
 		h3.timeline-sel-title
-			a(href="/anthologist/selections/#{slug}", itemprop="url')
+			a(href="/selections/#{slug}", itemprop="url')
 				span(itemprop="name")
 					if selection_title
 						#{selection_title},
@@ -14,7 +14,7 @@ div(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/Creat
 			span(itemprop="author", itemscope, itemtype="http://www.schema.org/Person")
 				meta(itemprop="familyName", content="#{source.author.last_name}")
 				meta(itemprop="givenName", content="#{source.author.first_name}")
-				a(href="/anthologist/authors/#{source.author.slug}", itemprop="url)
+				a(href="/authors/#{source.author.slug}", itemprop="url)
 					span(itemprop="name")= source.author.full_name
 			| .
 			if excerpt == true
@@ -27,4 +27,4 @@ div(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/Creat
 		.timeline-teaser
 			span.timeline-teaser-text!= teaser
 			span.ellipsis &nbsp;...&nbsp;
-			a(href="/anthologist/selections/#{slug}") [read the rest]
+			a(href="/selections/#{slug}") [read the rest]

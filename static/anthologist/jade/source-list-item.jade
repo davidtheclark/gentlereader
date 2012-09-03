@@ -1,10 +1,10 @@
 li(itemprop="itemListElement", itemscope, itemtype="http://schema.org/CreativeWork")
 	span(itemprop="author", itemscope, itemtype="http://schema.org/Person")
-		a(href="/anthologist/authors/#{author.slug}", itemprop="url").source-author
+		a(href="/authors/#{author.slug}", itemprop="url").source-author
 			span(itemprop="name") #{author.last_name}, #{author.first_name}.&nbsp;
 	span(itemprop="name")!= full_title
 	| .&nbsp;
-	a(href="/anthologist/timeline/##{pub_year}", itemprop="dateCreated", datetime="pub_year").source-date= date_display
+	a(href="/timeline/##{pub_year}", itemprop="dateCreated", datetime="pub_year").source-date= date_display
 	| .&nbsp;
 	if translator
 		| Trans.
@@ -21,7 +21,7 @@ li(itemprop="itemListElement", itemscope, itemtype="http://schema.org/CreativeWo
 			ul.source-selection-list
 				for sel in selections
 					li
-						a(href="/anthologist/selections/#{sel.slug}")= sel.title
+						a(href="/selections/#{sel.slug}")= sel.title
 		li Follow-up:&nbsp;
 			if scanned_text
 				a(href="#{scanned_text}", target="_blank").source-link [scanned text]&nbsp;

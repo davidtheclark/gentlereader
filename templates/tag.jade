@@ -31,7 +31,7 @@ block content
 							else
 								#{tag_type}
 						span#browse-tag-type
-							a(href="/anthologist/#{tag_type}s") &raquo; browse all&nbsp;
+							a(href="/#{tag_type}s") &raquo; browse all&nbsp;
 								if tag_type == 'language'
 									| orig. languages
 								else
@@ -43,7 +43,7 @@ block content
 						meta(itemprop="givenName", content="#{tag.first_name}")
 						#nation-dates				 
 							for nation in tag.nations.all
-								a(href="/anthologist/nations/#{nation.slug}", itemprop="nationality") #{nation.name}
+								a(href="/nations/#{nation.slug}", itemprop="nationality") #{nation.name}
 								.
 							| #{tag.dates}.
 							meta(itemprop="birthDate", content="#{tag.birth_year}")
@@ -111,7 +111,7 @@ block content
 			h2.sidebar-heading contribute
 			ul#suggest-selection
 				li
-					a(href="/anthologist/contribute/?subject=selection%20for%20tag%20#{tag.pk}%20(#{tag})") another selection for this category
+					a(href="/contribute/?subject=selection%20for%20tag%20#{tag.pk}%20(#{tag})") another selection for this category
 
 		
 			

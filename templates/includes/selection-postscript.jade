@@ -28,14 +28,14 @@ p#follow-up
 		p(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
 			span.postscript-tag-label(itemprop="name") author
 			| :
-			a(href="/anthologist/authors/#{selection.source.author.slug}", rel="tag", itemprop="itemListElement")
+			a(href="/authors/#{selection.source.author.slug}", rel="tag", itemprop="itemListElement")
 				span(itemref="main-content", itemprop="keywords")= selection.author
 		for tag_bunch in grouped_tags
 			p(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
 				span.postscript-tag-label(itemprop="name")= tag_bunch.type
 				| :
 				for tag in tag_bunch.tags
-					a(href="/anthologist/#{tag.get_tag_type_display()}s/#{tag.slug}", rel="tag", itemprop="itemListElement")
+					a(href="/#{tag.get_tag_type_display()}s/#{tag.slug}", rel="tag", itemprop="itemListElement")
 						span(itemref="main-content", itemprop="keywords")= tag.name
 					if forloop.last == false
 						| ,
@@ -43,12 +43,12 @@ p#follow-up
 			p(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
 				span.postscript-tag-label(itemprop="name") orig. language
 				| :
-				a(href="/anthologist/languages/#{selection.source.language.name}", rel="tag", itemprop="itemListElement")
+				a(href="/languages/#{selection.source.language.name}", rel="tag", itemprop="itemListElement")
 					span(itemref="main-content", itemprop="keywords")= selection.source.language.name
 				br
 	p
 		| See selections that surround this one in
-		a(href="/anthologist/timeline/##{selection.source.pub_year}") <cite>The Anthologist</cite>'s timeline
+		a(href="/timeline/##{selection.source.pub_year}") <cite>The Anthologist</cite>'s timeline
 		| .	
 
 hr
