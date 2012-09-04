@@ -81,7 +81,7 @@ block content
 								{% autoescape off %}							
 								if a.text|wordcount > 150
 									p
-										span(itemprop="description")= a.text|truncatewords_html:200
+										span(itemprop="description")!= a.text|truncatewords_html:200
 										a(href="/announcements/#{a.slug}") [read the rest]
 								else 
 									p(itemprop="description")!= a.text
