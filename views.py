@@ -26,7 +26,7 @@ def selection(req, sel_slug):
             selection = Selection.objects.latest('date_entered')
         elif sel_slug == 'random':
             selection = Selection.objects.order_by('?')[0] 
-        url = '/anthologist/selections/' + selection.slug
+        url = '/selections/' + selection.slug
         return redirect(url)   
     else:
         selection = get_object_or_404(Selection, slug=sel_slug)
@@ -136,7 +136,7 @@ def contribute(req):
                 recipients.append(sender)
             from django.core.mail import send_mail
             send_mail(subject, message, sender, recipients)
-            return HttpResponseRedirect('/anthologist/thanks/') # Redirect after POST
+            return HttpResponseRedirect('/thanks/') # Redirect after POST
     else:
         form = ContactForm() # An unbound form'
     return render_to_response('contribute.html', { 'form': form, 'auto_subject': auto_subject }, context_instance=RequestContext(req))

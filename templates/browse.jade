@@ -26,6 +26,8 @@ block scripts
 		script(type="application/javascript")
 			| var year = "#{jump_to}";
 		{% endautoescape %}
+	elif category == 'announcements'
+		//
 	else // Author and other tags.
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/browse-views.js")
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/browse-app.js")
