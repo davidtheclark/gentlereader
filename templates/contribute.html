@@ -35,7 +35,7 @@
 		  	<div class="instructions">
 		    	<p>(If you are suggesting a new selection, please include (1) as much information as you can about the author and source, (2) a link to the edition you prefer, and (3) if it's an excerpt from a longer work, the first and last sentences of the selection.)</p>
 		    </div>
-		<form action="/anthologist/contribute/" method="post">{% csrf_token %}
+		<form action="/contribute/" method="post">{% csrf_token %}
 			{{ form.non_field_errors }}
 		    <div class="fieldWrapper">
 		        {{ form.sender.errors }}
