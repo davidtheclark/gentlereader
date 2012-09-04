@@ -52,7 +52,7 @@ var SelectionSet = Backbone.Collection.extend({
 });
 
 var RandomQuotationSet = Backbone.Collection.extend({
-	url: '/api/quotations/random'
+	url: '/api/quotations/random/'
 });
 
 var SourceSet = Backbone.Collection.extend({
@@ -95,7 +95,7 @@ var TagFacetedFilterSet = Backbone.Collection.extend({
 })
 
 var RecentContentSet = Backbone.Collection.extend({
-	url: '/api/recent',
+	url: '/api/recent/',
 	initialize: function(models, options) {
 		if (options && options.hasOwnProperty('restriction')) {
 			this.url += '/' + options['restriction'];
