@@ -131,7 +131,7 @@ def contribute(req):
             message = '(From ' + form.cleaned_data['sender'] + ') ' + form.cleaned_data['message']
             sender = form.cleaned_data['sender']
             cc_myself = form.cleaned_data['cc_myself']
-            recipients = [ 'blurbus.blurbus@gmail.com' ]
+            recipients = [ 'dave@projectegghead.com' ]
             if cc_myself:
                 recipients.append(sender)
             from django.core.mail import send_mail

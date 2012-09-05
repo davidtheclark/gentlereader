@@ -114,6 +114,14 @@ class ExternalLinkAdmin(admin.ModelAdmin):
     search_fields = [ 'name', 'url', 'category', 'description', ]
     list_display = ( 'name', 'category', 'description', 'url', 'date_entered' )
 
+class AnnouncementForm(forms.ModelForm):
+    class Meta:
+        widgets = { 'text': Textarea(attrs={ 'cols': 85, 'rows': 50 })}
+
+class AnnouncementAdmin(admin.ModelAdmin):
+    form = AnnouncementForm
+
+
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Source, SourceAdmin)
 admin.site.register(Selection, SelectionAdmin)
@@ -121,4 +129,5 @@ admin.site.register(Tag, TagAdmin)
 admin.site.register(DictionarySource)
 admin.site.register(ExternalLink, ExternalLinkAdmin)
 admin.site.register(ExternalLinkCategory)
-admin.site.register(Announcement)
+admin.site.register(Announcement, AnnouncementAdmin)
+
