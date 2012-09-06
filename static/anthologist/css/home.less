@@ -109,7 +109,13 @@ h1 {
   color: black;
   display: block;
   padding: 20px;
-  h1 { font-size: 1.2em; }
+  h1 {
+    font-size: 1.2em;
+    a {
+      color: @highlight-color;
+      &:hover { color: black; }
+    }
+  }
 }
 
 a.sidebar-block:hover {

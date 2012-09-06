@@ -143,4 +143,7 @@ def contribute(req):
   
 def thanks(req):
     return render_to_response('contribute.html', { 'thanks': 'thanks' }, context_instance=RequestContext(req))
+
+def browse(req):
+    return render_to_response('browse-base.jade', context_instance=RequestContext(req))
     

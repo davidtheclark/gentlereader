@@ -58,6 +58,7 @@ urlpatterns += patterns('anthologist.views',
     (r'^resources/$', 'resource'),
     (r'^contribute/$', 'contribute'),
     (r'^thanks/$', 'thanks'),
+    (r'^browse/$', 'browse'),
     (r'^(?P<tag_type>[\w-]+)/(?P<tag_slug>[\w-]+)/$', 'tag'),
     (r'^(?P<category>[\w-]+)/$', 'category'),
 )
