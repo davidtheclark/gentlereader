@@ -27,7 +27,7 @@ class Announcement(models.Model):
     
     def toJSON(self):
         return dict(
-            id = 'a' + self.id,
+            id = 'a' + str(self.id),
             date_entered = self.date_entered.strftime("%d %B %Y, %H:%M"),
             date_entered_microdata = self.date_entered.isoformat(),
             title = self.title,
