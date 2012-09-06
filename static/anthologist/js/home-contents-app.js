@@ -35,7 +35,7 @@ $(document).ready(function () {
 		restrictContents: function () {
 			var restrictTo;
 			if (this.contentType == 'selAndAnn') {
-				restrictTo = '';
+				restrictTo = undefined;
 			}
 			else if (this.contentType == 'selOnly') {
 				restrictTo = 'selections';
