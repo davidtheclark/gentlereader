@@ -2,7 +2,7 @@ section.sel-item(itemprop="itemListElement", itemscope, itemtype="http://schema.
 	header
 		h2.sel-title
 			a(href="/announcements/#{slug}", itemprop="url")
-				span(itemprop="headline")= title
+				span(itemprop="headline")!= title
 		div.announcement-label-container
 			span.announcement-label announcement :&nbsp;
 			time.sel-info(itemprop="dateCreated", datetime="#{date_entered_microdata}")= date_entered
