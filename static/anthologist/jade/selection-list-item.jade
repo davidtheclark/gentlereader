@@ -3,9 +3,9 @@ section.sel-item(itemprop="itemListElement", itemscope, itemtype="http://schema.
 		a(href="/selections/#{slug}", itemprop="url")
 			span(itemprop="name")
 				if selection_title
-					#{selection_title}
+					!{selection_title}
 				else
-					#{source.section_title}
+					!{source.section_title}
 	.sel-info
 		span(itemprop="author", itemscope, itemtype="http://schema.org/Person")
 			a(href="/authors/#{source.author.slug}", itemprop="url")

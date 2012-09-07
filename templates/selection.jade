@@ -28,7 +28,7 @@ block content
 
 			header#content-header
 				hgroup
-					h1(itemprop="name").content-header-title= selection
+					h1(itemprop="name").content-header-title!= selection
 					h2.content-header-source
 						span(itemprop="author", itemscope, itemtype="http://schema.org/Person")
 							meta(itemprop="familyName", content="#{selection.source.author.last_name}")

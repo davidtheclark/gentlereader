@@ -18,7 +18,7 @@ block content
 				span#tag-type announcement
 				span#browse-tag-type
 					a(href="/announcements") &raquo; browse all announcements
-				h1(itemprop="headline")= ann.title
+				h1(itemprop="headline")!= ann.title
 				#adjustor-container
 					span.adjustor-section-label date posted :&nbsp;
 					time(itemprop="dateCreated", datetime="#{ann.date_entered.isoformat()}")= ann.date_entered|date:"d F Y, P"
