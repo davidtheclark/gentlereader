@@ -26,6 +26,9 @@ html(lang = "en")
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/base.js")
 		block scripts
 		
+		//RSS feed auto-discovery
+		link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed")
+		
 	body
 		#wrapper
 			a(href="#site-content-container")#skip Skip to Main Content (for screen readers)
