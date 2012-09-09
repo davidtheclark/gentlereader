@@ -68,6 +68,7 @@ block content
 
 			elif category == 'announcements'
 				#announcement-container
+					{% autoescape off %}
 					for a in announcements
 						.ann-list-item(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/BlogPosting")
 							header.ann-list-title
@@ -78,14 +79,13 @@ block content
 									| &raquo;
 									span(itemprop="dateCreated", content="#{a.date_entered.isoformat()}")= a.date_entered|date:"d F Y, P"
 							.ann-list-body
-								{% autoescape off %}							
 								if a.text|wordcount > 150
 									p
 										span(itemprop="description")!= a.text|truncatewords_html:200
 										a(href="/announcements/#{a.slug}") [read the rest]
 								else 
 									p(itemprop="description")!= a.text
-								{% endautoescape %}
+					{% endautoescape %}
 			
 			elif category == 'timeline'
 				#adjustor-container 
