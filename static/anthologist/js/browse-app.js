@@ -1,26 +1,30 @@
 var browseRouter = Backbone.Router.extend({
 	routes: {
-		'page/:page': 'pageChange',
-		
-		/* This occurs when a user changes pages, triggering a #route,
+		'page/:page': 'pageChange',		
+		/* '' occurs when a user changes pages, triggering a #route,
 		 * then uses the browser's back. */
-		'': 'restart'
-		
+		'': 'restart'		
 	},
 	pageChange: function (page) {
 		$('#tag-list').fadeOut('fast', function () {
 			$('#tag-list').empty();
 			app.clearPageInfo();
-			/* If #page is 'all' (because we got here by clicking a [show all] page-changers,
+
+			/* If #page is 'all' (because we got here by clicking a [show all] page-changer),
 			 * or #page is outside of pageCount (don't know why this would happen,
 			 * but playing it safe), or pageCount doesn't exist (which happens when I backtrack
 			 * to a #page from an external page), then get all tags; otherwise, set limits. */
-			if (page == 'all' || page > app.pageCount || !(app.pageCount)) { app.setAllTagsPage(); }
-			else { app.setPageLimits(page); }
+			if (page == 'all' || page > app.pageCount || !(app.pageCount)) {
+				app.setAllTagsPage();
+			} else {
+				app.setPageLimits(page);
+			}
 			
 			/* If router is called by [previous] or [next] buttons,
 			 * page-select has to be changed to match the page shown. */
-			if ($('#page-select').val() != page) { $('#page-select').val(page); }
+			if ($('#page-select').val() != page) {
+				$('#page-select').val(page);
+			}
 		});
 	},
 	restart: function () {
@@ -39,8 +43,10 @@ $(function () {
 		itemsPerPage: 20,
 		
 		initialize: function () {
-			/* If this is running, user has JavaScript enabled, so the template-generated list should
-			 * be destroyed in favor of the AJAX list. */
+			var thisApp = this;
+
+			/* The template-generated list (there for search-engines) should be emptied
+			 * in favor of the AJAX list. */
 			$('#tag-list').empty();
 			
 			/* If the user has returned to a #route with the browser's back, set fragment to 'all'.*/ 
@@ -48,7 +54,6 @@ $(function () {
 				this.routing.navigate('page/all', { trigger: false });
 			}
 			
-			var thisApp = this;
 			/* Only the Author Page has sorting, so only it needs a queryObject. */
 			if (tagType == 'authors') { this.currentQueryObject = {}; }
 			this.getTags();
@@ -61,8 +66,7 @@ $(function () {
 			/* Author Page requires sortability; Non-Author Pages require a dynamic url. */
 			if (tagType == 'authors') {
 				thisApp.tagSet = new AuthorSet(null, { query: thisApp.currentQueryObject });
-			}
-			else {
+			} else {
 				thisApp.tagSet = new TagSet();
 				thisApp.tagSet.url = '/api/' + tagType;
 			}
@@ -72,7 +76,7 @@ $(function () {
 				success: function () { 
 					/* pageCount = total number of pages; all tags will have one at least 1. */
 					thisApp.pageCount = Math.ceil(thisApp.tagSet.length / thisApp.itemsPerPage);
-					/* If there are multiple pages, set router to #all (which will then fun
+					/* If there are multiple pages, set router to #all (which will then run
 					 * setAllTagsPage()) and render the page-select element. */
 					if (thisApp.pageCount > 1) {
 						thisApp.renderPageSelect();
@@ -134,7 +138,12 @@ $(function () {
 			$('#tag-list').fadeIn('fast');
 			
 		},
-	
+		
+		clearPageInfo: function () {
+			$('.page-info-container').undelegate();
+			$('.page-info-container').remove();
+		},
+		
 		/* Called when user changes sorting on Author Page. */
 		sortAuthorList: function () {
 			var thisApp = this;
@@ -151,11 +160,6 @@ $(function () {
 				thisApp.getTags();
 				thisApp.routing.navigate('page/all', { trigger: true });
 			});
-		},
-		
-		clearPageInfo: function () {
-			$('.page-info-container').undelegate();
-			$('.page-info-container').remove();
 		}
 		
 	});
@@ -164,13 +168,13 @@ $(function () {
 
 	/* Create an instance of the BrowseTagApplication. */
 	window.app = app = new BrowseTagApplication();
-	
-	
+		
 	/* Make Author Page sorters work. */
 	if (tagType == 'authors') {
 		$('.sort-select').change(function () { app.sortAuthorList(); });
 	}
 	
+	/* Make tag description available. */
 	$('#get-description').click(function () {
 		$('#category-description').fadeToggle('fast');
 	});

@@ -19,6 +19,12 @@ block styles
 	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/tag.less")
 	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/selection-list.less")
 
+block head
+	if tag_type == 'author'
+		meta(name="description", content="Selections from public domain texts by #{tag}.")
+	else
+		meta(name="description", content="Selections from public domain texts related to '#{tag}'.")
+
 block content
 	#main(itemprop="mainContentOfPage")
 		#main-content(itemscope, itemtype="http://www.schema.org/ItemList")
@@ -88,7 +94,21 @@ block content
 					//filled by tag-app.js
 				
 			#sel-container
-				//populated by tag-app.js
+				//Will be emptied and repopulated by timeline-app.js.
+				//Initial filling is for search engines, etc.
+				ul
+					for s in all_selections
+						li
+							span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
+								meta(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
+									meta(itemprop="familyName", content="#{s.author.last_name}")
+									meta(itemprop="givenName", content="#{s.author.first_name}")
+									meta(itemprop="birthDate", content="#{s.author.birth_year}")
+									meta(itemprop="deathDate", content="#{s.author.death_year}")								
+								span(itemprop="name")= s
+								| , by #{s.author} (
+								span(itemprop="datePublished")= s.source.date_display
+								| )
 			
 	#sidebar(itemscope, itemtype="http://www.schema.org/WPSideBar")
 		.sidebar-section

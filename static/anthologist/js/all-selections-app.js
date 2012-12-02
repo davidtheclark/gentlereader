@@ -6,11 +6,13 @@ var selListRouter = Backbone.Router.extend({
 		$('#sel-container').fadeOut('fast', function () {
 			$('#sel-container').empty();
 			app.clearPageInfo();
+			/* Unlike the tag pages, the all-selections page will always display the first page
+			 * and the paginator, because of all the space a selection, with its teaser, takes. */
 			/* There might be no page count if user browses to a #route from an outside page. */
 			if (!(app.pageCount)) { app.setPageLimits(1) }
 			else if (page == 'all') { app.setAllSelectionsPage(); }
 			else { app.setPageLimits(page); }
-			/* If router is called by previous- or next-page buttons or a browser-back return,
+			/* If router is called by previous- or next-page browser buttons or a browser-back return,
 			 * page-select has to be changed to match the page shown. */
 			if ($('#page-select').val() != page) { $('#page-select').val(page); }
 		});
@@ -25,7 +27,7 @@ $(document).ready(function () {
 		itemsPerPage: 10,
 		
 		initialize: function (options) {
-			/* Set the queryObject to the primary tag, the root query of the page. */
+			/* Set the queryObject to the primary tag, the root query of the page, and get selections. */
 			this.resetQueryObject();
 			this.getSelections();
 		},
@@ -62,8 +64,7 @@ $(document).ready(function () {
 						thisApp.routing.navigate('page/1', { trigger: false, replace: true });
 						thisApp.setPageLimits(1);
 						thisApp.renderPageSelect();
-					}
-					else {
+					} else {
 						thisApp.setAllSelectionsPage();
 					}
 					

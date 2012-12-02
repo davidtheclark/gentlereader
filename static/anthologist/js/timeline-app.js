@@ -5,12 +5,13 @@ var timelineRouter = Backbone.Router.extend({
 	slide: function (year) {
 		setTimeout(function () {
 			$('html, body').animate({ scrollTop: $('#' + year).offset().top },'slow');
-		}, 1000); //Wait is necessary so TimelineApplication can finish rendering the template
+		}, 3000); //Wait is necessary so TimelineApplication can finish rendering the template
 	}
 });
 
 var TimelineApplication = Backbone.View.extend({
 	initialize: function () {
+		$('#timeline-sel-container').empty();
 		/* queryObject should describe whatever selections are being shown. */
 		
 		/* Usually initial sort is "asc", but would be "des" if user (1) came to the

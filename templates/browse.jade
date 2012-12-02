@@ -64,8 +64,22 @@ block content
 							option(value="asc")	ascending
 					#page-select-container.adjustor-subcontainer
 				#sel-container
-					//populated by tag-app.js
-
+					//Will be emptied and repopulated by all-selections-app.js.
+					//Initial filling is for search engines.
+					ul
+						for s in all_selections
+							li
+								span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
+									meta(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
+										meta(itemprop="familyName", content="#{s.author.last_name}")
+										meta(itemprop="givenName", content="#{s.author.first_name}")
+										meta(itemprop="birthDate", content="#{s.author.birth_year}")
+										meta(itemprop="deathDate", content="#{s.author.death_year}")
+									span(itemprop="name")= s
+									| , by #{s.author} (
+									span(itemprop="datePublished")= s.source.date_display
+									| )
+									
 			elif category == 'announcements'
 				#announcement-container
 					{% autoescape off %}
@@ -95,7 +109,21 @@ block content
 							option(value="asc") ascending
 							option(value="des") descending
 				#timeline-sel-container
-					//populated by timeline-app.js
+					ul
+						<!--Will be emptied and repopulated by timeline-app.js.
+						Initial filling is for search engines, etc.-->
+						for s in all_selections
+							li
+								span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
+									meta(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
+										meta(itemprop="familyName", content="#{s.author.last_name}")
+										meta(itemprop="givenName", content="#{s.author.first_name}")
+										meta(itemprop="birthDate", content="#{s.author.birth_year}")
+										meta(itemprop="deathDate", content="#{s.author.death_year}")								
+									span(itemprop="name")= s
+									| , by #{s.author} (
+									span(itemprop="datePublished")= s.source.date_display
+									| )
 			
 			elif category == 'authors'
 				#adjustor-container 
@@ -110,14 +138,26 @@ block content
 					#page-select-container.adjustor-subcontainer
 				#tag-container
 					ul#tag-list
-						//populated by browse-app.js
+						<!--Will be emptied and repopulated by timeline-app.js.
+						Initial filling is for search engines, etc.-->
+						for author in tags
+							li(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/Person") 
+								meta(itemprop="familyName", content="#{author.last_name}")
+								meta(itemprop="givenName", content="#{author.first_name}")
+								meta(itemprop="birthDate", content="#{author.birth_year}")
+								meta(itemprop="deathDate", content="#{author.death_year}")
+								a(itemprop="url", href="/authors/#{author.slug}")
+									!{author.full_name} (!{author.dates})
 			
 			else
 				#adjustor-container 
 					#page-select-container.adjustor-subcontainer
 				#tag-container
 					ul#tag-list
-						//populated by browse-app.js
+						<!--Will be emptied and repopulated by timeline-app.js.
+						Initial filling is for search engines, etc.-->
+						for t in tags
+							li(itemprop="itemListElement")= t.name
 			
 	#sidebar(itemscope, itemtype="WPSideBar")
 		if category == 'forms' or category == 'genres' or category == 'topics' or category == 'contexts' or category == 'styles'

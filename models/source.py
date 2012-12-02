@@ -8,16 +8,18 @@ class Source(models.Model):
     
     author = models.ForeignKey('Author')
     section_title = models.CharField(max_length=500, blank=True, null=True)
-    volume_title = models.CharField(max_length=500, blank=True, null=True, help_text="Source MUST have either a volume or section title, though neither is independently required.")    
+    volume_title = models.CharField(max_length=500, blank=True, null=True,
+                                    help_text="Source MUST have either a volume or section title, though neither is independently required.")    
     language = models.ForeignKey('Tag', related_name='language_sources', blank=True, null=True)
-    translator = models.CharField(max_length=60, blank=True, null=True)
+    translator = models.CharField(max_length=60, blank=True, null=True, help_text="First then last name.")
     translation_year = models.IntegerField(max_length=4, blank=True, null=True)
     pub_year = models.IntegerField(max_length=4)
-    pub_year_modifier = models.CharField(max_length=10, blank=True, null=True, help_text="According to Wikipedia Style: c. (approximate); before; after; etc.")
+    pub_year_modifier = models.CharField(max_length=10, blank=True, null=True,
+                                         help_text="According to Wikipedia Style: c. (approximate); before; after; etc.")
     forms = models.ManyToManyField('Tag', related_name='form_sources', blank=True, null=True)
     digital_text = models.URLField(max_length=255, blank=True, null=True)
     scanned_text = models.URLField(max_length=255, blank=True, null=True)
-    info_url = models.URLField(max_length=255, blank=True, null=True)
+    info_url = models.URLField(max_length=255, blank=True, null=True, help_text="Typically a Wikipedia article.")
     
     def __unicode__(self):
         return self.full_title()
@@ -39,7 +41,6 @@ class Source(models.Model):
         date_content.append(yr)
         result = ' '.join(date_content)
         return mark_safe(result)
-
         
     def full_title(self):
         title_content = list()

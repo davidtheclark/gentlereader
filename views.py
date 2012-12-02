@@ -7,8 +7,8 @@ from anthologist.forms import ContactForm
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
 
-
-def ignore_articles(string): #utility function used below.
+#Utility function (used below) returning a string without initial articles, for sorting.
+def ignore_articles(string):
     if string.startswith("the "):
         return string[4:]
     elif string.startswith("an "):
@@ -53,15 +53,24 @@ def tag(req, tag_type, tag_slug):
         tag = get_object_or_404(Author, slug=tag_slug)
         tag_type_json = json.dumps(tag_type)
         related_tags = Author.objects.all() #order_by('last_name') is default in models.py
+        all_selections = Selection.objects.filter(source__author=tag)
     else:
         tag = get_object_or_404(Tag, slug=tag_slug)
         tag_type_json = json.dumps(tag.get_tag_type_display()) #necessary because tag_type returns an integer
         related_tags = Tag.objects.filter(tag_type=tag.tag_type) #order_by('name') is default in models.py
+        kwargs = { tag.get_tag_type_display() + 's': tag }
+        if tag_type == 'language':
+            all_selections = Selection.objects.filter(source__language=tag)
+        elif tag_type == 'nation':
+            all_selections = Selection.objects.filter(source__author__nations=tag)
+        else:
+            all_selections = Selection.objects.filter(**kwargs)
     return render_to_response('tag.jade', {
             'tag_type': tag_type,
             'tag': tag,
             'tag_type_json': tag_type_json,
             'related_tags': related_tags,
+            'all_selections': all_selections,
             'filter_tag_types': [ 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations', 'language'  ]
         }, context_instance=RequestContext(req))
 
@@ -71,17 +80,20 @@ def category(req, category):
     #this "exec" business necessary to use variable as model name in query
     code = 'tags = ' + str(category.capitalize()[:-1] + '.objects.all()')
     exec code
+    #Only accept tags that are active -- that is, attached to a relevant model (author to source, nation to author, etc.)
+    filtered_tags = [ t for t in tags if t.is_active() ]
     return render_to_response('browse.jade', {
         'category': category,
         'category_json': json.dumps(category),
         'category_array': category_array,
-        'tags': tags
+        'tags': filtered_tags
     }, context_instance=RequestContext(req))
 
 def all_selections(req):
     return render_to_response('browse.jade', {
         'category': 'selections',
-        'category_array': category_array
+        'category_array': category_array,
+        'all_selections': Selection.objects.all().order_by('-date_entered')
     }, context_instance=RequestContext(req))
 
 def home(req):
@@ -100,6 +112,7 @@ def timeline(req):
     return render_to_response('browse.jade', {
         'category': 'timeline',
         'category_array': category_array,
+        'all_selections': Selection.objects.all().order_by('source__pub_year')
     }, context_instance=RequestContext(req))
 
 def resource(req):

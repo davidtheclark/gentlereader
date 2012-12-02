@@ -11,17 +11,24 @@ class Author(models.Model):
         (2, 'female')
     )
         
-    last_name = models.CharField(max_length=30, help_text="Or only name")
-    first_name = models.CharField(max_length=30, blank=True, null=True)
-    birth_year = models.IntegerField(max_length=4, help_text="Or approximate year of existence")
+    last_name = models.CharField(max_length=30, help_text="Or only name.")
+    first_name = models.CharField(max_length=30, blank=True, null=True, help_text="Followed by middle initial, when relevant.")
+    birth_year = models.IntegerField(max_length=4, help_text="Or approximate year of existence.")
     birth_modifier = models.CharField(max_length=10, blank=True, null=True, help_text="According to Wikipedia Style: c. (approximate); before; after; etc.")
     death_year = models.IntegerField(max_length=4, blank=True, null=True)
     death_modifier = models.CharField(max_length=10, blank=True, null=True, help_text="According to Wikipedia Style: c. (approximate); before; after; etc.")
     gender = models.IntegerField(choices=GENDER_CHOICES, default=1)
     nations = models.ManyToManyField('Tag', related_name='nation_authors', blank=True, null=True)
-    info_url = models.URLField(max_length=255, blank=True, null=True)
-    slug = models.SlugField(unique=True)
+    info_url = models.URLField(max_length=255, blank=True, null=True, help_text="Typically a Wikipedia article.")
+    slug = models.SlugField(unique=True, help_text="Exclude initial articles and punctuation. Use lowercase and hyphenate. Use only last name if it is distinctive; otherwise, first then last.")
     
+    #Test whether the author is attached to a source
+    def is_active(self):
+        if len(self.source_set.all()) != 0 and len(self.source_set.all()[0].selection_set.all()) != 0:
+            return True
+        else:
+            return False
+        
     def full_name(self):
         name_content = list()
         if self.first_name:
@@ -34,7 +41,8 @@ class Author(models.Model):
         date_content = list()
         if self.birth_modifier:
             date_content.append(self.birth_modifier)
-        if self.birth_year < -0:
+        #BCE years are entered as negative integers, for ordering, but need to display as positive integers with BCE label.
+        if self.birth_year < 0:
             yr = str(abs(self.birth_year)) + ' <span class="bce">bce</span>'
         else:
             yr = str(self.birth_year)
@@ -64,7 +72,8 @@ class Author(models.Model):
             slug = self.slug,
             full_name = self.full_name(),
             dates = self.dates(),
-            tag_type_display = 'author' #For the "browse" page's application.
+            #For the "browse" page
+            tag_type_display = 'author'
         )
         
     def closure(self):

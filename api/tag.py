@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from django.db.models import get_model
 import json
-from anthologist.models import Form, Genre, Context, Topic, Style
+from anthologist.models import Form, Genre, Context, Topic, Style, Selection, Author, Source
 from anthologist.models.tag import TAG_TYPES
 
 Tag = get_model('anthologist', 'Tag')
@@ -20,8 +20,9 @@ def tag(req, tagId):
     return HttpResponse(json.dumps(tag.toJSON()), content_type="application/json")
 
 #Specific tag sets: maybe later can figure out a way to consolidate this code?
+#The "is_active" test ensures that the tag is not unattached (topic has a selection, nation has an author, etc.)
 def tag_type_set(x):
-    tags = [ tag.toJSON() for tag in Tag.objects.filter(tag_type=x) ]
+    tags = [ tag.toJSON() for tag in Tag.objects.filter(tag_type=x) if tag.is_active() ]
     return HttpResponse(json.dumps(tags), content_type="application/json")
 
 #From models.tag

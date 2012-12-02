@@ -31,18 +31,25 @@ section#sidebar-tags.sidebar-section(itemscope, itemtype="http://www.schema.org/
 	for tag_bunch in grouped_tags
 		ul.tag-sublist(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
 			h3.sidebar-label(itemprop="name")= tag_bunch.type
-			for tag in tag_bunch.tags
-				a(href="/#{tag.get_tag_type_display()}s/#{tag.slug}", rel="tag", itemprop="itemListElement")
+			if tag_bunch.tags
+				for tag in tag_bunch.tags
+					a(href="/#{tag.get_tag_type_display()}s/#{tag.slug}", rel="tag", itemprop="itemListElement")
+						li
+							span #{tag.name}
+			else
+				a(href="/contribute/?subject=#{tag_bunch['type']}%20for%20sel.%20#{selection.pk}%20(#{selection})")
 					li
-						span #{tag.name}
+						span.empty-tag suggest one
 
 section#sidebar-share.sidebar-section
 	h2.sidebar-heading share
-	<span class='st_sharethis' displayText='ShareThis'></span>
-	<span class='st_facebook' displayText='Facebook'></span>
-	<span class='st_twitter' displayText='Tweet'></span>
-	<span class='st_googleplus' displayText='Google +'></span>
-	<span class='st_email' displayText='Email'></span>
+	.share-icons	
+		// From sharethis.com
+		<span class='st_facebook'></span>
+		<span class='st_twitter'></span>
+		<span class='st_googleplus'></span>
+		<span class='st_email'></span>
+		<span class='st_sharethis'></span>
 
 section#sidebar-suggest.sidebar-section
 	h2.sidebar-heading contribute

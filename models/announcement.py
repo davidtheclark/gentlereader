@@ -14,7 +14,7 @@ class Announcement(models.Model):
         
     date_entered = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=500, null=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, help_text="Exclude initial articles and punctuation. Use lowercase and hyphenate.")
     text = models.TextField(null=True)
     
     def __unicode__(self):
@@ -23,7 +23,7 @@ class Announcement(models.Model):
     def class_name(self):
         return 'Announcement'
         #Used to distinguish Announcements from Selections on the homepage, so that the lists can be merged
-        #but each instance is given a template corresponding to its model (not the same one for every instance).
+        #but each list-item is given a template corresponding to its model.
     
     def toJSON(self):
         return dict(

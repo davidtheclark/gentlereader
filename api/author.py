@@ -36,6 +36,7 @@ def author_all(req):
     sort_field = req.GET.get('sort', 'last_name')
     direction = req.GET.get('direction', 'asc')
     dir_mod = '-' if direction == 'des' else ''
-    authors = Author.objects.all().order_by(dir_mod + sort_field)
+    #Collect authors and filter out any authors that are not attached to a source that is itself attached to a selection
+    authors = [ a for a in Author.objects.all().order_by(dir_mod + sort_field) if a.is_active() ]
     result_set = [ item.toJSON() for item in authors ]
     return HttpResponse(json.dumps(result_set), content_type="application/json")

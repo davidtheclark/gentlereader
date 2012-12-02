@@ -8,10 +8,10 @@ class Selection(models.Model):
         
     date_entered = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
-    text = models.TextField(null=True)
+    text = models.TextField(null=True, help_text="For subheadings within the selection, use a &lt;div&gt; element with class 'sel-body-subheading'.")
     teaser = models.TextField(null=True)
     comment_intro = models.TextField(blank=True, null=True, help_text="Comment to introduce the selection to the reader.")
-    comment_text = models.TextField(blank=True, null=True, help_text="Comment to describe the textual source, proofreading, editing, &c.")
+    comment_text = models.TextField(blank=True, null=True, help_text="Comment to describe the textual source, proofreading, editing, &amp;c.")
     source = models.ForeignKey('Source')
     excerpt = models.BooleanField(help_text="Is the selection an excerpt (checked) or a complete text (unchecked)?")
     selection_title = models.CharField(max_length=100, blank=True, null=True,
@@ -20,8 +20,8 @@ class Selection(models.Model):
     contexts = models.ManyToManyField('Tag', related_name='context_selections', blank=True)
     topics = models.ManyToManyField('Tag', related_name='topic_selections', blank=True)
     styles= models.ManyToManyField('Tag', related_name='style_selections', blank=True)
-    slug = models.SlugField(unique=True)
-    stylesheet = models.SlugField(blank=True, null=True, help_text="If this selection requires its own accompanying stylesheet, specify the filename. Use the slug, unless there's a good reason. Ensure the file is in static/anthologist/css/selection-specific/.")
+    slug = models.SlugField(unique=True, help_text="Use selection title if there is one; otherwise, source title. Exclude initial articles and punctuation. Use lowercase and hyphenate.")
+    stylesheet = models.SlugField(blank=True, null=True, help_text="If this selection requires its own accompanying stylesheet, specify the filename -- which should match the selection's slug, unless there's a good reason. Ensure the file is in static/anthologist/css/selection-specific/.")
     
     def shortened_passage(self):
         return r'"' + self.text[:70] + r'..."' 
@@ -42,7 +42,7 @@ class Selection(models.Model):
     def class_name(self):
         return 'Selection'
         #Used to distinguish Announcements from Selections on the homepage, so that the lists can be merged
-        #but each instance is given a template corresponding to its model (not the same one for every instance).
+        #but each list-item is given a template corresponding to its model.
 
         
     def toJSON(self):
