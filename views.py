@@ -58,7 +58,8 @@ def tag(req, tag_type, tag_slug):
         tag = get_object_or_404(Tag, slug=tag_slug)
         tag_type_json = json.dumps(tag.get_tag_type_display()) #necessary because tag_type returns an integer
         related_tags = Tag.objects.filter(tag_type=tag.tag_type) #order_by('name') is default in models.py
-        kwargs = { tag.get_tag_type_display() + 's': tag }
+        x = tag.get_tag_type_display() + 's'
+        kwargs = { x: tag }
         if tag_type == 'language':
             all_selections = Selection.objects.filter(source__language=tag)
         elif tag_type == 'nation':
