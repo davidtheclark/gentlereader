@@ -1,8 +1,5 @@
 from django.contrib.sitemaps import Sitemap
 from anthologist.models import Selection, Announcement, Author, Tag
-from django.conf import settings
-
-host = settings.HOSTNAME
 
 class SelectionSitemap(Sitemap):
     priority = 1.0
@@ -17,7 +14,7 @@ class SelectionSitemap(Sitemap):
             return obj.date_entered
     
     def location(self, obj):
-        return "%sselections/%s" % (host, obj.slug)
+        return "/selections/%s" % (obj.slug)
 
 class AnnouncementSitemap(Sitemap):
     priority = 0.9
@@ -29,7 +26,7 @@ class AnnouncementSitemap(Sitemap):
         return obj.date_entered
     
     def location(self, obj):
-        return "%sannouncements/%s" % (host, obj.slug)
+        return "/announcements/%s" % (obj.slug)
 
 class AuthorSitemap(Sitemap):
     priority = 0.7
@@ -38,7 +35,7 @@ class AuthorSitemap(Sitemap):
         return Author.objects.all()
     
     def location(self, obj):
-        return "%sauthors/%s" % (host, obj.slug)
+        return "/authors/%s" % (obj.slug)
 
 class TagSitemap(Sitemap):
     priority = 0.5
@@ -47,4 +44,4 @@ class TagSitemap(Sitemap):
         return Tag.objects.all()
     
     def location(self, obj):
-        return "%s%s/%s" % (host, obj.get_tag_type_display() + 's', obj.slug)
+        return "/%s/%s" % (obj.get_tag_type_display() + 's', obj.slug)
