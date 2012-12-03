@@ -40,8 +40,8 @@ sitemaps = {
 }
 
 urlpatterns += patterns('django.contrib.sitemaps.views',
-    (r'^sitemap.xml$', 'index', {'sitemaps': sitemaps}),
-    (r'^sitemap-(?P<section>.+).xml$', 'sitemap', {'sitemaps': sitemaps}),
+    (r'^sitemap\.xml$', 'index', {'sitemaps': sitemaps}),
+    (r'^sitemap-(?P<section>.+)\.xml$', 'sitemap', {'sitemaps': sitemaps}),
 )
 
 urlpatterns += patterns('',
