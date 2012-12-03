@@ -19,7 +19,7 @@ block styles
 		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/selection-specific/#{selection.stylesheet}.css")
 
 block head
-	meta(name="description", content!="{{ selection.teaser }}")
+	meta(name="description", content!="{{ selection.teaser|striptags }}")
 
 block content
 	#main(itemprop="mainContentOfPage")
