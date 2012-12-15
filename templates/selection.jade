@@ -13,10 +13,10 @@ block scripts
 	<script type="text/javascript">stLight.options({publisher: "1f17416e-852e-4df7-a049-badc8989a78d"});</script>
 
 block styles
-	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/selection.less")
+	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/selection-main.css")
 	if selection.stylesheet
 		//Called when a selection calls for its own specific stylesheet.
-		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/selection-specific/#{selection.stylesheet}.css")
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/selection-specific/#{selection.stylesheet}.css")
 
 block head
 	meta(name="description", content!="{{ selection.teaser|striptags }}")
@@ -52,10 +52,10 @@ block content
 						| &nbsp;by #{selection.source.translator} in #{selection.source.translation_year}.
 					hr(width="60%")
 					if selection.comment_text
-						.content-header-comment!= selection.comment_text
+						.content-header-comment-text!= selection.comment_text
 						hr(width="60%")		
 					if selection.comment_intro
-						.content-header-comment!= selection.comment_intro
+						.content-header-comment-intro!= selection.comment_intro
 						hr(width="60%")
 
 			for image in selection.image_set.all

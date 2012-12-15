@@ -1,0 +1,24 @@
+.news-headlines {
+	text-align: center;
+}
+
+.headline-large {
+	text-transform: uppercase;
+}
+
+.headline-small {
+	font-variant: small-caps;
+}
+
+.advert-inside {
+	margin: 1em 5px;
+	border: 1px solid black;
+	padding: 5px;
+	font-size: 0.9em;
+}
+
+.ad-highlight {
+	display: block;
+	text-transform: uppercase;
+	text-align: center;
+}

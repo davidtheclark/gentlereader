@@ -1,0 +1,50 @@
+@author-container-width: 250px;
+
+/*CONTAINERS*/
+
+#author-container {
+  float: left;
+  width: @author-container-width;
+}
+
+#quotation-list-container {
+  margin-left: @author-container-width;
+  max-width: 500px;
+  padding: 0 10px;
+}
+
+/* AUTHORS */
+
+#author-list {
+  font-family: @menu-font;
+  font-size: 0.8em;
+  list-style-type: none;
+}
+
+.author-link {
+  display: block;
+  padding: 5px;
+  &:hover {
+  	.border-radius-soft;
+    background-color: @sidebar-highlight-color;
+  }
+}
+
+.author-last {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.author-dates {
+  font-size: 0.85em;
+}
+
+/* QUOTATIONS */
+
+#quotation-list {
+  list-style-type: none;
+}
+
+.quotation-list-item {
+  padding-bottom: 15px;
+}

@@ -3,6 +3,7 @@ from django.http import HttpResponse, Http404
 from django.db.models import get_model
 from tag import tag_set, tag
 import json
+from anthologist.models import Quotation
 
 Selection = get_model('anthologist', 'Selection')
 Source = get_model('anthologist', 'Source')
@@ -39,4 +40,11 @@ def author_all(req):
     #Collect authors and filter out any authors that are not attached to a source that is itself attached to a selection
     authors = [ a for a in Author.objects.all().order_by(dir_mod + sort_field) if a.is_active() ]
     result_set = [ item.toJSON() for item in authors ]
+    return HttpResponse(json.dumps(result_set), content_type="application/json")
+
+def author_quotations(req, authorId):
+    auth = get_object_or_404(Author, pk=authorId)
+    sel_set = Selection.objects.filter(source__author=auth)
+    quot_set = Quotation.objects.filter(selection__in=sel_set)
+    result_set = [ q.closure() for q in quot_set ]
     return HttpResponse(json.dumps(result_set), content_type="application/json")

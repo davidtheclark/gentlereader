@@ -4,7 +4,7 @@ from django.conf import settings
 
 class FullFeed(Feed):
     title = "The Anthologist: Selections and News"
-    link = "/anthologist/"
+    link = "/"
     description = "New additions to the Anthologist's collection and announcements about the site and related subjects."
    
     def items(self):

@@ -1,11 +1,12 @@
 from django.shortcuts import render_to_response, redirect
-from anthologist.models import Selection, Author, Topic, Nation, Language, Form, Genre, Context, Topic, Style, Tag, ExternalLink, ExternalLinkCategory, Announcement
+from anthologist.models import Selection, Author, Topic, Nation, Language, Form, Genre, Context, Topic, Style, Tag, ExternalLink, ExternalLinkCategory, Announcement, Quotation
 from django.template import RequestContext
 import json
 from django.shortcuts import get_object_or_404
 from anthologist.forms import ContactForm
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
+import re
 
 #Utility function (used below) returning a string without initial articles, for sorting.
 def ignore_articles(string):
@@ -42,9 +43,14 @@ def selection(req, sel_slug):
             item['tags'] = getattr(selection, this_type).all()
         #re-order the tags by using ignore_articles() (defined above), so that, e.g., "the egg" comes in the "e" range, not the "t" range.
         item['tags'] = sorted(item['tags'], key=lambda tag: ignore_articles(tag.name))
+        
+    
+    quotation = Quotation.objects.filter(selection=selection).order_by('?')[0]
+    
     return render_to_response('selection.jade', {
             'selection': selection,
-            'grouped_tags': grouped_tags 
+            'grouped_tags': grouped_tags,
+            'quotation': quotation
         }, context_instance=RequestContext(req))
 
 def tag(req, tag_type, tag_slug):
@@ -160,4 +166,30 @@ def thanks(req):
 
 def browse(req):
     return render_to_response('browse-base.jade', context_instance=RequestContext(req))
-    
+
+def browse_specimens(req):
+    return render_to_response('browse.jade', {
+        'category': 'specimens',
+        'category_json': json.dumps('specimens'),
+        'category_array': category_array
+    }, context_instance=RequestContext(req))
+
+def dumbToSmartQuotes(string):
+    string = re.sub(r'([a-zA-Z0-9.,?!;:])"', r'\1&#8221;', string)
+    string = string.replace('"', '&#8220;')
+    string = re.sub(r"([a-zA-Z0-9.,?!;:])'", r'\1&#8217;', string)
+    string = string.replace("'", '&#8216;')
+    return string
+
+def specimen(req, q_id):
+    if q_id == 'random':
+        quotation = Quotation.objects.order_by('?')[0]
+        url = '/specimens/' + str(quotation.pk)
+        return redirect(url)   
+    else:
+        quotation = get_object_or_404(Quotation, pk=q_id)
+    text = dumbToSmartQuotes(str(quotation.quotation))
+    return render_to_response('specimen.jade', {
+        'quotation': quotation,
+        'text': text
+    }, context_instance=RequestContext(req))

@@ -4,15 +4,21 @@ block title
 	title {{ category|capfirst }} | the Anthologist
 
 block styles
-	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/browse.less")
-	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/quotation-box.less")
 	if category == 'selections'
-		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/selection-list.less")
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-selection-main.css")
 	if category == 'timeline'
-		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/timeline.less")
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-timeline-main.css")
 	if category == 'announcements'
-		link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/all-announcements.less")
-		
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-announcement-main.css")
+	if category == 'specimens'
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-specimens-main.css")
+	else
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-main.css")
+
+if category == 'specimens'
+	block basescripts
+		//
+
 block scripts
 	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-views.js")
 	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-app.js")
@@ -28,6 +34,9 @@ block scripts
 		{% endautoescape %}
 	elif category == 'announcements'
 		//
+	elif category == 'specimens'
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+		script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-quot-main.js")
 	else // Author and other tags.
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/browse-views.js")
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/browse-app.js")
@@ -70,14 +79,13 @@ block content
 						for s in all_selections
 							li
 								span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
-									meta(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
-										meta(itemprop="familyName", content="#{s.author.last_name}")
-										meta(itemprop="givenName", content="#{s.author.first_name}")
-										meta(itemprop="birthDate", content="#{s.author.birth_year}")
-										meta(itemprop="deathDate", content="#{s.author.death_year}")
+									meta(itemprop="url", content="/selections/#{s.slug}")							
 									span(itemprop="name")= s
-									| , by #{s.author} (
-									span(itemprop="datePublished")= s.source.date_display
+									| , by
+									span(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
+										span(itemprop="name")= s.author
+									| (
+									span(itemprop="datePublished")= s.source.pub_year
 									| )
 									
 			elif category == 'announcements'
@@ -115,14 +123,13 @@ block content
 						for s in all_selections
 							li
 								span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
-									meta(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
-										meta(itemprop="familyName", content="#{s.author.last_name}")
-										meta(itemprop="givenName", content="#{s.author.first_name}")
-										meta(itemprop="birthDate", content="#{s.author.birth_year}")
-										meta(itemprop="deathDate", content="#{s.author.death_year}")								
+									meta(itemprop="url", content="/selections/#{s.slug}")							
 									span(itemprop="name")= s
-									| , by #{s.author} (
-									span(itemprop="datePublished")= s.source.date_display
+									| , by
+									span(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
+										span(itemprop="name")= s.author
+									| (
+									span(itemprop="datePublished")= s.source.pub_year
 									| )
 			
 			elif category == 'authors'
@@ -149,6 +156,24 @@ block content
 								a(itemprop="url", href="/authors/#{author.slug}")
 									!{author.full_name} (!{author.dates})
 			
+			elif category == 'specimens'
+				#author-container
+					h2 choose another author
+					#sort-container.adjustor-subcontainer
+						label#sort-label(for="sort-field") sort order :
+						select#sort-field.sort-select
+							option(value="last_name") last name
+							option(value="birth_year") birth year
+						select#sort-direction.sort-select
+							option(value="asc")	ascending
+							option(value="des") descending
+					#author-content
+						ul#author-list
+					#author-list
+				#quotation-list-container
+					#quotation-header
+					ul#quotation-list
+							
 			else
 				#adjustor-container 
 					#page-select-container.adjustor-subcontainer

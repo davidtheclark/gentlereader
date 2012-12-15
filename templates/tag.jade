@@ -16,8 +16,7 @@ block scripts
 	{% endautoescape %}
 
 block styles
-	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/tag.less")
-	link(rel="stylesheet/less", type="text/css", href="#{STATIC_URL}anthologist/css/selection-list.less")
+	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/tag-main.css")
 
 block head
 	if tag_type == 'author'
@@ -61,7 +60,8 @@ block content
 					section#tag-info
 						if tag.definition
 							div(itemprop="description")!= tag.definition
-								| &nbsp;[<cite><a href="#{tag.dictionary_source.link}" target="_blank">#{tag.dictionary_source}</a></cite>]
+								if tag.dictionary_source
+									| &nbsp;[<cite><a href="#{tag.dictionary_source.link}" target="_blank">#{tag.dictionary_source}</a></cite>]
 						if tag.description
 							div(itemprop="description")!= tag.description
 						if tag.info_url
@@ -100,14 +100,13 @@ block content
 					for s in all_selections
 						li
 							span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
-								meta(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
-									meta(itemprop="familyName", content="#{s.author.last_name}")
-									meta(itemprop="givenName", content="#{s.author.first_name}")
-									meta(itemprop="birthDate", content="#{s.author.birth_year}")
-									meta(itemprop="deathDate", content="#{s.author.death_year}")								
+								meta(itemprop="url", content="/selections/#{s.slug}")							
 								span(itemprop="name")= s
-								| , by #{s.author} (
-								span(itemprop="datePublished")= s.source.date_display
+								| , by
+								span(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
+									span(itemprop="name")= s.author
+								| (
+								span(itemprop="datePublished")= s.source.pub_year
 								| )
 			
 	#sidebar(itemscope, itemtype="http://www.schema.org/WPSideBar")

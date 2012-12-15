@@ -1,3 +1,13 @@
+aside.sidebar-section
+	h2.sidebar-heading highlight
+	#quotation-marker &#8220;
+	{% autoescape off %}
+	a(href="/specimens/#{quotation.pk}")#quotation-text.hyphenate
+		!{quotation}
+	{% endautoescape %}
+	#quotation-followup.instructions
+		a more highlights<br />from this selection &raquo;
+
 section#sidebar-display.sidebar-section
 	h2.sidebar-heading adjust
 	.display-section
@@ -25,6 +35,16 @@ section#sidebar-display.sidebar-section
 			option(value="justify", selected) justified
 			option(value="left") ragged
 		
+section#sidebar-share.sidebar-section
+	h2.sidebar-heading share
+	.share-icons	
+		// From sharethis.com
+		<span class='st_facebook'></span>
+		<span class='st_twitter'></span>
+		<span class='st_googleplus'></span>
+		<span class='st_email'></span>
+		<span class='st_sharethis'></span>
+
 section#sidebar-tags.sidebar-section(itemscope, itemtype="http://www.schema.org/ItemList")
 	h2(itemprop="name").sidebar-heading explore
 	p.instructions Click a keyword to find more <cite>Anthologist</cite> selections like this one.
@@ -40,16 +60,6 @@ section#sidebar-tags.sidebar-section(itemscope, itemtype="http://www.schema.org/
 				a(href="/contribute/?subject=#{tag_bunch['type']}%20for%20sel.%20#{selection.pk}%20(#{selection})")
 					li
 						span.empty-tag suggest one
-
-section#sidebar-share.sidebar-section
-	h2.sidebar-heading share
-	.share-icons	
-		// From sharethis.com
-		<span class='st_facebook'></span>
-		<span class='st_twitter'></span>
-		<span class='st_googleplus'></span>
-		<span class='st_email'></span>
-		<span class='st_sharethis'></span>
 
 section#sidebar-suggest.sidebar-section
 	h2.sidebar-heading contribute

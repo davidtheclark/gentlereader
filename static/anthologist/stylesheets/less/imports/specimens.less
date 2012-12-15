@@ -1,0 +1,131 @@
+#site-content-container { background-color: @sidebar-color; }
+
+#main {
+  background-color: white;
+  float: left;
+  width: 75%;
+}
+
+#sidebar {
+  width: 25%;
+  float: right;
+}
+
+/*-------------
+ * MAIN
+ *------------*/
+
+#main-content {
+  padding: 15px;
+}
+
+/* HEADER */
+
+#main-heading {
+  .browse-heading;
+  h1 {
+    border: none;
+    margin-bottom: 5px;
+  }
+  border-bottom: 1px solid @menu-color;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  width: 600px;
+}
+
+#main-description {
+  text-align: center;  
+}
+
+/* QUOTATION */
+
+.quotation-marker {
+  color: @highlight-color;
+  font-size: 3.5em;
+}
+
+#left-marker {
+  float: left;
+  width: 50px;
+}
+
+#right-marker {
+  float: right;
+  width: 50px;
+}
+
+#quotation-text {
+  font-family: 'IM Fell English', 'Calisto MT', Times, serif;
+  font-size: 1.5em;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+#quotation-text-content {
+  margin: 0 50px;
+}
+
+#quotation-citation {
+  border: 1px solid white;
+  display: block;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 500px;
+  &:hover {
+    border: 1px solid gray;
+  }
+}
+
+#read-full {
+  font-size: 0.65em;
+  text-decoration: underline;
+}
+
+/*--------------
+ * SIDEBAR
+ * -------------*/
+
+.sidebar-section {
+  padding: 15px;
+}
+
+.sidebar-heading {
+  color: @highlight-color;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* SHARE */
+.share-icons {
+  text-align: center;
+}
+
+/* READ ON */
+
+#read-on-links h2 {
+  padding: 15px 15px 5px 15px;
+}
+
+#sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar-block {
+  background-color: @sidebar-color;
+  border-bottom: 1px dotted black;
+  a {
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    &:hover {
+     background-color: lighten(@sidebar-color, 10%);
+      color: @highlight-color;
+    }
+  }
+  &:first-child {
+    border-top: 1px dotted black;
+  }
+}

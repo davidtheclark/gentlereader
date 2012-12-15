@@ -1,0 +1,65 @@
+extends ./base.jade
+
+block title
+	title A #{quotation.selection.source.author.last_name} Specimen | the Anthologist
+
+block scripts
+	// From sharethis.com
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "1f17416e-852e-4df7-a049-badc8989a78d"});</script>
+
+block styles
+	<link href='http://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic' rel='stylesheet' type='text/css'>
+	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/specimens-main.css")
+
+block head
+	meta(name="description", content!="{{ text|striptags }}")
+
+block content
+	#main
+		#main-content
+			header#main-heading
+				h1 specimens
+				#main-description
+					| Highlighted quotations from the Anthologist's curated
+					| collection of public domain texts.
+			{% autoescape off %}
+			section#quotation-text
+				.quotation-marker#left-marker &#8220;
+				.quotation-marker#right-marker &#8221;
+				#quotation-text-content !{text}
+			a(href="/selections/#{quotation.selection.slug}")#quotation-citation
+					| <em>from</em>
+					| "#{quotation.selection}"
+					br
+					| <em>by</em>
+					| #{quotation.selection.source.author.full_name}
+					br
+					span#read-full [click here to read the full selection]
+			{% endautoescape %}
+	#sidebar
+		section#read-on-links
+			h2.sidebar-heading read on
+			ul
+				li.sidebar-block
+					a(href="/selections/#{quotation.selection.slug}") View this <strong>full selection</strong>: "#{quotation.selection}"
+				li.sidebar-block
+					a(href="/specimens/#author/#{quotation.selection.source.author.pk}") See more <strong>#{quotation.selection.source.author.last_name}</strong> specimens
+				li.sidebar-block
+					a(href="/specimens/random") Enjoy a <strong>random specimen</strong>
+				li.sidebar-block 
+					a(href="") Browse <strong>all the specimens</strong>
+				li.sidebar-block
+					a(href="/") Visit the Anthologist's <strong>homepage</strong>
+		section#sidebar-share.sidebar-section
+			h2.sidebar-heading share
+			.share-icons	
+				// From sharethis.com
+				<span class='st_facebook'></span>
+				<span class='st_twitter'></span>
+				<span class='st_googleplus'></span>
+				<span class='st_email'></span>
+				<span class='st_sharethis'></span>
+
+			

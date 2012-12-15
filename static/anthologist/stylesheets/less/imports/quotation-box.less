@@ -1,0 +1,44 @@
+#quotation-container {
+  display: none; //Will fade in.
+  font-family: Times New Roman, serif;
+  font-size: 0.9em;
+  padding: 15px;
+  h2 {
+    border-bottom: 1px solid @header-color;
+    color: @highlight-color;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    width: 100%;
+    &:hover { color: @link-base; }
+  }
+}
+
+.quotation-box-quotation {
+  line-height: 120%;
+  margin-top: 10px;
+  font-style: italic;
+  p {
+    margin-bottom: 0;
+    text-indent: 20px;   
+  }
+  p:first-child {
+    text-indent: 0;
+  }
+  .inline-translation,
+  i, em, cite { font-style: normal; }
+}
+
+.quotation-box-citation {
+  margin: 10px 0 0 20px;
+  text-align: right;
+  a { .secret-link; }
+}
+
+.quotation-box-followup { margin-top: 10px; }
+
+.another-specimen {
+  .secret-link;
+  margin-top: 5px;
+}
+
+span.another-specimen { color: @link-base; }

@@ -5,20 +5,12 @@ import json
 
 Quotation = get_model('anthologist', 'Quotation')
 
-def quotation_set(req):
-    result_set = Quotation.objects.all()
-    
-    #filters (if I need them)
-    """filter_params = [ 'nations', 'language', 'forms', 'author', 'genres', 'contexts', 'topics', 'styles', 'source' ]
-    for param in filter_params:
-        val = req.GET.get(param, False)
-        if val:
-            if param == 'nations': full_param = 'selection__source__author__' + param
-            if param in [ 'language', 'forms', 'author' ]: full_param = 'selection__source__' + param
-            if param in [ 'genres', 'contexts', 'topics', 'styles', 'source' ]: full_param = 'selection__' + param
-            result_set = result_set.filter(**{ full_param: val })"""
-            
-    result = [ quotation.closure() for quotation in result_set ]
+def quotation_all(req):
+    result = [ quotation.closure() for quotation in Quotation.objects.all() ]
+    return HttpResponse(json.dumps(result), content_type="application/json")
+
+def quotation_set(req, Selection, SelectionId):
+    result = [ q.toJSON() for q in Quotation.objects.filter(selection__pk=SelectionId).order_by('?') ]
     return HttpResponse(json.dumps(result), content_type="application/json")
 
 def quotation(req, quotationId):

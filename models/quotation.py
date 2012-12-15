@@ -23,6 +23,8 @@ class Quotation(models.Model):
         )
         data['selection']['pub_year'] = self.selection.source.date_display()
         data['selection']['author'] = self.selection.source.author.full_name()
+        data['selection']['author-slug'] = self.selection.source.author.slug
+        data['selection']['author-dates'] = self.selection.source.author.dates()
         data['selection']['source'] = self.selection.__unicode__()
         data['selection']['slug'] = self.selection.slug
         return data
