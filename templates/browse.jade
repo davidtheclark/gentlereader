@@ -10,40 +10,39 @@ block styles
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-timeline-main.css")
 	if category == 'announcements'
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-announcement-main.css")
-	if category == 'specimens'
-		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-specimens-main.css")
+	if category == 'highlights'
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-highlights-main.css")
 	else
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-main.css")
 
 if category == 'specimens'
 	block basescripts
-		//
+		
 
 block scripts
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-views.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-app.js")
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
 	if category == 'selections'
-		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/all-selections-views.js")
-		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/all-selections-app.js")
+		//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-sel-main.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-sel-main-built.js")
 	elif category == 'timeline'
-		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/timeline-views.js")
-		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/timeline-app.js")
-		{% autoescape off %}
-		script(type="application/javascript")
-			| var year = "#{jump_to}";
-		{% endautoescape %}
+		//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-timeline-main.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-timeline-main-built.js")
 	elif category == 'announcements'
-		//
-	elif category == 'specimens'
-		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
-		script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-quot-main.js")
-	else // Author and other tags.
-		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/browse-views.js")
-		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/browse-app.js")
+		//<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require.js" data-main="{{ STATIC_URL }}anthologist/js/just-quot-main.js"></script>
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/just-quot-main-built.js")
+	elif category == 'highlights'
+		//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-quot-main.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-quot-main-built.js")
+	elif category == 'authors'
+		//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-author-main.js")	
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-author-main-built.js")
+	else // tags
 		{% autoescape off %}
 		script(type="application/javascript")
 			| var tagType = #{category_json};
-		{% endautoescape %}
+		{% endautoescape %}		
+		//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-tag-main.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-tag-main-built.js")
 
 block content
 	#main(itemprop="mainContentOfPage")
@@ -59,130 +58,30 @@ block content
 						| #{category}				
 				#category-description(itemprop="description")
 					include includes/browse-type-descriptions.html
-			
+				if category == 'highlights'
+					#highlights-description
+						| Choice specimens from <cite>the Anthologist</cite>'s curated
+						| collection of public domain texts.
+		
 			if category == 'selections'
-				#adjustor-container
-					#sort-container.adjustor-subcontainer
-						label#sort-label(for="sort-field") sort order :
-						select#sort-field.sort-select
-							option(value="date_entered") post date
-							option(value="author") author
-							option(value="pub_year") source date
-						select#sort-direction.sort-select
-							option(value="des") descending
-							option(value="asc")	ascending
-					#page-select-container.adjustor-subcontainer
-				#sel-container
-					//Will be emptied and repopulated by all-selections-app.js.
-					//Initial filling is for search engines.
-					ul
-						for s in all_selections
-							li
-								span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
-									meta(itemprop="url", content="/selections/#{s.slug}")							
-									span(itemprop="name")= s
-									| , by
-									span(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
-										span(itemprop="name")= s.author
-									| (
-									span(itemprop="datePublished")= s.source.pub_year
-									| )
+				include includes/br-selections
 									
 			elif category == 'announcements'
-				#announcement-container
-					{% autoescape off %}
-					for a in announcements
-						.ann-list-item(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/BlogPosting")
-							header.ann-list-title
-								h2
-									a(href="../announcements/#{a.slug}", itemprop="url")
-										span(itemprop="headline")!= a.title
-								span.posted-date
-									| &raquo;
-									span(itemprop="dateCreated", content="#{a.date_entered.isoformat()}")= a.date_entered|date:"d F Y, P"
-							.ann-list-body
-								if a.text|wordcount > 150
-									p
-										span(itemprop="description")!= a.text|truncatewords_html:200
-										a(href="/announcements/#{a.slug}") [read the rest]
-								else 
-									p(itemprop="description")!= a.text
-					{% endautoescape %}
+				include includes/br-announcements
 			
 			elif category == 'timeline'
-				#adjustor-container 
-					#sort-container.adjustor-subcontainer
-						label#sort-label(for="sort-direction") sort order :
-						select#sort-direction
-							option(value="asc") ascending
-							option(value="des") descending
-				#timeline-sel-container
-					ul
-						<!--Will be emptied and repopulated by timeline-app.js.
-						Initial filling is for search engines, etc.-->
-						for s in all_selections
-							li
-								span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
-									meta(itemprop="url", content="/selections/#{s.slug}")							
-									span(itemprop="name")= s
-									| , by
-									span(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
-										span(itemprop="name")= s.author
-									| (
-									span(itemprop="datePublished")= s.source.pub_year
-									| )
-			
+				include includes/br-timeline
+
 			elif category == 'authors'
-				#adjustor-container 
-					#sort-container.adjustor-subcontainer
-						label#sort-label(for="sort-field") sort order :
-						select#sort-field.sort-select
-							option(value="last_name") last name
-							option(value="birth_year") birth year
-						select#sort-direction.sort-select
-							option(value="asc")	ascending
-							option(value="des") descending
-					#page-select-container.adjustor-subcontainer
-				#tag-container
-					ul#tag-list
-						<!--Will be emptied and repopulated by timeline-app.js.
-						Initial filling is for search engines, etc.-->
-						for author in tags
-							li(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/Person") 
-								meta(itemprop="familyName", content="#{author.last_name}")
-								meta(itemprop="givenName", content="#{author.first_name}")
-								meta(itemprop="birthDate", content="#{author.birth_year}")
-								meta(itemprop="deathDate", content="#{author.death_year}")
-								a(itemprop="url", href="/authors/#{author.slug}")
-									!{author.full_name} (!{author.dates})
+				include includes/br-authors
 			
-			elif category == 'specimens'
-				#author-container
-					h2 choose another author
-					#sort-container.adjustor-subcontainer
-						label#sort-label(for="sort-field") sort order :
-						select#sort-field.sort-select
-							option(value="last_name") last name
-							option(value="birth_year") birth year
-						select#sort-direction.sort-select
-							option(value="asc")	ascending
-							option(value="des") descending
-					#author-content
-						ul#author-list
-					#author-list
-				#quotation-list-container
-					#quotation-header
-					ul#quotation-list
-							
+			elif category == 'highlights'
+				include includes/br-highlights
+
 			else
-				#adjustor-container 
-					#page-select-container.adjustor-subcontainer
-				#tag-container
-					ul#tag-list
-						<!--Will be emptied and repopulated by timeline-app.js.
-						Initial filling is for search engines, etc.-->
-						for t in tags
-							li(itemprop="itemListElement")= t.name
+				include includes/br-tags
+			
+			#bottom-pg-container
 			
 	#sidebar(itemscope, itemtype="WPSideBar")
 		if category == 'forms' or category == 'genres' or category == 'topics' or category == 'contexts' or category == 'styles'
@@ -203,4 +102,3 @@ block content
 									else
 										| #{c}
 		aside#quotation-container
-			//populated by quotation-box-app.js

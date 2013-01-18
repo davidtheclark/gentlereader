@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block scripts %}
-<script type="application/javascript" src="{{ STATIC_URL }}anthologist/js/quotation-box-views.js"></script>
-<script type="application/javascript" src="{{ STATIC_URL }}anthologist/js/quotation-box-app.js"></script>
-<script type="application/javascript" src="{{ STATIC_URL }}anthologist/js/contribute.js"></script>
+<!--
+<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require-config.js"></script>
+<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require.js" data-main="{{ STATIC_URL }}anthologist/js/just-quot-main.js"></script>
+-->
+<script type="application/javascript" src="{{STATIC_URL}}anthologist/builds/just-quot-main-built.js"></script>
 
 {% endblock %}
 
@@ -37,9 +39,6 @@
 		        {{ form.sender.errors }}
 		        <label for="id_sender">your email &#8212;</label>
 		        <input type="email" name="sender" id="id_sender" autofocus />
-		        <!--This is to trigger autofocus on non-HTML5 browsers. Works with contribute.js.
-		        	from http://diveintohtml5.info/forms.html-->
-		        <script>$(document).trigger('autofocus_ready');</script>
 		    </div>
 		    <div class="fieldWrapper">
 		        {{ form.subject.errors }}

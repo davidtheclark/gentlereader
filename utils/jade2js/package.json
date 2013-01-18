@@ -1,0 +1,12 @@
+{
+    "name": "jade2js",
+    "version": "0.1.0",
+    "author": "ryan.clark.j@gmail.com",
+    "description": "CLI utility to watch a folder full of Jade files, and compile those files into JavaScript functions.",
+    "dependencies": {
+        "jade": "*",
+        "optimist": "*",
+        "watch": "*"
+    },
+    "license": "MIT"
+}

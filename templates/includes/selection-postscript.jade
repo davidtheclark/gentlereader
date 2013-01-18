@@ -55,9 +55,5 @@ hr
 
 #postscript-dates
 	if selection.date_entered != selection.date_modified
-		p
-			| Last modified:
-			span(itemprop="dateModified", datetime="#{selection.date_modified.isoformat()}")= selection.date_modified|date:"d F Y, G:i"
-	p
-		| Originally posted:
-		span(itemprop="datePublished", datetime="#{selection.date_entered.isoformat()}")= selection.date_entered|date:"d F Y, G:i"
+		p Last modified: #{selection.date_modified|date:"d F Y, G:i"}
+	p Originally posted: #{selection.date_entered|date:"d F Y, G:i"}

@@ -23,7 +23,14 @@ class Source(models.Model):
     
     def __unicode__(self):
         return self.full_title()
-    
+     
+    #Test whether the author is attached to a source
+    def is_active(self):
+        if len(self.selection_set.all()) != 0:
+            return True
+        else:
+            return False
+   
     def root_work(self):
         if self.volume_title:
             return '<cite>' + self.volume_title + '</cite>'
@@ -31,16 +38,15 @@ class Source(models.Model):
             return '"' + self.section_title + '"'
 
     def date_display(self):
-        date_content = list()
+        date_content = ''
         if self.pub_year_modifier:
-            date_content.append(self.pub_year_modifier)
+            date_content += self.pub_year_modifier + '&nbsp;'
         if self.pub_year < -0:
-            yr = str(abs(self.pub_year)) + ' <span class="bce">bce</span>'
+            yr = str(abs(self.pub_year)) + '&nbsp;<span class="bce">bce</span>'
         else:
             yr = str(self.pub_year)
-        date_content.append(yr)
-        result = ' '.join(date_content)
-        return mark_safe(result)
+        date_content += yr
+        return mark_safe(date_content)
         
     def full_title(self):
         title_content = list()

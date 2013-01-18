@@ -2,11 +2,11 @@ aside.sidebar-section
 	h2.sidebar-heading highlight
 	#quotation-marker &#8220;
 	{% autoescape off %}
-	a(href="/specimens/#{quotation.pk}")#quotation-text.hyphenate
+	a(href="/highlights/#{quotation.pk}")#quotation-text.hyphenate
 		!{quotation}
 	{% endautoescape %}
 	#quotation-followup.instructions
-		a more highlights<br />from this selection &raquo;
+		a(href="/highlights/#author/#{quotation.selection.source.author.pk}") more highlights<br />from this author &raquo;
 
 section#sidebar-display.sidebar-section
 	h2.sidebar-heading adjust
@@ -68,3 +68,5 @@ section#sidebar-suggest.sidebar-section
 			a(href="/contribute/?subject=tag%20for%20sel.%20#{selection.pk}%20(#{selection})") another tag for this selection
 		li
 			a(href="/contribute/?subject=selection%20similar%20to%20sel.%20#{selection.pk}%20(#{selection})") another selection like this one 
+		li
+			a(href="/contribute/?subject=selection%20#{selection.pk}%20editorial%20comment") an editorial comment on the text

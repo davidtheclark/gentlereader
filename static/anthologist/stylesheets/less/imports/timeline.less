@@ -1,16 +1,17 @@
 #timeline-sel-container {
-  display: none; //fades in
   padding: 15px;
+  ul {
+    list-style-type: none;
+  }
 }
 
 .timeline-sel-item {
-  padding: 5px 10px;
+  padding: 10px 10px;
   h2 {
     float: left;
     font-size: 1.2em;
     padding: 0 5px;
     width: 75px;
-    &:after {}
   }
 }
 
@@ -24,7 +25,7 @@
 
 .timeline-sel-even { background-color: @even-sel-color; }
 
-.timeline-sel-info a { color: black; }
+//.timeline-sel-info a { color: black; }
 
 .timeline-sel-info,
 .toggle-teaser { font-size: 0.9em; }
@@ -55,4 +56,3 @@
   .inline-translation,
   i, em, cite { font-style: normal; }
 }
-

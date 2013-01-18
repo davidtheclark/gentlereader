@@ -1,6 +1,5 @@
 #quotation-container {
   display: none; //Will fade in.
-  font-family: Times New Roman, serif;
   font-size: 0.9em;
   padding: 15px;
   h2 {
@@ -14,9 +13,14 @@
 }
 
 .quotation-box-quotation {
-  line-height: 120%;
-  margin-top: 10px;
+  font-family: 'Times New Roman', Times, serif;
   font-style: italic;
+  line-height: 125%;
+  margin-top: 10px;
+  a {
+    display: block;
+    .secret-link;
+  }
   p {
     margin-bottom: 0;
     text-indent: 20px;   
@@ -31,10 +35,19 @@
 .quotation-box-citation {
   margin: 10px 0 0 20px;
   text-align: right;
-  a { .secret-link; }
+  a {
+    display: block;
+    .secret-link;
+  }
 }
 
-.quotation-box-followup { margin-top: 10px; }
+.quotation-box-followup {
+  .small-command;
+  margin-top: 10px;
+  a:hover, span:hover {
+    text-decoration: underline;
+  }
+}
 
 .another-specimen {
   .secret-link;

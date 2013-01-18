@@ -20,13 +20,29 @@
  * MAIN
  * -----*/
 
+#breadcrumb {
+  margin: 15px 0 0 15px;
+}
+
+#breadcrumb-type {
+  text-transform: uppercase;
+  color: @highlight-color;
+  font-size: 1.24em;
+}
+
+#breadcrumb-browse {
+  .secret-link;
+  margin-left: 5px;
+  font-size: 0.85em;
+}
+
 #main-content {
   margin: 0 auto;
   padding: 15px;
 }
 
 #content-header {
-  margin: 35px auto 0 auto;
+  margin: 25px auto 0 auto;
   max-width: 550px;
   text-align: center;
 }
@@ -117,7 +133,7 @@
  * ---------*/
 
 .sidebar-section {
-  border-bottom: 1px dotted black;
+  border-bottom: @thin-white;
 }
 
 .sidebar-heading {
@@ -134,18 +150,19 @@
   display: inline-block;
   float: left;
   font-family: Bookman Old Style, Times, serif;
-  font-size: 3.5em;
-  line-height: 1em;
-  width: 25px;
+  font-size: 2.5em;
+  line-height: 0;
+  margin-top: 20px;
+  width: 20px;
 }
 
 #quotation-text {
   .secret-link;
   display: block;
-  font-family: Times New Roman, Times, serif;
-  font-size: 0.95em;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.85em;
   font-style: italic;
-  margin-left: 25px;
+  margin-left: 20px;
   p {
     margin-bottom: 0;
     text-indent: 20px;   
@@ -158,7 +175,9 @@
 }
 
 #quotation-followup {
-  font-size: 0.8em;
+  .small-command;
+  font-size: 0.95em;
+  line-height: 95%;
   margin-top: 15px;
   text-align: right;
 }
@@ -211,6 +230,9 @@
 }
 
 /* CONTRIBUTE */
+#sidebar-suggest {
+  border: none;
+}
 
 #sidebar-suggest-content {
   font-size: 0.9em;
@@ -226,6 +248,4 @@
 .main-image {
   width: 300px;
 }
-
-
 

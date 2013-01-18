@@ -6,22 +6,11 @@ from django.shortcuts import get_object_or_404
 from anthologist.forms import ContactForm
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
-import re
-
-#Utility function (used below) returning a string without initial articles, for sorting.
-def ignore_articles(string):
-    if string.startswith("the "):
-        return string[4:]
-    elif string.startswith("an "):
-        return string[3:]
-    elif string.startswith("a "):
-        return string[2:]
-    else:
-        return string
+from utils import ignore_articles, dumb_to_smart_quotes
 
 def selection(req, sel_slug):
     
-    #make the "most recent" menu item redirect to the actual url of the most recently entered selection
+    # 'Most recent' and 'random' will redirect to a random selection's page
     if sel_slug == 'most-recent' or sel_slug == 'random':
         if sel_slug == 'most-recent':
             selection = Selection.objects.latest('date_entered')
@@ -31,8 +20,9 @@ def selection(req, sel_slug):
         return redirect(url)   
     else:
         selection = get_object_or_404(Selection, slug=sel_slug)
-    tag_type_list = [ 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations' ] #determines categories in the sidebar
-    grouped_tags = [{ 'type': tag_type, 'tags': [] } for tag_type in tag_type_list ]
+    # the categories in the sidebar
+    tag_type_list = [ 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations' ]
+    grouped_tags = [ { 'type': tag_type, 'tags': [ ] } for tag_type in tag_type_list ]
     for item in grouped_tags:
         this_type = item['type']
         if this_type == 'forms':
@@ -41,12 +31,10 @@ def selection(req, sel_slug):
             item['tags'] = getattr(selection.source.author, this_type).all()
         else:
             item['tags'] = getattr(selection, this_type).all()
-        #re-order the tags by using ignore_articles() (defined above), so that, e.g., "the egg" comes in the "e" range, not the "t" range.
-        item['tags'] = sorted(item['tags'], key=lambda tag: ignore_articles(tag.name))
-        
-    
+        # sort the tags by using ignore_articles()
+        item['tags'] = sorted(item['tags'], key=lambda tag: ignore_articles(tag.name.lower()))
+    # get a random quotation from this selection to post as the highlight
     quotation = Quotation.objects.filter(selection=selection).order_by('?')[0]
-    
     return render_to_response('selection.jade', {
             'selection': selection,
             'grouped_tags': grouped_tags,
@@ -54,39 +42,51 @@ def selection(req, sel_slug):
         }, context_instance=RequestContext(req))
 
 def tag(req, tag_type, tag_slug):
+    # tag_type is going to come with a plural-s on the end
+    ftt = [ 'author', 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations', 'language'  ]
+    if tag_type == 'forms':
+        ftt.remove('forms')
+    elif tag_type == 'languages':
+        ftt.remove('language')
     tag_type = tag_type[:-1] #subtract the "s"
     if tag_type == 'author':
         tag = get_object_or_404(Author, slug=tag_slug)
         tag_type_json = json.dumps(tag_type)
-        related_tags = Author.objects.all() #order_by('last_name') is default in models.py
         all_selections = Selection.objects.filter(source__author=tag)
     else:
         tag = get_object_or_404(Tag, slug=tag_slug)
-        tag_type_json = json.dumps(tag.get_tag_type_display()) #necessary because tag_type returns an integer
-        related_tags = Tag.objects.filter(tag_type=tag.tag_type) #order_by('name') is default in models.py
-        x = str(tag.get_tag_type_display()) + 's'
-        kwargs = { x: tag }
+        # tag_type returns an integer; so get_tag_type_display() is necessary
+        tag_type_json = json.dumps(tag.get_tag_type_display())
+        #related_tags = Tag.objects.filter(tag_type=tag.tag_type) #order_by('name') is default in models.py
         if tag_type == 'language':
             all_selections = Selection.objects.filter(source__language=tag)
+        elif tag_type == 'form':
+            all_selections = Selection.objects.filter(source__forms=tag)
         elif tag_type == 'nation':
             all_selections = Selection.objects.filter(source__author__nations=tag)
         else:
+            x = str(tag.get_tag_type_display()) + 's'
+            kwargs = { x: tag }
             all_selections = Selection.objects.filter(**kwargs)
+
     return render_to_response('tag.jade', {
             'tag_type': tag_type,
             'tag': tag,
             'tag_type_json': tag_type_json,
-            'related_tags': related_tags,
+            #'related_tags': related_tags,
             'all_selections': all_selections,
-            'filter_tag_types': [ 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations', 'language'  ]
+            'filter_tag_types': ftt
         }, context_instance=RequestContext(req))
 
-category_array = [ 'selections', 'authors', 'timeline', 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations', 'languages', ]
+category_array = [ 'selections', 'authors', 'highlights', 'timeline', 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations', 'languages', ]
+
+from django.db.models import get_model
 
 def category(req, category):
     #this "exec" business necessary to use variable as model name in query
     code = 'tags = ' + str(category.capitalize()[:-1] + '.objects.all()')
     exec code
+    
     #Only accept tags that are active -- that is, attached to a relevant model (author to source, nation to author, etc.)
     filtered_tags = [ t for t in tags if t.is_active() ]
     return render_to_response('browse.jade', {
@@ -123,10 +123,8 @@ def timeline(req):
     }, context_instance=RequestContext(req))
 
 def resource(req):
-    link_categories = ExternalLinkCategory.objects.all().order_by('weight')
-    links = ExternalLink.objects.all()
+    link_categories = ExternalLinkCategory.objects.all()
     return render_to_response('resource.jade', {
-        'links': links,
         'link_categories': link_categories
     }, context_instance=RequestContext(req))
 
@@ -167,29 +165,22 @@ def thanks(req):
 def browse(req):
     return render_to_response('browse-base.jade', context_instance=RequestContext(req))
 
-def browse_specimens(req):
+def browse_highlights(req):
     return render_to_response('browse.jade', {
-        'category': 'specimens',
-        'category_json': json.dumps('specimens'),
+        'category': 'highlights',
+        'category_json': json.dumps('highlights'),
         'category_array': category_array
     }, context_instance=RequestContext(req))
 
-def dumbToSmartQuotes(string):
-    string = re.sub(r'([a-zA-Z0-9.,?!;:])"', r'\1&#8221;', string)
-    string = string.replace('"', '&#8220;')
-    string = re.sub(r"([a-zA-Z0-9.,?!;:])'", r'\1&#8217;', string)
-    string = string.replace("'", '&#8216;')
-    return string
-
-def specimen(req, q_id):
+def highlight(req, q_id):
     if q_id == 'random':
         quotation = Quotation.objects.order_by('?')[0]
-        url = '/specimens/' + str(quotation.pk)
+        url = '/highlights/' + str(quotation.pk)
         return redirect(url)   
     else:
         quotation = get_object_or_404(Quotation, pk=q_id)
-    text = dumbToSmartQuotes(str(quotation.quotation))
-    return render_to_response('specimen.jade', {
+    text = dumb_to_smart_quotes(str(quotation.quotation))
+    return render_to_response('highlight.jade', {
         'quotation': quotation,
         'text': text
     }, context_instance=RequestContext(req))

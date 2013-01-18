@@ -59,8 +59,8 @@ class SourceAdmin(admin.ModelAdmin):
     form = SourceForm
      
     list_display = ('__unicode__',)
-    search_fields = ['author__last_name', 'author__first_name', 'section_title', 'volume_title', 'language']
-    list_filter = ['author__last_name', 'language']
+    search_fields = ['author__last_name', 'author__first_name', 'section_title', 'volume_title']
+    list_filter = ['author__last_name']
 
 
 #selection

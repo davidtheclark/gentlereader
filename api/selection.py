@@ -14,6 +14,7 @@ def selection_set(req):
     #GET business for sorting
     sort_field = req.GET.get('sort', 'date_entered')
     direction = req.GET.get('direction', 'des')
+    display = req.GET.get('display', 'list_item')
     dir_mod = '-' if direction == 'des' else ''
     sorter = dir_mod
     if sort_field == 'author':
@@ -23,7 +24,7 @@ def selection_set(req):
     else:
         sorter += sort_field
     result_set = Selection.objects.all().order_by(sorter)
-    
+        
     #GET business for filtering
     filter_params = [ 'nations', 'language', 'forms', 'author', 'genres', 'contexts', 'topics', 'styles', 'source' ]
     for param in filter_params:
@@ -35,9 +36,11 @@ def selection_set(req):
                 if param in [ 'language', 'forms', 'author' ]: full_param = 'source__' + param
                 if param in [ 'genres', 'contexts', 'topics', 'styles', 'source' ]: full_param = param
                 result_set = result_set.filter(**{ full_param: it })
-    closure = req.GET.get('closure', 'true')
-    if closure == 'true':
+
+    if display == 'closure':
         result = [ sel.closure() for sel in result_set ]
+    elif display == 'list_item':
+        result = [ sel.list_item() for sel in result_set ]
     else:
         result = [ sel.toJSON() for sel in result_set ]
         

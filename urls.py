@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
 from anthologist.feeds import FullFeed
-from anthologist.sitemap import SelectionSitemap, AnnouncementSitemap, AuthorSitemap, TagSitemap
+from anthologist.sitemap import SelectionSitemap, AnnouncementSitemap, AuthorSitemap, TagSitemap, QuotationSitemap
 admin.autodiscover()
 
 # Data Access URLs
@@ -37,7 +37,8 @@ sitemaps = {
     'selection': SelectionSitemap,
     'announcement': AnnouncementSitemap,
     'author': AuthorSitemap,
-    'tag': TagSitemap
+    'tag': TagSitemap,
+    'highlight': QuotationSitemap
 }
 
 urlpatterns += patterns('django.contrib.sitemaps.views',
@@ -60,8 +61,8 @@ urlpatterns += patterns('anthologist.views',
     (r'^contribute/$', 'contribute'),
     (r'^thanks/$', 'thanks'),
     (r'^browse/$', 'browse'),
-    #(r'^specimens/$', 'browse_specimens'),
-    (r'^specimens/(?P<q_id>\d+|random)/$', 'specimen'),
+    (r'^highlights/$', 'browse_highlights'),
+    (r'^highlights/(?P<q_id>\d+|random)/$', 'highlight'),
     (r'^(?P<tag_type>[\w-]+)/(?P<tag_slug>[\w-]+)/$', 'tag'),
     (r'^(?P<category>[\w-]+)/$', 'category'),
 )

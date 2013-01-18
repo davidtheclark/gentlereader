@@ -4,8 +4,7 @@ block title
 	title Browse | the Anthologist
 
 block scripts
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-views.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-app.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/just-quot-main-built.js")
 
 block styles
 	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/contribute-main.css")
@@ -20,6 +19,8 @@ block content
 					a(href="/selections") all selections
 				li
 					a(href="/authors") authors
+				li
+					a(href="/highlights") highlights
 				li
 					a(href="/timeline") timeline
 				li

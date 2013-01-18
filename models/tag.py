@@ -1,12 +1,12 @@
 from django.db import models
 from anthologist.models import Author, Source, Selection
 
-TAG_TYPES = (
+TAG_TYPES = [
     (1, 'nation'), (2, 'language'),
     (3, 'form'), (4, 'genre'),
     (5, 'context'), (6, 'topic'),
     (7, 'style')             
-)
+]
 
 class DictionarySource(models.Model):
     class Meta:
@@ -23,7 +23,7 @@ class Tag(models.Model):
         ordering = ['name']
         app_label = 'anthologist'
         
-    name = models.CharField(max_length=100, help_text="Lowercase unless it's a proper noun.")  
+    name = models.CharField(max_length=100, help_text="Lowercase unless it's a proper noun. No punctuation.")  
     slug = models.SlugField(unique=True, help_text="Exclude initial articles and punctuation. Use lowercase and hyphenate.")
     tag_type = models.IntegerField(choices=TAG_TYPES)
     info_url = models.URLField(max_length=255, blank=True, null=True, help_text="Typically a Wikipedia article.")
@@ -53,9 +53,7 @@ class Tag(models.Model):
           name = self.name,
           slug = self.slug,
           tag_type = self.tag_type,
-          tag_type_display = self.get_tag_type_display(),
-          info_url = self.info_url,
-          description = self.description            
+          tag_type_display = self.get_tag_type_display(),       
         )
         
 class Objects():

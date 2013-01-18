@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
+from quotation import Quotation
 
 class Selection(models.Model):
     class Meta:
@@ -44,7 +45,6 @@ class Selection(models.Model):
         #Used to distinguish Announcements from Selections on the homepage, so that the lists can be merged
         #but each list-item is given a template corresponding to its model.
 
-        
     def toJSON(self):
         return dict(
             id = self.id,
@@ -64,8 +64,32 @@ class Selection(models.Model):
             class_name = self.class_name()      
         )
     
+    def list_item(self):
+        selection = dict(
+            id = self.id,
+            date_entered = self.date_entered.strftime("%d %B %Y, %H:%M"),
+            date_entered_microdata = self.date_entered.isoformat(),
+            date_entered_simple = self.date_entered.strftime("%m/%d/%y"),
+            teaser = self.teaser,
+            selection_title = self.selection_title,
+            slug = self.slug,
+            source_display = self.source_display(),
+            class_name = self.class_name(),
+            title = self.__unicode__(),
+            excerpt = self.excerpt 
+        )
+        s = selection['source'] = {}
+        s['root_work'] = self.source.root_work()
+        s['pub_year'] = self.source.pub_year
+        s['date_display'] = self.source.date_display()
+        a = s['author'] = {}
+        a['last_name'] = self.source.author.last_name
+        a['full_name'] = self.source.author.full_name()
+        a['slug'] = self.source.author.slug
+        return selection
+    
     def closure(self):
-        selection = self.toJSON()
+        selection = self.list_item()
         selection['source'] = self.source.closure()
         selection['nations'] = [ nation.toJSON() for nation in self.source.author.nations.all() ]
         selection['language'] = [ self.source.language.toJSON() ]
@@ -75,3 +99,17 @@ class Selection(models.Model):
         selection['topics'] = [ topic.toJSON() for topic in self.topics.all() ]
         selection['styles'] = [ style.toJSON() for style in self.styles.all() ]
         return selection
+    
+    def with_quotations(self):
+        sel = dict(
+            date_display = self.source.date_display(),
+            id = self.id,
+            date_entered = self.date_entered.strftime("%d %B %Y, %H:%M"),
+            excerpt = self.excerpt,
+            selection_title = self.selection_title,
+            slug = self.slug,
+            source_display = self.source_display(),
+            title = self.__unicode__(),
+        )
+        sel['quotations'] = [ q.toJSON() for q in Quotation.objects.filter(selection=self) ]
+        return sel    

@@ -5,13 +5,11 @@ block title
 
 block scripts
 	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/libraries/hyphenator.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/selection.js")
 	
-	// From sharethis.com
-	<script type="text/javascript">var switchTo5x=true;</script>
-	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-	<script type="text/javascript">stLight.options({publisher: "1f17416e-852e-4df7-a049-badc8989a78d"});</script>
-
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/selection-main.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/selection-main-built.js")
+	
 block styles
 	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/selection-main.css")
 	if selection.stylesheet
@@ -23,9 +21,11 @@ block head
 
 block content
 	#main(itemprop="mainContentOfPage")
-	
 		#close-sidebar.sidebar-toggle [close sidebar]
 		#open-sidebar.sidebar-toggle [open sidebar]	
+		#breadcrumb
+			span#breadcrumb-type selection
+			a(href="/selections/")#breadcrumb-browse &raquo; browse all selections
 			
 		article#main-content(itemscope, itemtype="http://schema.org/CreativeWork")		
 			{% autoescape off %}
@@ -72,3 +72,9 @@ block content
 				
 	#sidebar(itemscope, itemtype="http://www.schema.org/WPSideBar")
 		include includes/selection-sidebar.jade
+
+block bottomscripts
+	// From sharethis.com
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "1f17416e-852e-4df7-a049-badc8989a78d"});</script>

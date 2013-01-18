@@ -4,9 +4,6 @@ block title
 	title {{ tag|capfirst }} | the Anthologist
 
 block scripts
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/tag-views.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/tag-app.js")
-	
 	{% autoescape off %}
 	script(type="application/javascript")
 		| tagCategory = #{tag_type_json};
@@ -14,6 +11,10 @@ block scripts
 		| tagId = #{tag.pk};
 		| tagName = ((tagCategory != 'author') ? '#{tag.name}' : '#{tag.full_name}');
 	{% endautoescape %}
+	
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/tag-main.js")
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/tag-main-built.js")
 
 block styles
 	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/tag-main.css")
@@ -53,29 +54,30 @@ block content
 							| #{tag.dates}.
 							meta(itemprop="birthDate", content="#{tag.birth_year}")
 							meta(itemprop="deathDeath", content="#{tag.death_year}")
+							if tag.info_url
+								a(href="#{tag.info_url}", target="_blank").small-command learn more&nbsp;&raquo;
+						#view-highlights
+							a(href="/highlights/#author/#{tag.id}") &laquo; view highlights from #{tag.last_name}'s selections
 				else
 					h1(itemprop="name")= tag
-				{% autoescape off %}
-				if tag.description or tag.definition or tag.info_url
-					section#tag-info
-						if tag.definition
-							div(itemprop="description")!= tag.definition
-								if tag.dictionary_source
-									| &nbsp;[<cite><a href="#{tag.dictionary_source.link}" target="_blank">#{tag.dictionary_source}</a></cite>]
-						if tag.description
-							div(itemprop="description")!= tag.description
-						if tag.info_url
-							div
-								a(href="#{tag.info_url}", target="_blank") [Wikipedia article]
-				
-				{% endautoescape %}
+					{% autoescape off %}
+					if tag.description or tag.definition or tag.info_url
+						section#tag-info
+							div(itemprop="description")
+								if tag.definition
+									!{tag.definition}
+									if tag.dictionary_source
+										| [<cite><a href="#{tag.dictionary_source.link}" target="_blank">
+										| #{tag.dictionary_source}</a></cite>]
+								if tag.description
+									!{tag.description}
+								if tag.info_url
+									a(href="#{tag.info_url}", target="_blank").small-command
+										&nbsp;&lowast;&lowast;&lowast;&nbsp;learn more&nbsp;&raquo;
+					
+					{% endautoescape %}
 			
 			#adjustor-container
-				#showing-container.adjustor-subcontainer
-					label#showing-label.adjustor-section-label(for="showing-content-container") showing :
-					.adjustor-section-content results&nbsp;
-						span#showing-content
-					//filled by tag-app.js
 				
 				#sort-container.adjustor-subcontainer
 					label#sort-label.adjustor-section-label(for="sort-field") sort order :
@@ -92,10 +94,9 @@ block content
 				
 				#filter-container.adjustor-subcontainer
 					//filled by tag-app.js
+				#page-select-container.adjustor-subcontainer
 				
 			#sel-container
-				//Will be emptied and repopulated by timeline-app.js.
-				//Initial filling is for search engines, etc.
 				ul
 					for s in all_selections
 						li
@@ -108,18 +109,21 @@ block content
 								| (
 								span(itemprop="datePublished")= s.source.pub_year
 								| )
+			#bottom-pg-container
 			
 	#sidebar(itemscope, itemtype="http://www.schema.org/WPSideBar")
 		.sidebar-section
 			header
 				h2.sidebar-heading filter
 				.instructions Narrow the selection list by filtering for the following categories.
-			ul.related-tag-superlist(itemscope, itemtype="http://www.schema.org/ItemList")
+			ul.related-tag-superlist
 				for c in filter_tag_types
-					li(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList")
-						span(itemprop="name")
+					li(data-type="#{c}").filter-type
+						span
 							if c == 'language'
 								| orig. languages
+							elif c == 'author'
+								| authors
 							else
 								#{c}
 						ul(id="#{c}-tags").related-tag-list
@@ -130,7 +134,11 @@ block content
 			h2.sidebar-heading contribute
 			ul#suggest-selection
 				li
-					a(href="/contribute/?subject=selection%20for%20tag%20#{tag.pk}%20(#{tag})") another selection for this category
+					a(href="/contribute/?subject=selection%20for%20tag%20#{tag.pk}%20(#{tag})")
+						another selection for this category
+				li
+					a(href="/contribute/?subject=comment%20about%20tag%20#{tag.pk}")
+						a comment about this tag or its selections
 
 		
 			

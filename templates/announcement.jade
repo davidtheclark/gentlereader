@@ -7,13 +7,9 @@ block styles
 	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/announcement-main.css")
 
 block scripts
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-views.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-app.js")
-	
-	// From sharethis.com
-	<script type="text/javascript">var switchTo5x=true;</script>
-	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-	<script type="text/javascript">stLight.options({publisher: "1f17416e-852e-4df7-a049-badc8989a78d"});</script>
+	//<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require-config.js"></script>
+	//<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require.js" data-main="{{ STATIC_URL }}anthologist/js/just-quot-main.js"></script>
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/just-quot-main-built.js")	
 	
 block content
 	#main(itemprop="mainContentOfPage")
@@ -41,4 +37,9 @@ block content
 				<span class='st_email'></span>
 				<span class='st_sharethis'></span>
 		aside#quotation-container
-		
+
+block bottomscripts
+	// From sharethis.com
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "1f17416e-852e-4df7-a049-badc8989a78d"});</script>

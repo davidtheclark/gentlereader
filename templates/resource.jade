@@ -4,10 +4,9 @@ block title
 	title Links and Sources | the Anthologist
 
 block scripts
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/resource-views.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/resource-app.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-views.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-app.js")
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/resource-main.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/resource-main-built.js")	
 
 block styles
 	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/resource-main.css")
@@ -25,7 +24,7 @@ block content
 								a(href="#").resource-arrow-up
 							p(itemprop="description")!= cat.description
 						dl.link-sublist
-							for link in cat.externallink_set.all
+							for link in cat.links
 								dt(itemprop="itemListElement")
 									h3
 										a(href="#{link.url}", target="_blank")= link.name
@@ -46,7 +45,7 @@ block content
 						option(value="des") descending
 				
 				ul#source-list
-					//populated by resource-app.js
+
 	#sidebar
 		section
 			h2.sidebar-heading Resources types:

@@ -1,0 +1,19 @@
+section.sel-item
+	h2.sel-title
+		a(href="/selections/#{slug}")!= title
+	.sel-info
+		a(href="/authors/#{source.author.slug}")= source.author.full_name
+		| . 
+		if excerpt
+			| From !{source_display}. 
+		else if source.volume_title
+			| From !{source.root_work}. 
+		a(href="/timeline/##{source.pub_year}")= source.date_display
+		| . 
+		span.posted-date
+			| (Posted:
+			time(datetime="#{date_entered_microdata}")= date_entered
+			| )
+	.sel-teaser
+		span.sel-teaser-text.hyphenate(itemprop="description")!= teaser
+		a(href="/selections/#{slug}").read-rest &nbsp;&lowast;&lowast;&lowast;&nbsp;read&nbsp;on&nbsp;&raquo;

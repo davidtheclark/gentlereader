@@ -1,0 +1,22 @@
+#adjustor-container 
+	#sort-container.adjustor-subcontainer
+		label#sort-label(for="sort-field") sort order :
+		select#sort-field.sort-select
+			option(value="last_name") last name
+			option(value="birth_year") birth year
+		select#sort-direction.sort-select
+			option(value="asc")	ascending
+			option(value="des") descending
+	#page-select-container.adjustor-subcontainer
+#tag-container
+	ul#tag-list
+		<!--Will be emptied and repopulated by timeline-app.js.
+		Initial filling is for search engines, etc.-->
+		for author in tags
+			li(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/Person") 
+				meta(itemprop="familyName", content="#{author.last_name}")
+				meta(itemprop="givenName", content="#{author.first_name}")
+				meta(itemprop="birthDate", content="#{author.birth_year}")
+				meta(itemprop="deathDate", content="#{author.death_year}")
+				a(itemprop="url", href="/authors/#{author.slug}")
+					!{author.full_name} (!{author.dates})

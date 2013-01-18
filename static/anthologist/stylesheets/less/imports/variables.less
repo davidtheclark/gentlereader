@@ -1,10 +1,9 @@
-/*
- * LESS variables to be used in all stylesheets;
+ /* LESS variables to be used in all stylesheets;
  * also, classes that apply across pages
  */
 
 @standard-font: Calisto MT, Book Antiqua, serif;
-@menu-font: Helvetica, sans-serif;
+@menu-font: Tahoma, Helvetica, sans-serif;
 
 @header-color: #364719;
 
@@ -27,6 +26,9 @@
 }
 
 @gray-text: #484848;
+@thin-white: 1px solid white;
+@thin-dotted: 1px dotted black;
+@thin-header: 1px solid @header-color;
 
 .dot-leaders {
   float: left;
@@ -54,15 +56,20 @@
     }
     & span:first-child {
       padding-left: 0.3em;
+      
+      // solves a problem with i0S browsers seeing a dot to the right of the word 
+      padding-right: 0.3em;
+      margin-right: -0.2em;
+      
       background: @sidebar-color;
     }
   }
 }
 
-
-
-
-.bce { font-variant: small-caps; }
+.bce {
+  font-variant: small-caps;
+  padding: 0 !important;
+}
 
 .posted-date { font-size: 0.8em; }
 
@@ -81,6 +88,7 @@
 .ellipsis {
   font-style: normal;
   display: inline-block;
+  font-size: 0.7em !important;
 }
 
 .inline-translation {
@@ -144,7 +152,7 @@
 .browse-heading {
   padding: 0 10px;
   h1 {
-    border-bottom: 1px solid @header-color;
+    border-bottom: @thin-header;
     color: @highlight-color;
     font-size: 3em;
     margin-bottom: 20px;
@@ -152,5 +160,16 @@
     text-transform: uppercase;
   }
 }
-  
+
+.small-command {
+  font-family: @menu-font;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+.read-rest {
+  .small-command;
+  &:hover {
+    text-decoration: underline;
+  }
 }

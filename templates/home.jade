@@ -2,11 +2,10 @@ extends ./base.jade
 
 block scripts	
 	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/libraries/hyphenator.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/home-contents-views.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/home-contents-app.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/home.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-views.js")
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/quotation-box-app.js")
+	
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/home-main.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/home-main-built.js")
 	
 block styles
 	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/home-main.css")
@@ -39,7 +38,7 @@ block content
 	
 	#body-container
 		nav#sidebar(itemscope, itemtype="http://www.schema.org/SiteNavigationElement")
-			include includes/home-sidebar.jade
+			include includes/home-sidebar.html
 
 		section#recent-contents-container(itemprop="mainContentOfPage")
 			#recent-contents(itemscope, itemtype="http://www.schema.org/ItemList")
@@ -51,7 +50,6 @@ block content
 							option(value="selOnly") selections only
 							option(value="annOnly") announcements only
 				#list-container
-					//populated by home-contents-app.js
 				#recent-contents-followup-container
 					a(href="/selections").recent-contents-followup browse all selections
 					a(href="/announcements").recent-contents-followup browse all announcements

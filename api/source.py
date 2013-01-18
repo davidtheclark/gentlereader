@@ -22,7 +22,7 @@ def source_set(req):
         sorter += 'pub_year'
     result_set = Source.objects.all().order_by(sorter)
     
-    sources = [ source.closure() for source in result_set ]
+    sources = [ s.closure() for s in result_set if s.is_active() ]
     return HttpResponse(json.dumps(sources), content_type="application/json")
 
 def source(req, sourceId):

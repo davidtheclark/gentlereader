@@ -1,0 +1,15 @@
+for s in selections
+	section.sel-block
+		h3
+			span.hide-sel-quotes(data-sel="#{s.id}")
+			a(href="/selections/#{s.slug}") "#{s.title}"&nbsp;
+				span.sel-dates (#{s.date_display})
+		ul.quotation-list(data-sel="#{s.id}")
+			for q in s.quotations
+				li.quotation-list-item
+					span.quotation-marker &#8220;
+					a.quotation-text(href="/highlights/#{q.id}")!= q.quotation
+		.read-more
+			.show-quotations(data-sel="#{s.id}") view highlights from this selection &raquo;
+			div
+				a(href="/selections/#{s.slug}") read this full selection &raquo;

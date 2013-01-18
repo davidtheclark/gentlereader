@@ -1,0 +1,45 @@
+/* BOTTOM PAGINATOR */
+
+#bottom-pg-container {
+  text-align: center;
+}
+
+#bot-pgs {
+  margin-top: 10px;
+}
+
+.bot-pg,
+.bot-pg-chg {
+  color: @link-base;
+  cursor: pointer;
+  font-family: @menu-font;
+  font-size: 0.8em;
+  margin: 0 3px;
+  padding: 2px 4px;
+}
+
+.bot-pg {
+  border: 1px solid grey;
+  &:hover {
+    background-color: @highlight-color;
+    color: white;
+  }
+}
+
+.bot-pg-chg {
+  &:hover {
+    color: @highlight-color;
+    text-decoration: underline;
+  }
+}
+
+.bot-pg-selected {
+  color: black;
+  background-color: @even-sel-color;
+  font-weight: bold;
+}
+
+#bot-pg-changers {
+  margin-top: 5px;
+  font-variant: small-caps;
+}

@@ -1,6 +1,12 @@
 from django.db import models
 from django.utils.safestring import mark_safe
 
+def applyBCE(yr):
+    if yr < 0:
+        return str(abs(yr)) + '&nbsp;<span class="bce">bce</span>'
+    else:
+        return str(yr)
+
 class Author(models.Model):
     class Meta:
         ordering = ['last_name']
@@ -39,19 +45,18 @@ class Author(models.Model):
     
     def dates(self):
         date_content = list()
+        birth = ''
         if self.birth_modifier:
-            date_content.append(self.birth_modifier)
-        #BCE years are entered as negative integers, for ordering, but need to display as positive integers with BCE label.
-        if self.birth_year < 0:
-            yr = str(abs(self.birth_year)) + ' <span class="bce">bce</span>'
-        else:
-            yr = str(self.birth_year)
-        date_content.append(yr)
+            birth += self.birth_modifier + '&nbsp;'
+        birth += applyBCE(self.birth_year)
+        date_content.append(birth)
         if self.death_year:
             date_content.append('-')
+            death = ''
             if self.death_modifier:
-                date_content.append(self.death_modifier)
-            date_content.append(str(self.death_year))
+                death += self.death_modifier + '&nbsp;'
+            death += applyBCE(self.death_year)
+            date_content.append(death)
         result = ' '.join(date_content)
         return mark_safe(result)
         
@@ -74,6 +79,16 @@ class Author(models.Model):
             dates = self.dates(),
             #For the "browse" page
             tag_type_display = 'author'
+        )
+    
+    def list_item(self):
+        return dict(
+            id = self.id,
+            slug = self.slug,
+            last_name = self.last_name,
+            full_name = self.full_name(),
+            dates = self.dates(),
+            birth_year = self.birth_year
         )
         
     def closure(self):

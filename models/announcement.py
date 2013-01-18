@@ -1,7 +1,8 @@
 from django.db import models
 
 #from http://stackoverflow.com/questions/250357/smart-truncate-in-python
-def smart_truncate(content, length=400, suffix=' ...'):
+# "suffix" could be used to add ellipsis or something else.
+def smart_truncate(content, length=400, suffix=''):
     if len(content) <= length:
         return content
     else:

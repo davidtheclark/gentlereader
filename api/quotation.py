@@ -15,7 +15,13 @@ def quotation_set(req, Selection, SelectionId):
 
 def quotation(req, quotationId):
     if quotationId == 'random':
-        quotation = Quotation.objects.order_by('?')[0]
+        quant = req.GET.get('quantity', '1')
+        quant = int(quant)
+        quotations = Quotation.objects.order_by('?')[0:quant]
+        if len(quotations) > 1:
+            results = [ q.closure() for q in quotations ]
+        else:
+            results = quotations[0].closure()
     else:
-        quotation = get_object_or_404(Quotation, pk=quotationId)
-    return HttpResponse(json.dumps(quotation.closure()), content_type="application/json")
+        results = get_object_or_404(Quotation, pk=quotationId).closure()
+    return HttpResponse(json.dumps(results), content_type="application/json")

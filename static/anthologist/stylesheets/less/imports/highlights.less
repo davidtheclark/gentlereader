@@ -1,0 +1,146 @@
+#site-content-container { background-color: @sidebar-color; }
+
+#main {
+  background-color: white;
+  float: left;
+  min-height: 450px;
+  width: 75%;
+}
+
+#sidebar {
+  width: 25%;
+  float: right;
+}
+
+/*-------------
+ * MAIN
+ *------------*/
+
+#main-content {
+  padding: 15px;
+}
+
+/* HEADER */
+
+#main-heading {
+  .browse-heading;
+  h1 {
+    border: none;
+    margin-bottom: 5px;
+  }
+  border-bottom: @thin-header;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  width: 600px;
+}
+
+#main-description {
+  text-align: center;  
+}
+
+/* QUOTATION */
+
+.quotation-marker {
+  color: @highlight-color;
+  font-size: 3.5em;
+  margin-top: -10px;
+}
+
+#left-marker {
+  float: left;
+  width: 50px;
+}
+
+#right-marker {
+  float: right;
+  width: 50px;
+}
+
+#quotation-text {
+  font-family: 'IM Fell English', 'Calisto MT', Times, serif;
+  font-size: 1.5em;
+  margin: 40px auto;
+  max-width: 600px;
+   p {
+    margin-bottom: 0;
+    text-indent: 20px;   
+  }
+  p:first-child {
+    text-indent: 0;
+  }
+}
+
+#quotation-text-content {
+  margin: 0 50px;
+}
+
+#quotation-citation {
+  display: block;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 500px;
+}
+
+#read-full {
+  .small-command;
+  font-size: 0.8em;
+  &:before,
+  &:after {
+    content: '\2217\2217\2217';
+  }
+}
+
+/*--------------
+ * SIDEBAR
+ * -------------*/
+
+.sidebar-section {
+  border-bottom: @thin-white;
+  padding: 15px;
+  
+}
+
+.sidebar-heading {
+  color: @highlight-color;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* SHARE */
+
+#sidebar-share {
+  border: none;
+}
+.share-icons {
+  text-align: center;
+}
+
+/* READ ON */
+
+#read-on-links h2 {
+  padding: 15px 15px 5px 15px;
+}
+
+#sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar-block {
+  background-color: @sidebar-color;
+  border-bottom: @thin-white;
+  a {
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    &:hover {
+      background-color: lighten(@sidebar-color, 10%);
+      color: @highlight-color;
+    }
+  }
+  &:first-child {
+    border-top: @thin-white;
+  }
+}

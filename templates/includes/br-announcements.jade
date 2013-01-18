@@ -1,0 +1,19 @@
+#announcement-container
+	{% autoescape off %}
+	for a in announcements
+		.ann-list-item(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/BlogPosting")
+			header.ann-list-title
+				h2
+					a(href="../announcements/#{a.slug}", itemprop="url")
+						span(itemprop="headline")!= a.title
+				span.posted-date
+					| &raquo;
+					span(itemprop="dateCreated", content="#{a.date_entered.isoformat()}")= a.date_entered|date:"d F Y, P"
+			.ann-list-body
+				if a.text|wordcount > 150
+					p
+						span(itemprop="description")!= a.text|truncatewords_html:200
+						a(href="/announcements/#{a.slug}").read-more-ann &lowast;&lowast;&lowast;&nbsp;read the rest&nbsp;&raquo;
+				else 
+					p(itemprop="description")!= a.text
+	{% endautoescape %}

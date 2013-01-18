@@ -1,4 +1,5 @@
 from django.db import models
+from ..utils import ignore_articles
 
 class ExternalLinkCategory(models.Model):
     class Meta:
@@ -9,7 +10,12 @@ class ExternalLinkCategory(models.Model):
     weight = models.IntegerField(max_length=2)
     
     def __unicode__(self):
-        return self.name        
+        return self.name
+    
+    def links(self):
+        l_set = self.externallink_set.all()
+        results = sorted(l_set, key=lambda link: ignore_articles(link.name.lower()))
+        return results
     
 class ExternalLink(models.Model):
     class Meta:
