@@ -4,10 +4,8 @@ section.sel-item
 	.sel-info
 		a(href="/authors/#{source.author.slug}")= source.author.full_name
 		| . 
-		if excerpt
-			| From !{source_display}. 
-		else if source.volume_title
-			| From !{source.root_work}. 
+		if from_display
+			| !{from_display} 
 		a(href="/timeline/##{source.pub_year}")= source.date_display
 		| . 
 		span.posted-date

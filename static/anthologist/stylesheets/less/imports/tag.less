@@ -67,8 +67,7 @@ h1 {
     li {
       display: inline;
       &+li:before {
-        content: "\2022 \0020";
-        
+        content: "\2022\00a0";
       }
     }
   }
@@ -168,7 +167,15 @@ b.def-altword {
 
 .instructions { 
   font-size: 0.9em;
-  margin-bottom: 20px; 
+  margin-bottom: 15px; 
+}
+
+#only-one-warning {
+  font-size: 0.9em;
+  font-style: italic;
+  &:before {
+    content: '\00BB\00a0';
+  }
 }
 
 .filter-type {

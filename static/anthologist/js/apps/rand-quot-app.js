@@ -2,9 +2,10 @@ define(['jquery'],
         
     function ($) {
 		
-		var container = $('#quotation-container');
+		var container;
 
-		var initialize = function () {
+		var app = function (cont) {
+			container = cont || $('#quotation-container');
 			layout();
 			enableNew();
 			getQuot();
@@ -75,9 +76,11 @@ define(['jquery'],
 			$('#read-quotation-sel').empty()
 				.append(followup)
 			/* Fade-in the now re-populated container. */
-			container.fadeIn('fast');
+			container.fadeIn('fast', function () {
+				$('#sidebar').css('min-height', $('#sidebar').height());
+			});
 		};
 		
-		return initialize;		
+		return app;		
 	}
 );

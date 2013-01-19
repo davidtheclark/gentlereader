@@ -10,14 +10,16 @@ JUST_QUOT="include=just-quot-main out=../just-quot-main-built.js"
 RESOURCE="include=resource-main out=../resource-main-built.js"
 SEL="include=selection-main out=../selection-main-built.js"
 TAG="include=tag-main out=../tag-main-built.js"
+QUOTATION="include=quotation-main out=../quotation-main-built.js"
 
-node libraries/r.js -o ../configs/gen-config.js $BR_AUTH
-node libraries/r.js -o ../configs/gen-config.js $BR_TAG
-node libraries/r.js -o ../configs/gen-config.js $BR_QUOT
-node libraries/r.js -o ../configs/gen-config.js $BR_SEL
-node libraries/r.js -o ../configs/gen-config.js $BR_TIME
-node libraries/r.js -o ../configs/gen-config.js $HOME
-node libraries/r.js -o ../configs/gen-config.js $JUST_QUOT
-node libraries/r.js -o ../configs/gen-config.js $RESOURCE
-node libraries/r.js -o ../configs/gen-config.js $SEL
-node libraries/r.js -o ../configs/gen-config.js $TAG
+node ../../js/libraries/r.js -o ../configs/gen-config.js $BR_AUTH
+node ../../js/libraries/r.js -o ../configs/gen-config.js $BR_TAG
+node ../../js/libraries/r.js -o ../configs/gen-config.js $BR_QUOT
+node ../../js/libraries/r.js -o ../configs/gen-config.js $BR_SEL
+node ../../js/libraries/r.js -o ../configs/gen-config.js $BR_TIME
+node ../../js/libraries/r.js -o ../configs/gen-config.js $HOME
+node ../../js/libraries/r.js -o ../configs/gen-config.js $JUST_QUOT
+node ../../js/libraries/r.js -o ../configs/gen-config.js $RESOURCE
+node ../../js/libraries/r.js -o ../configs/gen-config.js $SEL
+node ../../js/libraries/r.js -o ../configs/gen-config.js $TAG
+node ../../js/libraries/r.js -o ../configs/gen-config.js $QUOTATION

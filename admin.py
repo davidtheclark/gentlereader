@@ -47,6 +47,22 @@ class SourceForm(forms.ModelForm):
             tags = value.objects.all()
             fld = self.fields[key].widget
             fld.choices = [ (tag.id, tag.__unicode__()) for tag in tags ]
+    
+    def clean(self):
+        cleaned_data = super(SourceForm, self).clean()
+        section_title = cleaned_data.get("section_title")
+        volume_title = cleaned_data.get("volume_title")
+        if not section_title and not volume_title:
+            raise forms.ValidationError("You must enter either a 'Volume title' or a 'Section title'.")
+        lang = cleaned_data.get("language").name
+        translator = cleaned_data.get("translator")
+        trans_year = cleaned_data.get("translation_year")
+        # 21 is the pl for "English"
+        if lang != "English" and not translator:
+            raise forms.ValidationError("If the original 'Language' is not English, you must designate a 'Translator'.")
+        if lang != "English" and not trans_year:
+            raise forms.ValidationError("If the original 'Language' is not English, you must designate a 'Translation year'.")
+        return cleaned_data
             
 class SourceAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -87,6 +103,17 @@ class SelectionForm(forms.ModelForm):
             tags = value.objects.all()
             fld = self.fields[key].widget
             fld.choices = [ (tag.id, tag.__unicode__()) for tag in tags ]
+    
+    def clean(self):
+        cleaned_data = super(SelectionForm, self).clean()
+        selection_title = cleaned_data.get("selection_title")
+        from_section = cleaned_data.get("from_section")
+        excerpt = cleaned_data.get("excerpt")
+        if from_section and not selection_title:
+            raise forms.ValidationError("If you've entered a 'From section' value, you must also enter a 'Selection title'.")
+        if from_section and not excerpt:
+            raise forms.ValidationError("If you've entered a 'From section' value, the selection must be designated an 'Excerpt'.")
+        return cleaned_data
 
 class ImageInline(admin.StackedInline):
     model = Image
@@ -95,7 +122,7 @@ class ImageInline(admin.StackedInline):
 class SelectionAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Text', { 'fields': [ 'text', 'teaser' ] }),
-        ('Vitals', { 'fields': [ 'selection_title', 'source', 'slug', 'excerpt', 'comment_intro', 'comment_text', 'stylesheet' ] }),
+        ('Vitals', { 'fields': [ 'selection_title', 'source', 'slug', 'excerpt', 'from_section', 'comment_intro', 'comment_text', 'stylesheet' ] }),
         ('Tags', { 'fields': [ 'genres', 'contexts', 'topics', 'styles' ] })
     ]
     filter_horizontal = [ fld for fld in m.keys() ]

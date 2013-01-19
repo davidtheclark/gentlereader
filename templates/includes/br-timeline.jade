@@ -5,6 +5,7 @@
 			option(value="asc") ascending
 			option(value="des") descending
 #timeline-sel-container
+	{% autoescape off %}
 	ul
 		<!--Will be emptied and repopulated by timeline-app.js.-->
 		for s in all_selections
@@ -15,3 +16,4 @@
 			li.timeline-sel-item(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/CreativeWork")
 				include includes/br-timeline-item.jade
 			{% endif %}
+	{% endautoescape %}

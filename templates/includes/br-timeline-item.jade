@@ -15,8 +15,8 @@ h2(id="#{s.source.pub_year}").timeline-date!= s.source.date_display
 			a(href="/authors/#{s.source.author.slug}", itemprop="url)
 				span(itemprop="name")= s.source.author.full_name
 		| .
-		if s.excerpt == true
-			| From !{s.source_display}.
+		if s.from_display
+			| !{s.from_display} 
 	span.posted-date
 		| (Posted:
 		| <time itemprop="datePublished" datetime="{{s.date_entered|date:'c'}}">{{s.date_entered|date:'d F Y, H:i'}}</time>)
@@ -25,6 +25,5 @@ h2(id="#{s.source.pub_year}").timeline-date!= s.source.date_display
 		{% autoescape off %}
 		span.timeline-teaser-text(itemprop="description")!= s.teaser
 		{% endautoescape %}
-		| &nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
 		a(href="/selections/#{s.slug}")
-			span.read-rest read on &raquo;
+			span.read-rest &nbsp;&lowast;&lowast;&lowast;&nbsp;read&nbsp;on&nbsp;&raquo;

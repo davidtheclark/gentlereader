@@ -15,9 +15,9 @@
 #footnotes {
   border-top: 1px dotted black;
   font-size: 0.8em;
+  margin: 0 20px;
+  padding: 40px 20px;
   .poem-quote { font-size: 1em; }
-  margin: 40px;
-  ol li { margin-top: 1em; }
 }
 
 .indented-line { text-indent: 10px; }

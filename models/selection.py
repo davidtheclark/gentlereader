@@ -9,14 +9,15 @@ class Selection(models.Model):
         
     date_entered = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
-    text = models.TextField(null=True, help_text="For subheadings within the selection, use a &lt;div&gt; element with class 'sel-body-subheading'.")
+    text = models.TextField(null=True, help_text="For subsections, use &lt;section&gt; tags. For subheadings within the selection, use a &lt;div&gt; element with class 'sel-body-subheading', FOLLOWED BY a &lt;section&gt;.")
     teaser = models.TextField(null=True)
     comment_intro = models.TextField(blank=True, null=True, help_text="Comment to introduce the selection to the reader.")
     comment_text = models.TextField(blank=True, null=True, help_text="Comment to describe the textual source, proofreading, editing, &amp;c.")
     source = models.ForeignKey('Source')
-    excerpt = models.BooleanField(help_text="Is the selection an excerpt (checked) or a complete text (unchecked)?")
+    excerpt = models.BooleanField(help_text="Is the selection an excerpt (checked) or a complete short text (unchecked)?")
+    from_section = models.CharField(max_length=100, blank=True, null=True, help_text="IF SELECTION IS AN EXCERPT (and has a selection_title), optionally provide a name for the section (of the source volume) from which it's excerpted. To be displayed as 'selection_title,' from 'from_section'.")
     selection_title = models.CharField(max_length=100, blank=True, null=True,
-                                       help_text="If desired, add a title more suitable for the excerpt than the source's title. Necessary if source has no section_title.")
+                                       help_text="A title for the selection, either the title of the section, included in its entirety, of the source volume, or an original title. Necessary if the selection is an excerpt or if the source is just a volume. If the source has a section_title attribute, this field is optional, the selection's title will refer back to the source section.")
     genres = models.ManyToManyField('Tag', related_name='genre_selections', blank=True)
     contexts = models.ManyToManyField('Tag', related_name='context_selections', blank=True)
     topics = models.ManyToManyField('Tag', related_name='topic_selections', blank=True)
@@ -39,7 +40,22 @@ class Selection(models.Model):
             return self.selection_title
         else:
             return self.source.section_title
-        
+    
+    def from_display(self):
+        fr = self.from_section
+        sv = self.source.root_work()
+        if self.selection_title:
+            result = 'From '
+            if fr and sv:
+                result += '"' + fr + '" in '
+            if sv:
+                result += self.source.root_work()
+            if self.source.root_work()[-1:] != '?':
+                result += '.'
+            return result
+        else:
+            return 
+     
     def class_name(self):
         return 'Selection'
         #Used to distinguish Announcements from Selections on the homepage, so that the lists can be merged
@@ -74,6 +90,7 @@ class Selection(models.Model):
             selection_title = self.selection_title,
             slug = self.slug,
             source_display = self.source_display(),
+            from_display = self.from_display(),
             class_name = self.class_name(),
             title = self.__unicode__(),
             excerpt = self.excerpt 

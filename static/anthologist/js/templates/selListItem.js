@@ -17,13 +17,9 @@ buf.push('>');
 var __val__ = source.author.full_name
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</a>. ');
-if ( excerpt)
+if ( from_display)
 {
-buf.push('From ' + ((interp = source_display) == null ? '' : interp) + '. ');
-}
-else if ( source.volume_title)
-{
-buf.push('From ' + ((interp = source.root_work) == null ? '' : interp) + '. ');
+buf.push('' + ((interp = from_display) == null ? '' : interp) + ' ');
 }
 buf.push('<a');
 buf.push(attrs({ 'href':("/timeline/#" + (source.pub_year) + "") }, {"href":true}));

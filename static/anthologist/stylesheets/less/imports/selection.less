@@ -73,13 +73,43 @@
   max-width: 425px; //adjustable
   text-align: justify; //adjustable
   p { line-height: 150%; }
+  section { margin-bottom: 4em; }
+  section>:first-child:first-letter {
+    .drop-cap;     
+  }
+  &>:first-child:not(div):first-letter {
+    .drop-cap;
+  }
+}
+
+.drop-cap {
+  float: left;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  text-transform: uppercase;
 }
 
 .sel-body-subheading {
   font-variant: small-caps;
   font-weight: bold;
-  margin: 1.5em 0 1em 0;
+  margin: 0 0 1em 0;
   text-align: center;
+}
+
+
+.in-text-comment {
+  font-size: 0.9em;
+  font-style: italic;
+  margin: 1em 60px;
+  &:before {
+    content: "\2217\2217\2217\0020";
+  }
+  &:after {
+    content: "\0020\2217\2217\2217";
+  }
 }
 
 /*SIDEBAR TOGGLES*/
@@ -248,4 +278,3 @@
 .main-image {
   width: 300px;
 }
-

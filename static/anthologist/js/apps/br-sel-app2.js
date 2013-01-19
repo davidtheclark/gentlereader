@@ -6,9 +6,10 @@ define(['backbone',
         'views/bottom-paginator',
         'utils/pagination-details',
         'utils/sort-asc-des',
-        'utils/globals'],
+        'utils/globals',
+        'utils/loading-loader'],
 		
-	function (Backbone, Collection, Router, renderCol, PgSelectView, BottomPaginator, paginationDetails, sortAscDes, globals) {
+	function (Backbone, Collection, Router, renderCol, PgSelectView, BottomPaginator, paginationDetails, sortAscDes, globals, loader) {
 		var globals = globals.getGlobals();
 		var cont = $('#sel-container');
 		var BrSelApp = Backbone.View.extend({
@@ -38,6 +39,7 @@ define(['backbone',
 			getCollection: function (onInitialize) {
 				var self = this;
 				var col = self.collection = new Collection();
+				loader.addLoader();
 				col.fetch({
 					success: function () {
 						/* Calculate page parameters (starting and stopping points.
@@ -84,6 +86,7 @@ define(['backbone',
 					pageDetails: this.pageDetails,
 					container: cont
 				});
+				loader.removeLoader();
 			},
 			bottomPaginator: function (pg) {
 				/* Removed and re-created whenever the page changes. */

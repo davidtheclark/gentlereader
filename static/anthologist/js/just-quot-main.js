@@ -1,8 +1,7 @@
-require(['backbone',
-         'apps/rand-quot-app',
+require(['apps/rand-quot-app',
          'apps/copyright-app'],
 	
-	function (Backbone, RandQuotApp, cr) {
+	function (RandQuotApp, cr) {
 		RandQuotApp();
 		cr();
 	}

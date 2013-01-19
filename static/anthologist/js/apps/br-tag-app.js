@@ -5,9 +5,10 @@ define(['backbone',
         'utils/pagination-details',
         'views/pg-select-view',
         'views/bottom-paginator',
-        'utils/globals'],
+        'utils/globals',
+        'utils/loading-loader'],
 
-	function (Backbone, BrTagRouter, TagSet, renderTagCol, paginationDetails, PgSelectView, BottomPaginator, globals) {
+	function (Backbone, BrTagRouter, TagSet, renderTagCol, paginationDetails, PgSelectView, BottomPaginator, globals, loader) {
 		var globals = globals.getGlobals();
 		var cont = $('#tag-list');
 		var BrTagApp = Backbone.View.extend({
@@ -26,6 +27,7 @@ define(['backbone',
 				var tSet = self.tagSet = new TagSet();
 				// Variable "tagType" created in script in browse.jade
 				tSet.url = '/api/' + self.dataType;
+				loader.addLoader();
 				tSet.fetch({
 					success: function () {
 						/* First, populate all tags, since initial view is "all";
@@ -57,6 +59,7 @@ define(['backbone',
 					pageDetails: this.pageDetails,
 					container: cont
 				});
+				loader.removeLoader();
 			},
 			setPages: function () {
 				var pgParams = paginationDetails(this.tagSet, this.itemsPerPage);

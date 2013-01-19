@@ -1,17 +1,19 @@
 define(['backbone',
+        'apps/rand-quot-app',
         'models/tag-set',
         'models/tag-filter-set',
         'views/filters-view',
         'models/sel-set',
         'utils/pagination-details',
         'utils/globals',
+        'utils/loading-loader',
         'views/sel-view',
         'views/pg-select-view',
         'views/tag-faceted-view',
         'views/bottom-paginator',
         'routers/br-sorting-router'],
 
-	function (Backbone, TagSet, TagFilterSet, FiltersView, SelectionSet, paginationDetails, globals, renderSelCol, PgSelectView, TagFacetedView, BottomPaginator, Router) {
+	function (Backbone, RandQuotApp, TagSet, TagFilterSet, FiltersView, SelectionSet, paginationDetails, globals, loader, renderSelCol, PgSelectView, TagFacetedView, BottomPaginator, Router) {
 		var tagTypesArray = [ 'author', 'language', 'nations', 'forms', 'contexts', 'genres', 'topics', 'styles' ];
 		var globals = globals.getGlobals();
 		var cont = $('#sel-container');
@@ -65,11 +67,13 @@ define(['backbone',
 				this.currentQueryObject[tagCategory] = [ tagId ];
 			},
 			getSelections: function (onInitialize) {
-				/* This fucntion is called by initialize() and adjustCurrentQueryObject(). */
+				/* This function is called by initialize() and adjustCurrentQueryObject(). */
 				var self = this;
-				/* app.selectionSet is the complete, sorted selection set based
-				 * on the queryObject. */
+				/* If we are coming from a one-selection-set to a many-selection-set,
+				 * populatePg must know.*/
+				self.oldSetVal = (self.selectionSet) ? self.selectionSet.length : null;
 				var selSet = self.selectionSet = new SelectionSet(null, { query: self.currentQueryObject });
+				loader.addLoader();
 				selSet.fetch({
 					success: function (set, response) {
 						/* If there is more than one selection, show the
@@ -109,7 +113,7 @@ define(['backbone',
 							self.populatePg('all');
 						}
 					}
-				})
+				});
 			},
 			setPages: function () {
 				var pageParameters = paginationDetails(this.selectionSet, this.itemsPerPage);
@@ -119,7 +123,7 @@ define(['backbone',
 			populatePg: function (pg) {
 				var self = this;
 				renderSelCol({
-					collection: this.selectionSet,
+					collection: self.selectionSet,
 					page: pg,
 					container: $('#sel-container'),
 					pageDetails: self.pageDetails
@@ -134,8 +138,18 @@ define(['backbone',
 					}
 				}
 				/* Get and render the tag-filters. */
-				self.generateUniqueTags();
-				self.renderTags();
+				if (self.selectionSet.length > 1) {
+					if (self.oldSetVal === 1) {
+						self.fromOneToMany();
+					}
+					self.generateUniqueTags();
+					self.renderTags();
+				} else {
+					if (self.oldSetVal != 1) {
+						self.onlyOneSelection();
+					}
+				}
+				loader.removeLoader();
 			},
 			getPageSelect: function () {
 				/* Get and show the page-select. */
@@ -286,6 +300,29 @@ define(['backbone',
 					sortField: this.currentQueryObject.sort,
 					sortDir: this.currentQueryObject.direction
 				});
+			},
+			onlyOneSelection: function () {
+				/* Called if the selectionSet (whether initially or after filtering)
+				 * only contains one selection. Filters are
+				 * hidden from the sidebar, replaced with a short message and a random
+				 * highlight. */
+				$('.related-tag-superlist').fadeOut('fast');
+				$('<div />').insertAfter('.instructions')
+					.attr('id', 'only-one-warning')
+					.html("There's only one selection showing; so no need for filters.");
+				$('#sidebar-contribute').css('border-bottom', '1px solid white');
+				$('<div />').insertAfter('#sidebar-contribute')
+					.attr('id', 'quotation-container');
+				RandQuotApp();
+			},
+			fromOneToMany: function () {
+				/* Called if the selectionSet was filtered down to one selection
+				 * (calling onlyOneSelection) and then the filters were cleared.
+				 * Filters are shown in the sidebar and the elements added by
+				 * onlyOneSelection are removed. */
+				$('.related-tag-superlist').fadeIn('fast');
+				$('#only-one-warning, #quotation-container').remove();
+				$('#sidebar-contribute').css('border-bottom', 'none');
 			}
 		});
 		return TagApp;

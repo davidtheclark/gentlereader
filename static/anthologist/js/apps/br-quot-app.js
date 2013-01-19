@@ -128,7 +128,7 @@ define(['backbone',
 				shower.fadeToggle('fast', function () {
 					qList.css({
 						'margin-left': '260px',
-						'font-size': '1em'
+						'font-size': '0.9em'
 					});
 					aCont.fadeIn('fast');
 					hider.fadeToggle('fast');
@@ -139,7 +139,7 @@ define(['backbone',
 					hider.fadeToggle('fast', function () {
 						qList.css({
 							'margin-left': '20px',
-							'font-size': '1.1em'
+							'font-size': '1em'
 						});
 						shower.fadeToggle('fast');
 					});

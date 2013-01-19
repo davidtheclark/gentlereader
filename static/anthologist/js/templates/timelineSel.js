@@ -22,14 +22,14 @@ buf.push('>');
 var __val__ = source.author.full_name
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</a>. ');
-if ( excerpt == true)
+if ( from_display)
 {
-buf.push('From ' + ((interp = source_display) == null ? '' : interp) + '. ');
+buf.push('' + ((interp = from_display) == null ? '' : interp) + ' ');
 }
 buf.push('</span><span class="posted-date">(Posted: ' + escape((interp = date_entered) == null ? '' : interp) + ')&nbsp;</span><span class="toggle-teaser">[See the teaser <span class="arrow-down"></span>]</span>\n  <div class="timeline-teaser"><span class="timeline-teaser-text">');
 var __val__ = teaser
 buf.push(null == __val__ ? "" : __val__);
-buf.push('</span>&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;<a');
+buf.push('</span><a');
 buf.push(attrs({ 'href':("/selections/" + (slug) + ""), "class": ('read-rest') }, {"href":true}));
 buf.push('>&nbsp;&lowast;&lowast;&lowast;&nbsp;read&nbsp;on&nbsp;&raquo;</a></div>\n</div>');
 }

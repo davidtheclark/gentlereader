@@ -9,7 +9,7 @@ class Source(models.Model):
     author = models.ForeignKey('Author')
     section_title = models.CharField(max_length=500, blank=True, null=True)
     volume_title = models.CharField(max_length=500, blank=True, null=True,
-                                    help_text="Source MUST have either a volume or section title, though neither is independently required.")    
+                                    help_text="Source MUST have EITHER a volume or section title, though neither is independently required. NOT BOTH. Use section title ONLY if there is no relevant, author-authored volume (e.g. a magazine publication). If there is a volume and we want to keep track of the section, that will be done by selection, not source.")
     language = models.ForeignKey('Tag', related_name='language_sources', blank=True, null=True)
     translator = models.CharField(max_length=60, blank=True, null=True, help_text="First then last name.")
     translation_year = models.IntegerField(max_length=4, blank=True, null=True)

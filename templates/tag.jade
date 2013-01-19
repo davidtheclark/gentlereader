@@ -12,9 +12,9 @@ block scripts
 		| tagName = ((tagCategory != 'author') ? '#{tag.name}' : '#{tag.full_name}');
 	{% endautoescape %}
 	
-	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
-	script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/tag-main.js")
-	//script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/tag-main-built.js")
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/tag-main.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/tag-main-built.js")
 
 block styles
 	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/tag-main.css")
@@ -55,7 +55,7 @@ block content
 							meta(itemprop="birthDate", content="#{tag.birth_year}")
 							meta(itemprop="deathDeath", content="#{tag.death_year}")
 							if tag.info_url
-								a(href="#{tag.info_url}", target="_blank").small-command learn more&nbsp;&raquo;
+								a(href="#{tag.info_url}", target="_blank").small-command learn&nbsp;more&nbsp;&raquo;
 						#view-highlights
 							a(href="/highlights/#author/#{tag.id}") &laquo; view highlights from #{tag.last_name}'s selections
 				else
@@ -67,13 +67,11 @@ block content
 								if tag.definition
 									!{tag.definition}
 									if tag.dictionary_source
-										| [<cite><a href="#{tag.dictionary_source.link}" target="_blank">
-										| #{tag.dictionary_source}</a></cite>]
+										| [<cite><a href="#{tag.dictionary_source.link}" target="_blank">#{tag.dictionary_source}</a></cite>]
 								if tag.description
 									!{tag.description}
 								if tag.info_url
-									a(href="#{tag.info_url}", target="_blank").small-command
-										&nbsp;&lowast;&lowast;&lowast;&nbsp;learn more&nbsp;&raquo;
+									a(href="#{tag.info_url}", target="_blank").small-command &nbsp;&lowast;&lowast;&lowast;&nbsp;learn&nbsp;more&nbsp;&raquo;
 					
 					{% endautoescape %}
 			
@@ -134,11 +132,9 @@ block content
 			h2.sidebar-heading contribute
 			ul#suggest-selection
 				li
-					a(href="/contribute/?subject=selection%20for%20tag%20#{tag.pk}%20(#{tag})")
-						another selection for this category
+					a(href="/contribute/?subject=selection%20for%20tag%20#{tag.pk}%20(#{tag})") another selection for this category
 				li
-					a(href="/contribute/?subject=comment%20about%20tag%20#{tag.pk}")
-						a comment about this tag or its selections
+					a(href="/contribute/?subject=comment%20about%20tag%20#{tag.pk}") a comment about this tag or its selections
 
 		
 			

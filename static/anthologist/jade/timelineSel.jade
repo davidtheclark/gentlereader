@@ -9,12 +9,11 @@ h2(id="#{source.pub_year}").timeline-date= source.date_display
 		| by 
 		a(href="/authors/#{source.author.slug}")= source.author.full_name
 		| . 
-		if excerpt == true
-			| From !{source_display}. 
+		if from_display
+			| !{from_display} 
 	span.posted-date
 		| (Posted: #{date_entered})&nbsp;
 	span.toggle-teaser [See the teaser <span class="arrow-down"></span>]
 	.timeline-teaser
 		span.timeline-teaser-text!= teaser
-		| &nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
 		a(href="/selections/#{slug}").read-rest &nbsp;&lowast;&lowast;&lowast;&nbsp;read&nbsp;on&nbsp;&raquo;

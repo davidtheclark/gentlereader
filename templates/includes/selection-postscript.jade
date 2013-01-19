@@ -12,12 +12,12 @@ p#follow-up
 		| #{selection.source.root_work}:
 
 	ul#resource-list
-		if selection.source.digital_text
-			li
-				a(href="#{selection.source.digital_text}", target="_blank") digitized edition
 		if selection.source.scanned_text
 			li
 				a(href="#{selection.source.scanned_text}", target="_blank") scanned edition
+		if selection.source.digital_text
+			li
+				a(href="#{selection.source.digital_text}", target="_blank") transcribed edition
 		if selection.source.info_url
 			li
 				a(href="#{selection.source.info_url}", target="_blank") information about the work
@@ -48,7 +48,7 @@ p#follow-up
 				br
 	p
 		| See selections that surround this one in
-		a(href="/timeline/##{selection.source.pub_year}") <cite>The Anthologist</cite>'s timeline
+		a(href="/timeline/##{selection.source.pub_year}") <cite>the Anthologist</cite>'s timeline
 		| .	
 
 hr
