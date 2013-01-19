@@ -80,8 +80,6 @@ def tag(req, tag_type, tag_slug):
 
 category_array = [ 'selections', 'authors', 'highlights', 'timeline', 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations', 'languages', ]
 
-from django.db.models import get_model
-
 def category(req, category):
     #this "exec" business necessary to use variable as model name in query
     code = 'tags = ' + str(category.capitalize()[:-1] + '.objects.all()')
