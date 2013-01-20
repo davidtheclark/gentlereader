@@ -16,7 +16,7 @@ block styles
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-main.css")
 
 block scripts
-	// Un-built scripts: comment out for production.
+	// Built scripts: comment out for JS development.
 	if category == 'selections'
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-sel-main-built.js")
 	elif category == 'timeline'
@@ -34,7 +34,7 @@ block scripts
 		{% endautoescape %}
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-tag-main-built.js")
 
-	// Build scripts: comment out for JS development.
+	// Un-built scripts: comment out for JS development.
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
 		if category == 'selections'
 			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-sel-main.js")
@@ -69,7 +69,7 @@ block content
 				if category == 'highlights'
 					#highlights-description
 						| Choice specimens from <cite>the Anthologist</cite>'s curated
-						| collection of public domain texts.
+						| collection of public&nbsp;domain&nbsp;texts.
 			if category == 'selections'
 				include includes/br-selections
 			elif category == 'announcements'

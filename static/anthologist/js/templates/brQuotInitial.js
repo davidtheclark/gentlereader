@@ -14,7 +14,7 @@ var __indent = [];
       var q = locals[$index];
 
 buf.push('\n<section class="sel-block">\n  <h3><span class="header-from">from&nbsp;</span><a');
-buf.push(attrs({ 'href':("/selection/" + (q.selection.slug) + "") }, {"href":true}));
+buf.push(attrs({ 'href':("/selections/" + (q.selection.slug) + "") }, {"href":true}));
 buf.push('>"' + escape((interp = q.selection.title) == null ? '' : interp) + '"');
  var title = q.selection.title
 if ( title.charAt(title.length - 1) != '?')
@@ -39,7 +39,7 @@ buf.push('>+ more highlights from ' + escape((interp = q.selection.author) == nu
       $$l++;      var q = locals[$index];
 
 buf.push('\n<section class="sel-block">\n  <h3><span class="header-from">from&nbsp;</span><a');
-buf.push(attrs({ 'href':("/selection/" + (q.selection.slug) + "") }, {"href":true}));
+buf.push(attrs({ 'href':("/selections/" + (q.selection.slug) + "") }, {"href":true}));
 buf.push('>"' + escape((interp = q.selection.title) == null ? '' : interp) + '"');
  var title = q.selection.title
 if ( title.charAt(title.length - 1) != '?')

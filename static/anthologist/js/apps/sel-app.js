@@ -28,26 +28,25 @@ define(['jquery'],
 		}
 	
 		var go = function () {
-			
-			/* Hyphenator doesn't seem to work in Opera (breaks up words but doesn't
-			 * add the necessary hyphen). */
-			if ($.browser.opera) {
-				$('#content-body').removeClass('hyphenate');
-			}
-			
-			//toggle the sidebar
-			$('#close-sidebar').click(function () {
-				toggleSidebar ({ 'float': 'none', 'width': '100%' });
+			$(document).ready(function () {
+				/* Hyphenator doesn't seem to work in Opera (breaks up words but doesn't
+				 * add the necessary hyphen). */
+				if ($.browser.opera) {
+					$('#content-body').removeClass('hyphenate');
+				}
+				
+				//toggle the sidebar
+				$('#close-sidebar').click(function () {
+					toggleSidebar ({ 'float': 'none', 'width': '100%' });
+				});
+				$('#open-sidebar').click(function () {
+					toggleSidebar({ 'float': 'left', 'width': '75%' });
+				});
+				
+				//make display buttons work
+				displayButtons();
 			});
-			$('#open-sidebar').click(function () {
-				toggleSidebar({ 'float': 'left', 'width': '75%' });
-			});
-			
-			//make display buttons work
-			displayButtons();
-	
 		};
-		
 		return go;
 	}
 );

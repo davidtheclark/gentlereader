@@ -16,17 +16,21 @@ define(['backbone',
 	function (Backbone, RandQuotApp, TagSet, TagFilterSet, FiltersView, SelectionSet, paginationDetails, globals, loader, renderSelCol, PgSelectView, TagFacetedView, BottomPaginator, Router) {
 		var tagTypesArray = [ 'author', 'language', 'nations', 'forms', 'contexts', 'genres', 'topics', 'styles' ];
 		var globals = globals.getGlobals();
-		var cont = $('#sel-container');
+		var cont;
 		var TagApp = Backbone.View.extend({
 			// Keep itemPerPage even, so alternate shading works.
 			itemsPerPage: 10,
 			initialize: function () {
-				this.router = new Router();
-				this.setSorters();
-				this.setMoreAndLess();
-				this.resetQueryObject();
-				this.additionalFilters = globals.additionalFilters = new FiltersView({ collection: new TagSet() });
-				this.getSelections(true);
+				var self = this;
+				self.router = new Router();
+				$(document).ready(function () {
+					cont = $('#sel-container');
+					self.setSorters();
+					self.setMoreAndLess();
+				});
+				self.resetQueryObject();
+				self.additionalFilters = globals.additionalFilters = new FiltersView({ collection: new TagSet() });
+				self.getSelections(true);
 			},
 			setSorters: function () {
 				var self = this;

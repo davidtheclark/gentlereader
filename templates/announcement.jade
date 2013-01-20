@@ -10,6 +10,9 @@ block scripts
 	//<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require-config.js"></script>
 	//<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require.js" data-main="{{ STATIC_URL }}anthologist/js/just-quot-main.js"></script>
 	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/just-quot-main-built.js")	
+
+block head
+	meta(name="description", content!="{{ ann.short_teaser|striptags }}")
 	
 block content
 	#main(itemprop="mainContentOfPage")

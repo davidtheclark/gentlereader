@@ -18,6 +18,9 @@ class Announcement(models.Model):
     slug = models.SlugField(unique=True, help_text="Exclude initial articles and punctuation. Use lowercase and hyphenate.")
     text = models.TextField(null=True)
     
+    def short_teaser(self):
+        return smart_truncate(self.text, 100, suffix=' ...')
+    
     def __unicode__(self):
         return self.title
     
