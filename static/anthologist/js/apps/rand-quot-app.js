@@ -67,7 +67,7 @@ define(['jquery'],
 				citation += ',';
 			}
 			citation += ' ' + sel.author
-				+ ' (' + sel.pub_year + ')</a>';
+				+ '&nbsp;(' + sel.pub_year + ')</a>';
 			$('.quotation-box-citation').empty()
 				.append(citation);
 			/* Populate followup. */
