@@ -27,7 +27,7 @@ define(['jquery'],
 			$('#main').animate(cssObj, 'slow');
 		}
 	
-		var makeItHappen = function () {
+		var go = function () {
 			
 			/* Hyphenator doesn't seem to work in Opera (breaks up words but doesn't
 			 * add the necessary hyphen). */
@@ -35,9 +35,6 @@ define(['jquery'],
 				$('#content-body').removeClass('hyphenate');
 			}
 			
-			//make display buttons work
-			displayButtons();
-	
 			//toggle the sidebar
 			$('#close-sidebar').click(function () {
 				toggleSidebar ({ 'float': 'none', 'width': '100%' });
@@ -46,8 +43,11 @@ define(['jquery'],
 				toggleSidebar({ 'float': 'left', 'width': '75%' });
 			});
 			
+			//make display buttons work
+			displayButtons();
+	
 		};
 		
-		return makeItHappen;
+		return go;
 	}
 );

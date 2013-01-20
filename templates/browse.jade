@@ -32,11 +32,9 @@ block scripts
 		script(type="application/javascript")
 			| var tagType = #{category_json};
 		{% endautoescape %}
-		//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-tag-main.js")
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-tag-main-built.js")
 
-	//Build scripts: comment out for JS development.
-	//
+	// Build scripts: comment out for JS development.
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
 		if category == 'selections'
 			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-sel-main.js")
@@ -48,6 +46,12 @@ block scripts
 			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-quot-main.js")
 		elif category == 'authors'
 			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-author-main.js")
+		else // For generic tag page. MAKE SURE TO COMMENT OUT/IN RELEVANT SCRIPTS FOR DEVELOPMENT/PRODUCTION. 
+			{% autoescape off %}
+			script(type="application/javascript")
+				| var tagType = #{category_json};
+			{% endautoescape %}
+			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-tag-main.js")
 
 block content
 	#main(itemprop="mainContentOfPage")

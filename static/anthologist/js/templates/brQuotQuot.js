@@ -54,7 +54,7 @@ buf.push('</a></li>');
 buf.push('\n  </ul>\n  <div class="read-more">\n    <div');
 buf.push(attrs({ 'data-sel':("" + (s.id) + ""), "class": ('show-quotations') }, {"data-sel":true}));
 buf.push('>view highlights from this selection &raquo;</div>\n    <div><a');
-buf.push(attrs({ 'href':("/specimens/" + (s.slug) + "") }, {"href":true}));
+buf.push(attrs({ 'href':("/selections/" + (s.slug) + "") }, {"href":true}));
 buf.push('>read this full selection &raquo;</a></div>\n  </div>\n</section>');
     }
 
@@ -104,7 +104,7 @@ buf.push('</a></li>');
 buf.push('\n  </ul>\n  <div class="read-more">\n    <div');
 buf.push(attrs({ 'data-sel':("" + (s.id) + ""), "class": ('show-quotations') }, {"data-sel":true}));
 buf.push('>view highlights from this selection &raquo;</div>\n    <div><a');
-buf.push(attrs({ 'href':("/specimens/" + (s.slug) + "") }, {"href":true}));
+buf.push(attrs({ 'href':("/selections/" + (s.slug) + "") }, {"href":true}));
 buf.push('>read this full selection &raquo;</a></div>\n  </div>\n</section>');
     }
 

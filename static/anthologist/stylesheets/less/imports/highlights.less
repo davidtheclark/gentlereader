@@ -86,9 +86,11 @@
 #read-full {
   .small-command;
   font-size: 0.8em;
-  &:before,
+  &:before {
+    content: '\2217\2217\2217\0020';
+  }
   &:after {
-    content: '\2217\2217\2217';
+    content: '\0020\2217\2217\2217';
   }
 }
 

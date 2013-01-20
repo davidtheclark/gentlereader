@@ -41,12 +41,7 @@ define(['backbone'],
 				/* If current page is 'all', 'next' and 'prev' don't make sense;
 				 * if we're on the first page, 'prev' doesn't;
 				 * if we're on the last page, 'next' doesn't. */
-				if (cp === 'all') {
-					var thing = $('<span />').attr('data-pg', '1')
-						.addClass('bot-pg-chg')
-						.html('paginate')
-						.appendTo(changers);
-				} else {
+				if (cp != 'all') {
 					if (cp > 1 && cp <= count) {
 						var prevPg = parseInt(cp) - 1;
 						var prev = $('<span />').attr('data-pg', prevPg)
