@@ -42,6 +42,7 @@ define(['jquery'],
 		var getQuot = function () {
 			var options = {
 				url: '/api/quotations/random/',
+				cache: false,
 				success: function(result) {
 					popQuot(result);
 				}

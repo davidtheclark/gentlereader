@@ -24,6 +24,10 @@ a {
   &:hover { color: @highlight-color; }
 }
 
+a, img {
+  border: none;
+}
+
 /* <b> will be used to mark special span of text that doens't fit other
  * semantic markup. */
 b { font-weight: normal; } 
@@ -64,7 +68,7 @@ blockquote {
 
 body {
   background-color: @background-color;
-  font-family: Calisto MT, Constantia, Georgia, serif;
+  font-family: @standard-font;
   margin: 5px;
 }
 
@@ -85,7 +89,7 @@ body {
 #site-header { height: 40px; }
 
 #site-content-container {
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
 }
 
