@@ -81,9 +81,22 @@ class SourceAdmin(admin.ModelAdmin):
 
 #selection
 
+class QuotationInlineFormset(forms.models.BaseInlineFormSet):
+    def clean(self):
+        count = 0
+        for form in self.forms:
+            try:
+                if form.cleaned_data:
+                    count += 1
+            except AttributeError:
+                pass
+        if count < 1:
+            raise forms.ValidationError("You must enter at least one quotation.")
+
 class QuotationInline(admin.TabularInline):
     model = Quotation
     extra = 3
+    formset = QuotationInlineFormset
 
 m = { 
     'genres': Genre, 

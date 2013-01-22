@@ -73,18 +73,26 @@
   max-width: 425px; //adjustable
   text-align: justify; //adjustable
   p { line-height: 150%; }
-  section { margin-bottom: 4em; }
-  section>:first-child:first-letter {
+  section { margin-bottom: 3em; }
+  &>p:first-of-type:first-letter {
+    .drop-cap;
+  }
+  section>p:first-of-type:first-letter {
+    .drop-cap;
+  }
+  
+  /*section>:first-child:first-letter {
     .drop-cap;     
   }
   &>:first-child:not(div):first-letter {
     .drop-cap;
-  }
+  }*/
 }
 
 .drop-cap {
   float: left;
   font-size: 75px;
+  font-style: normal; // in case the word is italicized
   line-height: 60px;
   padding-top: 4px;
   padding-right: 8px;
@@ -188,20 +196,10 @@
 
 #quotation-text {
   .secret-link;
+  .italic-highlight;
   display: block;
-  font-family: 'Times New Roman', Times, serif;
   font-size: 0.85em;
-  font-style: italic;
   margin-left: 20px;
-  p {
-    margin-bottom: 0;
-    text-indent: 20px;   
-  }
-  p:first-child {
-    text-indent: 0;
-  }
-  .inline-translation,
-  i, em, cite { font-style: normal; }
 }
 
 #quotation-followup {

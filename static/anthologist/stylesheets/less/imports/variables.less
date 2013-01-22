@@ -84,7 +84,7 @@
   .hanging-indent;
 }
 
-/*in teasers and quotation boxes*/
+/*in selections, teasers, and quotation boxes*/
 
 .ellipsis {
   font-style: normal;
@@ -96,6 +96,35 @@
   font-style: normal;
   font-variant: small-caps;
 }
+
+.indented-paragraphs {
+  p {
+    margin-bottom: 0;
+    text-indent: 20px;   
+  }
+  p:first-child {
+    text-indent: 0;
+  }  
+}
+
+.any-highlight {
+  .indented-paragraphs;
+  line-height: 125%;
+  a {
+    display: block;
+    .secret-link;
+  }
+}
+
+.italic-highlight {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  .inline-translation,
+  i, em, cite {
+    font-style: normal;
+  }
+}
+
 
 /*------------------------*/
 
