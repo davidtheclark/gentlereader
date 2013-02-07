@@ -1,6 +1,7 @@
-define(['jquery'],
+define(['jquery',
+        'utils/ajax-error'],
         
-    function ($) {
+    function ($, ajaxError) {
 		
 		var container;
 
@@ -41,9 +42,10 @@ define(['jquery'],
 		 * On success, populate the quotation in the random quotation box. */
 		var getQuot = function () {
 			var options = {
-				url: '/api/quotations/random/',
+				url: '/api/quotations/random',
 				cache: false,
-				success: function(result) {
+				error: ajaxError,
+				success: function (result) {
 					popQuot(result);
 				}
 			}

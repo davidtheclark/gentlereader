@@ -1,9 +1,10 @@
 define(['backbone',
 		'models/source-set',
 		'views/source-view',
-		'utils/sort-asc-des'],
+		'utils/sort-asc-des',
+        'utils/ajax-error'],
 	
-	function (Backbone, SourceSet, SourceView, sortAscDes) {
+	function (Backbone, SourceSet, SourceView, sortAscDes, ajaxError) {
 		var cont = $('#source-list');
 		var ResourceApp = Backbone.View.extend({
 			initialize: function () {
@@ -22,6 +23,7 @@ define(['backbone',
 				var self = this;
 				var sourceSet = this.sourceSet = new SourceSet();
 				sourceSet.fetch({
+					error: ajaxError,
 					success: function (set, response) {
 						self.renderSources();
 						/* Get the currently computed height and make it permanent, so that

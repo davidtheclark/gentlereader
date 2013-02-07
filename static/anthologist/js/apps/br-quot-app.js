@@ -4,9 +4,10 @@ define(['backbone',
         'routers/br-quot-router',
         'templates/brQuotQuot',
         'templates/brQuotInitial',
-        'utils/sort-asc-des'],
+        'utils/sort-asc-des',
+        'utils/ajax-error'],
         
-	function(Backbone, AuthorSet, AuthColView, Router, brQuotQuotTempl, brQuotInitialTempl, sortAscDes) {		
+	function(Backbone, AuthorSet, AuthColView, Router, brQuotQuotTempl, brQuotInitialTempl, sortAscDes, ajaxError) {		
 		var qList = $('#quotation-list-container');
 		var aCont = $('#author-container');
 		var shower = $('#browse-all');
@@ -35,6 +36,7 @@ define(['backbone',
 				var self = this;
 				var aSet = self.authorSet = new AuthorSet();
 				aSet.fetch({
+					error: ajaxError,
 					success: function () {
 						self.renderAuthors();
 					}
@@ -50,6 +52,7 @@ define(['backbone',
 				var sets = {
 					dataType: 'json',
 					url: '/api/quotations/random?quantity=' + quantity,
+					error: ajaxError,
 					success: function (data) {
 						self.renderRandom(data);
 					}
@@ -97,6 +100,7 @@ define(['backbone',
 				var sets = {
 					dataType: 'json',
 					url: '/api/authors/' + id + '/quotations',
+					error: ajaxError,
 					success: function (data) {
 						self.renderQuotations(data);
 					}

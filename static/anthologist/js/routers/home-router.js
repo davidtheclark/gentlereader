@@ -6,12 +6,14 @@ define(['backbone'],
 				Backbone.history.start({ silent: true });
 			},
 			routes: {
-				'about': 'about'
+				'about': 'toggleAbout',
+				'home': 'toggleAbout'
 			},
-			about: function() {
+			toggleAbout: function () {
 				$("html, body").animate({ scrollTop: 0 });
-				$('#about-container').slideToggle();
-				$('#open-about').fadeOut();					
+				$('#about-container').slideToggle('medium', function () {
+					$('#open-about').fadeToggle();
+				});
 			}
 		});
 		return HomeRouter;

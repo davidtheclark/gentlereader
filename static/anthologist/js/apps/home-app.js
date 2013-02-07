@@ -1,21 +1,27 @@
 define(['backbone',
         'routers/home-router',
         'models/recent-content-set',
-        'views/home-content-view'],
+        'views/home-content-view',
+        'utils/ajax-error'],
 	
-	function (Backbone, HomeRouter, RecentContentSet, homeViews) {
+	function (Backbone, HomeRouter, RecentContentSet, homeViews, ajaxError) {
 		var HomeApp = Backbone.View.extend({
 			initialize: function () {
-				this.router = new HomeRouter();
+				var self = this;
+				$(document).ready(function () {
+					self.setAbout();
+					self.setFilter();
+				});
+				self.router = new HomeRouter();
 				if (Backbone.history.fragment === 'about') {
-					this.router.about();
+					self.router.about();
+				} else {
+					self.router.navigate('home', { replace: true });
 				}
-				this.operaCheck();
-				this.setAbout();
-				this.setFilter();
-				/* Set initial contentType for both selections and announcements */
-				this.contentType = 'selAndAnn';
-				this.getContents();
+				self.operaCheck();
+				/* Set initial contentType for both selections and announcements. */
+				self.contentType = 'selAndAnn';
+				self.getContents();
 			},
 			operaCheck: function () {
 				/* Last I checked, the Hyphenate plugin does not work in Opera:
@@ -31,10 +37,7 @@ define(['backbone',
 					self.router.navigate('about', { trigger: true });
 				});
 				$('#close-about').click(function () {
-					self.router.navigate('');
-					$('#about-container').slideToggle('medium', function () {
-						$('#open-about').fadeIn();
-					});
+					self.router.navigate('home', { trigger: true });
 				});
 				$('#more-about-uniqueness').click(function () {
 					$('#more-about-uniqueness').fadeOut('fast', function () {
@@ -66,6 +69,7 @@ define(['backbone',
 				var self = this;
 				var cSet = self.contentSet = new RecentContentSet(null, restriction);
 				cSet.fetch({
+					error: ajaxError,
 					success: function () {
 						self.renderContents();
 						$('#list-container, #recent-contents-followup-container').fadeIn('fast');

@@ -11,9 +11,10 @@ define(['backbone',
         'views/pg-select-view',
         'views/tag-faceted-view',
         'views/bottom-paginator',
-        'routers/br-sorting-router'],
+        'routers/br-sorting-router',
+        'utils/ajax-error'],
 
-	function (Backbone, RandQuotApp, TagSet, TagFilterSet, FiltersView, SelectionSet, paginationDetails, globals, loader, renderSelCol, PgSelectView, TagFacetedView, BottomPaginator, Router) {
+	function (Backbone, RandQuotApp, TagSet, TagFilterSet, FiltersView, SelectionSet, paginationDetails, globals, loader, renderSelCol, PgSelectView, TagFacetedView, BottomPaginator, Router, ajaxError) {
 		var tagTypesArray = [ 'author', 'language', 'nations', 'forms', 'contexts', 'genres', 'topics', 'styles' ];
 		var globals = globals.getGlobals();
 		var cont;
@@ -79,6 +80,7 @@ define(['backbone',
 				var selSet = self.selectionSet = new SelectionSet(null, { query: self.currentQueryObject });
 				loader.addLoader();
 				selSet.fetch({
+					error: ajaxError,
 					success: function (set, response) {
 						/* If there is more than one selection, show the
 						 * adjustor container and sorters. */

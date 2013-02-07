@@ -1,13 +1,16 @@
 define(['backbone',
         'models/sel-set',
-        'views/br-timeline-view'],
+        'views/br-timeline-view',
+        'utils/ajax-error'],
 	
-	function (Backbone, SelSet, renderTimelineCol) {
+	function (Backbone, SelSet, renderTimelineCol, ajaxError) {
 		var cont = $('#timeline-sel-container');
 		var BrTimelineApp = Backbone.View.extend({
 			initialize: function () {
-				this.setSorter();
-				this.setTeaser();
+				$(document).ready(function () {
+					this.setSorter();
+					this.setTeaser();
+				});
 				this.dir = 'asc';
 				this.getSelections();
 				
@@ -33,7 +36,9 @@ define(['backbone',
 					direction: this.dir 
 				}
 				var sSet = this.selectionSet = new SelSet(null, { query: queryObj });
-				sSet.fetch();
+				sSet.fetch({
+					error: ajaxError
+				});
 			},
 			renderSelections: function () {
 				renderTimelineCol({

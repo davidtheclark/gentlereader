@@ -7,9 +7,10 @@ define(['backbone',
         'utils/pagination-details',
         'utils/sort-asc-des',
         'utils/globals',
-        'utils/loading-loader'],
+        'utils/loading-loader',
+        'utils/ajax-error'],
 		
-	function (Backbone, Collection, Router, renderCol, PgSelectView, BottomPaginator, paginationDetails, sortAscDes, globals, loader) {
+	function (Backbone, Collection, Router, renderCol, PgSelectView, BottomPaginator, paginationDetails, sortAscDes, globals, loader, ajaxError) {
 		var globals = globals.getGlobals();
 		var cont = $('#sel-container');
 		var BrSelApp = Backbone.View.extend({
@@ -41,6 +42,7 @@ define(['backbone',
 				var col = self.collection = new Collection();
 				loader.addLoader();
 				col.fetch({
+					error: ajaxError,
 					success: function () {
 						/* Calculate page parameters (starting and stopping points.
 						 * If there are multiple pages, create pageSelect and

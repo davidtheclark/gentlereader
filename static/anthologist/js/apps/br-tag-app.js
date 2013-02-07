@@ -6,9 +6,10 @@ define(['backbone',
         'views/pg-select-view',
         'views/bottom-paginator',
         'utils/globals',
-        'utils/loading-loader'],
+        'utils/loading-loader',
+        'utils/ajax-error'],
 
-	function (Backbone, BrTagRouter, TagSet, renderTagCol, paginationDetails, PgSelectView, BottomPaginator, globals, loader) {
+	function (Backbone, BrTagRouter, TagSet, renderTagCol, paginationDetails, PgSelectView, BottomPaginator, globals, loader, ajaxError) {
 		var globals = globals.getGlobals();
 		var cont = $('#tag-list');
 		var BrTagApp = Backbone.View.extend({
@@ -29,6 +30,7 @@ define(['backbone',
 				tSet.url = '/api/' + self.dataType;
 				loader.addLoader();
 				tSet.fetch({
+					error: ajaxError,
 					success: function () {
 						/* First, populate all tags, since initial view is "all";
 						 * then, figure out pages, and if there's more than one
