@@ -14,7 +14,7 @@ define(['backbone',
 				});
 				self.router = new HomeRouter();
 				if (Backbone.history.fragment === 'about') {
-					self.router.about();
+					self.router.toggleAbout();
 				} else {
 					self.router.navigate('home', { replace: true });
 				}
