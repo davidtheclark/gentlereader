@@ -6,10 +6,12 @@ define(['jquery',
 		var container;
 
 		var app = function (cont) {
-			container = cont || $('#quotation-container');
-			layout();
-			enableNew();
-			getQuot();
+			$(document).ready(function () {
+				container = cont || $('#quotation-container');
+				layout();
+				enableNew();
+				getQuot();
+			});
 		};
 		
 		/* Loads (a) the DOM structure of the random quotation box,
