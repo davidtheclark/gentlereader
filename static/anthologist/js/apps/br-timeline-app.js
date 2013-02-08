@@ -7,12 +7,13 @@ define(['backbone',
 		var cont = $('#timeline-sel-container');
 		var BrTimelineApp = Backbone.View.extend({
 			initialize: function () {
+				var self = this;
 				$(document).ready(function () {
-					this.setSorter();
-					this.setTeaser();
+					self.setSorter();
+					self.setTeaser();
 				});
-				this.dir = 'asc';
-				this.getSelections();
+				self.dir = 'asc';
+				self.getSelections();
 				
 			},
 			setSorter: function () {
