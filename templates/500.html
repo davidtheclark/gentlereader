@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<style>
+			#error-container {
+			  background-color: #700;
+			  height: 100%;
+			  left: 0;
+			  position: absolute;
+			  top: 0;
+			  width: 100%;
+			}
+			#error-message {
+			  background-color: #5d868f;
+			  border: 2px solid white;
+			  color: white;
+			  font-family: Helvetica,Arial,sans-serif;
+			  font-size: 1.5em;
+			  padding: 40px;
+			  position: absolute;
+			  top: 50px;
+			  left: 25%;
+			  right: 25%;
+			}
+			#error-message p {
+			  margin-bottom: 1em;
+			}
+			#error-heading {
+			  color: #700;
+			  font-size: 2em;
+			  font-weight: bold;
+			  text-transform: uppercase;
+			}
+			#error-reload {
+			  background: white;
+			  border: 2px solid black;
+			  color: black;
+			  margin: 0 auto 1em auto;
+			  padding: 15px;
+			  text-align: center;
+			  text-transform: uppercase;
+			  width: 100px;
+			}
+			#error-reload:hover {
+		  	  background: #900;
+		      border: 2px solid white;
+		      color: white;
+		      cursor: pointer;
+		    }
+		</style>
+	</head>
+	<body>
+		<div id="error-container">
+			<div id="error-message">
+				<span id="error-heading">Sadly,</span>
+				<p>something went wrong. Either:</p>
+				<p>(a) the server betrayed you and failed to satisfy your request &mdash; please reload the page, and everything should turn out okay:</p>
+				<div id="error-reload">reload</div>
+				<p>(b) or the page you requested does not exist &mdash; please check your URL, and try something else.</p>
+			</div>
+		</div>
+		<script>
+			document.getElementById("error-reload").onclick = function() { location.reload(forceGet=true); };
+		</script>
+	</body>
+</html>
