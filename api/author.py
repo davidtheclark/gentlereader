@@ -49,8 +49,7 @@ def author_all(req):
 def author_quotations(req, authorId):
     auth = get_object_or_404(Author, pk=authorId)
     sel_set = Selection.objects.filter(source__author=auth)
-    quot_set = Quotation.objects.filter(selection__in=sel_set)
     result_set = {}
     result_set['author'] = auth.list_item()
-    result_set['selections'] = [ s.with_quotations() for s in Selection.objects.filter(source__author=auth) ]
+    result_set['selections'] = [ s.with_quotations() for s in sel_set ]
     return HttpResponse(json.dumps(result_set), content_type="application/json")

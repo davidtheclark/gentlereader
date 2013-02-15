@@ -87,7 +87,8 @@ define(['backbone'],
 						if (self.startPage === 1 && i === 0) {
 							html += ' selected';
 						}
-						html += '>' + (i + 1) + '. ' + start + ' to ' + end + '</option>';
+						var fill = (start != end) ? start + ' to ' + end : start;
+						html += '>' + (i + 1) + '. ' + fill + '</option>';
 					}
 					$(select).html(html);
 					self.$el.append(select);

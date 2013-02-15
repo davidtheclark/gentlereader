@@ -11,7 +11,7 @@ define(['backbone',
 				'click': 'addFilter'
 			},			
 			addFilter: function (ev) {
-				if (globals.app.selectionSet.length === 1) {
+				if (globals.app.collection.length === 1) {
 					alert("No need to filter results: you're only looking at one selection.");
 					return;
 				}

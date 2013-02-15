@@ -12,20 +12,24 @@ define(['backbone',
 		
 	function (Backbone, Collection, Router, renderCol, PgSelectView, BottomPaginator, paginationDetails, sortAscDes, globals, loader, ajaxError) {
 		var globals = globals.getGlobals();
-		var cont = $('#sel-container');
+		var cont;
 		var BrSelApp = Backbone.View.extend({
 			itemsPerPage: 10,
 			startPage: 1,
 			dataType: 'selections',
 			initialize: function () {
+				var self = this;
 				// instantiate the router
-				this.router = new Router();
-				// make sorters work
-				this.setSorters();
-				// set sortField and sortDir
-				this.setQuery();
+				self.router = new Router();
+				$(document).ready(function () {
+					cont = $('#sel-container');
+					// make sorters work
+					self.setSorters();
+					// set sortField and sortDir
+					self.setQuery();
+				});
 				// get collection
-				this.getCollection(true);
+				self.getCollection(true);
 			},
 			setSorters: function () {
 				var self = this;
@@ -44,17 +48,22 @@ define(['backbone',
 				col.fetch({
 					error: ajaxError,
 					success: function () {
-						/* Calculate page parameters (starting and stopping points.
-						 * If there are multiple pages, create pageSelect and
-						 * navigate to "all" URL. */
-						self.setPages();
-						if (self.pgCount > 1) {
-							self.resetPg();
-						} else {
-							self.populatePg('all');
-						}
+						self.initiatePopulation();
 					}
 				});
+			},
+			initiatePopulation: function () {
+				var self = this;
+				/* Calculate page parameters (starting and stopping points).
+				 * If there are multiple pages, create pageSelect and
+				 * navigate to startPage. If there's only one page, set
+				 * URL to "all". */
+				self.setPages();
+				if (self.pgCount > 1) {
+					self.resetPg();
+				} else {
+					self.populatePg('all');
+				}
 			},
 			setPages: function () {
 				/* Use utility paginationDetails to calculate page parameters. */
@@ -88,6 +97,7 @@ define(['backbone',
 					pageDetails: this.pageDetails,
 					container: cont
 				});
+				/* Remove the loader: its work is finished. */
 				loader.removeLoader();
 			},
 			bottomPaginator: function (pg) {
@@ -131,8 +141,7 @@ define(['backbone',
 						return sortAscDes(self.sortDir, first, second);
 					};
 					self.collection.sort();
-					self.setPages();
-					self.resetPg();
+					self.initiatePopulation();
 				});
 			}
 		});		

@@ -15,6 +15,19 @@ define(['backbone',
 				self.dir = 'asc';
 				self.getSelections();
 				
+				router = Backbone.Router.extend({
+					initialize: function () {
+						Backbone.history.start({ silent: true });
+						if (Backbone.history.fragment) {
+							alert(Backbone.history.fragment);
+						}
+					},
+					routes: {
+						'': 'eatIt'
+					},
+					eatIt: function () {}
+				});
+				self.router = new router;
 			},
 			setSorter: function () {
 				var self = this;

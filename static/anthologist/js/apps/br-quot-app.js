@@ -16,13 +16,29 @@ define(['backbone',
 			initialize: function (options) {
 				this.router = new Router();
 				this.getAuthors();
-				if (Backbone.history.fragment) {
-					this.initialRouting();
-				} else {
-					this.noRouting();
-				}
 				this.setSorters();
 				this.setShowHideAuthors();
+			},
+			getAuthors: function () {
+				/* Only called once, on load; and this function, on success,
+				 * initiates the fetching of the highlights */
+				var self = this;
+				var aSet = self.authorSet = new AuthorSet();
+				aSet.fetch({
+					error: ajaxError,
+					success: function () {
+						self.renderAuthors();
+						if (Backbone.history.fragment) {
+							self.initialRouting();
+						} else {
+							self.noRouting();
+						}
+					}
+				});
+			},
+			renderAuthors: function () {
+				this.authorsView = new AuthColView({ collection: this.authorSet });
+				this.setRandomizers('.auth-sidebar-random');
 			},
 			initialRouting: function () {
 				/* If there is a url fragment, route right away to get quotations. */
@@ -31,20 +47,6 @@ define(['backbone',
 			noRouting: function () {
 				this.showAuthors();
 				this.getRandom();
-			},
-			getAuthors: function () {
-				var self = this;
-				var aSet = self.authorSet = new AuthorSet();
-				aSet.fetch({
-					error: ajaxError,
-					success: function () {
-						self.renderAuthors();
-					}
-				});
-			},
-			renderAuthors: function () {
-				this.authorsView = new AuthColView({ collection: this.authorSet });
-				this.setRandomizers('.auth-sidebar-random');
 			},
 			getRandom: function () {
 				var self = this;
@@ -106,6 +108,8 @@ define(['backbone',
 					}
 				};
 				$.ajax(sets);
+				$('.selected-author').removeClass('selected-author');
+				$('.author-list-item[data-auth="' + id + '"]').addClass('selected-author');
 			},
 			renderQuotations: function (data) {
 				/* Populate the #quotation-header, then use a

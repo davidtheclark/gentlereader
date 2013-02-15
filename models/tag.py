@@ -48,13 +48,19 @@ class Tag(models.Model):
             return False             
         
     def toJSON(self):
-        return dict(
+        result = dict(
           id = self.id,
           name = self.name,
           slug = self.slug,
           tag_type = self.tag_type,
           tag_type_display = self.get_tag_type_display(),       
         )
+        result['description'] = ''
+        if self.description:
+            result['description'] = self.description
+        elif self.definition:
+            result['description'] = self.definition
+        return result
         
 class Objects():
     def __init__(self, tag_type):

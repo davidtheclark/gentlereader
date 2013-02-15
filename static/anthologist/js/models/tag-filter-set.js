@@ -9,7 +9,7 @@ define(['backbone',
 				var count1 = model1.get('count');
 				var count2 = model2.get('count');
 				var ln = function (mod) {
-					return mod.get('last_name');
+					return mod.get('last_name') + mod.get('first_name');
 				};
 				var a = (ln(model1)) ? ln(model1) : model1.get('name');
 				var b = (ln(model2)) ? ln(model2) : model2.get('name');

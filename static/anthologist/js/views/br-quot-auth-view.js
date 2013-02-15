@@ -8,6 +8,7 @@ define(['backbone',
 			template: brQuotAuth,
 			className: 'author-list-item',
 			render: function () {
+				this.$el.attr('data-auth', this.model.get('id'));
 				this.$el.append(this.template(this.model.toJSON()));
 				cont.append(this.el);
 				return this

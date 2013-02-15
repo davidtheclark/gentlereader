@@ -7,6 +7,7 @@ define(['backbone',
         'utils/pagination-details',
         'utils/globals',
         'utils/loading-loader',
+        'utils/sort-asc-des',
         'views/sel-view',
         'views/pg-select-view',
         'views/tag-faceted-view',
@@ -14,30 +15,37 @@ define(['backbone',
         'routers/br-sorting-router',
         'utils/ajax-error'],
 
-	function (Backbone, RandQuotApp, TagSet, TagFilterSet, FiltersView, SelectionSet, paginationDetails, globals, loader, renderSelCol, PgSelectView, TagFacetedView, BottomPaginator, Router, ajaxError) {
+	function (Backbone, RandQuotApp, TagSet, TagFilterSet, FiltersView, SelectionSet, paginationDetails, globals, loader, sortAscDes, renderSelCol, PgSelectView, TagFacetedView, BottomPaginator, Router, ajaxError) {
 		var tagTypesArray = [ 'author', 'language', 'nations', 'forms', 'contexts', 'genres', 'topics', 'styles' ];
 		var globals = globals.getGlobals();
 		var cont;
 		var TagApp = Backbone.View.extend({
 			// Keep itemPerPage even, so alternate shading works.
 			itemsPerPage: 10,
+			startPage: 1,
+			dataType: 'selections',
 			initialize: function () {
 				var self = this;
 				self.router = new Router();
 				$(document).ready(function () {
 					cont = $('#sel-container');
 					self.setSorters();
+					self.setQuery();
 					self.setMoreAndLess();
+					self.resetQueryObject();
+					self.additionalFilters = globals.additionalFilters = new FiltersView({ collection: new TagSet() });
+					self.getSelections(true);
 				});
-				self.resetQueryObject();
-				self.additionalFilters = globals.additionalFilters = new FiltersView({ collection: new TagSet() });
-				self.getSelections(true);
 			},
 			setSorters: function () {
 				var self = this;
 				$('.sort-select').change(function () {
-					self.adjustCurrentQueryObject(); 
+					self.sortCollection();
 				});
+			},
+			setQuery: function () {
+				this.sortField = $('#sort-field').val();
+				this.sortDir = $('#sort-direction').val();
 			},
 			setMoreAndLess: function () {
 				/* Make the "more" and "less" buttons in the faceted filters work. */
@@ -59,12 +67,13 @@ define(['backbone',
 				});
 			},
 			resetQueryObject: function () {
-				/* app.currentQueryObject should be kept up-to-date with the app's selectionSet. */
-				this.currentQueryObject = {
+				var self = this;
+				/* app.currentQueryObject should be kept up-to-date with the app's collection. */
+				self.currentQueryObject = {
 					// display set to 'closure' to provide all tag information
 					display: 'closure',
-					sort: $('#sort-field').val(),
-					direction: $('#sort-direction').val()
+					sort: self.sortField,
+					direction: self.sortDir
 				};
 				/* tagCategory and tagId retrieved from script in tag.jade (from python view).
 				 * tagId is in an array because the categories of the queryObject require arrays
@@ -72,79 +81,107 @@ define(['backbone',
 				this.currentQueryObject[tagCategory] = [ tagId ];
 			},
 			getSelections: function (onInitialize) {
-				/* This function is called by initialize() and adjustCurrentQueryObject(). */
+				/* This function is called by initialize() -- in which case onInitialize = true --
+				 * and adjustCurrentQueryObject(). */
 				var self = this;
 				/* If we are coming from a one-selection-set to a many-selection-set,
 				 * populatePg must know.*/
-				self.oldSetVal = (self.selectionSet) ? self.selectionSet.length : null;
-				var selSet = self.selectionSet = new SelectionSet(null, { query: self.currentQueryObject });
+				self.oldSetVal = (self.collection) ? self.collection.length : null;
+				var selSet = self.collection = new SelectionSet(null, { query: self.currentQueryObject });
 				loader.addLoader();
 				selSet.fetch({
 					error: ajaxError,
 					success: function (set, response) {
-						/* If there is more than one selection, show the
-						 * adjustor container and sorters. */
 						if (set.length > 1) {
+							/* If there is more than one selection, show the
+							 * adjustor container and sorters. */
 							$('#adjustor-container, #sort-container').show();
 						} else if (set.length <= 1 && !onInitialize) {
 							/* In case this is called by a filter (not initialize), and now there's only
 							 * one selection -- nothing to sort -- hide the sorters. */
 							$('#sort-container').hide();
 						}
-						// get page parameters
-						self.setPages();
-						/* If there are multiple pages, setup pageSelect then
-						 * navigate to the first page's url,
-						 * manually populate the first page of selections,
-						 * and create the bottom paginator.
-						 * If there's only one page, populate all selections. */
-						if (self.pgCount > 1) {
-							self.getPageSelect();
-							var url = 'pg/' + self.currentQueryObject.sort + '/'
-								+ self.currentQueryObject.direction + '/1';
-							var navOpts = {}
-							if (onInitialize) {
-								/* If this is the selectionSet created on initialize, 
-								 * set "replace" to true to avoid logging the unfragmented page
-								 * (/selections/) in history; so, once we navigate to
-								 * "/selection/#pg/.../1", if the user presses the browser's back
-								 * she will not go back to "/selections/" before returning to whatever
-								 * page she actually wanted. */
-								navOpts['replace'] = true;
-							}
-							self.router.navigate(url, navOpts);
-							self.populatePg(1);
-							
-						} else {
-							self.populatePg('all');
-						}
+						self.initiatePopulation(onInitialize);
 					}
 				});
 			},
+			initiatePopulation: function (onInitialize) {
+				var self = this;
+				var url = 'pg/' + self.sortField + '/' + self.sortDir + '/' + self.startPage;
+				var navOpts = {}
+				if (onInitialize) {
+					/* If this is the collection created on initialize, 
+					 * set "replace" to true to avoid logging the unfragmented page
+					 * (/selections/) in history; so, once we navigate to
+					 * "/selection/#pg/.../1", if the user presses the browser's back
+					 * she will not go back to "/selections/" before returning to whatever
+					 * page she actually wanted. */
+					navOpts['replace'] = true;
+				}
+				self.router.navigate(url, navOpts);
+				/* Calculate page parameters (starting and stopping points).
+				 * If there are multiple pages, create pageSelect and
+				 * navigate to startPage. If there's only one page, set
+				 * URL to "all". */
+				self.setPages();
+				if (self.pgCount > 1) {
+					self.resetPg();
+				} else {
+					self.populatePg('all');
+					self.bottomPaginator();
+				}
+			},
 			setPages: function () {
-				var pageParameters = paginationDetails(this.selectionSet, this.itemsPerPage);
+				var pageParameters = paginationDetails(this.collection, this.itemsPerPage);
 				this.pageDetails = globals.pageDetails = pageParameters.startEndMods;
 				this.pgCount = pageParameters.pgCount;
+			},
+			resetPg: function () {
+				var self = this;
+				var url = 'pg/' + self.sortField + '/' + self.sortDir + '/' + self.startPage;
+				self.router.navigate(url, { replace: true });
+				self.getPageSelect();
+				self.bottomPaginator(self.startPage);
+				self.populatePg(self.startPage);
+			},
+			getPageSelect: function () {
+				/* Get and show the page-select. */
+				this.pView = new PgSelectView({
+					pageDetails: globals.pageDetails,
+					router: this.router,
+					sorted: true,
+					sortField: this.sortField,
+					sortDir: this.sortDir,
+					dataType: this.dataType,
+					startPage: this.startPage
+				});
+				$('#page-select-container').show();
+			},
+			bottomPaginator: function (pg) {
+				/* Removed and re-created whenever the page changes. */
+				if (this.bPg) {
+					this.bPg.remove();
+				}
+				if (this.pgCount > 1) {
+					this.bPg = new BottomPaginator({
+						currentPg: pg,
+						pgCount: this.pgCount,
+						router: this.router,
+						sortField: this.sortField,
+						sortDir: this.sortDir
+					});
+				}
 			},
 			populatePg: function (pg) {
 				var self = this;
 				renderSelCol({
-					collection: self.selectionSet,
+					collection: self.collection,
 					page: pg,
-					container: $('#sel-container'),
+					container: cont,
 					pageDetails: self.pageDetails
 				});
-				/* If results are paginated, created the bottom paginator.
-				 * If not, remove any existing bottom paginator. */
-				if (pg != 'all') {
-					self.bottomPaginator(pg);
-				} else {
-					if (self.bPg) {
-						self.bPg.remove();
-					}
-				}
 				/* Get and render the tag-filters. */
-				if (self.selectionSet.length > 1) {
+				if (self.collection.length > 1) {
 					if (self.oldSetVal === 1) {
 						self.fromOneToMany();
 					}
@@ -155,19 +192,39 @@ define(['backbone',
 						self.onlyOneSelection();
 					}
 				}
+				/* Remove the loader: its work is finished. */
 				loader.removeLoader();
 			},
-			getPageSelect: function () {
-				/* Get and show the page-select. */
-				this.pView = new PgSelectView({
-					pageDetails: globals.pageDetails,
-					sortField: this.currentQueryObject.sort,
-					router: this.router,
-					sorted: true,
-					dataType: 'selections',
-					startPage: 1
+			sortCollection: function () {
+				var self = this;
+				/* Reset the sorting parameters. */
+				self.setQuery();
+				cont.fadeOut(function () {
+					/* Clear the container; set the collection's comparator
+					 * according to the sort-selects; sort the collection;
+					 * re-calculate page parameters; and reset the page. */
+					cont.off().empty();
+					self.collection.comparator = function (a,b) {
+						var getField = function (mod, field) {
+							switch (field) {
+							case 'date_entered':
+								return mod.get('date_entered_microdata');
+								break;
+							case 'author':
+								return mod.get('source').author.last_name.toUpperCase();
+								break;
+							case 'pub_year':
+								return mod.get('source').pub_year;
+								break;
+							}
+						};
+						var first = getField(a, self.sortField);
+						var second = getField(b, self.sortField);
+						return sortAscDes(self.sortDir, first, second);
+					};
+					self.collection.sort();
+					self.initiatePopulation();
 				});
-				$('#page-select-container').show();
 			},
 			adjustCurrentQueryObject: function (additions, removals) {
 				/* Run by a new sort or the application of a new filter. */
@@ -197,33 +254,33 @@ define(['backbone',
 				self.getSelections();
 			},
 			generateUniqueTags: function () {
-				/* This function creates for each tagType an attribute of the selectionSet.
+				/* This function creates for each tagType an attribute of the collection.
 				 * These tagType attributes are populated with an array of models,
-				 * containing every tag relevant to the selectionSet
+				 * containing every tag relevant to the collection
 				 * (referred to by one or more selections).
 				 * In these arrays, tags are not duplicated, but are attributed
 				 * with a "count" for how many selections refer to them.
-				 * These attributes of the selectionSet are then used by renderTags().*/
+				 * These attributes of the collection are then used by renderTags().*/
 				var self = this;
 				_.forEach(tagTypesArray, function (tagType) {
 					var uniqueTagTest = [];
-					var tagSet = self.selectionSet[tagType] = new TagFilterSet();
-					self.selectionSet.forEach(function (s) {
+					var tagSet = self.collection[tagType] = new TagFilterSet();
+					self.collection.forEach(function (s) {
 						var mods = (tagType == 'author') ? [s.get('source').author] : s.get(tagType);
 						_.forEach(mods, function (tag) {
 							if (uniqueTagTest.indexOf(tag.id) == -1) {
 								/* If the tag HAS NOT already shown up (is unique),
 								 * add it to uniqueTagTest (to prevent duplication),
 								 * create a "count" starting at 1,
-								 * and add it to the selectionSet's relevant tag collection. */
+								 * and add it to the collection's relevant tag collection. */
 								uniqueTagTest.push(tag.id);
 								_.extend(tag, { count: 1 });
-								self.selectionSet[tagType].add(tag);
+								self.collection[tagType].add(tag);
 							} else {
 								/* If the tag is a duplicate, not unique,
 								 * just add 1 to the tag's existing "count" in
-								 * selectionSet.[this tag type].[this tag]. */
-								var tagModel = self.selectionSet[tagType].get(tag.id);
+								 * collection.[this tag type].[this tag]. */
+								var tagModel = self.collection[tagType].get(tag.id);
 								tagModel.set('count', tagModel.get('count') + 1);
 							}
 						});
@@ -240,12 +297,12 @@ define(['backbone',
 				$('.more-tags, .fewer-tags, .filter-type').hide();
 				_.forEach(tagTypesArray, function (tagType) {
 					/* For every tagType, find and purge the relevant sidebar filter-list.
-					 * then use the selectionSet's attributes (created by generateUniqueTags())
+					 * then use the collection's attributes (created by generateUniqueTags())
 					 * to create and render a View for each tag-filter. */
 					var existingList = $('#' + tagType + '-tags');
 					existingList.off().empty();
 					var ct = 0;
-					self.selectionSet[tagType].forEach(function (tag) {
+					self.collection[tagType].forEach(function (tag) {
 						/* To prevent the primary tag (basis of the page) or any already-filtered tag
 						 * from showing up in the sidebar as possible filters, only add the tag-filter
 						 * if the currentQueryObject does not already contain it. */
@@ -294,21 +351,8 @@ define(['backbone',
 				});
 				$('.filter-type[data-type="' + tagType + '"]').show();
 			},
-			bottomPaginator: function (pg) {
-				/* Removed and re-created whenever the page changes. */
-				if (this.bPg) {
-					this.bPg.remove();
-				}
-				this.bPg = new BottomPaginator({
-					currentPg: pg,
-					pgCount: this.pgCount,
-					router: this.router,
-					sortField: this.currentQueryObject.sort,
-					sortDir: this.currentQueryObject.direction
-				});
-			},
 			onlyOneSelection: function () {
-				/* Called if the selectionSet (whether initially or after filtering)
+				/* Called if the collection (whether initially or after filtering)
 				 * only contains one selection. Filters are
 				 * hidden from the sidebar, replaced with a short message and a random
 				 * highlight. */
@@ -322,14 +366,14 @@ define(['backbone',
 				RandQuotApp();
 			},
 			fromOneToMany: function () {
-				/* Called if the selectionSet was filtered down to one selection
+				/* Called if the collection was filtered down to one selection
 				 * (calling onlyOneSelection) and then the filters were cleared.
 				 * Filters are shown in the sidebar and the elements added by
 				 * onlyOneSelection are removed. */
 				$('.related-tag-superlist').fadeIn('fast');
 				$('#only-one-warning, #quotation-container').remove();
 				$('#sidebar-contribute').css('border-bottom', 'none');
-			}
+			},
 		});
 		return TagApp;
 	}

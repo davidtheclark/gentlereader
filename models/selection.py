@@ -128,5 +128,5 @@ class Selection(models.Model):
             source_display = self.source_display(),
             title = self.__unicode__(),
         )
-        sel['quotations'] = [ q.toJSON() for q in Quotation.objects.filter(selection=self) ]
+        sel['quotations'] = [ q.toJSON() for q in Quotation.objects.filter(selection=self).order_by('?') ]
         return sel    
