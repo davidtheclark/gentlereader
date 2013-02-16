@@ -19,7 +19,8 @@ define(['backbone',
 					initialize: function () {
 						Backbone.history.start({ silent: true });
 						if (Backbone.history.fragment) {
-							alert(Backbone.history.fragment);
+							var yr = Backbone.history.fragment;
+							$('#' + yr).parent().addClass('selected-time');
 						}
 					},
 					routes: {
