@@ -3,10 +3,12 @@
 require(['backbone',
          'apps/br-timeline-app',
          'apps/rand-quot-app',
-         'apps/copyright-app'],
+         'apps/copyright-app',
+         'utils/nav-dropdown'],
          
-	function (Backbone, BrTimelineApp, RandQuotApp, cr) {
+	function (Backbone, BrTimelineApp, RandQuotApp, cr, navDropdown) {
 		var app = new BrTimelineApp();
+		navDropdown();
 		RandQuotApp();
 		cr();
 	}	

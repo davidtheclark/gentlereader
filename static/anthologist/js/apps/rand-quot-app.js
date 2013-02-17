@@ -46,7 +46,7 @@ define(['jquery',
 			var options = {
 				url: '/api/quotations/random',
 				cache: false,
-				error: ajaxError,
+				// If it fails, will fail silently
 				success: function (result) {
 					popQuot(result);
 				}

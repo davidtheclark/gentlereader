@@ -1,17 +1,21 @@
 /*LAYOUT*/
 
-#site-content-container { background-color: @sidebar-color; }
+#site-content-container {
+  background-color: white;
+  overflow: hidden;
+}
 
 #main {
-  background: white;
   float: left;
-  min-height: 870px; //to prevent the quotation box extending lower than the announcement
   width: 75%;
 }
 
 #sidebar {
+  background-color: @sidebar-color;
   width: 25%;
   float: right;
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
 }
 
 /*-------------------

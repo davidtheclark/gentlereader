@@ -112,7 +112,8 @@ body {
 
 #site-header-nav { display: inline; }
 
-.navigation {
+.navigation,
+.nav-js {
   font-family: @menu-font;
   font-size: 0.9em;
   list-style-type: none;
@@ -135,7 +136,7 @@ body {
 }
 
 /* The rules below relate to the "browse" dropdown, so only apply to the header. */
-
+/*
 #site-header-nav .navigation {
   float: right;
   ul { //second level list (browse options)
@@ -159,8 +160,49 @@ body {
     }
   }
 }
+*/
 
-/* FOOTER */
+.nav-js {
+  float: right;
+}
+
+#nav-browse .selected-br {
+  background-color: @menu-color;
+  color: black;
+  opacity: 0.95;
+}
+
+#nav-browse {
+  overflow: visible;
+  width: 70px;
+  ul {
+    display: none;
+    background-color: @menu-color;
+    list-style-type: none;
+    //opacity: 0.95;
+    position: relative;
+    width: 150px;
+    li {
+      float: none; //gets them all the same width
+      a {
+        color: black;
+        padding: 5px 10px; //overriding the padding set on higher level <a>
+        white-space: nowrap;
+        &:hover {
+          background-color: @highlight-color;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/*------------
+ * FOOTER
+ * -----------*/
 
 #site-footer {
   font-family: @menu-font;
@@ -172,8 +214,24 @@ body {
   background: white;
   clear: both;
   display: none;
-  font-size: 0.75em;
-  padding: 3px 5px;
+  padding: 2% 15%;
+}
+
+#close-copyright {
+  .small-command;
+  border: 2px solid @highlight-color;
+  color: @highlight-color;
+  display: block;
+  font-size: 0.9em;
+  margin: 10px auto 0 auto;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 200px;
+  &:hover {
+    background-color: @highlight-color;
+    color: white;
+  }
 }
 
 #footer-facebook, #footer-rss {

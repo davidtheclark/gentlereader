@@ -1,6 +1,8 @@
-require(['apps/copyright-app'],
+require(['apps/copyright-app',
+         'utils/nav-dropdown'],
 	
-	function (cr) {
+	function (cr, navDropdown) {
+		navDropdown();
 		cr();
 	}
 );

@@ -4,10 +4,11 @@ block title
 	title A #{quotation.selection.source.author.last_name} Highlight | the Anthologist
 
 block scripts
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/quotation-main.js")
 	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/quotation-main-built.js")
 
 block styles
-	<link href='http://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic' rel='stylesheet' type='text/css'>
 	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/highlights-main.css")
 
 block head

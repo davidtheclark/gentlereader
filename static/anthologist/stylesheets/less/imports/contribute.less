@@ -1,11 +1,12 @@
 /*LAYOUT*/
 
-#site-content-container { background-color: @sidebar-color; }
+#site-content-container {
+  background-color: white;
+  overflow: hidden;
+}
 
 #main {
-  background-color: white;
   float: left;
-  min-height: 805px;
   width: 75%;
 }
 
@@ -13,6 +14,8 @@
   background-color: @sidebar-color;
   width: 25%;
   float: right;
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
 }
 
 #main-content {

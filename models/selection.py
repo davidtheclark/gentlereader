@@ -25,6 +25,19 @@ class Selection(models.Model):
     slug = models.SlugField(unique=True, help_text="Use selection title if there is one; otherwise, source title. Exclude initial articles and punctuation. Use lowercase and hyphenate.")
     stylesheet = models.SlugField(blank=True, null=True, help_text="If this selection requires its own accompanying stylesheet, specify the filename -- which should match the selection's slug, unless there's a good reason. Ensure the file is in static/anthologist/css/selection-specific/.")
     
+    def widont_title(self):
+        words = self.__unicode__().split()
+        last = len(words) - 1
+        tit = ''
+        for i, word in enumerate(words):
+            if i != last and i != last - 1:
+                tit += word + ' '
+            elif i == last - 1:
+                tit += word + '&nbsp;'
+            elif i == last:
+                tit += word
+        return tit
+    
     def shortened_passage(self):
         return r'"' + self.text[:70] + r'..."' 
     

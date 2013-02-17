@@ -1,12 +1,21 @@
 define(['jquery'], function ($) {
-	var addLoader = function () {
+	var addLoader = function (container, relative) {
+		var c = container || $('#wrapper');
 		var el = '<div id="ajax-loading">&lowast;&lowast;&lowast; LOADING &lowast;&lowast;&lowast;</div>';
-		$('#wrapper').append(el);
-		$('#ajax-loading').fadeIn();
+		c.append(el);
+		var d = $('#ajax-loading');
+		if (relative === true) {
+			d.css({
+				'position': 'absolute',
+				'top': '100px'
+			});
+		}
+		d.fadeIn();
 	};
 	var removeLoader = function () {
-		$('#ajax-loading').fadeOut(function () {
-			$('#ajax-loading').remove();
+		var d = $('#ajax-loading');
+		d.fadeOut(function () {
+			d.remove();
 		});
 	};
 	return {

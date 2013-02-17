@@ -2,13 +2,8 @@
 <html>
 	<head>
 		<style>
-			#error-container {
+			body {
 			  background-color: #700;
-			  height: 100%;
-			  left: 0;
-			  position: absolute;
-			  top: 0;
-			  width: 100%;
 			}
 			#error-message {
 			  background-color: #5d868f;
@@ -16,12 +11,9 @@
 			  color: white;
 			  font-family: Helvetica,Arial,sans-serif;
 			  font-size: 1.5em;
-			  min-width: 400px;
+			  margin: 30px auto;
+			  max-width: 500px;
 			  padding: 40px;
-			  position: absolute;
-			  top: 50px;
-			  left: 25%;
-			  right: 25%;
 			}
 			#error-message p { margin-bottom: 1em; }
 			#error-heading {
@@ -55,17 +47,15 @@
 		</style>
 	</head>
 	<body>
-		<div id="error-container">
-			<div id="error-message">
-				<span id="error-heading">Sadly,</span>
-				<p>something went wrong. Either:</p>
-				<p>(a) the server betrayed you and failed to satisfy your request &mdash; please reload the page, and everything should turn out okay:</p>
-				<div id="error-reload" class="error-button">reload</div>
-				<p>(b) or the page you requested does not exist &mdash; please check your URL, and try something else.</p>
-				<a class="error-button" id="error-homepage" href="/">
-					go to the anthologist's homepage
-				</a>
-			</div>
+		<div id="error-message">
+			<span id="error-heading">Sadly,</span>
+			<p>something went wrong. Either:</p>
+			<p>(a) the server betrayed you and failed to satisfy your request &mdash; please reload the page, and everything should turn out okay:</p>
+			<div id="error-reload" class="error-button">reload</div>
+			<p>(b) or the page you requested does not exist &mdash; please check your URL, and try something else.</p>
+			<a class="error-button" id="error-homepage" href="/">
+				go to the anthologist's homepage
+			</a>
 		</div>
 		<script>
 			document.getElementById("error-reload").onclick = function() { location.reload(forceGet=true); };

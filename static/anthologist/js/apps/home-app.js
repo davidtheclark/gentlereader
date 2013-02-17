@@ -2,9 +2,10 @@ define(['backbone',
         'routers/home-router',
         'models/recent-content-set',
         'views/home-content-view',
-        'utils/ajax-error'],
+        'utils/ajax-error',
+        'utils/loading-loader'],
 	
-	function (Backbone, HomeRouter, RecentContentSet, homeViews, ajaxError) {
+	function (Backbone, HomeRouter, RecentContentSet, homeViews, ajaxError, loader) {
 		var HomeApp = Backbone.View.extend({
 			initialize: function () {
 				var self = this;
@@ -68,6 +69,7 @@ define(['backbone',
 				 * when a filter is selected. */
 				var self = this;
 				var cSet = self.contentSet = new RecentContentSet(null, restriction);
+				loader.addLoader($('#recent-contents'), true);
 				cSet.fetch({
 					error: ajaxError,
 					success: function () {
@@ -86,6 +88,7 @@ define(['backbone',
 						index: index
 					});
 				});
+				loader.removeLoader();
 			},
 			restrictContents: function () {
 				/* Creates the restriction parameter and gets a new Recent Content set to match it. */

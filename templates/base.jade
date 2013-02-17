@@ -29,32 +29,33 @@ html(lang = "en")
 						span#site-title-the the&nbsp;
 						span#site-title-name Anthologist
 					nav(itemscope, itemtype="http://www.schema.org/SiteNavigationElement")#site-header-nav
-						ul.navigation
-							li
-								a(href="/browse") browse
-								ul
-									li
-										a(href="/selections/") &raquo; all selections
-									li
-										a(href="/authors/") &raquo; authors
-									li
-										a(href="/highlights/") &raquo; highlights
-									li
-										a(href="/timeline/") &raquo; timeline
-									li
-										a(href="/forms/") &raquo; forms									
-									li
-										a(href="/genres/") &raquo; genres
-									li
-										a(href="/topics/") &raquo; topics
-									li
-										a(href="/contexts/") &raquo; contexts
-									li
-										a(href="/styles/") &raquo; styles
-									li
-										a(href="/nations/") &raquo; nations
-									li
-										a(href="/languages/") &raquo; orig. languages
+						
+						ul.nav-js
+							li#nav-browse
+								a browse
+								ul#nav-browse-menu
+										li
+											a(href="/selections/") &raquo; all selections
+										li
+											a(href="/authors/") &raquo; authors
+										li
+											a(href="/highlights/") &raquo; highlights
+										li
+											a(href="/timeline/") &raquo; timeline
+										li
+											a(href="/forms/") &raquo; forms									
+										li
+											a(href="/genres/") &raquo; genres
+										li
+											a(href="/topics/") &raquo; topics
+										li
+											a(href="/contexts/") &raquo; contexts
+										li
+											a(href="/styles/") &raquo; styles
+										li
+											a(href="/nations/") &raquo; nations
+										li
+											a(href="/languages/") &raquo; orig. languages
 							li
 								a(href="/selections/most-recent/") newest
 							li
@@ -86,6 +87,7 @@ html(lang = "en")
 						| Everything on the site that is not from a public domain text
 						| <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
 						| is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.</a>
+						span#close-copyright.get-copyright-info  close this message
 		
 		// bottom scripts
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/libraries/html5shiv.min.js")
