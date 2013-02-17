@@ -27,7 +27,7 @@ block scripts
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-quot-main-built.js")
 	elif category == 'authors'
 		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-author-main-built.js")
-	else // For generic tag page. MAKE SURE TO COMMENT OUT/IN RELEVANT SCRIPTS FOR DEVELOPMENT/PRODUCTION. 
+	else
 		{% autoescape off %}
 		script(type="application/javascript")
 			| var tagType = #{category_json};
@@ -46,7 +46,7 @@ block scripts
 			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-quot-main.js")
 		elif category == 'authors'
 			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-author-main.js")
-		else // For generic tag page. MAKE SURE TO COMMENT OUT/IN RELEVANT SCRIPTS FOR DEVELOPMENT/PRODUCTION. 
+		else
 			{% autoescape off %}
 			script(type="application/javascript")
 				| var tagType = #{category_json};
