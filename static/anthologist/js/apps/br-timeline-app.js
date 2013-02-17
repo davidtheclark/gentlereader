@@ -20,6 +20,7 @@ define(['backbone',
 						Backbone.history.start({ silent: true });
 						if (Backbone.history.fragment) {
 							var yr = Backbone.history.fragment;
+							window.scrollBy(0, -20);
 							$('#' + yr).parent().addClass('selected-time');
 						}
 					},

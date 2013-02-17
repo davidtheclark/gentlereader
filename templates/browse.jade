@@ -6,11 +6,11 @@ block title
 block styles
 	if category == 'selections'
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-selection-main.css")
-	if category == 'timeline'
+	elif category == 'timeline'
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-timeline-main.css")
-	if category == 'announcements'
+	elif category == 'announcements'
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-announcement-main.css")
-	if category == 'highlights'
+	elif category == 'highlights'
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-highlights-main.css")
 	else
 		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-main.css")
