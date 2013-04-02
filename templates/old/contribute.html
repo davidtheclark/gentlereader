@@ -1,0 +1,79 @@
+{% extends "base.jade" %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}anthologist/stylesheets/css/contribute-main.css" />
+{% endblock %}
+
+{% block scripts %}
+<!--
+<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require-config.js"></script>
+<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require.js" data-main="{{ STATIC_URL }}anthologist/js/just-quot-main.js"></script>
+-->
+<script type="application/javascript" src="{{STATIC_URL}}anthologist/builds/just-quot-main-built.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="main">
+	<div id="main-content">
+		
+		<header id="main-header">
+			<h1>Contribute</h1>
+			<p><strong><cite>The Anthologist</cite> wants your input.</strong></p>
+		</header>
+		
+		{% if thanks %}
+		<div id="thanks-content">
+			<p>Thanks for providing some.</p>
+			<p>You have done well today. Now back to your browsing.</p>
+		</div>
+		{% else %}
+			<p>Please send selection or tag ideas, questions, suggestions about improving the site, enthusiastic compilments, requests for new functionality, or whatever you feel like sending.</p>
+		  	<div class="instructions">
+		    	<p>(If you are suggesting a new selection, please include (1) as much information as you can about the author and source, (2) a link to the edition you prefer, and (3) if it's an excerpt from a longer work, the first and last sentences of the selection.)</p>
+		    </div>
+		<form action="/contribute/" method="post">{% csrf_token %}
+			{{ form.non_field_errors }}
+		    <div class="fieldWrapper">
+		        {{ form.sender.errors }}
+		        <label for="id_sender">your email &#8212;</label>
+		        <input type="email" name="sender" id="id_sender" autofocus />
+		    </div>
+		    <div class="fieldWrapper">
+		        {{ form.subject.errors }}
+		        <label for="id_subject">subject &#8212;</label>
+		        {% if auto_subject %}
+		    	<input id="id_subject" type="text" name="subject" maxlength="100" value="{{ auto_subject }}"/>
+		    	{% else %}
+		        <input id="id_subject" type="text" name="subject" maxlength="100" />
+		        {% endif %}
+		    </div>
+		    <div class="fieldWrapper">
+		        {{ form.message.errors }}
+		        <label for="id_message">message &#8212;</label>
+		        {{ form.message }}
+		    </div>
+		    <div class="fieldWrapper">
+		        {{ form.cc_myself.errors }}
+		        <label for="id_cc_myself">cc yourself? &#8212;</label>
+		        {{ form.cc_myself }}
+		    </div>
+		    <div class="fieldWrapper" id="recaptchaWrapper">
+		    	<label for="id_captcha">human? &#8212;</label>
+		    	{{ form.captcha }}
+		    </div>
+			<div id="submitWrapper">
+				<input type="submit" value="Submit" />
+			</div>
+		</form>
+		{% endif %}
+	
+	</div>
+</div>
+<div id="sidebar">
+	<div id="quotation-container">
+	</div>
+</div>
+
+{% endblock %}

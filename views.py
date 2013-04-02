@@ -8,9 +8,34 @@ from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
 from utils import ignore_articles, dumb_to_smart_quotes
 
+#utility
+def _get_selection_tags(s):
+    
+    """ Takes a selection (s) and returns a dictionary with
+    all of the selection's tags, organized by category and sorted """
+
+    # establish the desired tag categories
+    tag_type_list = [ 'forms', 'genres', 'topics', 'contexts', 'nations' ]
+    # setup the dictionary, each item being an object with a designated 'type' and a list of tags
+    grouped_tags = [ { 'type': tag_type, 'tags': [ ] } for tag_type in tag_type_list ]
+    # get and sort the tags for each category
+    for it in grouped_tags:
+        this_type = it['type']
+        if this_type == 'forms':
+            it['tags'] = getattr(s.source, this_type).all()
+        elif this_type == 'nations':
+            it['tags'] = getattr(s.source.author, this_type).all()
+        else:
+            it['tags'] = getattr(s, this_type).all()
+        # sort the tag-list, using ignore_articles()
+        it['tags'] = sorted(it['tags'], key=lambda tag: ignore_articles(tag.name))
+    
+    return grouped_tags
+
+
 def selection(req, sel_slug):
     
-    # 'Most recent' and 'random' will redirect to a random selection's page
+    # 'most recent' and 'random' will redirect to an actual selection's slug
     if sel_slug == 'most-recent' or sel_slug == 'random':
         if sel_slug == 'most-recent':
             selection = Selection.objects.latest('date_entered')
@@ -18,28 +43,24 @@ def selection(req, sel_slug):
             selection = Selection.objects.order_by('?')[0] 
         url = '/selections/' + selection.slug
         return redirect(url)   
+    
+    # get the selection
     else:
         selection = get_object_or_404(Selection, slug=sel_slug)
-    # the categories in the sidebar
-    tag_type_list = [ 'forms', 'genres', 'topics', 'contexts', 'styles', 'nations' ]
-    grouped_tags = [ { 'type': tag_type, 'tags': [ ] } for tag_type in tag_type_list ]
-    for item in grouped_tags:
-        this_type = item['type']
-        if this_type == 'forms':
-            item['tags'] = getattr(selection.source, this_type).all() #order_by('name') is default in models.py
-        elif this_type == 'nations':
-            item['tags'] = getattr(selection.source.author, this_type).all()
-        else:
-            item['tags'] = getattr(selection, this_type).all()
-        # sort the tags by using ignore_articles()
-        item['tags'] = sorted(item['tags'], key=lambda tag: ignore_articles(tag.name.lower()))
-    # get a random quotation from this selection to post as the highlight
+        
+    # get the selection's tags
+    grouped_tags = _get_selection_tags(selection)
+    
+    # get a random quotation to display as the highlight
     quotation = Quotation.objects.filter(selection=selection).order_by('?')[0]
-    return render_to_response('selection.jade', {
+    
+    return render_to_response('selection.html', {
             'selection': selection,
+            'source': selection.source,
             'grouped_tags': grouped_tags,
             'quotation': quotation
         }, context_instance=RequestContext(req))
+    
 
 def tag(req, tag_type, tag_slug):
     # tag_type is going to come with a plural-s on the end

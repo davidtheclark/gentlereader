@@ -1,0 +1,29 @@
+// Unfortunately, this has to be almost identical to ../../static/jade/timeline-sel.jade
+
+h2(id="#{s.source.pub_year}").timeline-date!= s.source.date_display
+.timeline-sel-body
+	meta(itemprop="dateCreated", datetime="#{s.source.pub_year}")
+	h3.timeline-sel-title
+		a(href="/selections/#{s.slug}", itemprop="url")
+			span(itemprop="name")= s
+		|  &mdash;
+	span.timeline-sel-info
+		| by
+		span(itemprop="author", itemscope, itemtype="http://www.schema.org/Person")
+			meta(itemprop="familyName", content="#{s.source.author.last_name}")
+			meta(itemprop="givenName", content="#{s.source.author.first_name}")
+			a(href="/authors/#{s.source.author.slug}", itemprop="url)
+				span(itemprop="name")= s.source.author.full_name
+		| .
+		if s.from_display
+			| !{s.from_display} 
+	span.posted-date
+		| (Posted:
+		| <time itemprop="datePublished" datetime="{{s.date_entered|date:'c'}}">{{s.date_entered|date:'d F Y, H:i'}}</time>)
+	span.toggle-teaser [See the teaser <span class="arrow-down"></span>]
+	.timeline-teaser
+		{% autoescape off %}
+		span.timeline-teaser-text(itemprop="description")!= s.teaser
+		{% endautoescape %}
+		a(href="/selections/#{s.slug}")
+			span.read-rest &nbsp;&lowast;&lowast;&lowast;&nbsp;read&nbsp;on&nbsp;&raquo;

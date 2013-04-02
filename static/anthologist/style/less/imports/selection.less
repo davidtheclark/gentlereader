@@ -1,0 +1,130 @@
+/*====================
+HEADING
+====================*/
+
+.sel-headline {
+  text-align: center;
+}
+
+.sel-title {
+  .font-line(37, 45);
+  color: @c-emphatic;
+  font-variant: small-caps;
+  margin-bottom: 15px;
+}
+
+.sel-authordate {
+  .font-line(25, 25);
+}
+
+.sel-info {
+  .font-line(18, 19);
+  margin: 20px 0 0 0;
+  &:before {
+    background: url("../../img/bd-small.png") no-repeat center center;
+    background-size: contain;
+    content: "";
+    display: block;
+    height: 25px;
+    margin: 15px auto;
+  }
+}
+
+/*====================
+EXtRAS: HIGHLIGHT AND TAG LIST
+======================*/
+
+@sel-extras-heading-y: 35px;
+
+.sel-extras--tabs--li {
+  .two-borders(x, @double);
+  color: @c-link;
+  font-family: @f-heading;
+  font-size: 18px;
+  font-style: italic;
+  float: left;
+  height: @sel-extras-heading-y;
+  line-height: @sel-extras-heading-y;
+  margin: 20px 0;
+  text-align: center;
+  width: 49.5%;
+  &:hover {
+    background: whitesmoke;
+    color: @c-emphatic;
+    cursor: pointer;
+    .sel-extras-downarrow {
+      .arrow-down(5, @c-emphatic);
+    }
+  }
+}
+
+.sel-extras-downarrow {
+  .arrow-down(5, @c-link);
+  height: 3px;
+  margin-left: 5px;
+}
+
+/* HIGHLIGHT */
+
+
+
+/* TOP TAG LIST */
+
+
+/*====================
+TEXT
+====================*/
+
+.drop-cap {
+  .font-line(90, 80);
+  float: left;
+  font-family: @f-heading;
+  font-style: normal; // in case the word is italicized
+  padding: 4px 8px 3px 0;
+  text-transform: uppercase;
+}
+
+.sel-text {
+  .font-line(19, 27);
+  clear: both;
+  text-align: justify;
+  p {
+    margin-bottom: 27px;
+  }
+  
+  > p:first-of-type,
+  > section > p:first-of-type {
+    // style first letter
+    &:first-letter {
+      .drop-cap;
+    }
+    // style first line
+    &:first-line {
+      font-size: 27px;
+      .s-cap;
+      font-family: @f-heading;
+    }
+  }
+  
+}
+
+/* BOTTOM TAG LIST */
+
+.sel-tags-bottom {
+  
+  .tag-sublist-label {
+    display: inline;
+    margin-right: 5px;
+    &:after {
+      content: "\00a0:"
+    }
+  }
+  
+  .tag-sublist {
+    .inline-list(" -");
+    a {
+      text-decoration: underline;
+    }
+  }
+
+}

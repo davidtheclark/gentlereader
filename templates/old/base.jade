@@ -1,0 +1,98 @@
+!!! 5
+html(lang = "en")
+	head
+		meta(charset="utf-8")
+		block title
+			title the Anthologist
+		
+		//rss feed
+		link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed/")
+		
+		// styles
+		block styles
+		
+		// scripts
+		block scripts
+		
+		//RSS feed auto-discovery
+		link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed")
+		
+		block head
+		
+	body
+		#wrapper
+			a(href="#site-content-container")#skip Skip to Main Content (for screen readers)
+			block header
+				header#site-header(itemscope, itemtype="http://www.schema.org/WPHeader")
+					meta(itemprop="name", content="the Anthologist")
+					a(href="/", itemprop="url")#site-header-title
+						span#site-title-the the&nbsp;
+						span#site-title-name Anthologist
+					nav(itemscope, itemtype="http://www.schema.org/SiteNavigationElement")#site-header-nav
+						
+						ul.nav-js
+							li#nav-browse
+								a browse
+								ul#nav-browse-menu
+										li
+											a(href="/selections/") &raquo; all selections
+										li
+											a(href="/authors/") &raquo; authors
+										li
+											a(href="/highlights/") &raquo; highlights
+										li
+											a(href="/timeline/") &raquo; timeline
+										li
+											a(href="/forms/") &raquo; forms									
+										li
+											a(href="/genres/") &raquo; genres
+										li
+											a(href="/topics/") &raquo; topics
+										li
+											a(href="/contexts/") &raquo; contexts
+										li
+											a(href="/styles/") &raquo; styles
+										li
+											a(href="/nations/") &raquo; nations
+										li
+											a(href="/languages/") &raquo; orig. languages
+							li
+								a(href="/selections/most-recent/") newest
+							li
+								a(href="/selections/random/") random
+							li
+								a(href="/announcements/") announcements									
+							li
+								a(href="/#about") about
+			#site-content-container
+				block content
+			footer#site-footer(itemscope, itemtype="http://www.schema.org/WPFooter")
+				ul.navigation
+					li
+						a(href="/resources/") links &amp; sources
+					li
+						a(href="/contribute/") contact, submit, contribute
+					li
+						a.get-copyright-info copyright info
+					li#footer-facebook
+						a(href="http://www.facebook.com/TheAnthologist", target="_blank")
+							img(src="#{STATIC_URL}anthologist/images/facebook_logo.png")
+					li#footer-rss
+						a(href="/feed")
+							img(src="#{STATIC_URL}anthologist/images/icons/feed-icon-20x20.png")
+					section#copyright-info
+						| All of <cite>the Anthologist</cite>'s selections are from works in the public domain in the US.
+						| (If a source text is <em>not</em>, in fact, in the public domain, there has been a misunderstanding;
+						| <a href="/contribute">please inform us</a> and it will be taken down.)
+						| Everything on the site that is not from a public domain text
+						| <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
+						| is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.</a>
+						span#close-copyright.get-copyright-info  close this message
+		
+		// bottom scripts
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/libraries/html5shiv.min.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/libraries/html5shiv-printshiv.min.js")
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/libraries/google-analytics.js")
+		block bottomscripts
+
+						

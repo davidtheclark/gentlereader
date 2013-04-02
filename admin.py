@@ -143,7 +143,7 @@ class SelectionAdmin(admin.ModelAdmin):
     inlines = [QuotationInline, ImageInline]
         
     search_fields = ('text', 'source__author__last_name', 'source__author__first_name', 'source__volume_title', 'source__section_title', 'selection_title')
-    list_display = ('author', '__unicode__', 'shortened_passage', 'date_entered')
+    list_display = ('get_author', '__unicode__', 'shortened_passage', 'date_entered')
 
 
 class TagAdmin(admin.ModelAdmin):

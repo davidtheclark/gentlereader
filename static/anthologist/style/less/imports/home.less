@@ -1,0 +1,233 @@
+/* HEADER */
+
+.site-header {
+  font-family: @f-heading;
+  text-align: center;
+}
+
+.site-title,
+.site-title-the {
+  color: @c-emphatic;
+  text-transform: uppercase;
+}
+
+.site-title {
+  .font-line(63, 65);
+  .letter-spacing(1.5);
+  margin: 0 auto 30px auto;
+  max-width: 400px;
+}
+
+.site-title-the {
+  .font-line(30, 40);
+}
+
+.site-slogan {
+  .font-line(20, 24);
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.site-header-more {
+  border-bottom: @bar;
+  border-top: @bar;
+  padding: 7px;
+  &:after {
+    content: @arrow-r;
+  }
+}
+
+.site-dedication {
+  .s-cap;
+  margin: 20px auto 0 auto;
+  padding: 2px 0;
+  text-align: center;
+  width: 200px;
+}
+
+.site-dedication-date {
+  .letter-spacing(0.8);
+}
+
+/* EXPLORE */
+
+.explore {
+  font-size: 20px;
+  font-style: italic;
+  margin: 20px auto;
+  max-width: 460px;
+  text-align: center;
+}
+
+.explore-border {
+  &.top {
+    background-image: url("../../img/brdr1.png");
+  }
+  &.bottom {
+    background-image: url("../../img/brdr1-inv.png");
+    margin-top: 12px
+  }
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: contain;
+  display: block;
+  height: 15px;
+  margin: 10px auto;
+}
+
+
+.search-container {
+  position: relative;
+  &:hover {
+    color: @c-emphatic;
+    .search-label {
+      border-bottom-color: @c-emphatic;      
+    }
+    .search-btn {
+      color: @c-emphatic;
+    }
+  }
+}
+
+.search-label {
+  border-bottom: 2px solid black;
+  margin-right: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@search-btn-width: 36px;
+@search-crnr: 7px;
+
+.styled-input {
+  .border-radius(7px);
+  .font-line(16, 24);
+  border: 1px solid grey;
+  padding: 0 @search-btn-width 1px 10px;
+  &:hover,
+  &:focus {
+    border: 1px solid @c-emphatic;
+    box-shadow: 0px 1px 15px lightgrey;
+    outline: none;
+  }
+}
+
+.search-btn {
+  .absolute(0, 0);
+  .font-line(14, 22);
+  background: transparent;
+  border: none;
+  color: grey;
+  width: @search-btn-width;
+  &:hover {
+    .border-radius(7px);
+    text-decoration: underline;
+  }
+}
+
+
+/* NAV */
+
+.h2:after {
+  .hr(150px, 2px, @c-emphatic);
+  margin: 7px auto 0 auto;
+}
+
+.home-nav-container {
+  .font-line(19, 25);
+  margin: 40px auto 30px auto;
+  max-width: 400px;
+  overflow-x: hidden;
+}
+
+.home-nav-item,
+.home-nav-sub-item {
+  background: white;
+  padding-right: 4px;
+  &:after {
+    .dot-leaders;
+  }
+}
+
+.home-nav-item {
+  text-transform: uppercase;
+  &:before {
+    content: "\00A7\00A0";
+  }
+}
+
+.home-nav-sub {
+  margin-left: 30px;
+}
+
+.home-nav-sub-item {
+  font-style: italic;
+}
+
+.home-nav-sub-right {
+  background: white;
+  float: right;
+  font-style: normal;
+  padding-left: 4px;
+}
+
+.home-nav-border {
+  background: url("../../img/bd-med.png") no-repeat center center;
+  height: 60px;
+  margin: 30px 0 0 0;
+}
+
+/* RECENT */
+
+.recent {
+  margin: 0;
+}
+
+.home-more-btn {
+  display: block;
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+  &:before,
+  &:after {
+    content: @dots;
+  }
+}
+
+.home-more-border {
+  background: url("../../img/ender3.png") no-repeat center center;
+  background-size: contain;
+  height: 170px;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+
+/* SUBSCRIBE */
+
+.subscribe {
+  .border-radius(10px);
+  background: whitesmoke;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 350px;
+  text-align: center;
+  p {
+    line-height: 23px;
+    margin-top: 0;
+  }
+}
+
+.subscribe-email {
+  line-height: 30px;
+}
+
+.subscribe-email > .btn {
+  margin: 0 5px;
+}
+
+.subscribe-feed {
+  margin-top: 10px;
+}

@@ -1,0 +1,244 @@
+/* =====================
+ * SELECTION
+ * ===================== */
+
+.s-content
+  margin: 0 auto
+  max-width: 950px
+
+/* heading */
+
+.s-headline 
+  text-align: center
+
+
+.s-title 
+  color: $c-emphatic
+  font: 
+    size: 2.7em
+    variant: small-caps
+  
+  line-height: 1.1
+  margin-bottom: 0.5em
+
+
+.s-authordate 
+  font-size: 1.6em
+
+.s-info 
+  font-size: 1.2em
+  line-height: 1.4
+  margin: 1.25em 0 0 0
+  &:before 
+    background: url("../../img/bd-small.png") no-repeat center center
+    background-size: contain
+    content: ""
+    display: block
+    height: 25px
+    margin: 1em auto
+
+
+/* extras: highlight and top tag list*/
+
+.s-extras
+  +clearfix
+  margin: 1.25em auto 0 auto
+  max-width: 500px
+  overflow: hidden
+  position: relative
+
+$s-extras--heading-y: 40px
+
+.s-extras--title
+  @extend %heading
+  font-size: 1.7em
+  line-height: $s-extras--heading-y
+  margin-bottom: 0.1em
+
+.s-extras--utils
+  color: $c-link
+  cursor: pointer
+  float: right
+  font-size: 1.03em
+  line-height: $s-extras--heading-y
+ 
+.s-extras--utils-i
+  &:before
+    content: $arrow-r-b
+  &:last-child
+    padding-left: 1em
+
+$trigger-y: 35px
+
+.s-extras--trigger
+  +two-borders(x, $double)
+  color: $c-link
+  cursor: pointer
+  font: 
+    family: $f-heading
+    size: 1.13em
+    style: italic
+  float: left
+  height: $trigger-y
+  line-height: $trigger-y
+  text-align: center
+  width: 49.5%
+  
+  &.u-wide
+    width: 100%
+  
+  &.u-left
+    &.u-wide
+      margin-bottom: 0.5em
+    &:not(.u-wide)
+      border-right: $bar
+  
+  &:hover
+    background: whitesmoke
+
+.s-extras--li
+  &.u-active
+    .u-wide
+      border: none
+
+// accordion
+
+.accItem
+  &.u-inactive
+    .accExpand
+      display: block
+    .accCollapse,
+    .accBody
+      display: none
+  &.u-active
+    .accExpand
+      display: none
+    .accBody
+      display: block
+    .accCollapse
+      display: inline
+
+// highlight
+
+.s-highlight
+  border-top: $double
+  margin-bottom: 1em
+  padding-top: 1em
+
+.s-highlight--text
+  color: $c-subtle
+  font-family: $f-heading
+  font-size: 1.5em
+  line-height: 1.4
+
+// tag list (top and bottom)
+
+.s-tags
+  padding-bottom: 1.5em
+  
+  &.u-top
+    border-bottom: $double
+   
+  &.u-bottom
+    margin: 0 auto
+    max-width: 400px   
+  
+  .tag-sublist-label
+    display: inline
+    font-weight: bold
+    line-height: 1
+    &:after
+      content: "\00a0:\00a0"
+  
+  .tag-sublist
+    +inline-list("\00a0; ")
+
+.s-tags--inst
+  +right-finger
+  color: $c-subtle
+  
+
+/* comments */
+
+.s-comment
+  font-style: italic
+  margin: -1em auto 0 auto
+  max-width: 500px
+  &:after
+    +hr
+    margin: 1em auto 3em auto
+
+
+/* text */
+
+=drop-cap 
+  font: 
+    family: $f-heading
+    size: 4em
+    style: normal
+  float: left
+  line-height: 1
+  padding-right: 0.05em
+  text-transform: uppercase
+
+.s-text 
+  font-size: 1.2em
+  line-height: 1.5
+  margin: 3em auto 0 auto
+  max-width: 550px
+  text-align: justify
+  
+  &:after
+    content: ""
+    display: block
+    background: url("../../img/brdr2.png") repeat-x center center
+    height: 100px
+    width: 100%
+  
+  p:not(.poetry-line),
+  blockquote
+    margin-bottom: 1.9em
+  
+  // top line decoration
+  > p:first-of-type,
+  > section > p:first-of-type 
+    // style first letter
+    &:first-letter 
+      +drop-cap
+    
+    // style first line
+    &:first-line 
+      font: 
+        family: $f-heading
+        size: 1.7em
+        variant: small-caps
+      
+      line-height: 1
+
+
+/* postscript */
+
+.s-postscript
+  p
+    text-align: center
+
+.s-postscript--title
+  @extend %heading
+  text-align: center
+  margin-bottom: 0.5em
+
+.s-postscript--inst
+  +right-finger
+  margin: 0.5em
+
+.s-postscript--timeline
+  &:before,
+  &:after
+    +hr
+    margin: 0.5em auto
+
+.s-postscript--dates
+  color: $c-subtle
+  font-size: 0.95em
+  font-style: italic
+  margin-top: 2em

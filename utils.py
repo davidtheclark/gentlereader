@@ -30,3 +30,10 @@ def dumb_to_smart_quotes(string):
     string = string.replace("'", '&#8216;')
     string = re.sub(r'=&#8216;(.*?)&#8217;', r"='\1'", string)
     return string
+
+def roman_year(year):
+    if year == 2012:
+        return 'MMXII'
+    elif year == 2013:
+        return 'MMXIII' 
+            

@@ -1,0 +1,129 @@
+/*CONTAINERS*/
+
+#site-content-container { background-color: @sidebar-color; }
+
+#main {
+  background-color: white;
+  float: left;
+  width: 75%;
+}
+
+#sidebar {
+  background-color: @sidebar-color;
+  width: 25%;
+  float: right;
+}
+
+/*-------------
+ * MAIN
+ ------------*/
+#main-content {
+  padding: 15px 25px;
+}
+
+.resource-arrow-up {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent; 
+  border-bottom: 6px solid @link-base;
+  font-size: 0;
+  height: 0;
+  margin-left: 15px;
+  vertical-align: 10px;
+  width: 0; 
+  &:hover { border-bottom-color: @highlight-color; }
+}
+
+/*LINKS*/
+
+h1 {
+  border-bottom: 1px solid @header-color;
+  color: @highlight-color;
+  font-size: 3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#link-list {
+  list-style-type: none;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  h2 {
+    color: darken(@highlight-color, 10%);
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  h3 {
+    display: inline;
+    font-family: @menu-font;
+    font-size: 1em;
+  }
+  dt { margin-top: 10px; }
+  dd { margin-left: 30px; }
+}
+
+/*SOURCES*/
+
+#sort-source-container {
+  font-size: 0.75em;
+  font-family: @menu-font;
+  margin: 15px 0;
+  text-align: center;
+}
+
+#sort-label {
+  color: @header-color;
+}
+
+#source-list {
+  font-size: 0.9em;
+  list-style-type: none;
+  li {
+    margin-bottom: 1em;
+    li { margin: 0 }
+  }
+}
+
+.source-author,
+.source-date {
+  font-weight: bold;
+}
+
+.source-inner-list {
+  list-style-type: circle;
+  margin-left: 40px;
+}
+
+.source-link { text-wrap: none; }
+
+.source-selection-list {
+  display: inline;
+  list-style-type: none;
+  li { display: inline; }
+  li:after {
+    content: '\0020\00B7\0020';
+  }
+  li:last-child:after { content: ''; }
+}
+
+/*-------------
+ * SIDEBAR
+ ------------*/
+
+.sidebar-block,
+.sidebar-heading {
+  background-color: @sidebar-color;
+  border-bottom: @thin-white;
+  color: black;
+  display: block;
+  font-size: 0.9em;
+  padding: 10px 20px;
+}
+
+.sidebar-heading { font-weight: bold; }
+
+.sidebar-block:hover { background-color: lighten(@sidebar-color, 10%); }
+
+#sidebar ul {
+  list-style-type: none;
+  li { text-transform: uppercase; }
+}

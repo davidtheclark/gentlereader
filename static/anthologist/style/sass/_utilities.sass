@@ -1,0 +1,118 @@
+/* MIX-INS */
+
+=border-radius($value: 5px) 
+  -webkit-border-radius: $value
+  -moz-border-radius: $value
+  border-radius: $value
+
+
+=box-shadow($value) 
+  -webkit-box-shadow: $value
+  -moz-box-shadow: $value
+  box-shadow: $value
+
+
+=dimensions($x, $y) 
+  height: $x
+  width: $y
+
+
+=absolute($top: auto, $right: auto, $bottom: auto, $left: auto, $z-index: auto) 
+  position: absolute
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  z-index: $z-index
+
+
+=hr($width: 50%, $height: 1px, $color: black) 
+  background: $color
+  content: ""
+  display: block
+  height: $height
+  margin: 0 auto
+  max-width: $width
+
+
+// inline-list will only work with <ul>s
+=inline-list($divider) 
+  display: inline
+  & > li 
+    display: inline-block
+    &:not(:last-child):after 
+      content: $divider
+    
+=two-borders($axis: x, $border: 1px solid black) 
+  @if $axis ==x 
+    border-bottom: $border
+    border-top: $border
+  @else if $axis ==y 
+    border-left: $border
+    border-right: $border
+  
+=transition($transition) 
+  -webkit-transition: $transition
+  -moz-transition: $transition
+  -o-transition: $transition
+  transition: $transition
+
+//
+  Clearfix: contain floats -- from HTML5 Boilerplate
+
+  For modern browsers
+  1. The space content is one way to avoid an Opera bug when the
+      `contenteditable` attribute is included anywhere else in the document.
+      Otherwise it causes space to appear at the top and bottom of elements
+      that receive the `clearfix` class.
+  2. The use of `table` rather than `block` is only necessary if using
+      `:before` to contain the top-margins of child elements.
+
+=clearfix 
+  &:before,
+  &:after 
+    content: " " /* 1 */
+    display: table /* 2 */
+  
+  &:after 
+    clear: both
+  
+  /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  *zoom: 1
+
+=arrow($size: 5, $color: black, $direction: down) 
+  $side: top // declare variable, set default
+  @if $direction ==down 
+    $side: top
+    margin-bottom: - ($size - 2px)
+  @else if $direction ==up 
+    $side: bottom
+    margin-bottom: $size - 2px
+  @else if $direction ==right 
+    $side: left
+  @else if $direction ==left 
+    $side: right
+  
+  content: ""
+  display: inline-block
+  height: 0
+  width: 0
+  border-style: solid
+  border-color: transparent
+  border-width: #{$size}px
+  border-#{$side}-color: $color
+
+=hanging-indent($size)
+  text-indent: -$size
+  margin: 0 0 0 $size
+
+=right-finger
+  &:before
+    content: "\261E"
+    font-size: 2em
+    line-height: 0
+    margin-right: 0.2em
+    vertical-align: middle

@@ -1,0 +1,8 @@
+#adjustor-container 
+	#page-select-container.adjustor-subcontainer
+#tag-container
+	ul#tag-list
+		<!--Will be emptied and repopulated by timeline-app.js.
+		Initial filling is for search engines, etc.-->
+		for t in tags
+			li(itemprop="itemListElement")= t.name

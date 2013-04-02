@@ -1,0 +1,244 @@
+@author-container-width: 250px;
+
+/* -----------
+ * CONTAINERS
+ * ----------*/
+
+#author-container {
+  background-color: @lightest-sidebar-color;
+  display: none;
+  float: left;
+  padding: 5px;
+  width: @author-container-width;
+}
+
+#quotation-list-container {
+  margin: 0 20px;
+  padding: 0 20px;
+}
+
+/* --------------
+ * HEADING
+ * -------------*/
+
+#main-heading {
+  .browse-heading;
+  h1 {
+    border: none;
+    margin-bottom: 5px;
+  }
+  border-bottom: @thin-header;
+  margin: 0 auto 15px auto;
+  padding-bottom: 15px;
+  max-width: 600px;
+}
+
+#highlights-description {
+  text-align: center;  
+}
+
+
+/* -----------------
+ * AUTHOR CONTAINER
+ * ----------------*/
+
+#close-authors {
+  color: @link-base;
+  float: right;
+  font-size: 0.75em;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: @highlight-color;
+  }
+}
+
+#author-command,
+.auth-sidebar-random {
+  color: @highlight-color;
+  font-family: @menu-font;
+  font-size: 0.95em;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+.auth-sidebar-random:hover {
+  .border-radius-soft;
+  cursor: pointer;
+  color: white;
+  background-color: @highlight-color;
+  
+}
+
+#sort-container {
+  border-top: @thin-dotted;
+  border-bottom: @thin-dotted;
+  margin: 0 -5px;
+  padding: 3px 0;
+}
+
+#author-list {
+  font-family: @menu-font;
+  font-size: 0.8em;
+  list-style-type: none;
+}
+
+.author-link {
+  display: block;
+  padding: 5px;
+  &:hover {
+  	.border-radius-soft;
+    background-color: @highlight-color;
+    color: white;
+  }
+}
+
+.author-last {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.author-dates {
+  font-size: 0.85em;
+}
+
+.selected-author {
+  background-color: @sidebar-color;
+  margin: 0 -5px;
+  a {
+    color: black;
+  }
+}
+
+/*-------------
+ * QUOTATIONS
+ * ------------*/
+
+.initial-header {
+  font-size: 2em;
+  line-height: 90%;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+.choose {
+  text-align: left;
+}
+
+.show-hide {
+  .small-command;
+  font-size: 0.9em;
+  margin-top: -5px;
+  text-align: right;
+  &:before {
+    content: '\00AB\0020';
+  }
+  &:hover {
+    color: @highlight-color;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+#more-random {
+  .show-hide;
+  &:before { content: '' }
+}
+
+#hide-authors {
+  display: none;
+}
+
+#quotation-list-container {
+  margin-top: 15px;
+  h2 {
+    font-size: 2.5em;
+  }
+  h3 {
+    border-bottom: @thin-dotted;
+    font-size: 1.5em;
+    font-variant: small-caps;
+    margin-bottom: 15px;
+  }
+}
+
+.header-from {
+  font-size: 0.7em;
+  font-style: italic;
+  font-variant: normal;
+}
+
+#quotation-list {
+  list-style-type: none;
+}
+
+.hide-sel-quotes {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent; 
+  border-bottom: 6px solid @link-base;
+  display: block;
+  height: 12px;
+  float: right;
+  margin-left: 5px;
+  &:hover {
+    cursor: pointer;
+    border-bottom-color: @highlight-color;
+  }
+}
+
+.sel-block {
+  margin-top: 20px;
+}
+
+.sel-dates {
+  font-size: 0.8em;
+}
+
+.quotation-list {
+  list-style-type: none;
+}
+
+.quotation-list-item {
+  padding: 0 0 15px 0;
+}
+
+.quotation-marker {
+  color: @highlight-color;
+  display: inline-block;
+  float: left;
+  font-family: 'Bookman Old Style', 'Times New Roman', Times, serif;
+  font-size: 2.5em;
+  line-height: 0;
+  margin-top: 20px;
+  width: 25px;
+}
+
+.quotation-text {
+  .secret-link;
+  .any-highlight;
+  display: block;
+  font-family: 'Calisto MT', 'Times New Roman', Times, serif;
+  margin-left: 30px;
+}
+
+.random-quot {
+  font-size: 1.2em !important;
+}
+
+.read-more {
+  .small-command;
+  font-size: 0.95em;
+  text-align: right;
+  a {
+    display: block;
+  }
+}
+
+.show-quotations {
+  color: @link-base;
+  display: none;
+  &:hover {
+    color: @highlight-color;
+    cursor: pointer;
+  }
+}

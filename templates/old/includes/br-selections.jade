@@ -1,0 +1,24 @@
+#adjustor-container
+	#sort-container.adjustor-subcontainer
+		label#sort-label(for="sort-field") sort order :
+		select#sort-field.sort-select
+			option(value="date_entered") post date
+			option(value="author") author
+			option(value="pub_year") source date
+		select#sort-direction.sort-select
+			option(value="des") descending
+			option(value="asc")	ascending
+	#page-select-container.adjustor-subcontainer
+#sel-container
+	ul
+		for s in all_selections
+			li
+				span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
+					meta(itemprop="url", content="/selections/#{s.slug}")							
+					span(itemprop="name")= s
+					| , by
+					span(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
+						span(itemprop="name")= s.author
+					| (
+					span(itemprop="datePublished")= s.source.pub_year
+					| )

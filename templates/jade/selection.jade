@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}{{ selection }}, by {{ selection.get_author }} - The Gentle Reader{% endblock %}
+
+{% block meta %}
+meta(name="description", content="{{ selection }}, by {{ selection.get_author }}. {% if selection.from_display_safe %}{{ selection.from_display_safe }}.{% endif %} Brought to you by The Gentle Reader.")
+{% endblock %}
+
+// styles
+{% block styles %}
+
+{% if selection.stylesheet %}
+// If the selection has its own stylesheet, get it.
+link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}anthologist/stylesheets/selection-specific/{{ selection.stylesheet }}.css")
+{% endif %}
+
+{% endblock %}
+
+// scripts
+{% block bottomscripts %}
+script(type="text/javascript", src="{{ STATIC_URL }}anthologist/lib/hyphenator.js")
+script(type="text/javascript", src="{{ STATIC_URL }}anthologist/scripts/selection.js")
+{% endblock %}
+
+
+{% block main %}
+
+// CONTENT
+article.s-content
+
+  // selection header
+  header
+
+    // title, author, date
+    hgroup.s-headline
+      h1.s-title {{ selection.get_title }}
+      h2.s-authordate
+        {% with author=selection.get_author year=selection.source.pub_year %}
+        | <a href="/authors/{{ source.author.slug }}" title="Author: {{ author }}" rel="author">
+        | {{ author }}</a> &mdash; <a href="/timeline&#35;{{ year }}" title="Published in {{ year }}">
+        | {{ year }}</a>
+        {% endwith %}
+  
+      {% with from=selection.from_display trans=source.translator %}
+      {% if from != "None" or trans %}
+       
+      // added info
+      .s-info
+        
+        {% if from != "None" %}
+        {{ from }}.
+        {% endif %}
+        
+        {% if trans %}
+        | Translated from {{ source.langauge.name }}
+        | by {{ trans }} in {{ source.translation_year }}.
+        {% endif %}
+      
+      {% endif %}
+      {% endwith %}
+    
+    // EXTRAS
+    ul.s-extras#sExtrasAccordion.accMother
+      
+      li.s-extras--li.accItem.u-inactive
+        .s-extras--trigger.u-left.accExpand.accTrigger Show Highlight
+        .s-highlight.accBody
+          .s-extras--utils
+            span.s-extras--utils-i.s-highlight--another See Another
+            span.s-extras--utils-i.accCollapse.accTrigger Hide
+          .s-extras--title A Highlight
+          .s-highlight--text {{ quotation.get_quotation }}
+      
+      li.s-extras--li.accItem.u-inactive
+        .s-extras--trigger.accExpand.accTrigger Show Tags
+        .s-tags.u-top.accBody
+          .s-extras--utils
+            span.s-extras--utils-i.accCollapse.accTrigger Hide
+          .s-extras--title Tags
+          .s-tags--inst Click a tag to find other selections like this one.
+          {% include "include-tag-sublist.html" %}  
+
+    
+    {% with ct=selection.comment_text ci=selection.comment_intro %}
+    {% if ct or ci %}
+    
+    //comments
+    .s-comments
+      
+      {% if ct %}
+      .s-comment.u-text {{ selection.get_comment_text }}
+      {% endif %}
+      
+      {% if ci %}
+      .s-comment.u-intro {{ selection.get_comment_intro }}
+      {% endif %}
+    
+    {% endif %}
+    {% endwith %}
+      
+  
+  //selection text
+  .s-text.hyphenate {{ selection.get_text }}
+
+  //postscript
+  .s-postscript
+    .s-postscript--title Further Reading
+    p.s-postscript--inst Find other selections that share features with this one:
+    //tags
+    .s-tags.u-bottom
+      {% include "include-tag-sublist.html" %}
+    .s-postscript--timeline
+      p.s-postscript--inst See selections that surround this one in <a href="/timeline/&#35;{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.	
+
+    .s-postscript--dates
+      {% if selection.date_entered != selection.date_modified %}
+      p Last modified: {{ selection.date_modified|date:"d F, G:i" }}, {{ year_modified }}
+      {% endif %}
+      p Originally posted: {{ selection.date_entered|date:"d F, G:i" }}, {{ year_entered }}
+    
+    {% for item in related_selections %}
+    p {{ item.selection.get_title }}
+    p {{ item.similarities }}
+    {% endfor %}
+
+
+{% endblock %}

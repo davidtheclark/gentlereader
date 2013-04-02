@@ -1,0 +1,43 @@
+extends ./base.jade
+
+block title
+	title Browse | the Anthologist
+
+block scripts
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/just-quot-main-built.js")
+
+block styles
+	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/contribute-main.css")
+	
+block content
+	#main
+		#main-content
+			#main-header
+				h1 Browse
+			ul#browse-list
+				li
+					a(href="/selections") all selections
+				li
+					a(href="/authors") authors
+				li
+					a(href="/highlights") highlights
+				li
+					a(href="/timeline") timeline
+				li
+					a(href="/forms") forms
+				li
+					a(href="/genres") genres
+				li
+					a(href="/topics") topics
+				li
+					a(href="/contexts") contexts
+				li
+					a(href="/styles") styles
+				li
+					a(href="/nations") nations
+				li
+					a(href="/languages") original languages
+	#sidebar
+		#quotation-container
+
+				

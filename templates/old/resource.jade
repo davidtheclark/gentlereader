@@ -1,0 +1,58 @@
+extends ./base.jade
+
+block title
+	title Links and Sources | the Anthologist
+
+block scripts
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/resource-main.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/resource-main-built.js")	
+
+block styles
+	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/resource-main.css")
+
+block content
+	#main(itemprop="mainContentOfPage")
+		#main-content
+			section(itemscope, itemtype="http://www.schema.org/ItemList")#link-list
+				h1(itemprop="name") links
+				{% autoescape off %}
+				for cat in link_categories
+					div(id="#{cat.name}", itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/ItemList") 
+						header
+							h2(itemprop="name")= cat.name
+								a(href="#").resource-arrow-up
+							p(itemprop="description")!= cat.description
+						dl.link-sublist
+							for link in cat.links
+								dt(itemprop="itemListElement")
+									h3
+										a(href="#{link.url}", target="_blank")= link.name
+									dd
+										span!= link.description
+				{% endautoescape %}
+					
+			section#source-texts(itemscope, itemtype="http://www.schema.org/ItemList")
+				h1(itemprop="name") source texts
+					a(href="#", style="vertical-align:15px;").resource-arrow-up
+				#sort-source-container
+					span#sort-label sort by:&nbsp;
+					select#sort-field.sort-select
+						option(value="author") author
+						option(value="pub_year") source date
+					select#sort-direction.sort-select
+						option(value="asc")	ascending
+						option(value="des") descending
+				
+				ul#source-list
+
+	#sidebar
+		section
+			h2.sidebar-heading Resources types:
+			ul
+				for cat in link_categories
+					a(href="##{cat.name}").sidebar-block.sidebar-hoverable
+						li= cat.name
+				a(href="#source-texts").sidebar-block.sidebar-hoverable
+					li source texts
+		#quotation-container

@@ -1,0 +1,103 @@
+extends ./base.jade
+
+block title
+	title {{ category|capfirst }} | the Anthologist
+
+block styles
+	if category == 'selections'
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-selection-main.css")
+	elif category == 'timeline'
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-timeline-main.css")
+	elif category == 'announcements'
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-announcement-main.css")
+	elif category == 'highlights'
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-highlights-main.css")
+	else
+		link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/browse-main.css")
+
+block scripts
+	// Built scripts: comment out (by indenting) for JS development.
+	if category == 'selections'
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-sel-main-built.js")
+	elif category == 'timeline'
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-timeline-main-built.js")
+	elif category == 'announcements'
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/just-quot-main-built.js")
+	elif category == 'highlights'
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-quot-main-built.js")
+	elif category == 'authors'
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-author-main-built.js")
+	else
+		{% autoescape off %}
+		script(type="application/javascript")
+			| var tagType = #{category_json};
+		{% endautoescape %}
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/br-tag-main-built.js")
+
+	// Un-built scripts: comment out (by indenting) for deployment.
+		script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+		if category == 'selections'
+			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-sel-main.js")
+		elif category == 'timeline'
+			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-timeline-main.js")
+		elif category == 'announcements'
+			<script type="application/javascript" src="{{STATIC_URL}}anthologist/js/require.js" data-main="{{ STATIC_URL }}anthologist/js/just-quot-main.js"></script>
+		elif category == 'highlights'
+			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-quot-main.js")
+		elif category == 'authors'
+			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-author-main.js")
+		else
+			{% autoescape off %}
+			script(type="application/javascript")
+				| var tagType = #{category_json};
+			{% endautoescape %}
+			script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/br-tag-main.js")
+
+block content
+	#main(itemprop="mainContentOfPage")
+		#main-content(itemscope, itemtype="http://www.schema.org/ItemList")
+			header#main-heading
+				h1(itemprop="name")
+					if category == 'selections'
+						| all selections
+					elif category == 'languages'
+						| original languages
+					else
+						| #{category}				
+				#category-description(itemprop="description")
+					include includes/browse-type-descriptions.html
+				if category == 'highlights'
+					#highlights-description
+						| Choice specimens from <cite>the Anthologist</cite>'s curated
+						| collection of public&nbsp;domain&nbsp;texts.
+			if category == 'selections'
+				include includes/br-selections
+			elif category == 'announcements'
+				include includes/br-announcements
+			elif category == 'timeline'
+				include includes/br-timeline
+			elif category == 'authors'
+				include includes/br-authors
+			elif category == 'highlights'
+				include includes/br-highlights
+			else
+				include includes/br-tags
+			#bottom-pg-container
+	#sidebar(itemscope, itemtype="WPSideBar")
+		if category == 'forms' or category == 'genres' or category == 'topics' or category == 'contexts' or category == 'styles'
+			#get-description.sidebar-block Q: What are we calling <strong>#{category}</strong>?
+		if category != 'announcements'
+			nav(itemscope, itemtype="SiteNavigationElement")
+				h2.sidebar-heading(itemprop="description") Other ways to browse: 
+				ul
+					for c in category_array
+						if c != category
+							li
+								a(href="/#{c}").sidebar-block
+									if c == 'selections'
+										| all selections
+									elif c == 'languages'
+										| orig. languages
+									else
+										| #{c}
+		aside#quotation-container

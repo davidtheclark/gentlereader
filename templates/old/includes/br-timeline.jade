@@ -1,0 +1,19 @@
+#adjustor-container 
+	#sort-container.adjustor-subcontainer
+		label#sort-label(for="sort-direction") sort order :
+		select#sort-direction
+			option(value="asc") ascending
+			option(value="des") descending
+#timeline-sel-container
+	{% autoescape off %}
+	ul
+		<!--Will be emptied and repopulated by timeline-app.js.-->
+		for s in all_selections
+			{% if forloop.counter|divisibleby:2 %}
+			li.timeline-sel-item.timeline-sel-even(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/CreativeWork")
+				include includes/br-timeline-item.jade
+			{% else %}
+			li.timeline-sel-item(itemprop="itemListElement", itemscope, itemtype="http://www.schema.org/CreativeWork")
+				include includes/br-timeline-item.jade
+			{% endif %}
+	{% endautoescape %}

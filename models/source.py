@@ -30,12 +30,6 @@ class Source(models.Model):
             return True
         else:
             return False
-   
-    def root_work(self):
-        if self.volume_title:
-            return '<cite>' + self.volume_title + '</cite>'
-        else:
-            return '"' + self.section_title + '"'
 
     def date_display(self):
         date_content = ''

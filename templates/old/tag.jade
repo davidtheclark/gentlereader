@@ -1,0 +1,140 @@
+extends ./base.jade
+
+block title
+	title {{ tag|capfirst }} | the Anthologist
+
+block scripts
+	{% autoescape off %}
+	script(type="application/javascript")
+		| tagCategory = #{tag_type_json};
+		| if (tagCategory != 'author' && tagCategory != 'language') { tagCategory += 's'; }
+		| tagId = #{tag.pk};
+		| tagName = ((tagCategory != 'author') ? '#{tag.name}' : '#{tag.full_name}');
+	{% endautoescape %}
+	
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/tag-main.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/tag-main-built.js")
+
+block styles
+	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/tag-main.css")
+
+block head
+	if tag_type == 'author'
+		meta(name="description", content="Selections from public domain texts by #{tag}.")
+	else
+		meta(name="description", content="Selections from public domain texts related to '#{tag}'.")
+
+block content
+	#main(itemprop="mainContentOfPage")
+		#main-content(itemscope, itemtype="http://www.schema.org/ItemList")
+			header#content-heading
+				if tag_type
+					#tag-type-heading
+						span#tag-type
+							if tag_type == 'language'
+								| original language
+							else
+								#{tag_type}
+						span#browse-tag-type
+							a(href="/#{tag_type}s") &raquo; browse all&nbsp;
+								if tag_type == 'language'
+									| orig. languages
+								else
+									#{tag_type}s
+				if tag_type == 'author'
+					div(itemprop="name", itemscope, itemtype="http://www.schema.org/Person")
+						h1(itemprop="name")= tag
+						meta(itemprop="familyName", content="#{tag.last_name}")
+						meta(itemprop="givenName", content="#{tag.first_name}")
+						#nation-dates				 
+							for nation in tag.nations.all
+								a(href="/nations/#{nation.slug}", itemprop="nationality") #{nation.name}
+								.
+							| #{tag.dates}.
+							meta(itemprop="birthDate", content="#{tag.birth_year}")
+							meta(itemprop="deathDeath", content="#{tag.death_year}")
+							if tag.info_url
+								a(href="#{tag.info_url}", target="_blank").small-command learn&nbsp;more&nbsp;&raquo;
+						#view-highlights
+							a(href="/highlights/#author/#{tag.id}") &laquo; view highlights from #{tag.last_name}'s selections
+				else
+					h1(itemprop="name")= tag
+					{% autoescape off %}
+					if tag.description or tag.definition or tag.info_url
+						section#tag-info
+							div(itemprop="description")
+								if tag.definition
+									!{tag.definition}
+									if tag.dictionary_source
+										| [<cite><a href="#{tag.dictionary_source.link}" target="_blank">#{tag.dictionary_source}</a></cite>]
+								if tag.description
+									!{tag.description}
+								if tag.info_url
+									a(href="#{tag.info_url}", target="_blank").small-command &nbsp;&lowast;&lowast;&lowast;&nbsp;learn&nbsp;more&nbsp;&raquo;
+					
+					{% endautoescape %}
+			
+			#adjustor-container
+				
+				#sort-container.adjustor-subcontainer
+					label#sort-label.adjustor-section-label(for="sort-field") sort order :
+					.adjustor-section-content
+						select#sort-field.sort-select
+							option(value="date_entered") post date
+							//-on Author Page, no author filter needed 
+							if tag_type != 'author'
+								option(value="author") author
+							option(value="pub_year") source date
+						select#sort-direction.sort-select
+							option(value="des") descending
+							option(value="asc")	ascending
+				
+				#filter-container.adjustor-subcontainer
+					//filled by tag-app.js
+				#page-select-container.adjustor-subcontainer
+				
+			#sel-container
+				ul
+					for s in all_selections
+						li
+							span(itemprop="itemListElement", itemscope, itemType="http://www.schema.org/CreativeWork")
+								meta(itemprop="url", content="/selections/#{s.slug}")							
+								span(itemprop="name")= s
+								| , by
+								span(itemprop="author", itemscope, itemType="http://www.schema.org/Person")
+									span(itemprop="name")= s.author
+								| (
+								span(itemprop="datePublished")= s.source.pub_year
+								| )
+			#bottom-pg-container
+			
+	#sidebar(itemscope, itemtype="http://www.schema.org/WPSideBar")
+		.sidebar-section
+			header
+				h2.sidebar-heading filter
+				.instructions Narrow the selection list by filtering for the following categories.
+			ul.related-tag-superlist
+				for c in filter_tag_types
+					li(data-type="#{c}").filter-type
+						span
+							if c == 'language'
+								| orig. languages
+							elif c == 'author'
+								| authors
+							else
+								#{c}
+						ul(id="#{c}-tags").related-tag-list
+							//List populated with tag-filters by selection-list-app.js
+						span(id="hide-#{c}").fewer-tags [fewer #{c} <span class="arrow-up"></span>]
+						span(id="show-#{c}").more-tags [more #{c} <span class="arrow-down"></span>]
+		#sidebar-contribute.sidebar-section
+			h2.sidebar-heading contribute
+			ul#suggest-selection
+				li
+					a(href="/contribute/?subject=selection%20for%20tag%20#{tag.pk}%20(#{tag})") another selection for this category
+				li
+					a(href="/contribute/?subject=comment%20about%20tag%20#{tag.pk}") a comment about this tag or its selections
+
+		
+			

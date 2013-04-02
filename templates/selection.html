@@ -1,0 +1,88 @@
+
+{% extends "base.html" %}
+{% block title %}{{ selection }}, by {{ selection.get_author }} - The Gentle Reader{% endblock %}
+{% block meta %}
+<meta name="description" content="{{ selection }}, by {{ selection.get_author }}. {% if selection.from_display_safe %}{{ selection.from_display_safe }}.{% endif %} Brought to you by The Gentle Reader."/>{% endblock %}
+<!-- styles-->{% block styles %}
+{% if selection.stylesheet %}
+<!-- If the selection has its own stylesheet, get it.-->
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}anthologist/stylesheets/selection-specific/{{ selection.stylesheet }}.css"/>{% endif %}
+{% endblock %}
+<!-- scripts-->{% block bottomscripts %}
+<script type="text/javascript" src="{{ STATIC_URL }}anthologist/lib/hyphenator.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}anthologist/scripts/selection.js"></script>{% endblock %}
+{% block main %}
+<!-- CONTENT-->
+<article class="s-content">
+  <!-- selection header-->
+  <header>
+    <!-- title, author, date-->
+    <hgroup class="s-headline">
+      <h1 class="s-title">{{ selection.get_title }}</h1>
+      <h2 class="s-authordate">
+        {% with author=selection.get_author year=selection.source.pub_year %}
+        <a href="/authors/{{ source.author.slug }}" title="Author: {{ author }}" rel="author">
+        {{ author }}</a> &mdash; <a href="/timeline&#35;{{ year }}" title="Published in {{ year }}">
+        {{ year }}</a>
+        {% endwith %}
+      </h2>{% with from=selection.from_display trans=source.translator %}
+      {% if from != "None" or trans %}
+      <!-- added info-->
+      <div class="s-info">
+        {% if from != "None" %}
+        {{ from }}.
+        {% endif %}
+        {% if trans %}
+        Translated from {{ source.langauge.name }}
+        by {{ trans }} in {{ source.translation_year }}.
+        {% endif %}
+      </div>{% endif %}
+      {% endwith %}
+    </hgroup>
+    <!-- EXTRAS-->
+    <ul id="sExtrasAccordion" class="s-extras accMother">
+      <li class="s-extras--li accItem u-inactive">
+        <div class="s-extras--trigger u-left accExpand accTrigger">Show Highlight</div>
+        <div class="s-highlight accBody">
+          <div class="s-extras--utils"><span class="s-extras--utils-i s-highlight--another">See Another</span><span class="s-extras--utils-i accCollapse accTrigger">Hide</span></div>
+          <div class="s-extras--title">A Highlight</div>
+          <div class="s-highlight--text">{{ quotation.get_quotation }}</div>
+        </div>
+      </li>
+      <li class="s-extras--li accItem u-inactive">
+        <div class="s-extras--trigger accExpand accTrigger">Show Tags</div>
+        <div class="s-tags u-top accBody">
+          <div class="s-extras--utils"><span class="s-extras--utils-i accCollapse accTrigger">Hide</span></div>
+          <div class="s-extras--title">Tags</div>
+          <div class="s-tags--inst">Click a tag to find other selections like this one.</div>{% include "include-tag-sublist.html" %}  
+        </div>
+      </li>
+    </ul>{% with ct=selection.comment_text ci=selection.comment_intro %}
+    {% if ct or ci %}
+    <!--comments-->
+    <div class="s-comments">{% if ct %}
+      <div class="s-comment u-text">{{ selection.get_comment_text }}</div>{% endif %}
+      {% if ci %}
+      <div class="s-comment u-intro">{{ selection.get_comment_intro }}</div>{% endif %}
+    </div>{% endif %}
+    {% endwith %}
+  </header>
+  <!--selection text-->
+  <div class="s-text hyphenate">{{ selection.get_text }}</div>
+  <!--postscript-->
+  <div class="s-postscript">
+    <div class="s-postscript--title">Further Reading</div>
+    <p class="s-postscript--inst">Find other selections that share features with this one:</p>
+    <!--tags-->
+    <div class="s-tags u-bottom">{% include "include-tag-sublist.html" %}</div>
+    <div class="s-postscript--timeline">
+      <p class="s-postscript--inst">See selections that surround this one in <a href="/timeline/&#35;{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.	</p>
+    </div>
+    <div class="s-postscript--dates">{% if selection.date_entered != selection.date_modified %}
+      <p>Last modified: {{ selection.date_modified|date:"d F, G:i" }}, {{ year_modified }}</p>{% endif %}
+      <p>Originally posted: {{ selection.date_entered|date:"d F, G:i" }}, {{ year_entered }}</p>
+    </div>{% for item in related_selections %}
+    <p>{{ item.selection.get_title }}</p>
+    <p>{{ item.similarities }}</p>{% endfor %}
+  </div>
+</article>{% endblock %}

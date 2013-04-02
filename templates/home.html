@@ -1,0 +1,76 @@
+
+{% extends "base.html" %}
+{% block title %}The Gentle Reader{% endblock %}
+{% block meta %}
+<meta name="description" content=""/>{% endblock %}
+{% block main %}
+<header class="site-header">
+  <h1>
+    <div class="site-title-the">The</div>
+    <div class="site-title">Gentle Reader</div>
+  </h1>
+  <p class="site-slogan">Containing a <em>dynamic</em>, <em>curated</em> <span class="s-cap">Anthology</span> of Selections from Texts in the <em>Public Domain</em>, compiled and catalogued for your <em>Enjoyment</em> and <em>Edification</em>.</p>
+  <p class="site-slogan"><a href="/about" class="site-header-more">Read more about the site</a></p>
+  <p class="site-dedication">Dedicated to The Moon, <br /> <span class="site-dedication-date">MMXIII.</span></p>
+</header>
+<div class="explore">
+  <div class="explore-border top"></div><span class="search-container">
+    <label for="inputSearch" class="search-label">Search</label>
+    <input id="inputSearch" type="search" placeholder="try an author, a title, &amp;c." class="styled-input"/>
+    <input type="submit" value="Go" class="search-btn"/></span>
+  <div class="explore-border bottom"></div>
+</div>
+<nav id="home-browse" class="home-nav-container">
+  <h2 class="h2"><span class="h2-inner">Browse</span></h2>
+  <ul class="home-nav">
+    <li><a href="#recent-additions"><span class="home-nav-item">Recent Additions</span><span class="home-nav-sub-right">i</span></a></li>
+    <li><a href="/selections"><span class="home-nav-item">Selections</span><span class="home-nav-sub-right">ii</span>
+        <ul class="home-nav-sub">
+          <li><a href="/selections/random"><span class="home-nav-sub-item">at <span class="s-cap">random</span></span><span class="home-nav-sub-right">iii</span></a></li>
+          <li><a href="/authors"><span class="home-nav-sub-item">by author</span><span class="home-nav-sub-right">iv</span></a></li>
+          <li><a href="/timeline"><span class="home-nav-sub-item">by date</span><span class="home-nav-sub-right">v</span></a></li>
+          <li><a href="/forms"><span class="home-nav-sub-item">by form</span><span class="home-nav-sub-right">vi</span></a></li>
+          <li><a href="/genres"><span class="home-nav-sub-item">by genre</span><span class="home-nav-sub-right">vii</span></a></li>
+          <li><a href="/topic"><span class="home-nav-sub-item">by topic</span><span class="home-nav-sub-right">viii</span></a></li>
+          <li><a href="/contexts"><span class="home-nav-sub-item">by context</span><span class="home-nav-sub-right">ix  </span></a></li>
+          <li><a href="/nation"><span class="home-nav-sub-item">by nation</span><span class="home-nav-sub-right">x</span></a></li>
+          <li><a href="/languages"><span class="home-nav-sub-item">by original language</span><span class="home-nav-sub-right">xi</span></a></li>
+        </ul></a></li>
+    <li><a href="/highlights"><span class="home-nav-item">Highlights</span><span class="home-nav-sub-right">x</span></a></li>
+    <li><a href="/announcements"><span class="home-nav-item">Announcements</span><span class="home-nav-sub-right">xi</span></a></li>
+  </ul>
+  <div class="home-nav-border"></div>
+</nav>
+<div id="recent-additions" class="recent">
+  <h2 class="h2"><span class="h2-inner">Recent Additions</span></h2>{% for it in recent_additions %}<a href="/selections/{{ it.slug }}" class="li-sel-link">
+    <div class="li-sel"> 
+      <h3 class="li-sel-title">{{ it.get_title }}</h3>
+      <section class="li-sel-dets"><span class="s-cap li-sel-author">{{ it.get_author }}.</span>{% if it.from_display %}
+        {{ it.from_display }}
+        {% endif %}
+        ({{ it.source.date_display }}).
+      </section>
+      <section class="li-sel-teaser"><span class="li-sel-teaser-text hyphenate">{{ it.get_teaser }}</span><span class="read-on">read&nbsp;on</span></section>
+      <div class="li-sel-posttime">Posted {{ it.date_entered }}</div>
+    </div></a>{% endfor %}
+  <div class="home-more"><a href="/selections" class="home-more-btn">more selections</a><a href="/announcements" class="home-more-btn">more announcements</a>
+    <div class="home-more-border"></div>
+  </div>
+</div>
+<div class="subscribe">
+  <p>As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.</p>
+  <div class="subscribe-email">
+    <label for="inputEmail"><em>Sign-up</em> for <span class="s-cap">Email Updates</span></label>
+    <input id="inputEmail" type="email" placeholder="your email address" class="styled-input"/>
+    <button type="submit" class="btn">Submit</button>
+  </div>
+  <div class="subscribe-feed">Or <em>subscribe</em> to <span class="s-cap">The Feed</span></div>
+</div>
+<div class="random-sel"><a href="/selections/random">Read a random selection</a></div>
+<aside class="random-quot">
+  <h2 class="h2 em">Random Highlight</h2>
+  <div class="quot-text">{{ random_quot.get_quot }}</div>
+  <div class="quot-citation">{{ random_quot.get_source }}</div>
+  <div class="quot-followup"><a href="/selections/{{ random_quot.selection.slug }}">read this selection</a><a href="#">get another random highlight</a></div>
+</aside>
+<div class="contribute"><a href="/contribute">Contribute</a></div>{% endblock %}

@@ -2,6 +2,34 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from quotation import Quotation
 
+#utility
+def _get_from_display(s, mark):
+    """Return a sentence describing the selection's source.
+    Return nothing if the source has no selection title
+    (which should indicate that the selection
+    constitutes a complete short text."""
+    if s.selection_title:
+        from_section = s.from_section
+        source = s.source
+        vol = source.volume_title
+        result = 'From '
+        if from_section:
+            if mark:
+                result += '"' + from_section + '" in '
+            else:
+                result += from_section + ' in '
+        if vol:
+            if mark:
+                result += '<cite>' + vol + '</cite>'
+            else:
+                result += vol
+        else:
+            result += '"' + source.section_title + '"'
+        return mark_safe(result)
+    else:
+        return
+
+
 class Selection(models.Model):
     class Meta:
         ordering = ['-date_entered']
@@ -25,54 +53,60 @@ class Selection(models.Model):
     slug = models.SlugField(unique=True, help_text="Use selection title if there is one; otherwise, source title. Exclude initial articles and punctuation. Use lowercase and hyphenate.")
     stylesheet = models.SlugField(blank=True, null=True, help_text="If this selection requires its own accompanying stylesheet, specify the filename -- which should match the selection's slug, unless there's a good reason. Ensure the file is in static/anthologist/css/selection-specific/.")
     
-    def widont_title(self):
+    
+    def __unicode__(self):
+        """If the source has a selection title provided, return it;
+        otherwise, return the section title from the source (which
+        would mean that the selection constitutes of the full-text of
+        that section)."""
+        if self.selection_title:
+            return mark_safe(self.selection_title)
+        else:
+            return mark_safe(self.source.section_title)
+    
+    def get_title(self):
+        """Return the selection's name with a non-breaking space
+        between the last and second-to-last words, to prevent orphans."""
         words = self.__unicode__().split()
-        last = len(words) - 1
-        tit = ''
+        last_word = len(words) - 1
+        title_adj = ''
         for i, word in enumerate(words):
-            if i != last and i != last - 1:
-                tit += word + ' '
-            elif i == last - 1:
-                tit += word + '&nbsp;'
-            elif i == last:
-                tit += word
-        return tit
+            if i != last_word and i != last_word - 1:
+                title_adj += word + ' '
+            elif i == last_word - 1:
+                title_adj += word + '&nbsp;'
+            elif i == last_word:
+                title_adj += word
+        return mark_safe(title_adj)
+
+    def get_author(self):
+        return mark_safe(self.source.author.full_name())
     
     def shortened_passage(self):
         return r'"' + self.text[:70] + r'..."' 
     
-    def author(self):
-        return self.source.author
-    
-    def source_display(self):
-        title = self.source.full_title()
-        return title
-    
-    def __unicode__(self):
-        if self.selection_title:
-            return self.selection_title
-        else:
-            return self.source.section_title
-    
     def from_display(self):
-        fr = self.from_section
-        sv = self.source.root_work()
-        if self.selection_title:
-            result = 'From '
-            if fr and sv:
-                result += '"' + fr + '" in '
-            if sv:
-                result += self.source.root_work()
-            if self.source.root_work()[-1:] != '?':
-                result += '.'
-            return result
-        else:
-            return 
+        return mark_safe(_get_from_display(self, True))
+    
+    def from_display_safe(self):
+        return mark_safe(_get_from_display(self, False))
+    
+    def get_teaser(self):
+        return mark_safe(self.teaser)
+    
+    def get_comment_text(self):
+        return mark_safe(self.comment_text)
+    
+    def get_comment_intro(self):
+        return mark_safe(self.comment_intro)
+    
+    def get_text(self):
+        return mark_safe(self.text)
      
     def class_name(self):
+        """Used to distinguish Announcements from Selections on the homepage, so that the lists can be merged
+        #but each list-item is given a template corresponding to its model."""
         return 'Selection'
-        #Used to distinguish Announcements from Selections on the homepage, so that the lists can be merged
-        #but each list-item is given a template corresponding to its model.
 
     def toJSON(self):
         return dict(

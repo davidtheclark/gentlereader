@@ -1,0 +1,11 @@
+{% for category in grouped_tags %}
+<div class="tag-sublist-container">
+  <div class="tag-sublist-label">{{ category.name|capfirst }}</div>
+  <ul class="tag-sublist">
+    {% if category.tags %}
+    {% for tag in category.tags %}
+    <li><a href="/{{ category.type }}/{{ tag.slug }}" title="{{ tag }}" rel="tag">{{ tag }}</a></li>{% endfor %}
+    {% else %}
+    <li><a href="/contribute/?subject={{ category.type }}%20for%20sel%20{{ selection.pk }}%20({{ selection }})" class="tag-suggest">suggest one</a></li>{% endif %}
+  </ul>
+</div>{% endfor %}

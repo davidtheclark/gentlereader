@@ -1,0 +1,57 @@
+extends ./base.jade
+
+block scripts	
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/js/libraries/hyphenator.js")
+	
+	//script(type="application/javascript", src="#{STATIC_URL}anthologist/js/require-config.js")
+	//script(src="#{STATIC_URL}anthologist/js/require.js", data-main="#{STATIC_URL}anthologist/js/home-main.js")
+	script(type="application/javascript", src="#{STATIC_URL}anthologist/builds/home-main-built.js")
+	
+block styles
+	link(rel="stylesheet", type="text/css", href="#{STATIC_URL}anthologist/stylesheets/css/home-main.css")
+
+block head
+	meta(name="description", content="A dynamic, curated collection of digestible selections from writing in the public domain, catalogued and connected to encourage exploration. A new breed of anthology.")
+
+block header
+
+block content
+	header#title-heading(itemscope, itemtype="http://www.schema.org/WPHeader")
+		
+		img(src="/static/anthologist/images/leaf-border-green-white.jpg", alt="leafy border").leafy-border
+		
+		#title-container
+			meta(itemprop="name", content="the Anthologist")
+			img(src="/static/anthologist/images/title-alone.jpg", alt="the Anthologist", title="the Anthologist")#title-image
+			img(src="/static/anthologist/images/melancholic-scholar.jpg", alt="a melancholic scholar")#scholar-image
+			#title-intro-text(itemprop="about")
+				| offers a dynamic, curated collection of digestible selections from writing in the public domain,
+				| catalogued and connected to encourage exploration.
+				span#open-about [Read more about the site <span class="arrow-down"></span>]
+		
+	#about-container(itemprop="about")
+		#about-text
+			span#close-about [close]
+			include includes/about-text.html
+	
+	img(src="/static/anthologist/images/leaf-border-green-white-in.jpg", alt="leafy border").leafy-border
+	
+	#body-container
+		nav#sidebar(itemscope, itemtype="http://www.schema.org/SiteNavigationElement")
+			include includes/home-sidebar.html
+
+		section#recent-contents-container(itemprop="mainContentOfPage")
+			#recent-contents(itemscope, itemtype="http://www.schema.org/ItemList")
+				header#recent-contents-title
+					h1(itemprop="name") recent contents
+					div showing
+						select#recent-contents-filter
+							option(value="selAndAnn", selected) selections &amp; announcements
+							option(value="selOnly") selections only
+							option(value="annOnly") announcements only
+				#list-container
+				#recent-contents-followup-container
+					a(href="/selections").recent-contents-followup browse all selections
+					a(href="/announcements").recent-contents-followup browse all announcements
+		
+			
