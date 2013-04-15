@@ -1,0 +1,148 @@
+$nav-y: 56px
+
+.site-nav--container
+  +box-shadow(0 0 7px $c-subtle)
+  background: white
+  border-bottom: double 6px black
+  height: $nav-y
+  position: relative
+  width: 100%
+
+.site-nav
+  +clearfix
+  font-size: 1.2em
+  margin: 0 auto
+  max-width: $site-x
+  padding-left: 0.5em
+  vertical-align: middle
+
+.site-nav--ul
+  +inline-list
+  display: inline
+  float: right
+
+.site-nav--li
+  border-bottom: 6px solid transparent
+  cursor: pointer
+  font:
+    family: $f-standout
+    size: 0.7em
+    weight: bold
+  height: $nav-y
+  line-height: $nav-y
+  padding: 0 0.5em
+  text-transform: uppercase
+  
+  &:hover
+    +transition((background $trans-time, border-bottom-color $trans-time, color $trans-time ))
+    color: $c-subtle
+    background: whitesmoke
+    border-bottom-color: $c-emphatic
+  
+  &.nav-about
+    display: none
+
+.site-nav--title,
+.site-nav--title:visited
+  border-bottom: none
+  color: $c-base
+  display: block
+  float: left
+  font-family: $f-heading
+  margin: 0.1em 0.7em 0 0
+  text-align: left
+  text-transform: uppercase
+  vertical-align: middle
+  &:hover
+    color: $c-emphatic
+
+.title-the
+  font-size: 0.7em
+.title-gentle
+  letter-spacing: 0.1em
+.title-reader
+  display: block
+  letter-spacing: 0.46em
+
+.fixed-back
+  display: none
+  
+  
+@media (min-width: $m-selection-med)
+  $nav-y: 46px
+
+  .site-nav--container
+    height: $nav-y
+
+  .site-nav--title,
+  .site-nav--title:visited
+    line-height: $nav-y - 2
+    margin-right: 2em 
+    text-align: left
+    width: auto
+    word-spacing: 0.3em
+  
+  .title-reader
+    display: inline
+  
+  .title-gentle,
+  .title-reader
+    letter-spacing: 0.1em
+  
+  .site-nav--li
+    line-height: $nav-y - 2
+    height: $nav-y
+    vertical-align: top
+    &.nav-about
+      display: inline-block
+
+
+@media (min-width: $m-selection-lg)
+  $nav-y: 55px
+
+  .site-nav--container
+    height: $nav-y
+    position: fixed
+    top: 0
+    z-index: 1000
+
+  .site-nav--ul
+    float: left
+
+  .site-nav--title
+    font-size: 1.7em
+ 
+  .site-nav--li
+    height: $nav-y
+    line-height: $nav-y
+
+  body
+    margin-top: $nav-y
+    
+@media (min-width: $m-selection-xlg)  
+  .fixed-back,
+  .fixed-back:visited
+    color: $c-base
+    display: block
+    height: $nav-y
+    line-height: $nav-y
+    position: absolute
+    top: 0
+    right: 0.5em
+    &:after
+      +arrow($direction: up)
+      margin-left: 0.2em
+    &:hover
+      color: $c-emphatic
+      &:after
+        +transition(border-bottom-color $trans-time)
+        border-bottom-color: $c-emphatic
+
+/* iPads in landscape ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
+  body
+    margin-top: 0
+  .site-nav--container
+    position: static
+  a.fixed-back
+    display: none

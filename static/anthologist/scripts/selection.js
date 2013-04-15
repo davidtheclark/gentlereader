@@ -19,7 +19,7 @@
     getMothers: function() {
       var app;
       app = this;
-      return $(".accMother").each(function() {
+      return $(".j-accMother").each(function() {
         return app.mothers.push($(this));
       });
     },
@@ -27,9 +27,9 @@
       var $items, app, id, triggers;
       app = this;
       id = $m.attr("id");
-      $items = $m.find(".accItem");
+      $items = $m.find(".j-accItem");
       $items.data("mother", id);
-      triggers = $m.find(".accTrigger");
+      triggers = $m.find(".j-accTrigger");
       return triggers.click(function() {
         return app.change($(this), $items, $m);
       });
@@ -69,30 +69,113 @@
         app.changeState("hide", $thisItem);
       }
       if (accordion.style) {
-        return accordion.style($trigger, $items, $mother);
+        return accordion.style($trigger, $thisItem, $items, $mother);
       }
     }
   };
 
   $(function() {
-    accordion.style = function($trigger, $items, $mother) {
-      var $triggers, isOpen;
-      $triggers = $mother.find(".accTrigger");
-      isOpen = false;
-      $items.each(function() {
-        if ($(this).hasClass("u-active")) {
-          return isOpen = true;
+    var changeHighlight;
+    accordion.style = function($trigger, $thisItem, $items, $mother) {
+      var $triggers, isOpen, untaintedHeight;
+      if ($mother.attr("id") === "sExtrasAccordion") {
+        $triggers = $mother.find(".j-accTrigger");
+        isOpen = false;
+        $items.each(function() {
+          if ($(this).hasClass("u-active")) {
+            return isOpen = true;
+          }
+        });
+        if (isOpen) {
+          return $triggers.addClass("u-wide");
+        } else {
+          return $triggers.removeClass("u-wide");
         }
-      });
-      if (isOpen) {
-        return $triggers.addClass("u-wide");
-      } else {
-        return $triggers.removeClass("u-wide");
+      } else if ($mother.attr("id") === "relSelAccordion") {
+        untaintedHeight = $thisItem.find(".rsel-info-container").height();
+        $thisItem.height($thisItem.height());
+        return $trigger.fadeOut("fast", function() {
+          /*
+          After the trigger is gone, calculate a new height
+          for the accItem, adding untaintedHeight to accBody's height.
+          Move the already-invisible teaser off-screen.
+          Then perform a series of animations that increase the height,
+          slide in the teaser, and then reset height and width (and make
+          the teaser static) so browser can be resized after looking
+          at a teaser.
+          */
+
+          var $body, bodyHeight, bodyWidth, changeFirst, changeFourth, changeSecond, changeThird, newItemHeight;
+          $body = $thisItem.find(".j-accBody");
+          bodyWidth = $body.width();
+          bodyHeight = $body.height();
+          newItemHeight = untaintedHeight + bodyHeight;
+          $body.css({
+            width: bodyWidth,
+            right: bodyWidth * 2,
+            opacity: 1
+          });
+          changeFirst = {
+            height: newItemHeight
+          };
+          changeSecond = {
+            right: 0
+          };
+          changeThird = {
+            position: "static",
+            width: "auto"
+          };
+          changeFourth = {
+            height: "auto"
+          };
+          return $thisItem.animate(changeFirst, 300, function() {
+            return $body.animate(changeSecond, 300, function() {
+              $body.css(changeThird);
+              return $thisItem.css(changeFourth);
+            });
+          });
+        });
       }
     };
-    return accordion.go({
+    accordion.go({
       oneAtATime: false,
       closeAll: true
+    });
+    changeHighlight = function($now) {
+      this.getNew = function($now) {
+        return $now.next(".u-inactive");
+      };
+      this.showNew = function($now) {
+        var $next, $nextHeight, animFirst, animSecond, animThird;
+        $next = this.getNew($now);
+        $nextHeight = $next.height();
+        animFirst = {
+          opacity: 0
+        };
+        animSecond = {
+          height: $nextHeight + "px"
+        };
+        animThird = {
+          opacity: 1
+        };
+        if ($next.hasClass("s-highlight--all")) {
+          $(".s-highlight > .s-extras--utils, .s-highlight > .s-extras--title").fadeOut();
+        }
+        return $now.animate(animFirst, 200, function() {
+          return $(".s-highlight--text").animate(animSecond, 300, function() {
+            return $next.animate(animThird, 200, function() {
+              $now.removeClass("u-active").addClass("u-inactive");
+              return $next.removeClass("u-inactive").addClass("u-active");
+            });
+          });
+        });
+      };
+      return this.showNew($now);
+    };
+    return $(".s-highlight--another").click(function() {
+      var $now;
+      $now = $(".s-highlight--li.u-active");
+      return changeHighlight($now);
     });
   });
 

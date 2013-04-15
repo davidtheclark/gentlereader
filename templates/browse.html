@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% block title %}Browse {{ category|capfirst }} - The Gentle Reader{% endblock %}
+{% block bottomscripts %}
+<script type="application/javascript" src="{{ STATIC_URL }}anthologist/scripts/require-config.js"></script>
+<script type="text/javscript" src="{{ STATIC_URL }}anthologist/scripts/lib/sweet-justice.js"></script>{% autoescape off %}
+<script type="application/javascript">var tagType = {{ category_json }};</script>{% endautoescape %}
+<script src="{{ STATIC_URL }}anthologist/scripts/require.js" data-main="{{ STATIC_URL }}anthologist/scripts/browse-main.js"></script>{% endblock %}
+{% block main %}
+<div class="content browse-content">
+  <h1 class="browse-h">
+    {% if category == "selections" %}
+    all selections
+    {% elif category == "languages" %}
+    original languages
+    {% else %}
+    {{ category }}
+    {% endif %}
+  </h1>
+  <aside>
+    <div class="rq-backdrop"></div>
+    <div id="rqTop" class="rq-body">
+      <div class="rq-title">A Random Highlight</div>
+      <div class="rq-content sweet-justice"></div>
+      <div class="rq-utils">
+        <div class="rq-another">Get Another Highlight</div>
+        <div class="rq-close">Close</div>
+      </div>
+    </div>
+  </aside>
+  <div id="adjustor-container">
+    <div id="page-select-container" class="adjustor-subcontainer"></div>
+  </div>
+  <div id="tag-container">
+    <ul id="tag-list">{% for t in tags %}
+      <li><a href="{{ t.slug }}" class="tag-list--a"><span class="tag-list--span">{{ t }}</span></a></li>{% endfor %}
+    </ul>
+  </div>
+  <div class="rq-btn">Read a Random Highlight</div>
+</div>{% endblock %}

@@ -1,0 +1,36 @@
+!!!
+html(lang="en")
+  head
+    meta(http-equiv="Content-Type", content="text/html")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title
+      {% block title %}{% endblock %}
+      
+    {% block meta %}{% endblock %}
+
+    link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed")
+
+    link(rel="stylesheet", href="{{ STATIC_URL }}anthologist/style/css/STYLE.css")
+    {% block style %}{% endblock %}
+
+    {% block topscripts %}{% endblock %}
+
+    {% block head %}{% endblock %}
+
+  body
+    
+    {% block header %}
+    {% include "header.html" %}
+    {% endblock %}
+    
+    {% block main %}{% endblock %}
+  
+    {% block footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+  
+    // work this into a build layer
+    script(type="text/javscript", src="{{ STATIC_URL }}anthologist/lib/hyphenator.js")
+    {% block bottomscripts %}{% endblock %}

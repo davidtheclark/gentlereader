@@ -1,0 +1,20 @@
+.tag-sublist-container
+  .tag-sublist-label Author
+  ul.tag-sublist
+    li: a(href="/authors/{{ source.author.slug }}") {{ source.author }}
+
+{% for category in grouped_tags %}
+.tag-sublist-container
+  .tag-sublist-label {{ category.name|capfirst }}
+  ul.tag-sublist
+
+    {% if category.tags %}
+
+    {% for tag in category.tags %}
+    li: a(href="/{{ category.type }}/{{ tag.slug }}", title="{{ tag }}", rel="tag") {{ tag }}
+    {% endfor %}
+
+    {% else %}
+    li: a(href="/contribute/?subject={{ category.type }}%20for%20sel%20{{ selection.pk }}%20({{ selection }})").tag-suggest suggest one
+    {% endif %}
+{% endfor %}

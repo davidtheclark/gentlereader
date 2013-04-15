@@ -18,15 +18,16 @@ link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}anthologist/styles
 
 // scripts
 {% block bottomscripts %}
+
 script(type="text/javascript", src="{{ STATIC_URL }}anthologist/lib/hyphenator.js")
 script(type="text/javascript", src="{{ STATIC_URL }}anthologist/scripts/selection.js")
-{% endblock %}
 
+{% endblock %}
 
 {% block main %}
 
 // CONTENT
-article.s-content
+article.content
 
   // selection header
   header
@@ -60,25 +61,34 @@ article.s-content
       {% endwith %}
     
     // EXTRAS
-    ul.s-extras#sExtrasAccordion.accMother
+    ul.s-extras#sExtrasAccordion.j-accMother
       
-      li.s-extras--li.accItem.u-inactive
-        .s-extras--trigger.u-left.accExpand.accTrigger Show Highlight
-        .s-highlight.accBody
+      li.s-extras--li.j-accItem.u-inactive
+        .s-extras--trigger.u-left.j-accExpand.j-accTrigger Show Highlight
+        .s-highlight.j-accBody
           .s-extras--utils
             span.s-extras--utils-i.s-highlight--another See Another
-            span.s-extras--utils-i.accCollapse.accTrigger Hide
+            span.s-extras--utils-i.j-accCollapse.j-accTrigger Hide
           .s-extras--title A Highlight
-          .s-highlight--text {{ quotation.get_quotation }}
+          ul.s-highlight--text.hyphenate
+            {% for q in quotations %}
+            {% if forloop.counter == 1 %}
+            li.s-highlight--li.u-active {{ q.get_quotation }}
+            {% else %}
+            li.s-highlight--li.u-inactive {{ q.get_quotation }}
+            {% endif %}
+            {% endfor %}
+            .s-highlight--li.u-inactive.s-highlight--all: a(href="#") see all the highlights for this selection
+
       
-      li.s-extras--li.accItem.u-inactive
-        .s-extras--trigger.accExpand.accTrigger Show Tags
-        .s-tags.u-top.accBody
+      li.s-extras--li.j-accItem.u-inactive
+        .s-extras--trigger.j-accExpand.j-accTrigger Show Tags
+        .s-tags.u-top.j-accBody
           .s-extras--utils
-            span.s-extras--utils-i.accCollapse.accTrigger Hide
+            span.s-extras--utils-i.j-accCollapse.j-accTrigger Hide
           .s-extras--title Tags
           .s-tags--inst Click a tag to find other selections like this one.
-          {% include "include-tag-sublist.html" %}  
+          include includes/tag-sublist 
 
     
     {% with ct=selection.comment_text ci=selection.comment_intro %}
@@ -104,24 +114,31 @@ article.s-content
 
   //postscript
   .s-postscript
-    .s-postscript--title Further Reading
-    p.s-postscript--inst Find other selections that share features with this one:
+
     //tags
-    .s-tags.u-bottom
-      {% include "include-tag-sublist.html" %}
-    .s-postscript--timeline
-      p.s-postscript--inst See selections that surround this one in <a href="/timeline/&#35;{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.	
+    .s-postscript--col.u-second
+      .s-tags.u-bottom
+        h3.s-postscript--h3 Tags
+        .s-tags--inst Click a tag to find other selections like this one.
+        include includes/tag-sublist
+        
+      .s-highlight--timeline See selections that surround this one in <a href="/timeline/&#35;{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.	
 
-    .s-postscript--dates
-      {% if selection.date_entered != selection.date_modified %}
-      p Last modified: {{ selection.date_modified|date:"d F, G:i" }}, {{ year_modified }}
-      {% endif %}
-      p Originally posted: {{ selection.date_entered|date:"d F, G:i" }}, {{ year_entered }}
-    
-    {% for item in related_selections %}
-    p {{ item.selection.get_title }}
-    p {{ item.similarities }}
-    {% endfor %}
+    .s-postscript--col.u-first
+      //related selections
+      .rsel
+        h3.s-postscript--h3 Related Selections
+        ul#relSelAccordion.j-accMother
+          
+          {% for item in related_selections %}
+          include includes/related-selection
+          {% endfor %}
 
+  //post and modification dates
+  .s-dates
+    {% if selection.date_entered != selection.date_modified %}
+    p Last modified: {{ selection.date_modified|date:"d F, G:i" }}, {{ year_modified }}
+    {% endif %}
+    p Originally posted: {{ selection.date_entered|date:"d F, G:i" }}, {{ year_entered }}
 
 {% endblock %}

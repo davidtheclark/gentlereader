@@ -5,9 +5,9 @@ jade = require 'jade'
 argv = require('optimist')
   .boolean(['R','s']) # Use -R flag to create RequireJS files, use -s flag to indicate if all functions should be written to a single file
   .default(
-    J: '/static/anthologist/js/libraries/jade-runtime.js',     # use -J flag to indicate the location of Jade's runtime.js
-    w: '../../static/anthologist/jade',                 # use -w flag to indicate the watch directory of Jade files
-    o: '../../static/anthologist/js/templates'         # use -o flag to indicate the output location for JavaScript files    
+    J: '/static/anthologist/scripts/lib/jade-runtime.js',   # use -J flag to indicate the location of Jade's runtime.js
+    w: '../../static/anthologist/scripts/templates/jade',   # use -w flag to indicate the watch directory of Jade files
+    o: '../../static/anthologist/scripts/templates'         # use -o flag to indicate the output location for JavaScript files    
   )
   .argv
   

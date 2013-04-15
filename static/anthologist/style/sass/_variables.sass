@@ -1,23 +1,39 @@
+/* 
+ * down arrow: &#9660; or small &#9662;
+ * up arrow: &#9650; or small &#9652;
+ * left arrow: &#9668; or small &#9666;
+ * right arrow: &#9654; or small &#9656;
+ *  */
+
 
 //  VARIABLES
 
 
+// LAYOUT
+$site-x: 940px
 
-//  LAYOUT AND TYPOGRAPHY
 
-$f-base: "Crimson Text", Georgia, "Times New Roman", Times, serif
+// TYPOGRAPHY
+
+$f-base: "Crimson", Georgia, "Times New Roman", Times, serif
 $f-heading: "IM Fell English", Georgia, "Times New Roman", Times, serif
-
+$f-standout: Arial, sans-serif 
+$f-ornament: "VictorianOrn"
+$middot: "\00b7"
+$flower: "\274b"
 
 // COLORS
 
+$c-base: black
 $c-emphatic: #c00b0b
-$c-link: #454AD3
 $c-subtle: #6D6D6D
+$c-standout: #7DBEBE
+$c-link: #7165C7
+$c-link-hover: lighten($c-link, 15)
+$c-weird: #3a5308
 
 
 // DECORATIONS
-
 
 $dots: "\00A0\00B7\00A0\00B7\00A0\00B7\00A0"
 $bar: 1px solid black
@@ -25,6 +41,13 @@ $bar2: 2px solid black
 $double: double 4px black
 $arrow-r-a: "\00A0\00BB"
 $arrow-r-b: "\00BB\00A0"
+
+
+// MEDIA QUERIES
+
+$m-selection-med: 32.1875em
+$m-selection-lg: 47.5em
+$m-selection-xlg: 51.25em
 
 
 // MIX-INS
@@ -36,21 +59,20 @@ $arrow-r-b: "\00BB\00A0"
   white-space: nowrap
   font-style: normal
   font-weight: normal
-  content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 
 
 =dot-leader-list 
-  list-style-type: none
-  margin: 0 0 10px 0
-  padding-left: 0px
+  list-style: none
+  margin: 0
+  padding: 0
   overflow-x: hidden
   overflow-y: hidden
   li 
     text-align: right
-    padding-bottom: 2px
+    padding-bottom: 0.1em
     &:before 
       +dot-leaders
-    
     & span:first-child 
       padding-left: 0.3em
       // solve a problem with i0S browsers seeing a dot to the right of the word 
@@ -61,8 +83,36 @@ $arrow-r-b: "\00BB\00A0"
   color: $c-emphatic
   font:
     family: $f-heading
-    variant: small-caps
-    size: 2em
-  
-  
 
+%reverse-italics
+  em,
+  cite,
+  i,
+  .inline-translation 
+    font-style: normal
+
+%indented-ps
+  p 
+    margin: 0
+    text-indent: 20px
+    &:first-child 
+      text-indent: 0
+
+=button($color: $c-base, $hover: $c-emphatic)
+  border-bottom: 2px solid $color
+  color: $color
+  font:
+    size: 0.8em
+  text-transform: uppercase
+  &:hover
+    +transition( (color $trans-time, border-bottom-color $trans-time) )
+    border-bottom-color: $hover
+    color: $hover
+
+$trans-time: 0.3s ease-in
+  
+// WEIRD STUFF CORRECTION
+
+b,
+strong
+  line-height: 1

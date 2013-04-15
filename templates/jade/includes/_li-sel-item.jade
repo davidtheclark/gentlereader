@@ -1,0 +1,18 @@
+li: a(href="/selections/{{ selection.slug }}").li-sel
+  
+  h3 {{ selection.get_title }}
+  
+  section.li-sel-dets
+    span.li-sel-author {{ selection.get_author }}.
+    
+    {% if selection.from_display %}
+    {{ selection.from_display }}
+    {% endif %}
+    
+    | ({{ selection.source.date_display }}).
+  
+  section.li-sel--teaser
+    span.teaser-text.hyphenate {{ selection.get_teaser }}
+    span.read-on read&nbsp;on
+
+  .li-sel--posttime Posted {{ selection.date_entered }}

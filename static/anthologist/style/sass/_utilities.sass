@@ -17,13 +17,16 @@
   width: $y
 
 
-=absolute($top: auto, $right: auto, $bottom: auto, $left: auto, $z-index: auto) 
+=absolute($top: auto, $right: auto, $bottom: auto, $left: auto) 
   position: absolute
-  top: $top
-  right: $right
-  bottom: $bottom
-  left: $left
-  z-index: $z-index
+  @if $top != auto
+    top: $top
+  @if $right != auto
+    right: $right
+  @if $bottom != auto
+    bottom: $bottom
+  @if $left != auto
+    left: $left
 
 
 =hr($width: 50%, $height: 1px, $color: black) 
@@ -36,12 +39,12 @@
 
 
 // inline-list will only work with <ul>s
-=inline-list($divider) 
-  display: inline
+=inline-list($divider: none, $disp: inline-block) 
   & > li 
-    display: inline-block
-    &:not(:last-child):after 
-      content: $divider
+    display: $disp
+    @if $divider != none
+      &:not(:last-child):after 
+        content: $divider
     
 =two-borders($axis: x, $border: 1px solid black) 
   @if $axis ==x 
@@ -57,30 +60,23 @@
   -o-transition: $transition
   transition: $transition
 
-//
-  Clearfix: contain floats -- from HTML5 Boilerplate
-
+/* Clearfix: contain floats -- from HTML5 Boilerplate
   For modern browsers
   1. The space content is one way to avoid an Opera bug when the
       `contenteditable` attribute is included anywhere else in the document.
       Otherwise it causes space to appear at the top and bottom of elements
       that receive the `clearfix` class.
   2. The use of `table` rather than `block` is only necessary if using
-      `:before` to contain the top-margins of child elements.
-
+      `:before` to contain the top-margins of child elements. */
 =clearfix 
   &:before,
   &:after 
-    content: " " /* 1 */
-    display: table /* 2 */
-  
+    content: " "
+    display: table
   &:after 
     clear: both
-  
-  /*
-   * For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats.
-   */
+  /*For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats. */
   *zoom: 1
 
 =arrow($size: 5, $color: black, $direction: down) 
@@ -93,8 +89,10 @@
     margin-bottom: $size - 2px
   @else if $direction ==right 
     $side: left
+    margin-bottom: $size - 3px
   @else if $direction ==left 
     $side: right
+    margin-bottom: $size - 3px
   
   content: ""
   display: inline-block
@@ -112,7 +110,22 @@
 =right-finger
   &:before
     content: "\261E"
-    font-size: 2em
+    font:
+      size: 2em
+      style: normal
     line-height: 0
     margin-right: 0.2em
     vertical-align: middle
+
+=content-box
+  -moz-box-sizing: content-box
+  -webkit-box-sizing: content-box
+  box-sizing: content-box
+
+=hyphens($val: "auto")
+  word-wrap: break-word
+  -webkit-hyphens: $val
+  -moz-hyphens: $val
+  -ms-hyphens: $val
+  -o-hyphens: $val
+  hyphens: $val

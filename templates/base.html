@@ -1,50 +1,25 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width">
-        <title>
-          {% block title %}{% endblock %}
-        </title>
-        {% block meta %}{% endblock %}
-
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed">
-
-        <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/style-2.css">
-        {% block style %}{% endblock %}
-
-        {% block topscripts %}{% endblock %}
-
-        {% block head %}{% endblock %}
-
-    </head>
-
-    <body>
-      
-      {% block header %}{% endblock %}
-      
-      {% block main %}{% endblock %}
-
-      {% block footer %}
-      <!-- All pages will display the same footer. -->
-      <footer>
-        <p>footer contents</p>
-      </footer>
-      {% endblock %}
-
-      <script type="text/javascript" src="{{ STATIC_URL }}anthologist/lib/jquery-1.9.1.min.js">
-      <!-- Google Analytics (HTML5 Boilerplate): change UA-XXXXX-X to be your site's ID. -->
-      <script>
-          var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-          (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-          g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-          s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-
-      {% block bottomscripts %}{% endblock %}
-
-    </body>
-
+  <head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>{% block meta %}{% endblock %}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed">
+    <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/STYLE.css">{% block style %}{% endblock %}
+    {% block topscripts %}{% endblock %}
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% block header %}
+    {% include "header.html" %}
+    {% endblock %}
+    {% block main %}{% endblock %}
+    {% block footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+    <!-- work this into a build layer-->
+    <script type="text/javscript" src="{{ STATIC_URL }}anthologist/lib/hyphenator.js"></script>{% block bottomscripts %}{% endblock %}
+  </body>
 </html>

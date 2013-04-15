@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Browse {{ category|capfirst }} - The Gentle Reader{% endblock %}
+
+{% block bottomscripts %}
+script(type="application/javascript", src="{{ STATIC_URL }}anthologist/scripts/require-config.js")
+script(type="text/javscript", src="{{ STATIC_URL }}anthologist/scripts/lib/sweet-justice.js")
+{% autoescape off %}
+script(type="application/javascript")
+  | var tagType = {{ category_json }};
+{% endautoescape %}
+script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/browse-main.js")
+
+{% endblock %}
+
+
+{% block main %}
+
+.content.browse-content
+
+  h1.browse-h
+    {% if category == "selections" %}
+    | all selections
+    {% elif category == "languages" %}
+    | original languages
+    {% else %}
+    | {{ category }}
+    {% endif %}
+
+  aside
+    include includes/rand-quot      
+  
+  #adjustor-container
+    #page-select-container.adjustor-subcontainer
+  #tag-container
+    ul#tag-list
+      {% for t in tags %}
+      li: a(href="{{ t.slug }}").tag-list--a
+        span.tag-list--span {{ t }}
+      {% endfor %}
+  
+  .rq-btn Read a Random Highlight
+
+
+{% endblock %}

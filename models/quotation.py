@@ -33,19 +33,20 @@ class Quotation(models.Model):
     def toJSON(self):
         return dict(
             id = self.id,
-            quotation = self.quotation
+            quotation = dumb_to_smart_quotes(self.quotation)
         )
     
-    def closure(self):
+    def extended(self):
         data = dict(
             quotation = self.toJSON(),
             selection = dict()
         )
-        data['selection']['pub_year'] = self.selection.source.date_display()
-        data['selection']['author'] = self.selection.source.author.full_name()
-        data['selection']['author_slug'] = self.selection.source.author.slug
-        data['selection']['author_dates'] = self.selection.source.author.dates()
-        data['selection']['author_id'] = self.selection.source.author.pk
-        data['selection']['title'] = self.selection.__unicode__()
-        data['selection']['slug'] = self.selection.slug
+        sel = data['selection']
+        sel['pub_year'] = self.selection.source.date_display()
+        sel['author'] = self.selection.source.author.full_name()
+        sel['author_slug'] = self.selection.source.author.slug
+        sel['author_dates'] = self.selection.source.author.dates()
+        sel['author_id'] = self.selection.source.author.pk
+        sel['title'] = self.selection.__unicode__()
+        sel['slug'] = self.selection.slug
         return data

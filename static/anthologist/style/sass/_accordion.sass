@@ -1,0 +1,16 @@
+// default accordion
+
+.j-accItem
+  &.u-inactive
+    .j-accExpand
+      display: block
+    .j-accCollapse,
+    .j-accBody
+      display: none
+  &.u-active
+    .j-accExpand
+      display: none
+    .j-accBody
+      display: block
+    .j-accCollapse
+      display: inline

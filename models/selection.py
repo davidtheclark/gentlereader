@@ -67,7 +67,7 @@ class Selection(models.Model):
     def get_title(self):
         """Return the selection's name with a non-breaking space
         between the last and second-to-last words, to prevent orphans."""
-        words = self.__unicode__().split()
+        """words = self.__unicode__().split()
         last_word = len(words) - 1
         title_adj = ''
         for i, word in enumerate(words):
@@ -77,7 +77,14 @@ class Selection(models.Model):
                 title_adj += word + '&nbsp;'
             elif i == last_word:
                 title_adj += word
-        return mark_safe(title_adj)
+        return mark_safe(title_adj)"""
+        # The problem is that 2 long words won't split at a small width
+        return mark_safe(self)
+    
+    def ends_wihtout_punctuation(self):
+        punctuation = "?,.!"
+        if self.get_title()[-1] in punctuation:
+            return False
 
     def get_author(self):
         return mark_safe(self.source.author.full_name())

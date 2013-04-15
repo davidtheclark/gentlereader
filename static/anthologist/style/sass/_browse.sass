@@ -1,0 +1,83 @@
+/* MAIN */
+
+.browse-content
+  +clearfix
+
+.browse-h
+  @extend %heading
+  font-size: 2.7em
+  text-align: center
+  text-transform: uppercase
+
+#tag-container
+  margin: 1.5em auto
+  max-width: 250px
+  
+#tag-list
+  margin-left: -0.3em
+  overflow-x: hidden
+  overflow-y: hidden
+
+.tag-list--a,
+.tag-list--a:visited
+  +hanging-indent(1em)
+  border: none
+  color: black
+  display: block
+  font-family: $f-heading
+  font-size: 1.5em
+  font-style: italic
+  line-height: 1.1
+  padding: 0.3em 0 0.3em 0.3em
+  position: relative
+
+  &:hover
+    color: $c-emphatic
+
+  &:after
+    +dot-leaders
+  
+.tag-list--span
+  background: white
+  padding-right: 0.36em
+
+  
+@media (min-width: $m-selection-lg)
+
+  .browse-content
+    margin: 0 auto
+    max-width: $m-selection-lg
+
+  .browse-h
+    font-size: 3.5em
+    text-align: left
+  
+  #tag-container
+    margin: 1.5em 0
+  
+  .rq-btn
+    display: none
+
+  .rq-backdrop[style]
+    display: none !important
+
+  .rq-body
+    display: block
+    float: right
+    left: 0
+    right: 0
+    max-width: 400px
+    opacity: 1
+    padding: 0
+    position: static
+    
+    &:before,
+    &:after
+      display: none
+
+  .rq-title
+    text-align: left
+  
+  .rq-close
+    display: none
+  

@@ -11,7 +11,8 @@ define(['backbone',
 				var mod = this.model;
 				/* Set the link's target. */
 				this.$el.attr('href', '/' + mod.get('tag_type_display') + 's/' + mod.get('slug'));
-				var html = '<li><span itemprop="itemListElement">' + mod.get('name') + '</span></li>';
+				var html = '<li><a class="tag-list--a" href="' + mod.get('slug') + '">'
+					+ '<span class="tag-list--span">' + mod.get('name') + '</span></a></li>';
 				this.$el.append(html);
 				$('#tag-list').append(this.el);
 				return this;

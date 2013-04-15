@@ -1,0 +1,59 @@
+.site-footer
+  +clearfix
+  +box-shadow(0 0 7px $c-subtle)
+  background: whitesmoke
+  border-bottom: 1.5px solid $c-subtle
+  border-top: 1.5px solid $c-subtle
+  margin-top: 2em
+  text-align: center
+  
+.footer-inner
+  margin: 0 auto
+  padding: 1em 1em 1.5em 1em
+  max-width: $site-x
+
+
+.footer-col
+  float: left
+  min-width: 200px
+  padding: 1em
+  width: 25%
+  &.footer-text
+    width: 50%
+
+.footer-title
+  color: $c-emphatic
+  font:
+    size: 1.2em
+    variant: small-caps
+  
+.footer-description
+  float: left
+  margin-right: 1em
+  width: 100%
+
+.footer-about
+  display: inline-block
+  &:before
+    content: "\00bb\00a0"
+      
+.footer-links
+  +clearfix
+  margin: 1em auto 0 auto
+  
+.footer-link,
+.footer-link:visited
+  +button($c-subtle, $c-emphatic)
+  float: left
+  line-height: 2
+  width: 50%
+
+
+@media (min-width: $m-selection-lg)
+
+  .footer-links
+    +inline-list(" / ")
+  
+  .footer-link
+    float: none
+    width: auto
