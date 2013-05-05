@@ -8,16 +8,17 @@ from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
 from utils import ignore_articles, dumb_to_smart_quotes
 
+
 def selection(req, sel_slug):
-    
+
     # 'Most recent' and 'random' will redirect to a random selection's page
     if sel_slug == 'most-recent' or sel_slug == 'random':
         if sel_slug == 'most-recent':
             selection = Selection.objects.latest('date_entered')
         elif sel_slug == 'random':
-            selection = Selection.objects.order_by('?')[0] 
+            selection = Selection.objects.order_by('?')[0]
         url = '/selections/' + selection.slug
-        return redirect(url)   
+        return redirect(url)
     else:
         selection = get_object_or_404(Selection, slug=sel_slug)
     # the categories in the sidebar
@@ -84,7 +85,7 @@ def category(req, category):
     #this "exec" business necessary to use variable as model name in query
     code = 'tags = ' + str(category.capitalize()[:-1] + '.objects.all()')
     exec code
-    
+
     #Only accept tags that are active -- that is, attached to a relevant model (author to source, nation to author, etc.)
     filtered_tags = [ t for t in tags if t.is_active() ]
     return render_to_response('browse.jade', {
@@ -135,11 +136,11 @@ def all_announcements(req):
 
 def announcement(req, ann_slug):
     ann = get_object_or_404(Announcement, slug=ann_slug)
-    return render_to_response('announcement.jade', { 'ann': ann }, context_instance=RequestContext(req)) 
+    return render_to_response('announcement.jade', { 'ann': ann }, context_instance=RequestContext(req))
 
 def contribute(req):
     auto_subject = req.GET.get('subject')
-    
+
     if req.method == 'POST': # If the form has been submitted...
         form = ContactForm(req.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
@@ -156,7 +157,7 @@ def contribute(req):
     else:
         form = ContactForm() # An unbound form'
     return render_to_response('contribute.html', { 'form': form, 'auto_subject': auto_subject }, context_instance=RequestContext(req))
-  
+
 def thanks(req):
     return render_to_response('contribute.html', { 'thanks': 'thanks' }, context_instance=RequestContext(req))
 
@@ -174,7 +175,7 @@ def highlight(req, q_id):
     if q_id == 'random':
         quotation = Quotation.objects.order_by('?')[0]
         url = '/highlights/' + str(quotation.pk)
-        return redirect(url)   
+        return redirect(url)
     else:
         quotation = get_object_or_404(Quotation, pk=q_id)
     text = dumb_to_smart_quotes(str(quotation.quotation))

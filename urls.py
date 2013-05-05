@@ -18,11 +18,11 @@ urlpatterns = patterns('anthologist.api',
     (r'^api/quotations/(?P<quotationId>\d+|random)/$', 'quotation'),
     (r'^api/sources/$', 'source_set'),
     (r'^api/authors/$', 'author_all'),
-    (r'^api/authors/(?P<authorId>\d+)/quotations', 'author_quotations'),
+    (r'^api/authors/(?P<authorSlug>[\w-]+)/quotations', 'author_quotations'),
     (r'^api/recent/$', 'recent_contents'),
     (r'^api/recent/selections/$', 'recent_selections'),
     (r'^api/recent/announcements/$', 'recent_announcements'),
-    
+
     #tag pages -- maybe later can figure out a way to consolidate this code?
     (r'^api/nations/$', 'nation_set'),
     (r'^api/languages/$', 'language_set'),
@@ -47,22 +47,22 @@ urlpatterns += patterns('django.contrib.sitemaps.views',
 )
 
 urlpatterns += patterns('',
-    (r'^feed/$', FullFeed()),
+    (r'^feed/$', FullFeed())
 )
 
 urlpatterns += patterns('anthologist.views',
     (r'^$', 'home'),
-    (r'^selections/$', 'all_selections'),
+    (r'^selections/$', 'browse_selections'),
     (r'^selections/(?P<sel_slug>[\w-]+)/$', 'selection'),
-    (r'^announcements/$', 'all_announcements'),
+    (r'^announcements/$', 'browse_announcements'),
     (r'^announcements/(?P<ann_slug>[\w-]+)/$', 'announcement'),
-    (r'^timeline/$', 'timeline'),
+    (r'^timeline/$', 'browse_timeline'),
     (r'^resources/$', 'resource'),
     (r'^contribute/$', 'contribute'),
     (r'^thanks/$', 'thanks'),
     (r'^browse/$', 'browse'),
     (r'^highlights/$', 'browse_highlights'),
-    (r'^highlights/(?P<q_id>\d+|random)/$', 'highlight'),
+    (r'^highlights/(?P<highlight_id>\d+|random)/$', 'highlight'),
     (r'^(?P<tag_type>[\w-]+)/(?P<tag_slug>[\w-]+)/$', 'tag'),
-    (r'^(?P<category>[\w-]+)/$', 'category'),
+    (r'^(?P<category>[\w-]+)/$', 'browse_category'),
 )

@@ -1,0 +1,17 @@
+#announcement-container.browse-container
+  ul#announcement-list
+
+    {% for a in announcements %}
+    li.ann-li
+      header
+        h2.ann-li-h: a(href='/announcements/{{ a.slug }}') {{ a.get_title }}
+        .ann-li-date
+          | &raquo; {{ a.date_entered|date:"d F Y, P" }}
+      section.ann-li-body.hyphenate
+        {% if a.text|wordcount > 200 %}
+        | {{ a.get_text|truncatewords_html:200 }}
+        .read-more-ann: a(href='/announcements/{{ a.slug }}') read&nbsp;the&nbsp;rest
+        {% else %}
+        | {{ a.get_text }}
+        {% endif %}
+    {% endfor %}

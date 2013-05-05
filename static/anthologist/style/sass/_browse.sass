@@ -1,18 +1,27 @@
 /* MAIN */
 
-.browse-content
-  +clearfix
-
 .browse-h
   @extend %heading
   font-size: 2.7em
   text-align: center
   text-transform: uppercase
 
-#tag-container
+  @media (min-width: $m-selection-lg)
+    font-size: 3.5em
+    text-align: left
+
+.browse-container
   margin: 1.5em auto
-  max-width: 250px
-  
+
+  @media (min-width: $m-selection-lg)
+    margin: 1.5em 0
+    float: left
+    max-width: 55%
+    width: 55%
+
+#tag-container
+  max-width: 20em
+
 #tag-list
   margin-left: -0.3em
   overflow-x: hidden
@@ -36,48 +45,42 @@
 
   &:after
     +dot-leaders
-  
+
 .tag-list--span
   background: white
   padding-right: 0.36em
 
-  
+.browse-author-dates
+  font:
+    size: 0.8em
+    style: normal
+
+.browse-extras
+  margin: 0 auto
+  width: 320px
+  @media (min-width: $m-selection-lg)
+    float: right
+    overflow: visible
+    width: 45%
+
+.other-browse
+  +clearfix
+  margin-bottom: 2em
+  li
+    float: left
+    font-size: 1.2em
+    text-transform: capitalize
+    width: 50%
+
+    &:before
+      content: "~\00a0"
+
+  @media (min-width: $m-selection-lg)
+    float: right
+    width: 90%
+
+
 @media (min-width: $m-selection-lg)
 
-  .browse-content
-    margin: 0 auto
-    max-width: $m-selection-lg
-
-  .browse-h
-    font-size: 3.5em
-    text-align: left
-  
-  #tag-container
-    margin: 1.5em 0
-  
-  .rq-btn
-    display: none
-
-  .rq-backdrop[style]
-    display: none !important
-
-  .rq-body
+  .innernav-browse--container
     display: block
-    float: right
-    left: 0
-    right: 0
-    max-width: 400px
-    opacity: 1
-    padding: 0
-    position: static
-    
-    &:before,
-    &:after
-      display: none
-
-  .rq-title
-    text-align: left
-  
-  .rq-close
-    display: none
-  

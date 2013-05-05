@@ -6,6 +6,7 @@
 /**
  * Correct `block` display not defined in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\0000324}}
 article,
 aside,
 details,
@@ -23,6 +24,7 @@ summary {
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\0000334}}
 audio,
 canvas,
 video {
@@ -32,6 +34,7 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\0000343}}
 audio:not([controls]) {
   display: none;
   height: 0; }
@@ -39,6 +42,7 @@ audio:not([controls]) {
 /**
  * Address styling not present in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\0000352}}
 [hidden] {
   display: none; }
 
@@ -50,6 +54,7 @@ audio:not([controls]) {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\0000366}}
 html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -59,6 +64,7 @@ html {
 /**
  * Remove default margin.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\0000375}}
 body {
   margin: 0; }
 
@@ -68,12 +74,14 @@ body {
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\0000387}}
 a:focus {
   outline: thin dotted; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\0000396}}
 a:active,
 a:hover {
   outline: 0; }
@@ -84,6 +92,7 @@ a:hover {
 /*!!!!!!!!!!!!!!!!!!!!!!!!
 MINE
 Make headings strictly semantic, not presentational */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003112}}
 h1,
 h2,
 h3,
@@ -97,12 +106,14 @@ h6 {
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003123}}
 abbr[title] {
   border-bottom: 1px dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003132}}
 b,
 strong {
   font-weight: bold;
@@ -111,12 +122,14 @@ strong {
 /**
  * Address styling not present in Safari 5 and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003141}}
 dfn {
   font-style: italic; }
 
 /**
  * Address differences between Firefox and other browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003149}}
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -125,6 +138,7 @@ hr {
 /**
  * Address styling not present in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003159}}
 mark {
   background: #ff0;
   color: #000; }
@@ -132,6 +146,7 @@ mark {
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003171}}
 code,
 kbd,
 pre,
@@ -142,24 +157,28 @@ samp {
 /**
  * Improve readability of pre-formatted text in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003180}}
 pre {
   white-space: pre-wrap; }
 
 /**
  * Set consistent quote types.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003188}}
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
 
 /**
  * Address inconsistent and variable font size in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003196}}
 small {
   font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003205}}
 sub,
 sup {
   font-size: 75%;
@@ -167,9 +186,11 @@ sup {
   position: relative;
   vertical-align: baseline; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003212}}
 sup {
   top: -0.5em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003216}}
 sub {
   bottom: -0.25em; }
 
@@ -179,12 +200,14 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003228}}
 img {
   border: 0; }
 
 /**
  * Correct overflow displayed oddly in IE 9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003236}}
 svg:not(:root) {
   overflow: hidden; }
 
@@ -194,6 +217,7 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari 5.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003248}}
 figure {
   margin: 0; }
 
@@ -203,6 +227,7 @@ figure {
 /*
  * Remove default fieldset styles. (from HTML5 Boilerplate)
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003260}}
 fieldset {
   border: 0;
   margin: 0;
@@ -212,6 +237,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003271}}
 legend {
   border: 0;
   /* 1 */
@@ -223,6 +249,7 @@ legend {
  * 2. Correct font size not being inherited in all browsers.
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003285}}
 button,
 input,
 select,
@@ -238,6 +265,7 @@ textarea {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003297}}
 button,
 input {
   line-height: normal; }
@@ -248,6 +276,7 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003309}}
 button,
 select {
   text-transform: none; }
@@ -259,6 +288,7 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003324}}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -271,6 +301,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003334}}
 button[disabled],
 html input[disabled] {
   cursor: default; }
@@ -279,6 +310,7 @@ html input[disabled] {
  * 1. Address box sizing set to `content-box` in IE 8/9.
  * 2. Remove excess padding in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003344}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -291,6 +323,7 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003355}}
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -303,6 +336,7 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003368}}
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -310,6 +344,7 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003377}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -319,6 +354,7 @@ input::-moz-focus-inner {
  * 1. Remove default vertical scrollbar in IE 8/9.
  * 2. Improve readability and alignment in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003387}}
 textarea {
   overflow: auto;
   /* 1 */
@@ -331,6 +367,7 @@ textarea {
 
 /*!!!!!!!!!!!!!
 MINE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003402}}
 label:hover,
 input:hover {
   cursor: pointer; }
@@ -342,6 +379,7 @@ input:hover {
 /**
  * Remove most spacing between table cells.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/lib\/my-normalize\.scss}line{font-family:\00003416}}
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -396,149 +434,224 @@ table {
   font-weight: normal;
   font-style: normal; }
 
+/* MIX-INS */
 /* down arrow: &#9660; or small &#9662;
  * up arrow: &#9650; or small &#9652;
  * left arrow: &#9668; or small &#9666;
  * right arrow: &#9654; or small &#9656;
  *  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\0000381}}
 .h2, .rq-title, .s-title, .s-extras--title, .s-postscript--h2, .s-postscript--h3, .browse-h {
   color: #c00b0b;
   font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\0000387}}
 .teaser-text em,
 .teaser-text cite,
 .teaser-text i,
 .teaser-text .inline-translation {
   font-style: normal; }
 
-.rq-text p, .s-highlight--text p, .teaser-text p {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\0000394}}
+.rq-text p:not(.poetry-line), .s-highlight--text p:not(.poetry-line), .s-text p:not(.poetry-line), .ann-text p:not(.poetry-line), .teaser-text p:not(.poetry-line) {
   margin: 0;
   text-indent: 20px; }
-  .rq-text p:first-child, .s-highlight--text p:first-child, .teaser-text p:first-child {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\0000397}}
+  .rq-text p:not(.poetry-line):first-child, .s-highlight--text p:not(.poetry-line):first-child, .s-text p:not(.poetry-line):first-child, .ann-text p:not(.poetry-line):first-child, .teaser-text p:not(.poetry-line):first-child {
     text-indent: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\00003122}}
+.s-extras, .highlight-adjustors {
+  *zoom: 1;
+  margin: 1.25em auto 0 auto;
+  max-width: 500px;
+  overflow: hidden;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
+  .s-extras:before, .highlight-adjustors:before, .s-extras:after, .highlight-adjustors:after {
+    content: " ";
+    display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
+  .s-extras:after, .highlight-adjustors:after {
+    clear: both; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\00003131}}
+.s-extras--trigger, .hl-adjustor {
+  border-bottom: double 4px black;
+  border-top: double 4px black;
+  color: #7165c7;
+  cursor: pointer;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.13em;
+  font-style: italic;
+  float: left;
+  height: 45px;
+  line-height: 40px;
+  text-align: center;
+  width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\00003145}}
+  .u-left.s-extras--trigger:not(.u-wide), .u-left.hl-adjustor:not(.u-wide) {
+    border-right: 1px solid black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\00003148}}
+  .s-extras--trigger:hover, .hl-adjustor:hover {
+    -webkit-transition: color 0.3s ease-in, background-color 0.3s ease-in;
+    -moz-transition: color 0.3s ease-in, background-color 0.3s ease-in;
+    -ms-transition: color 0.3s ease-in, background-color 0.3s ease-in;
+    -o-transition: color 0.3s ease-in, background-color 0.3s ease-in;
+    transition: color 0.3s ease-in, background-color 0.3s ease-in;
+    background-color: whitesmoke;
+    color: #c00b0b; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\00003156}}
 b,
 strong {
   line-height: 1; }
 
-/* MIX-INS */
-/* Clearfix: contain floats -- from HTML5 Boilerplate
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *     `contenteditable` attribute is included anywhere else in the document.
- *     Otherwise it causes space to appear at the top and bottom of elements
- *     that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *     `:before` to contain the top-margins of child elements. */
 /* sitewide */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\000035}}
 * {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\000038}}
 html,
 body {
-  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000312}}
 body {
-  -webkit-box-shadow: inset 0px 0px 18px rgba(139, 139, 139, 0.6);
-  -moz-box-shadow: inset 0px 0px 18px rgba(139, 139, 139, 0.6);
   box-shadow: inset 0px 0px 18px rgba(139, 139, 139, 0.6);
   background: white;
-  font-family: "Crimson", Georgia, "Times New Roman", Times, serif; }
+  font-family: "Crimson", Georgia, "Times New Roman", Times, serif;
+  overflow-x: hidden; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000318}}
 ul {
   list-style: none;
   margin: 0;
   padding: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000323}}
 a,
 a:visited {
   border-bottom: 1px dotted transparent;
   color: #7165c7;
   text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000328}}
   a:hover,
   a:visited:hover {
     -webkit-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     -moz-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
+    -ms-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     -o-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     border-bottom-color: #a59ddb;
     color: #a59ddb; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000333}}
 h1,
 h2,
 h3 {
   font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000341}}
 .content {
+  *zoom: 1;
   margin: 0 auto;
   max-width: 940px;
   padding: 1.5em 1.2em 0 1.2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
+  .content:before, .content:after {
+    content: " ";
+    display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
+  .content:after {
+    clear: both; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000341}}
+    .content {
+      padding: 2.5em 1.5em 0 1.5em; } }
 
-@media (min-width: 47.5em) {
-  .content {
-    padding: 2.5em 1.5em 0 1.5em; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000354}}
 .h2 {
   text-align: center; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000358}}
 .poetry-line {
   text-indent: -1em;
   margin: 0 0 0 1em;
   display: block; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000362}}
 .poetry-stanza {
-  margin-bottom: 1.9em; }
+  margin-bottom: 1em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000365}}
+.bce {
+  font-size: 0.6em;
+  text-transform: uppercase; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000371}}
 .ellipsis {
   font-style: normal;
-  display: inline-block;
-  font-size: 0.7em; }
+  font-size: 0.7em;
+  white-space: nowrap; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000376}}
 .inline-translation {
   font-style: normal;
   font-variant: small-caps; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000381}}
 .indented-paragraphs p {
   margin-bottom: 0;
   text-indent: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_base\.sass}line{font-family:\0000384}}
 .indented-paragraphs p:first-child {
   text-indent: 0; }
 
 /* pages and modules */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\000033}}
+.site-nav--container,
+.subnav-browse--container {
+  box-shadow: 0 0 7px #6d6d6d; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\000037}}
 .site-nav--container {
-  -webkit-box-shadow: 0 0 7px #6d6d6d;
-  -moz-box-shadow: 0 0 7px #6d6d6d;
-  box-shadow: 0 0 7px #6d6d6d;
   background: white;
   border-bottom: double 6px black;
   height: 56px;
   position: relative;
   width: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000314}}
 .site-nav {
-  /*For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats. */
   *zoom: 1;
   font-size: 1.2em;
   margin: 0 auto;
   max-width: 940px;
   padding-left: 0.5em;
   vertical-align: middle; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
   .site-nav:before, .site-nav:after {
     content: " ";
     display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
   .site-nav:after {
     clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000322}}
 .site-nav--ul {
   display: inline;
   float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000328}}
   .site-nav--ul > li {
     display: inline-block; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000327}}
 .site-nav--li {
   border-bottom: 6px solid transparent;
   cursor: pointer;
@@ -548,18 +661,23 @@ h3 {
   height: 56px;
   line-height: 56px;
   padding: 0 0.5em;
+  position: relative;
   text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000340}}
   .site-nav--li:hover {
     -webkit-transition: background 0.3s ease-in, border-bottom-color 0.3s ease-in, color 0.3s ease-in;
     -moz-transition: background 0.3s ease-in, border-bottom-color 0.3s ease-in, color 0.3s ease-in;
+    -ms-transition: background 0.3s ease-in, border-bottom-color 0.3s ease-in, color 0.3s ease-in;
     -o-transition: background 0.3s ease-in, border-bottom-color 0.3s ease-in, color 0.3s ease-in;
     transition: background 0.3s ease-in, border-bottom-color 0.3s ease-in, color 0.3s ease-in;
     color: #6d6d6d;
     background: whitesmoke;
     border-bottom-color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000346}}
   .site-nav--li.nav-about {
     display: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000349}}
 .site-nav--title,
 .site-nav--title:visited {
   border-bottom: none;
@@ -571,27 +689,151 @@ h3 {
   text-align: left;
   text-transform: uppercase;
   vertical-align: middle; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000360}}
   .site-nav--title:hover,
   .site-nav--title:visited:hover {
     color: #c00b0b; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000363}}
 .title-the {
   font-size: 0.7em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000365}}
 .title-gentle {
   letter-spacing: 0.1em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000367}}
 .title-reader {
   display: block;
   letter-spacing: 0.46em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000371}}
 .fixed-back {
   display: none; }
 
+/* browse subnav */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000379}}
+.subnav-browse--container {
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s;
+  height: 0;
+  background: whitesmoke;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000387}}
+  .subnav-browse--container.show {
+    border-bottom: double 6px black;
+    height: 27.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000390}}
+    .subnav-browse--container.show .subnav-browse {
+      opacity: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\0000393}}
+.subnav-browse {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 0 auto;
+  opacity: 0;
+  max-width: 13em;
+  padding: 1em 0 0.5em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\0000370}}
+  .subnav-browse li {
+    padding-bottom: 0.1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\0000372}}
+    .subnav-browse li:before {
+      float: left;
+      width: 0;
+      white-space: nowrap;
+      font-style: normal;
+      font-weight: normal;
+      content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\0000374}}
+    .subnav-browse li span {
+      background: whitesmoke;
+      padding-left: 0.3em;
+      padding-right: 0.3em;
+      margin-right: -0.2em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003104}}
+.subnav-browse--close {
+  color: #6d6d6d;
+  cursor: pointer;
+  display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003109}}
+  .subnav-browse--close.u-top {
+    font-family: Arial, sans-serif;
+    font-size: 0.8em;
+    padding: 0.8em;
+    position: absolute;
+    text-align: left;
+    top: -0.8em;
+    right: -0.8em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003119}}
+  .subnav-browse--close.u-bottom {
+    font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+    font-size: 1.2em;
+    font-style: italic;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003125}}
+    .subnav-browse--close.u-bottom:before, .subnav-browse--close.u-bottom:after {
+      content: "\00a0--\00a0"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003129}}
+  .subnav-browse--close:hover {
+    color: #c00b0b; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003132}}
+.subnav-browse--h {
+  border-bottom: 2px solid black;
+  display: block;
+  font-style: normal;
+  margin-bottom: 0.8em;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003141}}
+.subnav-browse--a,
+.subnav-browse--a:visited {
+  color: black;
+  display: block;
+  position: relative;
+  text-transform: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003148}}
+  .subnav-browse--a:hover,
+  .subnav-browse--a:visited:hover {
+    border-bottom-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003151}}
+  .subnav-browse--a span.u-ind,
+  .subnav-browse--a:visited span.u-ind {
+    padding-left: 1em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003154}}
+.toc-no {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 0.5em; }
+
 @media (min-width: 32.1875em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003165}}
   .site-nav--container {
     height: 46px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003168}}
   .site-nav--title,
   .site-nav--title:visited {
     line-height: 44px;
@@ -600,39 +842,53 @@ h3 {
     width: auto;
     word-spacing: 0.3em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003176}}
   .title-reader {
     display: inline; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003179}}
   .title-gentle,
   .title-reader {
     letter-spacing: 0.1em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003183}}
   .site-nav--li {
     line-height: 44px;
     height: 46px;
     vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003187}}
     .site-nav--li.nav-about {
       display: inline-block; } }
 @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003194}}
   .site-nav--container {
     height: 55px;
     position: fixed;
     top: 0;
     z-index: 1000; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003200}}
   .site-nav--ul {
     float: left; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003203}}
   .site-nav--title {
     font-size: 1.7em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003206}}
   .site-nav--li {
     height: 55px;
     line-height: 55px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003210}}
+  .subnav-browse {
+    max-width: 20em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003213}}
   body {
     margin-top: 55px; } }
 @media (min-width: 51.25em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003218}}
   .fixed-back,
   .fixed-back:visited {
     color: black;
@@ -642,6 +898,7 @@ h3 {
     position: absolute;
     top: 0;
     right: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003227}}
     .fixed-back:after,
     .fixed-back:visited:after {
       margin-bottom: 3px;
@@ -654,83 +911,97 @@ h3 {
       border-width: 5px;
       border-bottom-color: black;
       margin-left: 0.2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003230}}
     .fixed-back:hover,
     .fixed-back:visited:hover {
       color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003232}}
       .fixed-back:hover:after,
       .fixed-back:visited:hover:after {
         -webkit-transition: border-bottom-color 0.3s ease-in;
         -moz-transition: border-bottom-color 0.3s ease-in;
+        -ms-transition: border-bottom-color 0.3s ease-in;
         -o-transition: border-bottom-color 0.3s ease-in;
         transition: border-bottom-color 0.3s ease-in;
         border-bottom-color: #c00b0b; } }
 /* iPads in landscape ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003238}}
   body {
     margin-top: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003240}}
   .site-nav--container {
     position: static; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_header\.sass}line{font-family:\00003242}}
   a.fixed-back {
     display: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\000031}}
 .site-footer {
-  /*For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats. */
   *zoom: 1;
-  -webkit-box-shadow: 0 0 7px #6d6d6d;
-  -moz-box-shadow: 0 0 7px #6d6d6d;
   box-shadow: 0 0 7px #6d6d6d;
   background: whitesmoke;
   border-bottom: 1.5px solid #6d6d6d;
   border-top: 1.5px solid #6d6d6d;
   margin-top: 2em;
   text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
   .site-footer:before, .site-footer:after {
     content: " ";
     display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
   .site-footer:after {
     clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000310}}
 .footer-inner {
   margin: 0 auto;
   padding: 1em 1em 1.5em 1em;
   max-width: 940px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000316}}
 .footer-col {
   float: left;
   min-width: 200px;
   padding: 1em;
   width: 25%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000321}}
   .footer-col.footer-text {
     width: 50%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000324}}
 .footer-title {
   color: #c00b0b;
   font-size: 1.2em;
   font-variant: small-caps; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000330}}
 .footer-description {
   float: left;
   margin-right: 1em;
   width: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000335}}
 .footer-about {
   display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000337}}
   .footer-about:before {
     content: "\00bb\00a0"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000340}}
 .footer-links {
-  /*For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats. */
   *zoom: 1;
   margin: 1em auto 0 auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
   .footer-links:before, .footer-links:after {
     content: " ";
     display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
   .footer-links:after {
     clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000344}}
 .footer-link,
 .footer-link:visited {
   border-bottom: 2px solid #6d6d6d;
@@ -740,27 +1011,34 @@ h3 {
   float: left;
   line-height: 2;
   width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\00003106}}
   .footer-link:hover,
   .footer-link:visited:hover {
     -webkit-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     -moz-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
+    -ms-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     -o-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     border-bottom-color: #c00b0b;
     color: #c00b0b; }
 
 @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000328}}
   .footer-links > li {
     display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000331}}
     .footer-links > li:not(:last-child):after {
       content: " / "; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_footer\.sass}line{font-family:\0000357}}
   .footer-link {
     float: none;
     width: auto; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\000031}}
 .rq-btn {
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   border-bottom: double 4px #c00b0b;
@@ -772,12 +1050,19 @@ h3 {
   text-align: center;
   text-transform: uppercase;
   max-width: 320px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000312}}
   .rq-btn:hover {
     border-color: black;
     color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000315}}
     .rq-btn:hover:before, .rq-btn:hover:after {
       color: #c00b0b; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\000031}}
+    .rq-btn {
+      display: none; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000322}}
 .rq-backdrop {
   background: rgba(0, 0, 0, 0.7);
   content: "";
@@ -788,10 +1073,16 @@ h3 {
   left: 0;
   right: 0;
   z-index: 100; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000334}}
+    .rq-backdrop[style] {
+      display: none !important; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000338}}
 .rq-body {
   -webkit-transition: top 0.5s ease, opacity 0.7s linear;
   -moz-transition: top 0.5s ease, opacity 0.7s linear;
+  -ms-transition: top 0.5s ease, opacity 0.7s linear;
   -o-transition: top 0.5s ease, opacity 0.7s linear;
   transition: top 0.5s ease, opacity 0.7s linear;
   opacity: 0;
@@ -799,13 +1090,15 @@ h3 {
   display: none;
   font-size: 1em;
   margin: 20px auto 0 auto;
-  max-width: 600px;
+  overflow: hidden;
   padding: 1.5em;
   position: absolute;
   top: -1000px;
   left: 5%;
   right: 5%;
+  width: 90%;
   z-index: 200; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000354}}
   .rq-body:before {
     border: double 8px black;
     content: "";
@@ -814,20 +1107,42 @@ h3 {
     bottom: 0.5em;
     right: 0.5em;
     left: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000363}}
   .rq-body.show {
     opacity: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000365}}
+  .rq-body.opened {
+    display: block; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000338}}
+    .rq-body {
+      left: 0;
+      right: 0;
+      margin-right: 0;
+      opacity: 1;
+      padding: 0;
+      position: static; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000376}}
+      .rq-body:before {
+        display: none; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000379}}
 .rq-title {
   font-size: 1.5em;
   font-variant: small-caps;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   line-height: 1.75;
-  margin-bottom: 0.75em;
-  text-align: center; }
+  margin-bottom: 0.75em; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000379}}
+    .rq-title {
+      text-align: left; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000385}}
 .rq-content {
   position: relative; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000388}}
 .rq-text {
   color: #6d6d6d;
   font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
@@ -841,11 +1156,13 @@ h3 {
   font-size: 1.3em;
   margin-bottom: 0.6em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\0000397}}
 .rq-citation {
   font-size: 1.2em;
   margin-left: 1em;
   position: relative; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003102}}
 .rq-utils {
   font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
   font-size: 1.2em;
@@ -853,69 +1170,75 @@ h3 {
   margin-top: 1em;
   position: relative; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003110}}
 .rq-another,
 .rq-close {
   -webkit-transition: color 0.3s ease-in;
   -moz-transition: color 0.3s ease-in;
+  -ms-transition: color 0.3s ease-in;
   -o-transition: color 0.3s ease-in;
   transition: color 0.3s ease-in; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003114}}
 .rq-another {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   cursor: pointer;
   padding: 0.5em;
   text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003119}}
   .rq-another:hover {
     color: #c00b0b; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003122}}
 .rq-close {
   color: #6d6d6d;
   cursor: pointer;
   margin-top: 1em;
   text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003127}}
   .rq-close:before, .rq-close:after {
     content: "---"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003130}}
   .rq-close:before {
     margin-right: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003132}}
   .rq-close:after {
     margin-left: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003134}}
   .rq-close:hover {
     color: #c00b0b; }
-
-.j-accItem.u-inactive .j-accExpand {
-  display: block; }
-.j-accItem.u-inactive .j-accCollapse,
-.j-accItem.u-inactive .j-accBody {
-  display: none; }
-.j-accItem.u-active .j-accExpand {
-  display: none; }
-.j-accItem.u-active .j-accBody {
-  display: block; }
-.j-accItem.u-active .j-accCollapse {
-  display: inline; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_rand-quot\.sass}line{font-family:\00003122}}
+    .rq-close {
+      display: none; } }
 
 /* =====================
  * SELECTION
  * ===================== */
 /* selection heading
  * ---------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\000038}}
 .s-headline {
   text-align: center; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000312}}
 .s-title {
   font-size: 2.7em;
   font-variant: small-caps;
   line-height: 1.1;
   margin: 0 0 0.5em 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000321}}
 .s-authordate {
   font-size: 1.6em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000324}}
 .s-info {
   font: 1.2em;
   line-height: 1.4;
   margin-top: 1.25em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000328}}
   .s-info:before {
     background: url("../../img/bd-small.png") no-repeat center center;
     background-size: contain;
@@ -927,78 +1250,66 @@ h3 {
 /* selection extras:
  * highlight and top tag list
  * ----------------------- */
-.s-extras {
-  /*For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats. */
-  *zoom: 1;
-  margin: 1.25em auto 0 auto;
-  max-width: 500px;
-  overflow: hidden;
-  position: relative; }
-  .s-extras:before, .s-extras:after {
-    content: " ";
-    display: table; }
-  .s-extras:after {
-    clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000345}}
+.s-extras .uft-group .uft-a {
+  display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000347}}
+.s-extras .uft-group .uft-b {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000351}}
+.s-extras .uft-group.uft-on .uft-a {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000353}}
+.s-extras .uft-group.uft-on .uft-b {
+  clear: both;
+  display: block; }
 
-.s-extras--trigger {
-  border-bottom: double 4px black;
-  border-top: double 4px black;
-  color: #7165c7;
-  cursor: pointer;
-  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
-  font-size: 1.13em;
-  font-style: italic;
-  float: left;
-  height: 45px;
-  line-height: 40px;
-  text-align: center;
-  width: 50%; }
-  .s-extras--trigger.u-wide {
-    width: 100%; }
-  .s-extras--trigger.u-left.u-wide {
-    margin-bottom: 0.5em; }
-  .s-extras--trigger.u-left:not(.u-wide) {
-    border-right: 1px solid black; }
-  .s-extras--trigger:hover {
-    -webkit-transition: color 0.3s ease-in, background-color 0.3s ease-in;
-    -moz-transition: color 0.3s ease-in, background-color 0.3s ease-in;
-    -o-transition: color 0.3s ease-in, background-color 0.3s ease-in;
-    transition: color 0.3s ease-in, background-color 0.3s ease-in;
-    background-color: whitesmoke;
-    color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000360}}
+.s-extras--trigger.u-wide {
+  width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000364}}
+.s-extras--trigger.u-left.u-wide {
+  margin-bottom: 0.5em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000369}}
 .s-extras--title {
   font-size: 1.7em;
   font-variant: small-caps;
   line-height: 40px;
   margin-bottom: 0.1em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000377}}
 .s-extras--utils {
   color: #7165c7;
   cursor: pointer;
   float: right; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000382}}
 .s-extras--utils-i {
   border-bottom: 2px solid #7165c7;
   color: #7165c7;
   font-size: 0.8em;
   text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_variables\.sass}line{font-family:\00003106}}
   .s-extras--utils-i:hover {
     -webkit-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     -moz-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
+    -ms-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     -o-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     border-bottom-color: #c00b0b;
     color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000384}}
   .s-extras--utils-i:last-child {
     margin-left: 1em; }
 
 /* selection extras: highlight */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000389}}
 .s-highlight {
   border-top: double 4px black;
   padding: 1em 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\0000393}}
 .s-highlight--text {
   color: #6d6d6d;
   font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
@@ -1006,20 +1317,24 @@ h3 {
   line-height: 1.4;
   position: relative; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003102}}
 .s-highlight--li.u-inactive {
   opacity: 0;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: -1000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003108}}
 .s-highlight--li.u-active {
   position: static; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003111}}
 .s-highlight--all {
   font-family: "Crimson", Georgia, "Times New Roman", Times, serif;
   font-size: 0.8em;
   text-align: center;
   text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000372}}
   .s-highlight--all:before {
     content: "\261E";
     font-size: 2em;
@@ -1027,40 +1342,52 @@ h3 {
     line-height: 0;
     margin-right: 0.2em;
     vertical-align: middle; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003119}}
   .s-highlight--all a {
     position: relative; }
 
 /* selection extras: tag list (top and bottom) */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003124}}
 .s-tags {
   padding-bottom: 1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003127}}
   .s-tags.u-top {
     border-bottom: double 4px black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003130}}
   .s-tags .tag-sublist-label {
     display: inline;
     font-weight: bold;
     line-height: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003134}}
     .s-tags .tag-sublist-label:after {
       content: "\00a0:\00a0"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003137}}
   .s-tags .tag-sublist {
     display: inline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000328}}
     .s-tags .tag-sublist > li {
       display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000331}}
       .s-tags .tag-sublist > li:not(:last-child):after {
         content: "\00a0; "; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003141}}
 .s-tags--inst,
 .s-highlight--timeline {
   color: #6d6d6d; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003143}}
   .s-tags--inst:before,
   .s-highlight--timeline:before {
     content: "\00bb\00a0"; }
 
 /* textual comments
  * ----------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003151}}
 .s-comment {
   font-style: italic;
   margin: 2em auto 0 auto;
   max-width: 500px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003155}}
   .s-comment:after {
     background: black;
     content: "";
@@ -1072,19 +1399,35 @@ h3 {
 
 /* selection text
  * ---------------- */
-.s-text {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003173}}
+.s-text, .ann-text {
   font-size: 1.2em;
   line-height: 1.5;
   margin: 1.5em auto 0 auto;
   max-width: 520px;
   text-align: justify; }
-  .s-text p:not(.poetry-line),
-  .s-text blockquote {
-    margin-bottom: 1.9em; }
-  .s-text .poetry-line {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003181}}
+  .s-text p:not(.poetry-line), .ann-text p:not(.poetry-line),
+  .s-text blockquote,
+  .ann-text blockquote {
+    margin-bottom: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003185}}
+  .s-text section, .ann-text section {
+    margin-bottom: 2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003188}}
+  .s-text .poetry-line, .ann-text .poetry-line {
+    font-style: italic;
     text-align: left; }
-  .s-text > p:first-of-type:first-letter,
-  .s-text > section:first-of-type > p:first-of-type:first-letter {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003192}}
+  .s-text .sel-body-subheading, .ann-text .sel-body-subheading {
+    font-variant: small-caps;
+    font-weight: bold;
+    margin: 0 0 1em 0;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003202}}
+  .s-text > p:first-of-type:first-letter, .ann-text > p:first-of-type:first-letter,
+  .s-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-letter,
+  .ann-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-letter {
     font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
     font-size: 4em;
     font-style: normal;
@@ -1092,12 +1435,15 @@ h3 {
     line-height: 1;
     padding-right: 0.05em;
     text-transform: uppercase; }
-  .s-text > p:first-of-type:first-line,
-  .s-text > section:first-of-type > p:first-of-type:first-line {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003206}}
+  .s-text > p:first-of-type:first-line, .ann-text > p:first-of-type:first-line,
+  .s-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-line,
+  .ann-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-line {
     font-size: 1.7em;
     font-variant: small-caps;
     line-height: 1; }
-  .s-text > section > p:first-of-type:first-letter {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003214}}
+  .s-text > section > p:first-of-type:not(.poetry-line):first-letter, .ann-text > section > p:first-of-type:not(.poetry-line):first-letter {
     font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
     font-size: 4em;
     font-style: normal;
@@ -1106,7 +1452,8 @@ h3 {
     padding-right: 0.05em;
     text-transform: uppercase;
     font-family: black; }
-  .s-text:after {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003218}}
+  .s-text:after, .ann-text:after {
     content: "r";
     display: block;
     font-family: VictorianOrn;
@@ -1119,24 +1466,28 @@ h3 {
 
 /* postscript
  * ------------ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003233}}
 .s-postscript {
-  /*For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats. */
   *zoom: 1;
   margin-top: 3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
   .s-postscript:before, .s-postscript:after {
     content: " ";
     display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
   .s-postscript:after {
     clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003236}}
   .s-postscript p {
     text-align: center; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003239}}
 .s-postscript--h2 {
   color: #7dbebe;
   text-align: center;
   margin-bottom: 0.5em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003245}}
 .s-postscript--h3 {
   border-bottom: 1px dotted #c00b0b;
   margin-top: 1em;
@@ -1145,27 +1496,40 @@ h3 {
   text-transform: uppercase; }
 
 /* related selections */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003256}}
 .li-rsel {
-  /*For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats. */
   *zoom: 1;
   margin-bottom: 1em;
   position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
   .li-rsel:before, .li-rsel:after {
     content: " ";
     display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
   .li-rsel:after {
     clear: both; }
-  .li-rsel.u-active .j-accExpand, .li-rsel.u-inactive .j-accExpand {
-    display: inline-block; }
-  .li-rsel.u-active .j-accBody, .li-rsel.u-inactive .j-accBody {
-    position: absolute;
-    opacity: 0;
-    overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003261}}
+  .li-rsel .uft-b {
+    -webkit-transition: opacity 0.3s ease-in;
+    -moz-transition: opacity 0.3s ease-in;
+    -ms-transition: opacity 0.3s ease-in;
+    -o-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
+    height: 0;
+    opacity: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003266}}
+  .li-rsel.uft-on .uft-a {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003268}}
+  .li-rsel.uft-on .uft-b {
+    height: auto;
+    opacity: 1; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003272}}
 .li-rsel--info {
   font-size: 1.2em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003275}}
 .show-teaser {
   border-bottom: 1px dashed transparent;
   color: #7dbebe;
@@ -1174,6 +1538,7 @@ h3 {
   font-size: 0.8em;
   margin: 0.2em 0 0 2em;
   text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003285}}
   .show-teaser:before {
     margin-bottom: 1px;
     content: "";
@@ -1184,46 +1549,60 @@ h3 {
     border-color: transparent;
     border-width: 4px;
     border-left-color: #7dbebe; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003288}}
   .show-teaser:hover {
     -webkit-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     -moz-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
+    -ms-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     -o-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in;
     color: #c00b0b;
     border-bottom-color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003292}}
     .show-teaser:hover:before {
       -webkit-transition: border-left-color 0.3s ease-in;
       -moz-transition: border-left-color 0.3s ease-in;
+      -ms-transition: border-left-color 0.3s ease-in;
       -o-transition: border-left-color 0.3s ease-in;
       transition: border-left-color 0.3s ease-in;
       border-left-color: #c00b0b; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003296}}
 .li-rsel--teaser {
   line-height: 1.3;
   margin: 0em 0 0 30px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003300}}
 .li-rsel--shares {
   display: inline;
   line-height: 1.5; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003304}}
 .li-rsel--shares--ul {
   display: inline;
   margin-right: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000328}}
   .li-rsel--shares--ul > li {
     display: inline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000331}}
     .li-rsel--shares--ul > li:not(:last-child):after {
       content: " ; "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003308}}
   .li-rsel--shares--ul ul {
     display: inline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000328}}
     .li-rsel--shares--ul ul > li {
       display: inline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_utilities\.sass}line{font-family:\0000331}}
       .li-rsel--shares--ul ul > li:not(:last-child):after {
         content: ", "; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003312}}
 .li-rsel--category {
   font-variant: small-caps;
   text-transform: capitalize; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003316}}
 .li-rsel--tag,
 .li-rsel--tag:visited {
   color: #6d6d6d;
@@ -1231,12 +1610,14 @@ h3 {
   border-bottom: 1px dotted #6d6d6d; }
 
 /* postscript dates */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003325}}
 .s-dates {
   color: #6d6d6d;
   font-size: 0.95em;
   font-style: italic;
   margin-top: 2em;
   text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003331}}
   .s-dates:before {
     background: black;
     content: "";
@@ -1249,154 +1630,187 @@ h3 {
  * SELECTION MEDIA QUERIES
  * ========================= */
 @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003341}}
   .s-headline {
     font-size: 1.3em;
     text-align: left; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003346}}
   .s-info:before {
     height: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003349}}
   .s-comment {
     margin: 2em 0 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003351}}
     .s-comment:after {
       display: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003354}}
   .s-extras {
     float: right;
     margin: 2em 0 2em 2em;
-    max-width: 350px;
+    max-width: 340px;
     width: 40%; }
-    .s-extras .j-accItem.u-active .j-accExpand,
-    .s-extras .j-accItem.u-active .j-accCollapse, .s-extras .j-accItem.u-inactive .j-accExpand,
-    .s-extras .j-accItem.u-inactive .j-accCollapse {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003361}}
+    .s-extras .uft-group .uft-a {
       display: none; }
-    .s-extras .j-accItem.u-active .j-accBody, .s-extras .j-accItem.u-inactive .j-accBody {
-      display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003363}}
+    .s-extras .uft-group .uft-b {
+      display: block;
+      height: auto;
+      opacity: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003367}}
+      .s-extras .uft-group .uft-b .uft-trigger {
+        display: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003371}}
   .s-tags.u-bottom:before {
     background: none;
     margin: 1em; }
 
-  .s-text {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003375}}
+  .s-text, .ann-text {
     margin: 0; }
-    .s-text:before {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003378}}
+    .s-text:before, .ann-text:before {
       display: block;
       content: "b";
       font-family: VictorianOrn;
       font-size: 6em;
       line-height: 1;
       text-align: center; }
-    .s-text:after {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003386}}
+    .s-text:after, .ann-text:after {
       background: none;
       height: auto; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003390}}
   .s-text-bottom-orn {
     margin-top: 0.7em;
     max-width: 520px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003395}}
   .s-postscript p {
     text-align: left; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003398}}
   .s-postscript--h2 {
     text-align: left; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003402}}
   .s-postscript--col.u-first {
     float: left;
     padding-right: 5%;
     width: 70%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_selection\.sass}line{font-family:\00003406}}
   .s-postscript--col.u-second {
     float: right;
     width: 30%; } }
 /* .li-sel is an <a> */
-.li-sel,
-.li-sel:visited {
-  color: black;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\000032}}
+.li-sel {
   display: block;
-  padding: 0.8em; }
+  margin-bottom: 2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\000035}}
+  .li-sel a,
+  .li-sel a:visited {
+    color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\000038}}
+    .li-sel a:hover,
+    .li-sel a:visited:hover {
+      color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000310}}
   .li-sel h3,
-  .li-sel .read-on,
-  .li-sel:visited h3,
-  .li-sel:visited .read-on {
+  .li-sel .read-on {
     color: #7165c7; }
-  .li-sel:hover,
-  .li-sel:visited:hover {
-    -webkit-transition: background 0.3s ease-in, color 0.3s ease-in;
-    -moz-transition: background 0.3s ease-in, color 0.3s ease-in;
-    -o-transition: background 0.3s ease-in, color 0.3s ease-in;
-    transition: background 0.3s ease-in, color 0.3s ease-in;
-    background: whitesmoke;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000314}}
+  .li-sel:hover {
+    -webkit-transition: color 0.3s ease-in;
+    -moz-transition: color 0.3s ease-in;
+    -ms-transition: color 0.3s ease-in;
+    -o-transition: color 0.3s ease-in;
+    transition: color 0.3s ease-in;
     color: #7165c7;
     text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000318}}
     .li-sel:hover h3,
-    .li-sel:hover .read-on,
-    .li-sel:visited:hover h3,
-    .li-sel:visited:hover .read-on {
+    .li-sel:hover .read-on {
       -webkit-transition: color 0.3s ease-in;
       -moz-transition: color 0.3s ease-in;
+      -ms-transition: color 0.3s ease-in;
       -o-transition: color 0.3s ease-in;
       transition: color 0.3s ease-in;
       color: #c00b0b; }
-  .li-sel:after,
-  .li-sel:visited:after {
-    background: black;
-    content: "";
-    display: block;
-    height: 1px;
-    margin: 0 auto;
-    max-width: 50%;
-    margin-top: 1.5em; }
-  .li-sel h3,
-  .li-sel:visited h3 {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000323}}
+  .li-sel h3 {
     font-size: 1.5em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000328}}
 .li-sel-dets {
   font-size: 1.1em;
   line-height: 1.3; }
 
-.li-sel--teaser {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000332}}
+.li-sel--teaser, .tl-teaser {
   margin: 0.3em 0 0.3em 1.5em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000335}}
 .teaser-text {
   font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000340}}
   .teaser-text ul {
     padding: 0 0 1em 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000343}}
   .teaser-text:after {
     content: "\00A0\00B7\00A0\00B7\00A0\00B7\00A0"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000346}}
   .teaser-text span.poetry-line:not(:first-child):before {
     content: "\00A0\002F\00A0"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000349}}
 .li-sel--posttime {
   color: #6d6d6d;
   font-size: 0.8em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_li-sel\.sass}line{font-family:\0000353}}
 .read-on:after {
   content: "\00A0\00BB"; }
 
 /* MAIN */
-.browse-content {
-  /*For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats. */
-  *zoom: 1; }
-  .browse-content:before, .browse-content:after {
-    content: " ";
-    display: table; }
-  .browse-content:after {
-    clear: both; }
-
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\000033}}
 .browse-h {
   font-size: 2.7em;
   text-align: center;
   text-transform: uppercase; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\000033}}
+    .browse-h {
+      font-size: 3.5em;
+      text-align: left; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000313}}
+.browse-container {
+  margin: 1.5em auto; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000313}}
+    .browse-container {
+      margin: 1.5em 0;
+      float: left;
+      max-width: 55%;
+      width: 55%; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000322}}
 #tag-container {
-  margin: 1.5em auto;
-  max-width: 250px; }
+  max-width: 20em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000325}}
 #tag-list {
   margin-left: -0.3em;
   overflow-x: hidden;
   overflow-y: hidden; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000330}}
 .tag-list--a,
 .tag-list--a:visited {
   text-indent: -1em;
@@ -1410,9 +1824,11 @@ h3 {
   line-height: 1.1;
   padding: 0.3em 0 0.3em 0.3em;
   position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000343}}
   .tag-list--a:hover,
   .tag-list--a:visited:hover {
     color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000346}}
   .tag-list--a:after,
   .tag-list--a:visited:after {
     float: left;
@@ -1422,42 +1838,465 @@ h3 {
     font-weight: normal;
     content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000349}}
 .tag-list--span {
   background: white;
   padding-right: 0.36em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000353}}
+.browse-author-dates {
+  font-size: 0.8em;
+  font-style: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000358}}
+.browse-extras {
+  margin: 0 auto;
+  width: 320px; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000358}}
+    .browse-extras {
+      float: right;
+      overflow: visible;
+      width: 45%; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000366}}
+.other-browse {
+  *zoom: 1;
+  margin-bottom: 2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
+  .other-browse:before, .other-browse:after {
+    content: " ";
+    display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
+  .other-browse:after {
+    clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000369}}
+  .other-browse li {
+    float: left;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000375}}
+    .other-browse li:before {
+      content: "~\00a0"; }
+  @media (min-width: 47.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000366}}
+    .other-browse {
+      float: right;
+      width: 90%; } }
+
 @media (min-width: 47.5em) {
-  .browse-content {
-    margin: 0 auto;
-    max-width: 47.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse\.sass}line{font-family:\0000385}}
+  .innernav-browse--container {
+    display: block; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_page-select\.sass}line{font-family:\000031}}
+#selected-page {
+  text-align: center; }
 
-  .browse-h {
-    font-size: 3.5em;
-    text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_page-select\.sass}line{font-family:\000034}}
+#page-select-container {
+  height: 2em;
+  line-height: 2em;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  max-width: 8em; }
 
-  #tag-container {
-    margin: 1.5em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_page-select\.sass}line{font-family:\0000312}}
+#page-select {
+  background: transparent;
+  -webkit-appearance: none; }
 
-  .rq-btn {
-    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_page-select\.sass}line{font-family:\0000316}}
+#page-select,
+.page-select-label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
 
-  .rq-backdrop[style] {
-    display: none !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_page-select\.sass}line{font-family:\0000325}}
+.page-select-label {
+  background: white;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.1em;
+  font-style: italic;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 5; }
 
-  .rq-body {
-    display: block;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_page-select\.sass}line{font-family:\0000335}}
+.page-select-arrow {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 0.5em;
+  position: relative;
+  z-index: 100; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_page-select\.sass}line{font-family:\0000342}}
+  .page-select-arrow.u-left {
+    float: left;
+    margin-left: -2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_page-select\.sass}line{font-family:\0000346}}
+  .page-select-arrow.u-right {
     float: right;
-    left: 0;
-    right: 0;
-    max-width: 400px;
-    opacity: 1;
-    padding: 0;
-    position: static; }
-    .rq-body:before, .rq-body:after {
-      display: none; }
+    margin-right: -2em; }
 
-  .rq-title {
-    text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\000031}}
+#tl-list {
+  border-left: 2px solid #6d6d6d; }
 
-  .rq-close {
-    display: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\000034}}
+.tl-li {
+  overflow: auto;
+  padding-left: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\000038}}
+  .tl-li.u-even {
+    background: whitesmoke; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000311}}
+.tl-year {
+  color: #c00b0b;
+  float: left;
+  font-size: 1.4em;
+  margin-left: -0.75em;
+  margin-top: 0.3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000319}}
+  .tl-year:before {
+    margin-bottom: 2px;
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 5px;
+    border-left-color: #6d6d6d;
+    padding-right: 0.25em; }
+  @media (min-width: 32.1875em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000311}}
+    .tl-year {
+      font-size: 2em;
+      margin-left: -0.5em;
+      margin-top: 0; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000328}}
+.tl-sels {
+  margin: 0.8em 0 0.8em 5em;
+  line-height: 1.2; }
+  @media (min-width: 32.1875em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000328}}
+    .tl-sels {
+      margin-left: 7em; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000335}}
+.tl-sel {
+  margin-bottom: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000338}}
+  .tl-sel a:not(.read-on) {
+    color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000340}}
+    .tl-sel a:not(.read-on):hover {
+      color: #7165c7; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000343}}
+.tl-title {
+  display: inline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000345}}
+  .tl-title:after {
+    content: "\00a0\2014\00a0"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000348}}
+.tl-showteaser {
+  color: #6d6d6d;
+  cursor: pointer;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-size: 0.9em;
+  margin: 0.3em;
+  padding: 0.3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000357}}
+  .tl-showteaser:hover {
+    color: #7165c7; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000360}}
+.tl-teaser {
+  margin-left: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000367}}
+.uft-group .uft-b {
+  -webkit-transition: opacity 0.3s ease-in;
+  -moz-transition: opacity 0.3s ease-in;
+  -ms-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+  opacity: 0;
+  height: 0;
+  overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000374}}
+.uft-group.uft-on .uft-a {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_timeline\.sass}line{font-family:\0000376}}
+.uft-group.uft-on .uft-b {
+  opacity: 1;
+  height: auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\000033}}
+.tag-header {
+  border-bottom: 1px solid black; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\000036}}
+.tag-type-heading {
+  margin-top: -0.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\000039}}
+.tag-type {
+  text-transform: uppercase;
+  color: #c00b0b;
+  font-size: 1.24em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000314}}
+a.browse-tag-type {
+  color: black;
+  margin-left: 0.4em;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.05em;
+  font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000322}}
+  a.browse-tag-type:before {
+    content: "\00bb";
+    font-style: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000326}}
+.tag-h, .ann-title {
+  margin: 0.1em 0 0.3em 0;
+  font-size: 3em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000330}}
+.nation-dates {
+  font-size: 1.2em;
+  line-height: 1.3;
+  margin: 0 0 0.3em 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000336}}
+.view-highlights {
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  margin: 0 0 1em 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000342}}
+.tag-info {
+  font-size: 1em;
+  margin-bottom: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000345}}
+  .tag-info ul {
+    display: inline;
+    list-style-type: circle; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000348}}
+    .tag-info ul li {
+      display: inline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000350}}
+      .tag-info ul li + li:before {
+        content: "\2022\00a0"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000352}}
+  .tag-info div {
+    text-indent: 1.2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000354}}
+  .tag-info div:first-child {
+    text-indent: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000357}}
+b.def-altword {
+  font-variant: small-caps; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000359}}
+  b.def-altword:after {
+    content: "\0020 : \0020"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_tag\.sass}line{font-family:\0000365}}
+.tag-selections-container {
+  *zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000318}}
+  .tag-selections-container:before, .tag-selections-container:after {
+    content: " ";
+    display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/bourbon\/bourbon\/app\/assets\/stylesheets\/addons\/_clearfix\.scss}line{font-family:\0000323}}
+  .tag-selections-container:after {
+    clear: both; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\000031}}
+.highlight-adjustors {
+  margin: 0 auto 2em auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\000035}}
+.hl-adjustor {
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\000039}}
+  .hl-adjustor label {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: white;
+    pointer-events: none;
+    z-index: 10; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000315}}
+#select-highlight-author {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  cursor: pointer;
+  outline: none !important;
+  -webkit-appearance: none;
+  z-index: 1; }
+
+/*-------------
+ * QUOTATIONS
+ * ------------ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000327}}
+.highlight-author-h {
+  font-size: 2.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000330}}
+.hl-subhead {
+  border-bottom: 1px solid #6d6d6d;
+  font-size: 1.3em;
+  font-variant: small-caps;
+  margin-bottom: 15px;
+  padding-bottom: 0.3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000338}}
+  .hl-subhead a,
+  .hl-subhead a:visited {
+    border-bottom: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000342}}
+.header-from {
+  color: #6d6d6d;
+  font-size: 0.8em;
+  font-style: italic;
+  font-variant: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000349}}
+.sel-block {
+  margin-top: 1.3em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000352}}
+.sel-dates {
+  font-size: 0.8em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000355}}
+.quotation-list-item {
+  padding: 0 0 0.8em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000358}}
+.quotation-marker {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  color: #c00b0b;
+  float: left;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-size: 2.5em;
+  line-height: 0;
+  margin-top: 20px;
+  width: 25px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000368}}
+.quotation-text,
+.quotation-text:visited {
+  border-bottom: none;
+  color: black;
+  display: block;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  line-height: 1.5;
+  margin-left: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000377}}
+  .quotation-text:hover,
+  .quotation-text:visited:hover {
+    color: #6d6d6d; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000380}}
+.random-quot {
+  font-size: 1.2em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000383}}
+.read-more {
+  text-align: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000387}}
+.show-quotations {
+  color: #7165c7;
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000390}}
+  .show-quotations:hover {
+    color: #7165c7;
+    cursor: pointer; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-announcements\.sass}line{font-family:\000032}}
+.ann-li:not(:first-child) {
+  margin-top: 2em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-announcements\.sass}line{font-family:\000035}}
+.ann-li-h {
+  border-bottom: 1px dotted #6d6d6d;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.7em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-announcements\.sass}line{font-family:\0000311}}
+.ann-li-date {
+  color: #6d6d6d;
+  text-align: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-announcements\.sass}line{font-family:\0000316}}
+.ann-li-body ul {
+  list-style: circle;
+  margin-left: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-announcements\.sass}line{font-family:\0000319}}
+.ann-li-body li {
+  font-style: italic;
+  margin: 0.5em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-announcements\.sass}line{font-family:\0000323}}
+.read-more-ann {
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_browse-announcements\.sass}line{font-family:\0000329}}
+  .read-more-ann a:before, .read-more-ann a:after {
+    content: "--";
+    margin: 0 0.3em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_announcement\.sass}line{font-family:\000031}}
+.ann-title {
+  color: #c00b0b;
+  margin-bottom: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_announcement\.sass}line{font-family:\000036}}
+.ann-posted {
+  color: #6d6d6d;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.4em;
+  font-style: italic;
+  margin-left: 1em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_announcement\.sass}line{font-family:\0000316}}
+.ann-text ul {
+  list-style: circle;
+  margin-left: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_announcement\.sass}line{font-family:\0000319}}
+.ann-text li {
+  margin: 0.5em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_announcement\.sass}line{font-family:\0000322}}
+.ann-text:before {
+  border-top: 1px solid #6d6d6d;
+  content: "";
+  font-size: 1em;
+  margin: 1em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/anthologist\/static\/anthologist\/style\/sass\/_announcement\.sass}line{font-family:\0000328}}
+.ann-text:after {
+  content: ""; }

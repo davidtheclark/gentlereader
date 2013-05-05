@@ -1,4 +1,4 @@
-/* 
+/*
  * down arrow: &#9660; or small &#9662;
  * up arrow: &#9650; or small &#9652;
  * left arrow: &#9668; or small &#9666;
@@ -17,10 +17,8 @@ $site-x: 940px
 
 $f-base: "Crimson", Georgia, "Times New Roman", Times, serif
 $f-heading: "IM Fell English", Georgia, "Times New Roman", Times, serif
-$f-standout: Arial, sans-serif 
+$f-standout: Arial, sans-serif
 $f-ornament: "VictorianOrn"
-$middot: "\00b7"
-$flower: "\274b"
 
 // COLORS
 
@@ -48,12 +46,13 @@ $arrow-r-b: "\00BB\00A0"
 $m-selection-med: 32.1875em
 $m-selection-lg: 47.5em
 $m-selection-xlg: 51.25em
-
+$middot: "\00b7"
+$flower: "\274b"
 
 // MIX-INS
 
 
-=dot-leaders 
+=dot-leaders
   float: left
   width: 0
   white-space: nowrap
@@ -62,20 +61,20 @@ $m-selection-xlg: 51.25em
   content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 
 
-=dot-leader-list 
+=dot-leader-list($background)
   list-style: none
   margin: 0
   padding: 0
   overflow-x: hidden
   overflow-y: hidden
-  li 
-    text-align: right
+  li
     padding-bottom: 0.1em
-    &:before 
+    &:before
       +dot-leaders
-    & span:first-child 
+    & span
+      background: $background
       padding-left: 0.3em
-      // solve a problem with i0S browsers seeing a dot to the right of the word 
+      // solve a problem with i0S browsers seeing a dot to the right of the word
       padding-right: 0.3em
       margin-right: -0.2em
 
@@ -88,14 +87,14 @@ $m-selection-xlg: 51.25em
   em,
   cite,
   i,
-  .inline-translation 
+  .inline-translation
     font-style: normal
 
 %indented-ps
-  p 
+  p:not(.poetry-line)
     margin: 0
     text-indent: 20px
-    &:first-child 
+    &:first-child
       text-indent: 0
 
 =button($color: $c-base, $hover: $c-emphatic)
@@ -110,9 +109,51 @@ $m-selection-xlg: 51.25em
     color: $hover
 
 $trans-time: 0.3s ease-in
-  
+
+=sidebar-title()
+  @extend %heading
+  font:
+    size: 1.5em
+    variant: small-caps
+  border-bottom: $bar
+  line-height: 1.75
+  margin-bottom: 0.75em
+
+%two-buttons
+  +clearfix
+  margin: 1.25em auto 0 auto
+  max-width: 500px
+  overflow: hidden
+  position: relative
+
+$trigger-y: 40px
+
+%two-buttons--trigger
+  +two-borders(x, $double)
+  color: $c-link
+  cursor: pointer
+  font:
+    family: $f-heading
+    size: 1.13em
+    style: italic
+  float: left
+  height: $trigger-y + 5px
+  line-height: $trigger-y
+  text-align: center
+  width: 50%
+  &.u-left
+    &:not(.u-wide)
+      border-right: $bar
+
+  &:hover
+    +transition( (color $trans-time, background-color $trans-time) )
+    background-color: whitesmoke
+    color: $c-emphatic
+
+
 // WEIRD STUFF CORRECTION
 
 b,
 strong
   line-height: 1
+

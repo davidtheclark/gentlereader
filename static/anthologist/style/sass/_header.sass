@@ -1,7 +1,10 @@
 $nav-y: 56px
 
+.site-nav--container,
+.subnav-browse--container
+  box-shadow: 0 0 7px $c-subtle
+
 .site-nav--container
-  +box-shadow(0 0 7px $c-subtle)
   background: white
   border-bottom: double 6px black
   height: $nav-y
@@ -31,14 +34,15 @@ $nav-y: 56px
   height: $nav-y
   line-height: $nav-y
   padding: 0 0.5em
+  position: relative
   text-transform: uppercase
-  
+
   &:hover
     +transition((background $trans-time, border-bottom-color $trans-time, color $trans-time ))
     color: $c-subtle
     background: whitesmoke
     border-bottom-color: $c-emphatic
-  
+
   &.nav-about
     display: none
 
@@ -66,8 +70,95 @@ $nav-y: 56px
 
 .fixed-back
   display: none
-  
-  
+
+
+/* browse subnav */
+
+$subnav-background: whitesmoke
+
+.subnav-browse--container
+  +transition(height 0.5s)
+  height: 0
+  background: $subnav-background
+  overflow: hidden
+  position: relative
+  z-index: 1000
+
+  &.show
+    border-bottom: double 6px black
+    height: 27.5em
+    .subnav-browse
+      opacity: 1
+
+.subnav-browse
+  +dot-leader-list($subnav-background)
+  +transition(opacity 0.3s)
+  font:
+    size: 1.2em
+    style: italic
+  margin: 0 auto
+  opacity: 0
+  max-width: 13em
+  padding: 1em 0 0.5em 0
+
+.subnav-browse--close
+  color: $c-subtle
+  cursor: pointer
+  display: block
+
+  &.u-top
+    font:
+      family: $f-standout
+      size: 0.8em
+    padding: 0.8em
+    position: absolute
+    text-align: left
+    top: -0.8em
+    right: -0.8em
+
+  &.u-bottom
+    font:
+      family: $f-heading
+      size: 1.2em
+      style: italic
+    text-align: center
+    &:before,
+    &:after
+      content: "\00a0--\00a0"
+
+  &:hover
+    color: $c-emphatic
+
+.subnav-browse--h
+  border-bottom: $bar2
+  display: block
+  font-style: normal
+  margin-bottom: 0.8em
+  position: relative
+  text-align: center
+  text-transform: uppercase
+
+.subnav-browse--a,
+.subnav-browse--a:visited
+  color: $c-base
+  display: block
+  position: relative
+  text-transform: none
+
+  &:hover
+    border-bottom-color: transparent
+
+  & span.u-ind
+    padding-left: 1em
+
+.toc-no
+  position: absolute
+  bottom: 0
+  right: 0
+  padding-right: 0.5em
+
+
+
 @media (min-width: $m-selection-med)
   $nav-y: 46px
 
@@ -77,18 +168,18 @@ $nav-y: 56px
   .site-nav--title,
   .site-nav--title:visited
     line-height: $nav-y - 2
-    margin-right: 2em 
+    margin-right: 2em
     text-align: left
     width: auto
     word-spacing: 0.3em
-  
+
   .title-reader
     display: inline
-  
+
   .title-gentle,
   .title-reader
     letter-spacing: 0.1em
-  
+
   .site-nav--li
     line-height: $nav-y - 2
     height: $nav-y
@@ -111,15 +202,19 @@ $nav-y: 56px
 
   .site-nav--title
     font-size: 1.7em
- 
+
   .site-nav--li
     height: $nav-y
     line-height: $nav-y
 
+  .subnav-browse
+    max-width: 20em
+
   body
     margin-top: $nav-y
-    
-@media (min-width: $m-selection-xlg)  
+
+
+@media (min-width: $m-selection-xlg)
   .fixed-back,
   .fixed-back:visited
     color: $c-base

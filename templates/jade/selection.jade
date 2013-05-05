@@ -11,17 +11,14 @@ meta(name="description", content="{{ selection }}, by {{ selection.get_author }}
 
 {% if selection.stylesheet %}
 // If the selection has its own stylesheet, get it.
-link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}anthologist/stylesheets/selection-specific/{{ selection.stylesheet }}.css")
+link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}anthologist/style/css/selection-specific/{{ selection.stylesheet }}.css")
 {% endif %}
 
 {% endblock %}
 
 // scripts
 {% block bottomscripts %}
-
-script(type="text/javascript", src="{{ STATIC_URL }}anthologist/lib/hyphenator.js")
-script(type="text/javascript", src="{{ STATIC_URL }}anthologist/scripts/selection.js")
-
+script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/selection-main.js")
 {% endblock %}
 
 {% block main %}
@@ -41,34 +38,34 @@ article.content
         | {{ author }}</a> &mdash; <a href="/timeline&#35;{{ year }}" title="Published in {{ year }}">
         | {{ year }}</a>
         {% endwith %}
-  
+
       {% with from=selection.from_display trans=source.translator %}
       {% if from != "None" or trans %}
-       
+
       // added info
       .s-info
-        
+
         {% if from != "None" %}
         {{ from }}.
         {% endif %}
-        
+
         {% if trans %}
         | Translated from {{ source.langauge.name }}
         | by {{ trans }} in {{ source.translation_year }}.
         {% endif %}
-      
+
       {% endif %}
       {% endwith %}
-    
+
     // EXTRAS
-    ul.s-extras#sExtrasAccordion.j-accMother
-      
-      li.s-extras--li.j-accItem.u-inactive
-        .s-extras--trigger.u-left.j-accExpand.j-accTrigger Show Highlight
-        .s-highlight.j-accBody
+    ul.s-extras#sExtrasAccordion
+
+      li.s-extras--li.uft-group
+        .s-extras--trigger.u-left.uft-a.uft-trigger Show Highlight
+        .s-highlight.uft-b
           .s-extras--utils
             span.s-extras--utils-i.s-highlight--another See Another
-            span.s-extras--utils-i.j-accCollapse.j-accTrigger Hide
+            span.s-extras--utils-i.uft-trigger Hide
           .s-extras--title A Highlight
           ul.s-highlight--text.hyphenate
             {% for q in quotations %}
@@ -78,37 +75,37 @@ article.content
             li.s-highlight--li.u-inactive {{ q.get_quotation }}
             {% endif %}
             {% endfor %}
-            .s-highlight--li.u-inactive.s-highlight--all: a(href="#") see all the highlights for this selection
+            .s-highlight--li.u-inactive.s-highlight--all: a(href="/highlights/&#35;{{ selection.source.author.slug }}") see all the highlights from this selection
 
-      
-      li.s-extras--li.j-accItem.u-inactive
-        .s-extras--trigger.j-accExpand.j-accTrigger Show Tags
-        .s-tags.u-top.j-accBody
+
+      li.s-extras--li.uft-group
+        .s-extras--trigger.uft-a.uft-trigger Show Tags
+        .s-tags.u-top.uft-b
           .s-extras--utils
-            span.s-extras--utils-i.j-accCollapse.j-accTrigger Hide
+            span.s-extras--utils-i.uft-trigger Hide
           .s-extras--title Tags
           .s-tags--inst Click a tag to find other selections like this one.
-          include includes/tag-sublist 
+          include includes/tag-sublist
 
-    
+
     {% with ct=selection.comment_text ci=selection.comment_intro %}
     {% if ct or ci %}
-    
+
     //comments
     .s-comments
-      
+
       {% if ct %}
       .s-comment.u-text {{ selection.get_comment_text }}
       {% endif %}
-      
+
       {% if ci %}
       .s-comment.u-intro {{ selection.get_comment_intro }}
       {% endif %}
-    
+
     {% endif %}
     {% endwith %}
-      
-  
+
+
   //selection text
   .s-text.hyphenate {{ selection.get_text }}
 
@@ -121,15 +118,15 @@ article.content
         h3.s-postscript--h3 Tags
         .s-tags--inst Click a tag to find other selections like this one.
         include includes/tag-sublist
-        
-      .s-highlight--timeline See selections that surround this one in <a href="/timeline/&#35;{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.	
+
+      .s-highlight--timeline See selections that surround this one in <a href="/timeline/&#35;{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.
 
     .s-postscript--col.u-first
       //related selections
       .rsel
         h3.s-postscript--h3 Related Selections
-        ul#relSelAccordion.j-accMother
-          
+        ul#relSelAccordion
+
           {% for item in related_selections %}
           include includes/related-selection
           {% endfor %}

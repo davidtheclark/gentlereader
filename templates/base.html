@@ -7,19 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>{% block meta %}{% endblock %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed">
-    <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/STYLE.css">{% block style %}{% endblock %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/STYLE.css">{% block styles %}{% endblock %}
     {% block topscripts %}{% endblock %}
     {% block head %}{% endblock %}
   </head>
-  <body>
-    {% block header %}
-    {% include "header.html" %}
-    {% endblock %}
+  <body>{% block header %}
+    <div class="site-nav--container">
+      <nav class="site-nav"><a href="/" class="site-nav--title"><span class="title-the">The</span> <span class="title-gentle">Gentle</span> <span class="title-reader">Reader</span></a>
+        <ul class="site-nav--ul">
+          <li class="site-nav--li nav-about">About</li>
+          <li class="site-nav--li nav-browse">Browse</li>
+          <li class="site-nav--li">Search</li>
+        </ul>
+      </nav><a href="#" class="fixed-back">(top)</a>
+      <div class="subnav-browse--container">
+        <ul class="subnav-browse"><span class="subnav-browse--h"><span class="subnav-browse--close u-top">X</span>Contents</span>
+          <li><a href="/highlights" class="subnav-browse--a"><span>I. Highlights</span><span class="toc-no">i</span></a></li>
+          <li><a href="/selections" class="subnav-browse--a"><span>II. Selections</span><span class="toc-no">ii</span></a></li>
+          <li><a href="/authors" class="subnav-browse--a"><span class="u-ind">by Author</span><span class="toc-no">iii</span></a></li>
+          <li><a href="/timeline" class="subnav-browse--a"><span class="u-ind">by Date</span><span class="toc-no">iv</span></a></li>
+          <li><a href="/forms" class="subnav-browse--a"><span class="u-ind">by Form</span><span class="toc-no">v</span></a></li>
+          <li><a href="/genres" class="subnav-browse--a"><span class="u-ind">by Genre</span><span class="toc-no">vi</span></a></li>
+          <li><a href="/topics" class="subnav-browse--a"><span class="u-ind">by Topic</span><span class="toc-no">vii</span></a></li>
+          <li><a href="/contexts" class="subnav-browse--a"><span class="u-ind">by Context</span><span class="toc-no">viii</span></a></li>
+          <li><a href="/nations" class="subnav-browse--a"><span class="u-ind">by Nation</span><span class="toc-no">ix</span></a></li>
+          <li><a href="/languages" class="subnav-browse--a"><span class="u-ind">by Orig. Language</span><span class="toc-no">x</span></a></li>
+          <li><a href="/" class="subnav-browse--a"><span class="u-ind">Recent Additions</span><span class="toc-no">xi</span></a></li>
+          <li><a href="/announcements" class="subnav-browse--a"><span>III. Announcements</span><span class="toc-no">xii</span></a></li>
+        </ul>
+        <div class="subnav-browse--close u-bottom">close</div>
+      </div>
+    </div>{% endblock %}
     {% block main %}{% endblock %}
     {% block footer %}
-    {% include "footer.html" %}
-    {% endblock %}
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-text"><a href="/" class="footer-title">The Gentle Reader</a> is an ever-growing, explorable anthology of carefully curated selections from texts in the public domain. <a class="footer-about" href="/about">Read more about the site.</a></div>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Selections</a></li>
+          <li><a href="#" class="footer-link">Highlights</a></li>
+          <li><a href="#" class="footer-link">Announcements</a></li>
+          <li><a href="#" class="footer-link">Links &amp; Sources</a></li>
+          <li><a href="#" class="footer-link">Contact</a></li>
+          <li><a href="#" class="footer-link">Copyright Info.</a></li>
+        </ul>
+      </div>
+    </footer>{% endblock %}
     <!-- work this into a build layer-->
-    <script type="text/javscript" src="{{ STATIC_URL }}anthologist/lib/hyphenator.js"></script>{% block bottomscripts %}{% endblock %}
+    <script type="application/javascript" src="{{ STATIC_URL }}anthologist/scripts/require-config.js"></script>{% block bottomscripts %}{% endblock %}
   </body>
 </html>

@@ -1,0 +1,29 @@
+.ann-title
+  @extend .tag-h
+  color: $c-emphatic
+  margin-bottom: 0
+
+.ann-posted
+  color: $c-subtle
+  font:
+    family: $f-heading
+    size: 1.4em
+    style: italic
+  margin-left: 1em
+
+.ann-text
+  @extend .s-text
+  ul
+    list-style: circle
+    margin-left: 20px
+  li
+    margin: 0.5em 0
+
+  &:before
+    border-top: 1px solid $c-subtle
+    content: ""
+    font-size: 1em
+    margin: 1em 0
+
+  &:after
+    content: ""

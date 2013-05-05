@@ -1,11 +1,11 @@
 from django.db import models
 from django.utils.safestring import mark_safe
 
+
 class Source(models.Model):
     class Meta:
         app_label = 'anthologist'
 
-    
     author = models.ForeignKey('Author')
     section_title = models.CharField(max_length=500, blank=True, null=True)
     volume_title = models.CharField(max_length=500, blank=True, null=True,
@@ -20,10 +20,10 @@ class Source(models.Model):
     digital_text = models.URLField(max_length=255, blank=True, null=True)
     scanned_text = models.URLField(max_length=255, blank=True, null=True)
     info_url = models.URLField(max_length=255, blank=True, null=True, help_text="Typically a Wikipedia article.")
-    
+
     def __unicode__(self):
         return self.full_title()
-     
+
     #Test whether the author is attached to a source
     def is_active(self):
         if len(self.selection_set.all()) != 0:
@@ -41,7 +41,7 @@ class Source(models.Model):
             yr = str(self.pub_year)
         date_content += yr
         return mark_safe(date_content)
-        
+
     def full_title(self):
         title_content = list()
         if self.section_title:
@@ -52,33 +52,33 @@ class Source(models.Model):
             title_content.append('<cite>' + self.volume_title + '</cite>')
         result = ' '.join(title_content)
         return mark_safe(result)
-    
+
     def toJSON(self):
         return dict(
-            id = self.id,
-            section_title = self.section_title,
-            volume_title = self.volume_title,    
-            translator = self.translator,
-            translation_year = self.translation_year,
-            pub_year = self.pub_year,
-            pub_year_modifier = self.pub_year_modifier,
-            date_display = self.date_display(),
-            digital_text = self.digital_text,
-            scanned_text = self.scanned_text,
-            info_url = self.info_url,
-            root_work = self.root_work(),
-            full_title = self.full_title()
+            id=self.id,
+            section_title=self.section_title,
+            volume_title=self.volume_title,
+            translator=self.translator,
+            translation_year=self.translation_year,
+            pub_year=self.pub_year,
+            pub_year_modifier=self.pub_year_modifier,
+            date_display=self.date_display(),
+            digital_text=self.digital_text,
+            scanned_text=self.scanned_text,
+            info_url=self.info_url,
+            root_work=self.root_work(),
+            full_title=self.full_title()
         )
-        
+
     def selections(self):
         sel_set = []
         for sel in self.selection_set.all():
-            sel_set.append({ 'title': sel.__unicode__(), 'slug': sel.slug })
+            sel_set.append({'title': sel.__unicode__(), 'slug': sel.slug})
         return sel_set
-    
+
     def closure(self):
         source = self.toJSON()
         source['author'] = self.author.closure()
-        source['language'] = [ self.language.toJSON() ]
+        source['language'] = [self.language.toJSON()]
         source['selections'] = self.selections()
         return source

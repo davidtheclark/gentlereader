@@ -1,11 +1,9 @@
-li.li-rsel.j-accItem.u-inactive
+li.li-rsel.uft-group
   .rsel-info-container
-  
+
     a(href="/selections/{{ item.selection.slug }}").li-rsel--info
-      span.li-rsel--title &ldquo;{{ item.selection.get_title }}&rdquo; 
-      | by <i>{{ item.selection.source.author.last_name }}</i>&nbsp;
-      | ({{ item.selection.source.date_display }})
-    
+      span.li-rsel--title &ldquo;{{ item.selection.get_title }}&rdquo; by <i>{{ item.selection.source.author.last_name }}</i>&nbsp;({{ item.selection.source.date_display }})
+
     .li-rsel--shares &mdash;&nbsp;which shares
       ul.li-rsel--shares--ul
         {% for category, tags in item.share.items %}
@@ -16,17 +14,16 @@ li.li-rsel.j-accItem.u-inactive
             {% for tag in tags %}
             li
               | {% if tags|length > 1 and forloop.last %}and {% endif %}
-              a(href="#").li-rsel--tag {{ tag }}
+              a(href="/{{ tag.get_category }}/{{ tag.slug }}").li-rsel--tag {{ tag }}
             {% endfor %}
         {% endfor %}
         {% if item.more %}
         li and more&nbsp;...
         {% endif %}
-  
-  .show-teaser.j-accTrigger.j-accExpand read teaser
-      
-  .li-rsel--teaser.j-accBody
+
+  .show-teaser.uft-trigger.uft-a read teaser
+
+  .li-rsel--teaser.uft-b
     span.teaser-text.hyphenate {{ item.selection.get_teaser }}
     a(href="/selections/{{ item.selection.slug }}").read-on read&nbsp;on
 
-  

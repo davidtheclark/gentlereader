@@ -1,0 +1,17 @@
+#timeline-container.browse-container
+  ul#tl-list
+    {% for item in years %}
+    li(class="tl-li{% if forloop.counter|divisibleby:2 %} u-even{% endif %}")
+      .tl-year {{ item.date_display }}
+      ul.tl-sels
+        {% for s in item.selections %}
+        li.tl-sel.uft-group
+          a(href="/selections/{{ s.slug }}")
+            h2.tl-title {{ s }}
+            | by {{ s.source.author }}
+          span.tl-showteaser.uft-trigger.uft-a [&nbsp;teaser&nbsp;&#9662;&nbsp;]
+          .tl-teaser.hyphenate.uft-b
+            span.teaser-text {{ s.get_teaser }}
+            a(href="/selections/{{ s.slug }}").read-on read&nbsp;on
+        {% endfor %}
+    {% endfor %}

@@ -1,0 +1,94 @@
+.highlight-adjustors
+  @extend %two-buttons
+  margin: 0 auto 2em auto
+
+.hl-adjustor
+  @extend %two-buttons--trigger
+  position: relative
+
+  label
+    @include position(absolute, 0px 0px 0px 0px)
+    background: white
+    pointer-events: none
+    z-index: 10
+
+#select-highlight-author
+  @include position(absolute, 0px 0px 0px 0px)
+  cursor: pointer
+  outline: none !important
+  -webkit-appearance: none
+  z-index: 1
+
+
+/*-------------
+ * QUOTATIONS
+ * ------------*/
+
+.highlight-author-h
+  font-size: 2.5em
+
+.hl-subhead
+  border-bottom: 1px solid $c-subtle
+  font:
+    size: 1.3em
+    variant: small-caps
+  margin-bottom: 15px
+  padding-bottom: 0.3em
+
+  a,
+  a:visited
+    border-bottom: none
+
+.header-from
+  color: $c-subtle
+  font:
+    size: 0.8em
+    style: italic
+    variant: normal
+
+.sel-block
+  margin-top: 1.3em
+
+.sel-dates
+  font-size: 0.8em
+
+.quotation-list-item
+  padding: 0 0 0.8em 0
+
+.quotation-marker
+  +inline-block
+  color: $c-emphatic
+  float: left
+  font-family: $f-heading
+  font-size: 2.5em
+  line-height: 0
+  margin-top: 20px
+  width: 25px
+
+.quotation-text,
+.quotation-text:visited
+  border-bottom: none
+  color: black
+  display: block
+  font-family: $f-heading
+  line-height: 1.5
+  margin-left: 30px
+
+  &:hover
+    color: $c-subtle
+
+.random-quot
+  font-size: 1.2em
+
+.read-more
+  text-align: right
+
+
+.show-quotations
+  color: $c-link
+  display: none
+  &:hover
+    color: $c-link
+    cursor: pointer
+
+

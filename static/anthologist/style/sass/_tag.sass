@@ -1,0 +1,66 @@
+// HEADER
+
+.tag-header
+  border-bottom: $bar
+
+.tag-type-heading
+  margin-top: -0.5em
+
+.tag-type
+  text-transform: uppercase
+  color: $c-emphatic
+  font-size: 1.24em
+
+a.browse-tag-type
+  color: black
+  margin-left: 0.4em
+  font:
+    family: $f-heading
+    size: 1.05em
+    style: italic
+
+  &:before
+    content: "\00bb"
+    font-style: normal
+
+.tag-h
+  margin: 0.1em 0 0.3em 0
+  font-size: 3em
+
+.nation-dates
+  font:
+    size: 1.2em
+  line-height: 1.3
+  margin: 0 0 0.3em 20px
+
+.view-highlights
+  font:
+    family: $f-heading
+    style: italic
+  margin: 0 0 1em 20px
+
+.tag-info
+  font-size: 1em
+  margin-bottom: 1em
+  ul
+    display: inline
+    list-style-type: circle
+    li
+      display: inline
+      &+li:before
+        content: "\2022\00a0"
+  div
+    text-indent: 1.2em
+  div:first-child
+    text-indent: 0
+
+b.def-altword
+  font-variant: small-caps
+  &:after
+    content: "\0020 : \0020"
+
+
+// BODY
+
+.tag-selections-container
+  +clearfix

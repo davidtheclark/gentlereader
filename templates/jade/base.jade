@@ -7,30 +7,30 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title
       {% block title %}{% endblock %}
-      
+
     {% block meta %}{% endblock %}
 
     link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed")
 
     link(rel="stylesheet", href="{{ STATIC_URL }}anthologist/style/css/STYLE.css")
-    {% block style %}{% endblock %}
+    {% block styles %}{% endblock %}
 
     {% block topscripts %}{% endblock %}
 
     {% block head %}{% endblock %}
 
   body
-    
+
     {% block header %}
-    {% include "header.html" %}
+    include includes/header
     {% endblock %}
-    
+
     {% block main %}{% endblock %}
-  
+
     {% block footer %}
-    {% include "footer.html" %}
+    include includes/footer
     {% endblock %}
-  
+
     // work this into a build layer
-    script(type="text/javscript", src="{{ STATIC_URL }}anthologist/lib/hyphenator.js")
+    script(type="application/javascript", src="{{ STATIC_URL }}anthologist/scripts/require-config.js")
     {% block bottomscripts %}{% endblock %}

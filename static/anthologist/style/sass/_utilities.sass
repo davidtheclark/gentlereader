@@ -1,23 +1,8 @@
+@import mixins/positioning
+
 /* MIX-INS */
 
-=border-radius($value: 5px) 
-  -webkit-border-radius: $value
-  -moz-border-radius: $value
-  border-radius: $value
-
-
-=box-shadow($value) 
-  -webkit-box-shadow: $value
-  -moz-box-shadow: $value
-  box-shadow: $value
-
-
-=dimensions($x, $y) 
-  height: $x
-  width: $y
-
-
-=absolute($top: auto, $right: auto, $bottom: auto, $left: auto) 
+=absolute($top: auto, $right: auto, $bottom: auto, $left: auto)
   position: absolute
   @if $top != auto
     top: $top
@@ -29,7 +14,7 @@
     left: $left
 
 
-=hr($width: 50%, $height: 1px, $color: black) 
+=hr($width: 50%, $height: 1px, $color: black)
   background: $color
   content: ""
   display: block
@@ -39,61 +24,37 @@
 
 
 // inline-list will only work with <ul>s
-=inline-list($divider: none, $disp: inline-block) 
-  & > li 
+=inline-list($divider: none, $disp: inline-block)
+  & > li
     display: $disp
     @if $divider != none
-      &:not(:last-child):after 
+      &:not(:last-child):after
         content: $divider
-    
-=two-borders($axis: x, $border: 1px solid black) 
-  @if $axis ==x 
+
+=two-borders($axis: x, $border: 1px solid black)
+  @if $axis ==x
     border-bottom: $border
     border-top: $border
-  @else if $axis ==y 
+  @else if $axis ==y
     border-left: $border
     border-right: $border
-  
-=transition($transition) 
-  -webkit-transition: $transition
-  -moz-transition: $transition
-  -o-transition: $transition
-  transition: $transition
 
-/* Clearfix: contain floats -- from HTML5 Boilerplate
-  For modern browsers
-  1. The space content is one way to avoid an Opera bug when the
-      `contenteditable` attribute is included anywhere else in the document.
-      Otherwise it causes space to appear at the top and bottom of elements
-      that receive the `clearfix` class.
-  2. The use of `table` rather than `block` is only necessary if using
-      `:before` to contain the top-margins of child elements. */
-=clearfix 
-  &:before,
-  &:after 
-    content: " "
-    display: table
-  &:after 
-    clear: both
-  /*For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats. */
-  *zoom: 1
 
-=arrow($size: 5, $color: black, $direction: down) 
+=arrow($size: 5, $color: black, $direction: down)
   $side: top // declare variable, set default
-  @if $direction ==down 
+  @if $direction ==down
     $side: top
     margin-bottom: - ($size - 2px)
-  @else if $direction ==up 
+  @else if $direction ==up
     $side: bottom
     margin-bottom: $size - 2px
-  @else if $direction ==right 
+  @else if $direction ==right
     $side: left
     margin-bottom: $size - 3px
-  @else if $direction ==left 
+  @else if $direction ==left
     $side: right
     margin-bottom: $size - 3px
-  
+
   content: ""
   display: inline-block
   height: 0
@@ -116,11 +77,6 @@
     line-height: 0
     margin-right: 0.2em
     vertical-align: middle
-
-=content-box
-  -moz-box-sizing: content-box
-  -webkit-box-sizing: content-box
-  box-sizing: content-box
 
 =hyphens($val: "auto")
   word-wrap: break-word

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ announcement }} - The Gentle Reader{% endblock %}
+
+{% block main %}
+
+article.content
+
+  header
+
+    h1.ann-title {{ announcement.get_title }}
+    .ann-posted {{ announcement.date_entered|date:"d F Y, P" }}
+
+    .ann-text {{ announcement.get_text }}
+
+
+{% endblock %}

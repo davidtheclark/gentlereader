@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tag }} - The Gentle Reader{% endblock %}
+
+{% block meta %}
+meta(name="description", content="")
+{% endblock %}
+
+{% block bottomscripts %}
+script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/tag-main.js")
+{% endblock %}
+
+{% block main %}
+
+.content
+  header.tag-header
+    .tag-type-heading
+      span.tag-type
+        {% if tag_type == 'language' %}
+        | original language
+        {% else %}
+        | {{ tag_type }}
+        {% endif %}
+      a(href='/{{ tag_type }}s').browse-tag-type browse all
+        {% if tag_type == 'language' %}
+        | orig. languages
+        {% else %}
+        | {{ tag_type }}s
+        {% endif %}
+
+    h1.tag-h {{ tag }}
+
+    {% if tag_type == 'author' %}
+    .nation-dates
+      {% for nation in tag.nations.all %}
+      <a href='/nations/{{ nation.slug }}'>{{ nation.name }}</a>.
+      {% endfor %}
+      | {{ tag.dates }}.
+      {% if tag.info_url %}
+      a(href='{{ tag.info_url }}', target='_blank').small-command Learn&nbsp;more&nbsp;&raquo;
+      {% endif %}
+    .view-highlights
+      a(href='/highlights/') &laquo; view highlights from {{ tag.last_name }}'s selections
+
+    {% else %}
+
+    {% if tag.description or tag.definition or tag.info_url %}
+    .tag-info
+
+      {% if tag.definition %}
+      | {{ tag.get_definition }}
+      {% if tag.dictionary_source %}
+      a(href='{{ tag.dictionary_source.link }}', target='_blank') [<cite>{{ tag.dictionary_source }}</cite>]
+      {% endif %}
+      {% endif %}
+
+      {% if tag.description %}
+      | {{ tag.get_description }}
+      {% endif %}
+
+      {% if tag.info_url %}
+      a(href='{{ tag.info_url }}', target='_blank').small-command Learn&nbsp;more&nbsp;&raquo;
+      {% endif %}
+
+    {% endif %}
+
+    {% endif %}
+
+  include includes/browse-selections
+
+  aside.browse-extras
+    .rq-container
+      include includes/rand-quot
+
+  .rq-btn Read a Random Highlight
+
+
+
+
+{% endblock %}

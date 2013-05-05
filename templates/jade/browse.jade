@@ -3,20 +3,28 @@
 {% block title %}Browse {{ category|capfirst }} - The Gentle Reader{% endblock %}
 
 {% block bottomscripts %}
-script(type="application/javascript", src="{{ STATIC_URL }}anthologist/scripts/require-config.js")
-script(type="text/javscript", src="{{ STATIC_URL }}anthologist/scripts/lib/sweet-justice.js")
+
+
+{% if category == "timeline" %}
+script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/timeline-main.js")
+
+{% elif category == "highlights" or category == "announcements" %}
+script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/browse-highlights-main.js")
+
+{% elif category %}
 {% autoescape off %}
 script(type="application/javascript")
   | var tagType = {{ category_json }};
 {% endautoescape %}
 script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/browse-main.js")
+{% endif %}
 
 {% endblock %}
 
 
 {% block main %}
 
-.content.browse-content
+.content
 
   h1.browse-h
     {% if category == "selections" %}
@@ -27,18 +35,38 @@ script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATI
     | {{ category }}
     {% endif %}
 
-  aside
-    include includes/rand-quot      
-  
-  #adjustor-container
-    #page-select-container.adjustor-subcontainer
-  #tag-container
-    ul#tag-list
-      {% for t in tags %}
-      li: a(href="{{ t.slug }}").tag-list--a
-        span.tag-list--span {{ t }}
-      {% endfor %}
-  
+  //
+    #adjustor-container
+      #selected-page
+      #page-select-container.adjustor-subcontainer
+
+  {% if category == "selections" %}
+  include includes/browse-selections
+  {% elif category == "timeline" %}
+  include includes/browse-timeline
+  {% elif category == "highlights" %}
+  include includes/browse-highlights
+  {% elif category == "announcements" %}
+  include includes/browse-announcements
+  {% else %}
+  include includes/browse-tags
+  {% endif %}
+
+  aside.browse-extras
+    .other-browse
+      h2.rq-title Other Ways to Browse
+      ul
+        {% for category in other_categories %}
+        li: a(href="/{{ category }}")
+          {% if category == "languages" %}
+          | orig. languages
+          {% else %}
+          | {{ category }}
+          {% endif %}
+        {% endfor %}
+    .rq-container
+      include includes/rand-quot
+
   .rq-btn Read a Random Highlight
 
 

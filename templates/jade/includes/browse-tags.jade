@@ -1,0 +1,14 @@
+#tag-container.browse-container
+  ul#tag-list
+
+    {% for t in tags %}
+    li: a(href="{{ t.slug }}").tag-list--a
+
+      {% if category == "authors" %}
+      span.tag-list--span {{ t }} <span class="browse-author-dates">({{ t.dates }})</span>
+
+      {% else %}
+      span.tag-list--span {{ t }}
+
+      {% endif %}
+    {% endfor %}

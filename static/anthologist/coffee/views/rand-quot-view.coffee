@@ -2,17 +2,17 @@ define ["backbone",
         "templates/randQuotTempl"],
 
   (Backbone, randQuotTempl) ->
-    
+
     $container = $(".rq-content")
-    
+
     RandQuotView = Backbone.View.extend
       className : "rand-quot-view"
-      modalTemplate : randQuotTempl
+      template : randQuotTempl
 
       initialize : (options) ->
         _.extend @, options
         @render()
-      
+
       render : ->
         ### If there is already an active highglight, @offscreen
         should have been set to true. The new highlight will
@@ -24,10 +24,10 @@ define ["backbone",
             right : "-5000px"
             width : containerWidth
             opacity : 0
-        
-        @$el.append @modalTemplate @model.toJSON()
+
+        @$el.append @template @model.toJSON()
         $container.append @el
-        
+
         return @
-    
+
     return RandQuotView

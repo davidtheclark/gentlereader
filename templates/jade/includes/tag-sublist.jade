@@ -11,7 +11,7 @@
     {% if category.tags %}
 
     {% for tag in category.tags %}
-    li: a(href="/{{ category.type }}/{{ tag.slug }}", title="{{ tag }}", rel="tag") {{ tag }}
+    li: a(href="/{{ tag.get_category }}/{{ tag.slug }}", title="{{ tag }}", rel="tag") {{ tag }}
     {% endfor %}
 
     {% else %}

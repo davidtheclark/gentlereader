@@ -5,7 +5,7 @@ define(["backbone", "templates/randQuotTempl"], function(Backbone, randQuotTempl
   $container = $(".rq-content");
   RandQuotView = Backbone.View.extend({
     className: "rand-quot-view",
-    modalTemplate: randQuotTempl,
+    template: randQuotTempl,
     initialize: function(options) {
       _.extend(this, options);
       return this.render();
@@ -26,7 +26,7 @@ define(["backbone", "templates/randQuotTempl"], function(Backbone, randQuotTempl
           opacity: 0
         });
       }
-      this.$el.append(this.modalTemplate(this.model.toJSON()));
+      this.$el.append(this.template(this.model.toJSON()));
       $container.append(this.el);
       return this;
     }

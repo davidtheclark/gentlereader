@@ -5,27 +5,27 @@
 /* selection heading
  * ---------- */
 
-.s-headline 
+.s-headline
   text-align: center
 
 
-.s-title 
+.s-title
   @extend %heading
-  font: 
+  font:
     size: 2.7em
     variant: small-caps
   line-height: 1.1
   margin: 0 0 0.5em 0
 
 
-.s-authordate 
+.s-authordate
   font-size: 1.6em
 
-.s-info 
+.s-info
   font: 1.2em
   line-height: 1.4
   margin-top: 1.25em
-  &:before 
+  &:before
     background: url("../../img/bd-small.png") no-repeat center center
     background-size: contain
     content: ""
@@ -39,44 +39,30 @@
  -----------------------*/
 
 .s-extras
-  +clearfix
-  margin: 1.25em auto 0 auto
-  max-width: 500px
-  overflow: hidden
-  position: relative
+  @extend %two-buttons
 
+  .uft-group
+    .uft-a
+      display: inline-block
+    .uft-b
+      display: none
 
-$trigger-y: 40px
+    &.uft-on
+      .uft-a
+        display: none
+      .uft-b
+        clear: both
+        display: block
 
 .s-extras--trigger
-  +two-borders(x, $double)
-  color: $c-link
-  cursor: pointer
-  font: 
-    family: $f-heading
-    size: 1.13em
-    style: italic
-  float: left
-  height: $trigger-y + 5px
-  line-height: $trigger-y
-  text-align: center
-  width: 50%
-  
+  @extend %two-buttons--trigger
+
   &.u-wide
     width: 100%
-  
+
   &.u-left
     &.u-wide
       margin-bottom: 0.5em
-    &:not(.u-wide)
-      border-right: $bar
-  
-  &:hover
-    +transition( (color $trans-time, background-color $trans-time) )
-    background-color: whitesmoke
-    color: $c-emphatic
-
-
 
 $s-extras--heading-y: 40px
 
@@ -92,7 +78,7 @@ $s-extras--heading-y: 40px
   color: $c-link
   cursor: pointer
   float: right
- 
+
 .s-extras--utils-i
   +button($c-link)
   &:last-child
@@ -129,7 +115,7 @@ $s-extras--heading-y: 40px
     size: 0.8em
   text-align: center
   text-transform: uppercase
-  
+
   a
     position: relative
 
@@ -137,17 +123,17 @@ $s-extras--heading-y: 40px
 
 .s-tags
   padding-bottom: 1.5em
-  
+
   &.u-top
     border-bottom: $double
-  
+
   .tag-sublist-label
     display: inline
     font-weight: bold
     line-height: 1
     &:after
       content: "\00a0:\00a0"
-  
+
   .tag-sublist
     display: inline
     +inline-list("\00a0; ")
@@ -157,7 +143,7 @@ $s-extras--heading-y: 40px
   &:before
     content: "\00bb\00a0"
   color: $c-subtle
-  
+
 
 /* textual comments
  * ----------------- */
@@ -174,8 +160,8 @@ $s-extras--heading-y: 40px
 /* selection text
  * ---------------- */
 
-=drop-cap 
-  font: 
+=drop-cap
+  font:
     family: $f-heading
     size: 4em
     style: normal
@@ -184,36 +170,47 @@ $s-extras--heading-y: 40px
   padding-right: 0.05em
   text-transform: uppercase
 
-.s-text 
+.s-text
+  @extend %indented-ps
   font-size: 1.2em
   line-height: 1.5
   margin: 1.5em auto 0 auto
   max-width: 520px
   text-align: justify
-  
+
   p:not(.poetry-line),
   blockquote
-    margin-bottom: 1.9em
+    margin-bottom: 0.5em
+
+  section
+    margin-bottom: 2em
 
   .poetry-line
+    font-style: italic
     text-align: left
-  
+
+  .sel-body-subheading
+    font-variant: small-caps
+    font-weight: bold
+    margin: 0 0 1em 0
+    text-align: center
+
   // top line decoration
   > p:first-of-type,
-  > section:first-of-type > p:first-of-type 
+  > section:first-of-type > p:first-of-type:not(.poetry-line)
     // style first letter
-    &:first-letter 
+    &:first-letter
       +drop-cap
-    
+
     // style first line
-    &:first-line 
-      font: 
+    &:first-line
+      font:
         size: 1.7em
         variant: small-caps
-      
+
       line-height: 1
-   
-  > section > p:first-of-type
+
+  > section > p:first-of-type:not(.poetry-line)
     &:first-letter
       +drop-cap
       font-family: $c-base
@@ -260,20 +257,21 @@ $s-extras--heading-y: 40px
   +clearfix
   margin-bottom: 1em
   position: relative
-  //overrides of accordion default
 
-  &.u-active,
-  &.u-inactive
-    .j-accExpand
-      display: inline-block
-    .j-accBody
-      position: absolute
-      opacity: 0
-      overflow: hidden
+  .uft-b
+    +transition(opacity $trans-time)
+    height: 0
+    opacity: 0
+  &.uft-on
+    .uft-a
+      display: none
+    .uft-b
+      height: auto
+      opacity: 1
 
 .li-rsel--info
   font-size: 1.2em
-  
+
 .show-teaser
   border-bottom: 1px dashed transparent
   color: $c-standout
@@ -283,10 +281,10 @@ $s-extras--heading-y: 40px
     size: 0.8em
   margin: 0.2em 0 0 2em
   text-transform: uppercase
-  
+
   &:before
     +arrow(4, $c-standout, right)
-   
+
   &:hover
     +transition( (color $trans-time, border-bottom-color $trans-time) )
     color: $c-emphatic
@@ -294,15 +292,15 @@ $s-extras--heading-y: 40px
     &:before
       +transition(border-left-color $trans-time)
       border-left-color: $c-emphatic
-  
+
 .li-rsel--teaser
   line-height: 1.3
   margin: 0em 0 0 30px
- 
+
 .li-rsel--shares
   display: inline
   line-height: 1.5
-    
+
 .li-rsel--shares--ul
   +inline-list(' ; ', inline)
   display: inline
@@ -332,8 +330,8 @@ $s-extras--heading-y: 40px
   text-align: center
   &:before
     +hr
-    
-    
+
+
 /* =========================
  * SELECTION MEDIA QUERIES
  * =========================*/
@@ -343,7 +341,7 @@ $s-extras--heading-y: 40px
   .s-headline
     font-size: 1.3em
     text-align: left
-  
+
   .s-info
     &:before
       height: 0
@@ -356,26 +354,27 @@ $s-extras--heading-y: 40px
   .s-extras
     float: right
     margin: 2em 0 2em 2em
-    max-width: 350px
+    max-width: 340px
     width: 40%
-    
-    .j-accItem
-      &.u-active,
-      &.u-inactive
-        .j-accExpand,
-        .j-accCollapse
+
+    .uft-group
+      .uft-a
+        display: none
+      .uft-b
+        display: block
+        height: auto
+        opacity: 1
+        .uft-trigger
           display: none
-        .j-accBody
-          display: block
-  
+
   .s-tags.u-bottom
     &:before
       background: none
       margin: 1em
-  
+
   .s-text
     margin: 0
-      
+
     &:before
       display: block
       content: "b"
@@ -383,22 +382,22 @@ $s-extras--heading-y: 40px
       font-size: 6em
       line-height: 1
       text-align: center
-    
+
     &:after
       background: none
       height: auto
-  
+
   .s-text-bottom-orn
     margin-top: 0.7em
     max-width: 520px
-    
+
   .s-postscript
     p
       text-align: left
 
   .s-postscript--h2
     text-align: left
-    
+
   .s-postscript--col
     &.u-first
       float: left

@@ -2,21 +2,20 @@
 
 // ELEMENTS
 
-* 
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  box-sizing: border-box
+*
+  @include box-sizing(border-box)
 
 html,
 body
-  +content-box
+  @include box-sizing(content-box)
 
-body 
-  +box-shadow(inset 0px 0px 18px rgba(139, 139, 139, .6))
+body
+  box-shadow: inset 0px 0px 18px rgba(139, 139, 139, .6)
   background: white
   font-family: $f-base
+  overflow-x: hidden
 
-ul 
+ul
   list-style: none
   margin: 0
   padding: 0
@@ -33,43 +32,46 @@ a:visited
 
 h1,
 h2,
-h3 
+h3
   font-family: $f-heading
 
 
 // LAYOUT
 
 .content
+  +clearfix
   margin: 0 auto
   max-width: $site-x
   padding: 1.5em 1.2em 0 1.2em
 
-@media (min-width: $m-selection-lg)
-
-  .content
+  @media (min-width: $m-selection-lg)
     padding: 2.5em 1.5em 0 1.5em
 
 
 
 // STYLES
 
-.h2 
+.h2
   @extend %heading
   text-align: center
-  
+
 .poetry-line
   +hanging-indent(1em)
   display: block
 
-.poetry-stanza 
-  margin-bottom: 1.9em
+.poetry-stanza
+  margin-bottom: 1em
+
+.bce
+  font-size: 0.6em
+  text-transform: uppercase
 
 // in selections, teasers, and quotation boxes
 
 .ellipsis
   font-style: normal
-  display: inline-block
   font-size: 0.7em
+  white-space: nowrap
 
 .inline-translation
   font-style: normal
@@ -78,6 +80,6 @@ h3
 .indented-paragraphs
   p
     margin-bottom: 0
-    text-indent: 20px   
-  p:first-child 
+    text-indent: 20px
+  p:first-child
     text-indent: 0

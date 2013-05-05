@@ -1,0 +1,9 @@
+.page-select-arrow.u-left &lt;
+.page-select-arrow.u-right &gt;
+
+label.page-select-label(for='page-select') -- select a page --
+select#page-select
+  option(value='all') all #{itemCount} #{dataType}
+
+  for p in pages
+    option(value='#{p.num}#{p.sel}') #{p.num}. #{p.fill}

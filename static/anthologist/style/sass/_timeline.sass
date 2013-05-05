@@ -1,0 +1,78 @@
+#tl-list
+  border-left: 2px solid $c-subtle
+
+.tl-li
+  overflow: auto
+  padding-left: 1em
+
+  &.u-even
+    background: whitesmoke
+
+.tl-year
+  color: $c-emphatic
+  float: left
+  font:
+    size: 1.4em
+  margin-left: -0.75em
+  margin-top: 0.3em
+
+  &:before
+    +arrow($direction: right, $color: $c-subtle)
+    padding-right: 0.25em
+
+  @media (min-width: $m-selection-med)
+    font-size: 2em
+    margin-left: -0.5em
+    margin-top: 0
+
+.tl-sels
+  margin: 0.8em 0 0.8em 5em
+  line-height: 1.2
+
+  @media (min-width: $m-selection-med)
+    margin-left: 7em
+
+.tl-sel
+  margin-bottom: 0.5em
+
+  a:not(.read-on)
+    color: $c-base
+    &:hover
+      color: $c-link
+
+.tl-title
+  display: inline
+  &:after
+    content: "\00a0\2014\00a0"
+
+.tl-showteaser
+  color: $c-subtle
+  cursor: pointer
+  font:
+    family: $f-heading
+    size: 0.9em
+  margin: 0.3em
+  padding: 0.3em
+
+  &:hover
+    color: $c-link
+
+.tl-teaser
+  @extend .li-sel--teaser
+  margin-left: 0
+
+// uft-business
+
+.uft-group
+  .uft-b
+    +transition(opacity $trans-time)
+    opacity: 0
+    height: 0
+    overflow: hidden
+
+  &.uft-on
+    .uft-a
+      display: none
+    .uft-b
+      opacity: 1
+      height: auto

@@ -16,6 +16,9 @@
     &:after
       color: $c-emphatic
 
+  @media (min-width: $m-selection-lg)
+    display: none
+
 .rq-backdrop
   background: rgba(0,0,0,0.7)
   content: ""
@@ -27,6 +30,11 @@
   right: 0
   z-index: 100
 
+  @media (min-width: $m-selection-lg)
+    &[style]
+      display: none !important
+
+
 .rq-body
   +transition((top 0.5s ease, opacity 0.7s linear))
   opacity: 0
@@ -34,14 +42,15 @@
   display: none
   font-size: 1em
   margin: 20px auto 0 auto
-  max-width: 600px
+  overflow: hidden
   padding: 1.5em
   position: absolute
   top: -1000px
   left: 5%
   right: 5%
+  width: 90%
   z-index: 200
-    
+
   &:before
     border: double 8px black
     content: ""
@@ -50,21 +59,28 @@
     bottom: 0.5em
     right: 0.5em
     left: 0.5em
-  
+
   &.show
     opacity: 1
+  &.opened
+    display: block
+
+  @media (min-width: $m-selection-lg)
+    left: 0
+    right: 0
+    margin-right: 0
+    opacity: 1
+    padding: 0
+    position: static
+
+    &:before
+      display: none
 
 .rq-title
-  @extend %heading
-  font:
-    size: 1.5em
-    variant: small-caps
-  border-bottom: $bar2
-  line-height: 1.75
-  margin-bottom: 0.75em
-  text-align: center
+  +sidebar-title
 
-.rq-utils
+  @media (min-width: $m-selection-lg)
+    text-align: left
 
 .rq-content
   position: relative
@@ -102,7 +118,7 @@
   text-align: center
   &:hover
     color: $c-emphatic
-     
+
 .rq-close
   color: $c-subtle
   cursor: pointer
@@ -117,3 +133,6 @@
     margin-left: 0.5em
   &:hover
     color: $c-emphatic
+
+  @media (min-width: $m-selection-lg)
+    display: none
