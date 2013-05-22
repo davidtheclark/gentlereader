@@ -68,6 +68,7 @@ def browse_timeline(req):
 
 def browse_highlights(req):
     """Get all authors. Highlight-fetching is AJAX."""
+
     authors = Author.objects.all().order_by('last_name')
     other_categories = [c for c in categories if c != 'highlights']
     return render_to_response('browse.html', {

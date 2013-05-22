@@ -14,7 +14,7 @@ def _get_from_display(s, mark):
         from_section = s.from_section
         source = s.source
         vol = source.volume_title
-        result = 'From '
+        result = ''
         if from_section:
             if mark:
                 result += '"' + from_section + '" in '
@@ -82,7 +82,7 @@ class Selection(models.Model):
         # The problem is that 2 long words won't split at a small width
         return mark_safe(self)
 
-    def ends_wihtout_punctuation(self):
+    def ends_without_punctuation(self):
         punctuation = "?,.!"
         if self.get_title()[-1] in punctuation:
             return False

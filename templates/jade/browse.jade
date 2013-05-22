@@ -4,20 +4,31 @@
 
 {% block bottomscripts %}
 
-
+<!-- grunt-active: dev -->
+script
+  var tagType = '{{ category_json|safe }}';
 {% if category == "timeline" %}
-script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/timeline-main.js")
-
-{% elif category == "highlights" or category == "announcements" %}
-script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/browse-highlights-main.js")
-
+script(src="{{ STATIC_URL }}anthologist/scripts/timeline-main.js")
+{% elif category == "highlights" %}
+script(src="{{ STATIC_URL }}anthologist/scripts/browse-highlights-main.js")
 {% elif category %}
-{% autoescape off %}
-script(type="application/javascript")
-  | var tagType = {{ category_json }};
-{% endautoescape %}
-script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/browse-main.js")
+script(src="{{ STATIC_URL }}anthologist/scripts/browse-main.js")
 {% endif %}
+<!-- endgrunt -->
+
+<!-- grunt-inactive: build
+script
+  var tagType = '{{ category_json|safe }}';
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+    {% if category == "timeline" %}
+    require(['timeline-main'], function(timelineMain) {});
+    {% elif category == "highlights" %}
+    require(['browse-highlights-main'], function(highlightsMain) {});
+    {% elif category %}
+    require(['browse-main'], function(browseMain) {});
+    {% endif %}
+  });
+endgrunt -->
 
 {% endblock %}
 

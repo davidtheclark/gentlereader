@@ -1,13 +1,30 @@
+{% block footer-subscribe %}
+
+section.subscribe.u-footer
+  h2.home-subhead Subscribe
+  p As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.
+  form.email-form
+    label(for="inputEmail").home-form-label Email
+    .home-form-inner
+      input.email-input(type="email", placeholder="your email address")
+      input.email-submit(type="submit", value="Submit")
+  .subscribe-icons
+    a(href="#").subscribe-icon.s-icn-rss RSS Feed
+    a(href="#").subscribe-icon.s-icn-twitter Twitter
+    a(href="#").subscribe-icon.s-icn-facebook Facebook
+
+{% endblock %}
+
 footer.site-footer
   .footer-inner
 
     .footer-text
-      <a href="/" class="footer-title">The Gentle Reader</a> is an ever-growing, explorable anthology of carefully curated selections from texts in the public domain. <a class="footer-about" href="/about">Read more about the site.</a>
-      
+      <a href="/" class="footer-title">The Gentle Reader</a> is an ever-growing, explorable anthology of carefully curated selections from texts in the public domain. <a class="footer-about" href="/about">Read more about the site</a>
+
     ul.footer-links
-      li: a(href="#").footer-link Selections
-      li: a(href="#").footer-link Highlights
-      li: a(href="#").footer-link Announcements
+      li: a(href="/selections").footer-link Selections
+      li: a(href="/highlights").footer-link Highlights
+      li: a(href="/announcements").footer-link Announcements
       li: a(href="#").footer-link Links &amp; Sources
-      li: a(href="#").footer-link Contact
+      li: a(href="/contact").footer-link Contact
       li: a(href="#").footer-link Copyright Info.

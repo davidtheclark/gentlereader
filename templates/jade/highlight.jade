@@ -4,5 +4,17 @@
 
 
 {% block main %}
-h1
+.content
+  #single-highlight-container
+    .hl-body.hyphenate {{ h.get_quotation }}
+    .hl-about {{ h.get_source }}
+
+  .hl-links
+    a.hl-link(href='/selections/{{ h.selection.slug }}') Read this full selection
+    a.hl-link(href='/highlights/&#35;{{ h.selection.source.author.slug }}') See more highlights from {{ h.selection.source.author.full_name }}
+    a.hl-link(href='/highlights/random') Enjoy a random highlight
+    a.hl-link(href='/highlights') Browse all highlights
+    a.hl-link(href='/') Visit The Gentle Reader's Homepage
+
+
 {% endblock %}

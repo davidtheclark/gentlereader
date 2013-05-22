@@ -2,13 +2,26 @@
 {% extends "base.html" %}
 {% block title %}Browse {{ category|capfirst }} - The Gentle Reader{% endblock %}
 {% block bottomscripts %}
-{% if category == "timeline" %}
-<script src="{{ STATIC_URL }}anthologist/scripts/require.js" data-main="{{ STATIC_URL }}anthologist/scripts/timeline-main.js"></script>{% elif category == "highlights" or category == "announcements" %}
-<script src="{{ STATIC_URL }}anthologist/scripts/require.js" data-main="{{ STATIC_URL }}anthologist/scripts/browse-highlights-main.js"></script>{% elif category %}
-{% autoescape off %}
-<script type="application/javascript">var tagType = {{ category_json }};</script>{% endautoescape %}
-<script src="{{ STATIC_URL }}anthologist/scripts/require.js" data-main="{{ STATIC_URL }}anthologist/scripts/browse-main.js"></script>{% endif %}
-{% endblock %}
+<!-- grunt-active: dev -->
+<script>var tagType = '{{ category_json|safe }}';</script>{% if category == "timeline" %}
+<script src="{{ STATIC_URL }}anthologist/scripts/timeline-main.js"></script>{% elif category == "highlights" %}
+<script src="{{ STATIC_URL }}anthologist/scripts/browse-highlights-main.js"></script>{% elif category %}
+<script src="{{ STATIC_URL }}anthologist/scripts/browse-main.js"></script>{% endif %}
+<!-- endgrunt -->
+<!-- grunt-inactive: build
+<script>
+  var tagType = '{{ category_json|safe }}';
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+    {% if category == "timeline" %}
+    require(['timeline-main'], function(timelineMain) {});
+    {% elif category == "highlights" %}
+    require(['browse-highlights-main'], function(highlightsMain) {});
+    {% elif category %}
+    require(['browse-main'], function(browseMain) {});
+    {% endif %}
+  });
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
 {% block main %}
 <div class="content">
   <h1 class="browse-h">
@@ -41,7 +54,7 @@
   <div id="timeline-container" class="browse-container">
     <ul id="tl-list">{% for item in years %}
       <li class="tl-li{% if forloop.counter|divisibleby:2 %} u-even{% endif %}">
-        <div class="tl-year">{{ item.date_display }}</div>
+        <div data-year="{{ item.year }}" class="tl-year">{{ item.date_display }}</div>
         <ul class="tl-sels">{% for s in item.selections %}
           <li class="tl-sel uft-group"><a href="/selections/{{ s.slug }}">
               <h2 class="tl-title">{{ s }}</h2>by {{ s.source.author }}</a><span class="tl-showteaser uft-trigger uft-a">[&nbsp;teaser&nbsp;&#9662;&nbsp;]</span>

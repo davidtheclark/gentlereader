@@ -2,16 +2,23 @@
 
 {% block title %}{{ announcement }} - The Gentle Reader{% endblock %}
 
+{% block bottomscripts %}
+include includes/only-highlight-script
+{% endblock %}
+
 {% block main %}
 
-article.content
+.content
+  article
+    header
+      h1.ann-title {{ announcement.get_title }}
+      .ann-posted {{ announcement.date_entered|date:"d F Y, P" }}
+    .ann-text.browse-container {{ announcement.get_text }}
 
-  header
-
-    h1.ann-title {{ announcement.get_title }}
-    .ann-posted {{ announcement.date_entered|date:"d F Y, P" }}
-
-    .ann-text {{ announcement.get_text }}
+  aside.browse-extras
+    .rq-container
+      include includes/rand-quot
+  .rq-btn Read a Random Highlight
 
 
 {% endblock %}

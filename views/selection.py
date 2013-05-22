@@ -46,12 +46,14 @@ def _get_related_selections(mother):
     similar = {}
 
     def _add_to_similar(category, tag, selections, weight=1):
-        """Add to the dictionary 'similar' entries whose key is
+        """
+        Add to the dictionary 'similar' entries whose key is
         the selection's primary key, and value an object containing
         the selection, it's similarity 'score', and an ordered
         dictionary categorizing and listing the attributes it shares
         with the view's featured selection. (If the list of shared
-        attributes exceeds 5, stop there and append 'and more'."""
+        attributes exceeds 5, stop there and append 'and more'.
+        """
 
         for s in selections:
             if s == mother:
@@ -71,7 +73,7 @@ def _get_related_selections(mother):
                     'share': OrderedDict()
                 }
                 share = similar[s.pk]['share']
-                share[category] = [ tag ]
+                share[category] = [tag]
             else:
                 obj = similar[s.pk]
                 if obj['count'] == 5:

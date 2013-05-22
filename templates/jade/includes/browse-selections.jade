@@ -2,19 +2,5 @@
   ul#selection-list
 
     {% for s in selections %}
-    li.li-sel
-      section: a(href='/selections/{{ s.slug }}')
-        h3 {{ s.get_title }}
-        .li-sel-dets
-          span.li-sel-author {{ s.get_author }}.
-          {% if s.from_display %}
-          {{ s.from_display }}
-          {% endif %}
-          | ({{ s.source.date_display }}). <span class="li-sel--posttime">Posted {{ s.date_entered }}</span>
-
-      section.li-sel--teaser
-        span.teaser-text.hyphenate {{ s.get_teaser }}
-        a(href='/selections/{{ s.slug}}').read-on read&nbsp;on
-
-
+    include sel-in-list
     {% endfor %}

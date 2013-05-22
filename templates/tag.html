@@ -4,7 +4,15 @@
 {% block meta %}
 <meta name="description" content=""/>{% endblock %}
 {% block bottomscripts %}
-<script src="{{ STATIC_URL }}anthologist/scripts/require.js" data-main="{{ STATIC_URL }}anthologist/scripts/tag-main.js"></script>{% endblock %}
+<!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}anthologist/scripts/tag-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
+<script>
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+    require(['tag-main'], function(tagMain) {});
+  });
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
 {% block main %}
 <div class="content">
   <header class="tag-header">
@@ -28,7 +36,7 @@
       {{ tag.dates }}.
       {% if tag.info_url %}<a href="{{ tag.info_url }}" target="_blank" class="small-command">Learn&nbsp;more&nbsp;&raquo;</a>{% endif %}
     </div>
-    <div class="view-highlights"><a href="/highlights/">&laquo; view highlights from {{ tag.last_name }}'s selections</a></div>{% else %}
+    <div class="view-highlights"><a href="/highlights/&#35;{{ tag.slug }}">&laquo; view highlights from {{ tag.last_name }}'s selections</a></div>{% else %}
     {% if tag.description or tag.definition or tag.info_url %}
     <div class="tag-info">
       {% if tag.definition %}

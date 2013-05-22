@@ -2,4 +2,10 @@
 {% extends "base.html" %}
 {% block title %} Highlight &#35;{{ h.pk }}, from {{ h.selection.source.author.full_name }} - The Gentle Reader{% endblock %}
 {% block main %}
-<h1></h1>{% endblock %}
+<div class="content">
+  <div id="single-highlight-container">
+    <div class="hl-body hyphenate">{{ h.get_quotation }}</div>
+    <div class="hl-about">{{ h.get_source }}</div>
+  </div>
+  <div class="hl-links"><a href="/selections/{{ h.selection.slug }}" class="hl-link">Read this full selection</a><a href="/highlights/&#35;{{ h.selection.source.author.slug }}" class="hl-link">See more highlights from {{ h.selection.source.author.full_name }}</a><a href="/highlights/random" class="hl-link">Enjoy a random highlight</a><a href="/highlights" class="hl-link">Browse all highlights</a><a href="/" class="hl-link">Visit The Gentle Reader's Homepage</a></div>
+</div>{% endblock %}

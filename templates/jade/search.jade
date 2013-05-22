@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results - The Gentle Reader{% endblock %}
+
+{% block bottomscripts %}
+<!-- grunt-active: dev -->
+script(src="{{ STATIC_URL }}anthologist/scripts/base-main.js")
+<!-- endgrunt -->
+
+<!-- grunt-inactive: build
+script
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {});
+endgrunt -->
+
+{% endblock %}
+
+{% block main %}
+
+.content
+
+  header.search-header
+
+    h1.search-h Search Results
+
+    form.search-form
+      input.search-input(type="search", value="{{ query }}",placeholder="try an author, a title, &amp;c.")
+      input.search-submit.s-search(type="submit")
+
+    {% if count > 0 %}
+    p.search-query {{ count }} results for <em>{{ query }}</em>.
+
+  {% if results.authors %}
+  h2.search-page-category Authors
+  ul.search-results-list
+    {% for a in results.authors %}
+    li: a(href="/authors/{{ a.slug }}") {{ a }}
+    {% endfor %}
+  {% endif %}
+
+  {% if results.genres %}
+  h2.search-page-category Genres
+  ul.search-results-list
+    {% for g in results.genres %}
+    li: a(href="/genres/{{ g.slug }}") {{ g }}
+    {% endfor %}
+  {% endif %}
+
+  {% if results.topics %}
+  h2.search-page-category Topics
+  ul.search-results-list
+    {% for t in results.topics %}
+    li: a(href="/topics/{{ t.slug }}") {{ t }}
+    {% endfor %}
+  {% endif %}
+
+  {% if results.contexts %}
+  h2.search-page-category Contexts
+  ul.search-results-list
+    {% for c in results.contexts %}
+    li: a(href="/contexts/{{ c.slug }}") {{ c }}
+    {% endfor %}
+  {% endif %}
+
+  {% if results.nations %}
+  h2.search-page-category Nations
+  ul.search-results-list
+    {% for n in results.nations %}
+    li: a(href="/nations/{{ n.slug }}") {{ n }}
+    {% endfor %}
+  {% endif %}
+
+  {% if results.languages %}
+  h2.search-page-category Original Languages
+  ul.search-results-list
+    {% for l in results.languages %}
+    li: a(href="/languages/{{ l.slug }}") {{ l }}
+    {% endfor %}
+  {% endif %}
+
+  {% if results.forms %}
+  h2.search-page-category Forms
+  ul.search-results-list
+    {% for f in results.forms %}
+    li: a(href="/forms/{{ f.slug }}") {{ f }}
+    {% endfor %}
+  {% endif %}
+
+  {% if results.selections %}
+  h2.search-page-category Selections
+  ul
+    {% for s in results.selections %}
+    include includes/sel-in-list
+    {% endfor %}
+  {% endif %}
+
+  {% else %}
+  p No results for <em>{{ query }}</em>. Better luck next time, I guess.
+
+  {% endif %}
+
+{% endblock %}

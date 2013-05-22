@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>{% block meta %}{% endblock %}
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed">
-    <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/STYLE.css">{% block styles %}{% endblock %}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed"><!-- grunt-active: dev -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/STYLE.css"><!-- endgrunt -->
+    <!-- grunt-inactive: build
+    <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/style-compressed.css">
+    <endgrunt>--></endgrunt>{% block styles %}{% endblock %}
     {% block topscripts %}{% endblock %}
     {% block head %}{% endblock %}
   </head>
@@ -17,43 +20,67 @@
         <ul class="site-nav--ul">
           <li class="site-nav--li nav-about">About</li>
           <li class="site-nav--li nav-browse">Browse</li>
-          <li class="site-nav--li">Search</li>
+          <li class="site-nav--li nav-search">Search</li>
         </ul>
       </nav><a href="#" class="fixed-back">(top)</a>
       <div class="subnav-browse--container">
-        <ul class="subnav-browse"><span class="subnav-browse--h"><span class="subnav-browse--close u-top">X</span>Contents</span>
-          <li><a href="/highlights" class="subnav-browse--a"><span>I. Highlights</span><span class="toc-no">i</span></a></li>
-          <li><a href="/selections" class="subnav-browse--a"><span>II. Selections</span><span class="toc-no">ii</span></a></li>
-          <li><a href="/authors" class="subnav-browse--a"><span class="u-ind">by Author</span><span class="toc-no">iii</span></a></li>
-          <li><a href="/timeline" class="subnav-browse--a"><span class="u-ind">by Date</span><span class="toc-no">iv</span></a></li>
-          <li><a href="/forms" class="subnav-browse--a"><span class="u-ind">by Form</span><span class="toc-no">v</span></a></li>
-          <li><a href="/genres" class="subnav-browse--a"><span class="u-ind">by Genre</span><span class="toc-no">vi</span></a></li>
-          <li><a href="/topics" class="subnav-browse--a"><span class="u-ind">by Topic</span><span class="toc-no">vii</span></a></li>
-          <li><a href="/contexts" class="subnav-browse--a"><span class="u-ind">by Context</span><span class="toc-no">viii</span></a></li>
-          <li><a href="/nations" class="subnav-browse--a"><span class="u-ind">by Nation</span><span class="toc-no">ix</span></a></li>
-          <li><a href="/languages" class="subnav-browse--a"><span class="u-ind">by Orig. Language</span><span class="toc-no">x</span></a></li>
-          <li><a href="/" class="subnav-browse--a"><span class="u-ind">Recent Additions</span><span class="toc-no">xi</span></a></li>
-          <li><a href="/announcements" class="subnav-browse--a"><span>III. Announcements</span><span class="toc-no">xii</span></a></li>
-        </ul>
-        <div class="subnav-browse--close u-bottom">close</div>
+        <div class="subnav-browse--inner">
+          <div class="subnav-browse--h"><span class="subnav-browse--close u-top">&times;</span>Contents</div>
+          <ul class="subnav-browse">
+            <li><a href="/highlights" class="subnav-browse--a"><span>Highlights</span><span class="toc-no">i</span></a></li>
+            <li><a href="/selections" class="subnav-browse--a"><span>All Selections</span><span class="toc-no">ii</span></a></li>
+            <li><a href="/authors" class="subnav-browse--a"><span>Authors</span><span class="toc-no">iii</span></a></li>
+            <li><a href="/timeline" class="subnav-browse--a"><span>Timeline</span><span class="toc-no">iv</span></a></li>
+            <li><a href="/forms" class="subnav-browse--a"><span>Forms</span><span class="toc-no">v</span></a></li>
+            <li><a href="/genres" class="subnav-browse--a"><span>Genres</span><span class="toc-no">vi</span></a></li>
+            <li><a href="/topics" class="subnav-browse--a"><span>Topics</span><span class="toc-no">vii</span></a></li>
+            <li><a href="/contexts" class="subnav-browse--a"><span>Contexts</span><span class="toc-no">viii</span></a></li>
+            <li><a href="/nations" class="subnav-browse--a"><span>Nations</span><span class="toc-no">ix</span></a></li>
+            <li><a href="/languages" class="subnav-browse--a"><span>Original Languages</span><span class="toc-no">x</span></a></li>
+            <li><a href="/announcements" class="subnav-browse--a"><span>Announcements</span><span class="toc-no">xii</span></a></li>
+          </ul>
+          <div class="subnav-browse--close u-bottom">close</div>
+        </div>
+      </div>
+      <div class="nav-search--container">
+        <form class="search-form">
+          <input type="search" placeholder="try an author, a title, &amp;c." class="search-input">
+          <input type="submit" value="Submit" class="search-submit s-search">
+        </form>
       </div>
     </div>{% endblock %}
     {% block main %}{% endblock %}
-    {% block footer %}
+    {% block footer %}{% block footer-subscribe %}
+    <section class="subscribe u-footer">
+      <h2 class="home-subhead">Subscribe</h2>
+      <p>As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.</p>
+      <form class="email-form">
+        <label for="inputEmail" class="home-form-label">Email</label>
+        <div class="home-form-inner">
+          <input type="email" placeholder="your email address" class="email-input">
+          <input type="submit" value="Submit" class="email-submit">
+        </div>
+      </form>
+      <div class="subscribe-icons"><a href="#" class="subscribe-icon s-icn-rss">RSS Feed</a><a href="#" class="subscribe-icon s-icn-twitter">Twitter</a><a href="#" class="subscribe-icon s-icn-facebook">Facebook</a></div>
+    </section>{% endblock %}
     <footer class="site-footer">
       <div class="footer-inner">
-        <div class="footer-text"><a href="/" class="footer-title">The Gentle Reader</a> is an ever-growing, explorable anthology of carefully curated selections from texts in the public domain. <a class="footer-about" href="/about">Read more about the site.</a></div>
+        <div class="footer-text"><a href="/" class="footer-title">The Gentle Reader</a> is an ever-growing, explorable anthology of carefully curated selections from texts in the public domain. <a class="footer-about" href="/about">Read more about the site</a></div>
         <ul class="footer-links">
-          <li><a href="#" class="footer-link">Selections</a></li>
-          <li><a href="#" class="footer-link">Highlights</a></li>
-          <li><a href="#" class="footer-link">Announcements</a></li>
+          <li><a href="/selections" class="footer-link">Selections</a></li>
+          <li><a href="/highlights" class="footer-link">Highlights</a></li>
+          <li><a href="/announcements" class="footer-link">Announcements</a></li>
           <li><a href="#" class="footer-link">Links &amp; Sources</a></li>
-          <li><a href="#" class="footer-link">Contact</a></li>
+          <li><a href="/contact" class="footer-link">Contact</a></li>
           <li><a href="#" class="footer-link">Copyright Info.</a></li>
         </ul>
       </div>
     </footer>{% endblock %}
-    <!-- work this into a build layer-->
-    <script type="application/javascript" src="{{ STATIC_URL }}anthologist/scripts/require-config.js"></script>{% block bottomscripts %}{% endblock %}
+    <!-- grunt-active: dev -->
+    <script src="{{ STATIC_URL }}anthologist/scripts/require.js"></script>
+    <script src="{{ STATIC_URL }}anthologist/scripts/common-dev.js"></script><!-- endgrunt -->
+    <!-- grunt-inactive: build
+    <script src="{{ STATIC_URL }}anthologist/build/require.js"></script>
+    <endgrunt>--></endgrunt>{% block bottomscripts %}{% endblock %}
   </body>
 </html>

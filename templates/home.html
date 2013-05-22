@@ -3,74 +3,157 @@
 {% block title %}The Gentle Reader{% endblock %}
 {% block meta %}
 <meta name="description" content=""/>{% endblock %}
+{% block bottomscripts %}
+<!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}anthologist/scripts/home-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
+<script>
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+    require(['home-main'], function(homeMain) {});
+  });
+</script>
+<endgrunt>-->{% endblock %}</endgrunt>{% block header %}{% endblock %}
 {% block main %}
-<header class="site-header">
-  <h1>
-    <div class="site-title-the">The</div>
-    <div class="site-title">Gentle Reader</div>
-  </h1>
-  <p class="site-slogan">Containing a <em>dynamic</em>, <em>curated</em> <span class="s-cap">Anthology</span> of Selections from Texts in the <em>Public Domain</em>, compiled and catalogued for your <em>Enjoyment</em> and <em>Edification</em>.</p>
-  <p class="site-slogan"><a href="/about" class="site-header-more">Read more about the site</a></p>
-  <p class="site-dedication">Dedicated to The Moon, <br /> <span class="site-dedication-date">MMXIII.</span></p>
-</header>
-<div class="explore">
-  <div class="explore-border top"></div><span class="search-container">
-    <label for="inputSearch" class="search-label">Search</label>
-    <input id="inputSearch" type="search" placeholder="try an author, a title, &amp;c." class="styled-input"/>
-    <input type="submit" value="Go" class="search-btn"/></span>
-  <div class="explore-border bottom"></div>
-</div>
-<nav id="home-browse" class="home-nav-container">
-  <h2 class="h2"><span class="h2-inner">Browse</span></h2>
-  <ul class="home-nav">
-    <li><a href="#recent-additions"><span class="home-nav-item">Recent Additions</span><span class="home-nav-sub-right">i</span></a></li>
-    <li><a href="/selections"><span class="home-nav-item">Selections</span><span class="home-nav-sub-right">ii</span>
-        <ul class="home-nav-sub">
-          <li><a href="/selections/random"><span class="home-nav-sub-item">at <span class="s-cap">random</span></span><span class="home-nav-sub-right">iii</span></a></li>
-          <li><a href="/authors"><span class="home-nav-sub-item">by author</span><span class="home-nav-sub-right">iv</span></a></li>
-          <li><a href="/timeline"><span class="home-nav-sub-item">by date</span><span class="home-nav-sub-right">v</span></a></li>
-          <li><a href="/forms"><span class="home-nav-sub-item">by form</span><span class="home-nav-sub-right">vi</span></a></li>
-          <li><a href="/genres"><span class="home-nav-sub-item">by genre</span><span class="home-nav-sub-right">vii</span></a></li>
-          <li><a href="/topic"><span class="home-nav-sub-item">by topic</span><span class="home-nav-sub-right">viii</span></a></li>
-          <li><a href="/contexts"><span class="home-nav-sub-item">by context</span><span class="home-nav-sub-right">ix  </span></a></li>
-          <li><a href="/nation"><span class="home-nav-sub-item">by nation</span><span class="home-nav-sub-right">x</span></a></li>
-          <li><a href="/languages"><span class="home-nav-sub-item">by original language</span><span class="home-nav-sub-right">xi</span></a></li>
-        </ul></a></li>
-    <li><a href="/highlights"><span class="home-nav-item">Highlights</span><span class="home-nav-sub-right">x</span></a></li>
-    <li><a href="/announcements"><span class="home-nav-item">Announcements</span><span class="home-nav-sub-right">xi</span></a></li>
-  </ul>
-  <div class="home-nav-border"></div>
-</nav>
-<div id="recent-additions" class="recent">
-  <h2 class="h2"><span class="h2-inner">Recent Additions</span></h2>{% for it in recent_additions %}<a href="/selections/{{ it.slug }}" class="li-sel-link">
-    <div class="li-sel"> 
-      <h3 class="li-sel-title">{{ it.get_title }}</h3>
-      <section class="li-sel-dets"><span class="s-cap li-sel-author">{{ it.get_author }}.</span>{% if it.from_display %}
-        {{ it.from_display }}
-        {% endif %}
-        ({{ it.source.date_display }}).
+<div class="content home-content">
+  <header class="site-header">
+    <h1 class="site-title">
+      <div class="site-title-the">the</div>
+      <div class="site-title-gentle">Gentle</div>
+      <div class="site-title-reader">Reader</div>
+      <div class="site-title-the u-second">--</div>
+    </h1>
+  </header>
+  <div class="home-main">
+    <div class="home-col-left">
+      <div class="slogan-container">
+        <div class="site-slogan">Containing a <em>dynamic</em>, <em>curated</em> <span class="s-cap">Anthology</span> of Selections from Texts in the <em>Public Domain</em>, compiled and catalogued for your <em>Enjoyment</em> and <em>Edification</em>.</div>
+        <div class="site-slogan site-header-more">-- Read more about the site --</div>
+      </div>
+      <article id="about" class="hyphenate">
+        <h1>About the Site</h1>
+        <section>
+          <p class="feature">The Gentle Reader shares the simple mission of all <span data-gloss="1">anthologies</span>: to expose curious readers to exquisite writing and engrossing ideas.</p>
+          <p>It is a dynamic, curated anthology of selections from texts in the <span data-gloss"2">public domain</span>, compiled and catalogued for your enjoyment and edification.</p>
+        </section>
+        <section class="uft-group">
+          <h2>What Makes The Gentle Reader Unique?</h2>
+          <p>There are <span data-gloss="3">many other sites</span> that publish public domain texts; but several features distinguish The Gentle Reader from the rest. Pointing out these differences might be the best way to explain the site's purpose.<span class="uft-trigger uft-a">more</span></p>
+          <div class="uft-b">
+            <section>
+              <h3>Curation</h3>
+              <p>Every one of The Gentle Reader's texts has been <em>selected</em>, intentionally, by a living, sentient human being, with feelings, who hopes that that others readers might enjoy something that he himself has enjoyed.</p>
+              <p>The Gentle Reader is not a public domain warehouse, and does not aspire to archival completeness or scholarly authority. No texts are added merely because they exist and are in the public domain, or because they might garner more hits to the site, or because they are regarded as "classics." They are all here because I like them.</p>
+            </section>
+            <section>
+              <h3>Readability</h3>
+              <section>
+                <h4>Length</h4>
+                <p>The Gentle Reader will not publish entire novels or treatises or multi-hundred-page monographs, will not link you to volumes you might think you should read but probably won't read. Instead, it presents <strong>complete short works and excerpts from longer words</strong> &mdash; then provides links so that you can continue reading, if you'd like, and finish the volume.</p>
+                <p>Consuming long books is good for you, of course; but there is no shame in reading <a href="/selections/i-laugh-at-all">a fantastic excerpt from <cite>The Anatomy of Melancholy</cite></a> instead of downloading the full elephantine bulk of it to your eReader, where it will languish until the end of time.</p>
+              </section>
+              <section>
+                <h4>Format</h4>
+                <p>The Gentle Reader's selections are formatted to make online reading as pleasant as can be, without the clutter and wrack that repulses so many readers from online text.</p>
+              </section>
+            </section>
+            <section>
+              <h3>Ease of Exploration</h3>
+              <p>The Gentle Reader provides simple and straightforward means to follow-up on your interests, explore the collection, and discover new stuff worth reading. Most online collections can be browsed by author, maybe by date; here, you can browse by <a href="/authors">author</a>, <a href="/timeline">date</a>, <a href="/nations">nation</a>, <a href="/languages">original language</a>, <a href="/forms">form</a>, <a href="/genres">genre</a>, <a href="/contexts">context</a>, <a href="/topics">topic</a>, and <a href="/authors">style</a>. You can also dig through <a href="/highlights">highlights from the selections</a>.</p>
+              <p>The Gentle Reader's tags connect selections, forming paths that readers can follow from one text to another.</p>
+            </section>
+            <section>
+              <h3>Subscription</h3>
+              <p>Diversify your web-reading diet by subscribing to The Gentle Reader by email or RSS, or following The Gentle Reader on Twitter or Facebook. Alongside the latest celebrity gossip and apocalypse predictions, you'll receive classics and curiosities in the public domain as they are added to collection.</p>
+            </section>
+          </div>
+        </section>
+        <section class="uft-group">
+          <h2>Who's Behind The Gentle Reader?</h2>
+          <p>The Gentle Reader is the work of one of the world's David Clarks (<a href="/selections/i-laugh-at-all"><i>... parvus sum, nullus sum, altum nec spiro, nec spero</i></a>).<span class="uft-trigger uft-a">more</span></p>
+          <div class="uft-b">
+            <p>He was led to this labor by his own idiosyncratic reading habits, academic studies, and teaching experience &#8212; by years of seeking out delightful, edifying, and unusual works; developing an appreciation for the aesthetics of ages past; engaging more and more with electronic texts; hunting for freely-reproducible, high-quality readings to feed his students; and always aspiring to keep track, somehow, of the best stuff he'd found, so he could re-read it himself and share it with others.</p>
+            <p>This David Clark is just one man. So he could use your help, if you're interested in getting involved. All aspects of the site would benefit from more input: the text collection, the programming, the design, the cataloging. <a href="/contribute">Please contribute if you're interested</a>.</p>
+          </div>
+        </section>
+        <div class="subnav-browse--close u-bottom">close</div>
+      </article>
+      <form class="home-search-container search-form">
+        <label for="inputSearch" class="home-form-label">Search</label>
+        <div class="home-form-inner">
+          <input type="search" placeholder="try an author, a title, &amp;c." class="search-input"/>
+          <input type="submit" value="Submit" class="search-submit s-search"/>
+        </div>
+      </form>
+      <section id="recent-additions" class="recent home-section">
+        <h2 class="home-subhead">Recent Additions</h2>{% for s in recent_additions %}
+        <li class="li-sel">
+          <section><a href="/selections/{{ s.slug }}">
+              <h3>{{ s.get_title }}</h3>
+              <div class="li-sel-dets"><span class="li-sel-author">{{ s.get_author }}.</span>{% if s.from_display %}
+                {{ s.from_display }}
+                {% endif %}
+                ({{ s.source.date_display }}). <span class="li-sel--posttime">Posted {{ s.date_entered }}</span>
+              </div></a></section>
+          <section class="li-sel--teaser"><span class="teaser-text hyphenate">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug}}" class="read-on">read&nbsp;on</a></section>
+        </li>{% endfor %}
+        <div class="home-more"><a href="/selections" class="home-more-btn">more selections</a><a href="/announcements" class="home-more-btn">more announcements</a></div>
       </section>
-      <section class="li-sel-teaser"><span class="li-sel-teaser-text hyphenate">{{ it.get_teaser }}</span><span class="read-on">read&nbsp;on</span></section>
-      <div class="li-sel-posttime">Posted {{ it.date_entered }}</div>
-    </div></a>{% endfor %}
-  <div class="home-more"><a href="/selections" class="home-more-btn">more selections</a><a href="/announcements" class="home-more-btn">more announcements</a>
-    <div class="home-more-border"></div>
+      <section class="contribute home-section">
+        <h2 class="home-subhead">Contribute</h2>
+        <p>Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive! Just <a href="/contact">visit the contact page</a> and release the pent-up flood of ideas. <a href="/contact">Thank God for people like you!</a></p>
+      </section>
+      <div data-picture="data-picture" data-alt="A skeleton, thinking, at an altar" class="home-image">
+        <div data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking-nr.jpg" data-media="(min-width: 47.5em)"></div>
+        <div data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking.jpg" data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)"></div>
+      </div>
+    </div>
+    <div class="home-col-right">
+      <div data-picture="data-picture" data-alt="A melancholic scholar; a gentle reader" class="home-image">
+        <div data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar-nr.jpg" data-media="(min-width: 47.5em)"></div>
+        <div data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar.jpg" data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)"></div>
+      </div>
+      <section class="subscribe home-section">
+        <h2 class="home-subhead">Subscribe</h2>
+        <p>As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.</p>
+        <form class="email-form">
+          <label for="inputEmail" class="home-form-label">Email</label>
+          <div class="home-form-inner">
+            <input type="email" placeholder="your email address" class="email-input"/>
+            <input type="submit" value="Submit" class="email-submit"/>
+          </div>
+        </form>
+        <div class="subscribe-icons"><a href="#" class="subscribe-icon s-icn-rss">RSS Feed</a><a href="#" class="subscribe-icon s-icn-twitter">Twitter</a><a href="#" class="subscribe-icon s-icn-facebook">Facebook</a></div>
+      </section>
+      <nav id="home-browse" class="home-nav-container home-section">
+        <h2 class="home-subhead">Browse</h2>
+        <ul class="subnav-browse">
+          <li><a href="/highlights" class="subnav-browse--a"><span>Highlights</span><span class="toc-no">i</span></a></li>
+          <li><a href="/selections" class="subnav-browse--a"><span>All Selections</span><span class="toc-no">ii</span></a></li>
+          <li><a href="/authors" class="subnav-browse--a"><span>Authors</span><span class="toc-no">iii</span></a></li>
+          <li><a href="/timeline" class="subnav-browse--a"><span>Timeline</span><span class="toc-no">iv</span></a></li>
+          <li><a href="/forms" class="subnav-browse--a"><span>Forms</span><span class="toc-no">v</span></a></li>
+          <li><a href="/genres" class="subnav-browse--a"><span>Genres</span><span class="toc-no">vi</span></a></li>
+          <li><a href="/topics" class="subnav-browse--a"><span>Topics</span><span class="toc-no">vii</span></a></li>
+          <li><a href="/contexts" class="subnav-browse--a"><span>Contexts</span><span class="toc-no">viii</span></a></li>
+          <li><a href="/nations" class="subnav-browse--a"><span>Nations</span><span class="toc-no">ix</span></a></li>
+          <li><a href="/languages" class="subnav-browse--a"><span>Original Languages</span><span class="toc-no">x</span></a></li>
+          <li><a href="/announcements" class="subnav-browse--a"><span>Announcements</span><span class="toc-no">xii</span></a></li>
+        </ul>
+      </nav>
+      <div class="rq-container home-section">
+        <div class="rq-backdrop"></div>
+        <div id="rqTop" class="rq-body">
+          <h2 class="rq-title">A Random Highlight</h2>
+          <div id="rqContent" class="rq-content"></div>
+          <div class="rq-utils">
+            <div class="rq-another">Get Another Highlight</div>
+            <div class="rq-close">close</div>
+          </div>
+        </div>
+      </div>
+      <div class="rq-btn home-section">Read a Random Highlight</div>
+    </div>
   </div>
-</div>
-<div class="subscribe">
-  <p>As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.</p>
-  <div class="subscribe-email">
-    <label for="inputEmail"><em>Sign-up</em> for <span class="s-cap">Email Updates</span></label>
-    <input id="inputEmail" type="email" placeholder="your email address" class="styled-input"/>
-    <button type="submit" class="btn">Submit</button>
-  </div>
-  <div class="subscribe-feed">Or <em>subscribe</em> to <span class="s-cap">The Feed</span></div>
-</div>
-<div class="random-sel"><a href="/selections/random">Read a random selection</a></div>
-<aside class="random-quot">
-  <h2 class="h2 em">Random Highlight</h2>
-  <div class="quot-text">{{ random_quot.get_quot }}</div>
-  <div class="quot-citation">{{ random_quot.get_source }}</div>
-  <div class="quot-followup"><a href="/selections/{{ random_quot.selection.slug }}">read this selection</a><a href="#">get another random highlight</a></div>
-</aside>
-<div class="contribute"><a href="/contribute">Contribute</a></div>{% endblock %}
+</div>{% endblock %}
+{% block footer-subscribe %}
+<div class="home-footer-padding"></div>{% endblock %}

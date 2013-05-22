@@ -7,7 +7,16 @@ meta(name="description", content="")
 {% endblock %}
 
 {% block bottomscripts %}
-script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/tag-main.js")
+<!-- grunt-active: dev -->
+script(src="{{ STATIC_URL }}anthologist/scripts/tag-main.js")
+<!-- endgrunt -->
+
+<!-- grunt-inactive: build
+script
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+    require(['tag-main'], function(tagMain) {});
+  });
+endgrunt -->
 {% endblock %}
 
 {% block main %}
@@ -40,7 +49,7 @@ script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATI
       a(href='{{ tag.info_url }}', target='_blank').small-command Learn&nbsp;more&nbsp;&raquo;
       {% endif %}
     .view-highlights
-      a(href='/highlights/') &laquo; view highlights from {{ tag.last_name }}'s selections
+      a(href='/highlights/&#35;{{ tag.slug }}') &laquo; view highlights from {{ tag.last_name }}'s selections
 
     {% else %}
 

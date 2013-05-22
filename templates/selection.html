@@ -9,7 +9,15 @@
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}anthologist/style/css/selection-specific/{{ selection.stylesheet }}.css"/>{% endif %}
 {% endblock %}
 <!-- scripts-->{% block bottomscripts %}
-<script src="{{ STATIC_URL }}anthologist/scripts/require.js" data-main="{{ STATIC_URL }}anthologist/scripts/selection-main.js"></script>{% endblock %}
+<!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}anthologist/scripts/selection-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
+<script>
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+    require(['selection-main'], function(selectionMain) {});
+  });
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
 {% block main %}
 <!-- CONTENT-->
 <article class="content">
@@ -29,7 +37,7 @@
       <!-- added info-->
       <div class="s-info">
         {% if from != "None" %}
-        {{ from }}.
+        From {{ from }}.
         {% endif %}
         {% if trans %}
         Translated from {{ source.langauge.name }}

@@ -18,7 +18,16 @@ link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}anthologist/style/
 
 // scripts
 {% block bottomscripts %}
-script(src="{{ STATIC_URL }}anthologist/scripts/require.js", data-main="{{ STATIC_URL }}anthologist/scripts/selection-main.js")
+<!-- grunt-active: dev -->
+script(src="{{ STATIC_URL }}anthologist/scripts/selection-main.js")
+<!-- endgrunt -->
+
+<!-- grunt-inactive: build
+script
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+    require(['selection-main'], function(selectionMain) {});
+  });
+endgrunt -->
 {% endblock %}
 
 {% block main %}
@@ -46,7 +55,7 @@ article.content
       .s-info
 
         {% if from != "None" %}
-        {{ from }}.
+        | From {{ from }}.
         {% endif %}
 
         {% if trans %}

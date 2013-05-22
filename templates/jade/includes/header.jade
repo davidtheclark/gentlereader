@@ -4,48 +4,18 @@
     ul.site-nav--ul
       li.site-nav--li.nav-about About
       li.site-nav--li.nav-browse Browse
-      li.site-nav--li Search
+      li.site-nav--li.nav-search Search
   a.fixed-back(href="#") (top)
 
   .subnav-browse--container
-    ul.subnav-browse
-      span.subnav-browse--h
-        span.subnav-browse--close.u-top X
+    .subnav-browse--inner
+      .subnav-browse--h
+        span.subnav-browse--close.u-top &times;
         | Contents
-      li: a.subnav-browse--a(href="/highlights")
-        span I. Highlights
-        span.toc-no i
-      li: a.subnav-browse--a(href="/selections")
-        span II. Selections
-        span.toc-no ii
-      li: a.subnav-browse--a(href="/authors")
-        span.u-ind by Author
-        span.toc-no iii
-      li: a.subnav-browse--a(href="/timeline")
-        span.u-ind by Date
-        span.toc-no iv
-      li: a.subnav-browse--a(href="/forms")
-        span.u-ind by Form
-        span.toc-no v
-      li: a.subnav-browse--a(href="/genres")
-        span.u-ind by Genre
-        span.toc-no vi
-      li: a.subnav-browse--a(href="/topics")
-        span.u-ind by Topic
-        span.toc-no vii
-      li: a.subnav-browse--a(href="/contexts")
-        span.u-ind by Context
-        span.toc-no viii
-      li: a.subnav-browse--a(href="/nations")
-        span.u-ind by Nation
-        span.toc-no ix
-      li: a.subnav-browse--a(href="/languages")
-        span.u-ind by Orig. Language
-        span.toc-no x
-      li: a.subnav-browse--a(href="/")
-        span.u-ind Recent Additions
-        span.toc-no xi
-      li: a.subnav-browse--a(href="/announcements")
-        span III. Announcements
-        span.toc-no xii
-    .subnav-browse--close.u-bottom close
+      include table-of-contents
+      .subnav-browse--close.u-bottom close
+
+  .nav-search--container
+    form.search-form
+      input.search-input(type="search", placeholder="try an author, a title, &amp;c.")
+      input.search-submit.s-search(type="submit", value="Submit")

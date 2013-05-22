@@ -7,7 +7,7 @@ from quotation import quotation, quotation_set
 import json
 
 Selection = get_model('anthologist', 'Selection')
-selection_tags = [ 'genres', 'contexts', 'topics', 'styles' ]
+selection_tags = ['genres', 'contexts', 'topics', 'styles']
 
 def selection_set(req):
 
@@ -24,26 +24,26 @@ def selection_set(req):
     else:
         sorter += sort_field
     result_set = Selection.objects.all().order_by(sorter)
-        
+
     #GET business for filtering
-    filter_params = [ 'nations', 'language', 'forms', 'author', 'genres', 'contexts', 'topics', 'styles', 'source' ]
+    filter_params = ['nations', 'language', 'forms', 'author', 'genres', 'contexts', 'topics', 'styles', 'source']
     for param in filter_params:
         val = req.GET.get(param, False)
         if val:
-            val_split = val.split(',') #in case of multiple values given for the same param, e.g. (?genres=5,22)
-            for it in val_split: 
-                if param == 'nations': full_param = 'source__author__' + param 
-                if param in [ 'language', 'forms', 'author' ]: full_param = 'source__' + param
-                if param in [ 'genres', 'contexts', 'topics', 'styles', 'source' ]: full_param = param
-                result_set = result_set.filter(**{ full_param: it })
+            val_split = val.split(',')  #in case of multiple values given for the same param, e.g. (?genres=5,22)
+            for it in val_split:
+                if param == 'nations': full_param = 'source__author__' + param
+                if param in ['language', 'forms', 'author']: full_param = 'source__' + param
+                if param in ['genres', 'contexts', 'topics', 'styles', 'source']: full_param = param
+                result_set = result_set.filter(**{full_param: it})
 
     if display == 'closure':
-        result = [ sel.closure() for sel in result_set ]
+        result = [sel.closure() for sel in result_set]
     elif display == 'list_item':
-        result = [ sel.list_item() for sel in result_set ]
+        result = [sel.list_item() for sel in result_set]
     else:
-        result = [ sel.toJSON() for sel in result_set ]
-        
+        result = [sel.toJSON() for sel in result_set]
+
     return HttpResponse(json.dumps(result), content_type="application/json")
 
 def selection(req, selectionId):
@@ -63,7 +63,7 @@ def selection_attribute_set(req, selectionId, attribute):
     elif attribute == 'quotations':
         return quotation_set(req, Selection, selectionId)
     else: raise Http404
-    
+
 def selection_attribute(req, selectionId, attribute, attributeId):
     get_object_or_404(Selection, pk=selectionId)
     if attribute in selection_tags:

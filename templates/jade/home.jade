@@ -6,122 +6,100 @@
 meta(name="description", content="")
 {% endblock %}
 
+{% block bottomscripts %}
+<!-- grunt-active: dev -->
+script(src="{{ STATIC_URL }}anthologist/scripts/home-main.js")
+<!-- endgrunt -->
+
+<!-- grunt-inactive: build
+script
+  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+    require(['home-main'], function(homeMain) {});
+  });
+endgrunt -->{% endblock %}
+
+{% block header %}{% endblock %}
+
 {% block main %}
 
-header.site-header
-  h1
-    .site-title-the The
-    .site-title Gentle Reader
-  p.site-slogan Containing a <em>dynamic</em>, <em>curated</em> <span class="s-cap">Anthology</span> of Selections from Texts in the <em>Public Domain</em>, compiled and catalogued for your <em>Enjoyment</em> and <em>Edification</em>.
-  
-  p.site-slogan: a(href="/about").site-header-more Read more about the site
-  
-  p.site-dedication Dedicated to The Moon, <br /> <span class="site-dedication-date">MMXIII.</span>
+.content.home-content
+
+  header.site-header
+    h1.site-title
+      .site-title-the the
+      .site-title-gentle Gentle
+      .site-title-reader Reader
+      .site-title-the.u-second --
+
+  .home-main
+
+    .home-col-left
+
+      .slogan-container
+        .site-slogan Containing a <em>dynamic</em>, <em>curated</em> <span class="s-cap">Anthology</span> of Selections from Texts in the <em>Public Domain</em>, compiled and catalogued for your <em>Enjoyment</em> and <em>Edification</em>.
+
+        .site-slogan.site-header-more -- Read more about the site --
+
+      include includes/about
+
+      form.home-search-container.search-form
+        label(for="inputSearch").home-form-label Search
+        .home-form-inner
+          input.search-input(type="search", placeholder="try an author, a title, &amp;c.")
+          input.search-submit.s-search(type="submit", value="Submit")
+
+      section.recent.home-section#recent-additions
+        h2.home-subhead Recent Additions
+
+        {% for s in recent_additions %}
+        include includes/sel-in-list
+        {% endfor %}
+
+        .home-more
+          a(href="/selections").home-more-btn more selections
+          a(href="/announcements").home-more-btn more announcements
+
+      section.contribute.home-section
+        h2.home-subhead Contribute
+        p Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive! Just <a href="/contact">visit the contact page</a> and release the pent-up flood of ideas. <a href="/contact">Thank God for people like you!</a>
+
+      .home-image(data-picture, data-alt="A skeleton, thinking, at an altar")
+        div(data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking-nr.jpg", data-media="(min-width: 47.5em)")
+        div(data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking.jpg", data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)")
+
+    .home-col-right
+
+      .home-image(data-picture, data-alt="A melancholic scholar; a gentle reader")
+        div(data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar-nr.jpg", data-media="(min-width: 47.5em)")
+        div(data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar.jpg", data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)")
+
+      section.subscribe.home-section
+        h2.home-subhead Subscribe
+        p As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.
+        form.email-form
+          label(for="inputEmail").home-form-label Email
+          .home-form-inner
+            input.email-input(type="email", placeholder="your email address")
+            input.email-submit(type="submit", value="Submit")
+        .subscribe-icons
+          a(href="#").subscribe-icon.s-icn-rss RSS Feed
+          a(href="#").subscribe-icon.s-icn-twitter Twitter
+          a(href="#").subscribe-icon.s-icn-facebook Facebook
 
 
-.explore
-  .explore-border.top
-  span.search-container
-    label(for="inputSearch").search-label Search
-    input#inputSearch.styled-input(type="search", placeholder="try an author, a title, &amp;c.")
-    input.search-btn(type="submit", value="Go")
-  .explore-border.bottom
+      nav#home-browse.home-nav-container.home-section
+        h2.home-subhead Browse
+        include includes/table-of-contents
 
 
-nav#home-browse.home-nav-container
-  h2.h2
-    span.h2-inner Browse
-  ul.home-nav
-    li: a(href="#recent-additions")
-      span.home-nav-item Recent Additions
-      span.home-nav-sub-right i
-    li: a(href="/selections")
-      span.home-nav-item Selections
-      span.home-nav-sub-right ii
-      ul.home-nav-sub
-        li: a(href="/selections/random")
-          span.home-nav-sub-item at <span class="s-cap">random</span>
-          span.home-nav-sub-right iii
-        li: a(href="/authors")
-          span.home-nav-sub-item by author
-          span.home-nav-sub-right iv
-        li: a(href="/timeline")
-          span.home-nav-sub-item by date
-          span.home-nav-sub-right v
-        li: a(href="/forms")
-          span.home-nav-sub-item by form
-          span.home-nav-sub-right vi
-        li: a(href="/genres")
-          span.home-nav-sub-item by genre
-          span.home-nav-sub-right vii
-        li: a(href="/topic")
-          span.home-nav-sub-item by topic
-          span.home-nav-sub-right viii
-        li: a(href="/contexts")
-          span.home-nav-sub-item by context
-          span.home-nav-sub-right ix  
-        li: a(href="/nation")
-          span.home-nav-sub-item by nation
-          span.home-nav-sub-right x
-        li: a(href="/languages")
-          span.home-nav-sub-item by original language
-          span.home-nav-sub-right xi
-    li: a(href="/highlights")
-      span.home-nav-item Highlights
-      span.home-nav-sub-right x
-    li: a(href="/announcements")
-      span.home-nav-item Announcements
-      span.home-nav-sub-right xi
-  .home-nav-border
-    
-.recent#recent-additions
-  h2.h2
-    span.h2-inner Recent Additions
-  
-  {% for it in recent_additions %}
-  
-  a(href="/selections/{{ it.slug }}").li-sel-link
-    div(class="li-sel") 
-      h3.li-sel-title {{ it.get_title }}
-      section.li-sel-dets
-        span.s-cap.li-sel-author {{ it.get_author }}.
-        {% if it.from_display %}
-        {{ it.from_display }}
-        {% endif %}
-        | ({{ it.source.date_display }}).
-      section.li-sel-teaser
-        span.li-sel-teaser-text.hyphenate {{ it.get_teaser }}
-        span.read-on read&nbsp;on
-      .li-sel-posttime Posted {{ it.date_entered }}
-      
-  {% endfor %}
-  
-  .home-more
-    a(href="/selections").home-more-btn more selections
-    a(href="/announcements").home-more-btn more announcements
-    .home-more-border
-  
-.subscribe
-  p As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.
-  .subscribe-email
-    label(for="inputEmail") <em>Sign-up</em> for <span class="s-cap">Email Updates</span>
-    input#inputEmail.styled-input(type="email", placeholder="your email address")
-    button.btn(type="submit") Submit
-  .subscribe-feed Or <em>subscribe</em> to <span class="s-cap">The Feed</span>
-  
-.random-sel
-  a(href="/selections/random") Read a random selection
-  
-aside.random-quot
-  h2.h2.em Random Highlight
-  .quot-text {{ random_quot.get_quot }}
-  .quot-citation {{ random_quot.get_source }}
-  .quot-followup
-    a(href="/selections/{{ random_quot.selection.slug }}") read this selection
-    a(href="#") get another random highlight
 
-.contribute
-  a(href="/contribute") Contribute
-    
+      .rq-container.home-section
+          include includes/rand-quot
+      .rq-btn.home-section Read a Random Highlight
 
+
+{% endblock %}
+
+{% block footer-subscribe %}
+.home-footer-padding
 {% endblock %}

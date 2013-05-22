@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Contact and Contribute to The Gentle Reader{% endblock %}
+
+{% block bottomscripts %}
+include includes/only-highlight-script
+{% endblock %}
+
+{% block main %}
+
+.content
+  h1.browse-h Contact
+
+  .browse-container
+    p Please send ideas for selections or tags, questions, suggestions about improving the site, enthusiastic compliments, requests for new functionality, or whatever you feel like sending.
+    form(action='/contact/', method='post')#contact-form
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      .field-wrapper
+        label(for='id_subject') Subject
+        {% if auto_subject %}
+        input#id_subject(type='text', maxlength='100', value='{{ auto_subject }}')
+        {% else %}
+        input#id_subject(type='text', autofocus, maxlength='100')
+        {% endif %}
+        {{ form.subject.errors }}
+      .field-wrapper
+        {% if auto_subject %}
+        label(for='id_message', required, autofocus) Message
+        {% else %}
+        label(for='id_message', required) Message
+        {% endif %}
+        {{ form.message }}
+        {{ form.message.errors }}
+      .field-wrapper
+        label(for='id_sender') You email address
+        input#id_sender(type='email', required)
+        {{ form.sender.errors }}
+      .field-wrapper
+        label.cc-label(for='id_cc_myself') CC yourself?
+        {{ form.cc_myself }}
+        {{ form.cc_myself.errors }}
+      .field-wrapper#recaptcha-wrapper
+        label(for='id_captcha') Are you human?
+        {{ form.captcha }}
+      .submit-wrapper
+        input#contact-submit(type='submit', value='Submit')
+
+  aside.browse-extras
+    .rq-container
+      include includes/rand-quot
+    .rq-btn Read a Random Highlight
+
+
+
+
+
+{% endblock %}

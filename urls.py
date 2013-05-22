@@ -30,7 +30,16 @@ urlpatterns = patterns('anthologist.api',
     (r'^api/genres/$', 'genre_set'),
     (r'^api/contexts/$', 'context_set'),
     (r'^api/topics/$', 'topic_set'),
-    (r'^api/styles/$', 'style_set')
+    (r'^api/styles/$', 'style_set'),
+
+    (r'api/search/authors', 'author_search_data'),
+    (r'api/search/selections', 'selection_search_data'),
+    (r'api/search/nations', 'nation_search_data'),
+    (r'api/search/languages', 'language_search_data'),
+    (r'api/search/forms', 'form_search_data'),
+    (r'api/search/genres', 'genre_search_data'),
+    (r'api/search/contexts', 'context_search_data'),
+    (r'api/search/topics', 'topic_search_data')
 )
 
 sitemaps = {
@@ -57,12 +66,13 @@ urlpatterns += patterns('anthologist.views',
     (r'^announcements/$', 'browse_announcements'),
     (r'^announcements/(?P<ann_slug>[\w-]+)/$', 'announcement'),
     (r'^timeline/$', 'browse_timeline'),
-    (r'^resources/$', 'resource'),
-    (r'^contribute/$', 'contribute'),
-    (r'^thanks/$', 'thanks'),
-    (r'^browse/$', 'browse'),
+    (r'^search', 'search_results'),
+    #(r'^resources/$', 'resource'),
+    (r'^contact/$', 'contact'),
+    #(r'^thanks/$', 'thanks'),
     (r'^highlights/$', 'browse_highlights'),
-    (r'^highlights/(?P<highlight_id>\d+|random)/$', 'highlight'),
+    (r'^highlights/random/$', 'highlight_random'),
+    (r'^highlights/(?P<highlight_id>\d+)/$', 'highlight'),
     (r'^(?P<tag_type>[\w-]+)/(?P<tag_slug>[\w-]+)/$', 'tag'),
     (r'^(?P<category>[\w-]+)/$', 'browse_category'),
 )

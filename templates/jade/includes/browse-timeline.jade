@@ -2,7 +2,7 @@
   ul#tl-list
     {% for item in years %}
     li(class="tl-li{% if forloop.counter|divisibleby:2 %} u-even{% endif %}")
-      .tl-year {{ item.date_display }}
+      .tl-year(data-year="{{ item.year }}") {{ item.date_display }}
       ul.tl-sels
         {% for s in item.selections %}
         li.tl-sel.uft-group
