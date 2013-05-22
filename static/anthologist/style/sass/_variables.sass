@@ -18,7 +18,7 @@ $site-x: 940px
 $f-base: "Crimson", Georgia, "Times New Roman", Times, serif
 $f-heading: "IM Fell English", Georgia, "Times New Roman", Times, serif
 $f-standout: Arial, sans-serif
-$f-ornament: "VictorianOrn"
+$f-ornament: ornaments
 
 // COLORS
 
@@ -62,9 +62,6 @@ $flower: "\274b"
 
 
 =dot-leader-list($background)
-  list-style: none
-  margin: 0
-  padding: 0
   overflow-x: hidden
   overflow-y: hidden
   li
@@ -73,7 +70,6 @@ $flower: "\274b"
       +dot-leaders
     & span
       background: $background
-      padding-left: 0.3em
       // solve a problem with i0S browsers seeing a dot to the right of the word
       padding-right: 0.3em
       margin-right: -0.2em
@@ -119,36 +115,39 @@ $trans-time: 0.3s ease-in
   line-height: 1.75
   margin-bottom: 0.75em
 
-%two-buttons
-  +clearfix
-  margin: 1.25em auto 0 auto
-  max-width: 500px
-  overflow: hidden
-  position: relative
-
-$trigger-y: 40px
-
-%two-buttons--trigger
-  +two-borders(x, $double)
-  color: $c-link
-  cursor: pointer
+=dot-link()
+  border-bottom: $bar
+  color: $c-base
   font:
     family: $f-heading
-    size: 1.13em
+    size: 1.2em
     style: italic
-  float: left
-  height: $trigger-y + 5px
-  line-height: $trigger-y
-  text-align: center
-  width: 50%
-  &.u-left
-    &:not(.u-wide)
-      border-right: $bar
+  display: block
+  padding: 0.5em 0
+  &:first-child
+    border-top: $bar
+
+  &:before
+    content: "\25CE"
+    display: block
+    float: left
+    font-style: normal
+    width: 40px
 
   &:hover
-    +transition( (color $trans-time, background-color $trans-time) )
-    background-color: whitesmoke
-    color: $c-emphatic
+    border-bottom-color: $c-base !important
+
+%styled-input
+  border: 1px solid $c-subtle
+  border-radius: 5px
+  min-height: 35px
+  padding: 5px
+
+%dingled
+  &:before,
+  &:after
+    content: "--"
+    margin: 0 10px
 
 
 // WEIRD STUFF CORRECTION

@@ -1,10 +1,20 @@
 define ['jquery',
-        'lib/jquery.unfinishedToggler'],
+        "routers/browse-timeline-router",
+        'lib/unfinishedToggler'],
 
-  ($, unfinishedToggler) ->
+  ($, Router, unfinishedToggler) ->
 
-    TimelineApp = ->
-      $("#tl-list").unfinishedToggler
-        exclusive : false
+    TimelineApp = Backbone.View.extend
+
+      initialize : ->
+        $("#tl-list").unfinishedToggler
+          exclusive : false
+        @router = new Router()
+        if Backbone.history.fragment
+          @initialRouting()
+
+      initialRouting : ->
+        scrollTo = $(".tl-year[data-year='#{Backbone.history.fragment}']").offset().top - 60
+        $("html, body").animate scrollTop : scrollTo
 
     return TimelineApp

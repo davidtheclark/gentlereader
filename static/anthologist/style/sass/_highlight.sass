@@ -1,0 +1,33 @@
+#single-highlight-container
+  @media (min-width: $m-selection-lg)
+    font-size: 1.4em
+
+.hl-body
+  @extend %txt--sidebar-highlight
+
+.hl-about
+  font-size: 1.3em
+  margin-top: 1em
+  text-align: center
+  a
+    border-bottom: none
+    color: $c-emphatic
+    display: block
+    &:before,
+    &:after
+      content: "--"
+      margin: 0 0.3em
+    &:hover
+      color: $c-link
+
+.hl-links
+  margin-top: 5em
+  overflow: hidden
+
+  @media (min-width: $m-selection-lg)
+    width: 30em
+
+.hl-link,
+.hl-link:visited
+  +dot-link
+

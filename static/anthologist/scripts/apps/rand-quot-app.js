@@ -12,7 +12,7 @@ define(['backbone', 'models/rand-quot-set', 'views/rand-quot-view', 'lib/matchMe
     return _results;
   };
   RandQuotApp = Backbone.View.extend({
-    initialize: function() {
+    initialize: function(options) {
       this["dom"] = {};
       this.dom.body = $(".rq-body");
       this.dom.back = $(".rq-backdrop");
@@ -25,6 +25,9 @@ define(['backbone', 'models/rand-quot-set', 'views/rand-quot-view', 'lib/matchMe
           return false;
         }
       };
+      if (options) {
+        this.settings.home = options.home || false;
+      }
       this.setClickEvents();
       return this.getQuot();
     },
@@ -140,7 +143,7 @@ define(['backbone', 'models/rand-quot-set', 'views/rand-quot-view', 'lib/matchMe
         });
         if (!_this.settings.getThenShow) {
           top = $("#rqTop").offset().top;
-          scrollTo = _this.settings.desktop() ? top - 60 : top - 20;
+          scrollTo = _this.settings.desktop() && !_this.settings.home ? top - 60 : top - 20;
           if (!isElementInViewport(document.getElementById("rqTop"))) {
             $('body, html').animate({
               scrollTop: scrollTo

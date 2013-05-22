@@ -1,10 +1,15 @@
+.subscribe.u-footer
+  background: whitesmoke
+  border-top: 4px solid $c-subtle
+  margin-top: 2em
+  padding: 2em 0
+  .home-subhead
+    margin-top: 0
+
 .site-footer
   +clearfix
-  box-shadow: 0 0 7px $c-subtle
-  background: whitesmoke
-  border-bottom: 1.5px solid $c-subtle
-  border-top: 1.5px solid $c-subtle
-  margin-top: 2em
+  background: $c-subtle
+  color: white
   text-align: center
 
 .footer-inner
@@ -12,6 +17,12 @@
   padding: 1em 1em 1.5em 1em
   max-width: $site-x
 
+  a,
+  a:visited
+    border-bottom: 1px dotted white
+    color: white
+    &:hover
+      border-bottom-color: $c-emphatic
 
 .footer-col
   float: left
@@ -22,7 +33,6 @@
     width: 50%
 
 .footer-title
-  color: $c-emphatic
   font:
     size: 1.2em
     variant: small-caps
@@ -34,8 +44,8 @@
 
 .footer-about
   display: inline-block
-  &:before
-    content: "\00bb\00a0"
+  &:after
+    content: "\00a0\00bb"
 
 .footer-links
   +clearfix
@@ -47,6 +57,8 @@
   float: left
   line-height: 2
   width: 50%
+  &:hover
+    color: white
 
 
 @media (min-width: $m-selection-lg)

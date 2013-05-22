@@ -1,0 +1,40 @@
+#contact-form
+
+  label
+    display: block
+    margin-top: 1em
+    &.cc-label
+      +inline-block
+
+
+  input:not(#recaptcha_response_field),
+  textarea
+    @extend %styled-input
+    display: block
+    width: 100%
+    &#id_cc_myself
+      +inline-block
+      margin-left: 1em
+      width: auto
+
+
+#recaptcha-wrapper
+  text-align: center
+
+#recaptcha_area
+  margin: 0 auto
+
+.errorlist
+  color: $c-emphatic
+  font-style: italic
+  margin-left: 1em
+
+#contact-submit
+  background: white
+  border: 2px solid $c-link !important
+  color: $c-link
+  margin-top: 2em
+  text-transform: uppercase
+  &:hover
+    border: 2px solid $c-emphatic !important
+    color: $c-emphatic

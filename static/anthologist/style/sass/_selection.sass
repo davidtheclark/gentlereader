@@ -10,21 +10,14 @@
 
 
 .s-title
-  @extend %heading
-  font:
-    size: 2.7em
-    variant: small-caps
-  line-height: 1.1
-  margin: 0 0 0.5em 0
+  @extend %h--grand-title
 
 
 .s-authordate
-  font-size: 1.6em
+  @extend %h--subtitle
 
 .s-info
-  font: 1.2em
-  line-height: 1.4
-  margin-top: 1.25em
+  @extend %txt--h-follower
   &:before
     background: url("../../img/bd-small.png") no-repeat center center
     background-size: contain
@@ -40,7 +33,6 @@
 
 .s-extras
   @extend %two-buttons
-
   .uft-group
     .uft-a
       display: inline-block
@@ -67,12 +59,7 @@
 $s-extras--heading-y: 40px
 
 .s-extras--title
-  @extend %heading
-  font:
-    size: 1.7em
-    variant: small-caps
-  line-height: $s-extras--heading-y
-  margin-bottom: 0.1em
+  @extend %h--sidebar
 
 .s-extras--utils
   color: $c-link
@@ -91,12 +78,7 @@ $s-extras--heading-y: 40px
   padding: 1em 0
 
 .s-highlight--text
-  @extend %indented-ps
-  color: $c-subtle
-  font-family: $f-heading
-  font-size: 1.5em
-  line-height: 1.4
-  position: relative
+  @extend %txt--sidebar-highlight
 
 .s-highlight--li
   &.u-inactive
@@ -115,7 +97,6 @@ $s-extras--heading-y: 40px
     size: 0.8em
   text-align: center
   text-transform: uppercase
-
   a
     position: relative
 
@@ -186,7 +167,6 @@ $s-extras--heading-y: 40px
     margin-bottom: 2em
 
   .poetry-line
-    font-style: italic
     text-align: left
 
   .sel-body-subheading
@@ -216,10 +196,10 @@ $s-extras--heading-y: 40px
       font-family: $c-base
 
   &:after
-    content: "r"
+    content: "\2766"
     display: block
-    font-family: VictorianOrn
-    font-size: 7em
+    font-family: georgia, serif
+    font-size: 2em
     line-height: 0.4
     margin: 0.7em auto 0 auto
     margin-top: 0.4em
@@ -236,19 +216,8 @@ $s-extras--heading-y: 40px
   p
     text-align: center
 
-.s-postscript--h2
-  @extend %heading
-  color: $c-standout
-  text-align: center
-  margin-bottom: 0.5em
-
 .s-postscript--h3
-  @extend %heading
-  border-bottom: 1px dotted $c-emphatic
-  margin-top: 1em
-  margin-bottom: 0.5em
-  font-size: 1.2em
-  text-transform: uppercase
+  @extend %h--postscript
 
 
 /* related selections */
@@ -377,8 +346,8 @@ $s-extras--heading-y: 40px
 
     &:before
       display: block
-      content: "b"
-      font-family: VictorianOrn
+      content: "\62"
+      font-family: $f-ornament
       font-size: 6em
       line-height: 1
       text-align: center

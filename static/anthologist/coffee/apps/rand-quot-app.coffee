@@ -15,7 +15,8 @@ define ['backbone',
     RandQuotApp = Backbone.View.extend
 
 
-      initialize : ->
+      initialize : (options) ->
+
         # Get some DOM elements for reuse.
         @["dom"] = {}
         @dom.body = $(".rq-body")
@@ -26,6 +27,9 @@ define ['backbone',
         @["settings"] = {}
         @settings.desktop = ->
           if matchMedia('screen and (min-width: 760px)').matches then true else false
+
+        if options
+          @settings.home = options.home || false
 
         # Make it go.
         @setClickEvents()
@@ -125,7 +129,7 @@ define ['backbone',
 
           if !@settings.getThenShow
             top = $("#rqTop").offset().top
-            scrollTo = if @settings.desktop() then top - 60 else top - 20
+            scrollTo = if @settings.desktop() and not @settings.home then top - 60 else top - 20
             if not isElementInViewport document.getElementById("rqTop")
               $('body, html').animate scrollTop: scrollTo, "fast"
 

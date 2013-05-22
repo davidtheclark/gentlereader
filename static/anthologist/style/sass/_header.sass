@@ -1,7 +1,8 @@
 $nav-y: 56px
 
 .site-nav--container,
-.subnav-browse--container
+.subnav-browse--container,
+.nav-search--container
   box-shadow: 0 0 7px $c-subtle
 
 .site-nav--container
@@ -77,18 +78,11 @@ $nav-y: 56px
 $subnav-background: whitesmoke
 
 .subnav-browse--container
-  +transition(height 0.5s)
-  height: 0
   background: $subnav-background
-  overflow: hidden
+  border-bottom: double 6px black
+  display: none
   position: relative
   z-index: 1000
-
-  &.show
-    border-bottom: double 6px black
-    height: 27.5em
-    .subnav-browse
-      opacity: 1
 
 .subnav-browse
   +dot-leader-list($subnav-background)
@@ -97,9 +91,12 @@ $subnav-background: whitesmoke
     size: 1.2em
     style: italic
   margin: 0 auto
-  opacity: 0
+  padding: 0 0 0.5em
+
+.subnav-browse--inner
+  margin: 0 auto
+  padding: 1em 0
   max-width: 13em
-  padding: 1em 0 0.5em 0
 
 .subnav-browse--close
   color: $c-subtle
@@ -109,7 +106,7 @@ $subnav-background: whitesmoke
   &.u-top
     font:
       family: $f-standout
-      size: 0.8em
+      size: 1.3em
     padding: 0.8em
     position: absolute
     text-align: left
@@ -156,6 +153,20 @@ $subnav-background: whitesmoke
   bottom: 0
   right: 0
   padding-right: 0.5em
+
+
+// search
+
+.nav-search--container
+  background: $subnav-background
+  border-bottom: double 6px black
+  display: none
+  padding: 10px
+  text-align: center
+  width: 100%
+
+  .search-submit
+    background-color: $subnav-background !important
 
 
 
@@ -210,7 +221,7 @@ $subnav-background: whitesmoke
   .subnav-browse
     max-width: 20em
 
-  body
+  .content
     margin-top: $nav-y
 
 

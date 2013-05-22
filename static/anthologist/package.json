@@ -1,0 +1,13 @@
+{
+  "name": "the-gentle-reader",
+  "version": "2.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-shell": "~0.2.2",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-text-replace": "~0.3.2",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-jade": "~0.6.0",
+    "grunt-contrib-imagemin": "~0.1.4"
+  }
+}

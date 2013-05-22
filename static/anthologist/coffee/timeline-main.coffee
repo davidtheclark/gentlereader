@@ -1,14 +1,11 @@
 # Config parameters set in require-config.js.
 
-require ['backbone',
+require ['apps/timeline-app',
          'apps/rand-quot-app',
-         'apps/base-app',
-         'apps/timeline-app'],
+         'utils/globals'],
 
-  (Backbone, RandQuotApp, BaseApp, TimelineApp) ->
+  (TimelineApp, RandQuotApp, globals) ->
 
+    globals = globals.getGlobals()
     quoteApp = new RandQuotApp()
-
-    $ ->
-      BaseApp()
-      TimelineApp()
+    timelineApp = globals.app = new TimelineApp()

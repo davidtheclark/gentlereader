@@ -1,0 +1,6 @@
+li.tl-li
+  .tl-year {{ item.year }}
+  ul.tl-sels
+    {% for s in item.selections %}
+    li.tl-sel {{ s }}
+    {% endfor %}

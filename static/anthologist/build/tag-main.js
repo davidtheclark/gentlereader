@@ -1,0 +1,1 @@
+require(["apps/rand-quot-app"],function(e){var t;return t=new e}),define("tag-main",function(){});

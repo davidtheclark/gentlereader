@@ -1,5 +1,3 @@
-@import mixins/positioning
-
 /* MIX-INS */
 
 =absolute($top: auto, $right: auto, $bottom: auto, $left: auto)
@@ -63,10 +61,6 @@
   border-color: transparent
   border-width: #{$size}px
   border-#{$side}-color: $color
-
-=hanging-indent($size)
-  text-indent: -$size
-  margin: 0 0 0 $size
 
 =right-finger
   &:before
