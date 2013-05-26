@@ -2,7 +2,7 @@
   nav.site-nav
     a(href="/").site-nav--title <span class="title-the">The</span> <span class="title-gentle">Gentle</span> <span class="title-reader">Reader</span>
     ul.site-nav--ul
-      li.site-nav--li.nav-about About
+      li.site-nav--li.nav-about: a(href="/about") About
       li.site-nav--li.nav-browse Browse
       li.site-nav--li.nav-search Search
   a.fixed-back(href="#") (top)
@@ -17,5 +17,5 @@
 
   .nav-search--container
     form.search-form
-      input.search-input(type="search", placeholder="try an author, a title, &amp;c.")
+      input.search-input(type="search", placeholder="Search for an author, a title, &c.")
       input.search-submit.s-search(type="submit", value="Submit")

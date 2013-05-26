@@ -1,3 +1,7 @@
+#highlight-container
+  margin: 0 -20px
+  padding: 0 20px
+
 .highlight-adjustors
   @extend %two-buttons
   margin: 0 auto 2em auto
@@ -5,12 +9,34 @@
 .hl-adjustor
   @extend %two-buttons--trigger
   position: relative
-
+  padding: 0 5px
+  text-align: left
+  &:hover
+    background: white
+  &:before,
+  label:before
+    content: "\25CE"
+    display: block
+    float: left
+    font-style: normal
+    width: 40px
   label
     @include position(absolute, 0px 0px 0px 0px)
     background: white
     pointer-events: none
     z-index: 10
+
+  +breakpoint(mobile)
+    border-bottom: 1px solid black
+    border-top: none
+    &:first-child
+      border-top: 1px solid black
+    width: 100%
+    line-height: 45px
+    text-align: center
+    &:before,
+    label:before
+      content: ""
 
 #select-highlight-author
   @include position(absolute, 0px 0px 0px 0px)
@@ -56,7 +82,7 @@
   padding: 0 0 0.8em 0
 
 .quotation-marker
-  +inline-block
+  display: inline-block
   color: $c-emphatic
   float: left
   font-family: $f-heading

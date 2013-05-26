@@ -1,17 +1,18 @@
 {% block footer-subscribe %}
 
 section.subscribe.u-footer
-  h2.home-subhead Subscribe
-  p As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.
-  form.email-form
-    label(for="inputEmail").home-form-label Email
-    .home-form-inner
-      input.email-input(type="email", placeholder="your email address")
-      input.email-submit(type="submit", value="Submit")
-  .subscribe-icons
-    a(href="#").subscribe-icon.s-icn-rss RSS Feed
-    a(href="#").subscribe-icon.s-icn-twitter Twitter
-    a(href="#").subscribe-icon.s-icn-facebook Facebook
+  .inner
+
+    .subscribe-icons
+      a(href="#").subscribe-icon.s-icn-rss-sm Subscribe to the RSS Feed
+      a(href="#").subscribe-icon.s-icn-twitter-sm Follow us on Twitter
+      a(href="#").subscribe-icon.s-icn-facebook-sm Follow us on Facebook
+
+    .footer-subscribe Subscribe
+
+    form.email-form
+      input.email-input(type="email", placeholder="Your email address")
+      input.email-submit.s-envelope(type="submit")
 
 {% endblock %}
 
@@ -25,6 +26,15 @@ footer.site-footer
       li: a(href="/selections").footer-link Selections
       li: a(href="/highlights").footer-link Highlights
       li: a(href="/announcements").footer-link Announcements
-      li: a(href="#").footer-link Links &amp; Sources
+      //li: a(href="#").footer-link Links &amp; Sources
       li: a(href="/contact").footer-link Contact
-      li: a(href="#").footer-link Copyright Info.
+      li: a(href="#").footer-link.get-copyright-info Copyright Info.
+
+    .footer-copyright
+      .get-copyright-info.x-copyright &times;
+      p All of The Gentle Reader's selections are from works in the public domain in the US. (If a source text is <em>not</em>, in fact, in the public domain, there has been a misunderstanding; <a href="/contact">please inform The Editor</a> and it will be taken down.)
+      p The fonts are <em>Crimson</em>, by <a href="http://aldusleaf.org/" target="_blank">Sebastian Kosch</a>, and <em>IM Fell English</em>, digitally reproduced by <a href="http://www.iginomarini.xn--com-3ga/" target="_blank">Iginio Marini</a>.
+
+      p Everything else on the site that is not from a public domain text <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"> is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.</a>
+
+      .get-copyright-info.close-copyright  close this message

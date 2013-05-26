@@ -4,9 +4,9 @@
 
 {% block bottomscripts %}
 
-<!-- grunt-active: dev -->
+<!-- grunt-inactive: dev
 script
-  var tagType = '{{ category_json|safe }}';
+  var tagType = {{ category_json|safe }};
 {% if category == "timeline" %}
 script(src="{{ STATIC_URL }}anthologist/scripts/timeline-main.js")
 {% elif category == "highlights" %}
@@ -14,11 +14,11 @@ script(src="{{ STATIC_URL }}anthologist/scripts/browse-highlights-main.js")
 {% elif category %}
 script(src="{{ STATIC_URL }}anthologist/scripts/browse-main.js")
 {% endif %}
-<!-- endgrunt -->
+endgrunt -->
 
-<!-- grunt-inactive: build
+<!-- grunt-active: build -->
 script
-  var tagType = '{{ category_json|safe }}';
+  var tagType = {{ category_json|safe }};
   require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
     {% if category == "timeline" %}
     require(['timeline-main'], function(timelineMain) {});
@@ -28,7 +28,7 @@ script
     require(['browse-main'], function(browseMain) {});
     {% endif %}
   });
-endgrunt -->
+<!-- endgrunt -->
 
 {% endblock %}
 

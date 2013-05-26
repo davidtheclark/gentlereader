@@ -61,6 +61,7 @@ urlpatterns += patterns('',
 
 urlpatterns += patterns('anthologist.views',
     (r'^$', 'home'),
+    (r'^about/$', 'about'),
     (r'^selections/$', 'browse_selections'),
     (r'^selections/(?P<sel_slug>[\w-]+)/$', 'selection'),
     (r'^announcements/$', 'browse_announcements'),

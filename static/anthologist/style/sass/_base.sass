@@ -10,7 +10,6 @@ body
   @include box-sizing(content-box)
 
 body
-  box-shadow: inset 0px 0px 18px rgba(139, 139, 139, .6)
   background: white
   font-family: $f-base
   min-width: 320px
@@ -27,7 +26,6 @@ a:visited
   color: $c-link
   text-decoration: none
   &:hover
-    +transition( (color $trans-time, border-bottom-color $trans-time)  )
     border-bottom-color: $c-link-hover
     color: $c-link-hover
 
@@ -48,7 +46,7 @@ b
   max-width: $site-x
   padding: 1.5em 1.2em 0 1.2em
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     padding: 2.5em 1.5em 0 1.5em
 
 

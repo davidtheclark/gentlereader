@@ -9,15 +9,15 @@
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}anthologist/style/css/selection-specific/{{ selection.stylesheet }}.css"/>{% endif %}
 {% endblock %}
 <!-- scripts-->{% block bottomscripts %}
-<!-- grunt-active: dev -->
-<script src="{{ STATIC_URL }}anthologist/scripts/selection-main.js"></script><!-- endgrunt -->
-<!-- grunt-inactive: build
+<!-- grunt-inactive: dev
+<script src="{{ STATIC_URL }}anthologist/scripts/selection-main.js"></script>
+<endgrunt>--></endgrunt><!-- grunt-active: build -->
 <script>
   require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
     require(['selection-main'], function(selectionMain) {});
   });
-</script>
-<endgrunt>--></endgrunt>{% endblock %}
+</script><!-- endgrunt -->
+{% endblock %}
 {% block main %}
 <!-- CONTENT-->
 <article class="content">
@@ -59,7 +59,7 @@
             <li class="s-highlight--li u-active">{{ q.get_quotation }}</li>{% else %}
             <li class="s-highlight--li u-inactive">{{ q.get_quotation }}</li>{% endif %}
             {% endfor %}
-            <div class="s-highlight--li u-inactive s-highlight--all"><a href="/highlights/&#35;{{ selection.source.author.slug }}">see all the highlights from this selection</a></div>
+            <div class="s-highlight--li u-inactive s-highlight--all"><a href="/highlights/&amp;#35;{{ selection.source.author.slug }}">see all the highlights from this selection</a></div>
           </ul>
         </div>
       </li>
@@ -138,7 +138,10 @@
                     {% if item.share.items|length > 1 and forloop.last %}and {% endif %}
                     the <span class="li-rsel--category">{{ category }}</span>
                     <ul>{% for tag in tags %}
-                      <li>{% if tags|length > 1 and forloop.last %}and {% endif %}<a href="/{{ tag.get_category }}/{{ tag.slug }}" class="li-rsel--tag">{{ tag }}</a></li>{% endfor %}
+                      <li>
+                        {% if tags|length > 1 and forloop.last %}and {% endif %}
+                        {% if category != "source" %}<a href="/{{ tag.get_category }}/{{ tag.slug }}" class="li-rsel--tag">{{ tag }}</a>{% else %}<span class="li-rsel--tag">{{ tag }}</span>{% endif %}
+                      </li>{% endfor %}
                     </ul>
                   </li>{% endfor %}
                   {% if item.more %}

@@ -4,7 +4,7 @@ requirejs.config
 
   paths:
     jquery: "lib/jquery"
-    underscore: "lib/underscore"
+    underscore: "lib/lodash.custom"
     backbone: "lib/backbone"
     typeahead: "lib/typeahead"
     jade: "lib/jade-runtime"

@@ -3,13 +3,44 @@
 define(['jquery', 'apps/search-app', 'lib/picturefill'], function($, searchApp, picturefill) {
   var BaseApp;
   BaseApp = function() {
-    $(".nav-browse, .subnav-browse--close").click(function() {
-      $(".subnav-browse--container").slideToggle("fast");
-      return $(".nav-search--container").slideUp();
+    var $browseBtn, $browseCont, $copyCont, $getCopy, $searchBtn, $searchCont, menuToggle;
+    $searchBtn = $(".nav-search");
+    $searchCont = $(".nav-search--container");
+    $browseBtn = $(".nav-browse, .subnav-browse--close");
+    $browseCont = $(".subnav-browse--container");
+    menuToggle = function($desired, $other) {
+      return $desired.slideToggle("fast", function() {
+        $(document).off("click");
+        if ($desired.css("display") === "block") {
+          $other.slideUp();
+          $desired.click(function(e) {
+            return e.stopPropagation();
+          });
+          return $(document).one("click", function(e) {
+            return $desired.slideToggle("fast");
+          });
+        }
+      });
+    };
+    $browseBtn.click(function(e) {
+      e.stopPropagation();
+      return menuToggle($browseCont, $searchCont);
     });
-    $(".nav-search").click(function() {
-      $(".nav-search--container").slideToggle("fast");
-      return $(".subnav-browse--container").slideUp();
+    $searchBtn.click(function(e) {
+      e.stopPropagation();
+      return menuToggle($searchCont, $browseCont);
+    });
+    $getCopy = $(".get-copyright-info");
+    $copyCont = $(".footer-copyright");
+    $getCopy.click(function(e) {
+      e.preventDefault();
+      return $copyCont.slideToggle("fast", function() {
+        if ($copyCont.css("display") === "block") {
+          return $("html, body").animate({
+            scrollTop: $copyCont.offset().top
+          });
+        }
+      });
     });
     return searchApp.initialize();
   };

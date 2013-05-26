@@ -14,7 +14,12 @@ li.li-rsel.uft-group
             {% for tag in tags %}
             li
               | {% if tags|length > 1 and forloop.last %}and {% endif %}
+              {% if category != "source" %}
               a(href="/{{ tag.get_category }}/{{ tag.slug }}").li-rsel--tag {{ tag }}
+              {% else %}
+              span.li-rsel--tag {{ tag }}
+              {% endif %}
+
             {% endfor %}
         {% endfor %}
         {% if item.more %}

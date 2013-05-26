@@ -1,10 +1,10 @@
-<!-- grunt-active: dev -->
+<!-- grunt-inactive: dev
 script(src="{{ STATIC_URL }}anthologist/scripts/only-highlight-main.js")
-<!-- endgrunt -->
+endgrunt -->
 
-<!-- grunt-inactive: build
+<!-- grunt-active: build -->
 script
   require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
     require(['only-highlight-main'], function(homeMain) {});
   });
-endgrunt -->
+<!-- endgrunt -->

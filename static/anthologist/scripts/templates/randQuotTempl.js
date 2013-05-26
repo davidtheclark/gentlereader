@@ -6,10 +6,12 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('\n<div class="rq-text">');
+buf.push('<a');
+buf.push(attrs({ 'href':("/highlights/" + (quotation.id) + ""), "class": ('rq-text') }, {"href":true}));
+buf.push('>');
 var __val__ = quotation.quotation
 buf.push(null == __val__ ? "" : __val__);
-buf.push('</div>\n<div class="rq-citation"><a');
+buf.push('</a>\n<div class="rq-citation"><a');
 buf.push(attrs({ 'href':("/selections/" + (selection.slug) + "") }, {"href":true}));
 buf.push('>&mdash; from "' + escape((interp = selection.title) == null ? '' : interp) + '" by ' + escape((interp = selection.author) == null ? '' : interp) + '&nbsp;(' + escape((interp = selection.pub_year) == null ? '' : interp) + ')</a></div>');
 }

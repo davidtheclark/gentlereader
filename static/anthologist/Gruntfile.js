@@ -31,7 +31,7 @@ module.exports = function(grunt) {
           removeCombined: true,
           paths: {
             jquery: "lib/jquery",
-            underscore: "lib/underscore",
+            underscore: "lib/lodash.custom",
             backbone: "lib/backbone",
             typeahead: "lib/typeahead",
             jade: "lib/jade-runtime"
@@ -64,6 +64,15 @@ module.exports = function(grunt) {
               exclude: ["common-build"]
             }, {
               name: "browse-highlights-main",
+              exclude: ["common-build"]
+            }, {
+              name: "only-hyphenation-main",
+              exclude: ["common-build"]
+            }, {
+              name: "home-main",
+              exclude: ["common-build"]
+            }, {
+              name: "about-main",
               exclude: ["common-build"]
             }
 
@@ -120,14 +129,6 @@ module.exports = function(grunt) {
           'style/css/style-compressed.css': 'style/sass/STYLE.sass'
         }
       }
-    },
-
-    imagemin: {
-      build: {
-        files: {
-          'images/skeleton-thinking-min.jpg': 'images/originals/skeleton-thinking.png'
-        }
-      }
     }
 
   });
@@ -137,12 +138,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   grunt.registerTask('start', ['shell:initialize']);
   grunt.registerTask('sprite', ['shell:generate-sprite', 'shell:rename-sprite-style']);
   grunt.registerTask('dev', ['replace:dev', 'jade:process']);
-  grunt.registerTask('build', ['replace:build', 'jade:process', 'sass:build']);
+  grunt.registerTask('build', ['requirejs:compile', 'replace:build', 'jade:process', 'sass:build']);
 
   // Default task(s).
   //grunt.registerTask('default', ['']);

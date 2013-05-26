@@ -40,12 +40,14 @@ $nav-y: 56px
 
   &:hover
     +transition((background $trans-time, border-bottom-color $trans-time, color $trans-time ))
-    color: $c-subtle
     background: whitesmoke
     border-bottom-color: $c-emphatic
 
   &.nav-about
     display: none
+    a
+      border-bottom: none
+      color: $c-base
 
 .site-nav--title,
 .site-nav--title:visited
@@ -96,7 +98,7 @@ $subnav-background: whitesmoke
 .subnav-browse--inner
   margin: 0 auto
   padding: 1em 0
-  max-width: 13em
+  max-width: 18em
 
 .subnav-browse--close
   color: $c-subtle
@@ -114,14 +116,13 @@ $subnav-background: whitesmoke
     right: -0.8em
 
   &.u-bottom
+    @extend %dingled
+    display: block
     font:
       family: $f-heading
       size: 1.2em
       style: italic
     text-align: center
-    &:before,
-    &:after
-      content: "\00a0--\00a0"
 
   &:hover
     color: $c-emphatic
@@ -163,11 +164,7 @@ $subnav-background: whitesmoke
   display: none
   padding: 10px
   text-align: center
-  width: 100%
-
-  .search-submit
-    background-color: $subnav-background !important
-
+  width: 100
 
 
 @media (min-width: $m-selection-med)
@@ -199,7 +196,7 @@ $subnav-background: whitesmoke
       display: inline-block
 
 
-@media (min-width: $m-selection-lg)
++breakpoint(desktop)
   $nav-y: 55px
 
   .site-nav--container

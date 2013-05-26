@@ -6,16 +6,46 @@ define ['jquery',
 
     BaseApp = ->
 
+      $searchBtn = $(".nav-search")
+      $searchCont = $(".nav-search--container")
+      $browseBtn = $(".nav-browse, .subnav-browse--close")
+      $browseCont = $(".subnav-browse--container")
+
+      menuToggle = ($desired, $other) ->
+        $desired.slideToggle "fast", ->
+          $(document).off "click"
+          if $desired.css("display") == "block"
+            $other.slideUp()
+            # Clicking outside the container will close it
+            $desired.click (e) ->
+              e.stopPropagation()
+            $(document).one "click", (e) ->
+              $desired.slideToggle "fast"
+
+
+
       # show and hide browse
-      $(".nav-browse, .subnav-browse--close").click ->
-        $(".subnav-browse--container").slideToggle "fast"
-        $(".nav-search--container").slideUp()
+      $browseBtn.click (e) ->
+        e.stopPropagation()
+        menuToggle $browseCont, $searchCont
 
       # show and hide search
-      $(".nav-search").click ->
-        $(".nav-search--container").slideToggle "fast"
-        $(".subnav-browse--container").slideUp()
+      $searchBtn.click (e) ->
+        e.stopPropagation()
+        menuToggle $searchCont, $browseCont
+
+
+      $getCopy = $(".get-copyright-info")
+      $copyCont = $(".footer-copyright")
+      $getCopy.click (e) ->
+        e.preventDefault()
+        $copyCont.slideToggle "fast", ->
+          if $copyCont.css("display") == "block"
+            $("html, body").animate scrollTop: $copyCont.offset().top
+
+
 
       searchApp.initialize()
+
 
     return BaseApp

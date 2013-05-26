@@ -16,16 +16,6 @@
 .s-authordate
   @extend %h--subtitle
 
-.s-info
-  @extend %txt--h-follower
-  &:before
-    background: url("../../img/bd-small.png") no-repeat center center
-    background-size: contain
-    content: ""
-    display: block
-    height: 25px
-    margin: 0 auto 1em auto
-
 
 /* selection extras:
  * highlight and top tag list
@@ -188,7 +178,7 @@ $s-extras--heading-y: 40px
         size: 1.7em
         variant: small-caps
 
-      line-height: 1
+      line-height: 1.3
 
   > section > p:first-of-type:not(.poetry-line)
     &:first-letter
@@ -202,7 +192,7 @@ $s-extras--heading-y: 40px
     font-size: 2em
     line-height: 0.4
     margin: 0.7em auto 0 auto
-    margin-top: 0.4em
+    margin-top: 1em
     max-width: 520px
     text-align: center
 
@@ -305,13 +295,14 @@ $s-extras--heading-y: 40px
  * SELECTION MEDIA QUERIES
  * =========================*/
 
-@media (min-width: $m-selection-lg)
++breakpoint(desktop)
 
   .s-headline
     font-size: 1.3em
     text-align: left
 
   .s-info
+    margin-top: 1em
     &:before
       height: 0
 

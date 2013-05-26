@@ -1,4 +1,4 @@
-from home import home
+from home import home, about
 from selection import selection
 from browse import browse_category, browse_selections, browse_timeline, browse_highlights, browse_announcements
 from tag import tag

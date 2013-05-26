@@ -19,10 +19,10 @@ class Quotation(models.Model):
     def get_source(self):
         sel = self.selection
         sel_title = sel.get_title()
-        result = '<a href="/selections/' + sel.slug + '">"' + sel_title
+        result = '<a href="/selections/' + sel.slug + '">&ldquo;' + sel_title
         if sel_title[-1:] != '?':
             result += ','
-        result += '" ' + sel.get_author() + '&nbsp;(' + str(sel.source.pub_year) + ')</a>'
+        result += '&rdquo; ' + sel.get_author() + '&nbsp;(' + str(sel.source.pub_year) + ')</a>'
         return mark_safe(result)
 
     def is_brief(self):

@@ -74,11 +74,6 @@ $flower: "\274b"
       padding-right: 0.3em
       margin-right: -0.2em
 
-%heading
-  color: $c-emphatic
-  font:
-    family: $f-heading
-
 %reverse-italics
   em,
   cite,
@@ -106,24 +101,19 @@ $flower: "\274b"
 
 $trans-time: 0.3s ease-in
 
-=sidebar-title()
-  @extend %heading
-  font:
-    size: 1.5em
-    variant: small-caps
-  border-bottom: $bar
-  line-height: 1.75
-  margin-bottom: 0.75em
-
 =dot-link()
+  $x: 40px
   border-bottom: $bar
   color: $c-base
   font:
     family: $f-heading
     size: 1.2em
     style: italic
+  line-height: 1.5
   display: block
-  padding: 0.5em 0
+  padding: 0.5em 0.5em
+  text-indent: -$x
+  padding-left: $x
   &:first-child
     border-top: $bar
 
@@ -132,7 +122,7 @@ $trans-time: 0.3s ease-in
     display: block
     float: left
     font-style: normal
-    width: 40px
+    width: $x
 
   &:hover
     border-bottom-color: $c-base !important
@@ -142,12 +132,17 @@ $trans-time: 0.3s ease-in
   border-radius: 5px
   min-height: 35px
   padding: 5px
+  +placeholder
+    font:
+      family: $f-heading
+      size: 1.1em
+      style: italic
 
 %dingled
+  display: inline-block
   &:before,
   &:after
-    content: "--"
-    margin: 0 10px
+    content: "\00a0--\00a0"
 
 
 // WEIRD STUFF CORRECTION

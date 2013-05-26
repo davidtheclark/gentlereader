@@ -55,7 +55,7 @@ def browse_timeline(req):
     for year, display in years.iteritems():
         year_selections = Selection.objects.filter(source__pub_year=year)
         result.append({'year': year, 'date_display': display, 'selections': year_selections})
-    result = sorted(result, key=lambda i: i['year'])
+    result = sorted(result, key=lambda i: -i['year'])
 
     other_categories = [c for c in categories if c != 'timeline']
 
@@ -87,5 +87,6 @@ def browse_announcements(req):
     return render_to_response('browse.html', {
         'other_categories': other_categories,
         'category': 'announcements',
+        'category_json': json.dumps('announcements'),
         'announcements': announcements
     }, context_instance=RequestContext(req))

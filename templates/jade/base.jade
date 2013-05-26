@@ -12,12 +12,12 @@ html(lang="en")
 
     link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed")
 
-    <!-- grunt-active: dev -->
+    <!-- grunt-inactive: dev
     link(rel="stylesheet", href="{{ STATIC_URL }}anthologist/style/css/STYLE.css")
-    <!-- endgrunt -->
-    <!-- grunt-inactive: build
-    link(rel="stylesheet", href="{{ STATIC_URL }}anthologist/style/css/style-compressed.css")
     endgrunt -->
+    <!-- grunt-active: build -->
+    link(rel="stylesheet", href="{{ STATIC_URL }}anthologist/style/css/style-compressed.css")
+    <!-- endgrunt -->
     {% block styles %}{% endblock %}
 
     {% block topscripts %}{% endblock %}
@@ -36,12 +36,12 @@ html(lang="en")
     include includes/footer
     {% endblock %}
 
-    <!-- grunt-active: dev -->
+    <!-- grunt-inactive: dev
     script(src="{{ STATIC_URL }}anthologist/scripts/require.js")
     script(src="{{ STATIC_URL }}anthologist/scripts/common-dev.js")
-    <!-- endgrunt -->
-
-    <!-- grunt-inactive: build
-    script(src="{{ STATIC_URL }}anthologist/build/require.js")
     endgrunt -->
+
+    <!-- grunt-active: build -->
+    script(src="{{ STATIC_URL }}anthologist/build/require.js")
+    <!-- endgrunt -->
     {% block bottomscripts %}{% endblock %}

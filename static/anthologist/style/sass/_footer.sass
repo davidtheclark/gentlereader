@@ -1,10 +1,41 @@
+$icn-y: 62px
+
 .subscribe.u-footer
   background: whitesmoke
-  border-top: 4px solid $c-subtle
+  border-top: 2px solid $c-subtle
   margin-top: 2em
-  padding: 2em 0
-  .home-subhead
-    margin-top: 0
+  text-align: left
+
+  .inner
+    max-width: $site-x
+    margin: 0 auto
+    padding: 10px 1.2em
+    +clearfix
+
+  .subscribe-icons
+    +clearfix
+    float: right
+    font-size: 0
+    line-height: 0
+
+  .subscribe-icon
+    display: inline-block
+
+
+  .footer-subscribe,
+  .email-form
+    display: inline-block
+    vertical-align: middle
+
+  .footer-subscribe
+    font-family: $f-heading
+    font-size: 1.2em
+    margin-right: 0.3em
+    text-transform: uppercase
+
+  .email-form
+    .email-input
+      width: 16em
 
 .site-footer
   +clearfix
@@ -53,15 +84,56 @@
 
 .footer-link,
 .footer-link:visited
-  +button($c-subtle, $c-emphatic)
+  color: rgb(201,199,199) !important
+  font-size: 0.8em
   float: left
   line-height: 2
+  text-transform: uppercase
   width: 50%
+
+
+.footer-copyright
+  background: white
+  color: $c-subtle
+  display: none
+  margin-top: 1.5em
+  padding: 1em
+  position: relative
+  a,
+  a:visited
+    color: $c-emphatic
+
+.x-copyright
+  font-size: 2em
+  position: absolute
+  top: 0
+  right: 10px
+  line-height: 1
+
+
+.close-copyright
+  @extend %dingled
+  display: inline-block
+  font:
+    family: $f-heading
+    size: 1.2em
+    style: italic
+  text-align: center
+
+.x-copyright,
+.close-copyright
+  cursor: pointer
   &:hover
-    color: white
+    color: $c-emphatic
 
++breakpoint(mobile)
+  .subscribe.u-footer
+    text-align: center
+    .subscribe-icons
+      float: none
+      margin-bottom: 10px
 
-@media (min-width: $m-selection-lg)
++breakpoint(desktop)
 
   .footer-links
     +inline-list(" / ")

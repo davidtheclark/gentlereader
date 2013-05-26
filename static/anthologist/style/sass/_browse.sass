@@ -2,18 +2,18 @@
 
 .browse-h
   @extend %heading
-  font-size: 2.7em
+  font-size: 2.3em
   text-align: center
   text-transform: uppercase
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     font-size: 3.5em
     text-align: left
 
 .browse-container
   margin: 1.5em auto
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     margin: 1.5em 0
     float: left
     max-width: 55%
@@ -22,7 +22,7 @@
 #tag-container
   max-width: 20em
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     max-width: 55%
     width: 55%
 
@@ -60,9 +60,9 @@
     style: normal
 
 .browse-extras
-  margin: 0 auto
+  margin: 1.5em auto
   width: 320px
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     float: right
     overflow: visible
     width: 45%
@@ -79,12 +79,12 @@
     &:before
       content: "~\00a0"
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     float: right
     width: 90%
 
 
-@media (min-width: $m-selection-lg)
++breakpoint(desktop)
 
   .innernav-browse--container
     display: block

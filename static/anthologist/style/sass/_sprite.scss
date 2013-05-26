@@ -1,13 +1,25 @@
-/* glue: 0.3 hash: 902ece0557 */
+/* glue: 0.3 hash: ab2eacfef4 */
 .s-icn-twitter,
 .s-icn-rss,
 .s-icn-facebook,
+.s-icn-twitter-sm,
+.s-icn-rss-sm,
+.s-icn-facebook-sm,
+.s-envelope,
 .s-search{background-image:url('../../images/sprite/spriteable.png');background-repeat:no-repeat}
 .s-icn-twitter{background-position:0px 0px;width:62px;height:62px;}
 .s-icn-rss{background-position:-62px 0px;width:62px;height:62px;}
 .s-icn-facebook{background-position:0px -62px;width:62px;height:62px;}
-.s-search{background-position:-62px -62px;width:27px;height:27px;}
+.s-icn-twitter-sm{background-position:-62px -62px;width:37px;height:37px;}
+.s-icn-rss-sm{background-position:-124px 0px;width:37px;height:37px;}
+.s-icn-facebook-sm{background-position:-124px -37px;width:37px;height:37px;}
+.s-envelope{background-position:-124px -74px;width:34px;height:34px;}
+.s-search{background-position:0px -124px;width:27px;height:27px;}
 @media only screen and (-webkit-min-device-pixel-ratio: 2.0), only screen and (min--moz-device-pixel-ratio: 2.0), only screen and (-o-min-device-pixel-ratio: 200/100), only screen and (min-device-pixel-ratio: 2.0) {.s-icn-twitter,
 .s-icn-rss,
 .s-icn-facebook,
-.s-search{background-image:url('../../images/sprite/spriteable@2x.png');-webkit-background-size: 124px 124px;-moz-background-size: 124px 124px;background-size: 124px 124px;}}
+.s-icn-twitter-sm,
+.s-icn-rss-sm,
+.s-icn-facebook-sm,
+.s-envelope,
+.s-search{background-image:url('../../images/sprite/spriteable@2x.png');-webkit-background-size: 161px 151px;-moz-background-size: 161px 151px;background-size: 161px 151px;}}

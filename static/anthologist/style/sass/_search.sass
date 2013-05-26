@@ -8,6 +8,8 @@
 .search-query
   @extend %h--subtitle
   margin: 0.3em 0 1em 0
+  +breakpoint(desktop)
+    text-align: left
 
 .search-page-category
   @extend %h--postscript
@@ -19,19 +21,31 @@
   margin: 0.5em 0 1em 0
   padding-left: 1em
 
+.search-form
+  position: relative
+  margin: 0 auto
+  max-width: 33em
+
+  .search-content &
+    +breakpoint(desktop)
+      margin: 0
+
 .search-input,
 .tt-hint
-  +inline-block
   @extend %styled-input
-  width: 12em
+  display: inline-block
+  padding: 0 35px 0 10px
+  width: 100%
 
 .search-submit
   +hide-text
-  +inline-block
   background-color: white
   border: none
   margin: 0 0 0 0.5em
-  position: relative
+  padding: 0
+  position: absolute
+  right: 4px
+  top: 4px
   vertical-align: middle
   -webkit-appearance: none
   z-index: 100
@@ -41,6 +55,7 @@
 
 .twitter-typeahead
   vertical-align: middle
+  width: 100%
 
 .tt-dropdown-menu
   background: white
@@ -48,9 +63,12 @@
   border-radius: 5px
   box-shadow: 0px 2px 20px lightgray
   margin-top: 0.3em
-  margin-right: -30px
   text-align: left
   min-width: 100%
+
+  +breakpoint(desktop)
+    max-height: 30em
+    overflow: scroll
 
 .tt-suggestion
   line-height: 1

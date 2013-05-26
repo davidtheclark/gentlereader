@@ -16,7 +16,7 @@
     &:after
       color: $c-emphatic
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     display: none
 
 .rq-backdrop
@@ -30,7 +30,7 @@
   right: 0
   z-index: 100
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     &[style]
       display: none !important
 
@@ -65,7 +65,7 @@
   &.opened
     display: block
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     left: 0
     right: 0
     margin-right: 0
@@ -77,21 +77,31 @@
       display: none
 
 .rq-title
-  +sidebar-title
+  @extend %heading
+  font:
+    size: 1.5em
+    variant: small-caps
+  border-bottom: $bar
+  margin-bottom: 0.75em
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     text-align: left
 
 .rq-content
   position: relative
 
-.rq-text
+a.rq-text
   @extend %indented-ps
+  +transition(color 0.3s linear)
+  border-bottom: none
   color: $c-subtle
+  display: block
   font-family: $f-heading
   line-height: 1.4
   font-size: 1.3em
   margin-bottom: 0.6em
+  &:hover
+    color: $c-base
 
 .rq-citation
   font-size: 1.2em
@@ -133,5 +143,5 @@
   &:hover
     color: $c-emphatic
 
-  @media (min-width: $m-selection-lg)
+  +breakpoint(desktop)
     display: none

@@ -4,15 +4,15 @@
 {% block meta %}
 <meta name="description" content=""/>{% endblock %}
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
-<script src="{{ STATIC_URL }}anthologist/scripts/home-main.js"></script><!-- endgrunt -->
-<!-- grunt-inactive: build
+<!-- grunt-inactive: dev
+<script src="{{ STATIC_URL }}anthologist/scripts/home-main.js"></script>
+<endgrunt>--></endgrunt><!-- grunt-active: build -->
 <script>
   require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
     require(['home-main'], function(homeMain) {});
   });
-</script>
-<endgrunt>-->{% endblock %}</endgrunt>{% block header %}{% endblock %}
+</script><!-- endgrunt -->{% endblock %}
+{% block header %}{% endblock %}
 {% block main %}
 <div class="content home-content">
   <header class="site-header">
@@ -20,70 +20,20 @@
       <div class="site-title-the">the</div>
       <div class="site-title-gentle">Gentle</div>
       <div class="site-title-reader">Reader</div>
-      <div class="site-title-the u-second">--</div>
+      <!--.site-title-the.u-second ---->
     </h1>
   </header>
   <div class="home-main">
     <div class="home-col-left">
       <div class="slogan-container">
-        <div class="site-slogan">Containing a <em>dynamic</em>, <em>curated</em> <span class="s-cap">Anthology</span> of Selections from Texts in the <em>Public Domain</em>, compiled and catalogued for your <em>Enjoyment</em> and <em>Edification</em>.</div>
-        <div class="site-slogan site-header-more">-- Read more about the site --</div>
+        <div class="site-slogan">Containing a <em>dynamic</em>, <em>curated</em> <span class="s-cap">Anthology</span> of Selections from Texts in the <em>Public Domain</em>, compiled and catalogued for your <em>Enjoyment</em> and <em>Edification</em>.</div><a href="/about" class="site-slogan site-header-more">Read more about the site</a>
       </div>
-      <article id="about" class="hyphenate">
-        <h1>About the Site</h1>
-        <section>
-          <p class="feature">The Gentle Reader shares the simple mission of all <span data-gloss="1">anthologies</span>: to expose curious readers to exquisite writing and engrossing ideas.</p>
-          <p>It is a dynamic, curated anthology of selections from texts in the <span data-gloss"2">public domain</span>, compiled and catalogued for your enjoyment and edification.</p>
-        </section>
-        <section class="uft-group">
-          <h2>What Makes The Gentle Reader Unique?</h2>
-          <p>There are <span data-gloss="3">many other sites</span> that publish public domain texts; but several features distinguish The Gentle Reader from the rest. Pointing out these differences might be the best way to explain the site's purpose.<span class="uft-trigger uft-a">more</span></p>
-          <div class="uft-b">
-            <section>
-              <h3>Curation</h3>
-              <p>Every one of The Gentle Reader's texts has been <em>selected</em>, intentionally, by a living, sentient human being, with feelings, who hopes that that others readers might enjoy something that he himself has enjoyed.</p>
-              <p>The Gentle Reader is not a public domain warehouse, and does not aspire to archival completeness or scholarly authority. No texts are added merely because they exist and are in the public domain, or because they might garner more hits to the site, or because they are regarded as "classics." They are all here because I like them.</p>
-            </section>
-            <section>
-              <h3>Readability</h3>
-              <section>
-                <h4>Length</h4>
-                <p>The Gentle Reader will not publish entire novels or treatises or multi-hundred-page monographs, will not link you to volumes you might think you should read but probably won't read. Instead, it presents <strong>complete short works and excerpts from longer words</strong> &mdash; then provides links so that you can continue reading, if you'd like, and finish the volume.</p>
-                <p>Consuming long books is good for you, of course; but there is no shame in reading <a href="/selections/i-laugh-at-all">a fantastic excerpt from <cite>The Anatomy of Melancholy</cite></a> instead of downloading the full elephantine bulk of it to your eReader, where it will languish until the end of time.</p>
-              </section>
-              <section>
-                <h4>Format</h4>
-                <p>The Gentle Reader's selections are formatted to make online reading as pleasant as can be, without the clutter and wrack that repulses so many readers from online text.</p>
-              </section>
-            </section>
-            <section>
-              <h3>Ease of Exploration</h3>
-              <p>The Gentle Reader provides simple and straightforward means to follow-up on your interests, explore the collection, and discover new stuff worth reading. Most online collections can be browsed by author, maybe by date; here, you can browse by <a href="/authors">author</a>, <a href="/timeline">date</a>, <a href="/nations">nation</a>, <a href="/languages">original language</a>, <a href="/forms">form</a>, <a href="/genres">genre</a>, <a href="/contexts">context</a>, <a href="/topics">topic</a>, and <a href="/authors">style</a>. You can also dig through <a href="/highlights">highlights from the selections</a>.</p>
-              <p>The Gentle Reader's tags connect selections, forming paths that readers can follow from one text to another.</p>
-            </section>
-            <section>
-              <h3>Subscription</h3>
-              <p>Diversify your web-reading diet by subscribing to The Gentle Reader by email or RSS, or following The Gentle Reader on Twitter or Facebook. Alongside the latest celebrity gossip and apocalypse predictions, you'll receive classics and curiosities in the public domain as they are added to collection.</p>
-            </section>
-          </div>
-        </section>
-        <section class="uft-group">
-          <h2>Who's Behind The Gentle Reader?</h2>
-          <p>The Gentle Reader is the work of one of the world's David Clarks (<a href="/selections/i-laugh-at-all"><i>... parvus sum, nullus sum, altum nec spiro, nec spero</i></a>).<span class="uft-trigger uft-a">more</span></p>
-          <div class="uft-b">
-            <p>He was led to this labor by his own idiosyncratic reading habits, academic studies, and teaching experience &#8212; by years of seeking out delightful, edifying, and unusual works; developing an appreciation for the aesthetics of ages past; engaging more and more with electronic texts; hunting for freely-reproducible, high-quality readings to feed his students; and always aspiring to keep track, somehow, of the best stuff he'd found, so he could re-read it himself and share it with others.</p>
-            <p>This David Clark is just one man. So he could use your help, if you're interested in getting involved. All aspects of the site would benefit from more input: the text collection, the programming, the design, the cataloging. <a href="/contribute">Please contribute if you're interested</a>.</p>
-          </div>
-        </section>
-        <div class="subnav-browse--close u-bottom">close</div>
-      </article>
-      <form class="home-search-container search-form">
-        <label for="inputSearch" class="home-form-label">Search</label>
-        <div class="home-form-inner">
-          <input type="search" placeholder="try an author, a title, &amp;c." class="search-input"/>
+      <div class="home-search-container">
+        <form class="search-form">
+          <input type="search" placeholder="Search" class="search-input"/>
           <input type="submit" value="Submit" class="search-submit s-search"/>
-        </div>
-      </form>
+        </form>
+      </div>
       <section id="recent-additions" class="recent home-section">
         <h2 class="home-subhead">Recent Additions</h2>{% for s in recent_additions %}
         <li class="li-sel">
@@ -100,29 +50,26 @@
       </section>
       <section class="contribute home-section">
         <h2 class="home-subhead">Contribute</h2>
-        <p>Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive! Just <a href="/contact">visit the contact page</a> and release the pent-up flood of ideas. <a href="/contact">Thank God for people like you!</a></p>
+        <p>Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive! Just <a href="/contact">visit the contact page</a> and release your long-pent-up flood of ideas. <a href="/contact">Thank God for people like you!</a></p>
       </section>
-      <div data-picture="data-picture" data-alt="A skeleton, thinking, at an altar" class="home-image">
-        <div data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking-nr.jpg" data-media="(min-width: 47.5em)"></div>
-        <div data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking.jpg" data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)"></div>
+      <div data-picture="data-picture" data-alt="A skeleton, thinking, at an altar" class="home-image home-skeleton">
+        <div data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking-nr.png" data-media="(min-width: 47.5em)"></div>
+        <div data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking.png" data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)"></div>
       </div>
     </div>
     <div class="home-col-right">
       <div data-picture="data-picture" data-alt="A melancholic scholar; a gentle reader" class="home-image">
-        <div data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar-nr.jpg" data-media="(min-width: 47.5em)"></div>
-        <div data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar.jpg" data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)"></div>
+        <div data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar-nr.png" data-media="(min-width: 47.5em)"></div>
+        <div data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar.png" data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)"></div>
       </div>
       <section class="subscribe home-section">
         <h2 class="home-subhead">Subscribe</h2>
-        <p>As <cite>The Gentle Reader</cite> grows, you can receive <em>regular Installations</em> of newly added <span class="s-cap">Selections</span>&nbsp;.&nbsp;.&nbsp;.</p>
+        <p>As <cite>The Gentle Reader</cite> grows, you can receive <em>regular installations</em> of newly added <span class="s-cap">selections</span>&nbsp;.&nbsp;.&nbsp;. by email, RSS, Twitter, or Facebook.</p>
         <form class="email-form">
-          <label for="inputEmail" class="home-form-label">Email</label>
-          <div class="home-form-inner">
-            <input type="email" placeholder="your email address" class="email-input"/>
-            <input type="submit" value="Submit" class="email-submit"/>
-          </div>
+          <input type="email" placeholder="Your email address" class="email-input"/>
+          <input type="submit" value="Do it" class="email-submit"/>
         </form>
-        <div class="subscribe-icons"><a href="#" class="subscribe-icon s-icn-rss">RSS Feed</a><a href="#" class="subscribe-icon s-icn-twitter">Twitter</a><a href="#" class="subscribe-icon s-icn-facebook">Facebook</a></div>
+        <div class="subscribe-icons"><a href="#" class="subscribe-icon s-icn-rss">Subscribe to the RSS Feed</a><a href="#" class="subscribe-icon s-icn-twitter">Follow us on Twitter</a><a href="#" class="subscribe-icon s-icn-facebook">Follow us on Facebook</a></div>
       </section>
       <nav id="home-browse" class="home-nav-container home-section">
         <h2 class="home-subhead">Browse</h2>

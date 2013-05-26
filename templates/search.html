@@ -2,17 +2,16 @@
 {% extends "base.html" %}
 {% block title %}Search Results - The Gentle Reader{% endblock %}
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
-<script src="{{ STATIC_URL }}anthologist/scripts/base-main.js"></script><!-- endgrunt -->
-<!-- grunt-inactive: build
-<script>require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {});</script>
-<endgrunt>--></endgrunt>{% endblock %}
+<!-- grunt-inactive: dev
+<endgrunt>--></endgrunt><!-- grunt-active: build -->
+<script>require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {});</script><!-- endgrunt -->
+{% endblock %}
 {% block main %}
-<div class="content">
+<div class="content search-content">
   <header class="search-header">
     <h1 class="search-h">Search Results</h1>
     <form class="search-form">
-      <input type="search" value="{{ query }}" placeholder="try an author, a title, &amp;c." class="search-input"/>
+      <input type="search" value="{{ query }}" placeholder="Try an author, a title, &amp;amp;c." class="search-input"/>
       <input type="submit" class="search-submit s-search"/>
     </form>{% if count > 0 %}
     <p class="search-query">{{ count }} results for <em>{{ query }}</em>.</p>

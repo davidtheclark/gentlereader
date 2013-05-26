@@ -1,13 +1,25 @@
 require ["jquery",
-         "lib/unfinishedToggler"],
+         "apps/rand-quot-app",
+         "lib/unfinishedToggler",
+         "lib/hyphenator"],
 
-  ($, unfinishedToggler) ->
+  ($, RandQuotApp, unfinishedToggler, hyphenator) ->
+
     $ ->
+
+      new RandQuotApp home : true
 
       $about = $("#about")
 
       $(".site-header-more").click ->
-        $about.slideToggle()
+        $(this).fadeOut "fast", ->
+          $about.fadeIn()
+
+      $(".about-close").click ->
+        $about.fadeOut "fast", ->
+          $(".site-header-more").fadeIn()
+          $("html, body").animate scrollTop: 0
+
 
       $about.unfinishedToggler
         exclusive: false

@@ -28,8 +28,8 @@ def search_results(req):
 
         def check_author(term):
             return Author.objects.filter(
-                Q(last_name__iexact=term) |
-                Q(first_name__iexact=term))
+                Q(last_name__icontains=term) |
+                Q(first_name__icontains=term))
 
         for term in query_list:
             authors = check_author(term)

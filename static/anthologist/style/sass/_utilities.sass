@@ -79,3 +79,11 @@
   -ms-hyphens: $val
   -o-hyphens: $val
   hyphens: $val
+
+=breakpoint($point)
+  @if $point == desktop
+    @media (min-width: $m-selection-lg)
+      @content
+  @if $point == mobile
+    @media (max-width: $m-selection-lg)
+      @content

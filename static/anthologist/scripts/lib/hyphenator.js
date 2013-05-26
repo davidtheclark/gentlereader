@@ -2,54 +2,6 @@
  *  Hyphenator X.Y.Z - client side hyphenation for webbrowsers
  *  Copyright (C) 2012  Mathias Nater, Zürich (mathias at mnn dot ch)
  *  Project and Source hosted on http://code.google.com/p/hyphenator/
- * 
- *  This JavaScript code is free software: you can redistribute
- *  it and/or modify it under the terms of the GNU Lesser
- *  General Public License (GNU LGPL) as published by the Free Software
- *  Foundation, either version 3 of the License, or (at your option)
- *  any later version.  The code is distributed WITHOUT ANY WARRANTY;
- *  without even the implied warranty of MERCHANTABILITY or FITNESS
- *  FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
- *
- *  As additional permission under GNU GPL version 3 section 7, you
- *  may distribute non-source (e.g., minimized or compacted) forms of
- *  that code without the copy of the GNU GPL normally required by
- *  section 4, provided you include this license notice and a URL
- *  through which recipients can access the Corresponding Source.
- *
- * 
- *  Hyphenator.js contains code from Bram Steins hypher.js-Project:
- *  https://github.com/bramstein/Hypher
- *  
- *  Code from this project is marked in the source and belongs 
- *  to the following license:
- *  
- *  Copyright (c) 2011, Bram Stein
- *  All rights reserved.
- *  
- *  Redistribution and use in source and binary forms, with or without 
- *  modification, are permitted provided that the following conditions 
- *  are met:
- *   
- *   1. Redistributions of source code must retain the above copyright
- *      notice, this list of conditions and the following disclaimer. 
- *   2. Redistributions in binary form must reproduce the above copyright 
- *      notice, this list of conditions and the following disclaimer in the 
- *      documentation and/or other materials provided with the distribution. 
- *   3. The name of the author may not be used to endorse or promote products 
- *      derived from this software without specific prior written permission. 
- *  
- *  THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED 
- *  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
- *  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO 
- *  EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
- *  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
- *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
- *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY 
- *  OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
- *  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *  
  */
 
 define([], function() {var Hyphenator=function(g){var h=g,p={},e=function(b,c,a,d){p[b]={file:c,script:a,prompt:d}};e("be","be.js",1,"\u041c\u043e\u0432\u0430 \u0433\u044d\u0442\u0430\u0433\u0430 \u0441\u0430\u0439\u0442\u0430 \u043d\u0435 \u043c\u043e\u0436\u0430 \u0431\u044b\u0446\u044c \u0432\u044b\u0437\u043d\u0430\u0447\u0430\u043d\u044b \u0430\u045e\u0442\u0430\u043c\u0430\u0442\u044b\u0447\u043d\u0430. \u041a\u0430\u043b\u0456 \u043b\u0430\u0441\u043a\u0430 \u043f\u0430\u043a\u0430\u0436\u044b\u0446\u0435 \u043c\u043e\u0432\u0443:");

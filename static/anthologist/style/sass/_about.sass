@@ -1,0 +1,61 @@
+// ABOUT!!!
+
+#about
+  text-align: justify
+  section
+    margin-bottom: 3em
+  h2
+    @extend %h--subtitle
+    color: $c-subtle
+    margin: 0 0 0.5em
+  h3
+    @extend %h--sidebar
+    margin: 1em 0 0.5em
+  h4
+    color: $c-subtle
+    font-size: 1.1em
+    margin: 0.5em 0
+    text-transform: uppercase
+  p
+    font-size: 1.2em
+    &.feature
+      font-family: $f-heading
+      font-size: 1.7em
+      font-style: italic
+      margin-top: 0
+
+  .uft-group
+    &.uft-on
+      .uft-a
+        display: none
+  .uft-b
+    margin-top: -1em
+
+
+.about-more
+  color: $c-link
+  cursor: pointer
+  display: inline-block
+  font:
+    family: $f-heading
+    style: italic
+  margin-left: 10px
+  text-align: center
+  &:after
+    +arrow(6, $c-link, down)
+    content: ""
+    margin-left: 4px
+  &:hover
+    color: $c-link-hover
+    &:after
+      border-top-color: $c-link-hover
+
+.main-image img
+  margin: 0 auto
+  max-width: 100%
+
+.sidebar-image img
+  display: block
+  margin: 0 auto 2em
+  max-width: 90%
+  float: right

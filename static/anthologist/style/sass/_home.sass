@@ -14,31 +14,61 @@
 // SITE HEADER
 
 .site-header
-  padding: 20px 0
+  padding: 0 0 1em
   text-align: center
 
 .site-title
   color: $c-emphatic
+  margin-bottom: 1em
   text-align: center
 
 .site-title-the
-  @extend %dingled
-  font-size: 3em
+  font-size: 2.5em
+  display: inline-block
+  +breakpoint(mobile)
+    background: white
+    position: relative
+    z-index: 100
+    padding: 0 10px
+    top: 24px
+
+  +breakpoint(desktop)
+    font-size: 3em
 
 .site-title-gentle,
 .site-title-reader
-  font-size: 3.5em
+  font-size: 3em
   text-transform: uppercase
+
+  +breakpoint(desktop)
+    font-size: 3.5em
+
++breakpoint(mobile)
+  .site-title-gentle
+    border-top: double 6px $c-emphatic
+    padding-top: 12px
+  .site-title-reader
+    border-bottom: double 6px $c-emphatic
+    padding-bottom: 12px
 
 .site-slogan
   margin-bottom: 1em
   font:
     family: $f-heading
-    size: 1.4em
+    size: 1.2em
     style: italic
   text-align: center
   em
     font-style: normal
+
+  +breakpoint(desktop)
+    font-size: 1.4em
+    text-align: left
+
+.site-header-more
+  @extend %dingled
+  border-bottom: none
+  display: block
 
 .home-main
   +clearfix
@@ -49,22 +79,8 @@
 .home-search-container
   border-bottom: $bar2
   border-top: $bar2
-  padding: 1em
+  padding: 1em 0
   text-align: center
-
-  .search-input
-    width: 10em
-
-.home-form-inner
-  +inline-block
-
-.home-form-label
-  +inline-block
-  margin-right: 0.3em
-  text-transform: uppercase
-  vertical-align: middle
-  height: 30px
-  line-height: 30px
 
 
 // Lower regions
@@ -98,21 +114,26 @@
 
 // SUBSCRIBE
 
+.email-form
+  position: relative
+
 .email-input,
 .email-submit
   @extend %styled-input
 
+.email-input
+  padding-right: 40px
+  width: 10em
+
 .email-submit
-  background: whitesmoke
-  font-family: Arial, sans-serif
-  font-size: 0.7em
-  text-transform: uppercase
-  border: 2px solid $c-link
-  color: $c-link
-  vertical-align: top
-  &:hover
-    border-color: $c-link-hover
-    color: $c-link-hover
+  +hide-text
+  +appearance(none)
+  background-color: transparent
+  border: none
+  position: absolute
+  top: 0
+  right: 5px
+
 
 .subscribe,
 .contribute
@@ -126,16 +147,15 @@
 
 
 .home-image img
+  display: block
+  margin: 0 auto
   max-width: 100%
 
 .home-footer-padding
   margin-top: 2em
 
-#about
-  display: none
 
-
-@media (min-width: $m-selection-lg)
++breakpoint(desktop)
 
   // heading
 
@@ -158,21 +178,13 @@
     display: inline
     margin: 0 10px
 
-  .site-slogan
-    text-align: left
 
-
-  // right column
+  // left column
 
   .home-col-left
     float: left
     margin-right: 9%
     width: 58%
-
-  .home-search-container
-    text-align: left
-    .search-input
-      width: 18em
 
   .home-nav-container
     margin-top: 0
@@ -184,8 +196,7 @@
       +column-gap(40px)
       max-width: 100%
 
-
-  // left column
+  // right column
 
   .home-col-right
     float: left
@@ -194,8 +205,8 @@
     .rq-title
       font-size: 25px
       border-bottom: $bar
-      line-height: 1.75
       margin-top: 0
+      padding-bottom: 0.3em
       text-align: center
       text-transform: uppercase
     .rq-body

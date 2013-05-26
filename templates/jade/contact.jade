@@ -33,7 +33,7 @@ include includes/only-highlight-script
         {{ form.message }}
         {{ form.message.errors }}
       .field-wrapper
-        label(for='id_sender') You email address
+        label(for='id_sender') Your email address
         input#id_sender(type='email', required)
         {{ form.sender.errors }}
       .field-wrapper
@@ -41,7 +41,7 @@ include includes/only-highlight-script
         {{ form.cc_myself }}
         {{ form.cc_myself.errors }}
       .field-wrapper#recaptcha-wrapper
-        label(for='id_captcha') Are you human?
+        label(for='id_captcha') Are you human? Honest? Prove it.
         {{ form.captcha }}
       .submit-wrapper
         input#contact-submit(type='submit', value='Submit')

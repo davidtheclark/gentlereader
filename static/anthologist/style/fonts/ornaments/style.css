@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'ornaments';
-	src:url('fonts/ornaments.eot');
-	src:url('fonts/ornaments.eot?#iefix') format('embedded-opentype'),
-		url('fonts/ornaments.woff') format('woff'),
-		url('fonts/ornaments.ttf') format('truetype'),
-		url('fonts/ornaments.svg#ornaments') format('svg');
+	src:url('ornaments.eot');
+	src:url('ornaments.eot?#iefix') format('embedded-opentype'),
+		url('ornaments.woff') format('woff'),
+		url('ornaments.ttf') format('truetype'),
+		url('ornaments.svg#ornaments') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
