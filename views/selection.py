@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from collections import OrderedDict
-from gentelreader.models import Selection, Quotation, Topic, Context, Genre, Nation
+from gentlereader.models import Selection, Quotation, Topic, Context, Genre, Nation
 from ..utils import ignore_articles, roman_year
 
 

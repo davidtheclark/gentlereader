@@ -2,8 +2,8 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from django.db.models import get_model
 import json
-from gentelreader.models import Form, Genre, Context, Topic, Style, Selection, Author, Source
-from gentelreader.models.tag import TAG_TYPES
+from gentlereader.models import Form, Genre, Context, Topic, Style, Selection, Author, Source
+from gentlereader.models.tag import TAG_TYPES
 
 Tag = get_model('gentlereader', 'Tag')
 

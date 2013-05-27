@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.db.models import Q
-from gentelreader.models import Author, Selection, Nation, Language, Form, Genre, Context, Topic
+from gentlereader.models import Author, Selection, Nation, Language, Form, Genre, Context, Topic
 
 
 def search_results(req):

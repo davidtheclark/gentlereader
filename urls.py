@@ -1,11 +1,11 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
-from anthologist.feeds import FullFeed
-from anthologist.sitemap import SelectionSitemap, AnnouncementSitemap, AuthorSitemap, TagSitemap, QuotationSitemap
+from gentlereader.feeds import FullFeed
+from gentlereader.sitemap import SelectionSitemap, AnnouncementSitemap, AuthorSitemap, TagSitemap, QuotationSitemap
 admin.autodiscover()
 
 # Data Access URLs
-urlpatterns = patterns('anthologist.api',
+urlpatterns = patterns('gentlereader.api',
     (r'^api/selections/$', 'selection_set'),
     (r'^api/selections/(?P<selectionId>\d+)/$', 'selection'),
     (r'^api/selections/(?P<selectionId>\d+)/(?P<attribute>source|genres|contexts|topics|styles|quotations)/$', 'selection_attribute_set'),
@@ -59,7 +59,7 @@ urlpatterns += patterns('',
     (r'^feed/$', FullFeed())
 )
 
-urlpatterns += patterns('anthologist.views',
+urlpatterns += patterns('gentlereader.views',
     (r'^$', 'home'),
     (r'^about/$', 'about'),
     (r'^selections/$', 'browse_selections'),

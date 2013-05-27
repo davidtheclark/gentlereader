@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
-from gentelreader.models import Quotation
+from gentlereader.models import Quotation
 
 
 def highlight(req, highlight_id):

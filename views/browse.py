@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from gentelreader.models import Tag, Author, Selection, Source, Announcement
-from gentelreader.models.tag import TAG_TYPES
+from gentlereader.models import Tag, Author, Selection, Source, Announcement
+from gentlereader.models.tag import TAG_TYPES
 from gentlereader.utils import ignore_articles
 import json
 

@@ -55,3 +55,18 @@ LOG:  received smart shutdown request
 LOG:  autovacuum launcher shutting down
 LOG:  shutting down
 LOG:  database system is shut down
+LOG:  database system was shut down at 2013-05-26 22:16:44 MST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "gentlereader_selection" does not exist at character 508
+STATEMENT:  SELECT "gentlereader_selection"."id", "gentlereader_selection"."date_entered", "gentlereader_selection"."date_modified", "gentlereader_selection"."text", "gentlereader_selection"."teaser", "gentlereader_selection"."comment_intro", "gentlereader_selection"."comment_text", "gentlereader_selection"."source_id", "gentlereader_selection"."excerpt", "gentlereader_selection"."from_section", "gentlereader_selection"."selection_title", "gentlereader_selection"."slug", "gentlereader_selection"."stylesheet" FROM "gentlereader_selection" ORDER BY "gentlereader_selection"."date_entered" DESC
+ERROR:  relation "gentlereader_announcement" does not exist at character 199
+STATEMENT:  SELECT "gentlereader_announcement"."id", "gentlereader_announcement"."date_entered", "gentlereader_announcement"."title", "gentlereader_announcement"."slug", "gentlereader_announcement"."text" FROM "gentlereader_announcement" ORDER BY "gentlereader_announcement"."date_entered" DESC LIMIT 21
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-05-27 10:39:57 MST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

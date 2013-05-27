@@ -1,4 +1,4 @@
-from gentelreader.models import Selection, Announcement, Quotation
+from gentlereader.models import Selection, Announcement, Quotation
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 

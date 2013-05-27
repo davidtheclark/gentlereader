@@ -73,17 +73,6 @@
       "outputAbbreviatedPath" : "\/base.html",
       "fileType" : 512
     },
-    "\/jade\/browse.jade" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/jade\/browse.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/browse.html",
-      "fileType" : 512
-    },
     "\/jade\/includes\/sel-in-list.jade" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -93,6 +82,17 @@
       "outputStyle" : 0,
       "compileDebug" : 1,
       "outputAbbreviatedPath" : "\/sel-in-list.html",
+      "fileType" : 512
+    },
+    "\/jade\/browse.jade" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/jade\/browse.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/browse.html",
       "fileType" : 512
     },
     "\/jade\/includes\/browse-highlights.jade" : {
@@ -166,17 +166,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/jade\/includes\/browse-timeline.jade" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/jade\/includes\/browse-timeline.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/browse-timeline.html",
-      "fileType" : 512
-    },
     "\/jade\/includes\/table-of-contents.jade" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -186,6 +175,17 @@
       "outputStyle" : 0,
       "compileDebug" : 1,
       "outputAbbreviatedPath" : "\/table-of-contents.html",
+      "fileType" : 512
+    },
+    "\/jade\/includes\/browse-timeline.jade" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/jade\/includes\/browse-timeline.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/browse-timeline.html",
       "fileType" : 512
     },
     "\/jade\/includes\/only-highlight-script.jade" : {
@@ -252,15 +252,15 @@
       "outputAbbreviatedPath" : "\/footer.html",
       "fileType" : 512
     },
-    "\/jade\/includes\/browse-selections.jade" : {
-      "ignoreWasSetByUser" : 0,
+    "\/jade\/includes\/rand-quot.jade" : {
+      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/jade\/includes\/browse-selections.jade",
+      "inputAbbreviatedPath" : "\/jade\/includes\/rand-quot.jade",
       "outputStyle" : 0,
       "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/browse-selections.html",
+      "outputAbbreviatedPath" : "\/rand-quot.html",
       "fileType" : 512
     },
     "\/contact.html" : {
@@ -283,14 +283,16 @@
       "outputAbbreviatedPath" : "\/about.html",
       "fileType" : 512
     },
-    "\/browse.html" : {
+    "\/jade\/includes\/browse-selections.jade" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/browse.html",
-      "outputAbbreviatedPath" : "\/No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/jade\/includes\/browse-selections.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/browse-selections.html",
+      "fileType" : 512
     },
     "\/jade\/includes\/browse-announcements.jade" : {
       "ignoreWasSetByUser" : 0,
@@ -303,16 +305,14 @@
       "outputAbbreviatedPath" : "\/browse-announcements.html",
       "fileType" : 512
     },
-    "\/jade\/includes\/rand-quot.jade" : {
-      "ignoreWasSetByUser" : 1,
+    "\/browse.html" : {
+      "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/jade\/includes\/rand-quot.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/rand-quot.html",
-      "fileType" : 512
+      "inputAbbreviatedPath" : "\/browse.html",
+      "outputAbbreviatedPath" : "\/No Output Path",
+      "fileType" : 2048
     },
     "\/highlight.html" : {
       "ignoreWasSetByUser" : 0,

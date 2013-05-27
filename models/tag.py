@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
-from gentelreader.models import Author, Source, Selection
+from gentlereader.models import Author, Source, Selection
 
 TAG_TYPES = [
     (1, 'nation'), (2, 'language'),
