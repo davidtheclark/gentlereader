@@ -5,4 +5,4 @@ zips/
 static/gentlereader/node_modules/
 static/gentlereader/images/originals/
 utils/jade2js
-codekit-config.json
+*/codekit-config.json
