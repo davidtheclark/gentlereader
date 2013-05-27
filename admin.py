@@ -1,18 +1,18 @@
-from anthologist.models import Nation, Language, Form, Genre, Context, Topic, Style, Author, Source, Selection, Quotation, Tag, ExternalLink, ExternalLinkCategory, Image, Announcement, DictionarySource
+from gentlereader.models import Nation, Language, Form, Genre, Context, Topic, Style, Author, Source, Selection, Quotation, Tag, ExternalLink, ExternalLinkCategory, Image, Announcement, DictionarySource
 from django.contrib import admin
 from django import forms
 from django.forms import ModelForm, Textarea
 
 #author
 
-n = { 
+n = {
     'nations': Nation
 }
 
 class AuthorForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(AuthorForm, self).__init__(*args, **kwargs)
-        
+
         for key, value in n.iteritems():
             tags = value.objects.all()
             fld = self.fields[key].widget
@@ -26,7 +26,7 @@ class AuthorAdmin(admin.ModelAdmin):
     ]
     filter_horizontal = [ fld for fld in n.keys() ]
     form = AuthorForm
-    
+
     list_display = ('__unicode__',)
     search_fields = ['last_name', 'first_name', 'nations__name']
     list_filter = ['nations__name']
@@ -35,19 +35,19 @@ class AuthorAdmin(admin.ModelAdmin):
 #source
 
 s = {
-    'language': Language,  
+    'language': Language,
     'forms': Form
 }
 
 class SourceForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(SourceForm, self).__init__(*args, **kwargs)
-        
+
         for key, value in s.iteritems():
             tags = value.objects.all()
             fld = self.fields[key].widget
             fld.choices = [ (tag.id, tag.__unicode__()) for tag in tags ]
-    
+
     def clean(self):
         cleaned_data = super(SourceForm, self).clean()
         section_title = cleaned_data.get("section_title")
@@ -63,17 +63,17 @@ class SourceForm(forms.ModelForm):
         if lang != "English" and not trans_year:
             raise forms.ValidationError("If the original 'Language' is not English, you must designate a 'Translation year'.")
         return cleaned_data
-            
+
 class SourceAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Vitals', {'fields': ['author', 'section_title', 'volume_title', 'forms']}),
         ('Publication', {'fields': ['pub_year', 'pub_year_modifier', 'language', 'translator', 'translation_year']}),
         ('Links', {'fields': ['digital_text', 'scanned_text', 'info_url']})
-    ]   
-    
+    ]
+
     filter_horizontal = ['forms']
     form = SourceForm
-     
+
     list_display = ('__unicode__',)
     search_fields = ['author__last_name', 'author__first_name', 'section_title', 'volume_title']
     list_filter = ['author__last_name']
@@ -98,25 +98,25 @@ class QuotationInline(admin.TabularInline):
     extra = 3
     formset = QuotationInlineFormset
 
-m = { 
-    'genres': Genre, 
+m = {
+    'genres': Genre,
     'contexts': Context,
     'topics': Topic,
-    'styles': Style 
+    'styles': Style
 }
 
 class SelectionForm(forms.ModelForm):
     class Meta:
         widgets = { 'text': Textarea(attrs={ 'cols': 85, 'rows': 50 })}
-        
+
     def __init__(self, *args, **kwargs):
         super(SelectionForm, self).__init__(*args, **kwargs)
-        
+
         for key, value in m.iteritems():
             tags = value.objects.all()
             fld = self.fields[key].widget
             fld.choices = [ (tag.id, tag.__unicode__()) for tag in tags ]
-    
+
     def clean(self):
         cleaned_data = super(SelectionForm, self).clean()
         selection_title = cleaned_data.get("selection_title")
@@ -141,7 +141,7 @@ class SelectionAdmin(admin.ModelAdmin):
     filter_horizontal = [ fld for fld in m.keys() ]
     form = SelectionForm
     inlines = [QuotationInline, ImageInline]
-        
+
     search_fields = ('text', 'source__author__last_name', 'source__author__first_name', 'source__volume_title', 'source__section_title', 'selection_title')
     list_display = ('get_author', '__unicode__', 'shortened_passage', 'date_entered')
 

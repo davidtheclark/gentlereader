@@ -4,13 +4,13 @@
 {% block bottomscripts %}
 <!-- grunt-inactive: dev
 <script>var tagType = {{ category_json|safe }};</script>{% if category == "timeline" %}
-<script src="{{ STATIC_URL }}anthologist/scripts/timeline-main.js"></script>{% elif category == "highlights" %}
-<script src="{{ STATIC_URL }}anthologist/scripts/browse-highlights-main.js"></script>{% elif category %}
-<script src="{{ STATIC_URL }}anthologist/scripts/browse-main.js"></script>{% endif %}
+<script src="{{ STATIC_URL }}gentlereader/scripts/timeline-main.js"></script>{% elif category == "highlights" %}
+<script src="{{ STATIC_URL }}gentlereader/scripts/browse-highlights-main.js"></script>{% elif category %}
+<script src="{{ STATIC_URL }}gentlereader/scripts/browse-main.js"></script>{% endif %}
 <endgrunt>--></endgrunt><!-- grunt-active: build -->
 <script>
   var tagType = {{ category_json|safe }};
-  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     {% if category == "timeline" %}
     require(['timeline-main'], function(timelineMain) {});
     {% elif category == "highlights" %}

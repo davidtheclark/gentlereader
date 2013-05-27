@@ -2,10 +2,10 @@
 {% extends "base.html" %}
 {% block title %}{{ announcement }} - The Gentle Reader{% endblock %}
 {% block bottomscripts %}<!-- grunt-inactive: dev
-<script src="{{ STATIC_URL }}anthologist/scripts/only-highlight-main.js"></script>
+<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script>
 <endgrunt>--></endgrunt><!-- grunt-active: build -->
 <script>
-  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['only-highlight-main'], function(homeMain) {});
   });
 </script><!-- endgrunt -->{% endblock %}

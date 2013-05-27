@@ -11,7 +11,7 @@ meta(name="description", content="{{ selection }}, by {{ selection.get_author }}
 
 {% if selection.stylesheet %}
 // If the selection has its own stylesheet, get it.
-link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}anthologist/style/css/selection-specific/{{ selection.stylesheet }}.css")
+link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}gentlereader/style/css/selection-specific/{{ selection.stylesheet }}.css")
 {% endif %}
 
 {% endblock %}
@@ -19,12 +19,12 @@ link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}anthologist/style/
 // scripts
 {% block bottomscripts %}
 <!-- grunt-inactive: dev
-script(src="{{ STATIC_URL }}anthologist/scripts/selection-main.js")
+script(src="{{ STATIC_URL }}gentlereader/scripts/selection-main.js")
 endgrunt -->
 
 <!-- grunt-active: build -->
 script
-  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['selection-main'], function(selectionMain) {});
   });
 <!-- endgrunt -->

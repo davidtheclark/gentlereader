@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.db.models import get_model
 import json
 
-Quotation = get_model('anthologist', 'Quotation')
+Quotation = get_model('gentlereader', 'Quotation')
 
 def quotation_all(req):
     result = [ quotation.closure() for quotation in Quotation.objects.all() ]

@@ -2,10 +2,10 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from django.db.models import get_model
 import json
-from anthologist.models import Form, Genre, Context, Topic, Style, Selection, Author, Source
-from anthologist.models.tag import TAG_TYPES
+from gentelreader.models import Form, Genre, Context, Topic, Style, Selection, Author, Source
+from gentelreader.models.tag import TAG_TYPES
 
-Tag = get_model('anthologist', 'Tag')
+Tag = get_model('gentlereader', 'Tag')
 
 def tag_set(req, tag_type, model, modelId):
     mod = get_object_or_404(model, pk=modelId)
@@ -30,7 +30,7 @@ def tag_type_set(x):
 #    (1, 'nation'), (2, 'language'),
 #    (3, 'form'), (4, 'genre'),
 #    (5, 'context'), (6, 'topic'),
-#    (7, 'style')             
+#    (7, 'style')
 #)
 
 def nation_set(req):

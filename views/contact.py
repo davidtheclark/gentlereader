@@ -1,7 +1,7 @@
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
-from anthologist.forms import ContactForm
+from gentlereader.forms import ContactForm
 
 
 def contact(req):

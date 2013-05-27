@@ -5,10 +5,10 @@
 <meta name="description" content=""/>{% endblock %}
 {% block bottomscripts %}
 <!-- grunt-inactive: dev
-<script src="{{ STATIC_URL }}anthologist/scripts/tag-main.js"></script>
+<script src="{{ STATIC_URL }}gentlereader/scripts/tag-main.js"></script>
 <endgrunt>--></endgrunt><!-- grunt-active: build -->
 <script>
-  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['tag-main'], function(tagMain) {});
   });
 </script><!-- endgrunt -->

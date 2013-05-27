@@ -12,7 +12,7 @@ def applyBCE(yr):
 class Author(models.Model):
     class Meta:
         ordering = ['last_name']
-        app_label = 'anthologist'
+        app_label = 'gentlereader'
 
     GENDER_CHOICES = (
         (1, 'male'),

@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
-from anthologist.models import Author, Source, Selection
+from gentelreader.models import Author, Source, Selection
 
 TAG_TYPES = [
     (1, 'nation'), (2, 'language'),
@@ -12,7 +12,7 @@ TAG_TYPES = [
 
 class DictionarySource(models.Model):
     class Meta:
-        app_label = 'anthologist'
+        app_label = 'gentlereader'
 
     name = models.CharField(max_length=200)
     link = models.URLField(max_length=255, blank=True, null=True)
@@ -24,7 +24,7 @@ class DictionarySource(models.Model):
 class Tag(models.Model):
     class Meta:
         ordering = ['name']
-        app_label = 'anthologist'
+        app_label = 'gentlereader'
 
     name = models.CharField(max_length=100, help_text="Lowercase unless it's a proper noun. No punctuation.")
     slug = models.SlugField(unique=True, help_text="Exclude initial articles and punctuation. Use lowercase and hyphenate.")

@@ -16,7 +16,7 @@ def smart_truncate(content, length=400, suffix=''):
 class Announcement(models.Model):
     class Meta:
         ordering = ['-date_entered']
-        app_label = 'anthologist'
+        app_label = 'gentlereader'
 
     date_entered = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=500, null=True)

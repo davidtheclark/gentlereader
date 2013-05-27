@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from anthologist.models import Tag, Author, Selection
+from gentelreader.models import Tag, Author, Selection
 import json
 
 

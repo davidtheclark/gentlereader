@@ -2,7 +2,7 @@
 defunct/
 dumps/
 zips/
-static/anthologist/node_modules/
-static/anthologist/images/originals/
+static/gentlereader/node_modules/
+static/gentlereader/images/originals/
 utils/jade2js
 codekit-config.json

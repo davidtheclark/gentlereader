@@ -252,15 +252,15 @@
       "outputAbbreviatedPath" : "\/footer.html",
       "fileType" : 512
     },
-    "\/jade\/includes\/rand-quot.jade" : {
-      "ignoreWasSetByUser" : 1,
+    "\/jade\/includes\/browse-selections.jade" : {
+      "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/jade\/includes\/rand-quot.jade",
+      "inputAbbreviatedPath" : "\/jade\/includes\/browse-selections.jade",
       "outputStyle" : 0,
       "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/rand-quot.html",
+      "outputAbbreviatedPath" : "\/browse-selections.html",
       "fileType" : 512
     },
     "\/contact.html" : {
@@ -283,16 +283,14 @@
       "outputAbbreviatedPath" : "\/about.html",
       "fileType" : 512
     },
-    "\/jade\/includes\/browse-selections.jade" : {
+    "\/browse.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/jade\/includes\/browse-selections.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/browse-selections.html",
-      "fileType" : 512
+      "inputAbbreviatedPath" : "\/browse.html",
+      "outputAbbreviatedPath" : "\/No Output Path",
+      "fileType" : 2048
     },
     "\/jade\/includes\/browse-announcements.jade" : {
       "ignoreWasSetByUser" : 0,
@@ -305,14 +303,16 @@
       "outputAbbreviatedPath" : "\/browse-announcements.html",
       "fileType" : 512
     },
-    "\/browse.html" : {
-      "ignoreWasSetByUser" : 0,
+    "\/jade\/includes\/rand-quot.jade" : {
+      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/browse.html",
-      "outputAbbreviatedPath" : "\/No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/jade\/includes\/rand-quot.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/rand-quot.html",
+      "fileType" : 512
     },
     "\/highlight.html" : {
       "ignoreWasSetByUser" : 0,

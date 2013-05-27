@@ -3,9 +3,9 @@ from django.db.models import get_model
 import json
 import re
 
-Author = get_model('anthologist', 'Author')
-Selection = get_model('anthologist', 'Selection')
-Tag = get_model('anthologist', 'Tag')
+Author = get_model('gentlereader', 'Author')
+Selection = get_model('gentlereader', 'Selection')
+Tag = get_model('gentlereader', 'Tag')
 
 
 """Produce data that is typeahead.js-ready."""

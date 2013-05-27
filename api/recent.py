@@ -2,8 +2,8 @@ from django.db.models import get_model
 from django.http import HttpResponse
 import json
 
-Selection = get_model('anthologist', 'Selection')
-Announcement = get_model('anthologist', 'Announcement')
+Selection = get_model('gentlereader', 'Selection')
+Announcement = get_model('gentlereader', 'Announcement')
 
 s = Selection.objects.all()
 a = Announcement.objects.all()
@@ -19,4 +19,4 @@ def recent_selections(req):
 
 def recent_announcements(req):
     result_set = [ it.toJSON() for it in a[:10] ]
-    return HttpResponse(json.dumps(result_set), content_type="application/json")    
+    return HttpResponse(json.dumps(result_set), content_type="application/json")

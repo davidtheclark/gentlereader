@@ -1,8 +1,8 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from anthologist.models import Tag, Author, Selection, Source, Announcement
-from anthologist.models.tag import TAG_TYPES
-from anthologist.utils import ignore_articles
+from gentelreader.models import Tag, Author, Selection, Source, Announcement
+from gentelreader.models.tag import TAG_TYPES
+from gentlereader.utils import ignore_articles
 import json
 
 categories = ['selections', 'highlights', 'authors', 'timeline', 'forms', 'genres', 'topics', 'contexts', 'nations', 'languages', 'announcements']

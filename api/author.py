@@ -4,10 +4,10 @@ from django.db.models import get_model
 from tag import tag_set, tag
 import json
 
-Selection = get_model('anthologist', 'Selection')
-Source = get_model('anthologist', 'Source')
-Author = get_model('anthologist', 'Author')
-Quotation = get_model('anthologist', 'Quotation')
+Selection = get_model('gentlereader', 'Selection')
+Source = get_model('gentlereader', 'Source')
+Author = get_model('gentlereader', 'Author')
+Quotation = get_model('gentlereader', 'Quotation')
 
 
 def author_set(req, model, modelId):

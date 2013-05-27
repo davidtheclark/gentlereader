@@ -8,12 +8,12 @@ meta(name="description", content="")
 
 {% block bottomscripts %}
 <!-- grunt-inactive: dev
-script(src="{{ STATIC_URL }}anthologist/scripts/home-main.js")
+script(src="{{ STATIC_URL }}gentlereader/scripts/home-main.js")
 endgrunt -->
 
 <!-- grunt-active: build -->
 script
-  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['home-main'], function(homeMain) {});
   });
 <!-- endgrunt -->{% endblock %}
@@ -61,14 +61,14 @@ script
         p Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive! Just <a href="/contact">visit the contact page</a> and release your long-pent-up flood of ideas. <a href="/contact">Thank God for people like you!</a>
 
       .home-image.home-skeleton(data-picture, data-alt="A skeleton, thinking, at an altar")
-        div(data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking-nr.png", data-media="(min-width: 47.5em)")
-        div(data-src="{{ STATIC_URL }}anthologist/images/skeleton-thinking.png", data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)")
+        div(data-src="{{ STATIC_URL }}gentlereader/images/skeleton-thinking-nr.png", data-media="(min-width: 47.5em)")
+        div(data-src="{{ STATIC_URL }}gentlereader/images/skeleton-thinking.png", data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)")
 
     .home-col-right
 
       .home-image(data-picture, data-alt="A melancholic scholar; a gentle reader")
-        div(data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar-nr.png", data-media="(min-width: 47.5em)")
-        div(data-src="{{ STATIC_URL }}anthologist/images/melancholic-scholar.png", data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)")
+        div(data-src="{{ STATIC_URL }}gentlereader/images/melancholic-scholar-nr.png", data-media="(min-width: 47.5em)")
+        div(data-src="{{ STATIC_URL }}gentlereader/images/melancholic-scholar.png", data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)")
 
       section.subscribe.home-section
         h2.home-subhead Subscribe

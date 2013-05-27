@@ -6,7 +6,7 @@ from source import source, source_set
 from quotation import quotation, quotation_set
 import json
 
-Selection = get_model('anthologist', 'Selection')
+Selection = get_model('gentlereader', 'Selection')
 selection_tags = ['genres', 'contexts', 'topics', 'styles']
 
 def selection_set(req):

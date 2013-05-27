@@ -13,10 +13,10 @@ html(lang="en")
     link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed")
 
     <!-- grunt-inactive: dev
-    link(rel="stylesheet", href="{{ STATIC_URL }}anthologist/style/css/STYLE.css")
+    link(rel="stylesheet", href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css")
     endgrunt -->
     <!-- grunt-active: build -->
-    link(rel="stylesheet", href="{{ STATIC_URL }}anthologist/style/css/style-compressed.css")
+    link(rel="stylesheet", href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css")
     <!-- endgrunt -->
     {% block styles %}{% endblock %}
 
@@ -37,11 +37,11 @@ html(lang="en")
     {% endblock %}
 
     <!-- grunt-inactive: dev
-    script(src="{{ STATIC_URL }}anthologist/scripts/require.js")
-    script(src="{{ STATIC_URL }}anthologist/scripts/common-dev.js")
+    script(src="{{ STATIC_URL }}gentlereader/scripts/require.js")
+    script(src="{{ STATIC_URL }}gentlereader/scripts/common-dev.js")
     endgrunt -->
 
     <!-- grunt-active: build -->
-    script(src="{{ STATIC_URL }}anthologist/build/require.js")
+    script(src="{{ STATIC_URL }}gentlereader/build/require.js")
     <!-- endgrunt -->
     {% block bottomscripts %}{% endblock %}

@@ -3,10 +3,10 @@
 {% block title %} Highlight &#35;{{ h.pk }}, from {{ h.selection.source.author.full_name }} - The Gentle Reader{% endblock %}
 {% block bottomscripts %}
 <!-- grunt-inactive: dev
-<script src="{{ STATIC_URL }}anthologist/scripts/only-hyphenation-main.js"></script>
+<script src="{{ STATIC_URL }}gentlereader/scripts/only-hyphenation-main.js"></script>
 <endgrunt>--></endgrunt><!-- grunt-active: build -->
 <script>
-  require(['{{ STATIC_URL }}anthologist/build/common-build.js'], function(common) {
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['only-hyphenation-main'], function(homeMain) {});
   });
 </script><!-- endgrunt -->

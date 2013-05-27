@@ -35,7 +35,7 @@ def _get_from_display(s, mark):
 class Selection(models.Model):
     class Meta:
         ordering = ['-date_entered']
-        app_label = 'anthologist'
+        app_label = 'gentlereader'
 
     date_entered = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
@@ -53,7 +53,7 @@ class Selection(models.Model):
     topics = models.ManyToManyField('Tag', related_name='topic_selections', blank=True)
     styles = models.ManyToManyField('Tag', related_name='style_selections', blank=True)
     slug = models.SlugField(unique=True, help_text="Use selection title if there is one; otherwise, source title. Exclude initial articles and punctuation. Use lowercase and hyphenate.")
-    stylesheet = models.SlugField(blank=True, null=True, help_text="If this selection requires its own accompanying stylesheet, specify the filename -- which should match the selection's slug, unless there's a good reason. Ensure the file is in static/anthologist/css/selection-specific/.")
+    stylesheet = models.SlugField(blank=True, null=True, help_text="If this selection requires its own accompanying stylesheet, specify the filename -- which should match the selection's slug, unless there's a good reason. Ensure the file is in static/gentlereader/css/selection-specific/.")
 
     def __unicode__(self):
         """If the source has a selection title provided, return it;

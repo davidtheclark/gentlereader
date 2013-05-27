@@ -5,7 +5,7 @@ from ..utils import dumb_to_smart_quotes
 
 class Quotation(models.Model):
     class Meta:
-        app_label = 'anthologist'
+        app_label = 'gentlereader'
 
     selection = models.ForeignKey('Selection')
     quotation = models.TextField()

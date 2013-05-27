@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 
 class Source(models.Model):
     class Meta:
-        app_label = 'anthologist'
+        app_label = 'gentlereader'
 
     author = models.ForeignKey('Author')
     section_title = models.CharField(max_length=500, blank=True, null=True)

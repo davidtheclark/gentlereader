@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>{% block meta %}{% endblock %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed"><!-- grunt-inactive: dev
-    <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/STYLE.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css">
     <endgrunt>--></endgrunt><!-- grunt-active: build -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}anthologist/style/css/style-compressed.css"><!-- endgrunt -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css"><!-- endgrunt -->
     {% block styles %}{% endblock %}
     {% block topscripts %}{% endblock %}
     {% block head %}{% endblock %}
@@ -82,10 +82,10 @@
       </div>
     </footer>{% endblock %}
     <!-- grunt-inactive: dev
-    <script src="{{ STATIC_URL }}anthologist/scripts/require.js"></script>
-    <script src="{{ STATIC_URL }}anthologist/scripts/common-dev.js"></script>
+    <script src="{{ STATIC_URL }}gentlereader/scripts/require.js"></script>
+    <script src="{{ STATIC_URL }}gentlereader/scripts/common-dev.js"></script>
     <endgrunt>--></endgrunt><!-- grunt-active: build -->
-    <script src="{{ STATIC_URL }}anthologist/build/require.js"></script><!-- endgrunt -->
+    <script src="{{ STATIC_URL }}gentlereader/build/require.js"></script><!-- endgrunt -->
     {% block bottomscripts %}{% endblock %}
   </body>
 </html>
