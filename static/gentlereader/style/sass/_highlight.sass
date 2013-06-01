@@ -8,7 +8,7 @@
 
 .hl-about
   font-size: 1.3em
-  margin: 2em 0
+  margin: 2em 0 0
   text-align: center
   a
     border-bottom: none
@@ -16,6 +16,14 @@
     display: block
     &:hover
       color: $c-link-hover
+
+  &:after
+    color: $c-subtle
+    content: "v"
+    display: block
+    font-size: 2em
+    font-family: fellorn
+    margin-top: 0.7em
 
 .hl-links
   +clearfix

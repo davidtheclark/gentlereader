@@ -57,9 +57,16 @@ $s-extras--heading-y: 40px
   float: right
 
 .s-extras--utils-i
-  +button($c-link)
+  border-bottom: 1px dotted $c-link
+  color: $c-link
+  font-size: 0.75em
+  text-transform: uppercase
   &:last-child
     margin-left: 1em
+  &:hover
+    color: $c-link-hover
+    border-bottom-color: $c-link-hover
+
 
 /* selection extras: highlight */
 
@@ -81,7 +88,6 @@ $s-extras--heading-y: 40px
     position: static
 
 .s-highlight--all
-  +right-finger
   font:
     family: $f-base
     size: 0.8em
@@ -89,6 +95,10 @@ $s-extras--heading-y: 40px
   text-transform: uppercase
   a
     position: relative
+
+  &:before
+    content: "1 "
+    font-family: fellorn
 
 /* selection extras: tag list (top and bottom) */
 
@@ -142,7 +152,7 @@ $s-extras--heading-y: 40px
   text-transform: uppercase
 
 .s-text
-  @extend %indented-ps
+  @extend %indented-p
   font-size: 1.2em
   line-height: 1.5
   margin: 1.5em auto 0 auto
@@ -186,10 +196,9 @@ $s-extras--heading-y: 40px
       font-family: $c-base
 
   &:after
-    content: "\2766"
+    content: "a"
     display: block
-    font-family: georgia, serif
-    font-size: 2em
+    font-family: fellorn
     line-height: 0.4
     margin: 0.7em auto 0 auto
     margin-top: 1em
@@ -313,8 +322,8 @@ $s-extras--heading-y: 40px
 
   .s-extras
     float: right
-    margin: 2em 0 2em 2em
-    max-width: 340px
+    min-width: 20em
+    padding: 2em 0 3em 3em
     width: 40%
 
     .uft-group
@@ -327,6 +336,9 @@ $s-extras--heading-y: 40px
         .uft-trigger
           display: none
 
+  .s-tags.u-top
+    margin-top: 1em
+
   .s-tags.u-bottom
     &:before
       background: none
@@ -337,10 +349,11 @@ $s-extras--heading-y: 40px
 
     &:before
       display: block
-      content: "\62"
-      font-family: $f-ornament
-      font-size: 6em
+      content: "N"
+      font-family: fellorn
+      font-size: 2.5em
       line-height: 1
+      margin: 0.75em 0
       text-align: center
 
     &:after

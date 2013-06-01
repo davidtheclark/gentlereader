@@ -4,15 +4,10 @@ section.subscribe.u-footer
   .inner
 
     .subscribe-icons
+      span Hear about new selections
       a(href="#").subscribe-icon.s-icn-rss-sm Subscribe to the RSS Feed
       a(href="#").subscribe-icon.s-icn-twitter-sm Follow us on Twitter
       a(href="#").subscribe-icon.s-icn-facebook-sm Follow us on Facebook
-
-    .footer-subscribe Subscribe
-
-    form.email-form
-      input.email-input(type="email", placeholder="Your email address")
-      input.email-submit.s-envelope(type="submit")
 
 {% endblock %}
 
@@ -26,9 +21,9 @@ footer.site-footer
       li: a(href="/selections").footer-link Selections
       li: a(href="/highlights").footer-link Highlights
       li: a(href="/announcements").footer-link Announcements
-      //li: a(href="#").footer-link Links &amp; Sources
       li: a(href="/contact").footer-link Contact
       li: a(href="#").footer-link.get-copyright-info Copyright Info.
+      li: a(href="https://github.com/MisterGrumpyPants/gentlereader", target="_blank").footer-link Code on Github
 
     .footer-copyright
       .get-copyright-info.x-copyright &times;

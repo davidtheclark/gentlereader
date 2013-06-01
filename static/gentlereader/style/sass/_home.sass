@@ -7,20 +7,28 @@
 
 .home-subhead
   @extend %h--sidebar
-  margin: 1em 0
+  font-size: 2em
+  margin: 1.75em 0 0.5em
   text-align: center
   text-transform: uppercase
 
 // SITE HEADER
 
 .site-header
-  padding: 0 0 1em
+  margin-bottom: 1em
   text-align: center
 
 .site-title
   color: $c-emphatic
-  margin-bottom: 1em
+  padding: 0 0 1em
   text-align: center
+  +breakpoint(desktop)
+    border-bottom: double 15px $c-emphatic
+    border-top: double 15px $c-emphatic
+    font-size: 1.3em
+    margin: 1em 0 2.5em
+    padding: 1.3em 0
+    text-align: center
 
 .site-title-the
   font-size: 2.5em
@@ -63,7 +71,6 @@
 
   +breakpoint(desktop)
     font-size: 1.4em
-    text-align: left
 
 .site-header-more
   @extend %dingled
@@ -77,16 +84,20 @@
 // SEARCH
 
 .home-search-container
-  border-bottom: $bar2
-  border-top: $bar2
+  background: whitesmoke
+  border-radius: 8px
   padding: 1em 0
-  text-align: center
+  position: relative
+  .search-form
+    width: 90%
+
+
 
 
 // Lower regions
 
 .home-section
-  margin: 2em 0
+  margin: 3em 0
 
 
 // BROWSE
@@ -114,42 +125,24 @@
 
 // SUBSCRIBE
 
-.email-form
-  position: relative
-
-.email-input,
-.email-submit
-  @extend %styled-input
-
-.email-input
-  padding-right: 40px
-  width: 10em
-
-.email-submit
-  +hide-text
-  +appearance(none)
-  background-color: transparent
-  border: none
-  position: absolute
-  top: 0
-  right: 5px
-
-
 .subscribe,
 .contribute
   text-align: center
 
+.subscribe-icons
+  display: inline-block
+  margin: 0 auto
+
 .subscribe-icon
   +hide-text
+  +transition(all $trans-time)
   border-bottom: none
-  display: inline-block
+  border-radius: 100%
+  float: left
   margin: 0 5px
-
-
-.home-image img
-  display: block
-  margin: 0 auto
-  max-width: 100%
+  &:hover
+    background-color: $c-emphatic
+    box-shadow: 0 0 10px $c-emphatic
 
 .home-footer-padding
   margin-top: 2em
@@ -158,13 +151,6 @@
 +breakpoint(desktop)
 
   // heading
-
-  .site-title
-    border-bottom: double 15px $c-emphatic
-    border-top: double 15px $c-emphatic
-    font-size: 1.3em
-    margin: 1em 0 1.5em
-    text-align: center
 
   .site-title-the
     &:before,
@@ -204,10 +190,39 @@
     .home-subhead,
     .rq-title
       font-size: 25px
-      border-bottom: $bar
+      border-bottom: 1px solid $c-bd
       margin-top: 0
       padding-bottom: 0.3em
       text-align: center
       text-transform: uppercase
     .rq-body
       width: 100%
+
+
+// IMAGES
+
++breakpoint(desktop)
+
+  .home-scholar
+    background: url("../../images/melancholic-scholar-nr.png") no-repeat center center
+    background-size: contain
+    padding-top: 128%
+    +hidpi(1.5)
+      background-image: url("../../images/melancholic-scholar.png")
+
+  .home-skeleton
+    background: url("../../images/skeleton-thinking-nr.png") no-repeat center bottom
+    background-size: contain
+    padding-bottom: 97%
+    position: absolute
+    bottom: 0
+    left: 2%
+    width: 50%
+    z-index: -1
+    +hidpi(1.5)
+      background-image: url("../../images/skeleton-thinking.png")
+
+  .home-col-left:after
+    content: ""
+    display: block
+    padding-top: 88%

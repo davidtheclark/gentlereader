@@ -7,7 +7,7 @@ with (locals || {}) {
 var interp;
 var __indent = [];
 buf.push('<a');
-buf.push(attrs({ 'href':("/highlights/" + (quotation.id) + ""), "class": ('rq-text') }, {"href":true}));
+buf.push(attrs({ 'href':("/highlights/" + (quotation.id) + ""), "class": ('rq-text') + ' ' + ('hyphenate') }, {"href":true}));
 buf.push('>');
 var __val__ = quotation.quotation
 buf.push(null == __val__ ? "" : __val__);

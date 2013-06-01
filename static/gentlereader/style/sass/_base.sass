@@ -37,6 +37,17 @@ h3
 b
   font-weight: normal
 
+input[type="search"],
+input[type="email"],
+input[type="text"],
+textarea
+  +appearance(none)
+  +transition(all 0.4s)
+  outline: none
+  &:hover,
+  &:active
+    box-shadow: 0 0 7px $c-emphatic
+
 
 // LAYOUT
 
@@ -60,6 +71,8 @@ b
 .poetry-line
   +hanging-indent(1em)
   display: block
+  font-family: Georgia, serif
+  font-size: 0.85em
 
 .poetry-stanza
   margin-bottom: 1em

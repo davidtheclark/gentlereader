@@ -29,7 +29,7 @@
       <h2 class="s-authordate">
         {% with author=selection.get_author year=selection.source.pub_year %}
         <a href="/authors/{{ source.author.slug }}" title="Author: {{ author }}" rel="author">
-        {{ author }}</a> &mdash; <a href="/timeline&#35;{{ year }}" title="Published in {{ year }}">
+        {{ author }}</a> &mdash; <a href="/timeline#{{ year }}" title="Published in {{ year }}">
         {{ year }}</a>
         {% endwith %}
       </h2>{% with from=selection.from_display trans=source.translator %}
@@ -59,7 +59,7 @@
             <li class="s-highlight--li u-active">{{ q.get_quotation }}</li>{% else %}
             <li class="s-highlight--li u-inactive">{{ q.get_quotation }}</li>{% endif %}
             {% endfor %}
-            <div class="s-highlight--li u-inactive s-highlight--all"><a href="/highlights/&amp;#35;{{ selection.source.author.slug }}">see all the highlights from this selection</a></div>
+            <div class="s-highlight--li u-inactive s-highlight--all"><a href="/highlights/#{{ selection.source.author.slug }}">see all the highlights from this selection</a></div>
           </ul>
         </div>
       </li>
@@ -123,7 +123,7 @@
           </ul>
         </div>{% endfor %}
       </div>
-      <div class="s-highlight--timeline">See selections that surround this one in <a href="/timeline/&#35;{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.</div>
+      <div class="s-highlight--timeline">See selections that surround this one in <a href="/timeline/#{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.</div>
     </div>
     <div class="s-postscript--col u-first">
       <!--related selections-->

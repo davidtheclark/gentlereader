@@ -50,6 +50,25 @@
     &:after
       border-top-color: $c-link-hover
 
+// images
+
++breakpoint(desktop)
+
+  .bibliomaniac-image
+    background: url("../../images/bibliomaniac-nr.png") no-repeat center center
+    background-size: contain
+    padding-bottom: 128%
+    +hidpi(1.5)
+      background-image: url("../../images/bibliomaniac.png")
+
+  .skelscholar-image
+    background: url("../../images/skeleton-scholar-nr.png") no-repeat center center
+    background-size: contain
+    padding-bottom: 134%
+    +hidpi(1.5)
+      background-image: url("../../images/skeleton-scholar.png")
+
+
 .main-image img
   margin: 0 auto
   max-width: 100%

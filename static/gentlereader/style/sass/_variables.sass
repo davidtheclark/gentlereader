@@ -26,9 +26,10 @@ $c-base: black
 $c-emphatic: #c00b0b
 $c-subtle: #6D6D6D
 $c-standout: #7DBEBE
-$c-link: #7165C7
-$c-link-hover: lighten($c-link, 15)
+$c-link: #178b8b
+$c-link-hover: #088a08
 $c-weird: #3a5308
+$c-bd: #bdbdbd
 
 
 // DECORATIONS
@@ -49,100 +50,8 @@ $m-selection-xlg: 51.25em
 $middot: "\00b7"
 $flower: "\274b"
 
-// MIX-INS
-
-
-=dot-leaders
-  float: left
-  width: 0
-  white-space: nowrap
-  font-style: normal
-  font-weight: normal
-  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-
-
-=dot-leader-list($background)
-  overflow-x: hidden
-  overflow-y: hidden
-  li
-    padding-bottom: 0.1em
-    &:before
-      +dot-leaders
-    & span
-      background: $background
-      // solve a problem with i0S browsers seeing a dot to the right of the word
-      padding-right: 0.3em
-      margin-right: -0.2em
-
-%reverse-italics
-  em,
-  cite,
-  i,
-  .inline-translation
-    font-style: normal
-
-%indented-ps
-  p:not(.poetry-line)
-    margin: 0
-    text-indent: 20px
-    &:first-child
-      text-indent: 0
-
-=button($color: $c-base, $hover: $c-emphatic)
-  border-bottom: 2px solid $color
-  color: $color
-  font:
-    size: 0.8em
-  text-transform: uppercase
-  &:hover
-    +transition( (color $trans-time, border-bottom-color $trans-time) )
-    border-bottom-color: $hover
-    color: $hover
-
 $trans-time: 0.3s ease-in
 
-=dot-link()
-  $x: 40px
-  border-bottom: $bar
-  color: $c-base
-  font:
-    family: $f-heading
-    size: 1.2em
-    style: italic
-  line-height: 1.5
-  display: block
-  padding: 0.5em 0.5em
-  text-indent: -$x
-  padding-left: $x
-  &:first-child
-    border-top: $bar
-
-  &:before
-    content: "\25CE"
-    display: block
-    float: left
-    font-style: normal
-    width: $x
-
-  &:hover
-    border-bottom-color: $c-base !important
-
-%styled-input
-  border: 1px solid $c-subtle
-  border-radius: 5px
-  min-height: 35px
-  padding: 5px
-  +placeholder
-    font:
-      family: $f-heading
-      size: 1.1em
-      style: italic
-
-%dingled
-  display: inline-block
-  &:before,
-  &:after
-    content: "\00a0--\00a0"
 
 
 // WEIRD STUFF CORRECTION

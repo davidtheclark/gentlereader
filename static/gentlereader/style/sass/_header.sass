@@ -73,6 +73,22 @@ $nav-y: 56px
 
 .fixed-back
   display: none
+  cursor: pointer
+  height: $nav-y
+  line-height: $nav-y
+  position: absolute
+  top: 0
+  right: 0.5em
+  &:after
+    +arrow($direction: up)
+    margin-left: 0.2em
+  &:hover
+    color: $c-emphatic
+    &:after
+      +transition(border-bottom-color $trans-time)
+      border-bottom-color: $c-emphatic
+  @media (min-width: $m-selection-xlg)
+    display: block
 
 
 /* browse subnav */
@@ -153,7 +169,7 @@ $subnav-background: whitesmoke
   position: absolute
   bottom: 0
   right: 0
-  padding-right: 0.5em
+  padding-left: 0.2em
 
 
 // search
@@ -220,26 +236,6 @@ $subnav-background: whitesmoke
 
   .content
     margin-top: $nav-y
-
-
-@media (min-width: $m-selection-xlg)
-  .fixed-back,
-  .fixed-back:visited
-    color: $c-base
-    display: block
-    height: $nav-y
-    line-height: $nav-y
-    position: absolute
-    top: 0
-    right: 0.5em
-    &:after
-      +arrow($direction: up)
-      margin-left: 0.2em
-    &:hover
-      color: $c-emphatic
-      &:after
-        +transition(border-bottom-color $trans-time)
-        border-bottom-color: $c-emphatic
 
 /* iPads in landscape ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)

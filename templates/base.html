@@ -22,7 +22,8 @@
           <li class="site-nav--li nav-browse">Browse</li>
           <li class="site-nav--li nav-search">Search</li>
         </ul>
-      </nav><a href="#" class="fixed-back">(top)</a>
+      </nav>
+      <div id="toTop" class="fixed-back">(top)</div>
       <div class="subnav-browse--container">
         <div class="subnav-browse--inner">
           <div class="subnav-browse--h"><span class="subnav-browse--close u-top">&times;</span>Contents</div>
@@ -53,12 +54,7 @@
     {% block footer %}{% block footer-subscribe %}
     <section class="subscribe u-footer">
       <div class="inner">
-        <div class="subscribe-icons"><a href="#" class="subscribe-icon s-icn-rss-sm">Subscribe to the RSS Feed</a><a href="#" class="subscribe-icon s-icn-twitter-sm">Follow us on Twitter</a><a href="#" class="subscribe-icon s-icn-facebook-sm">Follow us on Facebook</a></div>
-        <div class="footer-subscribe">Subscribe</div>
-        <form class="email-form">
-          <input type="email" placeholder="Your email address" class="email-input">
-          <input type="submit" class="email-submit s-envelope">
-        </form>
+        <div class="subscribe-icons"><span>Hear about new selections</span><a href="#" class="subscribe-icon s-icn-rss-sm">Subscribe to the RSS Feed</a><a href="#" class="subscribe-icon s-icn-twitter-sm">Follow us on Twitter</a><a href="#" class="subscribe-icon s-icn-facebook-sm">Follow us on Facebook</a></div>
       </div>
     </section>{% endblock %}
     <footer class="site-footer">
@@ -68,9 +64,9 @@
           <li><a href="/selections" class="footer-link">Selections</a></li>
           <li><a href="/highlights" class="footer-link">Highlights</a></li>
           <li><a href="/announcements" class="footer-link">Announcements</a></li>
-          <!--li: a(href="#").footer-link Links &amp; Sources-->
           <li><a href="/contact" class="footer-link">Contact</a></li>
           <li><a href="#" class="footer-link get-copyright-info">Copyright Info.</a></li>
+          <li><a href="https://github.com/MisterGrumpyPants/gentlereader" target="_blank" class="footer-link">Code on Github</a></li>
         </ul>
         <div class="footer-copyright">
           <div class="get-copyright-info x-copyright">&times;</div>

@@ -71,6 +71,8 @@ script
         li: a(href="/{{ category }}")
           {% if category == "languages" %}
           | orig. languages
+          {% elif category == "announcements" %}
+          | announce&shy;ments
           {% else %}
           | {{ category }}
           {% endif %}

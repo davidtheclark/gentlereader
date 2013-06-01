@@ -65,6 +65,7 @@
   +breakpoint(desktop)
     float: right
     overflow: visible
+    padding-left: 10%
     width: 45%
 
 .other-browse
@@ -73,15 +74,13 @@
   li
     float: left
     font-size: 1.2em
+    padding: 0 5px 0 15px
     text-transform: capitalize
     width: 50%
 
     &:before
-      content: "~\00a0"
-
-  +breakpoint(desktop)
-    float: right
-    width: 90%
+      content: "~"
+      margin-left: -15px
 
 
 +breakpoint(desktop)

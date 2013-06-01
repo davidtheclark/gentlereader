@@ -41,11 +41,11 @@
   background: white
   display: none
   font-size: 1em
-  margin: 20px auto 0 auto
+  margin: 1.5em auto 0 auto
   overflow: hidden
   padding: 1.5em
   position: absolute
-  top: -1000px
+  top: -2000px
   left: 5%
   right: 5%
   width: 90%
@@ -68,6 +68,7 @@
   +breakpoint(desktop)
     left: 0
     right: 0
+    width: 100%
     margin-right: 0
     opacity: 1
     padding: 0
@@ -81,7 +82,7 @@
   font:
     size: 1.5em
     variant: small-caps
-  border-bottom: $bar
+  border-bottom: 1px solid $c-bd
   margin-bottom: 0.75em
 
   +breakpoint(desktop)
@@ -91,7 +92,7 @@
   position: relative
 
 a.rq-text
-  @extend %indented-ps
+  @extend %indented-p
   +transition(color 0.3s linear)
   border-bottom: none
   color: $c-subtle
@@ -101,7 +102,7 @@ a.rq-text
   font-size: 1.3em
   margin-bottom: 0.6em
   &:hover
-    color: $c-base
+    color: $c-base !important
 
 .rq-citation
   font-size: 1.2em
@@ -122,6 +123,7 @@ a.rq-text
 
 .rq-another
   +two-borders(x, $bar)
+  @extend %dingled
   cursor: pointer
   padding: 0.5em
   text-align: center

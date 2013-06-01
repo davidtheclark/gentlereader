@@ -15,27 +15,21 @@ $icn-y: 62px
   .subscribe-icons
     +clearfix
     float: right
-    font-size: 0
-    line-height: 0
+    span
+      color: $c-subtle
+      display: none
+      font-family: $f-heading
+      font-size: 1.2em
+      font-style: italic
+      margin-right: 0.3em
+      vertical-align: middle
+      @media (min-width: 34.375em)
+        display: inline-block
 
   .subscribe-icon
     display: inline-block
-
-
-  .footer-subscribe,
-  .email-form
-    display: inline-block
+    float: none
     vertical-align: middle
-
-  .footer-subscribe
-    font-family: $f-heading
-    font-size: 1.2em
-    margin-right: 0.3em
-    text-transform: uppercase
-
-  .email-form
-    .email-input
-      width: 16em
 
 .site-footer
   +clearfix
@@ -75,8 +69,9 @@ $icn-y: 62px
 
 .footer-about
   display: inline-block
-  &:after
-    content: "\00a0\00bb"
+  &:before
+    content: "1 "
+    font-family: fellorn
 
 .footer-links
   +clearfix
@@ -131,7 +126,6 @@ $icn-y: 62px
     text-align: center
     .subscribe-icons
       float: none
-      margin-bottom: 10px
 
 +breakpoint(desktop)
 

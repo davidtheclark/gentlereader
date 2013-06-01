@@ -1,4 +1,4 @@
-a(href="/highlights/#{quotation.id}").rq-text!= quotation.quotation
+a(href="/highlights/#{quotation.id}").rq-text.hyphenate!= quotation.quotation
 
 .rq-citation: a(href="/selections/#{selection.slug}")
   | &mdash; from "#{selection.title}" by #{selection.author}&nbsp;(#{selection.pub_year})

@@ -7,16 +7,8 @@ meta(name="description", content="")
 {% endblock %}
 
 {% block bottomscripts %}
-<!-- grunt-inactive: dev
-script(src="{{ STATIC_URL }}gentlereader/scripts/home-main.js")
-endgrunt -->
-
-<!-- grunt-active: build -->
-script
-  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
-    require(['home-main'], function(homeMain) {});
-  });
-<!-- endgrunt -->{% endblock %}
+include includes/only-highlight-script.jade
+{% endblock %}
 
 {% block header %}{% endblock %}
 
@@ -42,7 +34,7 @@ script
 
       .home-search-container
         form.search-form
-          input.search-input(type="search", placeholder="Search")
+          input.search-input(type="search", placeholder="Search for a title, author, topic, &c.")
           input.search-submit.s-search(type="submit", value="Submit")
 
       section.recent.home-section#recent-additions
@@ -58,28 +50,22 @@ script
 
       section.contribute.home-section
         h2.home-subhead Contribute
-        p Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive! Just <a href="/contact">visit the contact page</a> and release your long-pent-up flood of ideas. <a href="/contact">Thank God for people like you!</a>
+        p.regtxt Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive. Just <a href="/contact">visit the contact page</a> and release your long-pent-up flood of ideas. <a href="/contact">Thank God for people like you.</a>
 
-      .home-image.home-skeleton(data-picture, data-alt="A skeleton, thinking, at an altar")
-        div(data-src="{{ STATIC_URL }}gentlereader/images/skeleton-thinking-nr.png", data-media="(min-width: 47.5em)")
-        div(data-src="{{ STATIC_URL }}gentlereader/images/skeleton-thinking.png", data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)")
+      .home-skeleton
 
     .home-col-right
 
-      .home-image(data-picture, data-alt="A melancholic scholar; a gentle reader")
-        div(data-src="{{ STATIC_URL }}gentlereader/images/melancholic-scholar-nr.png", data-media="(min-width: 47.5em)")
-        div(data-src="{{ STATIC_URL }}gentlereader/images/melancholic-scholar.png", data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)")
+      .home-scholar
 
       section.subscribe.home-section
         h2.home-subhead Subscribe
-        p As <cite>The Gentle Reader</cite> grows, you can receive <em>regular installations</em> of newly added <span class="s-cap">selections</span>&nbsp;.&nbsp;.&nbsp;. by email, RSS, Twitter, or Facebook.
-        form.email-form
-          input.email-input(type="email", placeholder="Your email address")
-          input.email-submit(type="submit", value="Do it")
+        p.regtxt As <cite>The Gentle Reader</cite> grows, you stay updated with <em>regular installations</em> of newly added <span class="s-cap">selections</span> &mdash; by RSS, Twitter (<a href="https://twitter.com/aGentleTweeter" target="_blank">@aGentleTweeter</a>), or Facebook.
+
         .subscribe-icons
-          a(href="#").subscribe-icon.s-icn-rss Subscribe to the RSS Feed
-          a(href="#").subscribe-icon.s-icn-twitter Follow us on Twitter
-          a(href="#").subscribe-icon.s-icn-facebook Follow us on Facebook
+          a(href="/feed", target="_blank").subscribe-icon.s-icn-rss Subscribe to the RSS Feed
+          a(href="https://twitter.com/aGentleTweeter", title="@aGentleTweeter", target="_blank").subscribe-icon.s-icn-twitter Follow us on Twitter
+          a(href="#", target="_blank").subscribe-icon.s-icn-facebook Follow us on Facebook
 
 
       nav#home-browse.home-nav-container.home-section

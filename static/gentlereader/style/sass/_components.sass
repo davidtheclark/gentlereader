@@ -1,0 +1,87 @@
+=dot-leaders
+  float: left
+  line-height: 1.2
+  width: 0
+  white-space: nowrap
+  font-style: normal
+  font-weight: normal
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+
+=dot-leader-list($background)
+  overflow-x: hidden
+  overflow-y: hidden
+  li
+    padding-bottom: 0.2em
+    &:before
+      +dot-leaders
+    & span
+      background: $background
+      // solve a problem with i0S browsers seeing a dot to the right of the word
+      padding-right: 0.3em
+      margin-right: -0.2em
+
+%reverse-italics
+  em,
+  cite,
+  i,
+  .inline-translation
+    font-style: normal
+
+%indented-p
+  p:not(.poetry-line)
+    margin: 0
+    text-indent: 20px
+    &:first-child
+      text-indent: 0
+
+=dot-link()
+  $x: 40px
+  border-bottom: $bar
+  color: $c-base
+  font:
+    family: $f-heading
+    size: 1.2em
+    style: italic
+  line-height: 1
+  display: block
+  padding: 0.5em 0
+  text-indent: -$x
+  padding-left: $x + 10px
+  &:first-of-type
+    border-top: $bar
+
+  &:before
+    content: "c"
+    display: block
+    font-family: fellorn
+    font-size: 3em
+    float: left
+    font-style: normal
+    max-height: 1px
+    width: $x
+
+  &:hover
+    border-bottom-color: $c-base !important
+
+%styled-input
+  border: 1px solid $c-subtle
+  border-radius: 5px
+  min-height: 35px
+  padding: 5px
+  +placeholder
+    font:
+      family: $f-heading
+      size: 1.1em
+      style: italic
+
+%dingled
+  &:before,
+  &:after
+    font-family: "fellorn" !important
+    font-style: normal
+    margin: 0 0.5em
+    vertical-align: bottom
+  &:before
+    content: "\006a"
+  &:after
+    content: "\006b"

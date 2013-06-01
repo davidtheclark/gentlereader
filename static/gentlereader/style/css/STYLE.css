@@ -168,31 +168,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /*======================================================*/
 /* MIX-INS */
 /* down arrow: &#9660; or small &#9662; up arrow: &#9650; or small &#9652; left arrow: &#9668; or small &#9666; right arrow: &#9654; or small &#9656; */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000378}}
-.teaser-text em, .teaser-text cite, .teaser-text i, .teaser-text .inline-translation { font-style: normal; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000385}}
-.s-highlight--text p:not(.poetry-line), .hl-body p:not(.poetry-line), a.rq-text p:not(.poetry-line), .s-text p:not(.poetry-line), .ann-text p:not(.poetry-line), .teaser-text p:not(.poetry-line), .quotation-text p:not(.poetry-line) { margin: 0; text-indent: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000388}}
-.s-highlight--text p:not(.poetry-line):first-child, .hl-body p:not(.poetry-line):first-child, a.rq-text p:not(.poetry-line):first-child, .s-text p:not(.poetry-line):first-child, .ann-text p:not(.poetry-line):first-child, .teaser-text p:not(.poetry-line):first-child, .quotation-text p:not(.poetry-line):first-child { text-indent: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003130}}
-#contact-form input:not(#recaptcha_response_field), #contact-form textarea, .email-input, .email-submit, .search-input, .tt-hint { border: 1px solid #6d6d6d; border-radius: 5px; min-height: 35px; padding: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/css3\/_placeholder\.scss}line{font-family:\000038}}
-#contact-form input:not(#recaptcha_response_field)::-webkit-input-placeholder, #contact-form textarea::-webkit-input-placeholder, .email-input::-webkit-input-placeholder, .email-submit::-webkit-input-placeholder, .search-input::-webkit-input-placeholder, .tt-hint::-webkit-input-placeholder { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; font-style: italic; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/css3\/_placeholder\.scss}line{font-family:\0000314}}
-#contact-form input:-moz-placeholder:not(#recaptcha_response_field), #contact-form textarea:-moz-placeholder, .email-input:-moz-placeholder, .email-submit:-moz-placeholder, .search-input:-moz-placeholder, .tt-hint:-moz-placeholder { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; font-style: italic; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/css3\/_placeholder\.scss}line{font-family:\0000319}}
-#contact-form input:not(#recaptcha_response_field)::-moz-placeholder, #contact-form textarea::-moz-placeholder, .email-input::-moz-placeholder, .email-submit::-moz-placeholder, .search-input::-moz-placeholder, .tt-hint::-moz-placeholder { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; font-style: italic; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/css3\/_placeholder\.scss}line{font-family:\0000324}}
-#contact-form input:-ms-input-placeholder:not(#recaptcha_response_field), #contact-form textarea:-ms-input-placeholder, .email-input:-ms-input-placeholder, .email-submit:-ms-input-placeholder, .search-input:-ms-input-placeholder, .tt-hint:-ms-input-placeholder { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; font-style: italic; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003141}}
-.subnav-browse--close.u-bottom, .close-copyright, .site-header-more { display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003143}}
-.subnav-browse--close.u-bottom:before, .close-copyright:before, .site-header-more:before, .subnav-browse--close.u-bottom:after, .close-copyright:after, .site-header-more:after { content: "\00a0--\00a0"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000359}}
 b, strong { line-height: 1; }
 
 @font-face { font-family: "IM Fell English"; font-weight: normal; font-style: italic; src: url("../fonts/imfellenglish/imfeenit28p-webfont.eot"); src: url("../fonts/imfellenglish/imfeenit28p-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/imfellenglish/imfeenit28p-webfont.woff") format("woff"), url("../fonts/imfellenglish/imfeenit28p-webfont.ttf") format("truetype"), url("../fonts/imfellenglish/imfeenit28p-webfont.svg#IM Fell English") format("svg"); }
@@ -203,39 +179,71 @@ b, strong { line-height: 1; }
 
 @font-face { font-family: "Crimson"; font-weight: normal; font-style: italic; src: url("../fonts/crimson/crimson-italic-webfont.eot"); src: url("../fonts/crimson/crimson-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimson/crimson-italic-webfont.woff") format("woff"), url("../fonts/crimson/crimson-italic-webfont.ttf") format("truetype"), url("../fonts/crimson/crimson-italic-webfont.svg#Crimson") format("svg"); }
 
-@font-face { font-family: "ornaments"; font-weight: normal; font-style: normal; src: url("../fonts/ornaments/ornaments.eot"); src: url("../fonts/ornaments/ornaments.eot?#iefix") format("embedded-opentype"), url("../fonts/ornaments/ornaments.woff") format("woff"), url("../fonts/ornaments/ornaments.ttf") format("truetype"), url("../fonts/ornaments/ornaments.svg#ornaments") format("svg"); }
+@font-face { font-family: "fellorn"; font-weight: normal; font-style: normal; src: url("../fonts/fell-flowers/imfellorn-custom.eot"); src: url("../fonts/fell-flowers/imfellorn-custom.eot?#iefix") format("embedded-opentype"), url("../fonts/fell-flowers/imfellorn-custom.woff") format("woff"), url("../fonts/fell-flowers/imfellorn-custom.ttf") format("truetype"), url("../fonts/fell-flowers/imfellorn-custom.svg#fellorn") format("svg"); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000315}}
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000323}}
 .s-title, .s-postscript--h3, .search-page-category, .h2, .rq-title, .browse-h, .search-h { color: #c00b0b; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000328}}
 .s-title { font-size: 2.7em; font-variant: small-caps; line-height: 1.1; margin: 0 0 0.5em 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000336}}
 .s-extras--title, .home-subhead, #about h3, .s-authordate, .search-query, #about h2 { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.6em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000341}}
 .s-extras--title, .home-subhead, #about h3 { color: #c00b0b; font-variant: small-caps; margin-bottom: 0.1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000347}}
 .s-postscript--h3, .search-page-category { border-bottom: 1px dotted #c00b0b; margin-top: 1em; margin-bottom: 0.5em; font-size: 1.2em; text-transform: uppercase; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000363}}
 .s-highlight--text, .hl-body { color: #6d6d6d; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.5em; line-height: 1.4; position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000371}}
+.regtxt { font-size: 1.07em; line-height: 1.5; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000378}}
 .s-extras, .highlight-adjustors { *zoom: 1; margin: 1.25em auto 0 auto; max-width: 500px; overflow: hidden; position: relative; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .s-extras:before, .highlight-adjustors:before, .s-extras:after, .highlight-adjustors:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .s-extras:after, .highlight-adjustors:after { clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000377}}
-.s-extras--trigger, .hl-adjustor { border-bottom: double 4px black; border-top: double 4px black; color: #7165c7; cursor: pointer; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.13em; font-style: italic; float: left; height: 40px; line-height: 35px; text-align: center; width: 50%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000387}}
+.s-extras--trigger, .hl-adjustor { border-bottom: double 4px black; border-top: double 4px black; color: #178b8b; cursor: pointer; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.13em; font-style: italic; float: left; height: 40px; line-height: 35px; text-align: center; width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\00003101}}
 .u-left.s-extras--trigger:not(.u-wide), .u-left.hl-adjustor:not(.u-wide) { border-right: 1px solid black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_typography\.sass}line{font-family:\00003104}}
 .s-extras--trigger:hover, .hl-adjustor:hover { -webkit-transition: color 0.3s ease-in, background-color 0.3s ease-in; -moz-transition: color 0.3s ease-in, background-color 0.3s ease-in; transition: color 0.3s ease-in, background-color 0.3s ease-in; background-color: whitesmoke; color: #c00b0b; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000324}}
+.teaser-text em, .teaser-text cite, .teaser-text i, .teaser-text .inline-translation { font-style: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000331}}
+.s-highlight--text p:not(.poetry-line), .hl-body p:not(.poetry-line), a.rq-text p:not(.poetry-line), .s-text p:not(.poetry-line), .ann-text p:not(.poetry-line), .teaser-text p:not(.poetry-line), .quotation-text p:not(.poetry-line) { margin: 0; text-indent: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000334}}
+.s-highlight--text p:not(.poetry-line):first-child, .hl-body p:not(.poetry-line):first-child, a.rq-text p:not(.poetry-line):first-child, .s-text p:not(.poetry-line):first-child, .ann-text p:not(.poetry-line):first-child, .teaser-text p:not(.poetry-line):first-child, .quotation-text p:not(.poetry-line):first-child { text-indent: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000366}}
+#contact-form input:not(#recaptcha_response_field), #contact-form textarea, .search-input, .tt-hint { border: 1px solid #6d6d6d; border-radius: 5px; min-height: 35px; padding: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/css3\/_placeholder\.scss}line{font-family:\000038}}
+#contact-form input:not(#recaptcha_response_field)::-webkit-input-placeholder, #contact-form textarea::-webkit-input-placeholder, .search-input::-webkit-input-placeholder, .tt-hint::-webkit-input-placeholder { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/css3\/_placeholder\.scss}line{font-family:\0000314}}
+#contact-form input:-moz-placeholder:not(#recaptcha_response_field), #contact-form textarea:-moz-placeholder, .search-input:-moz-placeholder, .tt-hint:-moz-placeholder { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/css3\/_placeholder\.scss}line{font-family:\0000319}}
+#contact-form input:not(#recaptcha_response_field)::-moz-placeholder, #contact-form textarea::-moz-placeholder, .search-input::-moz-placeholder, .tt-hint::-moz-placeholder { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/css3\/_placeholder\.scss}line{font-family:\0000324}}
+#contact-form input:-ms-input-placeholder:not(#recaptcha_response_field), #contact-form textarea:-ms-input-placeholder, .search-input:-ms-input-placeholder, .tt-hint:-ms-input-placeholder { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; font-style: italic; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000378}}
+.subnav-browse--close.u-bottom:before, .close-copyright:before, .rq-another:before, .site-header-more:before, .subnav-browse--close.u-bottom:after, .close-copyright:after, .rq-another:after, .site-header-more:after { font-family: "fellorn" !important; font-style: normal; margin: 0 0.5em; vertical-align: bottom; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000384}}
+.subnav-browse--close.u-bottom:before, .close-copyright:before, .rq-another:before, .site-header-more:before { content: "\006a"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000386}}
+.subnav-browse--close.u-bottom:after, .close-copyright:after, .rq-another:after, .site-header-more:after { content: "\006b"; }
 
 /* sitewide */
 /* glue: 0.3 hash: 7d5f817d8f */
@@ -281,9 +289,9 @@ body { background: white; font-family: "Crimson", Georgia, "Times New Roman", Ti
 ul { list-style: none; margin: 0; padding: 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000323}}
-a, a:visited { border-bottom: 1px dotted transparent; color: #7165c7; text-decoration: none; }
+a, a:visited { border-bottom: 1px dotted transparent; color: #178b8b; text-decoration: none; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000328}}
-a:hover, a:visited:hover { border-bottom-color: #a59ddb; color: #a59ddb; }
+a:hover, a:visited:hover { border-bottom-color: #088a08; color: #088a08; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000332}}
 h1, h2, h3 { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; }
@@ -291,36 +299,41 @@ h1, h2, h3 { font-family: "IM Fell English", Georgia, "Times New Roman", Times, 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000337}}
 b { font-weight: normal; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000340}}
+input[type="search"], input[type="email"], input[type="text"], textarea { -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; -webkit-transition: all 0.4s; -moz-transition: all 0.4s; transition: all 0.4s; outline: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000347}}
+input[type="search"]:hover, input[type="search"]:active, input[type="email"]:hover, input[type="email"]:active, input[type="text"]:hover, input[type="text"]:active, textarea:hover, textarea:active { box-shadow: 0 0 7px #c00b0b; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000354}}
 .content { *zoom: 1; margin: 0 auto; max-width: 940px; padding: 1.5em 1.2em 0 1.2em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .content:before, .content:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .content:after { clear: both; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000343}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000354}}
   .content { padding: 2.5em 1.5em 0 1.5em; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000367}}
 .h2 { text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000360}}
-.poetry-line { text-indent: -1em; margin: 0 0 0 1em; display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000371}}
+.poetry-line { text-indent: -1em; margin: 0 0 0 1em; display: block; font-family: Georgia, serif; font-size: 0.85em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000377}}
 .poetry-stanza { margin-bottom: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000380}}
 .bce { font-size: 0.6em; text-transform: uppercase; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000386}}
 .ellipsis { font-style: normal; font-size: 0.7em; white-space: nowrap; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000391}}
 .inline-translation { font-style: normal; font-variant: small-caps; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000396}}
 .indented-paragraphs p { margin-bottom: 0; text-indent: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_base\.sass}line{font-family:\0000399}}
 .indented-paragraphs p:first-child { text-indent: 0; }
 
 /* pages and modules */
@@ -366,87 +379,87 @@ b { font-weight: normal; }
 .title-reader { display: block; letter-spacing: 0.46em; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000374}}
-.fixed-back { display: none; }
+.fixed-back { display: none; cursor: pointer; height: 56px; line-height: 56px; position: absolute; top: 0; right: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000382}}
+.fixed-back:after { margin-bottom: 3px; content: ""; display: inline-block; height: 0; width: 0; border-style: solid; border-color: transparent; border-width: 5px; border-bottom-color: black; margin-left: 0.2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000385}}
+.fixed-back:hover { color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000387}}
+.fixed-back:hover:after { -webkit-transition: border-bottom-color 0.3s ease-in; -moz-transition: border-bottom-color 0.3s ease-in; transition: border-bottom-color 0.3s ease-in; border-bottom-color: #c00b0b; }
+@media (min-width: 51.25em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000374}}
+  .fixed-back { display: block; } }
 
 /* browse subnav */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000398}}
 .subnav-browse--container { background: whitesmoke; border-bottom: double 6px black; display: none; position: relative; z-index: 1000; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003105}}
 .subnav-browse { overflow-x: hidden; overflow-y: hidden; -webkit-transition: opacity 0.3s; -moz-transition: opacity 0.3s; transition: opacity 0.3s; font-size: 1.2em; font-style: italic; margin: 0 auto; padding: 0 0 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000367}}
-.subnav-browse li { padding-bottom: 0.1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000369}}
-.subnav-browse li:before { float: left; width: 0; white-space: nowrap; font-style: normal; font-weight: normal; content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000313}}
+.subnav-browse li { padding-bottom: 0.2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000315}}
+.subnav-browse li:before { float: left; line-height: 1.2; width: 0; white-space: nowrap; font-style: normal; font-weight: normal; content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000317}}
 .subnav-browse li span { background: whitesmoke; padding-right: 0.3em; margin-right: -0.2em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003114}}
 .subnav-browse--inner { margin: 0 auto; padding: 1em 0; max-width: 18em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003119}}
 .subnav-browse--close { color: #6d6d6d; cursor: pointer; display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003124}}
 .subnav-browse--close.u-top { font-family: Arial, sans-serif; font-size: 1.3em; padding: 0.8em; position: absolute; text-align: left; top: -0.8em; right: -0.8em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003134}}
 .subnav-browse--close.u-bottom { display: block; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003143}}
 .subnav-browse--close:hover { color: #c00b0b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003146}}
 .subnav-browse--h { border-bottom: 2px solid black; display: block; font-style: normal; margin-bottom: 0.8em; position: relative; text-align: center; text-transform: uppercase; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003155}}
 .subnav-browse--a, .subnav-browse--a:visited { color: black; display: block; position: relative; text-transform: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003162}}
 .subnav-browse--a:hover, .subnav-browse--a:visited:hover { border-bottom-color: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003165}}
 .subnav-browse--a span.u-ind, .subnav-browse--a:visited span.u-ind { padding-left: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003152}}
-.toc-no { position: absolute; bottom: 0; right: 0; padding-right: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003168}}
+.toc-no { position: absolute; bottom: 0; right: 0; padding-left: 0.2em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003177}}
 .nav-search--container { background: whitesmoke; border-bottom: double 6px black; display: none; padding: 10px; text-align: center; width: 100; }
 
-@media (min-width: 32.1875em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003173}}
+@media (min-width: 32.1875em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003189}}
   .site-nav--container { height: 46px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003192}}
   .site-nav--title, .site-nav--title:visited { line-height: 44px; margin-right: 2em; text-align: left; width: auto; word-spacing: 0.3em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003200}}
   .title-reader { display: inline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003203}}
   .title-gentle, .title-reader { letter-spacing: 0.1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003207}}
   .site-nav--li { line-height: 44px; height: 46px; vertical-align: top; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003195}}
-  .site-nav--li.nav-about { display: inline-block; } }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003202}}
-  .site-nav--container { height: 55px; position: fixed; top: 0; z-index: 1000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003208}}
-  .site-nav--ul { float: left; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003211}}
+  .site-nav--li.nav-about { display: inline-block; } }
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003218}}
+  .site-nav--container { height: 55px; position: fixed; top: 0; z-index: 1000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003224}}
+  .site-nav--ul { float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003227}}
   .site-nav--title { font-size: 1.7em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003230}}
   .site-nav--li { height: 55px; line-height: 55px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003234}}
   .subnav-browse { max-width: 20em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003237}}
   .content { margin-top: 55px; } }
-@media (min-width: 51.25em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003226}}
-  .fixed-back, .fixed-back:visited { color: black; display: block; height: 55px; line-height: 55px; position: absolute; top: 0; right: 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003235}}
-  .fixed-back:after, .fixed-back:visited:after { margin-bottom: 3px; content: ""; display: inline-block; height: 0; width: 0; border-style: solid; border-color: transparent; border-width: 5px; border-bottom-color: black; margin-left: 0.2em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003238}}
-  .fixed-back:hover, .fixed-back:visited:hover { color: #c00b0b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003240}}
-  .fixed-back:hover:after, .fixed-back:visited:hover:after { -webkit-transition: border-bottom-color 0.3s ease-in; -moz-transition: border-bottom-color 0.3s ease-in; transition: border-bottom-color 0.3s ease-in; border-bottom-color: #c00b0b; } }
 /* iPads in landscape ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003246}}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003242}}
   body { margin-top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003248}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003244}}
   .site-nav--container { position: static; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003250}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_header\.sass}line{font-family:\00003246}}
   a.fixed-back { display: none; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\000033}}
 .subscribe.u-footer { background: whitesmoke; border-top: 2px solid #6d6d6d; margin-top: 2em; text-align: left; }
@@ -457,85 +470,83 @@ b { font-weight: normal; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .subscribe.u-footer .inner:after { clear: both; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000315}}
-.subscribe.u-footer .subscribe-icons { *zoom: 1; float: right; font-size: 0; line-height: 0; }
+.subscribe.u-footer .subscribe-icons { *zoom: 1; float: right; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .subscribe.u-footer .subscribe-icons:before, .subscribe.u-footer .subscribe-icons:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .subscribe.u-footer .subscribe-icons:after { clear: both; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000321}}
-.subscribe.u-footer .subscribe-icon { display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000325}}
-.subscribe.u-footer .footer-subscribe, .subscribe.u-footer .email-form { display: inline-block; vertical-align: middle; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000330}}
-.subscribe.u-footer .footer-subscribe { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; margin-right: 0.3em; text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000337}}
-.subscribe.u-footer .email-form .email-input { width: 16em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000318}}
+.subscribe.u-footer .subscribe-icons span { color: #6d6d6d; display: none; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; margin-right: 0.3em; vertical-align: middle; }
+@media (min-width: 34.375em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000318}}
+  .subscribe.u-footer .subscribe-icons span { display: inline-block; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000329}}
+.subscribe.u-footer .subscribe-icon { display: inline-block; float: none; vertical-align: middle; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000334}}
 .site-footer { *zoom: 1; background: #6d6d6d; color: white; text-align: center; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .site-footer:before, .site-footer:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .site-footer:after { clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000340}}
 .footer-inner { margin: 0 auto; padding: 1em 1em 1.5em 1em; max-width: 940px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000345}}
 .footer-inner a, .footer-inner a:visited { border-bottom: 1px dotted white; color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000349}}
 .footer-inner a:hover, .footer-inner a:visited:hover { border-bottom-color: #c00b0b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000352}}
 .footer-col { float: left; min-width: 200px; padding: 1em; width: 25%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000357}}
 .footer-col.footer-text { width: 50%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000360}}
 .footer-title { font-size: 1.2em; font-variant: small-caps; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000365}}
 .footer-description { float: left; margin-right: 1em; width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000370}}
 .footer-about { display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000378}}
-.footer-about:after { content: "\00a0\00bb"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000372}}
+.footer-about:before { content: "1 "; font-family: fellorn; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000376}}
 .footer-links { *zoom: 1; margin: 1em auto 0 auto; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .footer-links:before, .footer-links:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .footer-links:after { clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000380}}
 .footer-link, .footer-link:visited { color: #c9c7c7 !important; font-size: 0.8em; float: left; line-height: 2; text-transform: uppercase; width: 50%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000390}}
 .footer-copyright { background: white; color: #6d6d6d; display: none; margin-top: 1.5em; padding: 1em; position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\0000397}}
 .footer-copyright a, .footer-copyright a:visited { color: #c00b0b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003101}}
 .x-copyright { font-size: 2em; position: absolute; top: 0; right: 10px; line-height: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003109}}
 .close-copyright { display: inline-block; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003118}}
 .x-copyright, .close-copyright { cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003121}}
 .x-copyright:hover, .close-copyright:hover { color: #c00b0b; }
 
-@media (max-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003130}}
+@media (max-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003125}}
   .subscribe.u-footer { text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003132}}
-  .subscribe.u-footer .subscribe-icons { float: none; margin-bottom: 10px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003127}}
+  .subscribe.u-footer .subscribe-icons { float: none; } }
 @media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000326}}
   .footer-links > li { display: inline-block; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000329}}
   .footer-links > li:not(:last-child):after { content: " / "; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003135}}
   .footer-link { float: none; width: auto; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\000031}}
 .rq-btn { -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; transition: all 0.3s ease-in; border-bottom: double 4px #c00b0b; border-top: double 4px #c00b0b; cursor: pointer; font-size: 1.1em; margin: 0 auto; padding: 0.5em 0; text-align: center; text-transform: uppercase; max-width: 320px; }
@@ -552,7 +563,7 @@ b { font-weight: normal; }
   .rq-backdrop[style] { display: none !important; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000338}}
-.rq-body { -webkit-transition: top 0.5s ease, opacity 0.7s linear; -moz-transition: top 0.5s ease, opacity 0.7s linear; transition: top 0.5s ease, opacity 0.7s linear; opacity: 0; background: white; display: none; font-size: 1em; margin: 20px auto 0 auto; overflow: hidden; padding: 1.5em; position: absolute; top: -1000px; left: 5%; right: 5%; width: 90%; z-index: 200; }
+.rq-body { -webkit-transition: top 0.5s ease, opacity 0.7s linear; -moz-transition: top 0.5s ease, opacity 0.7s linear; transition: top 0.5s ease, opacity 0.7s linear; opacity: 0; background: white; display: none; font-size: 1em; margin: 1.5em auto 0 auto; overflow: hidden; padding: 1.5em; position: absolute; top: -2000px; left: 5%; right: 5%; width: 90%; z-index: 200; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000354}}
 .rq-body:before { border: double 8px black; content: ""; position: absolute; top: 0.5em; bottom: 0.5em; right: 0.5em; left: 0.5em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000363}}
@@ -560,48 +571,48 @@ b { font-weight: normal; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000365}}
 .rq-body.opened { display: block; }
 @media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000338}}
-  .rq-body { left: 0; right: 0; margin-right: 0; opacity: 1; padding: 0; position: static; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000376}}
+  .rq-body { left: 0; right: 0; width: 100%; margin-right: 0; opacity: 1; padding: 0; position: static; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000377}}
   .rq-body:before { display: none; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000379}}
-.rq-title { font-size: 1.5em; font-variant: small-caps; border-bottom: 1px solid black; margin-bottom: 0.75em; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000380}}
+.rq-title { font-size: 1.5em; font-variant: small-caps; border-bottom: 1px solid #bdbdbd; margin-bottom: 0.75em; }
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000380}}
   .rq-title { text-align: left; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000391}}
 .rq-content { position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\0000394}}
 a.rq-text { -webkit-transition: color 0.3s linear; -moz-transition: color 0.3s linear; transition: color 0.3s linear; border-bottom: none; color: #6d6d6d; display: block; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; line-height: 1.4; font-size: 1.3em; margin-bottom: 0.6em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003103}}
-a.rq-text:hover { color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003104}}
+a.rq-text:hover { color: black !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003107}}
 .rq-citation { font-size: 1.2em; margin-left: 1em; position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003112}}
 .rq-utils { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; margin-top: 1em; position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003120}}
 .rq-another, .rq-close { -webkit-transition: color 0.3s ease-in; -moz-transition: color 0.3s ease-in; transition: color 0.3s ease-in; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003124}}
 .rq-another { border-bottom: 1px solid black; border-top: 1px solid black; cursor: pointer; padding: 0.5em; text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003130}}
 .rq-another:hover { color: #c00b0b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003133}}
 .rq-close { color: #6d6d6d; cursor: pointer; margin-top: 1em; text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003138}}
 .rq-close:before, .rq-close:after { content: "---"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003139}}
-.rq-close:before { margin-right: 0.5em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003141}}
-.rq-close:after { margin-left: 0.5em; }
+.rq-close:before { margin-right: 0.5em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003143}}
+.rq-close:after { margin-left: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003145}}
 .rq-close:hover { color: #c00b0b; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003131}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\00003133}}
   .rq-close { display: none; } }
 
 /* ===================== SELECTION ===================== */
@@ -625,215 +636,218 @@ a.rq-text:hover { color: black; }
 .s-extras--trigger.u-left.u-wide { margin-bottom: 0.5em; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000354}}
-.s-extras--utils { color: #7165c7; cursor: pointer; float: right; }
+.s-extras--utils { color: #178b8b; cursor: pointer; float: right; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000359}}
-.s-extras--utils-i { border-bottom: 2px solid #7165c7; color: #7165c7; font-size: 0.8em; text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000397}}
-.s-extras--utils-i:hover { -webkit-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in; -moz-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in; transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in; border-bottom-color: #c00b0b; color: #c00b0b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000361}}
+.s-extras--utils-i { border-bottom: 1px dotted #178b8b; color: #178b8b; font-size: 0.75em; text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000364}}
 .s-extras--utils-i:last-child { margin-left: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000366}}
+.s-extras--utils-i:hover { color: #088a08; border-bottom-color: #088a08; }
 
 /* selection extras: highlight */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000373}}
 .s-highlight { border-top: double 4px black; padding: 1em 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000381}}
 .s-highlight--li.u-inactive { opacity: 0; position: absolute; top: 0; width: 100%; z-index: -1000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000387}}
 .s-highlight--li.u-active { position: static; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000383}}
-.s-highlight--all { font-family: "Crimson", Georgia, "Times New Roman", Times, serif; font-size: 0.8em; text-align: center; text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000366}}
-.s-highlight--all:before { content: "\261E"; font-size: 2em; font-style: normal; line-height: 0; margin-right: 0.2em; vertical-align: middle; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000390}}
+.s-highlight--all { font-family: "Crimson", Georgia, "Times New Roman", Times, serif; font-size: 0.8em; text-align: center; text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000396}}
 .s-highlight--all a { position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000399}}
+.s-highlight--all:before { content: "1 "; font-family: fellorn; }
 
 /* selection extras: tag list (top and bottom) */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000395}}
-.s-tags { padding-bottom: 1.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\0000398}}
-.s-tags.u-top { border-bottom: double 4px black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003101}}
-.s-tags .tag-sublist-label { display: inline; font-weight: bold; line-height: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003105}}
-.s-tags .tag-sublist-label:after { content: "\00a0:\00a0"; }
+.s-tags { padding-bottom: 1.5em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003108}}
+.s-tags.u-top { border-bottom: double 4px black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003111}}
+.s-tags .tag-sublist-label { display: inline; font-weight: bold; line-height: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003115}}
+.s-tags .tag-sublist-label:after { content: "\00a0:\00a0"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003118}}
 .s-tags .tag-sublist { display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000326}}
 .s-tags .tag-sublist > li { display: inline-block; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000329}}
 .s-tags .tag-sublist > li:not(:last-child):after { content: "\00a0; "; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003122}}
 .s-tags--inst, .s-highlight--timeline { color: #6d6d6d; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003124}}
 .s-tags--inst:before, .s-highlight--timeline:before { content: "\00bb\00a0"; }
 
 /* textual comments ----------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003132}}
 .s-comment { font-style: italic; margin: 2em auto 0 auto; max-width: 500px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003136}}
 .s-comment:after { background: black; content: ""; display: block; height: 1px; margin: 0 auto; max-width: 50%; margin: 1em auto 1em auto; }
 
 /* selection text ---------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003154}}
 .s-text, .ann-text { font-size: 1.2em; line-height: 1.5; margin: 1.5em auto 0 auto; max-width: 520px; text-align: justify; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003152}}
-.s-text p:not(.poetry-line), .ann-text p:not(.poetry-line), .s-text blockquote, .ann-text blockquote { margin-bottom: 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003156}}
-.s-text section, .ann-text section { margin-bottom: 2em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003159}}
-.s-text .poetry-line, .ann-text .poetry-line { text-align: left; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003162}}
-.s-text .sel-body-subheading, .ann-text .sel-body-subheading { font-variant: small-caps; font-weight: bold; margin: 0 0 1em 0; text-align: center; }
+.s-text p:not(.poetry-line), .ann-text p:not(.poetry-line), .s-text blockquote, .ann-text blockquote { margin-bottom: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003166}}
+.s-text section, .ann-text section { margin-bottom: 2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003169}}
+.s-text .poetry-line, .ann-text .poetry-line { text-align: left; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003172}}
+.s-text .sel-body-subheading, .ann-text .sel-body-subheading { font-variant: small-caps; font-weight: bold; margin: 0 0 1em 0; text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003182}}
 .s-text > p:first-of-type:first-letter, .ann-text > p:first-of-type:first-letter, .s-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-letter, .ann-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-letter { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 4em; font-style: normal; float: left; line-height: 1; padding-right: 0.05em; text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003186}}
 .s-text > p:first-of-type:first-line, .ann-text > p:first-of-type:first-line, .s-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-line, .ann-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-line { font-size: 1.7em; font-variant: small-caps; line-height: 1.3; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003194}}
 .s-text > section > p:first-of-type:not(.poetry-line):first-letter, .ann-text > section > p:first-of-type:not(.poetry-line):first-letter { font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 4em; font-style: normal; float: left; line-height: 1; padding-right: 0.05em; text-transform: uppercase; font-family: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003188}}
-.s-text:after, .ann-text:after { content: "\2766"; display: block; font-family: georgia, serif; font-size: 2em; line-height: 0.4; margin: 0.7em auto 0 auto; margin-top: 1em; max-width: 520px; text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003198}}
+.s-text:after, .ann-text:after { content: "a"; display: block; font-family: fellorn; line-height: 0.4; margin: 0.7em auto 0 auto; margin-top: 1em; max-width: 520px; text-align: center; }
 
 /* postscript ------------ */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003212}}
 .s-postscript { *zoom: 1; margin-top: 3em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .s-postscript:before, .s-postscript:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .s-postscript:after { clear: both; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003215}}
 .s-postscript p { text-align: center; }
 
 /* related selections */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003224}}
 .li-rsel { *zoom: 1; margin-bottom: 1em; position: relative; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .li-rsel:before, .li-rsel:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .li-rsel:after { clear: both; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003229}}
 .li-rsel .uft-b { -webkit-transition: opacity 0.3s ease-in; -moz-transition: opacity 0.3s ease-in; transition: opacity 0.3s ease-in; height: 0; opacity: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003234}}
 .li-rsel.uft-on .uft-a { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003236}}
 .li-rsel.uft-on .uft-b { height: auto; opacity: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003231}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003240}}
 .li-rsel--info { font-size: 1.2em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003243}}
 .show-teaser { border-bottom: 1px dashed transparent; color: #7dbebe; cursor: pointer; display: inline-block; font-size: 0.8em; margin: 0.2em 0 0 2em; text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003253}}
 .show-teaser:before { margin-bottom: 1px; content: ""; display: inline-block; height: 0; width: 0; border-style: solid; border-color: transparent; border-width: 4px; border-left-color: #7dbebe; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003256}}
 .show-teaser:hover { -webkit-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in; -moz-transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in; transition: color 0.3s ease-in, border-bottom-color 0.3s ease-in; color: #c00b0b; border-bottom-color: #c00b0b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003260}}
 .show-teaser:hover:before { -webkit-transition: border-left-color 0.3s ease-in; -moz-transition: border-left-color 0.3s ease-in; transition: border-left-color 0.3s ease-in; border-left-color: #c00b0b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003255}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003264}}
 .li-rsel--teaser { line-height: 1.3; margin: 0em 0 0 30px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003259}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003268}}
 .li-rsel--shares { display: inline; line-height: 1.5; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003272}}
 .li-rsel--shares--ul { display: inline; margin-right: 0.5em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000326}}
 .li-rsel--shares--ul > li { display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000329}}
 .li-rsel--shares--ul > li:not(:last-child):after { content: " ; "; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003267}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003276}}
 .li-rsel--shares--ul ul { display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000326}}
 .li-rsel--shares--ul ul > li { display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000329}}
 .li-rsel--shares--ul ul > li:not(:last-child):after { content: ", "; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003280}}
 .li-rsel--category { font-variant: small-caps; text-transform: capitalize; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003284}}
 .li-rsel--tag, .li-rsel--tag:visited { color: #6d6d6d; font-style: italic; border-bottom: 1px dotted #6d6d6d; }
 
 /* postscript dates */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003284}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003293}}
 .s-dates { color: #6d6d6d; font-size: 0.95em; font-style: italic; margin-top: 2em; text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003290}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003299}}
 .s-dates:before { background: black; content: ""; display: block; height: 1px; margin: 0 auto; max-width: 50%; }
 
 /* ========================= SELECTION MEDIA QUERIES ========================= */
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003300}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003309}}
   .s-headline { font-size: 1.3em; text-align: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003304}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003313}}
   .s-info { margin-top: 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003306}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003315}}
   .s-info:before { height: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003318}}
   .s-comment { margin: 2em 0 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003320}}
   .s-comment:after { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003314}}
-  .s-extras { float: right; margin: 2em 0 2em 2em; max-width: 340px; width: 40%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003321}}
-  .s-extras .uft-group .uft-a { display: none; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003323}}
+  .s-extras { float: right; min-width: 20em; padding: 2em 0 3em 3em; width: 40%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003330}}
+  .s-extras .uft-group .uft-a { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003332}}
   .s-extras .uft-group .uft-b { display: block; height: auto; opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003336}}
   .s-extras .uft-group .uft-b .uft-trigger { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003339}}
+  .s-tags.u-top { margin-top: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003343}}
   .s-tags.u-bottom:before { background: none; margin: 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003347}}
   .s-text, .ann-text { margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003338}}
-  .s-text:before, .ann-text:before { display: block; content: "\62"; font-family: ornaments; font-size: 6em; line-height: 1; text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003346}}
-  .s-text:after, .ann-text:after { background: none; height: auto; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003350}}
+  .s-text:before, .ann-text:before { display: block; content: "N"; font-family: fellorn; font-size: 2.5em; line-height: 1; margin: 0.75em 0; text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003359}}
+  .s-text:after, .ann-text:after { background: none; height: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003363}}
   .s-text-bottom-orn { margin-top: 0.7em; max-width: 520px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003368}}
   .s-postscript p { text-align: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003371}}
   .s-postscript--h2 { text-align: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003375}}
   .s-postscript--col.u-first { float: left; padding-right: 5%; width: 70%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003379}}
   .s-postscript--col.u-second { float: right; width: 30%; } }
 /* .li-sel is an <a> */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\000032}}
-.li-sel { display: block; margin: 1em 0; }
+.li-sel { display: block; margin: 1.5em 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\000035}}
-.li-sel h3, .li-sel .read-on { color: #7165c7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\000039}}
-.li-sel:hover { -webkit-transition: color 0.3s ease-in; -moz-transition: color 0.3s ease-in; transition: color 0.3s ease-in; color: #7165c7; text-decoration: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000313}}
-.li-sel:hover h3, .li-sel:hover .read-on { -webkit-transition: color 0.3s ease-in; -moz-transition: color 0.3s ease-in; transition: color 0.3s ease-in; color: #c00b0b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000318}}
-.li-sel h3 { font-size: 1.5em; }
+.li-sel h3, .li-sel .read-on { -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; transition: all 0.3s ease-in; color: #178b8b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000310}}
+.li-sel:hover { text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000312}}
+.li-sel:hover h3, .li-sel:hover .read-on { color: #c00b0b !important; border-bottom-color: #c00b0b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000317}}
+.li-sel h3 { font-size: 1.5em; border-bottom: 1px solid #bdbdbd; margin-bottom: 0.3em; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000323}}
 .li-sel-dets { font-size: 1.1em; line-height: 1.3; color: black; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000328}}
-.li-sel--teaser, .tl-teaser { margin: 0.3em 0; }
-@media (min-width: 32.1875em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000328}}
-  .li-sel--teaser, .tl-teaser { margin-left: 1.5em; } }
+.li-sel-author { font-variant: small-caps; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000331}}
+.li-sel--teaser, .tl-teaser { color: #6d6d6d; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.1em; margin: 0.3em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000337}}
 .teaser-text { font-style: italic; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000342}}
 .teaser-text ul { padding: 0 0 1em 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000345}}
 .teaser-text:after { content: "\00A0\00B7\00A0\00B7\00A0\00B7\00A0"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000348}}
 .teaser-text span.poetry-line:not(:first-child):before { content: "\00A0\002F\00A0"; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000351}}
 .li-sel--posttime { color: #6d6d6d; font-size: 0.8em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_li-sel\.sass}line{font-family:\0000355}}
 .read-on:after { content: "\00A0\00BB"; }
 
 /* MAIN */
@@ -860,7 +874,7 @@ a.rq-text:hover { color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000347}}
 .tag-list--a:hover, .tag-list--a:visited:hover { color: #c00b0b; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000350}}
-.tag-list--a:after, .tag-list--a:visited:after { float: left; width: 0; white-space: nowrap; font-style: normal; font-weight: normal; content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."; }
+.tag-list--a:after, .tag-list--a:visited:after { float: left; line-height: 1.2; width: 0; white-space: nowrap; font-style: normal; font-weight: normal; content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000353}}
 .tag-list--span { background: white; padding-right: 0.36em; }
@@ -871,22 +885,20 @@ a.rq-text:hover { color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000362}}
 .browse-extras { margin: 1.5em auto; width: 320px; }
 @media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000362}}
-  .browse-extras { float: right; overflow: visible; width: 45%; } }
+  .browse-extras { float: right; overflow: visible; padding-left: 10%; width: 45%; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000371}}
 .other-browse { *zoom: 1; margin-bottom: 2em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .other-browse:before, .other-browse:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .other-browse:after { clear: both; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000373}}
-.other-browse li { float: left; font-size: 1.2em; text-transform: capitalize; width: 50%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000379}}
-.other-browse li:before { content: "~\00a0"; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000370}}
-  .other-browse { float: right; width: 90%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000374}}
+.other-browse li { float: left; font-size: 1.2em; padding: 0 5px 0 15px; text-transform: capitalize; width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000381}}
+.other-browse li:before { content: "~"; margin-left: -15px; }
 
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000389}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse\.sass}line{font-family:\0000388}}
   .innernav-browse--container { display: block; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_page-select\.sass}line{font-family:\000031}}
 #selected-page { text-align: center; }
@@ -935,7 +947,7 @@ a.rq-text:hover { color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_timeline\.sass}line{font-family:\0000338}}
 .tl-sel a:not(.read-on) { color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_timeline\.sass}line{font-family:\0000340}}
-.tl-sel a:not(.read-on):hover { color: #7165c7; }
+.tl-sel a:not(.read-on):hover { color: #178b8b; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_timeline\.sass}line{font-family:\0000343}}
 .tl-title { display: inline; }
@@ -945,7 +957,7 @@ a.rq-text:hover { color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_timeline\.sass}line{font-family:\0000348}}
 .tl-showteaser { color: #6d6d6d; cursor: pointer; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 0.9em; margin: 0.3em; padding: 0.3em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_timeline\.sass}line{font-family:\0000357}}
-.tl-showteaser:hover { color: #7165c7; }
+.tl-showteaser:hover { color: #178b8b; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_timeline\.sass}line{font-family:\0000360}}
 .tl-teaser { margin-left: 0; }
@@ -1036,7 +1048,7 @@ b.def-altword:after { content: "\0020 : \0020"; }
 .highlight-author-h { font-size: 2.5em; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000356}}
-.hl-subhead { border-bottom: 1px solid #6d6d6d; font-size: 1.3em; font-variant: small-caps; margin-bottom: 15px; padding-bottom: 0.3em; }
+.hl-subhead { border-bottom: 1px solid #bdbdbd; font-size: 1.3em; font-variant: small-caps; margin-bottom: 15px; padding-bottom: 0.3em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse-highlights\.sass}line{font-family:\0000364}}
 .hl-subhead a, .hl-subhead a:visited { border-bottom: none; }
 
@@ -1067,9 +1079,9 @@ b.def-altword:after { content: "\0020 : \0020"; }
 .read-more { text-align: right; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse-highlights\.sass}line{font-family:\00003114}}
-.show-quotations { color: #7165c7; display: none; }
+.show-quotations { color: #178b8b; display: none; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse-highlights\.sass}line{font-family:\00003117}}
-.show-quotations:hover { color: #7165c7; cursor: pointer; }
+.show-quotations:hover { color: #178b8b; cursor: pointer; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_browse-announcements\.sass}line{font-family:\000032}}
 .ann-li:not(:first-child) { margin-top: 2em; }
@@ -1110,30 +1122,32 @@ b.def-altword:after { content: "\0020 : \0020"; }
 .hl-body { text-align: justify; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\000039}}
-.hl-about { font-size: 1.3em; margin: 2em 0; text-align: center; }
+.hl-about { font-size: 1.3em; margin: 2em 0 0; text-align: center; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000313}}
 .hl-about a { border-bottom: none; color: #c00b0b; display: block; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000317}}
-.hl-about a:hover { color: #a59ddb; }
-
+.hl-about a:hover { color: #088a08; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000320}}
+.hl-about:after { color: #6d6d6d; content: "v"; display: block; font-size: 2em; font-family: fellorn; margin-top: 0.7em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000328}}
 .hl-links { *zoom: 1; margin-top: 1em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .hl-links:before, .hl-links:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .hl-links:after { clear: both; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000320}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000328}}
   .hl-links { border-bottom: 1px solid black; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000326}}
-.hl-link, .hl-link:visited { border-bottom: 1px solid black; color: black; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; line-height: 1.5; display: block; padding: 0.5em 0.5em; text-indent: -40px; padding-left: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003117}}
-.hl-link:first-child, .hl-link:visited:first-child { border-top: 1px solid black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003120}}
-.hl-link:before, .hl-link:visited:before { content: "\25CE"; display: block; float: left; font-style: normal; width: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000334}}
+.hl-link, .hl-link:visited { border-bottom: 1px solid black; color: black; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; line-height: 1; display: block; padding: 0.5em 0; text-indent: -40px; padding-left: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000350}}
+.hl-link:first-of-type, .hl-link:visited:first-of-type { border-top: 1px solid black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000353}}
+.hl-link:before, .hl-link:visited:before { content: "c"; display: block; font-family: fellorn; font-size: 3em; float: left; font-style: normal; max-height: 1px; width: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000363}}
 .hl-link:hover, .hl-link:visited:hover { border-bottom-color: black !important; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000326}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_highlight\.sass}line{font-family:\0000334}}
   .hl-link, .hl-link:visited { width: 50%; float: left; border-top: 1px solid black; border-bottom: none; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_contact\.sass}line{font-family:\000033}}
@@ -1155,7 +1169,7 @@ b.def-altword:after { content: "\0020 : \0020"; }
 .errorlist { color: #c00b0b; font-style: italic; margin-left: 1em; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_contact\.sass}line{font-family:\0000333}}
-#contact-submit { background: whitesmoke; border: 2px solid #7165c7 !important; color: #7165c7; margin: 0 auto; max-width: 20em; margin-top: 2em; text-transform: uppercase; }
+#contact-submit { background: whitesmoke; border: 2px solid #178b8b !important; color: #178b8b; margin: 0 auto; max-width: 20em; margin-top: 2em; text-transform: uppercase; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_contact\.sass}line{font-family:\0000341}}
 #contact-submit:hover { border: 2px solid #c00b0b !important; color: #c00b0b; }
 
@@ -1163,115 +1177,122 @@ b.def-altword:after { content: "\0020 : \0020"; }
 .home-content { margin-top: 0; padding-top: 0; margin-bottom: -2em; position: relative; z-index: 1; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\000038}}
-.home-subhead { margin: 1em 0; text-align: center; text-transform: uppercase; }
+.home-subhead { font-size: 2em; margin: 1.75em 0 0.5em; text-align: center; text-transform: uppercase; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000316}}
-.site-header { padding: 0 0 1em; text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000317}}
+.site-header { margin-bottom: 1em; text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000320}}
-.site-title { color: #c00b0b; margin-bottom: 1em; text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000321}}
+.site-title { color: #c00b0b; padding: 0 0 1em; text-align: center; }
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000321}}
+  .site-title { border-bottom: double 15px #c00b0b; border-top: double 15px #c00b0b; font-size: 1.3em; margin: 1em 0 2.5em; padding: 1.3em 0; text-align: center; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000333}}
 .site-title-the { font-size: 2.5em; display: inline-block; }
-@media (max-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000325}}
+@media (max-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000333}}
   .site-title-the { background: white; position: relative; z-index: 100; padding: 0 10px; top: 24px; } }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000325}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000333}}
   .site-title-the { font-size: 3em; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000346}}
 .site-title-gentle, .site-title-reader { font-size: 3em; text-transform: uppercase; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000338}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000346}}
   .site-title-gentle, .site-title-reader { font-size: 3.5em; } }
 
-@media (max-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000347}}
+@media (max-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000355}}
   .site-title-gentle { border-top: double 6px #c00b0b; padding-top: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000358}}
   .site-title-reader { border-bottom: double 6px #c00b0b; padding-bottom: 12px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000362}}
 .site-slogan { margin-bottom: 1em; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000369}}
 .site-slogan em { font-style: normal; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000354}}
-  .site-slogan { font-size: 1.4em; text-align: left; } }
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000362}}
+  .site-slogan { font-size: 1.4em; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000375}}
 .site-header-more { border-bottom: none; display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000380}}
 .home-main { *zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000318}}
 .home-main:before, .home-main:after { content: " "; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/bourbon\/addons\/_clearfix\.scss}line{font-family:\0000323}}
 .home-main:after { clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000379}}
-.home-search-container { border-bottom: 2px solid black; border-top: 2px solid black; padding: 1em 0; text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000386}}
+.home-search-container { background: whitesmoke; border-radius: 8px; padding: 1em 0; position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000391}}
+.home-search-container .search-form { width: 90%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000388}}
-.home-section { margin: 2em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000399}}
+.home-section { margin: 3em 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003106}}
 .home-nav-container .subnav-browse { overflow-x: hidden; overflow-y: hidden; max-width: 85%; padding: 0; opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000367}}
-.home-nav-container .subnav-browse li { padding-bottom: 0.1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000369}}
-.home-nav-container .subnav-browse li:before { float: left; width: 0; white-space: nowrap; font-style: normal; font-weight: normal; content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000313}}
+.home-nav-container .subnav-browse li { padding-bottom: 0.2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000315}}
+.home-nav-container .subnav-browse li:before { float: left; line-height: 1.2; width: 0; white-space: nowrap; font-style: normal; font-weight: normal; content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000317}}
 .home-nav-container .subnav-browse li span { background: white; padding-right: 0.3em; margin-right: -0.2em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003115}}
 .home-content .rq-btn { margin: 2em auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003110}}
-.home-more-btn, .home-more-btn:visited { border-bottom: 1px solid black; color: black; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; line-height: 1.5; display: block; padding: 0.5em 0.5em; text-indent: -40px; padding-left: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003117}}
-.home-more-btn:first-child, .home-more-btn:visited:first-child { border-top: 1px solid black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003120}}
-.home-more-btn:before, .home-more-btn:visited:before { content: "\25CE"; display: block; float: left; font-style: normal; width: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_variables\.sass}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003121}}
+.home-more-btn, .home-more-btn:visited { border-bottom: 1px solid black; color: black; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-size: 1.2em; font-style: italic; line-height: 1; display: block; padding: 0.5em 0; text-indent: -40px; padding-left: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000350}}
+.home-more-btn:first-of-type, .home-more-btn:visited:first-of-type { border-top: 1px solid black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000353}}
+.home-more-btn:before, .home-more-btn:visited:before { content: "c"; display: block; font-family: fellorn; font-size: 3em; float: left; font-style: normal; max-height: 1px; width: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_components\.sass}line{font-family:\0000363}}
 .home-more-btn:hover, .home-more-btn:visited:hover { border-bottom-color: black !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003117}}
-.email-form { position: relative; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003124}}
-.email-input { padding-right: 40px; width: 10em; }
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003128}}
-.email-submit { color: transparent; font: 0/0 a; text-shadow: none; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; background-color: transparent; border: none; position: absolute; top: 0; right: 5px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003138}}
 .subscribe, .contribute { text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003142}}
-.subscribe-icon { color: transparent; font: 0/0 a; text-shadow: none; border-bottom: none; display: inline-block; margin: 0 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003132}}
+.subscribe-icons { display: inline-block; margin: 0 auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003149}}
-.home-image img { display: block; margin: 0 auto; max-width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003136}}
+.subscribe-icon { color: transparent; font: 0/0 a; text-shadow: none; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; transition: all 0.3s ease-in; border-bottom: none; border-radius: 100%; float: left; margin: 0 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003143}}
+.subscribe-icon:hover { background-color: #c00b0b; box-shadow: 0 0 10px #c00b0b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003147}}
 .home-footer-padding { margin-top: 2em; }
 
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003162}}
-  .site-title { border-bottom: double 15px #c00b0b; border-top: double 15px #c00b0b; font-size: 1.3em; margin: 1em 0 1.5em; text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003170}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003156}}
   .site-title-the:before, .site-title-the:after, .site-title-the.u-second { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003161}}
   .site-title-the, .site-title-gentle, .site-title-reader { display: inline; margin: 0 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003170}}
   .home-col-left { float: left; margin-right: 9%; width: 58%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003175}}
   .home-nav-container { margin-top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003177}}
   .home-nav-container .subnav-browse { -webkit-column-gap: 40px; -moz-column-gap: 40px; column-gap: 40px; max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003178}}
   .home-nav-container .subnav-browse li:before { position: relative; z-index: -1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003187}}
   .home-col-right { float: left; width: 33%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003204}}
-  .home-col-right .home-subhead, .home-col-right .rq-title { font-size: 25px; border-bottom: 1px solid black; margin-top: 0; padding-bottom: 0.3em; text-align: center; text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003190}}
+  .home-col-right .home-subhead, .home-col-right .rq-title { font-size: 25px; border-bottom: 1px solid #bdbdbd; margin-top: 0; padding-bottom: 0.3em; text-align: center; text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003198}}
   .home-col-right .rq-body { width: 100%; } }
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003206}}
+  .home-scholar { background: url("../../images/melancholic-scholar-nr.png") no-repeat center center; background-size: contain; padding-top: 128%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003213}}
+  .home-skeleton { background: url("../../images/skeleton-thinking-nr.png") no-repeat center bottom; background-size: contain; padding-bottom: 97%; position: absolute; bottom: 0; left: 2%; width: 50%; z-index: -1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003225}}
+  .home-col-left:after { content: ""; display: block; padding-top: 88%; } }
+@media only screen and (min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 47.5em) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 47.5em) and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-width: 47.5em) and (min-resolution: 144dpi), only screen and (min-width: 47.5em) and (min-resolution: 1.5dppx) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003206}}
+  .home-scholar { background-image: url("../../images/melancholic-scholar.png"); } }
+
+@media only screen and (min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 47.5em) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 47.5em) and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-width: 47.5em) and (min-resolution: 144dpi), only screen and (min-width: 47.5em) and (min-resolution: 1.5dppx) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_home\.sass}line{font-family:\00003213}}
+  .home-skeleton { background-image: url("../../images/skeleton-thinking.png"); } }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\000031}}
 .search-h { margin-bottom: 0.75em; }
 
@@ -1294,30 +1315,30 @@ b.def-altword:after { content: "\0020 : \0020"; }
 @media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000329}}
   .search-content .search-form { margin: 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000334}}
 .search-input, .tt-hint { display: inline-block; padding: 0 35px 0 10px; width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000342}}
 .search-submit { color: transparent; font: 0/0 a; text-shadow: none; background-color: white; border: none; margin: 0 0 0 0.5em; padding: 0; position: absolute; right: 4px; top: 4px; vertical-align: middle; -webkit-appearance: none; z-index: 100; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000358}}
 .twitter-typeahead { vertical-align: middle; width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000362}}
 .tt-dropdown-menu { background: white; border: 1px solid #6d6d6d; border-radius: 5px; box-shadow: 0px 2px 20px lightgrey; margin-top: 0.3em; text-align: left; min-width: 100%; }
-@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000360}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000362}}
   .tt-dropdown-menu { max-height: 30em; overflow: scroll; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000375}}
 .tt-suggestion { line-height: 1; padding: 0.4em 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000378}}
 .tt-suggestion p { margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000381}}
 .tt-is-under-cursor { background: #c00b0b; color: white; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000383}}
-.search-category { color: #6d6d6d; margin: 0.3em 0.5em 0 0.5em; padding: 0.2em 0; border-bottom: 1px dotted #6d6d6d; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_search\.sass}line{font-family:\0000385}}
+.search-category { color: #6d6d6d; margin: 1em 0.5em 0 0.5em; padding: 0.2em 0; border-bottom: 1px dotted #6d6d6d; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\000033}}
 #about { text-align: justify; }
@@ -1339,16 +1360,26 @@ b.def-altword:after { content: "\0020 : \0020"; }
 #about .uft-b { margin-top: -1em; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000335}}
-.about-more { color: #7165c7; cursor: pointer; display: inline-block; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-style: italic; margin-left: 10px; text-align: center; }
+.about-more { color: #178b8b; cursor: pointer; display: inline-block; font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif; font-style: italic; margin-left: 10px; text-align: center; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000344}}
-.about-more:after { margin-bottom: -4px; content: ""; display: inline-block; height: 0; width: 0; border-style: solid; border-color: transparent; border-width: 6px; border-top-color: #7165c7; content: ""; margin-left: 4px; }
+.about-more:after { margin-bottom: -4px; content: ""; display: inline-block; height: 0; width: 0; border-style: solid; border-color: transparent; border-width: 6px; border-top-color: #178b8b; content: ""; margin-left: 4px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000348}}
-.about-more:hover { color: #a59ddb; }
+.about-more:hover { color: #088a08; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000350}}
-.about-more:hover:after { border-top-color: #a59ddb; }
+.about-more:hover:after { border-top-color: #088a08; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000353}}
+@media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000357}}
+  .bibliomaniac-image { background: url("../../images/bibliomaniac-nr.png") no-repeat center center; background-size: contain; padding-bottom: 128%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000364}}
+  .skelscholar-image { background: url("../../images/skeleton-scholar-nr.png") no-repeat center center; background-size: contain; padding-bottom: 134%; } }
+@media only screen and (min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 47.5em) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 47.5em) and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-width: 47.5em) and (min-resolution: 144dpi), only screen and (min-width: 47.5em) and (min-resolution: 1.5dppx) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000357}}
+  .bibliomaniac-image { background-image: url("../../images/bibliomaniac.png"); } }
+
+@media only screen and (min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 47.5em) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 47.5em) and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-width: 47.5em) and (min-resolution: 144dpi), only screen and (min-width: 47.5em) and (min-resolution: 1.5dppx) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000364}}
+  .skelscholar-image { background-image: url("../../images/skeleton-scholar.png"); } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000372}}
 .main-image img { margin: 0 auto; max-width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_about\.sass}line{font-family:\0000376}}
 .sidebar-image img { display: block; margin: 0 auto 2em; max-width: 90%; float: right; }

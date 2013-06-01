@@ -7,12 +7,18 @@
 +font-face('Crimson', '../fonts/crimson/crimson-roman-webfont')
 +font-face('Crimson', '../fonts/crimson/crimson-italic-webfont', normal, italic)
 
-+font-face('ornaments', '../fonts/ornaments/ornaments')
++font-face('fellorn', '../fonts/fell-flowers/imfellorn-custom')
 
 
 
 // HEADINGS
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-weight: normal
 
 %heading
   color: $c-emphatic
@@ -55,12 +61,16 @@
   margin-top: 1.25em
 
 %txt--sidebar-highlight
-  @extend %indented-ps
+  @extend %indented-p
   color: $c-subtle
   font-family: $f-heading
   font-size: 1.5em
   line-height: 1.4
   position: relative
+
+.regtxt
+  font-size: 1.07em
+  line-height: 1.5
 
 
 // UTILITIES

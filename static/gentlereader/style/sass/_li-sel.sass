@@ -1,23 +1,23 @@
 /* .li-sel is an <a> */
 .li-sel,
   display: block
-  margin: 1em 0
+  margin: 1.5em 0
   h3,
   .read-on
+    +transition(all $trans-time)
     color: $c-link
 
   &:hover
-    +transition(color $trans-time)
-    color: $c-link
     text-decoration: none
     h3,
     .read-on
-      +transition(color $trans-time)
-      color: $c-emphatic
+      color: $c-emphatic !important
+      border-bottom-color: $c-emphatic
 
   h3
     font-size: 1.5em
-
+    border-bottom: 1px solid $c-bd
+    margin-bottom: 0.3em
 
 
 .li-sel-dets
@@ -25,14 +25,18 @@
   line-height: 1.3
   color: black
 
+.li-sel-author
+  font-variant: small-caps
+
 .li-sel--teaser
+  color: $c-subtle
+  font-family: $f-heading
+  font-size: 1.1em
   margin: 0.3em 0
-  @media (min-width: $m-selection-med)
-    margin-left: 1.5em
 
 .teaser-text
   @extend %reverse-italics
-  @extend %indented-ps
+  @extend %indented-p
   font-style: italic
 
   ul

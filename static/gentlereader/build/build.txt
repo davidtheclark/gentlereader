@@ -8,7 +8,6 @@ lib/backbone.js
 lib/typeahead.js
 lib/jade-runtime.js
 apps/search-app.js
-lib/picturefill.js
 apps/base-app.js
 base-main.js
 models/rand-quot-set.js

@@ -3,13 +3,12 @@
 {% block title %}The Gentle Reader{% endblock %}
 {% block meta %}
 <meta name="description" content=""/>{% endblock %}
-{% block bottomscripts %}
-<!-- grunt-inactive: dev
-<script src="{{ STATIC_URL }}gentlereader/scripts/home-main.js"></script>
+{% block bottomscripts %}<!-- grunt-inactive: dev
+<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script>
 <endgrunt>--></endgrunt><!-- grunt-active: build -->
 <script>
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
-    require(['home-main'], function(homeMain) {});
+    require(['only-highlight-main'], function(homeMain) {});
   });
 </script><!-- endgrunt -->{% endblock %}
 {% block header %}{% endblock %}
@@ -30,7 +29,7 @@
       </div>
       <div class="home-search-container">
         <form class="search-form">
-          <input type="search" placeholder="Search" class="search-input"/>
+          <input type="search" placeholder="Search for a title, author, topic, &amp;c." class="search-input"/>
           <input type="submit" value="Submit" class="search-submit s-search"/>
         </form>
       </div>
@@ -50,26 +49,16 @@
       </section>
       <section class="contribute home-section">
         <h2 class="home-subhead">Contribute</h2>
-        <p>Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive! Just <a href="/contact">visit the contact page</a> and release your long-pent-up flood of ideas. <a href="/contact">Thank God for people like you!</a></p>
+        <p class="regtxt">Send your own ideas for selections, tags, authors to feature, &amp;c. Help this project thrive. Just <a href="/contact">visit the contact page</a> and release your long-pent-up flood of ideas. <a href="/contact">Thank God for people like you.</a></p>
       </section>
-      <div data-picture="data-picture" data-alt="A skeleton, thinking, at an altar" class="home-image home-skeleton">
-        <div data-src="{{ STATIC_URL }}gentlereader/images/skeleton-thinking-nr.png" data-media="(min-width: 47.5em)"></div>
-        <div data-src="{{ STATIC_URL }}gentlereader/images/skeleton-thinking.png" data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)"></div>
-      </div>
+      <div class="home-skeleton"></div>
     </div>
     <div class="home-col-right">
-      <div data-picture="data-picture" data-alt="A melancholic scholar; a gentle reader" class="home-image">
-        <div data-src="{{ STATIC_URL }}gentlereader/images/melancholic-scholar-nr.png" data-media="(min-width: 47.5em)"></div>
-        <div data-src="{{ STATIC_URL }}gentlereader/images/melancholic-scholar.png" data-media="(min-width: 47.5em) and (-webkit-min-device-pixel-ratio: 2), (min-width: 47.5em) and (min-resolution: 192dpi)"></div>
-      </div>
+      <div class="home-scholar"></div>
       <section class="subscribe home-section">
         <h2 class="home-subhead">Subscribe</h2>
-        <p>As <cite>The Gentle Reader</cite> grows, you can receive <em>regular installations</em> of newly added <span class="s-cap">selections</span>&nbsp;.&nbsp;.&nbsp;. by email, RSS, Twitter, or Facebook.</p>
-        <form class="email-form">
-          <input type="email" placeholder="Your email address" class="email-input"/>
-          <input type="submit" value="Do it" class="email-submit"/>
-        </form>
-        <div class="subscribe-icons"><a href="#" class="subscribe-icon s-icn-rss">Subscribe to the RSS Feed</a><a href="#" class="subscribe-icon s-icn-twitter">Follow us on Twitter</a><a href="#" class="subscribe-icon s-icn-facebook">Follow us on Facebook</a></div>
+        <p class="regtxt">As <cite>The Gentle Reader</cite> grows, you stay updated with <em>regular installations</em> of newly added <span class="s-cap">selections</span> &mdash; by RSS, Twitter (<a href="https://twitter.com/aGentleTweeter" target="_blank">@aGentleTweeter</a>), or Facebook.</p>
+        <div class="subscribe-icons"><a href="/feed" target="_blank" class="subscribe-icon s-icn-rss">Subscribe to the RSS Feed</a><a href="https://twitter.com/aGentleTweeter" title="@aGentleTweeter" target="_blank" class="subscribe-icon s-icn-twitter">Follow us on Twitter</a><a href="#" target="_blank" class="subscribe-icon s-icn-facebook">Follow us on Facebook</a></div>
       </section>
       <nav id="home-browse" class="home-nav-container home-section">
         <h2 class="home-subhead">Browse</h2>

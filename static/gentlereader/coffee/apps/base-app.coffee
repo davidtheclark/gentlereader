@@ -1,8 +1,7 @@
 define ['jquery',
-        'apps/search-app',
-        'lib/picturefill'],
+        'apps/search-app'],
 
-  ($, searchApp, picturefill) ->
+  ($, searchApp) ->
 
     BaseApp = ->
 
@@ -34,7 +33,11 @@ define ['jquery',
         e.stopPropagation()
         menuToggle $searchCont, $browseCont
 
+      # back to top button
+      $("#toTop").click ->
+        $("html, body").animate scrollTop: 0
 
+      # show and hide copyright info in footer
       $getCopy = $(".get-copyright-info")
       $copyCont = $(".footer-copyright")
       $getCopy.click (e) ->

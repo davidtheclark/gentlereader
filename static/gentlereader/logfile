@@ -70,3 +70,15 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2013-05-27 10:39:57 MST
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  received SIGHUP, reloading configuration files
+WARNING:  corrupted statistics file "pg_stat_tmp/pgstat.stat"
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-05-27 21:14:34 MST
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+LOG:  received SIGHUP, reloading configuration files
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 3766) running in data directory "/usr/local/var/postgres"?
