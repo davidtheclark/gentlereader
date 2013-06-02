@@ -1,10 +1,16 @@
 define ['jquery',
         'apps/search-app',
-        'lib/hyphenator'],
+        'lib/fastclick'],
 
-  ($, searchApp, Hyphenator) ->
+  ($, searchApp, FastClick) ->
 
     BaseApp = ->
+
+      # fast click
+      $ ->
+        FastClick.attach document.body
+
+      # nav menu
 
       $searchBtn = $(".nav-search")
       $searchCont = $(".nav-search--container")
@@ -21,8 +27,6 @@ define ['jquery',
               e.stopPropagation()
             $(document).one "click", (e) ->
               $desired.slideToggle "fast"
-
-
 
       # show and hide browse
       $browseBtn.click (e) ->
@@ -46,9 +50,6 @@ define ['jquery',
         $copyCont.slideToggle "fast", ->
           if $copyCont.css("display") == "block"
             $("html, body").animate scrollTop: $copyCont.offset().top
-
-      # run hyphenator
-      Hyphenator.run()
 
 
       searchApp.initialize()

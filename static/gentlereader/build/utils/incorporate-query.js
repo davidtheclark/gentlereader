@@ -1,1 +1,1 @@
-define([],function(){var e;return e=function(e){var i,t,a,r,n;if(e&&e.hasOwnProperty("query")){for(t=[],n=e.query,a=0,r=n.length;r>a;a++)i=n[a],t.push(""+i+"="+e.query[i]);return"?"+t.join("&")}return""}});
+define([],function(){var e;return e=function(e){var t,i,n,a,r;if(e&&e.hasOwnProperty("query")){for(i=[],r=e.query,n=0,a=r.length;a>n;n++)t=r[n],i.push(""+t+"="+e.query[t]);return"?"+i.join("&")}return""}});

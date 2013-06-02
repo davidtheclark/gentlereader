@@ -8,6 +8,7 @@ lib/backbone.js
 lib/typeahead.js
 lib/jade-runtime.js
 apps/search-app.js
+lib/fastclick.js
 apps/base-app.js
 base-main.js
 models/rand-quot-set.js
@@ -62,17 +63,6 @@ templates/brQuotRandomTempl.js
 templates/brQuotAuthTempl.js
 apps/browse-highlights-app.js
 browse-highlights-main.js
-
-only-hyphenation-main.js
-----------------
-lib/hyphenator.js
-only-hyphenation-main.js
-
-home-main.js
-----------------
-lib/unfinishedToggler.js
-lib/hyphenator.js
-home-main.js
 
 about-main.js
 ----------------

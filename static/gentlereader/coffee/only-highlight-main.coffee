@@ -4,5 +4,7 @@ require ['apps/rand-quot-app'],
 
   (RandQuotApp) ->
 
-    quoteApp = new RandQuotApp()
+    options = highlightParams || ''
+
+    quoteApp = new RandQuotApp options
 

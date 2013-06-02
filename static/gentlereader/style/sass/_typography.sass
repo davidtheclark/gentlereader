@@ -64,9 +64,11 @@ h6
   @extend %indented-p
   color: $c-subtle
   font-family: $f-heading
-  font-size: 1.5em
+  font-size: 1.2em
   line-height: 1.4
   position: relative
+  +breakpoint(desktop)
+    font-size: 1.5em
 
 .regtxt
   font-size: 1.07em

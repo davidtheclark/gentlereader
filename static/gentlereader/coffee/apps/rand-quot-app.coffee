@@ -1,11 +1,10 @@
 define ['backbone',
         'models/rand-quot-set',
         'views/rand-quot-view',
-        'lib/matchMedia',
-        'lib/hyphenator'
+        'lib/matchMedia'
         'utils/isElementInViewport'],
 
-  (Backbone, RandQuotSet, RandQuotView, matchMedia, Hyphenator, isElementInViewport) ->
+  (Backbone, RandQuotSet, RandQuotView, matchMedia, isElementInViewport) ->
 
     removeStyle = () ->
       # Accepts jQuery DOM objects.
@@ -28,6 +27,8 @@ define ['backbone',
         @["settings"] = {}
         @settings.desktop = ->
           if matchMedia('screen and (min-width: 760px)').matches then true else false
+        @settings.ipad = ->
+          if matchMedia('only screen and (min-device-width : 768px) and (max-device-width : 1024px)').matches then true else false
 
         if options
           @settings.home = options.home || false
@@ -80,7 +81,7 @@ define ['backbone',
         on the view and run @switchQuot. ###
         if !@activeQuot
           @activeQuot = new RandQuotView params
-          Hyphenator.run()  # re-run hyphenator, with new text in place
+          #Hyphenator.run()  # re-run hyphenator, with new text in place
           if @settings.desktop()
             @desktopFirst()
           else
@@ -91,7 +92,7 @@ define ['backbone',
         else
           params["offscreen"] = true
           @offscreenQuot = new RandQuotView params
-          Hyphenator.run()  # re-run hyphenator, with new text in place
+          #Hyphenator.run()  # re-run hyphenator, with new text in place
           @switchQuot()
 
 
@@ -132,7 +133,7 @@ define ['backbone',
 
           if !@settings.getThenShow
             top = $("#rqTop").offset().top
-            scrollTo = if @settings.desktop() and not @settings.home then top - 60 else top - 20
+            scrollTo = if @settings.desktop() and not @settings.home and not @settings.ipad() then top - 60 else top - 20
             if not isElementInViewport document.getElementById("rqTop")
               $('body, html').animate scrollTop: scrollTo, "fast"
 

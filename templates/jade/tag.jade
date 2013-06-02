@@ -7,16 +7,16 @@ meta(name="description", content="")
 {% endblock %}
 
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
+<!-- grunt-inactive: dev
 script(src="{{ STATIC_URL }}gentlereader/scripts/tag-main.js")
-<!-- endgrunt -->
+endgrunt -->
 
-<!-- grunt-inactive: build
+<!-- grunt-active: build -->
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['tag-main'], function(tagMain) {});
   });
-endgrunt -->
+<!-- endgrunt -->
 {% endblock %}
 
 {% block main %}

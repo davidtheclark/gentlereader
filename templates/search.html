@@ -2,11 +2,10 @@
 {% extends "base.html" %}
 {% block title %}Search Results - The Gentle Reader{% endblock %}
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
-<!-- endgrunt -->
-<!-- grunt-inactive: build
-<script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {});</script>
-<endgrunt>--></endgrunt>{% endblock %}
+<!-- grunt-inactive: dev
+<endgrunt>--></endgrunt><!-- grunt-active: build -->
+<script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {});</script><!-- endgrunt -->
+{% endblock %}
 {% block main %}
 <div class="content search-content">
   <header class="search-header">

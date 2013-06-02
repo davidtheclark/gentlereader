@@ -31,13 +31,18 @@ a.browse-tag-type
   font:
     size: 1.2em
   line-height: 1.3
-  margin: 0 0 0.3em 20px
+  margin: 0 0 0.3em 0
 
 .view-highlights
   font:
     family: $f-heading
     style: italic
-  margin: 0 0 1em 20px
+  margin: 0 0 1em 0
+
++breakpoint(desktop)
+  .nation-dates,
+  .view-highlights
+    margin-left: 20px
 
 .tag-info
   font-size: 1em
