@@ -10,3 +10,7 @@ require ['utils/globals',
     quoteApp = new RandQuotApp()
     highlightApp = globals.app = new BrowseHighlightsApp()
 
+    $("#bhaLabel").click (e) ->
+      e.preventDefault()
+      $("#select-highlight-author").click()
+

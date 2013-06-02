@@ -23,8 +23,6 @@
   label
     @include position(absolute, 0px 0px 0px 0px)
     background: white
-    pointer-events: none
-    z-index: 10
 
   +breakpoint(mobile)
     border-bottom: 1px solid black
@@ -40,15 +38,22 @@
 
 #select-highlight-author
   @include position(absolute, 0px 0px 0px 0px)
+  +appearance(none)
   cursor: pointer
   outline: none !important
-  -webkit-appearance: none
-  z-index: 1
+  z-index: 10
+  border: none
+  background: transparent
+  opacity: 0
+
 
 
 /*-------------
  * QUOTATIONS
  * ------------*/
+
+.few-random
+  font-size: 2em
 
 .highlight-author-h
   font-size: 2.5em

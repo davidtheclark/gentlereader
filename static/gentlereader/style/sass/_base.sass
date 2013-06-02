@@ -43,9 +43,9 @@ input[type="text"],
 textarea
   +appearance(none)
   +transition(all 0.4s)
+  background: white
   outline: none
-  &:hover,
-  &:active
+  &:focus
     box-shadow: 0 0 7px $c-emphatic
 
 
@@ -71,8 +71,6 @@ textarea
 .poetry-line
   +hanging-indent(1em)
   display: block
-  font-family: Georgia, serif
-  font-size: 0.85em
 
 .poetry-stanza
   margin-bottom: 1em

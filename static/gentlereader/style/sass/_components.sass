@@ -33,6 +33,9 @@
     text-indent: 20px
     &:first-child
       text-indent: 0
+  p.no-indent
+    margin: 0
+    text-indent: 0
 
 =dot-link()
   $x: 40px
@@ -57,6 +60,7 @@
     font-size: 3em
     float: left
     font-style: normal
+    line-height: 1.1
     max-height: 1px
     width: $x
 
@@ -79,6 +83,7 @@
   &:after
     font-family: "fellorn" !important
     font-style: normal
+    line-height: 1
     margin: 0 0.5em
     vertical-align: bottom
   &:before

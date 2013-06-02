@@ -12,12 +12,12 @@ html(lang="en")
 
     link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed")
 
-    <!-- grunt-inactive: dev
+    <!-- grunt-active: dev -->
     link(rel="stylesheet", href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css")
-    endgrunt -->
-    <!-- grunt-active: build -->
-    link(rel="stylesheet", href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css")
     <!-- endgrunt -->
+    <!-- grunt-inactive: build
+    link(rel="stylesheet", href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css")
+    endgrunt -->
     {% block styles %}{% endblock %}
 
     {% block topscripts %}{% endblock %}
@@ -36,12 +36,12 @@ html(lang="en")
     include includes/footer
     {% endblock %}
 
-    <!-- grunt-inactive: dev
+    <!-- grunt-active: dev -->
     script(src="{{ STATIC_URL }}gentlereader/scripts/require.js")
     script(src="{{ STATIC_URL }}gentlereader/scripts/common-dev.js")
-    endgrunt -->
-
-    <!-- grunt-active: build -->
-    script(src="{{ STATIC_URL }}gentlereader/build/require.js")
     <!-- endgrunt -->
+
+    <!-- grunt-inactive: build
+    script(src="{{ STATIC_URL }}gentlereader/build/require.js")
+    endgrunt -->
     {% block bottomscripts %}{% endblock %}

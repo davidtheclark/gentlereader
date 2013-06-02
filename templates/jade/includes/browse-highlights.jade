@@ -2,7 +2,7 @@
   .adjustor-container.highlight-adjustors
     .hl-adjustor.random-highlights Random Highlights
     form.hl-adjustor
-      label(for='select-highlight-author') Choose an Author
+      label#bhaLabel(for='select-highlight-author') Choose an Author
       select#select-highlight-author(type='text')
         {% for author in authors %}
         option(value='{{ author.slug }}', data-identifier="{{ author.pk }}")

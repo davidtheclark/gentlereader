@@ -1,14 +1,15 @@
 
 {% extends "base.html" %}
 {% block title %}Contact and Contribute to The Gentle Reader{% endblock %}
-{% block bottomscripts %}<!-- grunt-inactive: dev
-<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script>
-<endgrunt>--></endgrunt><!-- grunt-active: build -->
+{% block bottomscripts %}<!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
 <script>
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['only-highlight-main'], function(homeMain) {});
   });
-</script><!-- endgrunt -->{% endblock %}
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
 {% block main %}
 <div class="content">
   <h1 class="browse-h">Contact</h1>

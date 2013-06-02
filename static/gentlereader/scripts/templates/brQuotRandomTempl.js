@@ -6,6 +6,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
+buf.push('\n<h2 class="few-random">A Few at Random</h2>');
 // iterate locals
 ;(function(){
   if ('number' == typeof locals.length) {

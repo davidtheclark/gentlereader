@@ -4,7 +4,7 @@
 
 {% block bottomscripts %}
 
-<!-- grunt-inactive: dev
+<!-- grunt-active: dev -->
 script
   var tagType = {{ category_json|safe }};
 {% if category == "timeline" %}
@@ -14,9 +14,9 @@ script(src="{{ STATIC_URL }}gentlereader/scripts/browse-highlights-main.js")
 {% elif category %}
 script(src="{{ STATIC_URL }}gentlereader/scripts/browse-main.js")
 {% endif %}
-endgrunt -->
+<!-- endgrunt -->
 
-<!-- grunt-active: build -->
+<!-- grunt-inactive: build
 script
   var tagType = {{ category_json|safe }};
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
@@ -28,7 +28,7 @@ script
     require(['browse-main'], function(browseMain) {});
     {% endif %}
   });
-<!-- endgrunt -->
+endgrunt -->
 
 {% endblock %}
 

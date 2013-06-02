@@ -100,7 +100,7 @@ class Selection(models.Model):
         return mark_safe(_get_from_display(self, False))
 
     def get_teaser(self):
-        return mark_safe(self.teaser)
+        return mark_safe(dumb_to_smart_quotes(self.teaser))
 
     def get_comment_text(self):
         return mark_safe(self.comment_text)

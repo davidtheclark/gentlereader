@@ -1,7 +1,8 @@
 define ['jquery',
-        'apps/search-app'],
+        'apps/search-app',
+        'lib/hyphenator'],
 
-  ($, searchApp) ->
+  ($, searchApp, Hyphenator) ->
 
     BaseApp = ->
 
@@ -46,6 +47,8 @@ define ['jquery',
           if $copyCont.css("display") == "block"
             $("html, body").animate scrollTop: $copyCont.offset().top
 
+      # run hyphenator
+      Hyphenator.run()
 
 
       searchApp.initialize()

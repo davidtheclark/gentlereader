@@ -2,9 +2,10 @@ define ['backbone',
         'models/rand-quot-set',
         'views/rand-quot-view',
         'lib/matchMedia',
+        'lib/hyphenator'
         'utils/isElementInViewport'],
 
-  (Backbone, RandQuotSet, RandQuotView, matchMedia, isElementInViewport) ->
+  (Backbone, RandQuotSet, RandQuotView, matchMedia, Hyphenator, isElementInViewport) ->
 
     removeStyle = () ->
       # Accepts jQuery DOM objects.
@@ -79,6 +80,7 @@ define ['backbone',
         on the view and run @switchQuot. ###
         if !@activeQuot
           @activeQuot = new RandQuotView params
+          Hyphenator.run()  # re-run hyphenator, with new text in place
           if @settings.desktop()
             @desktopFirst()
           else
@@ -89,6 +91,7 @@ define ['backbone',
         else
           params["offscreen"] = true
           @offscreenQuot = new RandQuotView params
+          Hyphenator.run()  # re-run hyphenator, with new text in place
           @switchQuot()
 
 

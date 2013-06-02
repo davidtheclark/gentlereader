@@ -66,9 +66,6 @@ module.exports = function(grunt) {
               name: "browse-highlights-main",
               exclude: ["common-build"]
             }, {
-              name: "only-hyphenation-main",
-              exclude: ["common-build"]
-            }, {
               name: "home-main",
               exclude: ["common-build"]
             }, {

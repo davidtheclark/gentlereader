@@ -3,16 +3,16 @@
 {% block title %}About the Gentle Reader{% endblock %}
 
 {% block bottomscripts %}
-<!-- grunt-inactive: dev
+<!-- grunt-active: dev -->
 script(src="{{ STATIC_URL }}gentlereader/scripts/about-main.js")
-endgrunt -->
+<!-- endgrunt -->
 
-<!-- grunt-active: build -->
+<!-- grunt-inactive: build
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['about-main'], function(tagMain) {});
   });
-<!-- endgrunt -->
+endgrunt -->
 {% endblock %}
 
 {% block main %}

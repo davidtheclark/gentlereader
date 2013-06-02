@@ -18,16 +18,16 @@ link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}gentlereader/style
 
 // scripts
 {% block bottomscripts %}
-<!-- grunt-inactive: dev
+<!-- grunt-active: dev -->
 script(src="{{ STATIC_URL }}gentlereader/scripts/selection-main.js")
-endgrunt -->
+<!-- endgrunt -->
 
-<!-- grunt-active: build -->
+<!-- grunt-inactive: build
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['selection-main'], function(selectionMain) {});
   });
-<!-- endgrunt -->
+endgrunt -->
 {% endblock %}
 
 {% block main %}
@@ -39,9 +39,9 @@ article.content
   header
 
     // title, author, date
-    hgroup.s-headline
+    .s-headline
       h1.s-title {{ selection.get_title }}
-      h2.s-authordate
+      .s-authordate
         {% with author=selection.get_author year=selection.source.pub_year %}
         | <a href="/authors/{{ source.author.slug }}" title="Author: {{ author }}" rel="author">
         | {{ author }}</a> &mdash; <a href="/timeline\#{{ year }}" title="Published in {{ year }}">

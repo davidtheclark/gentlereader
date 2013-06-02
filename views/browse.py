@@ -62,6 +62,7 @@ def browse_timeline(req):
     return render_to_response('browse.html', {
         'other_categories': other_categories,
         'category': 'timeline',
+        'category_json': json.dumps('timeline'),
         'years': result
     }, context_instance=RequestContext(req))
 
