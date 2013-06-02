@@ -1,14 +1,17 @@
 
 {% extends "base.html" %}
 {% block title %}{{ announcement }} - The Gentle Reader{% endblock %}
-{% block bottomscripts %}<!-- grunt-inactive: dev
-<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script>
-<endgrunt>--></endgrunt><!-- grunt-active: build -->
+{% block meta %}
+<meta name="description" content="An announcement from The Gentle Reader: {{ announcement }}."/>{% endblock %}
+{% block bottomscripts %}<!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
 <script>
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['only-highlight-main'], function(homeMain) {});
   });
-</script><!-- endgrunt -->{% endblock %}
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
 {% block main %}
 <div class="content">
   <article>

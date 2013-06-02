@@ -2,17 +2,21 @@
 
 {% block title %}About the Gentle Reader{% endblock %}
 
-{% block bottomscripts %}
-<!-- grunt-inactive: dev
-script(src="{{ STATIC_URL }}gentlereader/scripts/about-main.js")
-endgrunt -->
+{% block meta %}
+meta(name="description", content="The Gentle Reader is a dynamic, curated anthology of public domain texts.")
+{% endblock %}
 
-<!-- grunt-active: build -->
+{% block bottomscripts %}
+<!-- grunt-active: dev -->
+script(src="{{ STATIC_URL }}gentlereader/scripts/about-main.js")
+<!-- endgrunt -->
+
+<!-- grunt-inactive: build
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['about-main'], function(tagMain) {});
   });
-<!-- endgrunt -->
+endgrunt -->
 {% endblock %}
 
 {% block main %}

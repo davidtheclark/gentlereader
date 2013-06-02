@@ -1,13 +1,16 @@
 
 {% extends "base.html" %}
 {% block title %}Browse {{ category|capfirst }} - The Gentle Reader{% endblock %}
+{% block meta %}
+<meta name="description" content="Browse {{ category }} in The Gentle Reader's curated anthology of public domain texts."/>{% endblock %}
 {% block bottomscripts %}
-<!-- grunt-inactive: dev
+<!-- grunt-active: dev -->
 <script>var tagType = {{ category_json|safe }};</script>{% if category == "timeline" %}
 <script src="{{ STATIC_URL }}gentlereader/scripts/timeline-main.js"></script>{% elif category == "highlights" %}
 <script src="{{ STATIC_URL }}gentlereader/scripts/browse-highlights-main.js"></script>{% elif category %}
 <script src="{{ STATIC_URL }}gentlereader/scripts/browse-main.js"></script>{% endif %}
-<endgrunt>--></endgrunt><!-- grunt-active: build -->
+<!-- endgrunt -->
+<!-- grunt-inactive: build
 <script>
   var tagType = {{ category_json|safe }};
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
@@ -19,8 +22,8 @@
     require(['browse-main'], function(browseMain) {});
     {% endif %}
   });
-</script><!-- endgrunt -->
-{% endblock %}
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
 {% block main %}
 <div class="content">
   <h1 class="browse-h">

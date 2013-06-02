@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>{% block meta %}{% endblock %}
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed"><!-- grunt-inactive: dev
-    <link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css">
-    <endgrunt>--></endgrunt><!-- grunt-active: build -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css"><!-- endgrunt -->
-    {% block styles %}{% endblock %}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed"><!-- grunt-active: dev -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css"><!-- endgrunt -->
+    <!-- grunt-inactive: build
+    <link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css">
+    <endgrunt>--></endgrunt>{% block styles %}{% endblock %}
     {% block topscripts %}{% endblock %}
     {% block head %}{% endblock %}
   </head>
@@ -54,7 +54,7 @@
     {% block footer %}{% block footer-subscribe %}
     <section class="subscribe u-footer">
       <div class="inner">
-        <div class="subscribe-icons"><span>Hear about new selections</span><a href="#" class="subscribe-icon s-icn-rss-sm">Subscribe to the RSS Feed</a><a href="#" class="subscribe-icon s-icn-twitter-sm">Follow us on Twitter</a><a href="#" class="subscribe-icon s-icn-facebook-sm">Follow us on Facebook</a></div>
+        <div class="subscribe-icons"><span>Hear about new selections</span><a href="/feed" target="_blank" class="subscribe-icon s-icn-rss-sm">Subscribe to the RSS Feed</a><a href="https://twitter.com/aGentleTweeter" title="@aGentleTweeter" target="_blank" class="subscribe-icon s-icn-twitter-sm">Follow us on Twitter</a><a href="https://www.facebook.com/TheGentleReader" target="_blank" class="subscribe-icon s-icn-facebook-sm">Follow us on Facebook</a></div>
       </div>
     </section>{% endblock %}
     <footer class="site-footer">
@@ -77,11 +77,17 @@
         </div>
       </div>
     </footer>{% endblock %}
-    <!-- grunt-inactive: dev
+    <!-- grunt-active: dev -->
     <script src="{{ STATIC_URL }}gentlereader/scripts/require.js"></script>
-    <script src="{{ STATIC_URL }}gentlereader/scripts/common-dev.js"></script>
-    <endgrunt>--></endgrunt><!-- grunt-active: build -->
-    <script src="{{ STATIC_URL }}gentlereader/build/require.js"></script><!-- endgrunt -->
-    {% block bottomscripts %}{% endblock %}
+    <script src="{{ STATIC_URL }}gentlereader/scripts/common-dev.js"></script><!-- endgrunt -->
+    <!-- grunt-inactive: build
+    <script src="{{ STATIC_URL }}gentlereader/build/require.js"></script>
+    <endgrunt>--></endgrunt>
+    <script>
+      var _gaq=[['_setAccount','UA-41416800-1'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>{% block bottomscripts %}{% endblock %}
   </body>
 </html>

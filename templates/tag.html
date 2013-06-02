@@ -2,17 +2,17 @@
 {% extends "base.html" %}
 {% block title %}{{ tag }} - The Gentle Reader{% endblock %}
 {% block meta %}
-<meta name="description" content=""/>{% endblock %}
+<meta name="description" content="Public domain selections categorized in {{ tag|capfirst }} - The Gentle Reader."/>{% endblock %}
 {% block bottomscripts %}
-<!-- grunt-inactive: dev
-<script src="{{ STATIC_URL }}gentlereader/scripts/tag-main.js"></script>
-<endgrunt>--></endgrunt><!-- grunt-active: build -->
+<!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}gentlereader/scripts/tag-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
 <script>
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['tag-main'], function(tagMain) {});
   });
-</script><!-- endgrunt -->
-{% endblock %}
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
 {% block main %}
 <div class="content">
   <header class="tag-header">

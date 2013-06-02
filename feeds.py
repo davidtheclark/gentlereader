@@ -3,9 +3,9 @@ from gentlereader.models import Selection, Announcement
 from django.conf import settings
 
 class FullFeed(Feed):
-    title = "The Anthologist: Selections and News"
+    title = "The Gentle Reader"
     link = "/"
-    description = "New additions to the Anthologist's collection and announcements about the site and related subjects."
+    description = "New additions to The Gentle Reader's collection, along with announcements about the site."
 
     def items(self):
         s = Selection.objects.all()
@@ -16,10 +16,7 @@ class FullFeed(Feed):
         return item.__unicode__()
 
     def item_description(self, item):
-        if item.class_name() == "Announcement":
-            return item.text
-        else:
-            return item.teaser
+        return item.get_text()
 
     def item_link(self, item):
         host = settings.HOSTNAME
@@ -30,9 +27,9 @@ class FullFeed(Feed):
 
     def item_author_name(self, item):
         if item.class_name() == "Announcement":
-            return "The Anthologist"
+            return "The Gentle Reader"
         else:
-            return item.author()
+            return item.get_author()
 
     def item_pubdate(self, item):
         return item.date_entered

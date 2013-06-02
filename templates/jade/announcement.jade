@@ -2,6 +2,10 @@
 
 {% block title %}{{ announcement }} - The Gentle Reader{% endblock %}
 
+{% block meta %}
+meta(name="description", content="An announcement from The Gentle Reader: {{ announcement }}.")
+{% endblock %}
+
 {% block bottomscripts %}
 include includes/only-highlight-script
 {% endblock %}

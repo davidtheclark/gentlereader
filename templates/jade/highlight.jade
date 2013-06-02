@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %} Highlight &#35;{{ h.pk }}, from {{ h.selection.source.author.full_name }} - The Gentle Reader{% endblock %}
+{% block title %} Highlight from {{ h.selection.source.author.full_name }} (\#{{ h.pk }}) - The Gentle Reader{% endblock %}
+
+{% block meta %}
+meta(name="description", content="A {{ h.selection.source.author.full_name }} highlight from The Gentle Reader's anthology of public domain texts.")
+{% endblock %}
 
 {% block bottomscripts %}
 

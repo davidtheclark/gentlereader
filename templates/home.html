@@ -2,16 +2,17 @@
 {% extends "base.html" %}
 {% block title %}The Gentle Reader{% endblock %}
 {% block meta %}
-<meta name="description" content=""/>{% endblock %}
+<meta name="description" content="The Gentle Reader is a dynamic, curated anthology of public domain texts."/>{% endblock %}
 {% block bottomscripts %}
-<script>var highlightParams = { home: true };</script><!-- grunt-inactive: dev
-<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script>
-<endgrunt>--></endgrunt><!-- grunt-active: build -->
+<script>var highlightParams = { home: true };</script><!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
 <script>
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['only-highlight-main'], function(homeMain) {});
   });
-</script><!-- endgrunt -->{% endblock %}
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
 {% block header %}{% endblock %}
 {% block main %}
 <div class="content home-content">
@@ -59,7 +60,7 @@
       <section class="subscribe home-section">
         <h2 class="home-subhead">Subscribe</h2>
         <p class="regtxt">As <cite>The Gentle Reader</cite> grows, you stay updated with <em>regular installations</em> of newly added <span class="s-cap">selections</span> &mdash; by RSS, Twitter (<a href="https://twitter.com/aGentleTweeter" target="_blank">@aGentleTweeter</a>), or Facebook.</p>
-        <div class="subscribe-icons"><a href="/feed" target="_blank" class="subscribe-icon s-icn-rss">Subscribe to the RSS Feed</a><a href="https://twitter.com/aGentleTweeter" title="@aGentleTweeter" target="_blank" class="subscribe-icon s-icn-twitter">Follow us on Twitter</a><a href="#" target="_blank" class="subscribe-icon s-icn-facebook">Follow us on Facebook</a></div>
+        <div class="subscribe-icons"><a href="/feed" target="_blank" class="subscribe-icon s-icn-rss">Subscribe to the RSS Feed</a><a href="https://twitter.com/aGentleTweeter" title="@aGentleTweeter" target="_blank" class="subscribe-icon s-icn-twitter">Follow us on Twitter</a><a href="https://www.facebook.com/TheGentleReader" target="_blank" class="subscribe-icon s-icn-facebook">Follow us on Facebook</a></div>
       </section>
       <nav id="home-browse" class="home-nav-container home-section">
         <h2 class="home-subhead">Browse</h2>
