@@ -57,7 +57,6 @@ urlpatterns += patterns('django.contrib.sitemaps.views',
 
 urlpatterns += patterns('',
     (r'^feed/$', FullFeed())
-    (r'^googled0ee9de9c1486384\.html$', lambda r: HttpResponse("google-site-verification: googled0ee9de9c1486384.html.html", mimetype="text/plain")),
 )
 
 urlpatterns += patterns('gentlereader.views',
