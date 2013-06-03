@@ -1,0 +1,7 @@
+User-agent: *
+Sitemap: http://www.thegentlereader.net/sitemap.xml
+
+Disallow: /search/
+Disallow: /api/
+Disallow: /*feed=rss
+Disallow: /*type=feed

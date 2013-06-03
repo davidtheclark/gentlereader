@@ -3,8 +3,9 @@ from gentlereader.models import Selection, Announcement
 from django.conf import settings
 
 class FullFeed(Feed):
+    host = settings.HOSTNAME
     title = "The Gentle Reader"
-    link = "/"
+    link = "%s" % (host)
     description = "New additions to The Gentle Reader's collection, along with announcements about the site."
 
     def items(self):
