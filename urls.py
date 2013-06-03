@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from django.views.generic import TemplateView
+from django.http import HttpResponse
 from django.contrib import admin
 from gentlereader.feeds import FullFeed
 from gentlereader.sitemap import SelectionSitemap, AnnouncementSitemap, AuthorSitemap, TagSitemap, QuotationSitemap
@@ -60,8 +60,15 @@ urlpatterns += patterns('',
     (r'^feed/$', FullFeed())
 )
 
+robots = ("User-agent: *\n"
+          "Sitemap: http://www.thegentlereader.net/sitemap.xml\n"
+          "Disallow: /search/\n"
+          "Disallow: /api/\n"
+          "Disallow: /feed/")
+
 urlpatterns += patterns('gentlereader.views',
     (r'^$', 'home'),
+    (r'^robots\.txt$', lambda r: HttpResponse(robots, mimetype="text/plain")),
     (r'^about/$', 'about'),
     (r'^selections/$', 'browse_selections'),
     (r'^selections/(?P<sel_slug>[\w-]+)/$', 'selection'),
