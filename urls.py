@@ -58,7 +58,7 @@ urlpatterns += patterns('django.contrib.sitemaps.views',
 
 urlpatterns += patterns('',
     (r'^feed/$', FullFeed()),
-    (r'^robots\.txt$', TemplateView.as_view(template_name="robots.txt"))
+    (r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain; charset=utf-8'))
 )
 
 urlpatterns += patterns('gentlereader.views',
