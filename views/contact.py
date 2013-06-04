@@ -26,3 +26,7 @@ def contact(req):
         'form': form,
         'auto_subject': auto_subject
     }, context_instance=RequestContext(req))
+
+
+def thanks(req):
+    return render_to_response('thanks.html', {}, context_instance=RequestContext(req))

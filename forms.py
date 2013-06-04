@@ -4,6 +4,6 @@ from captcha.fields import ReCaptchaField
 class ContactForm(forms.Form):
     sender = forms.EmailField(required=False)
     cc_myself = forms.BooleanField(required=False)
-    subject = forms.CharField()
+    subject = forms.CharField(required=False)
     message = forms.CharField(widget=forms.widgets.Textarea())
     captcha = ReCaptchaField()

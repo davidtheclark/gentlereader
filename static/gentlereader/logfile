@@ -97,3 +97,11 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2013-06-02 21:26:08 MST
 LOG:  autovacuum launcher started
 LOG:  database system is ready to accept connections
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-06-03 19:33:29 MST
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections

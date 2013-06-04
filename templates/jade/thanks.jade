@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Contact and Contribute to The Gentle Reader{% endblock %}
+
+{% block meta %}
+meta(name="description", content="Suggest public domain texts and site improvements for The Gentle Reader.")
+{% endblock %}
+
+{% block bottomscripts %}
+include includes/only-highlight-script
+{% endblock %}
+
+{% block main %}
+
+.content
+  h1.browse-h Thank You
+
+  .browse-container.regtxt.thanks-txt
+    p Thank you for your contribution to the cause.
+    p I invite you to <a href="/">return to The Gentle Reader's homepage</a>.
+    .thanks-image
+
+  aside.browse-extras
+    .rq-container
+      include includes/rand-quot
+    .rq-btn Read a Random Highlight
+
+
+
+
+
+{% endblock %}

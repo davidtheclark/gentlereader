@@ -16,6 +16,13 @@
 .s-authordate
   @extend %h--subtitle
 
+.s-info
+  margin-top: 1em
+  font-size: 1.1em
+  +breakpoint(desktop)
+    margin-top: 0
+    font-size: 1em
+
 
 /* selection extras:
  * highlight and top tag list
@@ -160,6 +167,9 @@ $s-extras--heading-y: 40px
   margin: 1.5em auto 0 auto
   max-width: 520px
   text-align: justify
+
+  blockquote
+    margin-top: 0
 
   p:not(.poetry-line),
   blockquote

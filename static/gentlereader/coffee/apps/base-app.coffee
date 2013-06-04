@@ -10,8 +10,8 @@ define ['jquery',
       $ ->
         FastClick.attach document.body
 
-      # something seems weird with fastclic
-      # for this particular input only
+      # something seems weird with fastclick
+      # for this particular input only; so a hack correction
       $("#homeSearch").bind "touchstart", (e) ->
         e.stopPropagation
         $(e.target).trigger "focus"

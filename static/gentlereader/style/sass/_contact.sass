@@ -41,3 +41,16 @@
   &:hover
     border: 2px solid $c-emphatic !important
     color: $c-emphatic
+
+
+.thanks-txt
+  text-align: center
+  +breakpoint(desktop)
+    text-align: left
+
+.thanks-image
+  background: url("../../images/reader-scholar-nr.png") no-repeat center center
+  background-size: contain
+  padding-top: 90%
+  +hidpi(1.5)
+    background-image: url("../../images/reader-scholar.png")

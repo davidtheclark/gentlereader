@@ -18,16 +18,16 @@ link(rel="stylesheet", type="text/css", href="{{ STATIC_URL }}gentlereader/style
 
 // scripts
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
+<!-- grunt-inactive: dev
 script(src="{{ STATIC_URL }}gentlereader/scripts/selection-main.js")
-<!-- endgrunt -->
+endgrunt -->
 
-<!-- grunt-inactive: build
+<!-- grunt-active: build -->
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['selection-main'], function(selectionMain) {});
   });
-endgrunt -->
+<!-- endgrunt -->
 {% endblock %}
 
 {% block main %}
@@ -59,7 +59,7 @@ article.content
         {% endif %}
 
         {% if trans %}
-        | Translated from {{ source.langauge.name }}
+        | Translated from {{ source.language   }}
         | by {{ trans }} in {{ source.translation_year }}.
         {% endif %}
 

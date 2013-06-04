@@ -4,5 +4,5 @@ from browse import browse_category, browse_selections, browse_timeline, browse_h
 from tag import tag
 from announcement import announcement
 from highlight import highlight, highlight_random
-from contact import contact
+from contact import contact, thanks
 from search import search_results

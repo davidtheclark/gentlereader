@@ -7,16 +7,16 @@ meta(name="description", content="The Gentle Reader is a dynamic, curated anthol
 {% endblock %}
 
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
+<!-- grunt-inactive: dev
 script(src="{{ STATIC_URL }}gentlereader/scripts/about-main.js")
-<!-- endgrunt -->
+endgrunt -->
 
-<!-- grunt-inactive: build
+<!-- grunt-active: build -->
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['about-main'], function(tagMain) {});
   });
-endgrunt -->
+<!-- endgrunt -->
 {% endblock %}
 
 {% block main %}
@@ -74,7 +74,7 @@ endgrunt -->
 
         .uft-b
           p He was led to this labor by his own idiosyncratic reading habits, academic studies, and teaching experience &mdash; by years of seeking out delightful, inspiring, and unusual works; developing an appreciation for the aesthetics of ages past; engaging more and more with electronic texts; hunting for freely-reproducible, high-quality readings to feed his students; and always aspiring to keep track, somehow, of the best stuff he'd found, so he could re-read it himself and share it with others.
-          p This David Clark is just one man. So he could use your help, if you're interested in getting involved. All aspects of the site would benefit from more input: the text collection, the programming, the design, the cataloging. <a href="/contribute">Please contribute your ideas if you're interested in the project</a>.
+          p This David Clark is just one man. So he could use your help, if you're interested in getting involved. All aspects of the site would benefit from more input: the text collection, the programming, the design, the cataloging. <a href="/contact">Please contribute your ideas if you're interested in the project</a>.
 
       .bibliomaniac-image
 
