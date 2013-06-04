@@ -10,6 +10,12 @@ define ['jquery',
       $ ->
         FastClick.attach document.body
 
+      # something seems weird with fastclic
+      # for this particular input only
+      $("#homeSearch").bind "touchstart", (e) ->
+        e.stopPropagation
+        $(e.target).trigger "focus"
+
       # nav menu
 
       $searchBtn = $(".nav-search")

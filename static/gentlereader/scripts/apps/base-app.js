@@ -7,6 +7,10 @@ define(['jquery', 'apps/search-app', 'lib/fastclick'], function($, searchApp, Fa
     $(function() {
       return FastClick.attach(document.body);
     });
+    $("#homeSearch").bind("touchstart", function(e) {
+      e.stopPropagation;
+      return $(e.target).trigger("focus");
+    });
     $searchBtn = $(".nav-search");
     $searchCont = $(".nav-search--container");
     $browseBtn = $(".nav-browse, .subnav-browse--close");

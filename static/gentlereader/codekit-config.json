@@ -2,17 +2,6 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8300",
   "files" : {
-    "\/images\/originals\/skeleton-scholar.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/originals\/skeleton-scholar.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/originals\/skeleton-scholar.png",
-      "initialSize" : 102712,
-      "fileType" : 8192
-    },
     "\/style\/sass\/bourbon\/css3\/_background.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -24,6 +13,18 @@
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_background.css",
       "fileType" : 4,
       "debugStyle" : 2
+    },
+    "\/coffee\/utils\/isElementInViewport.coffee" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/coffee\/utils\/isElementInViewport.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/utils\/isElementInViewport.js",
+      "outputStyle" : 1,
+      "fileType" : 32
     },
     "\/coffee\/views\/pg-select-view.coffee" : {
       "ignoreWasSetByUser" : 0,
@@ -85,17 +86,14 @@
       "fileType" : 2,
       "debugStyle" : 2
     },
-    "\/style\/sass\/bourbon\/addons\/_hide-text.scss" : {
+    "\/style\/css\/selection-specific\/i-laugh-at-all.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_hide-text.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_hide-text.css",
-      "fileType" : 4,
-      "debugStyle" : 2
+      "inputAbbreviatedPath" : "\/style\/css\/selection-specific\/i-laugh-at-all.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/style\/sass\/bourbon\/css3\/_columns.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -109,15 +107,15 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/style\/sass\/bourbon\/addons\/_position.scss" : {
+    "\/style\/sass\/bourbon\/addons\/_hide-text.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_position.scss",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_hide-text.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_position.css",
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_hide-text.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -133,6 +131,18 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
+    "\/style\/sass\/bourbon\/addons\/_position.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_position.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_position.css",
+      "fileType" : 4,
+      "debugStyle" : 2
+    },
     "\/style\/sass\/bourbon\/css3\/_image-rendering.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -144,15 +154,6 @@
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_image-rendering.css",
       "fileType" : 4,
       "debugStyle" : 2
-    },
-    "\/style\/css\/selection-specific\/i-laugh-at-all.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/css\/selection-specific\/i-laugh-at-all.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/coffee\/selection-main.coffee" : {
       "ignoreWasSetByUser" : 0,
@@ -166,18 +167,6 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
-    "\/style\/sass\/bourbon\/helpers\/_linear-positions-parser.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/helpers\/_linear-positions-parser.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_linear-positions-parser.css",
-      "fileType" : 4,
-      "debugStyle" : 2
-    },
     "\/style\/sass\/bourbon\/css3\/_placeholder.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -187,6 +176,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_placeholder.css",
+      "fileType" : 4,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/bourbon\/helpers\/_linear-positions-parser.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/helpers\/_linear-positions-parser.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_linear-positions-parser.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -226,18 +227,6 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/style\/sass\/bourbon\/addons\/_triangle.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_triangle.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_triangle.css",
-      "fileType" : 4,
-      "debugStyle" : 2
-    },
     "\/style\/sass\/bourbon\/css3\/_border-radius.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -247,6 +236,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_border-radius.css",
+      "fileType" : 4,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/bourbon\/addons\/_triangle.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_triangle.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_triangle.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -331,16 +332,16 @@
       "initialSize" : 1850,
       "fileType" : 8192
     },
-    "\/images\/originals\/skeleton-thinking.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+    "\/scripts\/templates\/jade\/brQuotAuthTempl.jade" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/originals\/skeleton-thinking.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/originals\/skeleton-thinking.png",
-      "initialSize" : 184834,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotAuthTempl.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotAuthTempl.html",
+      "fileType" : 512
     },
     "\/style\/sass\/bourbon\/helpers\/_deprecated-webkit-gradient.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -366,15 +367,27 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/style\/sass\/bourbon\/addons\/_clearfix.scss" : {
+    "\/style\/sass\/bourbon\/functions\/_grid-width.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_clearfix.scss",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_grid-width.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_clearfix.css",
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_grid-width.css",
+      "fileType" : 4,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/bourbon\/css3\/_border-image.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_border-image.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_border-image.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -390,40 +403,28 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
-    "\/style\/sass\/bourbon\/functions\/_grid-width.scss" : {
+    "\/style\/sass\/bourbon\/addons\/_clearfix.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_grid-width.scss",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_clearfix.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_grid-width.css",
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_clearfix.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/scripts\/templates\/jade\/brQuotAuthTempl.jade" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotAuthTempl.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotAuthTempl.html",
-      "fileType" : 512
-    },
-    "\/style\/sass\/bourbon\/css3\/_border-image.scss" : {
+    "\/images\/originals\/skeleton-thinking.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_border-image.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_border-image.css",
-      "fileType" : 4,
-      "debugStyle" : 2
+      "inputAbbreviatedPath" : "\/images\/originals\/skeleton-thinking.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/originals\/skeleton-thinking.png",
+      "initialSize" : 184834,
+      "fileType" : 8192
     },
     "\/style\/css\/selection-specific\/in-a-far-country.css" : {
       "ignoreWasSetByUser" : 0,
@@ -481,6 +482,17 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
+    "\/images\/spriteable\/search.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/spriteable\/search.png",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/images\/spriteable\/search.png",
+      "initialSize" : 1853,
+      "fileType" : 8192
+    },
     "\/coffee\/base-main.coffee" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -492,17 +504,6 @@
       "outputAbbreviatedPath" : "\/scripts\/base-main.js",
       "outputStyle" : 1,
       "fileType" : 32
-    },
-    "\/images\/spriteable\/search.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/spriteable\/search.png",
-      "processed" : 1,
-      "outputAbbreviatedPath" : "\/images\/spriteable\/search.png",
-      "initialSize" : 1853,
-      "fileType" : 8192
     },
     "\/style\/sass\/_rand-quot.sass" : {
       "ignoreWasSetByUser" : 1,
@@ -660,18 +661,6 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/coffee\/common-dev.coffee" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/coffee\/common-dev.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/common-dev.js",
-      "outputStyle" : 1,
-      "fileType" : 32
-    },
     "\/coffee\/routers\/browse-highlights-router.coffee" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -681,6 +670,18 @@
       "checkOutputStyle" : 0,
       "minifyOutput" : 0,
       "outputAbbreviatedPath" : "\/scripts\/routers\/browse-highlights-router.js",
+      "outputStyle" : 1,
+      "fileType" : 32
+    },
+    "\/coffee\/common-dev.coffee" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/coffee\/common-dev.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/common-dev.js",
       "outputStyle" : 1,
       "fileType" : 32
     },
@@ -719,6 +720,17 @@
       "outputAbbreviatedPath" : "\/build\/templates\/jade\/timelineListItem.html",
       "fileType" : 512
     },
+    "\/images\/melancholic-scholar.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/melancholic-scholar.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/melancholic-scholar.png",
+      "initialSize" : 35456,
+      "fileType" : 8192
+    },
     "\/scripts\/templates\/jade\/timelineListItem.jade" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -742,17 +754,6 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
-    "\/images\/melancholic-scholar.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/melancholic-scholar.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/melancholic-scholar.png",
-      "initialSize" : 35456,
-      "fileType" : 8192
-    },
     "\/images\/melancholic-scholar-nr.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -764,15 +765,15 @@
       "initialSize" : 198518,
       "fileType" : 8192
     },
-    "\/style\/sass\/bourbon\/_bourbon-deprecated-upcoming.scss" : {
+    "\/style\/sass\/bourbon\/addons\/_retina-image.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/_bourbon-deprecated-upcoming.scss",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_retina-image.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/css\/_bourbon-deprecated-upcoming.css",
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_retina-image.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -787,15 +788,15 @@
       "initialSize" : 13645,
       "fileType" : 4096
     },
-    "\/style\/sass\/bourbon\/addons\/_retina-image.scss" : {
+    "\/style\/sass\/bourbon\/_bourbon-deprecated-upcoming.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_retina-image.scss",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/_bourbon-deprecated-upcoming.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_retina-image.css",
+      "outputAbbreviatedPath" : "\/style\/sass\/css\/_bourbon-deprecated-upcoming.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -822,16 +823,16 @@
       "outputAbbreviatedPath" : "\/scripts\/templates\/jade\/pgSelectTempl.html",
       "fileType" : 512
     },
-    "\/images\/spriteable\/icn-rss-sm.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+    "\/build\/templates\/jade\/brQuotRandomTempl.jade" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/spriteable\/icn-rss-sm.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/spriteable\/icn-rss-sm.png",
-      "initialSize" : 4858,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.html",
+      "fileType" : 512
     },
     "\/images\/originals\/bibliomaniac.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -843,17 +844,6 @@
       "outputAbbreviatedPath" : "\/images\/originals\/bibliomaniac.jpg",
       "initialSize" : 846149,
       "fileType" : 4096
-    },
-    "\/build\/templates\/jade\/brQuotRandomTempl.jade" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.html",
-      "fileType" : 512
     },
     "\/style\/sass\/bourbon\/addons\/_size.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -877,6 +867,17 @@
       "compileDebug" : 1,
       "outputAbbreviatedPath" : "\/build\/templates\/jade\/selListItem.html",
       "fileType" : 512
+    },
+    "\/images\/spriteable\/icn-rss-sm.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/spriteable\/icn-rss-sm.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/spriteable\/icn-rss-sm.png",
+      "initialSize" : 4858,
+      "fileType" : 8192
     },
     "\/style\/css\/STYLE.css" : {
       "ignoreWasSetByUser" : 0,
@@ -933,6 +934,18 @@
       "initialSize" : 470417,
       "fileType" : 8192
     },
+    "\/style\/sass\/_selection.sass" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/_selection.sass",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/css\/_selection.css",
+      "fileType" : 2,
+      "debugStyle" : 2
+    },
     "\/images\/originals\/bibliomaniac.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -943,18 +956,6 @@
       "outputAbbreviatedPath" : "\/images\/originals\/bibliomaniac.png",
       "initialSize" : 1739730,
       "fileType" : 8192
-    },
-    "\/style\/sass\/bourbon\/addons\/_html5-input-types.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_html5-input-types.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_html5-input-types.css",
-      "fileType" : 4,
-      "debugStyle" : 2
     },
     "\/scripts\/templates\/jade\/brQuotRandomTempl.jade" : {
       "ignoreWasSetByUser" : 1,
@@ -967,16 +968,16 @@
       "outputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotRandomTempl.html",
       "fileType" : 512
     },
-    "\/style\/sass\/_selection.sass" : {
-      "ignoreWasSetByUser" : 1,
+    "\/style\/sass\/bourbon\/addons\/_html5-input-types.scss" : {
+      "ignoreWasSetByUser" : 0,
       "ignore" : 1,
-      "hidden" : 0,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/_selection.sass",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/addons\/_html5-input-types.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/css\/_selection.css",
-      "fileType" : 2,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_html5-input-types.css",
+      "fileType" : 4,
       "debugStyle" : 2
     },
     "\/coffee\/apps\/browse-app.coffee" : {
@@ -1319,15 +1320,15 @@
       "fileType" : 2,
       "debugStyle" : 2
     },
-    "\/style\/sass\/bourbon\/functions\/_flex-grid.scss" : {
+    "\/style\/sass\/bourbon\/css3\/_hidpi-media-query.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_flex-grid.scss",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_hidpi-media-query.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_flex-grid.css",
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_hidpi-media-query.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -1353,15 +1354,15 @@
       "initialSize" : 25975,
       "fileType" : 8192
     },
-    "\/style\/sass\/bourbon\/css3\/_hidpi-media-query.scss" : {
+    "\/style\/sass\/bourbon\/functions\/_flex-grid.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_hidpi-media-query.scss",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_flex-grid.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_hidpi-media-query.css",
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_flex-grid.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -1400,18 +1401,6 @@
       "outputAbbreviatedPath" : "\/build\/templates\/jade\/pgSelectTempl.html",
       "fileType" : 512
     },
-    "\/style\/sass\/bourbon\/functions\/_tint-shade.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_tint-shade.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_tint-shade.css",
-      "fileType" : 4,
-      "debugStyle" : 2
-    },
     "\/images\/spriteable\/icn-twitter-sm.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1422,6 +1411,18 @@
       "outputAbbreviatedPath" : "\/images\/spriteable\/icn-twitter-sm.png",
       "initialSize" : 4512,
       "fileType" : 8192
+    },
+    "\/coffee\/apps\/browse-highlights-app.coffee" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/coffee\/apps\/browse-highlights-app.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/apps\/browse-highlights-app.js",
+      "outputStyle" : 1,
+      "fileType" : 32
     },
     "\/coffee\/timeline-main.coffee" : {
       "ignoreWasSetByUser" : 0,
@@ -1435,16 +1436,16 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
-    "\/style\/sass\/_home.sass" : {
-      "ignoreWasSetByUser" : 1,
+    "\/style\/sass\/bourbon\/functions\/_transition-property-name.scss" : {
+      "ignoreWasSetByUser" : 0,
       "ignore" : 1,
-      "hidden" : 0,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/_home.sass",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_transition-property-name.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/css\/_home.css",
-      "fileType" : 2,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_transition-property-name.css",
+      "fileType" : 4,
       "debugStyle" : 2
     },
     "\/style\/sass\/_about.sass" : {
@@ -1471,29 +1472,29 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/style\/sass\/bourbon\/functions\/_transition-property-name.scss" : {
+    "\/style\/sass\/_home.sass" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/_home.sass",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/css\/_home.css",
+      "fileType" : 2,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/bourbon\/functions\/_tint-shade.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_transition-property-name.scss",
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_tint-shade.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_transition-property-name.css",
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_tint-shade.css",
       "fileType" : 4,
       "debugStyle" : 2
-    },
-    "\/coffee\/apps\/browse-highlights-app.coffee" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/coffee\/apps\/browse-highlights-app.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/apps\/browse-highlights-app.js",
-      "outputStyle" : 1,
-      "fileType" : 32
     },
     "\/style\/sass\/bourbon\/helpers\/_radial-arg-parser.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1542,17 +1543,16 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
-    "\/style\/sass\/bourbon\/css3\/_radial-gradient.scss" : {
+    "\/images\/spriteable\/envelope.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_radial-gradient.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_radial-gradient.css",
-      "fileType" : 4,
-      "debugStyle" : 2
+      "inputAbbreviatedPath" : "\/images\/spriteable\/envelope.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/spriteable\/envelope.png",
+      "initialSize" : 1580,
+      "fileType" : 8192
     },
     "\/style\/sass\/bourbon\/functions\/_px-to-em.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1566,16 +1566,17 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/images\/spriteable\/envelope.png" : {
+    "\/style\/sass\/bourbon\/css3\/_radial-gradient.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/spriteable\/envelope.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/spriteable\/envelope.png",
-      "initialSize" : 1580,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_radial-gradient.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_radial-gradient.css",
+      "fileType" : 4,
+      "debugStyle" : 2
     },
     "\/style\/sass\/_browse-announcements.sass" : {
       "ignoreWasSetByUser" : 1,
@@ -1623,6 +1624,17 @@
       "initialSize" : 4109,
       "fileType" : 8192
     },
+    "\/images\/sprite\/spriteable@2x.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/sprite\/spriteable@2x.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/sprite\/spriteable@2x.png",
+      "initialSize" : 15606,
+      "fileType" : 8192
+    },
     "\/style\/sass\/bourbon\/css3\/_perspective.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1635,6 +1647,15 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
+    "\/style\/css\/style-compressed.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/css\/style-compressed.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/style\/sass\/bourbon\/addons\/_font-family.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1645,27 +1666,6 @@
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_font-family.css",
       "fileType" : 4,
-      "debugStyle" : 2
-    },
-    "\/style\/css\/style-compressed.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/css\/style-compressed.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/style\/sass\/_highlight.sass" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/_highlight.sass",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/css\/_highlight.css",
-      "fileType" : 2,
       "debugStyle" : 2
     },
     "\/images\/originals\/melancholic-scholar.png" : {
@@ -1691,17 +1691,17 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/coffee\/utils\/isElementInViewport.coffee" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/style\/sass\/_highlight.sass" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/coffee\/utils\/isElementInViewport.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/utils\/isElementInViewport.js",
-      "outputStyle" : 1,
-      "fileType" : 32
+      "inputAbbreviatedPath" : "\/style\/sass\/_highlight.sass",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/css\/_highlight.css",
+      "fileType" : 2,
+      "debugStyle" : 2
     },
     "\/style\/sass\/_browse-highlights.sass" : {
       "ignoreWasSetByUser" : 1,
@@ -1724,6 +1724,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
+    "\/images\/originals\/skeleton-scholar.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/originals\/skeleton-scholar.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/originals\/skeleton-scholar.png",
+      "initialSize" : 102712,
+      "fileType" : 8192
+    },
     "\/style\/sass\/bourbon\/css3\/_animation.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1735,17 +1746,6 @@
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_animation.css",
       "fileType" : 4,
       "debugStyle" : 2
-    },
-    "\/images\/sprite\/spriteable@2x.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/sprite\/spriteable@2x.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/sprite\/spriteable@2x.png",
-      "initialSize" : 15606,
-      "fileType" : 8192
     },
     "\/style\/sass\/bourbon\/functions\/_compact.scss" : {
       "ignoreWasSetByUser" : 0,
