@@ -12,7 +12,10 @@ define ['jquery',
 
       # something seems weird with fastclick
       # for this particular input only; so a hack correction
-      $("#homeSearch").bind "touchstart", (e) ->
+      $homeSearch = $("#homeSearch")
+      $homeSearch.bind "touchstart", (e) ->
+        e.stopPropagation
+      $homeSearch.bind "touchend", (e) ->
         e.stopPropagation
         $(e.target).trigger "focus"
 

@@ -22,7 +22,6 @@ selection-main.js
 ----------------
 lib/unfinishedToggler.js
 apps/selection-app.js
-lib/hyphenator.js
 selection-main.js
 
 only-highlight-main.js
@@ -67,5 +66,4 @@ browse-highlights-main.js
 about-main.js
 ----------------
 lib/unfinishedToggler.js
-lib/hyphenator.js
 about-main.js

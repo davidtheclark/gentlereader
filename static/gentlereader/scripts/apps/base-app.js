@@ -3,11 +3,15 @@
 define(['jquery', 'apps/search-app', 'lib/fastclick'], function($, searchApp, FastClick) {
   var BaseApp;
   BaseApp = function() {
-    var $browseBtn, $browseCont, $copyCont, $getCopy, $searchBtn, $searchCont, menuToggle;
+    var $browseBtn, $browseCont, $copyCont, $getCopy, $homeSearch, $searchBtn, $searchCont, menuToggle;
     $(function() {
       return FastClick.attach(document.body);
     });
-    $("#homeSearch").bind("touchstart", function(e) {
+    $homeSearch = $("#homeSearch");
+    $homeSearch.bind("touchstart", function(e) {
+      return e.stopPropagation;
+    });
+    $homeSearch.bind("touchend", function(e) {
       e.stopPropagation;
       return $(e.target).trigger("focus");
     });

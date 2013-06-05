@@ -81,7 +81,6 @@ define ['backbone',
         on the view and run @switchQuot. ###
         if !@activeQuot
           @activeQuot = new RandQuotView params
-          #Hyphenator.run()  # re-run hyphenator, with new text in place
           if @settings.desktop()
             @desktopFirst()
           else
@@ -92,7 +91,6 @@ define ['backbone',
         else
           params["offscreen"] = true
           @offscreenQuot = new RandQuotView params
-          #Hyphenator.run()  # re-run hyphenator, with new text in place
           @switchQuot()
 
 

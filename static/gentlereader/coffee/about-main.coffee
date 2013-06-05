@@ -1,15 +1,12 @@
 require ["jquery",
          "apps/rand-quot-app",
-         "lib/unfinishedToggler",
-         "lib/hyphenator"],
+         "lib/unfinishedToggler"],
 
-  ($, RandQuotApp, unfinishedToggler, hyphenator) ->
+  ($, RandQuotApp, unfinishedToggler) ->
 
     $ ->
 
       new RandQuotApp()
 
-      $about = $("#about")
-
-      $about.unfinishedToggler
+      $$("#about").unfinishedToggler
         exclusive: false

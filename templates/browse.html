@@ -1,130 +1,34 @@
-
 {% extends "base.html" %}
 {% block title %}Browse {{ category|capfirst }} - The Gentle Reader{% endblock %}
-{% block meta %}
-<meta name="description" content="Browse {{ category }} in The Gentle Reader's curated anthology of public domain texts."/>{% endblock %}
+{% block meta %}<meta name="description" content="Browse {{ category }} in The Gentle Reader's curated anthology of public domain texts."/>{% endblock %}
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
-<script>var tagType = {{ category_json|safe }};</script>{% if category == "timeline" %}
-<script src="{{ STATIC_URL }}gentlereader/scripts/timeline-main.js"></script>{% elif category == "highlights" %}
-<script src="{{ STATIC_URL }}gentlereader/scripts/browse-highlights-main.js"></script>{% elif category %}
-<script src="{{ STATIC_URL }}gentlereader/scripts/browse-main.js"></script>{% endif %}
-<!-- endgrunt -->
-<!-- grunt-inactive: build
-<script>
-  var tagType = {{ category_json|safe }};
-  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
-    {% if category == "timeline" %}
-    require(['timeline-main'], function(timelineMain) {});
-    {% elif category == "highlights" %}
-    require(['browse-highlights-main'], function(highlightsMain) {});
-    {% elif category %}
-    require(['browse-main'], function(browseMain) {});
-    {% endif %}
-  });
-</script>
-<endgrunt>--></endgrunt>{% endblock %}
-{% block main %}
-<div class="content">
-  <h1 class="browse-h">
-    {% if category == "selections" %}
-    all selections
-    {% elif category == "languages" %}
-    original languages
-    {% else %}
-    {{ category }}
-    {% endif %}
-  </h1><!--
-  <div id="adjustor-container">
-    <div id="selected-page"></div>
-    <div id="page-select-container" class="adjustor-subcontainer"></div>
-  </div>-->{% if category == "selections" %}
-  <div id="selection-container" class="browse-container">
-    <ul id="selection-list">{% for s in selections %}
-      <li class="li-sel">
-        <section><a href="/selections/{{ s.slug }}">
-            <h3>{{ s.get_title }}</h3>
-            <div class="li-sel-dets"><span class="li-sel-author">{{ s.get_author }}.</span>{% if s.from_display %}
-              {{ s.from_display }}
-              {% endif %}
-              ({{ s.source.date_display }}). <span class="li-sel--posttime">Posted {{ s.date_entered }}</span>
-            </div></a></section>
-        <section class="li-sel--teaser"><span class="teaser-text hyphenate">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug}}" class="read-on">read&nbsp;on</a></section>
-      </li>{% endfor %}
-    </ul>
-  </div>{% elif category == "timeline" %}
-  <div id="timeline-container" class="browse-container">
-    <ul id="tl-list">{% for item in years %}
-      <li class="tl-li{% if forloop.counter|divisibleby:2 %} u-even{% endif %}">
-        <div data-year="{{ item.year }}" class="tl-year">{{ item.date_display }}</div>
-        <ul class="tl-sels">{% for s in item.selections %}
-          <li class="tl-sel uft-group"><a href="/selections/{{ s.slug }}">
-              <h2 class="tl-title">{{ s }}</h2>by {{ s.source.author }}</a><span class="tl-showteaser uft-trigger uft-a">[&nbsp;teaser&nbsp;&#9662;&nbsp;]</span>
-            <div class="tl-teaser hyphenate uft-b"><span class="teaser-text">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug }}" class="read-on">read&nbsp;on</a></div>
-          </li>{% endfor %}
-        </ul>
-      </li>{% endfor %}
-    </ul>
-  </div>{% elif category == "highlights" %}
-  <div class="browse-container">
-    <div class="adjustor-container highlight-adjustors">
-      <div class="hl-adjustor random-highlights">Random Highlights</div>
-      <form class="hl-adjustor">
-        <label id="bhaLabel" for="select-highlight-author">Choose an Author</label>
-        <select id="select-highlight-author" type="text">{% for author in authors %}
-          <option value="{{ author.slug }}" data-identifier="{{ author.pk }}">{{ author.last_name }}{% if author.first_name %}, {{ author.first_name}}{% endif %}</option>{% endfor %}
-        </select>
-      </form>
-    </div>
-    <div id="highlight-container"></div>
-  </div>{% elif category == "announcements" %}
-  <div id="announcement-container" class="browse-container">
-    <ul id="announcement-list">{% for a in announcements %}
-      <li class="ann-li">
-        <header>
-          <h2 class="ann-li-h"><a href="/announcements/{{ a.slug }}">{{ a.get_title }}</a></h2>
-          <div class="ann-li-date">&raquo; {{ a.date_entered|date:"d F Y, P" }}</div>
-        </header>
-        <section class="ann-li-body hyphenate">
-          {% if a.text|wordcount > 200 %}
-          {{ a.get_text|truncatewords_html:200 }}
-          <div class="read-more-ann"><a href="/announcements/{{ a.slug }}">read&nbsp;the&nbsp;rest</a></div>{% else %}
-          {{ a.get_text }}
-          {% endif %}
-        </section>
-      </li>{% endfor %}
-    </ul>
-  </div>{% else %}
-  <div id="tag-container" class="browse-container">
-    <ul id="tag-list">{% for t in tags %}
-      <li><a href="{{ t.slug }}" class="tag-list--a">{% if category == "authors" %}<span class="tag-list--span">{{ t }} <span class="browse-author-dates">({{ t.dates }})</span></span>{% else %}<span class="tag-list--span">{{ t }}</span>{% endif %}</a></li>{% endfor %}
-    </ul>
-  </div>{% endif %}
-  <aside class="browse-extras">
-    <div class="other-browse">
-      <h2 class="rq-title">Other Ways to Browse</h2>
-      <ul>{% for category in other_categories %}
-        <li><a href="/{{ category }}">
-            {% if category == "languages" %}
-            orig. languages
-            {% elif category == "announcements" %}
-            announce&shy;ments
-            {% else %}
-            {{ category }}
-            {% endif %}</a></li>{% endfor %}
-      </ul>
-    </div>
-    <div class="rq-container">
-      <div class="rq-backdrop"></div>
-      <div id="rqTop" class="rq-body">
-        <h2 class="rq-title">A Random Highlight</h2>
-        <div id="rqContent" class="rq-content"></div>
-        <div class="rq-utils">
-          <div class="rq-another">Get Another Highlight</div>
-          <div class="rq-close">close</div>
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="rq-btn">Read a Random Highlight</div>
-</div>{% endblock %}
+<!-- grunt-inactive: dev<script>var tagType = {{ category_json|safe }};</script>{% if category == "timeline" %}<script src="{{ STATIC_URL }}gentlereader/scripts/timeline-main.js"></script>{% elif category == "highlights" %}<script src="{{ STATIC_URL }}gentlereader/scripts/browse-highlights-main.js"></script>{% elif category %}<script src="{{ STATIC_URL }}gentlereader/scripts/browse-main.js"></script>{% endif %}<endgrunt>--></endgrunt><!-- grunt-active: build --><script>var tagType = {{ category_json|safe }};
+require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
+  {% if category == "timeline" %}
+  require(['timeline-main'], function(timelineMain) {});
+  {% elif category == "highlights" %}
+  require(['browse-highlights-main'], function(highlightsMain) {});
+  {% elif category %}
+  require(['browse-main'], function(browseMain) {});
+  {% endif %}
+});</script><!-- endgrunt -->
+{% endblock %}
+{% block main %}<div class="content"><h1 class="browse-h">{% if category == "selections" %}
+all selections
+{% elif category == "languages" %}
+original languages
+{% else %}
+{{ category }}
+{% endif %}</h1><!--<div id="adjustor-container"><div id="selected-page"></div><div id="page-select-container" class="adjustor-subcontainer"></div></div>-->{% if category == "selections" %}<div id="selection-container" class="browse-container"><ul id="selection-list">{% for s in selections %}<li class="li-sel"><section><a href="/selections/{{ s.slug }}"><h3>{{ s.get_title }}</h3><div class="li-sel-dets"><span class="li-sel-author">{{ s.get_author }}.</span>{% if s.from_display %}
+{{ s.from_display }}
+{% endif %}
+({{ s.source.date_display }}). <span class="li-sel--posttime">Posted {{ s.date_entered }}</span></div></a></section><section class="li-sel--teaser"><span class="teaser-text hyphenate">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug}}" class="read-on">read&nbsp;on</a></section></li>{% endfor %}</ul></div>{% elif category == "timeline" %}<div id="timeline-container" class="browse-container"><ul id="tl-list">{% for item in years %}<li class="tl-li{% if forloop.counter|divisibleby:2 %} u-even{% endif %}"><div data-year="{{ item.year }}" class="tl-year">{{ item.date_display }}</div><ul class="tl-sels">{% for s in item.selections %}<li class="tl-sel uft-group"><a href="/selections/{{ s.slug }}"><h2 class="tl-title">{{ s }}</h2>by {{ s.source.author }}</a><span class="tl-showteaser uft-trigger uft-a">[&nbsp;teaser&nbsp;&#9662;&nbsp;]</span><div class="tl-teaser hyphenate uft-b"><span class="teaser-text">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug }}" class="read-on">read&nbsp;on</a></div></li>{% endfor %}</ul></li>{% endfor %}</ul></div>{% elif category == "highlights" %}<div class="browse-container"><div class="adjustor-container highlight-adjustors"><div class="hl-adjustor random-highlights">Random Highlights</div><form class="hl-adjustor"><label id="bhaLabel" for="select-highlight-author">Choose an Author</label><select id="select-highlight-author" type="text">{% for author in authors %}<option value="{{ author.slug }}" data-identifier="{{ author.pk }}">{{ author.last_name }}{% if author.first_name %}, {{ author.first_name}}{% endif %}</option>{% endfor %}</select></form></div><div id="highlight-container"></div></div>{% elif category == "announcements" %}<div id="announcement-container" class="browse-container"><ul id="announcement-list">{% for a in announcements %}<li class="ann-li"><header><h2 class="ann-li-h"><a href="/announcements/{{ a.slug }}">{{ a.get_title }}</a></h2><div class="ann-li-date">&raquo; {{ a.date_entered|date:"d F Y, P" }}</div></header><section class="ann-li-body hyphenate">{% if a.text|wordcount > 200 %}
+{{ a.get_text|truncatewords_html:200 }}<div class="read-more-ann"><a href="/announcements/{{ a.slug }}">read&nbsp;the&nbsp;rest</a></div>{% else %}
+{{ a.get_text }}
+{% endif %}</section></li>{% endfor %}</ul></div>{% else %}<div id="tag-container" class="browse-container"><ul id="tag-list">{% for t in tags %}<li><a href="{{ t.slug }}" class="tag-list--a">{% if category == "authors" %}<span class="tag-list--span">{{ t }} <span class="browse-author-dates">({{ t.dates }})</span></span>{% else %}<span class="tag-list--span">{{ t }}</span>{% endif %}</a></li>{% endfor %}</ul></div>{% endif %}<aside class="browse-extras"><div class="other-browse"><h2 class="rq-title">Other Ways to Browse</h2><ul>{% for category in other_categories %}<li><a href="/{{ category }}">{% if category == "languages" %}
+orig. languages
+{% elif category == "announcements" %}
+announce&shy;ments
+{% else %}
+{{ category }}
+{% endif %}</a></li>{% endfor %}</ul></div><div class="rq-container"><div class="rq-backdrop"></div><div id="rqTop" class="rq-body"><h2 class="rq-title">A Random Highlight</h2><div id="rqContent" class="rq-content"></div><div class="rq-utils"><div class="rq-another">Get Another Highlight</div><div class="rq-close">close</div></div></div></div></aside><div class="rq-btn">Read a Random Highlight</div></div>{% endblock %}

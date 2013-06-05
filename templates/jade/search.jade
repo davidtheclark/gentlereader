@@ -3,13 +3,13 @@
 {% block title %}Search Results - The Gentle Reader{% endblock %}
 
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
-<!-- endgrunt -->
+<!-- grunt-inactive: dev
+endgrunt -->
 
-<!-- grunt-inactive: build
+<!-- grunt-active: build -->
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {});
-endgrunt -->
+<!-- endgrunt -->
 
 {% endblock %}
 
