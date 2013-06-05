@@ -52,7 +52,16 @@ $flower: "\274b"
 
 $trans-time: 0.3s ease-in
 
-
+=breakpoint($point)
+  @if $point == desktop
+    @media (min-width: $m-selection-lg)
+      @content
+  @if $point == mobile
+    @media (max-width: $m-selection-lg)
+      @content
+  @if $point == ipad
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)
+      @content
 
 // WEIRD STUFF CORRECTION
 

@@ -87,8 +87,10 @@ $nav-y: 56px
     &:after
       +transition(border-bottom-color $trans-time)
       border-bottom-color: $c-emphatic
-  @media (min-width: $m-selection-xlg)
+  +breakpoint(desktop)
     display: block
+  +breakpoint(ipad)
+    display: none
 
 
 /* browse subnav */
@@ -243,5 +245,3 @@ $subnav-background: whitesmoke
     margin-top: 0
   .site-nav--container
     position: static
-  a.fixed-back
-    display: none

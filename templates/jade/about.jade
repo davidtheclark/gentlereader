@@ -7,16 +7,16 @@ meta(name="description", content="The Gentle Reader is a dynamic, curated anthol
 {% endblock %}
 
 {% block bottomscripts %}
-<!-- grunt-inactive: dev
+<!-- grunt-active: dev -->
 script(src="{{ STATIC_URL }}gentlereader/scripts/about-main.js")
-endgrunt -->
+<!-- endgrunt -->
 
-<!-- grunt-active: build -->
+<!-- grunt-inactive: build
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['about-main'], function(tagMain) {});
   });
-<!-- endgrunt -->
+endgrunt -->
 {% endblock %}
 
 {% block main %}
@@ -30,8 +30,9 @@ script
     .browse-container
 
       section
-        p.feature The Gentle Reader shares the simple mission of all <span data-gloss="1">anthologies</span>: to expose curious readers to exquisite writing and engrossing ideas.
-        p It is a dynamic, curated anthology of selections from texts in the <span data-gloss"2">public domain</span>, compiled and catalogued for your enjoyment and edification.
+        p.feature The Gentle Reader shares the simple mission of all anthologies &mdash; to expose curious readers to exquisite writing and engrossing ideas.
+        p Its texts are drawn from the bottomless treasures of the public domain and entwined in a network of tags, so readers can easily follow their interests from one selection to another. This network will be grow more dense and more interesting as the collection grows.
+        p New selections are added regularly; and <a href="/contact">suggestions are more than welcome</a>.
 
       section.uft-group
         h2 What Makes The Gentle Reader Unique?

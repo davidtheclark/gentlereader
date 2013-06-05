@@ -1,12 +1,64 @@
+
 {% extends "base.html" %}
 {% block title %}Contact and Contribute to The Gentle Reader{% endblock %}
-{% block meta %}<meta name="description" content="Suggest public domain texts and site improvements for The Gentle Reader."/>{% endblock %}
-{% block bottomscripts %}<!-- grunt-inactive: dev<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script><endgrunt>--></endgrunt><!-- grunt-active: build --><script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
-  require(['only-highlight-main'], function(homeMain) {});
-});</script><!-- endgrunt -->{% endblock %}
-{% block main %}<div class="content"><h1 class="browse-h">Contact</h1><div class="browse-container regtxt"><p>Please send ideas for selections or tags, questions, suggestions about improving the site, enthusiastic compliments, requests for new functionality, or whatever you feel like sending.</p><form action="/contact/" method="post" id="contact-form">{% csrf_token %}
-{{ form.non_field_errors }}<div class="field-wrapper"><label for="id_subject">Subject</label>{% if auto_subject %}<input id="id_subject" type="text" maxlength="100" value="{{ auto_subject }}"/>{% else %}<input id="id_subject" type="text" autofocus="autofocus" maxlength="100"/>{% endif %}
-{{ form.subject.errors }}</div><div class="field-wrapper"><label for="id_message">Message</label>{{ form.message }}
-{{ form.message.errors }}</div><div class="field-wrapper"><label for="id_sender">Your email address</label><input id="id_sender" type="email" required="required"/>{{ form.sender.errors }}</div><div class="field-wrapper"><label for="id_cc_myself" class="cc-label">CC yourself?</label>{{ form.cc_myself }}
-{{ form.cc_myself.errors }}</div><div id="recaptcha-wrapper" class="field-wrapper"><label for="id_captcha">Are you human? Honest? Prove it.</label>{{ form.captcha }}
-{{ form.captcha.errors }}</div><div class="submit-wrapper"><input id="contact-submit" type="submit" value="Submit"/></div></form></div><aside class="browse-extras"><div class="rq-container"><div class="rq-backdrop"></div><div id="rqTop" class="rq-body"><h2 class="rq-title">A Random Highlight</h2><div id="rqContent" class="rq-content"></div><div class="rq-utils"><div class="rq-another">Get Another Highlight</div><div class="rq-close">close</div></div></div></div><div class="rq-btn">Read a Random Highlight</div></aside></div>{% endblock %}
+{% block meta %}
+<meta name="description" content="Suggest public domain texts and site improvements for The Gentle Reader."/>{% endblock %}
+{% block bottomscripts %}<!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
+<script>
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
+    require(['only-highlight-main'], function(homeMain) {});
+  });
+</script>
+<endgrunt>--></endgrunt>{% if go_to_captcha %}
+<script>document.getElementById("recaptcha-wrapper").scrollIntoView();</script>{% endif %}
+<script></script>{% endblock %}
+{% block main %}
+<div class="content">
+  <h1 class="browse-h">Contact</h1>
+  <div class="browse-container regtxt">
+    <p>Please send ideas for selections or tags, questions, suggestions about improving the site, enthusiastic compliments, requests for new functionality, or whatever you feel like sending.</p>
+    <form action="/contact/" method="post" id="contact-form">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="field-wrapper">
+        <label for="id_subject">Subject</label>{{ form.subject }}
+        {{ form.subject.errors }}
+      </div>
+      <div class="field-wrapper">
+        <label for="id_message">Message</label>{{ form.message }}
+        {{ form.message.errors }}
+      </div>
+      <div class="field-wrapper">
+        <label for="id_sender">Your email address</label>{{ form.sender }}
+        <!--input#id_sender(type='email', name='sender', maxlength='100', required)-->{{ form.sender.errors }}
+      </div>
+      <div class="field-wrapper">
+        <label for="id_cc_myself" class="cc-label">CC yourself?</label>{{ form.cc_myself }}
+        {{ form.cc_myself.errors }}
+      </div>
+      <div id="recaptcha-wrapper" class="field-wrapper">
+        <label for="id_captcha">Are you human? Honest? Prove it.</label>{{ form.captcha }}
+        {{ form.captcha.errors }}
+      </div>
+      <div class="submit-wrapper">
+        <input id="contact-submit" type="submit" value="Submit"/>
+      </div>
+    </form>
+  </div>
+  <aside class="browse-extras">
+    <div class="rq-container">
+      <div class="rq-backdrop"></div>
+      <div id="rqTop" class="rq-body">
+        <h2 class="rq-title">A Random Highlight</h2>
+        <div id="rqContent" class="rq-content"></div>
+        <div class="rq-utils">
+          <div class="rq-another">Get Another Highlight</div>
+          <div class="rq-close">close</div>
+        </div>
+      </div>
+    </div>
+    <div class="rq-btn">Read a Random Highlight</div>
+  </aside>
+</div>{% endblock %}

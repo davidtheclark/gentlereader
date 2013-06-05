@@ -8,6 +8,12 @@ meta(name="description", content="Suggest public domain texts and site improveme
 
 {% block bottomscripts %}
 include includes/only-highlight-script
+{% if go_to_captcha %}
+script
+  document.getElementById("recaptcha-wrapper").scrollIntoView();
+{% endif %}
+script
+
 {% endblock %}
 
 {% block main %}
@@ -22,11 +28,7 @@ include includes/only-highlight-script
       {{ form.non_field_errors }}
       .field-wrapper
         label(for='id_subject') Subject
-        {% if auto_subject %}
-        input#id_subject(type='text', maxlength='100', value='{{ auto_subject }}')
-        {% else %}
-        input#id_subject(type='text', autofocus, maxlength='100')
-        {% endif %}
+        {{ form.subject }}
         {{ form.subject.errors }}
       .field-wrapper
         label(for='id_message') Message
@@ -34,7 +36,8 @@ include includes/only-highlight-script
         {{ form.message.errors }}
       .field-wrapper
         label(for='id_sender') Your email address
-        input#id_sender(type='email', required)
+        {{ form.sender }}
+        //input#id_sender(type='email', name='sender', maxlength='100', required)
         {{ form.sender.errors }}
       .field-wrapper
         label.cc-label(for='id_cc_myself') CC yourself?

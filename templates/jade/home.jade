@@ -38,7 +38,7 @@ include includes/only-highlight-script.jade
       .home-search-container
         form.search-form
           input#homeSearch.search-input(type="search", placeholder="Search for a title, author, topic, &c.")
-          input.search-submit.s-search(type="submit", value="Submit")
+          input.search-submit(type="submit", value="Submit")
 
       section.recent.home-section#recent-additions
         h2.home-subhead Recent Additions
@@ -66,9 +66,9 @@ include includes/only-highlight-script.jade
         p.regtxt As <cite>The Gentle Reader</cite> grows, you can stay updated with <em>regular installations</em> of newly added <span class="s-cap">selections</span> &mdash; by RSS, Twitter (<a href="https://twitter.com/aGentleTweeter" target="_blank">@aGentleTweeter</a>), or Facebook.
 
         .subscribe-icons
-          a(href="/feed", target="_blank").subscribe-icon.s-icn-rss Subscribe to the RSS Feed
-          a(href="https://twitter.com/aGentleTweeter", title="@aGentleTweeter", target="_blank").subscribe-icon.s-icn-twitter Follow us on Twitter
-          a(href="https://www.facebook.com/TheGentleReader", target="_blank").subscribe-icon.s-icn-facebook Follow us on Facebook
+          a(href="/feed", target="_blank").subscribe-icon.mod-rss Subscribe to the RSS Feed
+          a(href="https://twitter.com/aGentleTweeter", title="@aGentleTweeter", target="_blank").subscribe-icon.mod-twitter Follow us on Twitter
+          a(href="https://www.facebook.com/TheGentleReader", target="_blank").subscribe-icon.mod-facebook Follow us on Facebook
 
 
       nav#home-browse.home-nav-container.home-section

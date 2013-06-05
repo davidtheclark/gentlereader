@@ -61,32 +61,3 @@
   border-color: transparent
   border-width: #{$size}px
   border-#{$side}-color: $color
-
-=right-finger
-  &:before
-    content: "\261E"
-    font:
-      size: 2em
-      style: normal
-    line-height: 0
-    margin-right: 0.2em
-    vertical-align: middle
-
-=hyphens($val: "auto")
-  word-wrap: break-word
-  -webkit-hyphens: $val
-  -moz-hyphens: $val
-  -ms-hyphens: $val
-  -o-hyphens: $val
-  hyphens: $val
-
-=breakpoint($point)
-  @if $point == desktop
-    @media (min-width: $m-selection-lg)
-      @content
-  @if $point == mobile
-    @media (max-width: $m-selection-lg)
-      @content
-  @if $point == ipad
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)
-      @content

@@ -1,3 +1,12 @@
+var glueCommands = function(name, retina) {
+  var first = 'glue images/sprite-assets/sprite-' + name + ' --url=../../images/sprites --img=images/sprites/ --css=style/sass/sprites/ --namespace=s --sprite-namespace=' + name;
+  var second = 'mv style/sass/sprites/sprite-' + name + '.css style/sass/sprites/_sprite-' + name + '.scss';
+  if (retina) {
+    first += ' --retina --imagemagick';
+  }
+  return [first, second].join('&&');
+};
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -12,10 +21,10 @@ module.exports = function(grunt) {
         ].join('&&')
       },
       'generate-sprite': {
-        command: 'glue images/spriteable --img=images/sprite --css=style/sass --padding=1 --retina --imagemagick --namespace=s --sprite-namespace='
-      },
-      'rename-sprite-style': {
-        command: 'mv style/sass/spriteable.css style/sass/_sprite.scss'
+        command: [
+          glueCommands('all', true),
+          glueCommands('home', true)
+        ].join('&&')
       }
     },
 
@@ -76,6 +85,14 @@ module.exports = function(grunt) {
     },
 
     replace: {
+      'sprite-extend': {
+        src: ['style/sass/sprites/_sprite-*'],
+        overwrite: true,
+        replacements: [{
+          from: /^\./gm,
+          to: '%'
+        }]
+      },
       dev: {
         src: ['../../templates/jade/*.jade', '../../templates/jade/includes/*.jade'],
         overwrite: true,
@@ -134,7 +151,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
 
   grunt.registerTask('start', ['shell:initialize']);
-  grunt.registerTask('sprite', ['shell:generate-sprite', 'shell:rename-sprite-style']);
+  grunt.registerTask('sprite', ['shell:generate-sprite', 'replace:sprite-extend']);
   grunt.registerTask('dev', ['replace:dev', 'jade:process']);
   grunt.registerTask('build', ['requirejs:compile', 'replace:build', 'jade:process', 'sass:build']);
 
