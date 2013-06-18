@@ -555,7 +555,7 @@ input[type="search"]:focus, input[type="email"]:focus, input[type="text"]:focus,
 @media (min-width: 47.5em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000326}}
   .footer-links > li { display: inline-block; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000329}}
-  .footer-links > li:not(:last-child):after { content: " / "; }
+  .footer-links > li:not(:last-child):after { content: "\00a0/\00a0"; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_footer\.sass}line{font-family:\00003141}}
   .footer-link { float: none; width: auto; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_rand-quot\.sass}line{font-family:\000031}}
@@ -692,7 +692,7 @@ a.rq-text:hover { color: black !important; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000326}}
 .s-tags .tag-sublist > li { display: inline-block; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000329}}
-.s-tags .tag-sublist > li:not(:last-child):after { content: "; "; }
+.s-tags .tag-sublist > li:not(:last-child):after { content: ";\00a0"; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003128}}
 .s-tags--inst, .s-highlight--timeline { color: #6d6d6d; }
@@ -780,7 +780,7 @@ a.rq-text:hover { color: black !important; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000326}}
 .li-rsel--shares--ul > li { display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000329}}
-.li-rsel--shares--ul > li:not(:last-child):after { content: " ; "; }
+.li-rsel--shares--ul > li:not(:last-child):after { content: "\00a0;\00a0"; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_selection\.sass}line{font-family:\00003290}}
 .li-rsel--shares--ul ul { display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/davidclark\/dev\/me\/django\/miniProject\/gentlereader\/static\/gentlereader\/style\/sass\/_utilities\.sass}line{font-family:\0000326}}

@@ -123,7 +123,7 @@ $s-extras--heading-y: 40px
 
   .tag-sublist
     display: inline
-    +inline-list("; ")
+    +inline-list(";\00a0")
 
 .s-tags--inst,
 .s-highlight--timeline
@@ -284,7 +284,7 @@ $s-extras--heading-y: 40px
   line-height: 1.5
 
 .li-rsel--shares--ul
-  +inline-list(' ; ', inline)
+  +inline-list('\00a0;\00a0', inline)
   display: inline
   margin-right: 0.5em
   ul
