@@ -5,6 +5,6 @@
 %s-home-icn-twitter{background-position:0px 0px;width:60px;height:60px;}
 %s-home-icn-rss{background-position:-60px 0px;width:60px;height:60px;}
 %s-home-icn-facebook{background-position:0px -60px;width:60px;height:60px;}
-@media only screen and (-webkit-min-device-pixel-ratio: 2.0), only screen and (min--moz-device-pixel-ratio: 2.0), only screen and (-o-min-device-pixel-ratio: 200/100), only screen and (min-device-pixel-ratio: 2.0) {.s-home-icn-twitter,
+@media only screen and (-webkit-min-device-pixel-ratio: 2.0), only screen and (min--moz-device-pixel-ratio: 2.0), only screen and (-o-min-device-pixel-ratio: 200/100), only screen and (min-device-pixel-ratio: 2.0) {%s-home-icn-twitter,
 %s-home-icn-rss,
 %s-home-icn-facebook{background-image:url('../../images/sprites/sprite-home@2x.png');-webkit-background-size: 120px 120px;-moz-background-size: 120px 120px;background-size: 120px 120px;}}

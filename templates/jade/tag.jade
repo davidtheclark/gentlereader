@@ -7,16 +7,16 @@ meta(name="description", content="Public domain selections categorized in {{ tag
 {% endblock %}
 
 {% block bottomscripts %}
-<!-- grunt-inactive: dev
+<!-- grunt-active: dev -->
 script(src="{{ STATIC_URL }}gentlereader/scripts/tag-main.js")
-endgrunt -->
+<!-- endgrunt -->
 
-<!-- grunt-active: build -->
+<!-- grunt-inactive: build
 script
   require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
     require(['tag-main'], function(tagMain) {});
   });
-<!-- endgrunt -->
+endgrunt -->
 {% endblock %}
 
 {% block main %}
@@ -49,7 +49,7 @@ script
       a(href='{{ tag.info_url }}', target='_blank').small-command Learn&nbsp;more&nbsp;&raquo;
       {% endif %}
     .view-highlights
-      a(href='/highlights/&#35;{{ tag.slug }}') &laquo; view highlights from {{ tag.last_name }}'s selections
+      a(href='/highlights/\#{{ tag.slug }}') &laquo; view highlights from {{ tag.last_name }}'s selections
 
     {% else %}
 

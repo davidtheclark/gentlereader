@@ -8,5 +8,5 @@ require ["jquery",
 
       new RandQuotApp()
 
-      $$("#about").unfinishedToggler
+      $("#about").unfinishedToggler
         exclusive: false

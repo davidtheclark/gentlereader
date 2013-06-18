@@ -91,6 +91,9 @@ module.exports = function(grunt) {
         replacements: [{
           from: /^\./gm,
           to: '%'
+        }, {
+          from: '{.',
+          to: '{%'
         }]
       },
       dev: {

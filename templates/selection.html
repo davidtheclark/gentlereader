@@ -1,34 +1,164 @@
+
 {% extends "base.html" %}
 {% block title %}{{ selection }}, by {{ selection.get_author }} - The Gentle Reader{% endblock %}
-{% block meta %}<meta name="description" content="{{ selection }}, by {{ selection.get_author }}. {% if selection.from_display_safe %}{{ selection.from_display_safe }}.{% endif %} Brought to you by The Gentle Reader."/>{% endblock %}<!-- styles-->{% block styles %}
-{% if selection.stylesheet %}<!-- If the selection has its own stylesheet, get it.--><link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}gentlereader/style/css/selection-specific/{{ selection.stylesheet }}.css"/>{% endif %}
-{% endblock %}<!-- scripts-->{% block bottomscripts %}
-<!-- grunt-inactive: dev<script src="{{ STATIC_URL }}gentlereader/scripts/selection-main.js"></script><endgrunt>--></endgrunt><!-- grunt-active: build --><script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
-  require(['selection-main'], function(selectionMain) {});
-});</script><!-- endgrunt -->
+{% block meta %}
+<meta name="description" content="{{ selection }}, by {{ selection.get_author }}. {% if selection.from_display_safe %}{{ selection.from_display_safe }}.{% endif %} Brought to you by The Gentle Reader."/>{% endblock %}
+<!-- styles-->{% block styles %}
+{% if selection.stylesheet %}
+<!-- If the selection has its own stylesheet, get it.-->
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}gentlereader/style/css/selection-specific/{{ selection.stylesheet }}.css"/>{% endif %}
 {% endblock %}
-{% block main %}<!-- CONTENT--><article class="content"><!-- selection header--><header><!-- title, author, date--><div class="s-headline"><h1 class="s-title">{{ selection.get_title }}</h1><div class="s-authordate">{% with author=selection.get_author year=selection.source.pub_year %}
-<a href="/authors/{{ source.author.slug }}" title="Author: {{ author }}" rel="author">
-{{ author }}</a> &mdash; <a href="/timeline#{{ year }}" title="Published in {{ year }}">
-{{ year }}</a>
-{% endwith %}</div>{% with from=selection.from_display trans=source.translator %}
-{% if from != "None" or trans %}<!-- added info--><div class="s-info">{% if from != "None" %}
-From {{ from }}.
-{% endif %}
-{% if trans %}
-Translated from {{ source.language   }}
-by {{ trans }} in {{ source.translation_year }}.
-{% endif %}</div>{% endif %}
-{% endwith %}</div><!-- EXTRAS--><ul id="sExtrasAccordion" class="s-extras"><li class="s-extras--li uft-group"><div class="s-extras--trigger u-left uft-a uft-trigger">Show Highlight</div><div class="s-highlight uft-b"><div class="s-extras--utils"><span class="s-extras--utils-i s-highlight--another">See Another</span><span class="s-extras--utils-i uft-trigger">Hide</span></div><div class="s-extras--title">A Highlight</div><ul class="s-highlight--text hyphenate">{% for q in quotations %}
-{% if forloop.counter == 1 %}<li class="s-highlight--li u-active">{{ q.get_quotation }}</li>{% else %}<li class="s-highlight--li u-inactive">{{ q.get_quotation }}</li>{% endif %}
-{% endfor %}<div class="s-highlight--li u-inactive s-highlight--all"><a href="/highlights/#{{ selection.source.author.slug }}">see all the highlights from this selection</a></div></ul></div></li><li class="s-extras--li uft-group"><div class="s-extras--trigger uft-a uft-trigger">Show Tags</div><div class="s-tags u-top uft-b"><div class="s-extras--utils"><span class="s-extras--utils-i uft-trigger">Hide</span></div><div class="s-extras--title">Tags</div><div class="s-tags--inst">Click a tag to find other selections like this one.</div><div class="tag-sublist-container"><div class="tag-sublist-label">Author</div><ul class="tag-sublist"><li><a href="/authors/{{ source.author.slug }}">{{ source.author }}</a></li></ul></div>{% for category in grouped_tags %}<div class="tag-sublist-container"><div class="tag-sublist-label">{{ category.name|capfirst }}</div><ul class="tag-sublist">{% if category.tags %}
-{% for tag in category.tags %}<li><a href="/{{ tag.get_category }}/{{ tag.slug }}" title="{{ tag }}" rel="tag">{{ tag }}</a></li>{% endfor %}
-{% else %}<li><a href="/contribute/?subject={{ category.type }}%20for%20sel%20{{ selection.pk }}%20({{ selection }})" class="tag-suggest">suggest one</a></li>{% endif %}</ul></div>{% endfor %}</div></li></ul>{% with ct=selection.comment_text ci=selection.comment_intro %}
-{% if ct or ci %}<!--comments--><div class="s-comments">{% if ct %}<div class="s-comment u-text">{{ selection.get_comment_text }}</div>{% endif %}
-{% if ci %}<div class="s-comment u-intro">{{ selection.get_comment_intro }}</div>{% endif %}</div>{% endif %}
-{% endwith %}</header><!--selection text--><div class="s-text hyphenate">{{ selection.get_text }}</div><!--postscript--><div class="s-postscript"><!--tags--><div class="s-postscript--col u-second"><div class="s-tags u-bottom"><h3 class="s-postscript--h3">Tags</h3><div class="s-tags--inst">Click a tag to find other selections like this one.</div><div class="tag-sublist-container"><div class="tag-sublist-label">Author</div><ul class="tag-sublist"><li><a href="/authors/{{ source.author.slug }}">{{ source.author }}</a></li></ul></div>{% for category in grouped_tags %}<div class="tag-sublist-container"><div class="tag-sublist-label">{{ category.name|capfirst }}</div><ul class="tag-sublist">{% if category.tags %}
-{% for tag in category.tags %}<li><a href="/{{ tag.get_category }}/{{ tag.slug }}" title="{{ tag }}" rel="tag">{{ tag }}</a></li>{% endfor %}
-{% else %}<li><a href="/contribute/?subject={{ category.type }}%20for%20sel%20{{ selection.pk }}%20({{ selection }})" class="tag-suggest">suggest one</a></li>{% endif %}</ul></div>{% endfor %}</div><div class="s-highlight--timeline">See selections that surround this one in <a href="/timeline/#{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.</div></div><div class="s-postscript--col u-first"><!--related selections--><div class="rsel"><h3 class="s-postscript--h3">Related Selections</h3><ul id="relSelAccordion">{% for item in related_selections %}<li class="li-rsel uft-group"><div class="rsel-info-container"><a href="/selections/{{ item.selection.slug }}" class="li-rsel--info"><span class="li-rsel--title">&ldquo;{{ item.selection.get_title }}&rdquo; by <i>{{ item.selection.source.author.last_name }}</i>&nbsp;({{ item.selection.source.date_display }})</span></a><div class="li-rsel--shares">&mdash;&nbsp;which shares<ul class="li-rsel--shares--ul">{% for category, tags in item.share.items %}<li>{% if item.share.items|length > 1 and forloop.last %}and {% endif %}
-the <span class="li-rsel--category">{{ category }}</span><ul>{% for tag in tags %}<li>{% if tags|length > 1 and forloop.last %}and {% endif %}
-{% if category != "source" %}<a href="/{{ tag.get_category }}/{{ tag.slug }}" class="li-rsel--tag">{{ tag }}</a>{% else %}<span class="li-rsel--tag">{{ tag }}</span>{% endif %}</li>{% endfor %}</ul></li>{% endfor %}
-{% if item.more %}<li>and more&nbsp;...</li>{% endif %}</ul></div></div><div class="show-teaser uft-trigger uft-a">read teaser</div><div class="li-rsel--teaser uft-b"><span class="teaser-text hyphenate">{{ item.selection.get_teaser }}</span><a href="/selections/{{ item.selection.slug }}" class="read-on">read&nbsp;on</a></div></li>{% endfor %}</ul></div></div></div><!--post and modification dates--><div class="s-dates">{% if selection.date_entered != selection.date_modified %}<p>Last modified: {{ selection.date_modified|date:"d F, G:i" }}, {{ year_modified }}</p>{% endif %}<p>Originally posted: {{ selection.date_entered|date:"d F, G:i" }}, {{ year_entered }}</p></div></article>{% endblock %}
+<!-- scripts-->{% block bottomscripts %}
+<!-- grunt-active: dev -->
+<script src="{{ STATIC_URL }}gentlereader/scripts/selection-main.js"></script><!-- endgrunt -->
+<!-- grunt-inactive: build
+<script>
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
+    require(['selection-main'], function(selectionMain) {});
+  });
+</script>
+<endgrunt>--></endgrunt>{% endblock %}
+{% block main %}
+<!-- CONTENT-->
+<article class="content">
+  <!-- selection header-->
+  <header>
+    <!-- title, author, date-->
+    <div class="s-headline">
+      <h1 class="s-title">{{ selection.get_title }}</h1>
+      <div class="s-authordate">
+        {% with author=selection.get_author year=selection.source.pub_year %}
+        <a href="/authors/{{ source.author.slug }}" title="Author: {{ author }}" rel="author">
+        {{ author }}</a> &mdash; <a href="/timeline#{{ year }}" title="Published in {{ year }}">
+        {{ year }}</a>
+        {% endwith %}
+      </div>{% with from=selection.from_display trans=source.translator %}
+      {% if from != "None" or trans %}
+      <!-- added info-->
+      <div class="s-info">
+        {% if from != "None" %}
+        From {{ from }}.
+        {% endif %}
+        {% if trans %}
+        Translated from {{ source.language   }}
+        by {{ trans }} in {{ source.translation_year }}.
+        {% endif %}
+      </div>{% endif %}
+      {% endwith %}
+    </div>
+    <!-- EXTRAS-->
+    <ul id="sExtrasAccordion" class="s-extras">
+      <li class="s-extras--li uft-group">
+        <div class="s-extras--trigger u-left uft-a uft-trigger">Show Highlight</div>
+        <div class="s-highlight uft-b">
+          <div class="s-extras--utils"><span class="s-extras--utils-i s-highlight--another">See Another</span><span class="s-extras--utils-i uft-trigger">Hide</span></div>
+          <div class="s-extras--title">A Highlight</div>
+          <ul class="s-highlight--text hyphenate">
+            {% for q in quotations %}
+            {% if forloop.counter == 1 %}
+            <li class="s-highlight--li u-active">{{ q.get_quotation }}</li>{% else %}
+            <li class="s-highlight--li u-inactive">{{ q.get_quotation }}</li>{% endif %}
+            {% endfor %}
+            <div class="s-highlight--li u-inactive s-highlight--all"><a href="/highlights/#{{ selection.source.author.slug }}">see all the highlights from this selection</a></div>
+          </ul>
+        </div>
+      </li>
+      <li class="s-extras--li uft-group">
+        <div class="s-extras--trigger uft-a uft-trigger">Show Tags</div>
+        <div class="s-tags u-top uft-b">
+          <div class="s-extras--utils"><span class="s-extras--utils-i uft-trigger">Hide</span></div>
+          <div class="s-extras--title">Tags</div>
+          <div class="s-tags--inst">Click a tag to find other selections like this one.</div>
+          <div class="tag-sublist-container">
+            <div class="tag-sublist-label">Author</div>
+            <ul class="tag-sublist">
+              <li><a href="/authors/{{ source.author.slug }}">{{ source.author }}</a></li>
+            </ul>
+          </div>{% for category in grouped_tags %}
+          <div class="tag-sublist-container">
+            <div class="tag-sublist-label">{{ category.name|capfirst }}</div>
+            <ul class="tag-sublist">
+              {% if category.tags %}
+              {% for tag in category.tags %}
+              <li><a href="/{{ tag.get_category }}/{{ tag.slug }}" title="{{ tag }}" rel="tag">{{ tag }}</a></li>{% endfor %}
+              {% else %}
+              <li><a href="/contribute/?subject={{ category.type }}%20for%20sel%20{{ selection.pk }}%20({{ selection }})" class="tag-suggest">suggest one</a></li>{% endif %}
+            </ul>
+          </div>{% endfor %}
+        </div>
+      </li>
+    </ul>{% with ct=selection.comment_text ci=selection.comment_intro %}
+    {% if ct or ci %}
+    <!--comments-->
+    <div class="s-comments">{% if ct %}
+      <div class="s-comment u-text">{{ selection.get_comment_text }}</div>{% endif %}
+      {% if ci %}
+      <div class="s-comment u-intro">{{ selection.get_comment_intro }}</div>{% endif %}
+    </div>{% endif %}
+    {% endwith %}
+  </header>
+  <!--selection text-->
+  <div class="s-text hyphenate">{{ selection.get_text }}</div>
+  <!--postscript-->
+  <div class="s-postscript">
+    <!--tags-->
+    <div class="s-postscript--col u-second">
+      <div class="s-tags u-bottom">
+        <h3 class="s-postscript--h3">Tags</h3>
+        <div class="s-tags--inst">Click a tag to find other selections like this one.</div>
+        <div class="tag-sublist-container">
+          <div class="tag-sublist-label">Author</div>
+          <ul class="tag-sublist">
+            <li><a href="/authors/{{ source.author.slug }}">{{ source.author }}</a></li>
+          </ul>
+        </div>{% for category in grouped_tags %}
+        <div class="tag-sublist-container">
+          <div class="tag-sublist-label">{{ category.name|capfirst }}</div>
+          <ul class="tag-sublist">
+            {% if category.tags %}
+            {% for tag in category.tags %}
+            <li><a href="/{{ tag.get_category }}/{{ tag.slug }}" title="{{ tag }}" rel="tag">{{ tag }}</a></li>{% endfor %}
+            {% else %}
+            <li><a href="/contribute/?subject={{ category.type }}%20for%20sel%20{{ selection.pk }}%20({{ selection }})" class="tag-suggest">suggest one</a></li>{% endif %}
+          </ul>
+        </div>{% endfor %}
+      </div>
+      <div class="s-highlight--timeline">See selections that surround this one in <a href="/timeline/#{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.</div>
+    </div>
+    <div class="s-postscript--col u-first">
+      <!--related selections-->
+      <div class="rsel">
+        <h3 class="s-postscript--h3">Related Selections</h3>
+        <ul id="relSelAccordion">{% for item in related_selections %}
+          <li class="li-rsel uft-group">
+            <div class="rsel-info-container"><a href="/selections/{{ item.selection.slug }}" class="li-rsel--info"><span class="li-rsel--title">&ldquo;{{ item.selection.get_title }}&rdquo; by <i>{{ item.selection.source.author.last_name }}</i>&nbsp;({{ item.selection.source.date_display }})</span></a>
+              <div class="li-rsel--shares">&mdash;&nbsp;which shares
+                <ul class="li-rsel--shares--ul">{% for category, tags in item.share.items %}
+                  <li>
+                    {% if item.share.items|length > 1 and forloop.last %}and {% endif %}
+                    the <span class="li-rsel--category">{{ category }}</span>
+                    <ul>{% for tag in tags %}
+                      <li>
+                        {% if tags|length > 1 and forloop.last %}and {% endif %}
+                        {% if category != "source" %}<a href="/{{ tag.get_category }}/{{ tag.slug }}" class="li-rsel--tag">{{ tag }}</a>{% else %}<span class="li-rsel--tag">{{ tag }}</span>{% endif %}
+                      </li>{% endfor %}
+                    </ul>
+                  </li>{% endfor %}
+                  {% if item.more %}
+                  <li>and more&nbsp;...</li>{% endif %}
+                </ul>
+              </div>
+            </div>
+            <div class="show-teaser uft-trigger uft-a">read teaser</div>
+            <div class="li-rsel--teaser uft-b"><span class="teaser-text hyphenate">{{ item.selection.get_teaser }}</span><a href="/selections/{{ item.selection.slug }}" class="read-on">read&nbsp;on</a></div>
+          </li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--post and modification dates-->
+  <div class="s-dates">{% if selection.date_entered != selection.date_modified %}
+    <p>Last modified: {{ selection.date_modified|date:"d F, G:i" }}, {{ year_modified }}</p>{% endif %}
+    <p>Originally posted: {{ selection.date_entered|date:"d F, G:i" }}, {{ year_entered }}</p>
+  </div>
+</article>{% endblock %}
