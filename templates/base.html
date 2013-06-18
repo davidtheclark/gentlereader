@@ -1,93 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>{% block meta %}{% endblock %}
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed"><!-- grunt-active: dev -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css"><!-- endgrunt -->
-    <!-- grunt-inactive: build
-    <link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css">
-    <endgrunt>--></endgrunt>{% block styles %}{% endblock %}
-    {% block topscripts %}{% endblock %}
-    {% block head %}{% endblock %}
-  </head>
-  <body>{% block header %}
-    <div class="site-nav--container">
-      <nav class="site-nav"><a href="/" class="site-nav--title"><span class="title-the">The</span> <span class="title-gentle">Gentle</span> <span class="title-reader">Reader</span></a>
-        <ul class="site-nav--ul">
-          <li class="site-nav--li nav-about"><a href="/about">About</a></li>
-          <li class="site-nav--li nav-browse">Browse</li>
-          <li class="site-nav--li nav-search">Search</li>
-        </ul>
-      </nav>
-      <div id="toTop" class="fixed-back">(top)</div>
-      <div class="subnav-browse--container">
-        <div class="subnav-browse--inner">
-          <div class="subnav-browse--h"><span class="subnav-browse--close u-top">&times;</span>Contents</div>
-          <ul class="subnav-browse">
-            <li><a href="/highlights" class="subnav-browse--a"><span>Highlights</span><span class="toc-no">i</span></a></li>
-            <li><a href="/selections" class="subnav-browse--a"><span>All Selections</span><span class="toc-no">ii</span></a></li>
-            <li><a href="/authors" class="subnav-browse--a"><span>Authors</span><span class="toc-no">iii</span></a></li>
-            <li><a href="/timeline" class="subnav-browse--a"><span>Timeline</span><span class="toc-no">iv</span></a></li>
-            <li><a href="/forms" class="subnav-browse--a"><span>Forms</span><span class="toc-no">v</span></a></li>
-            <li><a href="/genres" class="subnav-browse--a"><span>Genres</span><span class="toc-no">vi</span></a></li>
-            <li><a href="/topics" class="subnav-browse--a"><span>Topics</span><span class="toc-no">vii</span></a></li>
-            <li><a href="/contexts" class="subnav-browse--a"><span>Contexts</span><span class="toc-no">viii</span></a></li>
-            <li><a href="/nations" class="subnav-browse--a"><span>Nations</span><span class="toc-no">ix</span></a></li>
-            <li><a href="/languages" class="subnav-browse--a"><span>Original Languages</span><span class="toc-no">x</span></a></li>
-            <li><a href="/announcements" class="subnav-browse--a"><span>Announcements</span><span class="toc-no">xii</span></a></li>
-          </ul>
-          <div class="subnav-browse--close u-bottom">close</div>
-        </div>
-      </div>
-      <div class="nav-search--container">
-        <form class="search-form">
-          <input type="search" placeholder="Search for an author, a title, &amp;c." class="search-input">
-          <input type="submit" value="Submit" class="search-submit">
-        </form>
-      </div>
-    </div>{% endblock %}
-    {% block main %}{% endblock %}
-    {% block footer %}{% block footer-subscribe %}
-    <section class="subscribe u-footer">
-      <div class="inner">
-        <div class="subscribe-icons"><span>Hear about new selections</span><a href="/feed" target="_blank" class="subscribe-icon mod-rss">Subscribe to the RSS Feed</a><a href="https://twitter.com/aGentleTweeter" title="@aGentleTweeter" target="_blank" class="subscribe-icon mod-twitter">Follow us on Twitter</a><a href="https://www.facebook.com/TheGentleReader" target="_blank" class="subscribe-icon mod-facebook">Follow us on Facebook</a></div>
-      </div>
-    </section>{% endblock %}
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-text"><a href="/" class="footer-title">The Gentle Reader</a> is an ever-growing, explorable anthology of carefully curated selections from texts in the public domain. <a class="footer-about" href="/about">Read more about the site</a></div>
-        <ul class="footer-links">
-          <li><a href="/selections" class="footer-link">Selections</a></li>
-          <li><a href="/highlights" class="footer-link">Highlights</a></li>
-          <li><a href="/announcements" class="footer-link">Announcements</a></li>
-          <li><a href="/contact" class="footer-link">Contact</a></li>
-          <li><a href="#" class="footer-link get-copyright-info">Copyright Info</a></li>
-          <li><a href="https://github.com/MisterGrumpyPants/gentlereader" target="_blank" class="footer-link">Code on Github</a></li>
-        </ul>
-        <div class="footer-copyright">
-          <div class="get-copyright-info x-copyright">&times;</div>
-          <p>All of The Gentle Reader's selections (and any images) are from works in the public domain in the US. Old books. (If a source text is <em>not</em>, in fact, in the public domain, there has been a misunderstanding; <a href="/contact">please inform The Editor</a> and it will be taken down.)</p>
-          <p>The fonts are <em>Crimson</em>, by <a href="http://aldusleaf.org/" target="_blank">Sebastian Kosch</a>, and <em>IM Fell English</em> with some ornaments from <em>IM Fell Flowers 2</em>, both digitally reproduced by <a href="http://www.iginomarini.xn--com-3ga/" target="_blank">Iginio Marini</a>. I would like to publicly thank these benefactors.</p>
-          <p>Everything else on the site that is not from a public domain text <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" target="_blank"> is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.</a></p>
-          <div class="get-copyright-info close-copyright"> close this message</div>
-        </div>
-      </div>
-    </footer>{% endblock %}
-    <!-- grunt-active: dev -->
-    <script src="{{ STATIC_URL }}gentlereader/scripts/require.js"></script>
-    <script src="{{ STATIC_URL }}gentlereader/scripts/common-dev.js"></script><!-- endgrunt -->
-    <!-- grunt-inactive: build
-    <script src="{{ STATIC_URL }}gentlereader/build/require.js"></script>
-    <endgrunt>--></endgrunt>
-    <script>
-      var _gaq=[['_setAccount','UA-41416800-1'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src='//www.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>{% block bottomscripts %}{% endblock %}
-  </body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>{% block title %}{% endblock %}</title>{% block meta %}{% endblock %}<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed"><!-- grunt-inactive: dev<link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css"><endgrunt>--></endgrunt><!-- grunt-active: build --><link rel="stylesheet" href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css"><!-- endgrunt -->
+{% block styles %}{% endblock %}
+{% block topscripts %}{% endblock %}
+{% block head %}{% endblock %}</head><body>{% block header %}<div class="site-nav--container"><nav class="site-nav"><a href="/" class="site-nav--title"><span class="title-the">The</span> <span class="title-gentle">Gentle</span> <span class="title-reader">Reader</span></a><ul class="site-nav--ul"><li class="site-nav--li nav-about"><a href="/about">About</a></li><li class="site-nav--li nav-browse">Browse</li><li class="site-nav--li nav-search">Search</li></ul></nav><div id="toTop" class="fixed-back">(top)</div><div class="subnav-browse--container"><div class="subnav-browse--inner"><div class="subnav-browse--h"><span class="subnav-browse--close u-top">&times;</span>Contents</div><ul class="subnav-browse"><li><a href="/highlights" class="subnav-browse--a"><span>Highlights</span><span class="toc-no">i</span></a></li><li><a href="/selections" class="subnav-browse--a"><span>All Selections</span><span class="toc-no">ii</span></a></li><li><a href="/authors" class="subnav-browse--a"><span>Authors</span><span class="toc-no">iii</span></a></li><li><a href="/timeline" class="subnav-browse--a"><span>Timeline</span><span class="toc-no">iv</span></a></li><li><a href="/forms" class="subnav-browse--a"><span>Forms</span><span class="toc-no">v</span></a></li><li><a href="/genres" class="subnav-browse--a"><span>Genres</span><span class="toc-no">vi</span></a></li><li><a href="/topics" class="subnav-browse--a"><span>Topics</span><span class="toc-no">vii</span></a></li><li><a href="/contexts" class="subnav-browse--a"><span>Contexts</span><span class="toc-no">viii</span></a></li><li><a href="/nations" class="subnav-browse--a"><span>Nations</span><span class="toc-no">ix</span></a></li><li><a href="/languages" class="subnav-browse--a"><span>Original Languages</span><span class="toc-no">x</span></a></li><li><a href="/announcements" class="subnav-browse--a"><span>Announcements</span><span class="toc-no">xii</span></a></li></ul><div class="subnav-browse--close u-bottom">close</div></div></div><div class="nav-search--container"><form class="search-form"><input type="search" placeholder="Search for an author, a title, &amp;c." class="search-input"><input type="submit" value="Submit" class="search-submit"></form></div></div>{% endblock %}
+{% block main %}{% endblock %}
+{% block footer %}{% block footer-subscribe %}<section class="subscribe u-footer"><div class="inner"><div class="subscribe-icons"><span>Hear about new selections</span><a href="/feed" target="_blank" class="subscribe-icon mod-rss">Subscribe to the RSS Feed</a><a href="https://twitter.com/aGentleTweeter" title="@aGentleTweeter" target="_blank" class="subscribe-icon mod-twitter">Follow us on Twitter</a><a href="https://www.facebook.com/TheGentleReader" target="_blank" class="subscribe-icon mod-facebook">Follow us on Facebook</a></div></div></section>{% endblock %}<footer class="site-footer"><div class="footer-inner"><div class="footer-text"><a href="/" class="footer-title">The Gentle Reader</a> is an ever-growing, explorable anthology of carefully curated selections from texts in the public domain. <a class="footer-about" href="/about">Read more about the site</a></div><ul class="footer-links"><li><a href="/selections" class="footer-link">Selections</a></li><li><a href="/highlights" class="footer-link">Highlights</a></li><li><a href="/announcements" class="footer-link">Announcements</a></li><li><a href="/contact" class="footer-link">Contact</a></li><li><a href="#" class="footer-link get-copyright-info">Copyright Info</a></li><li><a href="https://github.com/MisterGrumpyPants/gentlereader" target="_blank" class="footer-link">Code on Github</a></li></ul><div class="footer-copyright"><div class="get-copyright-info x-copyright">&times;</div><p>All of The Gentle Reader's selections (and any images) are from works in the public domain in the US. Old books. (If a source text is <em>not</em>, in fact, in the public domain, there has been a misunderstanding; <a href="/contact">please inform The Editor</a> and it will be taken down.)</p><p>The fonts are <em>Crimson</em>, by <a href="http://aldusleaf.org/" target="_blank">Sebastian Kosch</a>, and <em>IM Fell English</em> with some ornaments from <em>IM Fell Flowers 2</em>, both digitally reproduced by <a href="http://www.iginomarini.xn--com-3ga/" target="_blank">Iginio Marini</a>. I would like to publicly thank these benefactors.</p><p>Everything else on the site that is not from a public domain text <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" target="_blank"> is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.</a></p><div class="get-copyright-info close-copyright"> close this message</div></div></div></footer>{% endblock %}
+<!-- grunt-inactive: dev<script src="{{ STATIC_URL }}gentlereader/scripts/require.js"></script><script src="{{ STATIC_URL }}gentlereader/scripts/common-dev.js"></script><endgrunt>--></endgrunt><!-- grunt-active: build --><script src="{{ STATIC_URL }}gentlereader/build/require.js"></script><!-- endgrunt --><script>var _gaq=[['_setAccount','UA-41416800-1'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src='//www.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));</script>{% block bottomscripts %}{% endblock %}</body></html>

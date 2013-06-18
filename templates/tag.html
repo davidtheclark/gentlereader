@@ -1,81 +1,34 @@
-
 {% extends "base.html" %}
 {% block title %}{{ tag }} - The Gentle Reader{% endblock %}
-{% block meta %}
-<meta name="description" content="Public domain selections categorized in {{ tag|capfirst }} - The Gentle Reader."/>{% endblock %}
+{% block meta %}<meta name="description" content="Public domain selections categorized in {{ tag|capfirst }} - The Gentle Reader."/>{% endblock %}
 {% block bottomscripts %}
-<!-- grunt-active: dev -->
-<script src="{{ STATIC_URL }}gentlereader/scripts/tag-main.js"></script><!-- endgrunt -->
-<!-- grunt-inactive: build
-<script>
-  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
-    require(['tag-main'], function(tagMain) {});
-  });
-</script>
-<endgrunt>--></endgrunt>{% endblock %}
-{% block main %}
-<div class="content">
-  <header class="tag-header">
-    <div class="tag-type-heading"><span class="tag-type">
-        {% if tag_type == 'language' %}
-        original language
-        {% else %}
-        {{ tag_type }}
-        {% endif %}</span><a href="/{{ tag_type }}s" class="browse-tag-type">
-        browse all
-        {% if tag_type == 'language' %}
-        orig. languages
-        {% else %}
-        {{ tag_type }}s
-        {% endif %}</a></div>
-    <h1 class="tag-h">{{ tag }}</h1>{% if tag_type == 'author' %}
-    <div class="nation-dates">
-      {% for nation in tag.nations.all %}
-      <a href='/nations/{{ nation.slug }}'>{{ nation.name }}</a>.
-      {% endfor %}
-      {{ tag.dates }}.
-      {% if tag.info_url %}<a href="{{ tag.info_url }}" target="_blank" class="small-command">Learn&nbsp;more&nbsp;&raquo;</a>{% endif %}
-    </div>
-    <div class="view-highlights"><a href="/highlights/#{{ tag.slug }}">&laquo; view highlights from {{ tag.last_name }}'s selections</a></div>{% else %}
-    {% if tag.description or tag.definition or tag.info_url %}
-    <div class="tag-info">
-      {% if tag.definition %}
-      {{ tag.get_definition }}
-      {% if tag.dictionary_source %}<a href="{{ tag.dictionary_source.link }}" target="_blank">[<cite>{{ tag.dictionary_source }}</cite>]</a>{% endif %}
-      {% endif %}
-      {% if tag.description %}
-      {{ tag.get_description }}
-      {% endif %}
-      {% if tag.info_url %}<a href="{{ tag.info_url }}" target="_blank" class="small-command">Learn&nbsp;more&nbsp;&raquo;</a>{% endif %}
-    </div>{% endif %}
-    {% endif %}
-  </header>
-  <div id="selection-container" class="browse-container">
-    <ul id="selection-list">{% for s in selections %}
-      <li class="li-sel">
-        <section><a href="/selections/{{ s.slug }}">
-            <h3>{{ s.get_title }}</h3>
-            <div class="li-sel-dets"><span class="li-sel-author">{{ s.get_author }}.</span>{% if s.from_display %}
-              {{ s.from_display }}
-              {% endif %}
-              ({{ s.source.date_display }}). <span class="li-sel--posttime">Posted {{ s.date_entered }}</span>
-            </div></a></section>
-        <section class="li-sel--teaser"><span class="teaser-text hyphenate">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug}}" class="read-on">read&nbsp;on</a></section>
-      </li>{% endfor %}
-    </ul>
-  </div>
-  <aside class="browse-extras">
-    <div class="rq-container">
-      <div class="rq-backdrop"></div>
-      <div id="rqTop" class="rq-body">
-        <h2 class="rq-title">A Random Highlight</h2>
-        <div id="rqContent" class="rq-content"></div>
-        <div class="rq-utils">
-          <div class="rq-another">Get Another Highlight</div>
-          <div class="rq-close">close</div>
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="rq-btn">Read a Random Highlight</div>
-</div>{% endblock %}
+<!-- grunt-inactive: dev<script src="{{ STATIC_URL }}gentlereader/scripts/tag-main.js"></script><endgrunt>--></endgrunt><!-- grunt-active: build --><script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
+  require(['tag-main'], function(tagMain) {});
+});</script><!-- endgrunt -->
+{% endblock %}
+{% block main %}<div class="content"><header class="tag-header"><div class="tag-type-heading"><span class="tag-type">{% if tag_type == 'language' %}
+original language
+{% else %}
+{{ tag_type }}
+{% endif %}</span><a href="/{{ tag_type }}s" class="browse-tag-type">browse all
+{% if tag_type == 'language' %}
+orig. languages
+{% else %}
+{{ tag_type }}s
+{% endif %}</a></div><h1 class="tag-h">{{ tag }}</h1>{% if tag_type == 'author' %}<div class="nation-dates">{% for nation in tag.nations.all %}
+<a href='/nations/{{ nation.slug }}'>{{ nation.name }}</a>.
+{% endfor %}
+{{ tag.dates }}.
+{% if tag.info_url %}<a href="{{ tag.info_url }}" target="_blank" class="small-command">Learn&nbsp;more&nbsp;&raquo;</a>{% endif %}</div><div class="view-highlights"><a href="/highlights/#{{ tag.slug }}">&laquo; view highlights from {{ tag.last_name }}'s selections</a></div>{% else %}
+{% if tag.description or tag.definition or tag.info_url %}<div class="tag-info">{% if tag.definition %}
+{{ tag.get_definition }}
+{% if tag.dictionary_source %}<a href="{{ tag.dictionary_source.link }}" target="_blank">[<cite>{{ tag.dictionary_source }}</cite>]</a>{% endif %}
+{% endif %}
+{% if tag.description %}
+{{ tag.get_description }}
+{% endif %}
+{% if tag.info_url %}<a href="{{ tag.info_url }}" target="_blank" class="small-command">Learn&nbsp;more&nbsp;&raquo;</a>{% endif %}</div>{% endif %}
+{% endif %}</header><div id="selection-container" class="browse-container"><ul id="selection-list">{% for s in selections %}<li class="li-sel"><section><a href="/selections/{{ s.slug }}"><h3>{{ s.get_title }}</h3><div class="li-sel-dets"><span class="li-sel-author">{{ s.get_author }}.</span>{% if s.from_display %}
+{{ s.from_display }}
+{% endif %}
+({{ s.source.date_display }}). <span class="li-sel--posttime">Posted {{ s.date_entered }}</span></div></a></section><section class="li-sel--teaser"><span class="teaser-text hyphenate">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug}}" class="read-on">read&nbsp;on</a></section></li>{% endfor %}</ul></div><aside class="browse-extras"><div class="rq-container"><div class="rq-backdrop"></div><div id="rqTop" class="rq-body"><h2 class="rq-title">A Random Highlight</h2><div id="rqContent" class="rq-content"></div><div class="rq-utils"><div class="rq-another">Get Another Highlight</div><div class="rq-close">close</div></div></div></div></aside><div class="rq-btn">Read a Random Highlight</div></div>{% endblock %}
