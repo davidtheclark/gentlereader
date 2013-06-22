@@ -17,6 +17,8 @@ require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common)
 all selections
 {% elif category == "languages" %}
 original languages
+{% elif category == "announcements" %}
+announce&shy;ments
 {% else %}
 {{ category }}
 {% endif %}</h1><!--<div id="adjustor-container"><div id="selected-page"></div><div id="page-select-container" class="adjustor-subcontainer"></div></div>-->{% if category == "selections" %}<div id="selection-container" class="browse-container"><ul id="selection-list">{% for s in selections %}<li class="li-sel"><section><a href="/selections/{{ s.slug }}"><h3>{{ s.get_title }}</h3><div class="li-sel-dets"><span class="li-sel-author">{{ s.get_author }}.</span>{% if s.from_display %}

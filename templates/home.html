@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}The Gentle Reader{% endblock %}
 {% block meta %}<meta name="description" content="The Gentle Reader is a dynamic, curated anthology of public domain texts."/><meta name="google-site-verification" content="dR70T1m35LbkbQN3lrEMkkqj6VByE4hV84nAHpovjyc"/>{% endblock %}
-{% block bottomscripts %}<script>var highlightParams = { home: true };</script><!-- grunt-inactive: dev<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script><endgrunt>--></endgrunt><!-- grunt-active: build --><script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
+{% block bottomscripts %}<script>window.highlightParams = { 'home': true };</script><!-- grunt-inactive: dev<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script><endgrunt>--></endgrunt><!-- grunt-active: build --><script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
   require(['only-highlight-main'], function(homeMain) {});
 });</script><!-- endgrunt -->{% endblock %}
 {% block header %}{% endblock %}

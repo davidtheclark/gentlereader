@@ -41,7 +41,8 @@ def selection_search_data(req):
 
         display = '"' + s.__unicode__() + '" by ' + s.get_author()
         if s.from_display() != "None":
-            display += '; from ' + s.from_display() + ' (' + s.source.date_display() + ')'
+            display += '; from ' + s.from_display()
+        display += ' (' + s.source.date_display() + ')'
         datum['value'] = display
 
         datum['url'] = '/selections/' + s.slug
