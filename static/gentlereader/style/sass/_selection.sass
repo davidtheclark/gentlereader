@@ -290,6 +290,10 @@ $s-extras--heading-y: 40px
   ul
     display: inline
     +inline-list(', ', inline)
+    > li:first-child:nth-last-child(2):after
+      // no comma if there's only two items
+      content: " "
+
 
 .li-rsel--category
   font-variant: small-caps

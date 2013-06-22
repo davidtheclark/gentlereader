@@ -1,1 +1,1 @@
-require(["apps/rand-quot-app"],function(e){var t,i;return t=t||"",i=new e(t)}),define("only-highlight-main",function(){});
+require(["apps/rand-quot-app"],function(e){var t,i;return t=window.highlightParams||"",i=new e(t)}),define("only-highlight-main",function(){});

@@ -139,3 +139,8 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2013-06-09 16:52:19 MST
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  received SIGHUP, reloading configuration files
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
