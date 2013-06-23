@@ -1,7 +1,37 @@
+
 {% extends "base.html" %}
 {% block title %}{{ announcement }} - The Gentle Reader{% endblock %}
-{% block meta %}<meta name="description" content="An announcement from The Gentle Reader: {{ announcement }}."/>{% endblock %}
-{% block bottomscripts %}<!-- grunt-inactive: dev<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script><endgrunt>--></endgrunt><!-- grunt-active: build --><script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
-  require(['only-highlight-main'], function(homeMain) {});
-});</script><!-- endgrunt -->{% endblock %}
-{% block main %}<div class="content"><article><header><h1 class="ann-title">{{ announcement.get_title }}</h1><div class="ann-posted">{{ announcement.date_entered|date:"d F Y, P" }}</div></header><div class="ann-text browse-container">{{ announcement.get_text }}</div></article><aside class="browse-extras"><div class="rq-container"><div class="rq-backdrop"></div><div id="rqTop" class="rq-body"><h2 class="rq-title">A Random Highlight</h2><div id="rqContent" class="rq-content"></div><div class="rq-utils"><div class="rq-another">Get Another Highlight</div><div class="rq-close">close</div></div></div></div></aside><div class="rq-btn">Read a Random Highlight</div></div>{% endblock %}
+{% block meta %}
+<meta name="description" content="An announcement from The Gentle Reader: {{ announcement }}."/>{% endblock %}
+{% block bottomscripts %}<!-- grunt-inactive: dev
+<script src="{{ STATIC_URL }}gentlereader/scripts/only-highlight-main.js"></script>
+<endgrunt>--></endgrunt><!-- grunt-active: build -->
+<script>
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {
+    require(['only-highlight-main'], function(homeMain) {});
+  });
+</script><!-- endgrunt -->{% endblock %}
+{% block main %}
+<div class="content">
+  <article>
+    <header>
+      <h1 class="ann-title">{{ announcement.get_title }}</h1>
+      <div class="ann-posted">{{ announcement.date_entered|date:"d F Y, P" }}</div>
+    </header>
+    <div class="ann-text browse-container">{{ announcement.get_text }}</div>
+  </article>
+  <aside class="browse-extras">
+    <div class="rq-container">
+      <div class="rq-backdrop"></div>
+      <div id="rqTop" class="rq-body">
+        <h2 class="rq-title">A Random Highlight</h2>
+        <div id="rqContent" class="rq-content"></div>
+        <div class="rq-utils">
+          <div class="rq-another">Get Another Highlight</div>
+          <div class="rq-close">close</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="rq-btn">Read a Random Highlight</div>
+</div>{% endblock %}

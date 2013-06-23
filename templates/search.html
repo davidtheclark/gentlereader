@@ -1,17 +1,69 @@
+
 {% extends "base.html" %}
 {% block title %}Search Results - The Gentle Reader{% endblock %}
 {% block bottomscripts %}
-<!-- grunt-inactive: dev<endgrunt>--></endgrunt><!-- grunt-active: build --><script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {});</script><!-- endgrunt -->
+<!-- grunt-inactive: dev
+<endgrunt>--></endgrunt><!-- grunt-active: build -->
+<script>require(['{{ STATIC_URL }}gentlereader/build/common-build.js'], function(common) {});</script><!-- endgrunt -->
 {% endblock %}
-{% block main %}<div class="content search-content"><header class="search-header"><h1 class="search-h">Search Results</h1><form class="search-form"><input type="search" value="{{ query }}" placeholder="Try an author, a title, &amp;amp;c." class="search-input"/><input type="submit" class="search-submit"/></form>{% if count > 0 %}<p class="search-query">{{ count }} results for <em>{{ query }}</em>.</p></header>{% if results.authors %}<h2 class="search-page-category">Authors</h2><ul class="search-results-list">{% for a in results.authors %}<li><a href="/authors/{{ a.slug }}">{{ a }}</a></li>{% endfor %}</ul>{% endif %}
-{% if results.genres %}<h2 class="search-page-category">Genres</h2><ul class="search-results-list">{% for g in results.genres %}<li><a href="/genres/{{ g.slug }}">{{ g }}</a></li>{% endfor %}</ul>{% endif %}
-{% if results.topics %}<h2 class="search-page-category">Topics</h2><ul class="search-results-list">{% for t in results.topics %}<li><a href="/topics/{{ t.slug }}">{{ t }}</a></li>{% endfor %}</ul>{% endif %}
-{% if results.contexts %}<h2 class="search-page-category">Contexts</h2><ul class="search-results-list">{% for c in results.contexts %}<li><a href="/contexts/{{ c.slug }}">{{ c }}</a></li>{% endfor %}</ul>{% endif %}
-{% if results.nations %}<h2 class="search-page-category">Nations</h2><ul class="search-results-list">{% for n in results.nations %}<li><a href="/nations/{{ n.slug }}">{{ n }}</a></li>{% endfor %}</ul>{% endif %}
-{% if results.languages %}<h2 class="search-page-category">Original Languages</h2><ul class="search-results-list">{% for l in results.languages %}<li><a href="/languages/{{ l.slug }}">{{ l }}</a></li>{% endfor %}</ul>{% endif %}
-{% if results.forms %}<h2 class="search-page-category">Forms</h2><ul class="search-results-list">{% for f in results.forms %}<li><a href="/forms/{{ f.slug }}">{{ f }}</a></li>{% endfor %}</ul>{% endif %}
-{% if results.selections %}<h2 class="search-page-category">Selections</h2><ul>{% for s in results.selections %}<li class="li-sel"><section><a href="/selections/{{ s.slug }}"><h3>{{ s.get_title }}</h3><div class="li-sel-dets"><span class="li-sel-author">{{ s.get_author }}.</span>{% if s.from_display %}
-{{ s.from_display }}
-{% endif %}
-({{ s.source.date_display }}). <span class="li-sel--posttime">Posted {{ s.date_entered }}</span></div></a></section><section class="li-sel--teaser"><span class="teaser-text hyphenate">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug}}" class="read-on">read&nbsp;on</a></section></li>{% endfor %}</ul>{% endif %}
-{% else %}<p>No results for <em>{{ query }}</em>. Better luck next time, I guess.</p>{% endif %}</div>{% endblock %}
+{% block main %}
+<div class="content search-content">
+  <header class="search-header">
+    <h1 class="search-h">Search Results</h1>
+    <form class="search-form">
+      <input type="search" value="{{ query }}" placeholder="Try an author, a title, &amp;amp;c." class="search-input"/>
+      <input type="submit" class="search-submit"/>
+    </form>{% if count > 0 %}
+    <p class="search-query">{{ count }} results for <em>{{ query }}</em>.</p>
+  </header>{% if results.authors %}
+  <h2 class="search-page-category">Authors</h2>
+  <ul class="search-results-list">{% for a in results.authors %}
+    <li><a href="/authors/{{ a.slug }}">{{ a }}</a></li>{% endfor %}
+  </ul>{% endif %}
+  {% if results.genres %}
+  <h2 class="search-page-category">Genres</h2>
+  <ul class="search-results-list">{% for g in results.genres %}
+    <li><a href="/genres/{{ g.slug }}">{{ g }}</a></li>{% endfor %}
+  </ul>{% endif %}
+  {% if results.topics %}
+  <h2 class="search-page-category">Topics</h2>
+  <ul class="search-results-list">{% for t in results.topics %}
+    <li><a href="/topics/{{ t.slug }}">{{ t }}</a></li>{% endfor %}
+  </ul>{% endif %}
+  {% if results.contexts %}
+  <h2 class="search-page-category">Contexts</h2>
+  <ul class="search-results-list">{% for c in results.contexts %}
+    <li><a href="/contexts/{{ c.slug }}">{{ c }}</a></li>{% endfor %}
+  </ul>{% endif %}
+  {% if results.nations %}
+  <h2 class="search-page-category">Nations</h2>
+  <ul class="search-results-list">{% for n in results.nations %}
+    <li><a href="/nations/{{ n.slug }}">{{ n }}</a></li>{% endfor %}
+  </ul>{% endif %}
+  {% if results.languages %}
+  <h2 class="search-page-category">Original Languages</h2>
+  <ul class="search-results-list">{% for l in results.languages %}
+    <li><a href="/languages/{{ l.slug }}">{{ l }}</a></li>{% endfor %}
+  </ul>{% endif %}
+  {% if results.forms %}
+  <h2 class="search-page-category">Forms</h2>
+  <ul class="search-results-list">{% for f in results.forms %}
+    <li><a href="/forms/{{ f.slug }}">{{ f }}</a></li>{% endfor %}
+  </ul>{% endif %}
+  {% if results.selections %}
+  <h2 class="search-page-category">Selections</h2>
+  <ul>{% for s in results.selections %}
+    <li class="li-sel">
+      <section><a href="/selections/{{ s.slug }}">
+          <h3>{{ s.get_title }}</h3>
+          <div class="li-sel-dets"><span class="li-sel-author">{{ s.get_author }}.</span>{% if s.from_display %}
+            {{ s.from_display }}
+            {% endif %}
+            ({{ s.source.date_display }}). <span class="li-sel--posttime">Posted {{ s.date_entered }}</span>
+          </div></a></section>
+      <section class="li-sel--teaser"><span class="teaser-text hyphenate">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug}}" class="read-on">read&nbsp;on</a></section>
+    </li>{% endfor %}
+  </ul>{% endif %}
+  {% else %}
+  <p>No results for <em>{{ query }}</em>. Better luck next time, I guess.</p>{% endif %}
+</div>{% endblock %}
