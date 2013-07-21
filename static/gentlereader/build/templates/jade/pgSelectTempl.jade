@@ -1,9 +1,7 @@
-.page-select-arrow.u-left &lt;
-.page-select-arrow.u-right &gt;
-
-label.page-select-label(for='page-select') -- select a page --
-select#page-select
-  option(value='all') all #{itemCount} #{dataType}
+.x-adjustor(data-adjustor="page") &times;
+.adjustor-h Pages
+ol(start="0")#pagelist
+  li.page-all(data-page='all').pagelist-i all #{itemCount} #{dataType}
 
   for p in pages
-    option(value='#{p.num}#{p.sel}') #{p.num}. #{p.fill}
+    li(data-page='#{p.num}').pagelist-i #{p.fill}

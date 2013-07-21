@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "globals.js",
+  "sourceRoot": "../../coffee/utils/",
+  "sources": [
+    "globals.coffee"
+  ],
+  "names": [],
+  "mappings": "AAGA,CAAO,EAAA,GAAP,GAAO;CACL,KAAA,CAAA;CAAA,CAAA,CAAU,IAAV;CACA,QAAO;CAAA,CAAa,CAAA,CAAb,KAAa,CAAb;CAAgB,MAAA,MAAO;CAAvB,IAAa;CAFf,GAEL;CAFK"
+}

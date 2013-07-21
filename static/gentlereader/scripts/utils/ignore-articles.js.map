@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "ignore-articles.js",
+  "sourceRoot": "../../coffee/utils/",
+  "sources": [
+    "ignore-articles.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;;;;;CAAA;AAKA,CALA,EAKO,GAAP,GAAO;CAEL,KAAA,QAAA;CAAA,CAAA,CAAiB,GAAA,GAAC,KAAlB;CAEE,GAAA,CAAG,CAAM,EAAN;CACD,KAAa,GAAN,IAAA;CAEM,GAAP,CAAA,CAHR,CAGQ;CACN,KAAa,GAAN,IAAA;CAEM,GAAP,CAAA,CANR;CAOE,KAAa,GAAN,IAAA;MAPT;CAUE,KAAA,OAAO;MAZM;CAAjB,EAAiB;CAcjB,QAAO,KAAP;CAhBK"
+}

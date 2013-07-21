@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "incorporate-query.js",
+  "sourceRoot": "../../coffee/utils/",
+  "sources": [
+    "incorporate-query.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAO,EAAA,GAAP,GAAO;CAEL,KAAA,UAAA;CAAA,CAAA,CAAmB,IAAA,EAAC,OAApB;CAEE,OAAA,0BAAA;CAAA,GAAA,GAAG,OAAY;CACb,CAAA,CAAc,GAAd,KAAA;CACA;CAAA,UAAA,gCAAA;0BAAA;CACE,CAAiB,CAAE,CAAnB,CAAiB,EAAkB,CAAnC,GAAW;CADb,MADA;CAGA,EAAQ,CAAE,OAAW,EAAb;MAJV;CAOE,CAAA,WAAO;MATQ;CAAnB,EAAmB;CAWnB,QAAO,OAAP;CAbK"
+}

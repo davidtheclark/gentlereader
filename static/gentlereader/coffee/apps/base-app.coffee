@@ -36,6 +36,7 @@ define ['jquery',
               e.stopPropagation()
             $(document).one "click", (e) ->
               $desired.slideToggle "fast"
+          $(".search-form").find("input[type='search']").focus()
 
       # show and hide browse
       $browseBtn.click (e) ->

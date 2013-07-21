@@ -1,0 +1,131 @@
+#page-list-current
+  color: $c-subtle
+  margin-top: -1em
+
+#selected-page
+  text-align: center
+
+#page-and-sort
+  display: none
+  margin: 0 auto 2em auto
+  position: relative
+  text-align: center
+  +breakpoint(desktop)
+    text-align: left
+  #timeline-c &
+    display: block
+
+.page-select-arrow
+  cursor: pointer
+  font-size: 2.3em
+  line-height: 1
+  padding: 0 5px
+  position: relative
+  z-index: 100
+  &:hover
+    color: $c-emphatic
+
+  &.u-left
+    float: left
+  &.u-right
+    float: right
+  +breakpoint(desktop)
+    &.u-left
+      float: right
+      margin-right: 10px
+
+.adjustor-btn
+  background: whitesmoke
+  border-bottom: 1px solid whitesmoke
+  cursor: pointer
+  display: inline-block
+  margin: 5px 5px 0 0
+  padding: 5px 10px
+  &.is-active
+    color: $c-subtle
+    &:hover
+      color: $c-emphatic
+
+
+.adjustor-container
+  background: whitesmoke
+  font-family: "IM Fell English"
+  font-size: 0.95em
+  width: 100%
+  text-align: left
+
+  // hide and show
+  +transition(all 0.2s linear)
+  max-height: 0
+  overflow: hidden
+  padding-left: 1em
+  padding-right: 1em
+  &.is-active
+    max-height: 500px
+    padding-top: 1em
+    padding-bottom: 1em
+
+#pagelist
+  margin: 0
+  padding-left: 20px
+  li:first-child
+    list-style-type: none
+
+.x-adjustor
+  color: $c-subtle
+  cursor: pointer
+  float: right
+  font-size: 1.6em
+  margin-top: -3px
+  &:hover
+    color: $c-emphatic
+
+.page-all
+  font-style: italic
+
+.pagelist-i
+  cursor: pointer
+  margin: 0.5em 0
+  &.is-active
+    color: $c-emphatic
+
+.adjustor-h
+  border-bottom: 1px solid $c-subtle
+  color: $c-subtle
+  margin-bottom: 10px
+  text-transform: uppercase
+
+.sort-h
+  display: inline-block
+  float: left
+  font-family: $f-base
+  font-size: 0.8em
+  margin-right: 7px
+  text-transform: uppercase
+  text-align: right
+  width: 50px
+
+.sort-item
+  display: block
+  margin: 5px 0 5px 57px
+
+.sort-radio
+  margin-right: 5px
+
+
+/* bottom paginator */
+
+.bottom-paginator
+  font-family: IM Fell English
+  font-size: 1.2em
+  text-align: center
+  +inline-list
+
+.bottom-paginator-i
+  cursor: pointer
+  padding: 0.2em
+  margin: 0 0.2em
+  &.is-current
+    color: $c-emphatic
+  &:hover:not(.is-current)
+    color: $c-link-hover

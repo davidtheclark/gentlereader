@@ -1,33 +1,80 @@
-### Creates a select menu whose displayed options reflect a collection's models and
-the current sort values. Must be called with the following options:
-- pageDetails: an array of objects with information about where each
-page starts and ends, formatted thus
-[ { startIndex: value1, startMod: model1, endIndex: value2, endMod: model2 }, ... ]
-- sortField (optional): a field to sort by (date_entered, author, or pub_year)
-(without this, the model's "name" will be displayed by default)
-- router: a router used to navigate to new pages
-- container (optional): if the container's id is other than "page-select-container"
-- dataType: what is being paginated (e.g. selection, genre, author)
-- startPage: which page should be initially selected (should be "all" or 1)? ###
-
-
 define ['backbone',
         'templates/pgSelectTempl'],
 
   (Backbone, pgSelectTempl) ->
 
+    BottomPaginatorView = Backbone.View.extend
+      className : "bottom-paginator"
+      tagName : 'ul'
+
+      initialize : (options) ->
+        _.extend @, options
+        @fillPageList()
+
+      fillPageList : ->
+        liClass = @liClass = "bottom-paginator-i"
+        $list = @.$el
+        $list.append "<li class='#{liClass}' data-page='prev'>&lsaquo;</li>"
+        for i in [1..@.total]
+          $list.append "<li class='#{liClass}' data-page='#{i}'>#{i}</li>"
+        $list.append "<li class='#{liClass}' data-page='next'>&rsaquo;</li>"
+        @renderPageList()
+
+      assignCurrent : (current) ->
+        if current is "all"
+          @.$el.hide()
+        else
+          @.$el.show()
+        lis = $(".#{@liClass}")
+        lis.each ->
+          $li = $(@)
+          $li.removeClass "is-current"
+          if $li.data("page") is current
+            $li.addClass "is-current"
+
+      renderPageList : ->
+        $(".browse-container").append @el
+        @assignCurrent @.current
+
+      events :
+        "click .bottom-paginator-i" : "go"
+
+      go : (ev) ->
+        pageNo = $(ev.currentTarget).data "page"
+        if pageNo is "next"
+          $target = $(".page-select-arrow.u-right")
+        else if pageNo is "prev"
+          $target = $(".page-select-arrow.u-left")
+        else
+          $target = $(".pagelist-i[data-page='#{pageNo}']")
+        $target.click()
+        $("html, body").animate scrollTop : 0
+
+
+
     PgSelectView = Backbone.View.extend
+
+      el : "#adjustor-pages-container"
 
       template : pgSelectTempl
 
       initialize : (options) ->
         _.extend @, options
+        # get the bottom paginator
+        $(".bottom-paginator").off().remove()
+        @bottomPaginator = new BottomPaginatorView
+          current : @.pageNo
+          total : @.options.pgParams.length
+          router : @.router
+        # set pageNo to designated starting page
+        @pageNo = @startPage
+        @setEvents()
         @render()
 
       getModelDisplay : (model) ->
-        ### From each relevant model, get the proper value to display in
-        the pageSelect. This relies on the option "dataType" passed when
-        the View is instantiated. pageSelects for selection lists can show
+        ### From each relevant model, get the text to display in
+        the page list. This relies on the option "dataType" passed when
+        the View is instantiated. The page list for selection lists can show
         date entered, author last name, or pub year; for author lists just
         last name; for tags just name. ###
 
@@ -37,60 +84,71 @@ define ['backbone',
             when "author" then model.get("source").author.last_name.toUpperCase()
             when "pub_year" then model.get("source").date_display
         else if @dataType == "authors"
-          return model.get("last_name").toUpperCase()
+          switch @sortField
+            when "last_name" then model.get("last_name").toUpperCase()
+            when "birth_year" then model.get "birth_year"
         else
           return model.get("name").toUpperCase()
 
+      setEvents : ->
+        $(".page-select-arrow").off().on "click", (ev) => @flipPage($(ev.currentTarget))
+
       events :
-        "change" : "changePage"
-        "click .page-select-arrow" : "flipPage"
+        "click .pagelist-i" : "changePage"
 
-      changePage : ->
+      changePage : (ev) ->
+        @pageNo = $(ev.currentTarget).data "page"
+        @pageName = $(ev.currentTarget).text()
         if @router
-          page = $("#page-select").val()
-          ### The "sorted" option is passed as "true" (on instantiation)
-          if the data can be sorted (NOT tags, which are always in
-          ascending alphabetical order.) ###
-          if @sorted
-            sorter = $("#sort-field").val()
-            director = $("#sort-direction").val()
-            url = "page/#{sorter}#{director}/#{page}"
-            @router.navigate url, trigger : true
-          else
-            @router.navigate "page/#{page}", trigger : true
-
+          @router.navigate "page/#{@pageNo}", trigger : true
           @changeSelectedPage()
-
         else
           console.log "No router found."
 
       changeSelectedPage : ->
-        $('#selected-page').html $('#page-select option:selected').text()
+        $("#page-list-current").empty()
+        items = $(".pagelist-i")
+        $newPage = items.filter("[data-page='#{@pageNo}']")
+        # change active page in list
+        items.filter(".is-active").removeClass("is-active")
+        $newPage.addClass "is-active"
 
-      flipPage : ->
-        $clicked = $(event.target)
+        if @pageNo is "all"
+          result = "showing #{$newPage.text()}<br><br>"
+        else
+          result = "showing page #{@pageNo} of #{@pgParams.length}:<br>#{$newPage.text()}"
+
+        $('#page-list-current').html result
+
+        # change bottom paginator
+        @bottomPaginator.assignCurrent @pageNo
+
+      flipPage : ($clicked) ->
         move = if $clicked.hasClass "u-left" then "prev" else "next"
-        $pgSelect = $("#page-select")
-        pgVal = $pgSelect.val()
-        if pgVal == 'all'
+        lastPage = @pgParams.length
+        if @pageNo == 'all'
           if move == "prev"
-            newPage = @pgParams.length
+            newPage = lastPage
           else
             newPage = 1
         else
-          currentPage = parseInt $pgSelect.val()
-          newPage = if $clicked.hasClass "u-left" then currentPage - 1 else currentPage + 1
-        $pgSelect.val(newPage.toString()).trigger("change")
+          prev = $clicked.hasClass "u-left"
+          if @pageNo == 1 and prev
+            newPage = lastPage
+          else if @pageNo == lastPage and not prev
+            newPage = 1
+          else
+            newPage = if prev then @pageNo - 1 else @pageNo + 1
+        $(".pagelist-i").filter("[data-page='#{newPage}']").click()
 
       render : ->
+        $(@el).off().empty()
         params = @pgParams
         if params
-          ### If no "container" option has been passed,
-          default to #page-select-container. ###
-          container = @container or $("#page-select-container")
+          container = @container or $("#adjustor-pages-container")
           pgCount = params.length
           itemCount = params[pgCount - 1].endIndex + 1
-          container.off().empty()
+          container.off()
 
           templateVars =
             itemCount : itemCount
@@ -101,7 +159,6 @@ define ['backbone',
             start = @getModelDisplay pg.startModel
             end = @getModelDisplay pg.endModel
             results =
-              sel : if @startPage == 1 and i == 0 then " selected" else ""
               fill : if start != end then "#{start} to #{end}" else start
               num : i + 1
             templateVars.pages.push(results)

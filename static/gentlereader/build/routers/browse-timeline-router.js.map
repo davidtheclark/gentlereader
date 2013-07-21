@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "browse-timeline-router.js",
+  "sourceRoot": "../../coffee/routers/",
+  "sources": [
+    "browse-timeline-router.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAO,CACC,CAEN,GAHF,CAGE,CAAA,CAAC,CAHI,KAAA;CAKH,KAAA,cAAA;CAAA,CAAA,CAAU,IAAV,GAAU;CAAV,CAEA,CAAuB,GAAe,EAAP,YAA/B;CAEE,CAAa,CAAA,CAAb,KAAa,CAAb;CACW,IAAT,EAAgB,CAAR,KAAR;CAAuB,CAAS,EAAT,EAAA,EAAA;CADZ,OACX;CADF,IAAa;CAAb,CAIE,EADF,EAAA;CACE,CAAU,IAAV,CAAA,GAAA;MAJF;CAAA,CAMe,CAAA,CAAf,KAAgB,GAAhB;CACU,EAAG,CAAX,GAAO,CAAP,KAAA;CAPF,IAMe;CAVjB,GAEuB;CAWvB,QAAO,WAAP;CAfF"
+}

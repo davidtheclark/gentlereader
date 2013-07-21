@@ -40,6 +40,8 @@ templates/pgSelectTempl.js
 views/pg-select-view.js
 views/paginated-collection-view.js
 views/br-tag-view.js
+templates/selListItemTempl.js
+views/br-sel-view.js
 utils/globals.js
 routers/br-tag-router.js
 utils/pagination-details.js
@@ -48,8 +50,13 @@ browse-main.js
 
 timeline-main.js
 ----------------
+utils/ignore-articles.js
+models/tag-set.js
 utils/globals.js
 routers/browse-timeline-router.js
+views/paginated-collection-view.js
+templates/timelineListItem.js
+views/br-timeline-view.js
 lib/unfinishedToggler.js
 apps/timeline-app.js
 timeline-main.js

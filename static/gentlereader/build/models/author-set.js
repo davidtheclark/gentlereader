@@ -1,0 +1,1 @@
+define(["backbone","utils/incorporate-query"],function(e,t){var i,n=this;return i=e.Collection.extend({url:"/api/authors",initialize:function(e,i){return n.url+=t(i)}})});

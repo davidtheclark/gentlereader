@@ -1,0 +1,11 @@
+section: a(href='/selections/#{model.get("slug")}')
+  h3 #{model.get("title")}
+  .li-sel-dets
+    span.li-sel-author #{model.get("author")}.&#32;
+    if model.get("from_display")
+      | !{model.get("from_display")}
+    |&#32;(!{model.get("date_display")}). <span class="li-sel--posttime">Posted #{model.get("date_entered")}</span>
+
+section.li-sel--teaser
+  span.teaser-text.hyphenate!= model.get("teaser")
+  a(href='/selections/#{model.get("slug")}').read-on read&nbsp;on

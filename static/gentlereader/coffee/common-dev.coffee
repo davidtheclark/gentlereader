@@ -3,7 +3,7 @@ requirejs.config
   baseUrl: "/static/gentlereader/scripts"
 
   paths:
-    jquery: "lib/jquery"
+    jquery: "//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min"
     underscore: "lib/lodash.custom"
     backbone: "lib/backbone"
     typeahead: "lib/typeahead"

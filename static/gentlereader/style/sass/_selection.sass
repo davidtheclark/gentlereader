@@ -110,7 +110,7 @@ $s-extras--heading-y: 40px
 /* selection extras: tag list (top and bottom) */
 
 .s-tags
-  padding-bottom: 1.5em
+  padding-bottom: 0.5em
 
   &.u-top
     border-bottom: $double
@@ -317,6 +317,43 @@ $s-extras--heading-y: 40px
   &:before
     +hr
 
+/* share */
+
+.shareit
+  margin: 1em 0
+  &.m-seldesk
+    display: none
+    padding-bottom: 1.5em
+    +breakpoint(desktop)
+      display: block
+  &.m-selmobile
+    +breakpoint(desktop)
+      display: none
+
+.share-i-container
+  +clearfix
+
+.shareit-i
+  +hide-text
+  background-size: 80% 80%
+  background-position: center center
+  border-radius: 100%
+  width: 40px
+  height: 40px
+  margin: 5px 10px 10px 0
+  display: block
+  float: left
+  &:hover
+    background-color: $c-link
+    box-shadow: 0 0 10px $c-link
+    text-decoration: none
+  &.m-facebook
+    @extend .icon-facebook-bare
+  &.m-twitter
+    @extend .icon-twitter-bare
+  &.m-gplus
+    @extend .icon-google-plus-bare
+
 
 /* =========================
  * SELECTION MEDIA QUERIES
@@ -355,6 +392,7 @@ $s-extras--heading-y: 40px
           display: none
 
   .s-tags.u-top
+    border: none
     margin-top: 1em
 
   .s-tags.u-bottom
@@ -377,6 +415,11 @@ $s-extras--heading-y: 40px
     &:after
       background: none
       height: auto
+
+  .shareit.m-seldesk
+    border-bottom: double 4px black
+    display: block
+
 
   .s-text-bottom-orn
     margin-top: 0.7em

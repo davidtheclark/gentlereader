@@ -1,6 +1,7 @@
-li.tl-li
-  .tl-year {{ item.year }}
-  ul.tl-sels
-    {% for s in item.selections %}
-    li.tl-sel {{ s }}
-    {% endfor %}
+a(href="/selections/#{model.get('slug')}")
+  h2.tl-title #{model.get('title')}
+  | by #{model.get('author')}
+span.tl-showteaser.uft-trigger.uft-a [&nbsp;teaser&nbsp;&#9662;&nbsp;]
+.tl-teaser.hyphenate.uft-b
+  span.teaser-text #{model.get('teaser')}
+  a(href="/selections/{#{model.get('slug')}").read-on read&nbsp;on

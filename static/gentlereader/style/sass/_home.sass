@@ -85,7 +85,6 @@
 
 .home-search-container
   background: whitesmoke
-  border-radius: 8px
   padding: 1em 0
   .search-form
     width: 90%
@@ -139,15 +138,18 @@
   border-radius: 100%
   float: left
   margin: 0 5px
+  background-size: 100% 100%
+  width: 60px
+  height: 60px
   &:hover
     background-color: $c-emphatic
     box-shadow: 0 0 10px $c-emphatic
   &.mod-rss
-    @extend %s-home-icn-rss
+    @extend .icon-feed
   &.mod-twitter
-    @extend %s-home-icn-twitter
+    @extend .icon-twitter
   &.mod-facebook
-    @extend %s-home-icn-facebook
+    @extend .icon-facebook
 
 .home-footer-padding
   margin-top: 2em

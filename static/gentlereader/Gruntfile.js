@@ -1,12 +1,3 @@
-var glueCommands = function(name, retina) {
-  var first = 'glue images/sprite-assets/sprite-' + name + ' --url=../../images/sprites --img=images/sprites/ --css=style/sass/sprites/ --namespace=s --sprite-namespace=' + name;
-  var second = 'mv style/sass/sprites/sprite-' + name + '.css style/sass/sprites/_sprite-' + name + '.scss';
-  if (retina) {
-    first += ' --retina --imagemagick';
-  }
-  return [first, second].join('&&');
-};
-
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -20,11 +11,8 @@ module.exports = function(grunt) {
           'python ~/dev/me/django/miniProject/manage.py runserver'
         ].join('&&')
       },
-      'generate-sprite': {
-        command: [
-          glueCommands('all', true),
-          glueCommands('home', true)
-        ].join('&&')
+      'jade2js': {
+        command: 'coffee ../../utils/jade2js/jade2js.coffee -R'
       }
     },
 
@@ -85,17 +73,6 @@ module.exports = function(grunt) {
     },
 
     replace: {
-      'sprite-extend': {
-        src: ['style/sass/sprites/_sprite-*'],
-        overwrite: true,
-        replacements: [{
-          from: /^\./gm,
-          to: '%'
-        }, {
-          from: '{.',
-          to: '{%'
-        }]
-      },
       dev: {
         src: ['../../templates/jade/*.jade', '../../templates/jade/includes/*.jade'],
         overwrite: true,
@@ -133,15 +110,94 @@ module.exports = function(grunt) {
     },
 
     sass: {
+      options: {
+        debugInfo: false,
+        noCache: true
+      },
+      dev: {
+        options: {
+          style: "expanded",
+          sourcemap: true
+        },
+        files: {
+          'style/css/STYLE.css': 'style/sass/STYLE.sass'
+        }
+      },
       build: {
         options: {
-          style: "compressed",
-          debugInfo: false,
-          noCache: true
+          style: "compressed"
         },
         files: {
           'style/css/style-compressed.css': 'style/sass/STYLE.sass'
         }
+      }
+    },
+
+    grunticon: {
+      icons: {
+        options: {
+          src: 'images/svg-assets/',
+          dest: 'style/sass/svg/',
+          datasvgcss: '_icons-svg.scss'
+        }
+      }
+    },
+
+    coffee : {
+      options: {
+        bare: true
+      },
+      compile: {
+        expand: true,
+        cwd: 'coffee',
+        src: ['*.coffee', '**/*.coffee'],
+        dest: 'scripts',
+        ext: '.js'
+      }
+    },
+
+    watch: {
+      livereload: {
+        options: {
+          livereload: true
+        },
+        files: [
+          'style/css/STYLE.css',
+          '../../templates/*.html',
+          'scripts/*.js',
+          'scripts/**/*.js'
+        ]
+      },
+      jade: {
+        options: {
+          nospawn: true
+        },
+        files: [
+          '../../templates/jade/*',
+          '../../templates/jade/**/*.jade'
+        ],
+        tasks: ['jade:process']
+      },
+      sass: {
+        files: 'style/sass/*',
+        tasks: ['sass:dev']
+      },
+      icons: {
+        livereload: {
+          options: true
+        },
+        files: 'images/svg-assets/*.svg',
+        tasks: ['grunticon:icons']
+      },
+      coffee: {
+        options: {
+          nospawn: true
+        },
+        files: [
+          '*.coffee',
+          '**/*.coffee'
+        ],
+        tasks: ['coffee:compile']
       }
     }
 
@@ -152,13 +208,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-grunticon');
 
   grunt.registerTask('start', ['shell:initialize']);
   grunt.registerTask('sprite', ['shell:generate-sprite', 'replace:sprite-extend']);
+  grunt.registerTask('jade2js', ['shell:jade2js']);
   grunt.registerTask('dev', ['replace:dev', 'jade:process']);
   grunt.registerTask('build', ['requirejs:compile', 'replace:build', 'jade:process', 'sass:build']);
-
-  // Default task(s).
-  //grunt.registerTask('default', ['']);
 
 };

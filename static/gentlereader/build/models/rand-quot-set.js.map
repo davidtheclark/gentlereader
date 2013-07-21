@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "rand-quot-set.js",
+  "sourceRoot": "../../coffee/models/",
+  "sources": [
+    "rand-quot-set.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAO,CAEL,CAAA,GAFF,EAEE,CAAC,CAFI;CAGH,KAAA,KAAA;CAAA,CAAA,CAAc,GAAA,EAAQ,EAAW,CAAjC;CACE,CAAM,CAAN,CAAA,oBAAA;CADF,GAAc;CAEd,QAAO,EAAP;CAHF"
+}

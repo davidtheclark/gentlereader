@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "author-set.js",
+  "sourceRoot": "../../coffee/models/",
+  "sources": [
+    "author-set.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAO,CACC,CAEN,GAHF,EAGE,CAAC,CAHI,MAGL,SAHK;CAKH,KAAA,GAAA;KAAA,OAAA;CAAA,CAAA,CAAY,GAAA,EAAQ,CAApB,CAA+B;CAE7B,CAAM,CAAN,CAAA,UAAA;CAAA,CACa,CAAA,CAAb,EAAa,CAAA,EAAC,CAAd;CACG,EAAD,CAAQ,CAAP,EAAO,MAAR,GAAQ;CAFV,IACa;CAHf,GAAY;CAMZ,QAAO;CART"
+}

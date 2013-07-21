@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "isElementInViewport.js",
+  "sourceRoot": "../../coffee/utils/",
+  "sources": [
+    "isElementInViewport.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAO,CAAP,CAAW,GAAX,GAAW;CAET,KAAA,aAAA;CAAA,CAAA,CAAsB,MAAC,UAAvB;CACE,GAAA,IAAA;CAAA,CAAS,CAAF,CAAP,iBAAO;CACP,EACE,CAAI,CAGJ,CADA,EAA8C,EAC/B,CAHf,CAEe,GAAgD;CALnE,EAAsB;CAStB,QAAO,UAAP;CAXS"
+}

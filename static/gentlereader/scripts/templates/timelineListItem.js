@@ -6,7 +6,11 @@ var buf = [];
 with (locals || {}) {
 var interp;
 var __indent = [];
-buf.push('\n<li class="tl-li">\n  <div class="tl-year">{{ item.year }}</div>\n  <ul class="tl-sels">{% for s in item.selections %}\n    <li class="tl-sel">{{ s }}</li>{% endfor %}\n  </ul>\n</li>');
+buf.push('<a');
+buf.push(attrs({ 'href':("/selections/" + (model.get('slug')) + "") }, {"href":true}));
+buf.push('>\n  <h2 class="tl-title">' + escape((interp = model.get('title')) == null ? '' : interp) + '</h2>by ' + escape((interp = model.get('author')) == null ? '' : interp) + '</a><span class="tl-showteaser uft-trigger uft-a">[&nbsp;teaser&nbsp;&#9662;&nbsp;]</span>\n<div class="tl-teaser hyphenate uft-b"><span class="teaser-text">' + escape((interp = model.get('teaser')) == null ? '' : interp) + '</span><a');
+buf.push(attrs({ 'href':("/selections/{" + (model.get('slug')) + ""), "class": ('read-on') }, {"href":true}));
+buf.push('>read&nbsp;on</a></div>');
 }
 return buf.join("");
 }return timelineListItem});
