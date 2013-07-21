@@ -11,7 +11,10 @@ meta(name="description", content="A highlight from the work of {{ h.selection.so
 {% endblock %}
 
 {% block bottomscripts %}
-
+<!-- grunt-active: build -->
+script
+  require(['{{ STATIC_URL }}gentlereader/build/common-build.js']);
+<!-- endgrunt -->
 {% endblock %}
 
 
