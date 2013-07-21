@@ -5,7 +5,7 @@
 {% block meta %}
 meta(property="og:description", content="{{ selection.get_teaser|striptags }}")
 meta(property="og:title", content="{{ selection }}, by {{ selection.get_author }} - The Gentle Reader")
-meta(property="og:url", content="http://thegentlereader.net/selections/{{ selection.slug }}")
+meta(property="og:url", content="http://thegentlereader.net/selections/{{ selection.slug }}/")
 meta(property="og:image", content="http://thegentlereader.net/static/gentlereader/images/thumb-skeleton-thinking.png")
 meta(name="description", content="{{ selection }}, by {{ selection.get_author }}. {% if selection.from_display_safe %}From {{ selection.from_display_safe }}.{% endif %} Brought to you by The Gentle Reader.")
 {% endblock %}

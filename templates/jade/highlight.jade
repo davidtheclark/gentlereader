@@ -5,7 +5,7 @@
 {% block meta %}
 meta(property="og:description", content="{{ h.get_quotation|striptags }}")
 meta(property="og:title", content="Highlight from {{ h.selection.source.author.full_name }} (\#{{ h.pk }}) - The Gentle Reader")
-meta(property="og:url", content="http://thegentlereader.net/highglights/{{ h.pk }}")
+meta(property="og:url", content="http://thegentlereader.net/highglights/{{ h.pk }}/")
 meta(property="og:image", content="http://thegentlereader.net/static/gentlereader/images/thumb-skeleton-thinking.png")
 meta(name="description", content="A highlight from the work of {{ h.selection.source.author.full_name }} in The Gentle Reader's anthology of public domain texts.")
 {% endblock %}
