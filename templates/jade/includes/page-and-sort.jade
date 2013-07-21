@@ -1,0 +1,33 @@
+#page-and-sort
+  .adjustor-labels
+    #page-list-current
+
+    div.adjustor-buttons
+      .page-select-arrow.u-right &rsaquo;
+      .page-select-arrow.u-left &lsaquo;
+      span.adjustor-btn#adjustor-btn-pages(data-adjustor="page") select a page
+      {% if category == "authors" or category == "selections" %}
+      span.adjustor-btn#adjustor-btn-sort(data-adjustor="sort") sort
+      {% endif %}
+
+
+  #adjustor-pages-container.adjustor-container
+  #adjustor-sort-container.adjustor-container
+    .x-adjustor(data-adjustor="sort") &times;
+    .adjustor-h Sort by
+    .sort-subcontainer
+      span.sort-h field
+      {% if category == "authors" %}
+      label.sort-item <input name="sortField" type="radio" value="last_name" class="sort-radio" checked> last name
+      label.sort-item <input name="sortField" type="radio" value="birth_year" class="sort-radio"> birth year
+      {% elif category == "selections" %}
+      label.sort-item <input name="sortField" type="radio" value="date_entered" class="sort-radio" checked> post date
+      label.sort-item <input name="sortField" type="radio" value="author" class="sort-radio"> author
+      label.sort-item <input name="sortField" type="radio" value="pub_year" class="sort-radio"> source date
+      {% else %}
+      label.sort-item <input name="sortField" type="radio" value="name" class="sort-radio" checked> name
+      {% endif %}
+    .sort-subcontainer
+      span.sort-h order
+      label.sort-item <input name="sortOrder" type="radio" value="asc" class="sort-radio"{% if category != "selections" %} checked{% endif %}> ascending
+      label.sort-item <input name="sortOrder" type="radio" value="des" class="sort-radio"{% if category == "selections" %} checked{% endif %}> descending
