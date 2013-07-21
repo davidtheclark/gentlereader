@@ -3,7 +3,11 @@
 {% block title %}{{ selection }}, by {{ selection.get_author }} - The Gentle Reader{% endblock %}
 
 {% block meta %}
-meta(name="description", content="{{ selection }}, by {{ selection.get_author }}. {% if selection.from_display_safe %}{{ selection.from_display_safe }}.{% endif %} Brought to you by The Gentle Reader.")
+meta(property="og:description", content="{{ selection.get_teaser|striptags }}")
+meta(property="og:title", content="{{ selection }}, by {{ selection.get_author }} - The Gentle Reader")
+meta(property="og:url", content="http://thegentlereader.net/selections/{{ selection.slug }}")
+meta(property="og:image", content="http://thegentlereader.net/static/gentlereader/images/thumb-skeleton-thinking.png")
+meta(name="description", content="{{ selection }}, by {{ selection.get_author }}. {% if selection.from_display_safe %}From {{ selection.from_display_safe }}.{% endif %} Brought to you by The Gentle Reader.")
 {% endblock %}
 
 // styles
@@ -96,6 +100,10 @@ article.content
           .s-tags--inst Click a tag to find other selections like this one.
           include includes/tag-sublist
 
+      li.s-extras--li.shareit.m-seldesk
+        .s-extras--title Share this Selection
+        include includes/sel-share
+
 
     {% with ct=selection.comment_text ci=selection.comment_intro %}
     {% if ct or ci %}
@@ -120,6 +128,11 @@ article.content
 
   //postscript
   .s-postscript
+
+    // mobile share
+    .shareit.m-selmobile
+      h3.s-postscript--h3 Share this Selection
+      include includes/sel-share
 
     //tags
     .s-postscript--col.u-second

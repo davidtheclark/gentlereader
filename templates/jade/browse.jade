@@ -51,13 +51,9 @@ script
     | {{ category }}
     {% endif %}
 
-  //
-    #adjustor-container
-      #selected-page
-      #page-select-container.adjustor-subcontainer
-
   {% if category == "selections" %}
-  include includes/browse-selections
+  .browsec-paginated
+    include includes/browse-selections
   {% elif category == "timeline" %}
   include includes/browse-timeline
   {% elif category == "highlights" %}
@@ -65,7 +61,8 @@ script
   {% elif category == "announcements" %}
   include includes/browse-announcements
   {% else %}
-  include includes/browse-tags
+  .browsec-paginated
+    include includes/browse-tags
   {% endif %}
 
   aside.browse-extras

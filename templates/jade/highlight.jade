@@ -3,7 +3,11 @@
 {% block title %} Highlight from {{ h.selection.source.author.full_name }} (\#{{ h.pk }}) - The Gentle Reader{% endblock %}
 
 {% block meta %}
-meta(name="description", content="A {{ h.selection.source.author.full_name }} highlight from The Gentle Reader's anthology of public domain texts.")
+meta(property="og:description", content="{{ h.get_quotation|striptags }}")
+meta(property="og:title", content="Highlight from {{ h.selection.source.author.full_name }} (\#{{ h.pk }}) - The Gentle Reader")
+meta(property="og:url", content="http://thegentlereader.net/highglights/{{ h.pk }}")
+meta(property="og:image", content="http://thegentlereader.net/static/gentlereader/images/thumb-skeleton-thinking.png")
+meta(name="description", content="A highlight from the work of {{ h.selection.source.author.full_name }} in The Gentle Reader's anthology of public domain texts.")
 {% endblock %}
 
 {% block bottomscripts %}
@@ -16,6 +20,12 @@ meta(name="description", content="A {{ h.selection.source.author.full_name }} hi
   #single-highlight-container
     .hl-body.hyphenate {{ h.get_quotation }}
     .hl-about {{ h.get_source }}
+    .hl-share
+      | Share this highlight&nbsp;:
+      .share-i-container
+        a.shareit-i.m-twitter(href="http://twitter.com/share?text=A highlight from The Gentle Reader.&url=http://thegentlereader.net/highlights/{{ h.pk }}", target="_blank") Share on Twitter
+        a.shareit-i.m-facebook(href="https://www.facebook.com/dialog/feed?app_id=1394114264142120&link=http://thegentlereader.net/selections/{{ h.pk }}&redirect_uri=http://thegentlereader.net/highglights/{{ h.pk }}", target="_blank") Share on Facebook
+        a.shareit-i.m-gplus(href="https://plus.google.com/share?url=http://thegentlereader.net/highlights/{{ h.pk }}", target="_blank") Share on Google Plus
 
   .hl-links
     a.hl-link(href='/selections/{{ h.selection.slug }}') Read this full selection

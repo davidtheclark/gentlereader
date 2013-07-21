@@ -119,39 +119,21 @@ class Selection(models.Model):
     def toJSON(self):
         return dict(
             id=self.id,
-            date_entered=self.date_entered.strftime("%d %B %Y, %H:%M"),
-            date_entered_microdata=self.date_entered.isoformat(),
+            date_entered=self.date_entered.strftime("%B %d, %Y"),
             date_modified=self.date_modified.strftime("%d %B %Y, %H:%M"),
-            date_modified_microdata=self.date_entered.isoformat(),
-            #text is excluded because this dictionary is only called for tables of contents
-            teaser=self.teaser,
-            comment_intro=self.comment_intro,
-            comment_text=self.comment_text,
-            excerpt=self.excerpt,
-            selection_title=self.selection_title,
             slug=self.slug,
-            shortened_passage=self.shortened_passage(),
-            source_display=self.source_display(),
-            class_name=self.class_name()
+            author=self.get_author(),
+            title=self.get_title(),
+            from_display=self.from_display(),
+            date_display=self.source.date_display(),
+            teaser=self.get_teaser()
         )
 
     def list_item(self):
-        selection = dict(
-            id=self.id,
-            date_entered=self.date_entered.strftime("%d %B %Y, %H:%M"),
-            date_entered_microdata=self.date_entered.isoformat(),
-            date_entered_simple=self.date_entered.strftime("%m/%d/%y"),
-            teaser=self.teaser,
-            selection_title=self.selection_title,
-            slug=self.slug,
-            source_display=self.source_display(),
-            from_display=self.from_display(),
-            class_name=self.class_name(),
-            title=self.__unicode__(),
-            excerpt=self.excerpt
-        )
+        selection = self.toJSON();
+        selection['date_entered_sort'] = self.date_entered.strftime("%B %d, %Y %H:%M:%S"),
+        selection['date_entered_simple'] = self.date_entered.strftime("%d %b %y"),
         s = selection['source'] = {}
-        s['root_work'] = self.source.root_work()
         s['pub_year'] = self.source.pub_year
         s['date_display'] = self.source.date_display()
         a = s['author'] = {}

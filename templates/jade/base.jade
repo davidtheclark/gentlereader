@@ -1,5 +1,5 @@
 !!!
-html(lang="en")
+html(lang="en").no-js
   head
     meta(http-equiv="Content-Type", content="text/html")
     meta(charset="utf-8")
@@ -12,6 +12,9 @@ html(lang="en")
 
     link(rel="alternate", type="application/rss+xml", title="RSS", href="/feed")
 
+    <!-- google fonts -->
+    link(href='http://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic|Crimson+Text:400,400italic', rel='stylesheet', type='text/css')
+
     <!-- grunt-inactive: dev
     link(rel="stylesheet", href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css")
     endgrunt -->
@@ -20,6 +23,8 @@ html(lang="en")
     <!-- endgrunt -->
     {% block styles %}{% endblock %}
 
+    script
+        document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + 'js';
     {% block topscripts %}{% endblock %}
 
     {% block head %}{% endblock %}
@@ -37,6 +42,7 @@ html(lang="en")
     {% endblock %}
 
     <!-- grunt-inactive: dev
+    script(src="http://localhost:35729/livereload.js")
     script(src="{{ STATIC_URL }}gentlereader/scripts/require.js")
     script(src="{{ STATIC_URL }}gentlereader/scripts/common-dev.js")
     endgrunt -->
