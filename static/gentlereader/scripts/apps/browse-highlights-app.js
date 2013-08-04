@@ -1,6 +1,6 @@
 define(["backbone", "routers/browse-highlights-router", "templates/brQuotRandomTempl", "templates/brQuotAuthTempl", "lib/matchMedia", "utils/isElementInViewport"], function(Backbone, Router, randomTempl, fromAuthorTempl, matchMedia, isElementInViewport) {
   var BrowseHighlightApp, cont;
-  cont = $("#highlight-container");
+  cont = $("#browseHighlights");
   return BrowseHighlightApp = Backbone.View.extend({
     initialize: function(options) {
       this.router = new Router();
@@ -24,7 +24,7 @@ define(["backbone", "routers/browse-highlights-router", "templates/brQuotRandomT
     setAuthorSelect: function() {
       var $select,
         _this = this;
-      $select = $("#select-highlight-author");
+      $select = $("#selectHighlightAuthor");
       return $select.change(function() {
         return _this.router.navigate($select.val(), {
           trigger: true

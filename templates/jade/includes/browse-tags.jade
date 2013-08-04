@@ -1,16 +1,16 @@
-#tag-container.browse-container
+#tag-container.main-c
   include page-and-sort
 
-  ul#tag-list
+  ul#tag-list.taglist
 
     {% for t in tags %}
-    li: a(href="{{ t.slug }}").tag-list--a
+    li: a(href="{{ t.slug }}").taglist-i
 
       {% if category == "authors" %}
-      span.tag-list--span {{ t }} <span class="browse-author-dates">({{ t.dates }})</span>
+      span.taglist-inner {{ t }} <span class="browse-author-dates">({{ t.dates }})</span>
 
       {% else %}
-      span.tag-list--span {{ t }}
+      span.taglist-inner {{ t }}
 
       {% endif %}
     {% endfor %}

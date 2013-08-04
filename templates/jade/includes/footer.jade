@@ -1,20 +1,17 @@
 {% block footer-subscribe %}
 
-section.subscribe.u-footer
-  .inner
-
+section.subscribe.m-footer
+  .inner-c
+    span.subscribe-label Hear about new selections
     .subscribe-icons
-      span Hear about new selections
-      a(href="/feed", target="_blank").subscribe-icon.mod-rss Subscribe to the RSS Feed
-      a(href="https://twitter.com/aGentleTweeter", title="@aGentleTweeter", target="_blank").subscribe-icon.mod-twitter Follow us on Twitter
-      a(href="https://www.facebook.com/TheGentleReader", target="_blank").subscribe-icon.mod-facebook Follow us on Facebook
+      include subscribe
 
 {% endblock %}
 
 footer.site-footer
-  .footer-inner
+  .inner-c
 
-    .footer-text
+    div
       <a href="/" class="footer-title">The Gentle Reader</a> is an ever-growing, explorable anthology of carefully curated selections from texts in the public domain. <a class="footer-about" href="/about">Read more about the site</a>
 
     ul.footer-links
@@ -22,14 +19,14 @@ footer.site-footer
       li: a(href="/highlights").footer-link Highlights
       li: a(href="/announcements").footer-link Announcements
       li: a(href="/contact").footer-link Contact
-      li: a(href="#").footer-link.get-copyright-info Copyright Info
+      li: a(href="#").footer-link.js-copyright-btn Copyright Info
       li: a(href="https://github.com/MisterGrumpyPants/gentlereader", target="_blank").footer-link Code on Github
 
-    .footer-copyright
-      .get-copyright-info.x-copyright &times;
+    #copyright.copyright
+      .js-copyright-btn.close-x &times;
       p All of The Gentle Reader's selections (and any images) are from works in the public domain in the US. Old books. (If a source text is <em>not</em>, in fact, in the public domain, there has been a misunderstanding; <a href="/contact">please inform The Editor</a> and it will be taken down.)
       p The fonts are <em>Crimson</em>, by <a href="http://aldusleaf.org/" target="_blank">Sebastian Kosch</a>, and <em>IM Fell English</em> with some ornaments from <em>IM Fell Flowers 2</em>, both digitally reproduced by <a href="http://www.iginomarini.xn--com-3ga/" target="_blank">Iginio Marini</a>. I would like to publicly thank these benefactors.
 
       p Everything else on the site that is not from a public domain text <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" target="_blank"> is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.</a>
 
-      .get-copyright-info.close-copyright  close this message
+      .js-copyright-btn.close-verbose  close this message

@@ -1,14 +1,14 @@
 // ABOUT!!!
 
-#about
+.about
   section
     margin-bottom: 3em
   h2
-    @extend %h--subtitle
+    @extend %h-subtitle
     color: $c-subtle
     margin: 0 0 0.5em
   h3
-    @extend %h--sidebar
+    @extend %h-sidebar
     margin: 1em 0 0.5em
   h4
     color: $c-subtle
@@ -35,8 +35,10 @@
   color: $c-link
   cursor: pointer
   display: block
+  margin-top: 0.3em
   font:
     family: $f-heading
+    size: 1.1em
     style: italic
   &:after
     +arrow(6, $c-link, down)
@@ -47,7 +49,21 @@
     &:after
       border-top-color: $c-link-hover
 
+  text-align: center
+  +breakpoint(desktop)
+    text-align: left
+
 // images
+
+.main-image img
+  margin: 0 auto
+  max-width: 100%
+
+.sidebar-image img
+  display: block
+  margin: 0 auto 2em
+  max-width: 90%
+  float: right
 
 +breakpoint(desktop)
 
@@ -64,14 +80,3 @@
     padding-bottom: 134%
     +hidpi(1.5)
       background-image: url("../../images/skeleton-scholar.png")
-
-
-.main-image img
-  margin: 0 auto
-  max-width: 100%
-
-.sidebar-image img
-  display: block
-  margin: 0 auto 2em
-  max-width: 90%
-  float: right

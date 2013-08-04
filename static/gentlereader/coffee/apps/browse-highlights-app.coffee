@@ -7,7 +7,7 @@ define ["backbone",
 
   (Backbone, Router, randomTempl, fromAuthorTempl, matchMedia, isElementInViewport) ->
 
-    cont = $("#highlight-container")
+    cont = $("#browseHighlights")
 
     BrowseHighlightApp = Backbone.View.extend
 
@@ -29,7 +29,7 @@ define ["backbone",
 
 
       setAuthorSelect : ->
-        $select = $("#select-highlight-author")
+        $select = $("#selectHighlightAuthor")
         $select.change =>
           @router.navigate $select.val(), trigger : true
 

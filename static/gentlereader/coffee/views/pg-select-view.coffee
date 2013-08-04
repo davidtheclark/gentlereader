@@ -14,10 +14,10 @@ define ['backbone',
       fillPageList : ->
         liClass = @liClass = "bottom-paginator-i"
         $list = @.$el
-        $list.append "<li class='#{liClass}' data-page='prev'>&lsaquo;</li>"
+        $list.append "<li class='#{liClass} paginator-arrow' data-page='prev'>&lsaquo;</li>"
         for i in [1..@.total]
           $list.append "<li class='#{liClass}' data-page='#{i}'>#{i}</li>"
-        $list.append "<li class='#{liClass}' data-page='next'>&rsaquo;</li>"
+        $list.append "<li class='#{liClass} paginator-arrow' data-page='next'>&rsaquo;</li>"
         @renderPageList()
 
       assignCurrent : (current) ->
@@ -33,7 +33,7 @@ define ['backbone',
             $li.addClass "is-current"
 
       renderPageList : ->
-        $(".browse-container").append @el
+        $(".main-c").append @el
         @assignCurrent @.current
 
       events :
@@ -42,9 +42,9 @@ define ['backbone',
       go : (ev) ->
         pageNo = $(ev.currentTarget).data "page"
         if pageNo is "next"
-          $target = $(".page-select-arrow.u-right")
+          $target = $(".page-select-arrow.m-right")
         else if pageNo is "prev"
-          $target = $(".page-select-arrow.u-left")
+          $target = $(".page-select-arrow.m-left")
         else
           $target = $(".pagelist-i[data-page='#{pageNo}']")
         $target.click()
@@ -124,7 +124,7 @@ define ['backbone',
         @bottomPaginator.assignCurrent @pageNo
 
       flipPage : ($clicked) ->
-        move = if $clicked.hasClass "u-left" then "prev" else "next"
+        move = if $clicked.hasClass "m-left" then "prev" else "next"
         lastPage = @pgParams.length
         if @pageNo == 'all'
           if move == "prev"
@@ -132,7 +132,7 @@ define ['backbone',
           else
             newPage = 1
         else
-          prev = $clicked.hasClass "u-left"
+          prev = $clicked.hasClass "m-left"
           if @pageNo == 1 and prev
             newPage = lastPage
           else if @pageNo == lastPage and not prev

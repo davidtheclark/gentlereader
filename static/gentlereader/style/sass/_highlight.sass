@@ -3,7 +3,7 @@
     font-size: 1.4em
 
 .hl-body
-  @extend %txt--sidebar-highlight
+  @extend %sidebar-highlight
 
 .hl-about
   font-size: 1.3em
@@ -17,14 +17,14 @@
       color: $c-link-hover
 
 .hl-links
-  +clearfix
+  @extend %clearfix
   margin-top: 1em
   +breakpoint(desktop)
     border-bottom: $bar
 
 .hl-link,
 .hl-link:visited
-  +dot-link
+  @extend %dot-link
   +breakpoint(desktop)
     width: 50%
     float: left

@@ -21,10 +21,10 @@ define ['jquery',
 
       # nav menu
 
-      $searchBtn = $(".nav-search")
-      $searchCont = $(".nav-search--container")
-      $browseBtn = $(".nav-browse, .subnav-browse--close")
-      $browseCont = $(".subnav-browse--container")
+      $searchBtn = $("#navSearchBtn")
+      $searchCont = $("#navSearch")
+      $browseBtns = $(".js-nav-browse-btn")
+      $browseCont = $("#navBrowse")
 
       menuToggle = ($desired, $other) ->
         $desired.slideToggle "fast", ->
@@ -39,7 +39,7 @@ define ['jquery',
           $(".search-form").find("input[type='search']").focus()
 
       # show and hide browse
-      $browseBtn.click (e) ->
+      $browseBtns.click (e) ->
         e.stopPropagation()
         menuToggle $browseCont, $searchCont
 
@@ -53,14 +53,12 @@ define ['jquery',
         $("html, body").animate scrollTop: 0
 
       # show and hide copyright info in footer
-      $getCopy = $(".get-copyright-info")
-      $copyCont = $(".footer-copyright")
+      $getCopy = $(".js-copyright-btn")
+      $copyCont = $("#copyright")
       $getCopy.click (e) ->
         e.preventDefault()
-        $copyCont.slideToggle "fast", ->
-          if $copyCont.css("display") == "block"
-            $("html, body").animate scrollTop: $copyCont.offset().top
-
+        $copyCont.toggleClass "is-visible"
+        $("html, body").animate scrollTop: $copyCont.offset().top
 
       searchApp.initialize()
 

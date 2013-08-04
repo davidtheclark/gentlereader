@@ -1,22 +1,10 @@
-
-// FONTS
-// crimson and im fell loaded via google fonts
-+font-face('fellorn', '../fonts/fell-flowers/imfellorn-custom')
-
-
-// HEADINGS
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-  font-weight: normal
+%reset-link
+  border-bottom: none
+  color: $c-base
 
 %heading
   color: $c-emphatic
-  font:
-    family: $f-heading
+  font-family: $f-heading
 
 %h--grand-title
   @extend %heading
@@ -26,18 +14,18 @@ h6
   line-height: 1.1
   margin: 0 0 0.2em 0
 
-%h--subtitle
+%h-subtitle
   font:
     family: $f-heading
     size:  1.6em
 
-%h--sidebar
-  @extend %h--subtitle
+%h-sidebar
+  @extend %h-subtitle
   color: $c-emphatic
   font-variant: small-caps
   margin-bottom: 0.1em
 
-%h--postscript
+%h-postscript
   @extend %heading
   border-bottom: 1px dotted $c-emphatic
   margin-top: 1em
@@ -46,14 +34,7 @@ h6
     size: 1.2em
   text-transform: uppercase
 
-// TEXT
-
-%txt--h-follower
-  font: 1.2em
-  line-height: 1.4
-  margin-top: 1.25em
-
-%txt--sidebar-highlight
+%sidebar-highlight
   @extend %indented-p
   color: $c-subtle
   font-family: $f-heading
@@ -67,41 +48,177 @@ h6
   font-size: 1.07em
   line-height: 1.5
 
+%reverse-italics
+  em,
+  cite,
+  i,
+  .inline-translation
+    font-style: normal
 
-// UTILITIES
+%indented-p
+  p:not(.poetry-line)
+    margin: 0
+    text-indent: 20px
+    &:first-child
+      text-indent: 0
+  p.no-indent
+    margin: 0
+    text-indent: 0
 
-%two-buttons
-  +clearfix
-  margin: 1.25em auto 0 auto
-  max-width: 500px
-  overflow: hidden
-  position: relative
-
-$trigger-y: 40px
-
-%two-buttons--trigger
-  +two-borders(x, $double)
-  color: $c-link
-  cursor: pointer
-  font:
-    family: $f-heading
-    size: 1.13em
-    style: italic
-  float: left
-  height: $trigger-y
-  line-height: $trigger-y - 5px
-  text-align: center
-  width: 50%
-  &.u-left
-    &:not(.u-wide)
-      border-right: $bar
-
+%hover-highlight
   &:hover
-    +transition( (color $trans-time, background-color $trans-time) )
-    background-color: whitesmoke
     color: $c-emphatic
 
+%dingled
+  &:before,
+  &:after
+    font-family: "fellorn" !important
+    font-style: normal
+    line-height: 1
+    margin: 0 0.5em
+    vertical-align: bottom
+  &:before
+    content: "\006a"
+  &:after
+    content: "\006b"
 
-=hanging-indent($size)
-  text-indent: -$size
-  margin: 0 0 0 $size
+.h1
+  @extend %heading
+  font-size: 2.3em
+  text-align: center
+  text-transform: uppercase
+
+  +breakpoint(desktop)
+    font-size: 3.5em
+    text-align: left
+
+.h2
+  margin: 0.3em 0 0 0
+  font-size: 3em
+  +breakpoint(mobile)
+    font-size: 2.3em
+  +breakpoint(desktop)
+    font-size: 3.5em
+
+.h3
+  @extend %heading
+  font:
+    size: 1.5em
+    variant: small-caps
+  border-bottom: 1px solid $c-bd
+  margin-bottom: 0.75em
+
+  +breakpoint(desktop)
+    text-align: left
+
+.poetry-line
+  +hanging-indent(1em)
+  display: block
+
+.poetry-stanza
+  margin-bottom: 1em
+
+.bce
+  font-size: 0.6em
+  text-transform: uppercase
+
+.hyphenate
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  hyphens: auto
+
+.ellipsis
+  font-style: normal
+  font-size: 0.7em
+  white-space: nowrap
+
+.inline-translation
+  font-style: normal
+  font-variant: small-caps
+
+.indented-paragraphs
+  p
+    margin-bottom: 0
+    text-indent: 20px
+  p:first-child
+    text-indent: 0
+
+%drop-cap
+  font:
+    family: $f-heading
+    size: 3em
+    style: normal
+  float: left
+  line-height: 1.2
+  padding-right: 0.05em
+  text-transform: uppercase
+  +breakpoint(desktop)
+    font-size: 4em
+    line-height: 1
+
+
+// SELECTION TEXT
+
+.s-text
+  @extend %indented-p
+  font-size: 1.2em
+  line-height: 1.5
+  margin: 1.5em auto 0 auto
+  max-width: 520px
+
+  blockquote
+    margin-top: 0
+
+  ul
+    list-style: circle
+    margin-left: 20px
+  li
+    margin: 0.5em 0
+
+  p:not(.poetry-line),
+  blockquote
+    margin-bottom: 0.5em
+    .poetry-line
+      font-size: 0.9em
+      color: $c-subtle
+
+  section
+    margin-bottom: 2em
+
+  .poetry-line
+    text-align: left
+
+  .sel-body-subheading
+    font-variant: small-caps
+    margin: 0 0 1em 0
+    text-align: center
+
+  // top line decoration
+  > p:first-of-type,
+  > section:first-of-type > p:first-of-type:not(.poetry-line)
+    // style first letter
+    &:first-letter
+      @extend %drop-cap
+
+    // style first line
+    &:first-line
+      font:
+        size: 1.7em
+        variant: small-caps
+
+      line-height: 1.3
+
+  > section > p:first-of-type:not(.poetry-line)
+    &:first-letter
+      @extend %drop-cap
+      font-family: $f-base
+
+  &:after
+    content: "a"
+    display: block
+    font-family: fellorn
+    line-height: 0.4
+    margin: 0.7em auto 0 auto
+    margin-top: 1em
+    max-width: 520px
+    text-align: center

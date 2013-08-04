@@ -2,7 +2,7 @@ define(['backbone', 'views/paginated-collection-view', 'templates/selListItemTem
   var BrSelView, renderTagCollection;
   BrSelView = Backbone.View.extend({
     tagName: "li",
-    className: "li-sel",
+    className: "selectioninlist",
     template: selListItemTempl,
     initialize: function() {
       return this.render();
@@ -14,7 +14,7 @@ define(['backbone', 'views/paginated-collection-view', 'templates/selListItemTem
         model: model
       }));
       $("#selection-list").append(this.el);
-      $(".browse-container").show();
+      $(".main-c").show();
       return this;
     }
   });

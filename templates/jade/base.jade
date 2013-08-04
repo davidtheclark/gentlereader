@@ -18,13 +18,15 @@ html(lang="en").no-js
     <!-- grunt-inactive: dev
     link(rel="stylesheet", href="{{ STATIC_URL }}gentlereader/style/css/STYLE.css")
     endgrunt -->
+
     <!-- grunt-active: build -->
     link(rel="stylesheet", href="{{ STATIC_URL }}gentlereader/style/css/style-compressed.css")
     <!-- endgrunt -->
+
     {% block styles %}{% endblock %}
 
     script
-        document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + 'js';
+      document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + 'js';
     {% block topscripts %}{% endblock %}
 
     {% block head %}{% endblock %}

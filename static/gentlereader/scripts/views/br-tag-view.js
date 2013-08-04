@@ -10,8 +10,8 @@ define(['backbone', 'views/paginated-collection-view'], function(Backbone, Pagin
       model = this.model;
       slug = model.get("slug");
       author = model.has("last_name");
-      link = $("<a />").attr("href", slug).addClass("tag-list--a");
-      span = $("<span />").addClass("tag-list--span").appendTo(link);
+      link = $("<a />").attr("href", slug).addClass("taglist-i");
+      span = $("<span />").addClass("taglist-i-inner").appendTo(link);
       if (author) {
         span.html("" + (model.get('full_name')) + " <span class='browse-author-dates'>(" + (model.get('dates')) + ")</span>");
       } else {
@@ -19,7 +19,7 @@ define(['backbone', 'views/paginated-collection-view'], function(Backbone, Pagin
       }
       this.$el.append(link);
       $("#tag-list").append(this.el);
-      $(".browse-container").show();
+      $(".main-c").show();
       return this;
     }
   });

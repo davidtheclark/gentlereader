@@ -76,7 +76,7 @@ define(['backbone', 'models/tag-set', 'views/pg-select-view', 'views/br-tag-view
             _this.start();
             return _this.setEvents();
           } else {
-            return $(".browse-container").show();
+            return $(".main-c").show();
           }
         }
       });
@@ -123,6 +123,9 @@ define(['backbone', 'models/tag-set', 'views/pg-select-view', 'views/br-tag-view
     },
     reSort: function() {
       this.tagSet.sort();
+      this.router.navigate("page/" + this.settings.startPage, {
+        trigger: false
+      });
       this.start();
       return this.setEvents();
     },

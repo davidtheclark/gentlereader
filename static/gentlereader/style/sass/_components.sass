@@ -1,4 +1,65 @@
-=dot-leaders
+// MISC
+
+.inner-c
+  @extend %clearfix
+  max-width: $site-x
+  margin: 0 auto
+
+
+=hr($width: 50%, $height: 1px, $color: black)
+  background: $color
+  content: ""
+  display: block
+  height: $height
+  margin: 0 auto
+  max-width: $width
+
+
+=divided-list($divider: none, $disp: inline-block)
+  & > li
+    display: $disp
+    @if $divider != none
+      &:not(:last-child):after
+        content: $divider
+
+=two-borders($axis: x, $border: 1px solid black)
+  @if $axis ==x
+    border-bottom: $border
+    border-top: $border
+  @else if $axis ==y
+    border-left: $border
+    border-right: $border
+
+
+=arrow($size: 5, $color: black, $direction: down)
+  $side: top // declare variable, set default
+  @if $direction ==down
+    $side: top
+    margin-bottom: - ($size - 2px)
+  @else if $direction ==up
+    $side: bottom
+    margin-bottom: $size - 2px
+  @else if $direction ==right
+    $side: left
+    margin-bottom: $size - 3px
+  @else if $direction ==left
+    $side: right
+    margin-bottom: $size - 3px
+
+  content: ""
+  display: inline-block
+  height: 0
+  width: 0
+  border-style: solid
+  border-color: transparent
+  border-width: #{$size}px
+  border-#{$side}-color: $color
+
+
+
+// DOT LEADER LIST
+
+%dot-leaders
   float: left
   line-height: 1.2
   width: 0
@@ -13,31 +74,17 @@
   li
     padding-bottom: 0.2em
     &:before
-      +dot-leaders
+      @extend %dot-leaders
     & span
       background: $background
       // solve a problem with i0S browsers seeing a dot to the right of the word
       padding-right: 0.3em
       margin-right: -0.2em
 
-%reverse-italics
-  em,
-  cite,
-  i,
-  .inline-translation
-    font-style: normal
 
-%indented-p
-  p:not(.poetry-line)
-    margin: 0
-    text-indent: 20px
-    &:first-child
-      text-indent: 0
-  p.no-indent
-    margin: 0
-    text-indent: 0
+// DOT LINK
 
-=dot-link()
+%dot-link
   $x: 40px
   border-bottom: $bar
   color: $c-base
@@ -67,26 +114,181 @@
   &:hover
     border-bottom-color: $c-base !important
 
-%styled-input
-  border: 1px solid $c-subtle
-  //border-radius: 5px
-  min-height: 35px
-  padding: 5px
-  +placeholder
-    font:
-      family: $f-heading
-      size: 1.1em
-      style: italic
 
-%dingled
-  &:before,
-  &:after
-    font-family: "fellorn" !important
-    font-style: normal
-    line-height: 1
-    margin: 0 0.5em
-    vertical-align: bottom
-  &:before
-    content: "\006a"
-  &:after
-    content: "\006b"
+// CLOSE BUTTONS
+
+.close-x
+  @extend %hover-highlight
+  color: $c-subtle
+  cursor: pointer
+  display: block
+  font-family: $f-standout
+
+.close-verbose
+  @extend %dingled
+  @extend %hover-highlight
+  cursor: pointer
+  display: block
+  margin: 1em 0
+  font:
+    family: $f-heading
+    size: 1.2em
+    style: italic
+  text-align: center
+
+
+// TABLE OF CONTENTS
+
+.toc-i,
+.toc-i:visited
+  @extend %reset-link
+  display: block
+  position: relative
+
+.toc-no
+  position: absolute
+  bottom: 0
+  right: 0
+  padding-left: 0.2em
+
+
+// SEARCH INPUT
+
+.search-form
+  position: relative
+  margin: 0 auto
+  max-width: 33em
+
+.search-input,
+.tt-hint
+  @extend %styled-input
+  display: inline-block
+  padding: 0 35px 0 10px
+  width: 100%
+
+
+.search-submit
+  @extend .icon-search
+  @extend %hide-text
+  width: 25px
+  height: 25px
+  background-size: contain
+  background-color: $c-bg
+  border: none
+  margin: 0 0 0 0.5em
+  padding: 0
+  position: absolute
+  right: 4px
+  top: 4px
+  vertical-align: middle
+  -webkit-appearance: none
+  z-index: 100
+
+.twitter-typeahead
+  background: $c-bg
+  vertical-align: middle
+  width: 100%
+
+.tt-dropdown-menu
+  background: $c-bg
+  border: 1px solid $c-subtle
+  border-radius: 5px
+  box-shadow: 0px 2px 20px lightgray
+  margin-top: 0.3em
+  text-align: left
+  min-width: 100%
+
+  +breakpoint(desktop)
+    max-height: 30em
+    overflow-y: scroll
+
+.tt-suggestion
+  line-height: 1
+  padding: 0.4em 0.5em
+  p
+    margin: 0
+
+.tt-is-under-cursor
+  background: $c-emphatic
+  color: $c-bg
+
+.search-category
+  color: $c-subtle
+  margin: 1em 0.5em 0 0.5em
+  padding: 0.2em 0
+  border-bottom: 1px dotted $c-subtle
+
+
+// SUBSCRIBE
+
+.subscribe
+  text-align: center
+
+.subscribe-label
+  color: $c-subtle
+  display: none
+  font-family: $f-heading
+  font-size: 1.2em
+  font-style: italic
+  margin-right: 0.3em
+  vertical-align: middle
+  @media (min-width: 34.375em)
+    display: inline-block
+
+.subscribe-icons
+  display: inline-block
+
+.subscribe-icon
+  @extend %hide-text
+  +transition(all $trans-time)
+  border-bottom: none
+  border-radius: 100%
+  float: left
+  margin: 0 5px
+  background-size: 100% 100%
+  width: 60px
+  height: 60px
+  &:hover
+    background-color: $c-emphatic
+    box-shadow: 0 0 10px $c-emphatic
+  &.mod-rss
+    @extend .icon-feed
+  &.mod-twitter
+    @extend .icon-twitter
+  &.mod-facebook
+    @extend .icon-facebook
+
+
+// BUTTONS
+
+%twobuttons
+  @extend %clearfix
+  margin: 1.25em auto 0 auto
+  max-width: 500px
+  overflow: hidden
+  position: relative
+
+$trigger-y: 40px
+
+%twobuttons-trigger
+  +two-borders(x, $double)
+  color: $c-link
+  cursor: pointer
+  font:
+    family: $f-heading
+    size: 1.13em
+    style: italic
+  float: left
+  height: $trigger-y
+  line-height: $trigger-y - 5px
+  text-align: center
+  width: 50%
+  &.m-left
+    &:not(.u-wide)
+      border-right: $bar
+
+  &:hover
+    +transition( (color $trans-time, background-color $trans-time) )
+    background-color: whitesmoke
+    color: $c-emphatic
+

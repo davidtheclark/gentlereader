@@ -1,7 +1,7 @@
-h2.few-random A Few at Random
+h2.hl-random-h A Few at Random
 
 for q in locals
-  section.sel-block
+  section.hl-sel-block
     h3.hl-subhead
       span.header-from from&nbsp;
       a(href="/selections/#{q.selection.slug}") &ldquo;#{q.selection.title}
@@ -9,12 +9,12 @@ for q in locals
         if title.charAt(title.length - 1) != '?&rdquo;'
           | ,&rdquo;
         | &nbsp;by #{q.selection.author}&nbsp;
-        span.sel-dates (#{q.selection.pub_year})
-    ul.quotation-list
-      li.quotation-list-item
-        span.quotation-marker &#8220;
-        a.quotation-text.random-quot(href="/highlights/#{q.quotation.id}")!= q.quotation.quotation
-    .read-more
+        span.hl-sel-dates (#{q.selection.pub_year})
+    ul
+      li.hl-i
+        .hl-quotationmark &#8220;
+        a.hl-quote.hl-random(href="/highlights/#{q.quotation.id}")!= q.quotation.quotation
+    .hl-more
       a(href="/selections/#{q.selection.slug}") read this full selection &raquo;
       br
       a(href="/highlights/##{q.selection.author_slug}") + more highlights from #{q.selection.author}

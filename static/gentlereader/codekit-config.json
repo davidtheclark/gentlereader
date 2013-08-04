@@ -105,6 +105,28 @@
       "initialSize" : 72776,
       "fileType" : 8192
     },
+    "\/build\/templates\/jade\/brQuotRandomTempl.jade" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.html",
+      "fileType" : 512
+    },
+    "\/style\/sass\/svg\/png\/facebook-bare.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/svg\/png\/facebook-bare.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/svg\/png\/facebook-bare.png",
+      "initialSize" : 315,
+      "fileType" : 8192
+    },
     "\/style\/sass\/svg\/icons.fallback.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -125,17 +147,6 @@
       "outputAbbreviatedPath" : "\/scripts\/utils\/isElementInViewport.js",
       "outputStyle" : 1,
       "fileType" : 32
-    },
-    "\/build\/templates\/jade\/brQuotRandomTempl.jade" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.html",
-      "fileType" : 512
     },
     "\/style\/sass\/svg\/_icons-svg.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -371,18 +382,6 @@
       "fileType" : 2,
       "debugStyle" : 2
     },
-    "\/style\/sass\/bourbon\/css3\/_background-image.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_background-image.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_background-image.css",
-      "fileType" : 4,
-      "debugStyle" : 2
-    },
     "\/style\/sass\/bourbon\/css3\/_border-image.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -392,6 +391,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_border-image.css",
+      "fileType" : 4,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/bourbon\/css3\/_background-image.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_background-image.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_background-image.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -617,17 +628,16 @@
       "outputStyle" : 0,
       "fileType" : 32
     },
-    "\/coffee\/apps\/timeline-app.coffee" : {
+    "\/style\/sass\/svg\/png\/google-plus-bare.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/coffee\/apps\/timeline-app.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/apps\/timeline-app.js",
-      "outputStyle" : 1,
-      "fileType" : 32
+      "inputAbbreviatedPath" : "\/style\/sass\/svg\/png\/google-plus-bare.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/svg\/png\/google-plus-bare.png",
+      "initialSize" : 666,
+      "fileType" : 8192
     },
     "\/coffee\/routers\/browse-highlights-router.coffee" : {
       "ignoreWasSetByUser" : 0,
@@ -641,17 +651,17 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
-    "\/style\/sass\/bourbon\/css3\/_linear-gradient.scss" : {
+    "\/coffee\/apps\/timeline-app.coffee" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_linear-gradient.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_linear-gradient.css",
-      "fileType" : 4,
-      "debugStyle" : 2
+      "inputAbbreviatedPath" : "\/coffee\/apps\/timeline-app.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/apps\/timeline-app.js",
+      "outputStyle" : 1,
+      "fileType" : 32
     },
     "\/style\/sass\/_browse-highlights.sass" : {
       "ignoreWasSetByUser" : 1,
@@ -663,6 +673,18 @@
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/css\/_browse-highlights.css",
       "fileType" : 2,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/bourbon\/css3\/_linear-gradient.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/css3\/_linear-gradient.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_linear-gradient.css",
+      "fileType" : 4,
       "debugStyle" : 2
     },
     "\/style\/sass\/svg\/png\/google-plus.png" : {
@@ -846,18 +868,6 @@
       "initialSize" : 35456,
       "fileType" : 8192
     },
-    "\/style\/sass\/_home.sass" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/_home.sass",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/css\/_home.css",
-      "fileType" : 2,
-      "debugStyle" : 2
-    },
     "\/style\/sass\/bourbon\/addons\/_timing-functions.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -868,6 +878,18 @@
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_timing-functions.css",
       "fileType" : 4,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/_home.sass" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/_home.sass",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/css\/_home.css",
+      "fileType" : 2,
       "debugStyle" : 2
     },
     "\/scripts\/templates\/jade\/pgSelectTempl.jade" : {
@@ -1242,16 +1264,17 @@
       "fileType" : 2,
       "debugStyle" : 2
     },
-    "\/style\/sass\/svg\/png\/search.png" : {
+    "\/style\/sass\/bourbon\/functions\/_linear-gradient.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/svg\/png\/search.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/svg\/png\/search.png",
-      "initialSize" : 656,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_linear-gradient.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_linear-gradient.css",
+      "fileType" : 4,
+      "debugStyle" : 2
     },
     "\/style\/sass\/bourbon\/functions\/_compact.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1265,17 +1288,16 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/style\/sass\/bourbon\/functions\/_linear-gradient.scss" : {
+    "\/style\/sass\/svg\/png\/search.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/bourbon\/functions\/_linear-gradient.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_linear-gradient.css",
-      "fileType" : 4,
-      "debugStyle" : 2
+      "inputAbbreviatedPath" : "\/style\/sass\/svg\/png\/search.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/svg\/png\/search.png",
+      "initialSize" : 656,
+      "fileType" : 8192
     },
     "\/style\/sass\/bourbon\/functions\/_grid-width.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1639,17 +1661,6 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/scripts\/templates\/jade\/brQuotAuthTempl.jade" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotAuthTempl.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotAuthTempl.html",
-      "fileType" : 512
-    },
     "\/style\/sass\/bourbon\/css3\/_perspective.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1661,6 +1672,17 @@
       "outputAbbreviatedPath" : "\/style\/sass\/bourbon\/css\/_perspective.css",
       "fileType" : 4,
       "debugStyle" : 2
+    },
+    "\/scripts\/templates\/jade\/brQuotAuthTempl.jade" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotAuthTempl.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/scripts\/templates\/jade\/brQuotAuthTempl.html",
+      "fileType" : 512
     },
     "\/style\/sass\/sprites\/_sprite-home.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1719,6 +1741,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/originals\/skeleton-thinking.png",
       "initialSize" : 184834,
+      "fileType" : 8192
+    },
+    "\/style\/sass\/svg\/png\/twitter-bare.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/svg\/png\/twitter-bare.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/svg\/png\/twitter-bare.png",
+      "initialSize" : 570,
       "fileType" : 8192
     },
     "\/style\/sass\/bourbon\/addons\/_prefixer.scss" : {
@@ -1895,6 +1928,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/sprite-assets\/sprite-home\/icn-rss.png",
       "initialSize" : 3878,
+      "fileType" : 8192
+    },
+    "\/images\/thumb-skeleton-thinking.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/thumb-skeleton-thinking.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/thumb-skeleton-thinking.png",
+      "initialSize" : 4196,
       "fileType" : 8192
     },
     "\/coffee\/utils\/globals.coffee" : {

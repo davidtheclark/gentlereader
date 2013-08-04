@@ -1,21 +1,21 @@
-.site-nav--container
-  nav.site-nav
-    a(href="/").site-nav--title <span class="title-the">The</span> <span class="title-gentle">Gentle</span> <span class="title-reader">Reader</span>
-    ul.site-nav--ul
-      li.site-nav--li.nav-about: a(href="/about") About
-      li.site-nav--li.nav-browse Browse
-      li.site-nav--li.nav-search Search
-  #toTop.fixed-back (top)
+.sitenav-c
+  nav.sitenav
+    a(href="/").sitenav-title <span class="title-the">The</span> <span class="title-gentle">Gentle</span> <span class="title-reader">Reader</span>
+    ul.sitenav-menu
+      li.sitenav-menu-i.nav-about-btn: a(href="/about") About
+      li.sitenav-menu-i.js-nav-browse-btn Browse
+      li.sitenav-menu-i#navSearchBtn Search
+  #toTop.backtotop (top)
 
-  .subnav-browse--container
-    .subnav-browse--inner
-      .subnav-browse--h
-        span.subnav-browse--close.u-top &times;
+  #navBrowse.nav-browse
+    .nav-browse-inner
+      .nav-browse-h
+        .js-nav-browse-btn.close-x &times;
         | Contents
       include table-of-contents
-      .subnav-browse--close.u-bottom close
+      .js-nav-browse-btn.close-verbose close
 
-  .nav-search--container
+  #navSearch.nav-search
     form.search-form
       input.search-input(type="search", placeholder="Search for an author, a title, &c.")
       input.search-submit(type="submit", value="Submit")

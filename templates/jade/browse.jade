@@ -2,7 +2,7 @@
 
 {% block title %}Browse {{ category|capfirst }} - The Gentle Reader{% endblock %}
 {% block meta %}
-meta(name="description", content="Browse {{ category }} in The Gentle Reader's curated anthology of public domain texts.")
+meta(name="description", content="Browse for '{{ category }}'' in The Gentle Reader's curated anthology of public domain texts.")
 {% endblock %}
 
 {% block bottomscripts %}
@@ -40,7 +40,7 @@ script
 
 .content
 
-  h1.browse-h
+  h1.h1
     {% if category == "selections" %}
     | all selections
     {% elif category == "languages" %}
@@ -65,12 +65,12 @@ script
     include includes/browse-tags
   {% endif %}
 
-  aside.browse-extras
-    .other-browse
-      h2.rq-title Other Ways to Browse
+  aside.extras-c
+    .waystobrowse
+      h2.h3 Other Ways to Browse
       ul
         {% for category in other_categories %}
-        li: a(href="/{{ category }}")
+        li.waystobrowse-i: a(href="/{{ category }}")
           {% if category == "languages" %}
           | orig. languages
           {% elif category == "announcements" %}

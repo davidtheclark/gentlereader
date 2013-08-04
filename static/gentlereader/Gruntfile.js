@@ -169,9 +169,6 @@ module.exports = function(grunt) {
         ]
       },
       jade: {
-        options: {
-          nospawn: true
-        },
         files: [
           '../../templates/jade/*',
           '../../templates/jade/**/*.jade'
@@ -190,9 +187,6 @@ module.exports = function(grunt) {
         tasks: ['grunticon:icons']
       },
       coffee: {
-        options: {
-          nospawn: true
-        },
         files: [
           '*.coffee',
           '**/*.coffee'

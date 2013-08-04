@@ -11,11 +11,11 @@ define(['backbone', 'templates/pgSelectTempl'], function(Backbone, pgSelectTempl
       var $list, i, liClass, _i, _ref;
       liClass = this.liClass = "bottom-paginator-i";
       $list = this.$el;
-      $list.append("<li class='" + liClass + "' data-page='prev'>&lsaquo;</li>");
+      $list.append("<li class='" + liClass + " paginator-arrow' data-page='prev'>&lsaquo;</li>");
       for (i = _i = 1, _ref = this.total; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
         $list.append("<li class='" + liClass + "' data-page='" + i + "'>" + i + "</li>");
       }
-      $list.append("<li class='" + liClass + "' data-page='next'>&rsaquo;</li>");
+      $list.append("<li class='" + liClass + " paginator-arrow' data-page='next'>&rsaquo;</li>");
       return this.renderPageList();
     },
     assignCurrent: function(current) {
@@ -36,7 +36,7 @@ define(['backbone', 'templates/pgSelectTempl'], function(Backbone, pgSelectTempl
       });
     },
     renderPageList: function() {
-      $(".browse-container").append(this.el);
+      $(".main-c").append(this.el);
       return this.assignCurrent(this.current);
     },
     events: {
@@ -46,9 +46,9 @@ define(['backbone', 'templates/pgSelectTempl'], function(Backbone, pgSelectTempl
       var $target, pageNo;
       pageNo = $(ev.currentTarget).data("page");
       if (pageNo === "next") {
-        $target = $(".page-select-arrow.u-right");
+        $target = $(".page-select-arrow.m-right");
       } else if (pageNo === "prev") {
-        $target = $(".page-select-arrow.u-left");
+        $target = $(".page-select-arrow.m-left");
       } else {
         $target = $(".pagelist-i[data-page='" + pageNo + "']");
       }
@@ -139,7 +139,7 @@ define(['backbone', 'templates/pgSelectTempl'], function(Backbone, pgSelectTempl
     },
     flipPage: function($clicked) {
       var lastPage, move, newPage, prev;
-      move = $clicked.hasClass("u-left") ? "prev" : "next";
+      move = $clicked.hasClass("m-left") ? "prev" : "next";
       lastPage = this.pgParams.length;
       if (this.pageNo === 'all') {
         if (move === "prev") {
@@ -148,7 +148,7 @@ define(['backbone', 'templates/pgSelectTempl'], function(Backbone, pgSelectTempl
           newPage = 1;
         }
       } else {
-        prev = $clicked.hasClass("u-left");
+        prev = $clicked.hasClass("m-left");
         if (this.pageNo === 1 && prev) {
           newPage = lastPage;
         } else if (this.pageNo === lastPage && !prev) {

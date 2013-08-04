@@ -1,12 +1,12 @@
 #tl-list
   border-left: 2px solid $c-subtle
 
-.tl-li
+.tl-i
   overflow: auto
   padding-left: 1em
 
-  &.u-even
-    background: whitesmoke
+  &.m-even
+    background: $c-bg-light
 
 .tl-year
   color: $c-emphatic
@@ -17,7 +17,7 @@
   margin-top: 0.3em
 
   &:before
-    +arrow($direction: right, $color: $c-subtle)
+    +arrow(5, $c-subtle, right)
     padding-right: 0.25em
 
   @media (min-width: $m-selection-med)
@@ -58,7 +58,7 @@
     color: $c-link
 
 .tl-teaser
-  @extend .li-sel--teaser
+  @extend .selectioninlist-teaser
   margin-left: 0
 
 // uft-business

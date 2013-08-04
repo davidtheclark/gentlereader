@@ -22,7 +22,7 @@ script
 {% block main %}
 
 .content
-  header.tag-header
+  header.h2eader
     .tag-type-heading
       span.tag-type
         {% if tag_type == 'language' %}
@@ -37,7 +37,7 @@ script
         | {{ tag_type }}s
         {% endif %}
 
-    h1.tag-h {{ tag }}
+    h1.h2 {{ tag }}
 
     {% if tag_type == 'author' %}
     .nation-dates
@@ -77,7 +77,7 @@ script
 
   include includes/browse-selections
 
-  aside.browse-extras
+  aside.extras-c
     .rq-container
       include includes/rand-quot
 

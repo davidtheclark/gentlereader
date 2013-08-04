@@ -1,36 +1,21 @@
-$icn-y: 62px
+// FOOTER SUBSCRIBE
 
-.subscribe.u-footer
-  background: whitesmoke
+.subscribe.m-footer
+  background: $c-bg-light
   border-top: 2px solid $c-subtle
   margin-top: 2em
   text-align: left
 
-  .inner
-    max-width: $site-x
-    margin: 0 auto
+  .inner-c
     padding: 10px 1.2em
-    +clearfix
-
-  .subscribe-icons
-    +clearfix
-    float: right
-    span
-      color: $c-subtle
-      display: none
-      font-family: $f-heading
-      font-size: 1.2em
-      font-style: italic
-      margin-right: 0.3em
-      vertical-align: middle
-      @media (min-width: 34.375em)
-        display: inline-block
+    text-align: center
+    +breakpoint(desktop)
+      text-align: right
 
   .subscribe-icon
     display: inline-block
     float: none
     vertical-align: middle
-    background-size: 100% 100%
     width: 35px
     height: 35px
     &.mod-rss
@@ -40,107 +25,91 @@ $icn-y: 62px
     &.mod-facebook
       @extend .icon-facebook
 
+
+// FOOTER
+
 .site-footer
-  +clearfix
+  @extend %clearfix
   background: $c-subtle
-  color: white
+  color: $c-bg
   text-align: center
 
-.footer-inner
-  margin: 0 auto
-  padding: 1em 1em 1.5em 1em
-  max-width: $site-x
+  .inner-c
+    padding: 1em 1em 1.5em 1em
 
   a,
   a:visited
-    border-bottom: 1px dotted white
-    color: white
+    border-bottom: 1px dotted $c-bg
+    color: $c-bg
     &:hover
       border-bottom-color: $c-emphatic
-
-.footer-col
-  float: left
-  min-width: 200px
-  padding: 1em
-  width: 25%
-  &.footer-text
-    width: 50%
 
 .footer-title
   font:
     size: 1.2em
     variant: small-caps
 
-.footer-description
-  float: left
-  margin-right: 1em
-  width: 100%
-
 .footer-about
-  display: inline-block
+  white-space: nowrap
   &:before
     content: "1 "
     font-family: fellorn
 
+
+// FOOTER LINKS
+
 .footer-links
-  +clearfix
+  @extend %clearfix
   margin: 1em auto 0 auto
 
-.footer-link,
-.footer-link:visited
-  color: rgb(201,199,199) !important
+  +breakpoint(desktop)
+    +inline-list("\00a0/\00a0")
+    margin-top: 1em
+
+a.footer-link,
+a.footer-link:visited
+  color: $c-extra-subtle
   font-size: 0.8em
   float: left
   line-height: 2
   text-transform: uppercase
   width: 50%
 
+  +breakpoint(desktop)
+    float: none
+    width: auto
 
-.footer-copyright
-  background: white
+
+// COPYRIGHT
+
+.copyright
+  background: $c-bg
   color: $c-subtle
-  display: none
-  margin-top: 1.5em
-  padding: 1em
   position: relative
+  padding: 0 1em
+  // animation
+  +transition-property(margin-top, margin-bottom, max-height)
+  +transition-duration(0.3s)
+  +transition-timing-function(linear)
+  margin-top: 0
+  margin-bottom: 0
+  max-height: 0
+  overflow: hidden
+  &.is-visible
+    margin-top: 1.5em
+    margin-bottom: 1.5em
+    max-height: 1000px
+
+  p:first-of-type
+    margin-top: 2em
+
   a,
   a:visited
     color: $c-emphatic
 
-.x-copyright
-  font-size: 2em
-  position: absolute
-  top: 0
-  right: 10px
-  line-height: 1
-
-
-.close-copyright
-  @extend %dingled
-  display: inline-block
-  font:
-    family: $f-heading
-    size: 1.2em
-    style: italic
-  text-align: center
-
-.x-copyright,
-.close-copyright
-  cursor: pointer
-  &:hover
-    color: $c-emphatic
-
-+breakpoint(mobile)
-  .subscribe.u-footer
-    text-align: center
-    .subscribe-icons
-      float: none
-
-+breakpoint(desktop)
-
-  .footer-links
-    +inline-list("\00a0/\00a0")
-
-  .footer-link
-    float: none
-    width: auto
+  .close-x
+    font-size: 2em
+    position: absolute
+    top: 3px
+    right: 10px
+    line-height: 1

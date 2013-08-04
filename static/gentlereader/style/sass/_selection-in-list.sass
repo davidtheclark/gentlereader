@@ -1,34 +1,33 @@
-/* .li-sel is an <a> */
-.li-sel,
+/* .selectioninlist is an <a> */
+.selectioninlist
   display: block
   margin: 1.5em 0
-  h3,
+  .selectioninlist-title,
   .read-on
     +transition(all $trans-time)
     color: $c-link
 
   &:hover
     text-decoration: none
-    h3,
+    .selectioninlist-title,
     .read-on
       color: $c-emphatic !important
       border-bottom-color: $c-emphatic
 
-  h3
-    font-size: 1.5em
-    border-bottom: 1px solid $c-bd
-    margin-bottom: 0.3em
+.selectioninlist-title
+  font-size: 1.5em
+  border-bottom: 1px solid $c-bd
+  margin-bottom: 0.3em
 
-
-.li-sel-dets
+.selectioninlist-details
   font-size: 1.1em
   line-height: 1.3
   color: black
 
-.li-sel-author
+.selectioninlist-author
   font-variant: small-caps
 
-.li-sel--teaser
+.selectioninlist-teaser
   color: $c-subtle
   font-family: $f-heading
   font-size: 1.1em
@@ -48,7 +47,7 @@
   span.poetry-line:not(:first-child):before
     content: "\00A0\002F\00A0"
 
-.li-sel--posttime
+.selectioninlist-posttime
   color: $c-subtle
   font-size: 0.8em
 

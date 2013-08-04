@@ -1,6 +1,6 @@
 // HEADER
 
-.tag-header
+.h2eader
   border-bottom: $bar
 
 .tag-type-heading
@@ -22,14 +22,6 @@ a.browse-tag-type
   &:before
     content: "\00bb\00a0"
     font-style: normal
-
-.tag-h
-  margin: 0.3em 0 0 0
-  font-size: 3em
-  +breakpoint(mobile)
-    font-size: 2.3em
-  +breakpoint(desktop)
-    font-size: 3.5em
 
 .nation-dates
   font:
@@ -75,4 +67,4 @@ b.def-altword
 // BODY
 
 .tag-selections-container
-  +clearfix
+  @extend %clearfix

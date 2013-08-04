@@ -1,18 +1,18 @@
-#highlight-container
+#browseHighlights
   margin: 0 -20px
   padding: 0 20px
 
 .highlight-adjustors
-  @extend %two-buttons
+  @extend %twobuttons
   margin: 0 auto 2em auto
 
 .hl-adjustor
-  @extend %two-buttons--trigger
+  @extend %twobuttons-trigger
   position: relative
   padding: 0 5px
   text-align: left
   &:hover
-    background: white
+    background: $c-bg
   &:before,
   label:before
     content: "\25CE"
@@ -22,13 +22,13 @@
     width: 40px
   label
     @include position(absolute, 0px 0px 0px 0px)
-    background: white
+    background: $c-bg
 
   +breakpoint(mobile)
-    border-bottom: 1px solid black
+    border-bottom: $bar
     border-top: none
     &:first-child
-      border-top: 1px solid black
+      border-top: $bar
     width: 100%
     line-height: 45px
     text-align: center
@@ -36,7 +36,7 @@
     label:before
       content: ""
 
-#select-highlight-author
+#selectHighlightAuthor
   @include position(absolute, 0px 0px 0px 0px)
   +appearance(none)
   cursor: pointer
@@ -47,12 +47,9 @@
   opacity: 0
 
 
+// QUOTATIONS
 
-/*-------------
- * QUOTATIONS
- * ------------*/
-
-.few-random
+.hl-random-h
   font-size: 2em
 
 .highlight-author-h
@@ -77,27 +74,26 @@
     style: italic
     variant: normal
 
-.sel-block
+.hl-sel-block
   margin-top: 1.3em
 
-.sel-dates
+.hl-sel-dates
   font-size: 0.8em
 
-.quotation-list-item
+.hl-i
   padding: 0 0 0.8em 0
 
-.quotation-marker
+.hl-quotationmark
+  @extend %heading
   display: inline-block
-  color: $c-emphatic
   float: left
-  font-family: $f-heading
   font-size: 2.5em
   line-height: 0
   margin-top: 20px
   width: 25px
 
-.quotation-text,
-.quotation-text:visited
+.hl-quote,
+.hl-quote:visited
   @extend %indented-p
   border-bottom: none
   color: black
@@ -110,18 +106,8 @@
   &:hover
     color: $c-subtle
 
-.random-quot
+.hl-random
   font-size: 1.2em
 
-.read-more
+.hl-more
   text-align: right
-
-
-.show-quotations
-  color: $c-link
-  display: none
-  &:hover
-    color: $c-link
-    cursor: pointer
-
-

@@ -214,3 +214,12 @@ LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
 FATAL:  lock file "postmaster.pid" already exists
 HINT:  Is another postmaster (PID 5264) running in data directory "/usr/local/var/postgres"?
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-07-25 21:52:34 MST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 2751) running in data directory "/usr/local/var/postgres"?

@@ -1,14 +1,8 @@
-#timeline-container.browse-container
-
-  //
-    #page-and-sort
-      .sort-subcontainer
-        label.sort-item <input name="sortOrder" type="radio" value="asc" class="sort-radio"  checked> descending
-        label.sort-item <input name="sortOrder" type="radio" value="des" class="sort-radio"> ascending
+#timeline-container.main-c
 
   ul#tl-list
     {% for item in years %}
-    li(class="tl-li{% if forloop.counter|divisibleby:2 %} u-even{% endif %}")
+    li(class="tl-i{% if forloop.counter|divisibleby:2 %} m-even{% endif %}")
       .tl-year(data-year="{{ item.year }}") {{ item.date_display }}
       ul.tl-sels
         {% for s in item.selections %}

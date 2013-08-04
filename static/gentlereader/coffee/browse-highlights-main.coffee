@@ -12,5 +12,5 @@ require ['utils/globals',
 
     $("#bhaLabel").click (e) ->
       e.preventDefault()
-      $("#select-highlight-author").click()
+      $("#selectHighlightAuthor").click()
 

@@ -5,6 +5,6 @@ require(['utils/globals', 'apps/rand-quot-app', 'apps/browse-highlights-app'], f
   highlightApp = globals.app = new BrowseHighlightsApp();
   return $("#bhaLabel").click(function(e) {
     e.preventDefault();
-    return $("#select-highlight-author").click();
+    return $("#selectHighlightAuthor").click();
   });
 });

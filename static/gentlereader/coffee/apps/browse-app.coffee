@@ -74,7 +74,7 @@ define ['backbone',
               @start()
               @setEvents()
             else
-              $(".browse-container").show()
+              $(".main-c").show()
 
       start : ->
         @getPages()
@@ -110,6 +110,7 @@ define ['backbone',
 
       reSort : ->
         @tagSet.sort()
+        @router.navigate "page/#{@settings.startPage}", trigger : false
         @start()
         @setEvents()
 

@@ -1,26 +1,27 @@
-/* MAIN */
-
-.browse-h
-  @extend %heading
-  font-size: 2.3em
-  text-align: center
-  text-transform: uppercase
-
-  +breakpoint(desktop)
-    font-size: 3.5em
-    text-align: left
-
-.browsec-paginated .browse-container
+// hide the list on paginated pages: JS will fill in, show
+.browsec-paginated .main-c
   display: none
 
-.browse-container
-  margin: 1.5em auto
 
-  +breakpoint(desktop)
-    margin: 1.5em 0
-    float: left
-    max-width: 55%
-    width: 55%
+// WAYS TO BROWSE
+
+.waystobrowse
+  @extend %clearfix
+  margin-bottom: 2em
+
+.waystobrowse-i
+  float: left
+  font-size: 1.2em
+  padding: 0 5px 0 15px
+  text-transform: capitalize
+  width: 50%
+
+  &:before
+    content: "~"
+    margin-left: -15px
+
+
+// TAGS
 
 #tag-container
   max-width: 20em
@@ -34,11 +35,12 @@
   overflow-x: hidden
   overflow-y: hidden
 
-.tag-list--a,
-.tag-list--a:visited
+.taglist-i,
+.taglist-i:visited
   +hanging-indent(1em)
+  @extend %hover-highlight
   border: none
-  color: black
+  color: $c-base
   display: block
   font-family: $f-heading
   font-size: 1.5em
@@ -47,46 +49,53 @@
   padding: 0.3em 0 0.3em 0.3em
   position: relative
 
-  &:hover
-    color: $c-emphatic
-
   &:after
-    +dot-leaders
+    @extend %dot-leaders
 
-.tag-list--span
-  background: white
+.taglist-i-inner
+  background: $c-bg
   padding-right: 0.36em
+
+
+// AUTHORS
 
 .browse-author-dates
   font:
     size: 0.8em
     style: normal
 
-.browse-extras
-  margin: 1.5em auto
-  width: 320px
-  +breakpoint(desktop)
-    float: right
-    overflow: visible
-    padding-left: 10%
-    width: 45%
 
-.other-browse
-  +clearfix
-  margin-bottom: 2em
+// ANNOUNCEMENTS
+
+.ann-li
+  &:not(:first-child)
+    margin-top: 2em
+
+.ann-li-h
+  border-bottom: 1px dotted $c-subtle
+  font:
+    family: $f-heading
+    size: 1.7em
+
+.ann-li-date
+  color: $c-subtle
+  text-align: right
+
+.ann-li-body
+  ul
+    list-style: circle
+    margin-left: 20px
   li
-    float: left
-    font-size: 1.2em
-    padding: 0 5px 0 15px
-    text-transform: capitalize
-    width: 50%
+    font-style: italic
+    margin: 0.5em 0
 
-    &:before
-      content: "~"
-      margin-left: -15px
-
-
-+breakpoint(desktop)
-
-  .innernav-browse--container
-    display: block
+.read-more-ann
+  font:
+    family: $f-heading
+    style: italic
+  text-align: center
+  a
+    &:before,
+    &:after
+      content: "--"
+      margin: 0 0.3em

@@ -1,13 +1,16 @@
-.browse-container
-  .adjustor-container.highlight-adjustors
+.main-c
+
+  .highlight-adjustors
+
     .hl-adjustor.random-highlights Random Highlights
+
     form.hl-adjustor
       label#bhaLabel(for='select-highlight-author') Choose an Author
-      select#select-highlight-author(type='text')
+      select#selectHighlightAuthor(type='text')
         {% for author in authors %}
         option(value='{{ author.slug }}', data-identifier="{{ author.pk }}")
           | {{ author.last_name }}{% if author.first_name %}, {{ author.first_name}}{% endif %}
 
         {% endfor %}
 
-  #highlight-container
+  #browseHighlights

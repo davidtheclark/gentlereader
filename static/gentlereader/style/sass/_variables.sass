@@ -1,16 +1,5 @@
-/*
- * down arrow: &#9660; or small &#9662;
- * up arrow: &#9650; or small &#9652;
- * left arrow: &#9668; or small &#9666;
- * right arrow: &#9654; or small &#9656;
- *  */
-
-
-//  VARIABLES
-
-
 // LAYOUT
-$site-x: 940px
+$site-x: em(940)
 
 
 // TYPOGRAPHY
@@ -22,24 +11,29 @@ $f-ornament: ornaments
 
 // COLORS
 
-$c-base: black
+$c-base: rgb(44,44,44)
 $c-emphatic: #c00b0b
 $c-subtle: #6D6D6D
+$c-extra-subtle: rgb(201,199,199)
 $c-standout: #7DBEBE
 $c-link: #178b8b
 $c-link-hover: #088a08
 $c-weird: #3a5308
 $c-bd: #bdbdbd
+$c-bg: white
+$c-bg-light: whitesmoke
 
 
 // DECORATIONS
 
 $dots: "\00A0\00B7\00A0\00B7\00A0\00B7\00A0"
-$bar: 1px solid black
-$bar2: 2px solid black
-$double: double 4px black
+$bar: 1px solid $c-base
+$bar2: 2px solid $c-base
+$double: double 4px $c-base
 $arrow-r-a: "\00A0\00BB"
 $arrow-r-b: "\00BB\00A0"
+$middot: "\00b7"
+$flower: "\274b"
 
 
 // MEDIA QUERIES
@@ -47,8 +41,6 @@ $arrow-r-b: "\00BB\00A0"
 $m-selection-med: 32.1875em
 $m-selection-lg: 47.5em
 $m-selection-xlg: 51.25em
-$middot: "\00b7"
-$flower: "\274b"
 
 $trans-time: 0.3s ease-in
 
@@ -56,16 +48,13 @@ $trans-time: 0.3s ease-in
   @if $point == desktop
     @media (min-width: $m-selection-lg)
       @content
-  @if $point == mobile
+  @else if $point == tablet
+    @media (min-width: $m-selection-med)
+      @content
+  @else if $point == mobile
     @media (max-width: $m-selection-lg)
       @content
-  @if $point == ipad
+  @else if $point == ipad
     @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)
       @content
-
-// WEIRD STUFF CORRECTION
-
-b,
-strong
-  line-height: 1
 

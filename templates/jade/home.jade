@@ -24,7 +24,6 @@ include includes/only-highlight-script.jade
       .site-title-the the
       .site-title-gentle Gentle
       .site-title-reader Reader
-      //.site-title-the.u-second --
 
   .home-main
 
@@ -65,10 +64,8 @@ include includes/only-highlight-script.jade
         h2.home-subhead Subscribe
         p.regtxt As <cite>The Gentle Reader</cite> grows, you can stay updated with <em>regular installations</em> of newly added <span class="s-cap">selections</span> &mdash; by RSS, Twitter (<a href="https://twitter.com/aGentleTweeter" target="_blank">@aGentleTweeter</a>), or Facebook.
 
-        .subscribe-icons
-          a(href="/feed", target="_blank").subscribe-icon.mod-rss Subscribe to the RSS Feed
-          a(href="https://twitter.com/aGentleTweeter", title="@aGentleTweeter", target="_blank").subscribe-icon.mod-twitter Follow us on Twitter
-          a(href="https://www.facebook.com/TheGentleReader", target="_blank").subscribe-icon.mod-facebook Follow us on Facebook
+        .subscribe-icons.m-large
+          include includes/subscribe
 
 
       nav#home-browse.home-nav-container.home-section

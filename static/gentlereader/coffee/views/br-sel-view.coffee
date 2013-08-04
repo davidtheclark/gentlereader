@@ -6,7 +6,7 @@ define ['backbone',
 
     BrSelView = Backbone.View.extend
       tagName : "li"
-      className: "li-sel"
+      className: "selectioninlist"
       template: selListItemTempl
       initialize : ->
         @render()
@@ -15,7 +15,7 @@ define ['backbone',
         @$el.append @template model: model
         $("#selection-list").append @el
         # show the container
-        $(".browse-container").show()
+        $(".main-c").show()
         return @
 
     renderTagCollection = (options) ->

@@ -25,12 +25,12 @@
   &:hover
     color: $c-emphatic
 
-  &.u-left
+  &.m-left
     float: left
-  &.u-right
+  &.m-right
     float: right
   +breakpoint(desktop)
-    &.u-left
+    &.m-left
       float: right
       margin-right: 10px
 
@@ -117,11 +117,12 @@
 
 .bottom-paginator
   font-family: IM Fell English
-  font-size: 1.2em
+  font-size: 1.4em
   text-align: center
   +inline-list
 
 .bottom-paginator-i
+  vertical-align: middle
   cursor: pointer
   padding: 0.2em
   margin: 0 0.2em
@@ -129,3 +130,7 @@
     color: $c-emphatic
   &:hover:not(.is-current)
     color: $c-link-hover
+
+.paginator-arrow
+  font-size: 2em
+  vertical-align: middle
