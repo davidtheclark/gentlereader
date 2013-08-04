@@ -2,15 +2,17 @@ $header-bd: double 6px black
 
 // SITE TITLE
 
-.sitenav-title
+a.sitenav-title
   @extend %reset-link
-  @extend %hover-highlight
+  color: $c-base
   text-transform: uppercase
   display: block
   float: left
   font-family: $f-heading
   margin: 0.1em 0.7em 0 0
   vertical-align: middle
+  &:hover
+    color: $c-emphatic !important
 
 
 .title-the
