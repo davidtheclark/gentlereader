@@ -1,7 +1,7 @@
 li.selectioninlist
   section: a(href='/selections/{{ s.slug }}')
     h3.selectioninlist-title {{ s.get_title }}
-    .selectioninlist-detailss
+    .selectioninlist-details
       span.selectioninlist-author {{ s.get_author }}.
       {% if s.from_display %}
       {{ s.from_display }}
