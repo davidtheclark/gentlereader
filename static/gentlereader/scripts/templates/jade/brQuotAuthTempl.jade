@@ -3,15 +3,15 @@ h2#highlight-author.highlight-author-h
   a(href='/authors/#{author.slug}')= author.full_name
 
 for s in selections
-  section.sel-block
+  section.hl-sel-block
     h3.hl-subhead
       a(href="/selections/#{s.slug}") &ldquo;#{s.title}&rdquo;&nbsp;
         span.sel-dates (#{s.date_display})
-    ul.quotation-list(data-sel="#{s.id}")
+    ul(data-sel="#{s.id}")
       for q in s.quotations
-        li.quotation-list-item
-          span.quotation-marker &#8220;
-          a.quotation-text(href="/highlights/#{q.id}")!= q.quotation
-    .read-more
+        li.hl-i
+          span.hl-quotationmark &#8220;
+          a.hl-quote(href="/highlights/#{q.id}")!= q.quotation
+    .hl-more
       div
         a(href="/selections/#{s.slug}") read this full selection &raquo;
