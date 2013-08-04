@@ -46,11 +46,11 @@
 .s-extras--trigger
   @extend %twobuttons-trigger
 
-  &.u-wide
+  &.m-wide
     width: 100%
 
   &.m-left
-    &.u-wide
+    &.m-wide
       margin-bottom: 0.5em
 
 $s-extras--heading-y: 40px
@@ -85,14 +85,18 @@ $s-extras--heading-y: 40px
   @extend %sidebar-highlight
 
 .s-highlight--li
-  &.u-inactive
+  &.m-inactive
     opacity: 0
     position: absolute
     top: 0
     width: 100%
     z-index: -1000
-  &.u-active
+  &.m-active
     position: static
+  a
+    color: $c-subtle
+    &:hover
+      color: $c-base
 
 .s-highlight--all
   font:
@@ -112,7 +116,7 @@ $s-extras--heading-y: 40px
 .s-tags
   padding-bottom: 0.5em
 
-  &.u-top
+  &.m-top
     border-bottom: $double
 
   .tag-sublist-label
@@ -189,7 +193,7 @@ $s-extras--heading-y: 40px
   text-transform: uppercase
 
   &:before
-    +triangle(4px, $c-link, right)
+    +arrow(4, $c-link, right)
 
   &:hover
     +transition( (color $trans-time, border-bottom-color $trans-time) )
@@ -316,11 +320,11 @@ $s-extras--heading-y: 40px
         .uft-trigger
           display: none
 
-  .s-tags.u-top
+  .s-tags.m-top
     border: none
     margin-top: 1em
 
-  .s-tags.u-bottom
+  .s-tags.m-bottom
     &:before
       background: none
       margin: 1em
@@ -358,10 +362,10 @@ $s-extras--heading-y: 40px
     text-align: left
 
   .s-postscript--col
-    &.u-first
+    &.m-first
       float: left
       padding-right: 5%
       width: 70%
-    &.u-second
+    &.m-second
       float: right
       width: 30%

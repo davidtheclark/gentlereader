@@ -31,7 +31,7 @@ define ['jquery',
       changeHighlight = ($now)->
 
         @.getNew = ($now) ->
-          return  $now.next ".u-inactive"
+          return  $now.next ".m-inactive"
 
         @.showNew = ($now) ->
           $next = @.getNew $now
@@ -49,13 +49,13 @@ define ['jquery',
           $now.animate animFirst, 200, ->
             $(".s-highlight--text").animate animSecond, 300, ->
               $next.animate animThird, 200, ->
-                $now.removeClass("u-active").addClass("u-inactive")
-                $next.removeClass("u-inactive").addClass("u-active")
+                $now.removeClass("m-active").addClass("m-inactive")
+                $next.removeClass("m-inactive").addClass("m-active")
                 # if we're on the "see all" slide, hide title and clicker
 
         @.showNew $now
 
 
       $(".s-highlight--another").click ->
-        $now = $(".s-highlight--li.u-active")
+        $now = $(".s-highlight--li.m-active")
         changeHighlight $now

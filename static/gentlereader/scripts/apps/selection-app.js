@@ -27,7 +27,7 @@ define(['jquery', 'lib/unfinishedToggler'], function($, unfinishedToggler) {
     });
     changeHighlight = function($now) {
       this.getNew = function($now) {
-        return $now.next(".u-inactive");
+        return $now.next(".m-inactive");
       };
       this.showNew = function($now) {
         var $next, $nextHeight, animFirst, animSecond, animThird;
@@ -48,8 +48,8 @@ define(['jquery', 'lib/unfinishedToggler'], function($, unfinishedToggler) {
         return $now.animate(animFirst, 200, function() {
           return $(".s-highlight--text").animate(animSecond, 300, function() {
             return $next.animate(animThird, 200, function() {
-              $now.removeClass("u-active").addClass("u-inactive");
-              return $next.removeClass("u-inactive").addClass("u-active");
+              $now.removeClass("m-active").addClass("m-inactive");
+              return $next.removeClass("m-inactive").addClass("m-active");
             });
           });
         });
@@ -58,7 +58,7 @@ define(['jquery', 'lib/unfinishedToggler'], function($, unfinishedToggler) {
     };
     return $(".s-highlight--another").click(function() {
       var $now;
-      $now = $(".s-highlight--li.u-active");
+      $now = $(".s-highlight--li.m-active");
       return changeHighlight($now);
     });
   });
