@@ -18,9 +18,9 @@ define ['jquery',
           if $(this).hasClass "uft-on"
             isOpen = true
         if isOpen
-          $triggers.addClass "u-wide"
+          $triggers.addClass "m-wide"
         else
-          $triggers.removeClass "u-wide"
+          $triggers.removeClass "m-wide"
       $("#sExtrasAccordion").unfinishedToggler
         exclusive : false
         postChange : widenTriggers
