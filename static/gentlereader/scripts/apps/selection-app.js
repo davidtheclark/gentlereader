@@ -16,9 +16,9 @@ define(['jquery', 'lib/unfinishedToggler'], function($, unfinishedToggler) {
         }
       });
       if (isOpen) {
-        return $triggers.addClass("u-wide");
+        return $triggers.addClass("m-wide");
       } else {
-        return $triggers.removeClass("u-wide");
+        return $triggers.removeClass("m-wide");
       }
     };
     $("#sExtrasAccordion").unfinishedToggler({
