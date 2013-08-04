@@ -10,7 +10,7 @@
 {% if results.nations %}<h2 class="search-page-category">Nations</h2><ul class="search-results-list">{% for n in results.nations %}<li><a href="/nations/{{ n.slug }}">{{ n }}</a></li>{% endfor %}</ul>{% endif %}
 {% if results.languages %}<h2 class="search-page-category">Original Languages</h2><ul class="search-results-list">{% for l in results.languages %}<li><a href="/languages/{{ l.slug }}">{{ l }}</a></li>{% endfor %}</ul>{% endif %}
 {% if results.forms %}<h2 class="search-page-category">Forms</h2><ul class="search-results-list">{% for f in results.forms %}<li><a href="/forms/{{ f.slug }}">{{ f }}</a></li>{% endfor %}</ul>{% endif %}
-{% if results.selections %}<h2 class="search-page-category">Selections</h2><ul>{% for s in results.selections %}<li class="selectioninlist"><section><a href="/selections/{{ s.slug }}"><h3 class="selectioninlist-title">{{ s.get_title }}</h3><div class="selectioninlist-detailss"><span class="selectioninlist-author">{{ s.get_author }}.</span>{% if s.from_display %}
+{% if results.selections %}<h2 class="search-page-category">Selections</h2><ul>{% for s in results.selections %}<li class="selectioninlist"><section><a href="/selections/{{ s.slug }}"><h3 class="selectioninlist-title">{{ s.get_title }}</h3><div class="selectioninlist-details"><span class="selectioninlist-author">{{ s.get_author }}.</span>{% if s.from_display %}
 {{ s.from_display }}
 {% endif %}
 ({{ s.source.date_display }}). <span class="selectioninlist-posttime">Posted {{ s.date_entered }}</span></div></a></section><section class="selectioninlist-teaser"><span class="teaser-text hyphenate">{{ s.get_teaser }}</span><a href="/selections/{{ s.slug}}" class="read-on">read&nbsp;on</a></section></li>{% endfor %}</ul>{% endif %}
