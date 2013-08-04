@@ -83,17 +83,17 @@ article.content
           ul.s-highlight--text.hyphenate
             {% for q in quotations %}
             {% if forloop.counter == 1 %}
-            li.s-highlight--li.u-active {{ q.get_quotation }}
+            li.s-highlight--li.m-active: a(href="/highlights/{{ q.pk }}") {{ q.get_quotation }}
             {% else %}
-            li.s-highlight--li.u-inactive {{ q.get_quotation }}
+            li.s-highlight--li.m-inactive: a(href="/highlights/{{ q.pk }}") {{ q.get_quotation }}
             {% endif %}
             {% endfor %}
-            .s-highlight--li.u-inactive.s-highlight--all: a(href="/highlights/\#{{ selection.source.author.slug }}") see all the highlights from this selection
+            .s-highlight--li.m-inactive.s-highlight--all: a(href="/highlights/\#{{ selection.source.author.slug }}") see all the highlights from this selection
 
 
       li.s-extras--li.uft-group
         .s-extras--trigger.uft-a.uft-trigger Show Tags
-        .s-tags.u-top.uft-b
+        .s-tags.m-top.uft-b
           .s-extras--utils
             span.s-extras--utils-i.uft-trigger Hide
           .s-extras--title Tags
@@ -112,11 +112,11 @@ article.content
     .s-comments
 
       {% if ct %}
-      .s-comment.u-text {{ selection.get_comment_text }}
+      .s-comment.m-text {{ selection.get_comment_text }}
       {% endif %}
 
       {% if ci %}
-      .s-comment.u-intro {{ selection.get_comment_intro }}
+      .s-comment.m-intro {{ selection.get_comment_intro }}
       {% endif %}
 
     {% endif %}
@@ -135,15 +135,15 @@ article.content
       include includes/sel-share
 
     //tags
-    .s-postscript--col.u-second
-      .s-tags.u-bottom
+    .s-postscript--col.m-second
+      .s-tags.m-bottom
         h3.s-postscript--h3 Tags
         .s-tags--inst Click a tag to find other selections like this one.
         include includes/tag-sublist
 
       .s-highlight--timeline See selections that surround this one in <a href="/timeline/\#{{ selection.source.pub_year }}"><cite>the Gentle Reader</cite>'s timeline</a>.
 
-    .s-postscript--col.u-first
+    .s-postscript--col.m-first
       //related selections
       .rsel
         h3.s-postscript--h3 Related Selections
