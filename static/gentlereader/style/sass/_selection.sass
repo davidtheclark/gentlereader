@@ -66,8 +66,7 @@ $s-extras--heading-y: 40px
 .s-extras--utils-i
   border-bottom: 1px dotted $c-link
   color: $c-link
-  font-size: 0.75em
-  text-transform: uppercase
+  font-family: $f-base-cap
   &:last-child
     margin-left: 1em
   &:hover
@@ -100,17 +99,17 @@ $s-extras--heading-y: 40px
       color: $c-base
 
 .s-highlight--all
-  font:
-    family: $f-base
-    size: 0.8em
+  line-height: 1.2
   text-align: center
-  text-transform: uppercase
+  font-family: $f-base-cap
   a
     position: relative
 
-  &:before
-    content: "1 "
-    font-family: fellorn
+    &:before
+      content: "1 "
+      font-family: fellorn
+      position: relative
+      top: 4px
 
 /* selection extras: tag list (top and bottom) */
 
@@ -188,13 +187,13 @@ $s-extras--heading-y: 40px
   color: $c-link
   cursor: pointer
   display: inline-block
-  font:
-    size: 0.8em
-  margin: 0.2em 0 0 2em
-  text-transform: uppercase
+  margin: 0.3em 0 0 2em
+  font-family: $f-base-cap
 
   &:before
-    +arrow(4, $c-link, right)
+    +arrow(5, $c-link, right)
+    position: relative
+    top: 0.15em
 
   &:hover
     +transition( (color $trans-time, border-bottom-color $trans-time) )
@@ -207,7 +206,7 @@ $s-extras--heading-y: 40px
 .li-rsel--teaser
   color: $c-subtle
   line-height: 1.3
-  margin: 0em 0 0 30px
+  margin: 0.3em 0 0 30px
 
 .li-rsel--shares
   display: inline

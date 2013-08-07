@@ -52,16 +52,18 @@ textarea
 
 
 // FONTS
-// crimson and im fell loaded via google fonts
+// im fell loaded via google fonts
 +font-face('fellorn', '../fonts/fell-flowers/imfellorn-custom')
++font-face('Crimson', '../fonts/crimson/crimson-roman-webfont')
++font-face('Crimson', '../fonts/crimson/crimson-italic-webfont', normal, italic)
++font-face('CrimsonCaps', '../fonts/crimson/crimson-roman-sc-onum-webfont')
 
 
 // LAYOUT
 
 .content
   @extend %clearfix
-  margin: 0 auto
-  max-width: $site-x
+  @extend .inner-c
   padding: 1.5em 1.2em 0 1.2em
 
   +breakpoint(desktop)

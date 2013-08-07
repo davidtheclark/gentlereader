@@ -17,7 +17,7 @@
 %h-subtitle
   font:
     family: $f-heading
-    size:  1.6em
+    size:  1.5em
 
 %h-sidebar
   @extend %h-subtitle
@@ -119,8 +119,8 @@
   margin-bottom: 1em
 
 .bce
-  font-size: 0.6em
-  text-transform: uppercase
+  font-size: 0.8em
+  font-family: $f-base-cap
 
 .hyphenate
   -webkit-hyphens: auto
@@ -128,8 +128,8 @@
   hyphens: auto
 
 .ellipsis
+  color: $c-subtle
   font-style: normal
-  font-size: 0.7em
   white-space: nowrap
 
 .inline-translation
@@ -154,7 +154,7 @@
   text-transform: uppercase
   +breakpoint(desktop)
     font-size: 4em
-    line-height: 1
+    line-height: 1.05
 
 
 // SELECTION TEXT
@@ -162,7 +162,7 @@
 .s-text
   @extend %indented-p
   font-size: 1.2em
-  line-height: 1.5
+  line-height: 1.6
   margin: 1.5em auto 0 auto
   max-width: 520px
 
@@ -177,7 +177,6 @@
 
   p:not(.poetry-line),
   blockquote
-    margin-bottom: 0.5em
     .poetry-line
       font-size: 0.9em
       color: $c-subtle
@@ -202,16 +201,14 @@
 
     // style first line
     &:first-line
-      font:
-        size: 1.7em
-        variant: small-caps
+      font-family: $f-base-cap
+      font-size: 1.5em
 
-      line-height: 1.3
+      line-height: 1
 
   > section > p:first-of-type:not(.poetry-line)
     &:first-letter
       @extend %drop-cap
-      font-family: $f-base
 
   &:after
     content: "a"

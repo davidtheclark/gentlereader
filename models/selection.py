@@ -17,7 +17,7 @@ def _get_from_display(s, mark):
         result = ''
         if from_section:
             if mark:
-                result += '"' + from_section + '" in '
+                result += '&ldquo;' + from_section + '&rdquo; in '
             else:
                 result += from_section + ' in '
         if vol:

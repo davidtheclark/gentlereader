@@ -13,7 +13,7 @@ var __val__ = quotation.quotation
 buf.push(null == __val__ ? "" : __val__);
 buf.push('</a>\n<div class="rq-citation"><a');
 buf.push(attrs({ 'href':("/selections/" + (selection.slug) + "") }, {"href":true}));
-buf.push('>&mdash; from "' + escape((interp = selection.title) == null ? '' : interp) + '" by ' + escape((interp = selection.author) == null ? '' : interp) + '&nbsp;(' + escape((interp = selection.pub_year) == null ? '' : interp) + ')</a></div>');
+buf.push('>&mdash; from &ldquo;' + escape((interp = selection.title) == null ? '' : interp) + '&rdquo; by ' + escape((interp = selection.author) == null ? '' : interp) + '&nbsp;(' + escape((interp = selection.pub_year) == null ? '' : interp) + ')</a></div>');
 }
 return buf.join("");
 }return randQuotTempl});

@@ -4,7 +4,7 @@ li.li-rsel.uft-group
     a(href="/selections/{{ item.selection.slug }}").li-rsel--info
       span.li-rsel--title &ldquo;{{ item.selection.get_title }}&rdquo; by <i>{{ item.selection.source.author.last_name }}</i>&nbsp;({{ item.selection.source.date_display }})
 
-    .li-rsel--shares &mdash;&nbsp;which shares
+    .li-rsel--shares &nbsp;&mdash;&nbsp;which shares
       ul.li-rsel--shares--ul
         {% for category, tags in item.share.items %}
         li
