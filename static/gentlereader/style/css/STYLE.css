@@ -476,6 +476,7 @@ table {
 .toc-i,
 .toc-i:visited {
   display: block;
+  margin-left: 2px;
   position: relative;
 }
 
@@ -819,7 +820,6 @@ table {
 }
 
 .s-text {
-  font-size: 1.2em;
   line-height: 1.6;
   margin: 1.5em auto 0 auto;
   max-width: 520px;
@@ -1684,6 +1684,12 @@ a.rq-text:hover {
   margin-bottom: 0.5em;
 }
 
+@media (max-width: 47.5em) {
+  .s-extras--title {
+    font-size: 1.3em;
+  }
+}
+
 .s-extras--utils {
   color: #178b8b;
   cursor: pointer;
@@ -2094,7 +2100,7 @@ a.rq-text:hover {
 }
 
 .selectioninlist-author {
-  font-variant: small-caps;
+  font-family: CrimsonCaps;
 }
 
 .selectioninlist-teaser, .tl-teaser {
@@ -2136,7 +2142,6 @@ a.rq-text:hover {
 
 .waystobrowse-i {
   float: left;
-  font-size: 1.2em;
   padding: 0 5px 0 15px;
   text-transform: capitalize;
   width: 50%;
@@ -2535,7 +2540,7 @@ a.browse-tag-type:before {
   }
 }
 .tag-info {
-  font-size: 1em;
+  font-size: 0.8em;
   margin-bottom: 1em;
 }
 .tag-info ul {
@@ -2556,7 +2561,7 @@ a.browse-tag-type:before {
 }
 @media (min-width: 47.5em) {
   .tag-info {
-    font-size: 1.15em;
+    font-size: 1em;
   }
 }
 

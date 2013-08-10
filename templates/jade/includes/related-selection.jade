@@ -8,7 +8,7 @@ li.li-rsel.uft-group
       ul.li-rsel--shares--ul
         {% for category, tags in item.share.items %}
         li
-          | {% if item.share.items|length > 1 and forloop.last %}and {% endif %}
+          | {% if item.share.items|length > 1 and forloop.last and not item.more %}and {% endif %}
           | the <span class="li-rsel--category">{{ category }}</span>
           ul
             {% for tag in tags %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found - The Gentle Reader{% endblock %}
+
+{% block meta %}
+{% endblock %}
+
+{% block bottomscripts %}
+include only-highlight-script
+{% endblock %}
+
+{% block main %}
+
+.content
+  article
+    header
+      h1.h1 Page Not Found
+    .s-text.main-c
+      p You must have mistyped a URL, or come here from a bad link. But that's ok.
+      p I suggest you <a href="http://thegentlereader.net">return to The Gentle Reader homepage</a>.
+
+  aside.extras-c
+    .rq-container
+      include rand-quot
+  .rq-btn Read a Random Highlight
+
+
+{% endblock %}

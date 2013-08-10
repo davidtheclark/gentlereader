@@ -227,3 +227,31 @@ FATAL:  lock file "postmaster.pid" already exists
 HINT:  Is another postmaster (PID 2751) running in data directory "/usr/local/var/postgres"?
 FATAL:  lock file "postmaster.pid" already exists
 HINT:  Is another postmaster (PID 2751) running in data directory "/usr/local/var/postgres"?
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-08-06 21:58:36 MST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-08-10 11:03:33 MST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "postgres" does not exist
+FATAL:  role "dave" does not exist
+ERROR:  permission denied for relation spatial_ref_sys
+CONTEXT:  SQL statement "SELECT SRID         FROM spatial_ref_sys WHERE SRID = new_srid"
+	PL/pgSQL function addgeometrycolumn(character varying,character varying,character varying,character varying,integer,character varying,integer,boolean) line 50 at SQL statement
+	SQL statement "SELECT AddGeometryColumn('','',$1,$2,$3,$4,$5, $6)"
+	PL/pgSQL function addgeometrycolumn(character varying,character varying,integer,character varying,integer,boolean) line 5 at SQL statement
+STATEMENT:  SELECT AddGeometryColumn('planet_osm_point', 'way', 900913, 'POINT', 2 );
+	
+LOG:  checkpoints are occurring too frequently (11 seconds apart)
+HINT:  Consider increasing the configuration parameter "checkpoint_segments".
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 19819) running in data directory "/usr/local/var/postgres"?

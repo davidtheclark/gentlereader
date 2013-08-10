@@ -47,7 +47,8 @@ def browse_timeline(req):
 
     years = {}
     result = []
-    for source in Source.objects.all():
+    active_sources = [s for s in Source.objects.all() if s.is_active()]
+    for source in active_sources:
         source_year = source.pub_year
         if source_year not in years:
             years[source_year] = source.date_display()
