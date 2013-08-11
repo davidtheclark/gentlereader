@@ -12,7 +12,7 @@
 {{ author }}</a> &mdash; <a href="/timeline#{{ year }}" title="Published in {{ year }}">
 {{ year }}</a>
 {% endwith %}</div>{% with from=selection.from_display trans=source.translator %}
-{% if from != "None" or trans %}<!-- added info--><div class="s-info">{% if from != "None" %}
+{% if from != "None" or trans %}<!-- added info--><div class="s-info">{% if from %}
 From {{ from }}.
 {% endif %}
 {% if trans %}
