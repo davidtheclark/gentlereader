@@ -255,3 +255,7 @@ LOG:  checkpoints are occurring too frequently (11 seconds apart)
 HINT:  Consider increasing the configuration parameter "checkpoint_segments".
 FATAL:  lock file "postmaster.pid" already exists
 HINT:  Is another postmaster (PID 19819) running in data directory "/usr/local/var/postgres"?
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 19819) running in data directory "/usr/local/var/postgres"?
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 19819) running in data directory "/usr/local/var/postgres"?

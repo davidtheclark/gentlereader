@@ -29,7 +29,7 @@ def _get_from_display(s, mark):
             result += '"' + source.section_title + '"'
         return mark_safe(result)
     else:
-        return
+        return False
 
 
 class Selection(models.Model):
@@ -94,10 +94,10 @@ class Selection(models.Model):
         return r'"' + self.text[:70] + r'..."'
 
     def from_display(self):
-        return mark_safe(_get_from_display(self, True))
+        return _get_from_display(self, True)
 
     def from_display_safe(self):
-        return mark_safe(_get_from_display(self, False))
+        return _get_from_display(self, False)
 
     def get_teaser(self):
         return mark_safe(dumb_to_smart_quotes(self.teaser))
