@@ -26,7 +26,7 @@ def _get_from_display(s, mark):
             else:
                 result += vol
         else:
-            result += '"' + source.section_title + '"'
+            result += '&ldquo;' + source.section_title + '&rdquo;'
         return mark_safe(result)
     else:
         return False
