@@ -40,7 +40,7 @@ def selection_search_data(req):
         datum = {}
 
         display = '"' + s.__unicode__() + '" by ' + s.get_author()
-        if s.from_display() != "None":
+        if s.from_display():
             display += '; from ' + s.from_display()
         display += ' (' + s.source.date_display() + ')'
         datum['value'] = display
