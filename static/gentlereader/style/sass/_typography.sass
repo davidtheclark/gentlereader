@@ -161,9 +161,12 @@
 
 .s-text
   @extend %indented-p
+  font-size: 1.1em
   line-height: 1.6
   margin: 1.5em auto 0 auto
   max-width: 520px
+  +breakpoint(desktop)
+    min-height: 700px
 
   blockquote
     margin-top: 1em

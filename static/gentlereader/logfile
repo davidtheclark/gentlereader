@@ -271,3 +271,6 @@ LOG:  aborting any active transactions
 LOG:  autovacuum launcher shutting down
 LOG:  shutting down
 LOG:  database system is shut down
+LOG:  database system was shut down at 2013-08-17 08:41:07 MST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

@@ -820,12 +820,19 @@ table {
 }
 
 .s-text {
+  font-size: 1.1em;
   line-height: 1.6;
   margin: 1.5em auto 0 auto;
   max-width: 520px;
 }
+@media (min-width: 47.5em) {
+  .s-text {
+    min-height: 700px;
+  }
+}
 .s-text blockquote {
-  margin-top: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .s-text ul {
   list-style: circle;
@@ -2119,7 +2126,12 @@ a.rq-text:hover {
 .teaser-text:after {
   content: "\00A0\00B7\00A0\00B7\00A0\00B7\00A0";
 }
-.teaser-text span.poetry-line:not(:first-child):before {
+.teaser-text .poetry-line {
+  display: inline;
+  margin-left: 0;
+  text-indent: 0;
+}
+.teaser-text .poetry-line:not(:first-child):before {
   content: "\00A0\002F\00A0";
 }
 
@@ -2182,7 +2194,7 @@ a.rq-text:hover {
   position: relative;
 }
 
-.taglist-inner {
+.taglist-i-inner {
   background: white;
   padding-right: 0.36em;
 }
