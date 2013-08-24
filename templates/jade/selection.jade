@@ -46,7 +46,7 @@ article.content
     .s-headline
       h1.s-title {{ selection.get_title }}
       .s-authordate
-        {% with author=selection.get_author year=selection.source.pub_year %}
+        {% with author=selection.get_author year=selection.source.date_display %}
         | <a href="/authors/{{ source.author.slug }}" title="Author: {{ author }}" rel="author">
         | {{ author }}</a> &mdash; <a href="/timeline\#{{ year }}" title="Published in {{ year }}">
         | {{ year }}</a>
