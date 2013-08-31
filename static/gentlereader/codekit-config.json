@@ -140,18 +140,6 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
-    "\/style\/sass\/lib\/sass-mixins\/src\/_shortcuts.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/lib\/sass-mixins\/src\/_shortcuts.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/lib\/sass-mixins\/css\/_shortcuts.css",
-      "fileType" : 4,
-      "debugStyle" : 2
-    },
     "\/style\/sass\/lib\/bourbon\/css3\/_background.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -161,6 +149,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css\/_background.css",
+      "fileType" : 4,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/lib\/sass-mixins\/src\/_shortcuts.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/lib\/sass-mixins\/src\/_shortcuts.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/lib\/sass-mixins\/css\/_shortcuts.css",
       "fileType" : 4,
       "debugStyle" : 2
     },
@@ -560,6 +560,17 @@
       "initialSize" : 3878,
       "fileType" : 8192
     },
+    "\/scripts\/common-build.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scripts\/common-build.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/common-build-ck.js",
+      "fileType" : 64
+    },
     "\/style\/sass\/lib\/bourbon\/functions\/_tint-shade.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -571,17 +582,6 @@
       "outputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css\/_tint-shade.css",
       "fileType" : 4,
       "debugStyle" : 2
-    },
-    "\/scripts\/common-build.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scripts\/common-build.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/common-build-ck.js",
-      "fileType" : 64
     },
     "\/images\/originals\/bibliomaniac.png" : {
       "ignoreWasSetByUser" : 0,
@@ -746,16 +746,16 @@
       "fileType" : 2,
       "debugStyle" : 2
     },
-    "\/build\/utils\/incorporate-query.js" : {
+    "\/style\/sass\/lib\/sass-mixins\/test\/test.jade" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/build\/utils\/incorporate-query.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/build\/utils\/incorporate-query-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/style\/sass\/lib\/sass-mixins\/test\/test.jade",
+      "outputStyle" : 0,
+      "compileDebug" : 1,
+      "outputAbbreviatedPath" : "\/style\/sass\/lib\/sass-mixins\/test\/test.html",
+      "fileType" : 512
     },
     "\/scripts\/routers\/browse-timeline-router.js" : {
       "ignoreWasSetByUser" : 0,
@@ -768,16 +768,16 @@
       "outputAbbreviatedPath" : "\/scripts\/routers\/browse-timeline-router-ck.js",
       "fileType" : 64
     },
-    "\/style\/sass\/lib\/sass-mixins\/test\/test.jade" : {
+    "\/build\/utils\/incorporate-query.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/lib\/sass-mixins\/test\/test.jade",
-      "outputStyle" : 0,
-      "compileDebug" : 1,
-      "outputAbbreviatedPath" : "\/style\/sass\/lib\/sass-mixins\/test\/test.html",
-      "fileType" : 512
+      "inputAbbreviatedPath" : "\/build\/utils\/incorporate-query.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/build\/utils\/incorporate-query-ck.js",
+      "fileType" : 64
     },
     "\/style\/css\/selection-specific\/concealed-art.css" : {
       "ignoreWasSetByUser" : 0,
@@ -847,18 +847,6 @@
       "outputAbbreviatedPath" : "\/scripts\/apps\/rand-quot-app-ck.js",
       "fileType" : 64
     },
-    "\/coffee\/routers\/browse-timeline-router.coffee" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/coffee\/routers\/browse-timeline-router.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/routers\/browse-timeline-router.js",
-      "outputStyle" : 1,
-      "fileType" : 32
-    },
     "\/style\/sass\/_browse-timeline.sass" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -870,6 +858,18 @@
       "outputAbbreviatedPath" : "\/style\/css\/_browse-timeline.css",
       "fileType" : 2,
       "debugStyle" : 2
+    },
+    "\/coffee\/routers\/browse-timeline-router.coffee" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/coffee\/routers\/browse-timeline-router.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/routers\/browse-timeline-router.js",
+      "outputStyle" : 1,
+      "fileType" : 32
     },
     "\/scripts\/common-dev.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1063,6 +1063,18 @@
       "initialSize" : 666,
       "fileType" : 8192
     },
+    "\/coffee\/views\/pg-select-view.coffee" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/coffee\/views\/pg-select-view.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/views\/pg-select-view.js",
+      "outputStyle" : 1,
+      "fileType" : 32
+    },
     "\/style\/sass\/lib\/sass-mixins\/src\/_shapes.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1108,18 +1120,6 @@
       "outputAbbreviatedPath" : "\/scripts\/utils\/globals-ck.js",
       "fileType" : 64
     },
-    "\/coffee\/views\/pg-select-view.coffee" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/coffee\/views\/pg-select-view.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/views\/pg-select-view.js",
-      "outputStyle" : 1,
-      "fileType" : 32
-    },
     "\/style\/sass\/lib\/sass-mixins\/src\/shapes\/_triangle.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1132,6 +1132,17 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
+    "\/scripts\/only-highlight-main.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scripts\/only-highlight-main.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/only-highlight-main-ck.js",
+      "fileType" : 64
+    },
     "\/coffee\/browse-main.coffee" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1143,17 +1154,6 @@
       "outputAbbreviatedPath" : "\/scripts\/browse-main.js",
       "outputStyle" : 0,
       "fileType" : 32
-    },
-    "\/scripts\/only-highlight-main.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scripts\/only-highlight-main.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/only-highlight-main-ck.js",
-      "fileType" : 64
     },
     "\/style\/sass\/lib\/bourbon\/addons\/_prefixer.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1213,6 +1213,18 @@
       "outputAbbreviatedPath" : "\/build\/templates\/jade\/brQuotRandomTempl.html",
       "fileType" : 512
     },
+    "\/style\/sass\/_adjustors.sass" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/_adjustors.sass",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/css\/_adjustors.css",
+      "fileType" : 2,
+      "debugStyle" : 2
+    },
     "\/images\/melancholic-scholar-nr.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1234,18 +1246,6 @@
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css\/_hidpi-media-query.css",
       "fileType" : 4,
-      "debugStyle" : 2
-    },
-    "\/style\/sass\/_adjustors.sass" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/_adjustors.sass",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/css\/_adjustors.css",
-      "fileType" : 2,
       "debugStyle" : 2
     },
     "\/coffee\/apps\/selection-app.coffee" : {
@@ -1271,16 +1271,17 @@
       "outputAbbreviatedPath" : "\/scripts\/utils\/incorporate-query-ck.js",
       "fileType" : 64
     },
-    "\/scripts\/views\/paginated-collection-view.js" : {
+    "\/coffee\/apps\/browse-highlights-app.coffee" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scripts\/views\/paginated-collection-view.js",
+      "inputAbbreviatedPath" : "\/coffee\/apps\/browse-highlights-app.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/apps\/browse-highlights-app.js",
       "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/views\/paginated-collection-view-ck.js",
-      "fileType" : 64
+      "fileType" : 32
     },
     "\/style\/sass\/lib\/sass-mixins\/src\/shapes\/_circle.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1318,17 +1319,16 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/coffee\/apps\/browse-highlights-app.coffee" : {
+    "\/scripts\/views\/paginated-collection-view.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/coffee\/apps\/browse-highlights-app.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/apps\/browse-highlights-app.js",
+      "inputAbbreviatedPath" : "\/scripts\/views\/paginated-collection-view.js",
       "outputStyle" : 1,
-      "fileType" : 32
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/views\/paginated-collection-view-ck.js",
+      "fileType" : 64
     },
     "\/images\/thumb-skeleton-thinking.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1875,18 +1875,6 @@
       "fileType" : 2,
       "debugStyle" : 2
     },
-    "\/style\/sass\/_variables.sass" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/_variables.sass",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/css\/_variables.css",
-      "fileType" : 2,
-      "debugStyle" : 2
-    },
     "\/style\/sass\/_highlight.sass" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1896,6 +1884,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/css\/_highlight.css",
+      "fileType" : 2,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/_variables.sass" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/_variables.sass",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/css\/_variables.css",
       "fileType" : 2,
       "debugStyle" : 2
     },
@@ -1957,16 +1957,17 @@
       "initialSize" : 470417,
       "fileType" : 8192
     },
-    "\/style\/sass\/svg\/png\/search.png" : {
+    "\/coffee\/apps\/rand-quot-app.coffee" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/svg\/png\/search.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/svg\/png\/search.png",
-      "initialSize" : 656,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/coffee\/apps\/rand-quot-app.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/apps\/rand-quot-app.js",
+      "outputStyle" : 1,
+      "fileType" : 32
     },
     "\/style\/sass\/lib\/bourbon\/functions\/_linear-gradient.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1980,17 +1981,16 @@
       "fileType" : 4,
       "debugStyle" : 2
     },
-    "\/coffee\/apps\/rand-quot-app.coffee" : {
+    "\/style\/sass\/svg\/png\/search.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/coffee\/apps\/rand-quot-app.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/apps\/rand-quot-app.js",
-      "outputStyle" : 1,
-      "fileType" : 32
+      "inputAbbreviatedPath" : "\/style\/sass\/svg\/png\/search.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/svg\/png\/search.png",
+      "initialSize" : 656,
+      "fileType" : 8192
     },
     "\/style\/sass\/lib\/bourbon\/css3\/_backface-visibility.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -2301,18 +2301,6 @@
       "outputStyle" : 1,
       "fileType" : 32
     },
-    "\/style\/sass\/lib\/bourbon\/addons\/_size.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/addons\/_size.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css\/_size.css",
-      "fileType" : 4,
-      "debugStyle" : 2
-    },
     "\/coffee\/utils\/incorporate-query.coffee" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2324,6 +2312,18 @@
       "outputAbbreviatedPath" : "\/scripts\/utils\/incorporate-query.js",
       "outputStyle" : 1,
       "fileType" : 32
+    },
+    "\/style\/sass\/lib\/bourbon\/addons\/_size.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/addons\/_size.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css\/_size.css",
+      "fileType" : 4,
+      "debugStyle" : 2
     },
     "\/images\/originals\/melancholic-scholar.png" : {
       "ignoreWasSetByUser" : 0,
@@ -2460,15 +2460,6 @@
       "outputAbbreviatedPath" : "\/scripts\/lib\/backbone-ck.js",
       "fileType" : 64
     },
-    "\/style\/css\/STYLE.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/css\/STYLE.css",
-      "outputAbbreviatedPath" : "\/No Output Path",
-      "fileType" : 16
-    },
     "\/scripts\/require.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2480,17 +2471,14 @@
       "outputAbbreviatedPath" : "\/scripts\/require-ck.js",
       "fileType" : 64
     },
-    "\/style\/sass\/lib\/bourbon\/css3\/_radial-gradient.scss" : {
+    "\/style\/css\/STYLE.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
-      "hidden" : 1,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css3\/_radial-gradient.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css\/_radial-gradient.css",
-      "fileType" : 4,
-      "debugStyle" : 2
+      "inputAbbreviatedPath" : "\/style\/css\/STYLE.css",
+      "outputAbbreviatedPath" : "\/No Output Path",
+      "fileType" : 16
     },
     "\/style\/sass\/lib\/bourbon\/css3\/_image-rendering.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -2501,6 +2489,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css\/_image-rendering.css",
+      "fileType" : 4,
+      "debugStyle" : 2
+    },
+    "\/style\/sass\/lib\/bourbon\/css3\/_radial-gradient.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css3\/_radial-gradient.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/style\/sass\/lib\/bourbon\/css\/_radial-gradient.css",
       "fileType" : 4,
       "debugStyle" : 2
     },

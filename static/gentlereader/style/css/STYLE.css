@@ -849,6 +849,12 @@ table {
 .s-text section {
   margin-bottom: 2em;
 }
+.s-text .center {
+  text-align: center;
+}
+.s-text .smcaps {
+  font-variant: small-caps;
+}
 .s-text .poetry-line {
   text-align: left;
 }
