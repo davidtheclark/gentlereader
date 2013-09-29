@@ -1,0 +1,40 @@
+.s-text h2 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 1em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.s-text h3 {
+  font-size: 1.2em;
+  line-height: 1.1;
+  margin: 1em 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.s-text .subhead {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.s-text section:before {
+  content: "* * *";
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+.s-text section:first-child:before {
+  content: "";
+}
+
+.s-text ol {
+  list-style-position: inside;
+  padding-left: 0;
+  text-indent: 20px;
+}
+
+.roman-list {
+  list-style-type: upper-roman;
+}
