@@ -1,9 +1,9 @@
 section: a(href='/selections/#{model.get("slug")}')
   h3.selectioninlist-title #{model.get("title")}
   .selectioninlist-details
-    span.selectioninlist-author #{model.get("author")}.&#32;
+    span.selectioninlist-author #{model.get("author")}
     if model.get("from_display")
-      | !{model.get("from_display")}
+      | .&#32;!{model.get("from_display")}
     |&#32;(!{model.get("date_display")}). <span class="selectioninlist-posttime">Posted #{model.get("date_entered")}</span>
 
 section.selectioninlist-teaser
