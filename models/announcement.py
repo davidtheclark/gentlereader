@@ -30,7 +30,7 @@ class Announcement(models.Model):
         return mark_safe(smart_truncate(self.text, 400, suffix=''))
 
     def get_text(self):
-        return mark_safe(self.text)
+        return mark_safe(dumb_to_smart_quotes(self.text))
 
     def __unicode__(self):
         return self.title

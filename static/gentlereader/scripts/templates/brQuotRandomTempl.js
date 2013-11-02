@@ -28,9 +28,9 @@ buf.push('>');
 var __val__ = q.quotation.quotation
 buf.push(null == __val__ ? "" : __val__);
 buf.push('</a>\n    </li>\n  </ul>\n  <div class="hl-more"><a');
-buf.push(attrs({ 'href':("/selections/" + (q.selection.slug) + "") }, {"href":true}));
+buf.push(attrs({ 'href':("/selections/" + (q.selection.slug) + ""), "class": ('hl-more--link') }, {"href":true}));
 buf.push('>read this full selection &raquo;</a><br/><a');
-buf.push(attrs({ 'href':("/highlights/#" + (q.selection.author_slug) + "") }, {"href":true}));
+buf.push(attrs({ 'href':("/highlights/#" + (q.selection.author_slug) + ""), "class": ('hl-more--link') }, {"href":true}));
 buf.push('>+ more highlights from ' + escape((interp = q.selection.author) == null ? '' : interp) + '</a></div>\n</section>');
     }
 
@@ -53,9 +53,9 @@ buf.push('>');
 var __val__ = q.quotation.quotation
 buf.push(null == __val__ ? "" : __val__);
 buf.push('</a>\n    </li>\n  </ul>\n  <div class="hl-more"><a');
-buf.push(attrs({ 'href':("/selections/" + (q.selection.slug) + "") }, {"href":true}));
+buf.push(attrs({ 'href':("/selections/" + (q.selection.slug) + ""), "class": ('hl-more--link') }, {"href":true}));
 buf.push('>read this full selection &raquo;</a><br/><a');
-buf.push(attrs({ 'href':("/highlights/#" + (q.selection.author_slug) + "") }, {"href":true}));
+buf.push(attrs({ 'href':("/highlights/#" + (q.selection.author_slug) + ""), "class": ('hl-more--link') }, {"href":true}));
 buf.push('>+ more highlights from ' + escape((interp = q.selection.author) == null ? '' : interp) + '</a></div>\n</section>');
     }
 

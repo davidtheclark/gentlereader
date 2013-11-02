@@ -88,7 +88,9 @@ article.content
             li.s-highlight--li.m-inactive: a(href="/highlights/{{ q.pk }}") {{ q.get_quotation }}
             {% endif %}
             {% endfor %}
-            .s-highlight--li.m-inactive.s-highlight--all: a(href="/highlights/\#{{ selection.source.author.slug }}") see all the highlights from this selection
+            li.s-highlight--li.m-inactive.s-highlight--all: a(href="/highlights/\#{{ selection.source.author.slug }}")
+              //- | see all the highlights from this selection
+          .s-highlight--see-all: a(href="/highlights/\#{{ selection.source.author.slug }}") see all the highlights from this selection
 
 
       li.s-extras--li.uft-group

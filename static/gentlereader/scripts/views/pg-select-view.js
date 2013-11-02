@@ -73,6 +73,11 @@ define(['backbone', 'templates/pgSelectTempl'], function(Backbone, pgSelectTempl
       this.setEvents();
       return this.render();
     },
+    checkBCEDate: function(year) {
+      var result;
+      result = year < 0 ? "" + (Math.abs(year)) + " <span class='bce'>bce</span>" : year;
+      return result;
+    },
     getModelDisplay: function(model) {
       /* From each relevant model, get the text to display in
       the page list. This relies on the option "dataType" passed when
@@ -95,7 +100,7 @@ define(['backbone', 'templates/pgSelectTempl'], function(Backbone, pgSelectTempl
           case "last_name":
             return model.get("last_name").toUpperCase();
           case "birth_year":
-            return model.get("birth_year");
+            return this.checkBCEDate(model.get("birth_year"));
         }
       } else {
         return model.get("name").toUpperCase();

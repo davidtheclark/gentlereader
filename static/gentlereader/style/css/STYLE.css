@@ -734,17 +734,17 @@ table {
   }
 }
 
-.h2 {
+.h2, .ann-title {
   margin: 0.3em 0 0 0;
   font-size: 3em;
 }
 @media (max-width: 47.5em) {
-  .h2 {
+  .h2, .ann-title {
     font-size: 2.3em;
   }
 }
 @media (min-width: 47.5em) {
-  .h2 {
+  .h2, .ann-title {
     font-size: 3.5em;
   }
 }
@@ -816,7 +816,7 @@ table {
   text-indent: 0;
 }
 
-.s-text > p:first-of-type:first-letter {
+.s-text > p:first-of-type:first-letter, .s-text section > p:first-of-type:not(.poetry-line):first-letter {
   font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
   font-size: 3em;
   font-style: normal;
@@ -826,8 +826,8 @@ table {
   text-transform: uppercase;
 }
 @media (min-width: 47.5em) {
-  .s-text > p:first-of-type:first-letter {
-    font-size: 4em;
+  .s-text > p:first-of-type:first-letter, .s-text section > p:first-of-type:not(.poetry-line):first-letter {
+    font-size: 3.8em;
     line-height: 1.05;
   }
 }
@@ -855,7 +855,7 @@ table {
   margin: 0.5em 0;
 }
 .s-text p:not(.poetry-line) .poetry-line,
-.s-text blockquote .poetry-line {
+.s-text blockquote {
   font-size: 0.9em;
   color: #6d6d6d;
 }
@@ -876,11 +876,17 @@ table {
   margin: 0 0 1em 0;
   text-align: center;
 }
+.s-text .sel-body-subheading.m-large {
+  font-size: 2em;
+}
 .s-text > p:first-of-type:first-line,
-.s-text > section:first-of-type > p:first-of-type:not(.poetry-line):first-line {
+.s-text section:first-of-type > p:first-of-type:not(.poetry-line):first-line {
   font-family: "CrimsonCaps", "Times New Roman", Times, serif;
   font-size: 1.5em;
   line-height: 1;
+}
+.s-text section > p:first-of-type:not(.poetry-line) {
+  text-indent: 0;
 }
 .s-text:after {
   content: "a";
@@ -953,6 +959,7 @@ body {
   font-family: "Crimson", "Times New Roman", Times, serif;
   min-width: 20em;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 a,
@@ -1223,7 +1230,7 @@ li.nav-about-btn a {
   border-top-width: 0;
   position: absolute;
   top: 20px;
-  right: 10px;
+  right: 1.3em;
   cursor: pointer;
   display: none;
 }
@@ -1759,15 +1766,17 @@ a.rq-text:hover {
   color: #2c2c2c;
 }
 
-.s-highlight--all {
+.s-highlight--see-all {
+  font-size: 1.2em;
   line-height: 1.2;
-  text-align: center;
+  margin-top: 0.5em;
   font-family: "CrimsonCaps", "Times New Roman", Times, serif;
 }
-.s-highlight--all a {
+.s-highlight--see-all a {
   position: relative;
+  border-bottom: none;
 }
-.s-highlight--all a:before {
+.s-highlight--see-all a:before {
   content: "1 ";
   font-family: fellorn;
   position: relative;
@@ -2092,6 +2101,18 @@ a.rq-text:hover {
     width: 30%;
   }
 }
+.ann-title {
+  color: #c00b0b;
+  margin-bottom: 0;
+}
+
+.ann-posted {
+  color: #6d6d6d;
+  font-family: "IM Fell English", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.4em;
+  font-style: italic;
+}
+
 /* .selectioninlist is an <a> */
 .selectioninlist {
   display: block;
@@ -2236,6 +2257,7 @@ a.rq-text:hover {
 .ann-li-date {
   color: #6d6d6d;
   text-align: right;
+  margin-top: 0.3em;
 }
 
 .ann-li-body ul {
@@ -2458,6 +2480,7 @@ a.rq-text:hover {
   border-width: 5px;
   border-left-color: #6d6d6d;
   padding-right: 0.25em;
+  margin-bottom: 0.2em;
 }
 @media (min-width: 32.1875em) {
   .tl-year {
@@ -2741,6 +2764,13 @@ b.def-altword:after {
 
 .hl-more {
   text-align: right;
+}
+
+.hl-more--link {
+  display: inline-block;
+}
+.hl-more--link:first-child {
+  margin-bottom: 0.5em;
 }
 
 @media (min-width: 47.5em) {

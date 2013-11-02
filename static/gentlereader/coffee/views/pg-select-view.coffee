@@ -71,6 +71,10 @@ define ['backbone',
         @setEvents()
         @render()
 
+      checkBCEDate : (year) ->
+        result = if year < 0 then "#{Math.abs(year)} <span class='bce'>bce</span>" else year
+        return result
+
       getModelDisplay : (model) ->
         ### From each relevant model, get the text to display in
         the page list. This relies on the option "dataType" passed when
@@ -86,7 +90,7 @@ define ['backbone',
         else if @dataType == "authors"
           switch @sortField
             when "last_name" then model.get("last_name").toUpperCase()
-            when "birth_year" then model.get "birth_year"
+            when "birth_year" then @checkBCEDate(model.get "birth_year")
         else
           return model.get("name").toUpperCase()
 

@@ -164,7 +164,7 @@
   padding-right: 0.05em
   text-transform: uppercase
   +breakpoint(desktop)
-    font-size: 4em
+    font-size: 3.8em
     line-height: 1.05
 
 
@@ -189,11 +189,10 @@
   li
     margin: 0.5em 0
 
-  p:not(.poetry-line),
+  p:not(.poetry-line) .poetry-line,
   blockquote
-    .poetry-line
-      font-size: 0.9em
-      color: $c-subtle
+    font-size: 0.9em
+    color: $c-subtle
 
   section
     margin-bottom: 2em
@@ -216,8 +215,8 @@
       font-size: 2em
 
   // top line decoration
-  > p:first-of-type,
-  > section:first-of-type > p:first-of-type:not(.poetry-line)
+  & > p:first-of-type,
+  section:first-of-type > p:first-of-type:not(.poetry-line)
     // style first letter
     &:first-letter
       @extend %drop-cap
@@ -228,7 +227,8 @@
       font-size: 1.5em
       line-height: 1
 
-  > section > p:first-of-type:not(.poetry-line)
+  section > p:first-of-type:not(.poetry-line)
+    text-indent: 0
     &:first-letter
       @extend %drop-cap
 

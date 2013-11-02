@@ -15,6 +15,6 @@ for q in locals
         .hl-quotationmark &#8220;
         a.hl-quote.hl-random(href="/highlights/#{q.quotation.id}")!= q.quotation.quotation
     .hl-more
-      a(href="/selections/#{q.selection.slug}") read this full selection &raquo;
+      a(href="/selections/#{q.selection.slug}").hl-more--link read this full selection &raquo;
       br
-      a(href="/highlights/##{q.selection.author_slug}") + more highlights from #{q.selection.author}
+      a(href="/highlights/##{q.selection.author_slug}").hl-more--link + more highlights from #{q.selection.author}

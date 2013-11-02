@@ -16,7 +16,7 @@ buf.push('\n<div data-adjustor="page" class="x-adjustor">&times;</div>\n<div cla
 
 buf.push('\n  <li');
 buf.push(attrs({ 'data-page':('' + (p.num) + ''), "class": ('pagelist-i') }, {"data-page":true}));
-buf.push('>' + escape((interp = p.fill) == null ? '' : interp) + '</li>');
+buf.push('>' + ((interp = p.fill) == null ? '' : interp) + '</li>');
     }
 
   } else {
@@ -26,7 +26,7 @@ buf.push('>' + escape((interp = p.fill) == null ? '' : interp) + '</li>');
 
 buf.push('\n  <li');
 buf.push(attrs({ 'data-page':('' + (p.num) + ''), "class": ('pagelist-i') }, {"data-page":true}));
-buf.push('>' + escape((interp = p.fill) == null ? '' : interp) + '</li>');
+buf.push('>' + ((interp = p.fill) == null ? '' : interp) + '</li>');
     }
 
   }

@@ -5,6 +5,10 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     shell: {
+      options: {
+        stdout: true,
+        stderr: true
+      },
       initialize: {
         command: [
           'pg_ctl -D /usr/local/var/postgres -l logfile start',

@@ -4,4 +4,5 @@ ol(start="0")#pagelist
   li.page-all(data-page='all').pagelist-i all #{itemCount} #{dataType}
 
   for p in pages
-    li(data-page='#{p.num}').pagelist-i #{p.fill}
+    li(data-page='#{p.num}').pagelist-i
+      | !{p.fill}
